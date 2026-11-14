@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IXmlNodeSerializer : IXmlNodeSerializer.Interface, INativeGuid
 {
+    /// <include file='IXmlNodeSerializer.xml' path='doc/member[@name="IXmlNodeSerializer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IXmlNodeSerializer);
 
     public void** lpVtbl;

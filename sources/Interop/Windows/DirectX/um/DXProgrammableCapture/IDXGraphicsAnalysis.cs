@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDXGraphicsAnalysis : IDXGraphicsAnalysis.Interface, INativeGuid
 {
+    /// <include file='IDXGraphicsAnalysis.xml' path='doc/member[@name="IDXGraphicsAnalysis.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDXGraphicsAnalysis);
 
     public void** lpVtbl;

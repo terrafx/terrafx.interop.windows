@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IMediaTimelineController2 : IMediaTimelineController2.Interface, INativeGuid
 {
+    /// <include file='IMediaTimelineController2.xml' path='doc/member[@name="IMediaTimelineController2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMediaTimelineController2);
 
     public void** lpVtbl;

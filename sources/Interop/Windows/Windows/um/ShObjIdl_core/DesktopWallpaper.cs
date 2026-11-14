@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("C2CF3110-460E-4FC1-B9D0-8A1C0C9CC4BD")]
 public unsafe partial struct DesktopWallpaper : INativeGuid
 {
+    /// <include file='DesktopWallpaper.xml' path='doc/member[@name="DesktopWallpaper.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_DesktopWallpaper);
 }

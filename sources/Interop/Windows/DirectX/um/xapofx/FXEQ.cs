@@ -13,6 +13,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("F5E01117-D6C4-485A-A3F5-695196F3DBFA")]
 public unsafe partial struct FXEQ : INativeGuid
 {
+    /// <include file='FXEQ.xml' path='doc/member[@name="FXEQ.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_FXEQ);
 
     [NativeTypeName("#define FXEQ_MIN_FRAMERATE 22000")]

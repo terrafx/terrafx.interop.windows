@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ICoCreatedLocally : ICoCreatedLocally.Interface, INativeGuid
 {
+    /// <include file='ICoCreatedLocally.xml' path='doc/member[@name="ICoCreatedLocally.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICoCreatedLocally);
 
     public void** lpVtbl;

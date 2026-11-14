@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("3BEE4890-4FE9-4A37-8C1E-5E7E12791C1F")]
 public unsafe partial struct SpSharedRecognizer : INativeGuid
 {
+    /// <include file='SpSharedRecognizer.xml' path='doc/member[@name="SpSharedRecognizer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SpSharedRecognizer);
 }

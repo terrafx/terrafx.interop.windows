@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpEventProvider")]
 public unsafe partial struct IGlobalConfigurationChangeProvider : IGlobalConfigurationChangeProvider.Interface, INativeGuid
 {
+    /// <include file='IGlobalConfigurationChangeProvider.xml' path='doc/member[@name="IGlobalConfigurationChangeProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGlobalConfigurationChangeProvider);
 
     public void** lpVtbl;

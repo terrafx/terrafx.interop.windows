@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")]
 public unsafe partial struct ISmsDevice : ISmsDevice.Interface, INativeGuid
 {
+    /// <include file='ISmsDevice.xml' path='doc/member[@name="ISmsDevice.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISmsDevice);
 
     public void** lpVtbl;

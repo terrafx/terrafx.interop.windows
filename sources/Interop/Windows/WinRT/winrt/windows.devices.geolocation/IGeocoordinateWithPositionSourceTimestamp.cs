@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IGeocoordinateWithPositionSourceTimestamp : IGeocoordinateWithPositionSourceTimestamp.Interface, INativeGuid
 {
+    /// <include file='IGeocoordinateWithPositionSourceTimestamp.xml' path='doc/member[@name="IGeocoordinateWithPositionSourceTimestamp.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGeocoordinateWithPositionSourceTimestamp);
 
     public void** lpVtbl;

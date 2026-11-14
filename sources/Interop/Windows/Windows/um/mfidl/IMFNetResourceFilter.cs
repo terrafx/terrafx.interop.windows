@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFNetResourceFilter : IMFNetResourceFilter.Interface, INativeGuid
 {
+    /// <include file='IMFNetResourceFilter.xml' path='doc/member[@name="IMFNetResourceFilter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFNetResourceFilter);
 
     public void** lpVtbl;

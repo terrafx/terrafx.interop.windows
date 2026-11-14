@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("305105D2-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct SVGLinearGradientElement : INativeGuid
 {
+    /// <include file='SVGLinearGradientElement.xml' path='doc/member[@name="SVGLinearGradientElement.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SVGLinearGradientElement);
 }

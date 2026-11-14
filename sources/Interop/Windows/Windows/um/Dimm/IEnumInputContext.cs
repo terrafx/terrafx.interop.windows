@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IEnumInputContext : IEnumInputContext.Interface, INativeGuid
 {
+    /// <include file='IEnumInputContext.xml' path='doc/member[@name="IEnumInputContext.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IEnumInputContext);
 
     public void** lpVtbl;

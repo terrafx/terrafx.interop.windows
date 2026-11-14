@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows10.0.19043.0")]
 public unsafe partial struct IGraphicsCaptureItemInterop : IGraphicsCaptureItemInterop.Interface, INativeGuid
 {
+    /// <include file='IGraphicsCaptureItemInterop.xml' path='doc/member[@name="IGraphicsCaptureItemInterop.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGraphicsCaptureItemInterop);
 
     public void** lpVtbl;

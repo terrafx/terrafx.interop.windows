@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IPSFactoryBuffer : IPSFactoryBuffer.Interface, INativeGuid
 {
+    /// <include file='IPSFactoryBuffer.xml' path='doc/member[@name="IPSFactoryBuffer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPSFactoryBuffer);
 
     public void** lpVtbl;

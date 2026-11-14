@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("9565239F-861C-4AC8-BFDA-E00CB4DB8548")]
 public unsafe partial struct CODECAPI_AVEncDDDCHighPassFilter : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncDDDCHighPassFilter.xml' path='doc/member[@name="CODECAPI_AVEncDDDCHighPassFilter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncDDDCHighPassFilter);
 }

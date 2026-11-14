@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISharedBitmap : ISharedBitmap.Interface, INativeGuid
 {
+    /// <include file='ISharedBitmap.xml' path='doc/member[@name="ISharedBitmap.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISharedBitmap);
 
     public void** lpVtbl;

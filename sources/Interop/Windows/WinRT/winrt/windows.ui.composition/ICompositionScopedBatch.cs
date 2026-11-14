@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICompositionScopedBatch : ICompositionScopedBatch.Interface, INativeGuid
 {
+    /// <include file='ICompositionScopedBatch.xml' path='doc/member[@name="ICompositionScopedBatch.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICompositionScopedBatch);
 
     public void** lpVtbl;

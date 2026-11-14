@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IActivitySensor : IActivitySensor.Interface, INativeGuid
 {
+    /// <include file='IActivitySensor.xml' path='doc/member[@name="IActivitySensor.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IActivitySensor);
 
     public void** lpVtbl;

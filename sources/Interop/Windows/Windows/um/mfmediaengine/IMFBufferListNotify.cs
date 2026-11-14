@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IMFBufferListNotify : IMFBufferListNotify.Interface, INativeGuid
 {
+    /// <include file='IMFBufferListNotify.xml' path='doc/member[@name="IMFBufferListNotify.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFBufferListNotify);
 
     public void** lpVtbl;

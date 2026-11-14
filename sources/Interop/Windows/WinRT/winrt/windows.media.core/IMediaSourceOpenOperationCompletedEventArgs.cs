@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IMediaSourceOpenOperationCompletedEventArgs : IMediaSourceOpenOperationCompletedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IMediaSourceOpenOperationCompletedEventArgs.xml' path='doc/member[@name="IMediaSourceOpenOperationCompletedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMediaSourceOpenOperationCompletedEventArgs);
 
     public void** lpVtbl;

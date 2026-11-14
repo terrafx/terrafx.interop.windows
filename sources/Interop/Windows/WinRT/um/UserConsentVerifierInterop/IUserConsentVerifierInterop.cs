@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows10.0.22000.0")]
 public unsafe partial struct IUserConsentVerifierInterop : IUserConsentVerifierInterop.Interface, INativeGuid
 {
+    /// <include file='IUserConsentVerifierInterop.xml' path='doc/member[@name="IUserConsentVerifierInterop.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUserConsentVerifierInterop);
 
     public void** lpVtbl;

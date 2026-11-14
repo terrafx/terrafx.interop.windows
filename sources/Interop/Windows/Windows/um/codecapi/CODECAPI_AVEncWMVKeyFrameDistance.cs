@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("5569055E-E268-4771-B83E-9555EA28AED3")]
 public unsafe partial struct CODECAPI_AVEncWMVKeyFrameDistance : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncWMVKeyFrameDistance.xml' path='doc/member[@name="CODECAPI_AVEncWMVKeyFrameDistance.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncWMVKeyFrameDistance);
 }

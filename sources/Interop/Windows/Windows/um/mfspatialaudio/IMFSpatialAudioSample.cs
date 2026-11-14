@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0.15063.0")]
 public unsafe partial struct IMFSpatialAudioSample : IMFSpatialAudioSample.Interface, INativeGuid
 {
+    /// <include file='IMFSpatialAudioSample.xml' path='doc/member[@name="IMFSpatialAudioSample.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFSpatialAudioSample);
 
     public void** lpVtbl;

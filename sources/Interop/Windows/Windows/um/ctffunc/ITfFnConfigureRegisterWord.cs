@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("ITfFunction")]
 public unsafe partial struct ITfFnConfigureRegisterWord : ITfFnConfigureRegisterWord.Interface, INativeGuid
 {
+    /// <include file='ITfFnConfigureRegisterWord.xml' path='doc/member[@name="ITfFnConfigureRegisterWord.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfFnConfigureRegisterWord);
 
     public void** lpVtbl;

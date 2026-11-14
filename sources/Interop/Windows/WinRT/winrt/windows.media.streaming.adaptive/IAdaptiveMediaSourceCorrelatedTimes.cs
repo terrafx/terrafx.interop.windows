@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAdaptiveMediaSourceCorrelatedTimes : IAdaptiveMediaSourceCorrelatedTimes.Interface, INativeGuid
 {
+    /// <include file='IAdaptiveMediaSourceCorrelatedTimes.xml' path='doc/member[@name="IAdaptiveMediaSourceCorrelatedTimes.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAdaptiveMediaSourceCorrelatedTimes);
 
     public void** lpVtbl;

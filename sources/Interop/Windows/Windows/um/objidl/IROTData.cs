@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IROTData : IROTData.Interface, INativeGuid
 {
+    /// <include file='IROTData.xml' path='doc/member[@name="IROTData.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IROTData);
 
     public void** lpVtbl;

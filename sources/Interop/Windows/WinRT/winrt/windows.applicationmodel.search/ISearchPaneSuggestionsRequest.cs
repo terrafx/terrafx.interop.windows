@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("ISearchPaneSuggestionsRequest may be altered or unavailable for releases after Windows 10.")]
 public unsafe partial struct ISearchPaneSuggestionsRequest : ISearchPaneSuggestionsRequest.Interface, INativeGuid
 {
+    /// <include file='ISearchPaneSuggestionsRequest.xml' path='doc/member[@name="ISearchPaneSuggestionsRequest.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISearchPaneSuggestionsRequest);
 
     public void** lpVtbl;

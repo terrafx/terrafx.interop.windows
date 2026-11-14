@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAMCameraControl : IAMCameraControl.Interface, INativeGuid
 {
+    /// <include file='IAMCameraControl.xml' path='doc/member[@name="IAMCameraControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAMCameraControl);
 
     public void** lpVtbl;

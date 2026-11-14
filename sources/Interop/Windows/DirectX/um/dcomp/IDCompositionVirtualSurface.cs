@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IDCompositionVirtualSurface : IDCompositionVirtualSurface.Interface, INativeGuid
 {
+    /// <include file='IDCompositionVirtualSurface.xml' path='doc/member[@name="IDCompositionVirtualSurface.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDCompositionVirtualSurface);
 
     public void** lpVtbl;

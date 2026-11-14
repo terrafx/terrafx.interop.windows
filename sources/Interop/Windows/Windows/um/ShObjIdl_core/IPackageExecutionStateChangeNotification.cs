@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IPackageExecutionStateChangeNotification : IPackageExecutionStateChangeNotification.Interface, INativeGuid
 {
+    /// <include file='IPackageExecutionStateChangeNotification.xml' path='doc/member[@name="IPackageExecutionStateChangeNotification.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPackageExecutionStateChangeNotification);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IContactPanelActivatedEventArgs : IContactPanelActivatedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IContactPanelActivatedEventArgs.xml' path='doc/member[@name="IContactPanelActivatedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IContactPanelActivatedEventArgs);
 
     public void** lpVtbl;

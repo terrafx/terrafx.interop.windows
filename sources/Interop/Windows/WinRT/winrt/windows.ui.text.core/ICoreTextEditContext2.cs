@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICoreTextEditContext2 : ICoreTextEditContext2.Interface, INativeGuid
 {
+    /// <include file='ICoreTextEditContext2.xml' path='doc/member[@name="ICoreTextEditContext2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICoreTextEditContext2);
 
     public void** lpVtbl;

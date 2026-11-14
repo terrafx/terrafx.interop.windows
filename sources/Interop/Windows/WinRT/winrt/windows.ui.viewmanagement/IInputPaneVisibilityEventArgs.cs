@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IInputPaneVisibilityEventArgs : IInputPaneVisibilityEventArgs.Interface, INativeGuid
 {
+    /// <include file='IInputPaneVisibilityEventArgs.xml' path='doc/member[@name="IInputPaneVisibilityEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IInputPaneVisibilityEventArgs);
 
     public void** lpVtbl;

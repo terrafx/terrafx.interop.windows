@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDynamicHWHandler : IDynamicHWHandler.Interface, INativeGuid
 {
+    /// <include file='IDynamicHWHandler.xml' path='doc/member[@name="IDynamicHWHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDynamicHWHandler);
 
     public void** lpVtbl;

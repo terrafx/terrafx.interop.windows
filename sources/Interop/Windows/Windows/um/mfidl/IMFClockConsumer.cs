@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0.15063.0")]
 public unsafe partial struct IMFClockConsumer : IMFClockConsumer.Interface, INativeGuid
 {
+    /// <include file='IMFClockConsumer.xml' path='doc/member[@name="IMFClockConsumer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFClockConsumer);
 
     public void** lpVtbl;

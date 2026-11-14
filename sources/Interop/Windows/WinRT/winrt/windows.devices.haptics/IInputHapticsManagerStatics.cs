@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IInputHapticsManagerStatics : IInputHapticsManagerStatics.Interface, INativeGuid
 {
+    /// <include file='IInputHapticsManagerStatics.xml' path='doc/member[@name="IInputHapticsManagerStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IInputHapticsManagerStatics);
 
     public void** lpVtbl;

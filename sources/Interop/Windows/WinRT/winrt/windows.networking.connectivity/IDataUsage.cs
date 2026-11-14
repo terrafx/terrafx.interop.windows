@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("IDataUsage may be altered or unavailable for releases after Windows 8.1. Instead, use INetworkUsage.")]
 public unsafe partial struct IDataUsage : IDataUsage.Interface, INativeGuid
 {
+    /// <include file='IDataUsage.xml' path='doc/member[@name="IDataUsage.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDataUsage);
 
     public void** lpVtbl;

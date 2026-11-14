@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("3050F3FE-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct CMimeTypes : INativeGuid
 {
+    /// <include file='CMimeTypes.xml' path='doc/member[@name="CMimeTypes.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_CMimeTypes);
 }

@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0.15063.0")]
 public unsafe partial struct IMFMuxStreamAttributesManager : IMFMuxStreamAttributesManager.Interface, INativeGuid
 {
+    /// <include file='IMFMuxStreamAttributesManager.xml' path='doc/member[@name="IMFMuxStreamAttributesManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFMuxStreamAttributesManager);
 
     public void** lpVtbl;

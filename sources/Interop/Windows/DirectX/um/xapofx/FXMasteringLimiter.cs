@@ -13,6 +13,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("C4137916-2BE1-46FD-8599-441536F49856")]
 public unsafe partial struct FXMasteringLimiter : INativeGuid
 {
+    /// <include file='FXMasteringLimiter.xml' path='doc/member[@name="FXMasteringLimiter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_FXMasteringLimiter);
 
     [NativeTypeName("#define FXMASTERINGLIMITER_MIN_RELEASE 1")]

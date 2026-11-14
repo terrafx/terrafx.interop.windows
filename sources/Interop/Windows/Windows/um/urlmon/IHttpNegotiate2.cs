@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpNegotiate")]
 public unsafe partial struct IHttpNegotiate2 : IHttpNegotiate2.Interface, INativeGuid
 {
+    /// <include file='IHttpNegotiate2.xml' path='doc/member[@name="IHttpNegotiate2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpNegotiate2);
 
     public void** lpVtbl;

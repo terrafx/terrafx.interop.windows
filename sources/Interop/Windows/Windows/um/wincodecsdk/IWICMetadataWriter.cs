@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IWICMetadataReader")]
 public unsafe partial struct IWICMetadataWriter : IWICMetadataWriter.Interface, INativeGuid
 {
+    /// <include file='IWICMetadataWriter.xml' path='doc/member[@name="IWICMetadataWriter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWICMetadataWriter);
 
     public void** lpVtbl;

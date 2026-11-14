@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPersistedKeyProviderStatics : IPersistedKeyProviderStatics.Interface, INativeGuid
 {
+    /// <include file='IPersistedKeyProviderStatics.xml' path='doc/member[@name="IPersistedKeyProviderStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPersistedKeyProviderStatics);
 
     public void** lpVtbl;

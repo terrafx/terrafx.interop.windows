@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IAppHostAdminManager")]
 public unsafe partial struct IAppHostWritableAdminManager : IAppHostWritableAdminManager.Interface, INativeGuid
 {
+    /// <include file='IAppHostWritableAdminManager.xml' path='doc/member[@name="IAppHostWritableAdminManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppHostWritableAdminManager);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAppBroadcastStreamStateChangedEventArgs : IAppBroadcastStreamStateChangedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IAppBroadcastStreamStateChangedEventArgs.xml' path='doc/member[@name="IAppBroadcastStreamStateChangedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppBroadcastStreamStateChangedEventArgs);
 
     public void** lpVtbl;

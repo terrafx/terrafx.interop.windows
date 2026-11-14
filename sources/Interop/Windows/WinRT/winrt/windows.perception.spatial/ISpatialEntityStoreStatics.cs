@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISpatialEntityStoreStatics : ISpatialEntityStoreStatics.Interface, INativeGuid
 {
+    /// <include file='ISpatialEntityStoreStatics.xml' path='doc/member[@name="ISpatialEntityStoreStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpatialEntityStoreStatics);
 
     public void** lpVtbl;

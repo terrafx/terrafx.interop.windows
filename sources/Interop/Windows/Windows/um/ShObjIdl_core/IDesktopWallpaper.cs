@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface, INativeGuid
 {
+    /// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDesktopWallpaper);
 
     public void** lpVtbl;

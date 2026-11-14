@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISequentialStream : ISequentialStream.Interface, INativeGuid
 {
+    /// <include file='ISequentialStream.xml' path='doc/member[@name="ISequentialStream.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISequentialStream);
 
     public void** lpVtbl;

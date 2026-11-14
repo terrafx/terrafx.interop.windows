@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IContactReader : IContactReader.Interface, INativeGuid
 {
+    /// <include file='IContactReader.xml' path='doc/member[@name="IContactReader.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IContactReader);
 
     public void** lpVtbl;

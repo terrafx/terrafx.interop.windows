@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IQueryOptionsFactory : IQueryOptionsFactory.Interface, INativeGuid
 {
+    /// <include file='IQueryOptionsFactory.xml' path='doc/member[@name="IQueryOptionsFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IQueryOptionsFactory);
 
     public void** lpVtbl;

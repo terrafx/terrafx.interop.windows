@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDirect3DCryptoSession9 : IDirect3DCryptoSession9.Interface, INativeGuid
 {
+    /// <include file='IDirect3DCryptoSession9.xml' path='doc/member[@name="IDirect3DCryptoSession9.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDirect3DCryptoSession9);
 
     public void** lpVtbl;

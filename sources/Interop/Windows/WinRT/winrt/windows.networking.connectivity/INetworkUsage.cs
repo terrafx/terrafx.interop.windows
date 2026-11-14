@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct INetworkUsage : INetworkUsage.Interface, INativeGuid
 {
+    /// <include file='INetworkUsage.xml' path='doc/member[@name="INetworkUsage.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_INetworkUsage);
 
     public void** lpVtbl;

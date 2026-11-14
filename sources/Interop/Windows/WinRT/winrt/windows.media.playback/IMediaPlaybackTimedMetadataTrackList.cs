@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IMediaPlaybackTimedMetadataTrackList : IMediaPlaybackTimedMetadataTrackList.Interface, INativeGuid
 {
+    /// <include file='IMediaPlaybackTimedMetadataTrackList.xml' path='doc/member[@name="IMediaPlaybackTimedMetadataTrackList.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMediaPlaybackTimedMetadataTrackList);
 
     public void** lpVtbl;

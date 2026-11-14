@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct DispHTMLCSSNamespaceRule : DispHTMLCSSNamespaceRule.Interface, INativeGuid
 {
+    /// <include file='DispHTMLCSSNamespaceRule.xml' path='doc/member[@name="DispHTMLCSSNamespaceRule.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_DispHTMLCSSNamespaceRule);
 
     public void** lpVtbl;

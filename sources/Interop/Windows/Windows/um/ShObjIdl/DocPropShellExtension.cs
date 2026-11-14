@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("883373C3-BF89-11D1-BE35-080036B11A03")]
 public unsafe partial struct DocPropShellExtension : INativeGuid
 {
+    /// <include file='DocPropShellExtension.xml' path='doc/member[@name="DocPropShellExtension.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_DocPropShellExtension);
 }

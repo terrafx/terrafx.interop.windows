@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("7E8BC44E-AEFF-11D1-89C2-00C04FB6BFC4")]
 public unsafe partial struct CClientCaps : INativeGuid
 {
+    /// <include file='CClientCaps.xml' path='doc/member[@name="CClientCaps.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_CClientCaps);
 }

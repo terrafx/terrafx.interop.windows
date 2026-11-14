@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("550DDA30-0541-11D2-9CA9-0060B0EC3D39")]
 public unsafe partial struct XMLDSOControl : INativeGuid
 {
+    /// <include file='XMLDSOControl.xml' path='doc/member[@name="XMLDSOControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_XMLDSOControl);
 }

@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("6B33163C-76A5-4B6C-BF21-45DE9CD503A1")]
 public unsafe partial struct PublishingWizard : INativeGuid
 {
+    /// <include file='PublishingWizard.xml' path='doc/member[@name="PublishingWizard.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_PublishingWizard);
 }

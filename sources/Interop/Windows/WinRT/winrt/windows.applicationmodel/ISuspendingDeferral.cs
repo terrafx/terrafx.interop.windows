@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISuspendingDeferral : ISuspendingDeferral.Interface, INativeGuid
 {
+    /// <include file='ISuspendingDeferral.xml' path='doc/member[@name="ISuspendingDeferral.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISuspendingDeferral);
 
     public void** lpVtbl;

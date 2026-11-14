@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpCompletionInfo")]
 public unsafe partial struct IHttpCompletionInfo2 : IHttpCompletionInfo2.Interface, INativeGuid
 {
+    /// <include file='IHttpCompletionInfo2.xml' path='doc/member[@name="IHttpCompletionInfo2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpCompletionInfo2);
 
     public void** lpVtbl;

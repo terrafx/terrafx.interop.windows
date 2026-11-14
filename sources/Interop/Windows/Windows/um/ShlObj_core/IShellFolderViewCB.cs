@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IShellFolderViewCB : IShellFolderViewCB.Interface, INativeGuid
 {
+    /// <include file='IShellFolderViewCB.xml' path='doc/member[@name="IShellFolderViewCB.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IShellFolderViewCB);
 
     public void** lpVtbl;

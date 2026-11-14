@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IHTMLBookmarkCollection : IHTMLBookmarkCollection.Interface, INativeGuid
 {
+    /// <include file='IHTMLBookmarkCollection.xml' path='doc/member[@name="IHTMLBookmarkCollection.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHTMLBookmarkCollection);
 
     public void** lpVtbl;

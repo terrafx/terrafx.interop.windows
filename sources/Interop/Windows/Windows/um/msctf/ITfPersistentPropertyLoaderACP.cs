@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ITfPersistentPropertyLoaderACP : ITfPersistentPropertyLoaderACP.Interface, INativeGuid
 {
+    /// <include file='ITfPersistentPropertyLoaderACP.xml' path='doc/member[@name="ITfPersistentPropertyLoaderACP.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfPersistentPropertyLoaderACP);
 
     public void** lpVtbl;

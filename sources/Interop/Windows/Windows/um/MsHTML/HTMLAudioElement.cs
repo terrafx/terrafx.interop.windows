@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("3051070E-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct HTMLAudioElement : INativeGuid
 {
+    /// <include file='HTMLAudioElement.xml' path='doc/member[@name="HTMLAudioElement.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_HTMLAudioElement);
 }

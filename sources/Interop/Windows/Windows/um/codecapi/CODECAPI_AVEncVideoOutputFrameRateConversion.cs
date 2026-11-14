@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("8C068BF4-369A-4BA3-82FD-B2518FB3396E")]
 public unsafe partial struct CODECAPI_AVEncVideoOutputFrameRateConversion : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncVideoOutputFrameRateConversion.xml' path='doc/member[@name="CODECAPI_AVEncVideoOutputFrameRateConversion.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncVideoOutputFrameRateConversion);
 }

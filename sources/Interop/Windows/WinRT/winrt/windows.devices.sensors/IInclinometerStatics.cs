@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IInclinometerStatics : IInclinometerStatics.Interface, INativeGuid
 {
+    /// <include file='IInclinometerStatics.xml' path='doc/member[@name="IInclinometerStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IInclinometerStatics);
 
     public void** lpVtbl;

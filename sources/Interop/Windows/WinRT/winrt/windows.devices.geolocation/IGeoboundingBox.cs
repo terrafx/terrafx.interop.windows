@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IGeoboundingBox : IGeoboundingBox.Interface, INativeGuid
 {
+    /// <include file='IGeoboundingBox.xml' path='doc/member[@name="IGeoboundingBox.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGeoboundingBox);
 
     public void** lpVtbl;

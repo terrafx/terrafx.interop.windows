@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IInitializeWithWindow : IInitializeWithWindow.Interface, INativeGuid
 {
+    /// <include file='IInitializeWithWindow.xml' path='doc/member[@name="IInitializeWithWindow.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IInitializeWithWindow);
 
     public void** lpVtbl;

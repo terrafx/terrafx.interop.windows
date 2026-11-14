@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct ISpeechPhoneConverter : ISpeechPhoneConverter.Interface, INativeGuid
 {
+    /// <include file='ISpeechPhoneConverter.xml' path='doc/member[@name="ISpeechPhoneConverter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpeechPhoneConverter);
 
     public void** lpVtbl;

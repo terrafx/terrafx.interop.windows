@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMMDeviceEnumerator : IMMDeviceEnumerator.Interface, INativeGuid
 {
+    /// <include file='IMMDeviceEnumerator.xml' path='doc/member[@name="IMMDeviceEnumerator.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMMDeviceEnumerator);
 
     public void** lpVtbl;

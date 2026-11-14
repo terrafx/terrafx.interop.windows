@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISurrogate : ISurrogate.Interface, INativeGuid
 {
+    /// <include file='ISurrogate.xml' path='doc/member[@name="ISurrogate.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISurrogate);
 
     public void** lpVtbl;

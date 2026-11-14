@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICoreCursorFactory : ICoreCursorFactory.Interface, INativeGuid
 {
+    /// <include file='ICoreCursorFactory.xml' path='doc/member[@name="ICoreCursorFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICoreCursorFactory);
 
     public void** lpVtbl;

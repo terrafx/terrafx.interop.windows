@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IDateTimeSettingsStatics : IDateTimeSettingsStatics.Interface, INativeGuid
 {
+    /// <include file='IDateTimeSettingsStatics.xml' path='doc/member[@name="IDateTimeSettingsStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDateTimeSettingsStatics);
 
     public void** lpVtbl;

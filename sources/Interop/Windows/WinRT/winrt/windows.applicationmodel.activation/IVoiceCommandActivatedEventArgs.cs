@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IVoiceCommandActivatedEventArgs : IVoiceCommandActivatedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IVoiceCommandActivatedEventArgs.xml' path='doc/member[@name="IVoiceCommandActivatedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IVoiceCommandActivatedEventArgs);
 
     public void** lpVtbl;

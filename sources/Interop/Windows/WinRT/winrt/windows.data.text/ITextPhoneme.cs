@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ITextPhoneme : ITextPhoneme.Interface, INativeGuid
 {
+    /// <include file='ITextPhoneme.xml' path='doc/member[@name="ITextPhoneme.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITextPhoneme);
 
     public void** lpVtbl;

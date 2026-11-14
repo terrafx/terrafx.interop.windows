@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("7AB770C7-0E23-4D7A-8AA2-19BFAD479829")]
 public unsafe partial struct ImageProperties : INativeGuid
 {
+    /// <include file='ImageProperties.xml' path='doc/member[@name="ImageProperties.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_ImageProperties);
 }

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IPersistFolder")]
 public unsafe partial struct IPersistFolder2 : IPersistFolder2.Interface, INativeGuid
 {
+    /// <include file='IPersistFolder2.xml' path='doc/member[@name="IPersistFolder2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPersistFolder2);
 
     public void** lpVtbl;

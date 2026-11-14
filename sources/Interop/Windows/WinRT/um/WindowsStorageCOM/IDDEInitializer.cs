@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IDDEInitializer : IDDEInitializer.Interface, INativeGuid
 {
+    /// <include file='IDDEInitializer.xml' path='doc/member[@name="IDDEInitializer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDDEInitializer);
 
     public void** lpVtbl;

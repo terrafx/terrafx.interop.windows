@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("ITfFunction")]
 public unsafe partial struct ITfFnGetSAPIObject : ITfFnGetSAPIObject.Interface, INativeGuid
 {
+    /// <include file='ITfFnGetSAPIObject.xml' path='doc/member[@name="ITfFnGetSAPIObject.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfFnGetSAPIObject);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IPersistSerializedPropStorage")]
 public unsafe partial struct IPersistSerializedPropStorage2 : IPersistSerializedPropStorage2.Interface, INativeGuid
 {
+    /// <include file='IPersistSerializedPropStorage2.xml' path='doc/member[@name="IPersistSerializedPropStorage2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPersistSerializedPropStorage2);
 
     public void** lpVtbl;

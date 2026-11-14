@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct ID2D1CommandSink2 : ID2D1CommandSink2.Interface, INativeGuid
 {
+    /// <include file='ID2D1CommandSink2.xml' path='doc/member[@name="ID2D1CommandSink2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1CommandSink2);
 
     public void** lpVtbl;

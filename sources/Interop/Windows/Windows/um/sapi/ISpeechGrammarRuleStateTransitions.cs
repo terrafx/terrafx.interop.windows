@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct ISpeechGrammarRuleStateTransitions : ISpeechGrammarRuleStateTransitions.Interface, INativeGuid
 {
+    /// <include file='ISpeechGrammarRuleStateTransitions.xml' path='doc/member[@name="ISpeechGrammarRuleStateTransitions.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpeechGrammarRuleStateTransitions);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IVariablePhotoSequenceCapture2 : IVariablePhotoSequenceCapture2.Interface, INativeGuid
 {
+    /// <include file='IVariablePhotoSequenceCapture2.xml' path='doc/member[@name="IVariablePhotoSequenceCapture2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IVariablePhotoSequenceCapture2);
 
     public void** lpVtbl;

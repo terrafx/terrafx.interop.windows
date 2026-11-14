@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IIsolatedProcessLauncher : IIsolatedProcessLauncher.Interface, INativeGuid
 {
+    /// <include file='IIsolatedProcessLauncher.xml' path='doc/member[@name="IIsolatedProcessLauncher.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IIsolatedProcessLauncher);
 
     public void** lpVtbl;

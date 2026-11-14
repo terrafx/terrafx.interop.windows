@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ILimiterEffectDefinition : ILimiterEffectDefinition.Interface, INativeGuid
 {
+    /// <include file='ILimiterEffectDefinition.xml' path='doc/member[@name="ILimiterEffectDefinition.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ILimiterEffectDefinition);
 
     public void** lpVtbl;

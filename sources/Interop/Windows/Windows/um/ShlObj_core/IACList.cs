@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IACList : IACList.Interface, INativeGuid
 {
+    /// <include file='IACList.xml' path='doc/member[@name="IACList.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IACList);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICoreComponentFocusable : ICoreComponentFocusable.Interface, INativeGuid
 {
+    /// <include file='ICoreComponentFocusable.xml' path='doc/member[@name="ICoreComponentFocusable.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICoreComponentFocusable);
 
     public void** lpVtbl;

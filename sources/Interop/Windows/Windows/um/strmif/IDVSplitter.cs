@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDVSplitter : IDVSplitter.Interface, INativeGuid
 {
+    /// <include file='IDVSplitter.xml' path='doc/member[@name="IDVSplitter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDVSplitter);
 
     public void** lpVtbl;

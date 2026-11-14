@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct ISVGZoomEvent : ISVGZoomEvent.Interface, INativeGuid
 {
+    /// <include file='ISVGZoomEvent.xml' path='doc/member[@name="ISVGZoomEvent.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISVGZoomEvent);
 
     public void** lpVtbl;

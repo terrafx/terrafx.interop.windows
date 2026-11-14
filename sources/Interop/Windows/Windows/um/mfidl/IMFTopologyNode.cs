@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IMFAttributes")]
 public unsafe partial struct IMFTopologyNode : IMFTopologyNode.Interface, INativeGuid
 {
+    /// <include file='IMFTopologyNode.xml' path='doc/member[@name="IMFTopologyNode.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFTopologyNode);
 
     public void** lpVtbl;

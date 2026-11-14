@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct ID2D1ImageSource : ID2D1ImageSource.Interface, INativeGuid
 {
+    /// <include file='ID2D1ImageSource.xml' path='doc/member[@name="ID2D1ImageSource.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1ImageSource);
 
     public void** lpVtbl;

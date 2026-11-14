@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("49F371E1-8C5C-4D9C-9A3B-54A6827F513C")]
 public unsafe partial struct SharingConfigurationManager : INativeGuid
 {
+    /// <include file='SharingConfigurationManager.xml' path='doc/member[@name="SharingConfigurationManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SharingConfigurationManager);
 }

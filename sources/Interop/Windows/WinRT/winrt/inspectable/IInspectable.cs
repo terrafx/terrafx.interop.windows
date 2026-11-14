@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IInspectable : IInspectable.Interface, INativeGuid
 {
+    /// <include file='IInspectable.xml' path='doc/member[@name="IInspectable.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IInspectable);
 
     public void** lpVtbl;

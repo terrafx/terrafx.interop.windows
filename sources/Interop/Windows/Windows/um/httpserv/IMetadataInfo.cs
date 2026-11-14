@@ -14,6 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("48B10633-825D-495E-93B0-225380053E8E")]
 public unsafe partial struct IMetadataInfo : IMetadataInfo.Interface, INativeGuid
 {
+    /// <include file='IMetadataInfo.xml' path='doc/member[@name="IMetadataInfo.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMetadataInfo);
 
     public void** lpVtbl;

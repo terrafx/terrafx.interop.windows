@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IMFMediaStream")]
 public unsafe partial struct IMFMediaStream2 : IMFMediaStream2.Interface, INativeGuid
 {
+    /// <include file='IMFMediaStream2.xml' path='doc/member[@name="IMFMediaStream2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFMediaStream2);
 
     public void** lpVtbl;

@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IMFCaptureEngineOnSampleCallback2 : IMFCaptureEngineOnSampleCallback2.Interface, INativeGuid
 {
+    /// <include file='IMFCaptureEngineOnSampleCallback2.xml' path='doc/member[@name="IMFCaptureEngineOnSampleCallback2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFCaptureEngineOnSampleCallback2);
 
     public void** lpVtbl;

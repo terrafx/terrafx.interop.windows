@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("696E1D31-548F-4036-825F-7026C60011BD")]
 public unsafe partial struct CODECAPI_GUID_AVDecAudioOutputFormat_PCM : INativeGuid
 {
+    /// <include file='CODECAPI_GUID_AVDecAudioOutputFormat_PCM.xml' path='doc/member[@name="CODECAPI_GUID_AVDecAudioOutputFormat_PCM.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_GUID_AVDecAudioOutputFormat_PCM);
 }

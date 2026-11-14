@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ILightSensorReadingChangedEventArgs : ILightSensorReadingChangedEventArgs.Interface, INativeGuid
 {
+    /// <include file='ILightSensorReadingChangedEventArgs.xml' path='doc/member[@name="ILightSensorReadingChangedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ILightSensorReadingChangedEventArgs);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IICCSVGColor : IICCSVGColor.Interface, INativeGuid
 {
+    /// <include file='IICCSVGColor.xml' path='doc/member[@name="IICCSVGColor.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IICCSVGColor);
 
     public void** lpVtbl;

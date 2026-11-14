@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext2D.Interface, INativeGuid
 {
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICanvasRenderingContext2D);
 
     public void** lpVtbl;

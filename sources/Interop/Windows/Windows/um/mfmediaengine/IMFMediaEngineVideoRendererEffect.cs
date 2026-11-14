@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFMediaEngineVideoRendererEffect : IMFMediaEngineVideoRendererEffect.Interface, INativeGuid
 {
+    /// <include file='IMFMediaEngineVideoRendererEffect.xml' path='doc/member[@name="IMFMediaEngineVideoRendererEffect.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFMediaEngineVideoRendererEffect);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct DDiscFormat2DataEvents : DDiscFormat2DataEvents.Interface, INativeGuid
 {
+    /// <include file='DDiscFormat2DataEvents.xml' path='doc/member[@name="DDiscFormat2DataEvents.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_DDiscFormat2DataEvents);
 
     public void** lpVtbl;

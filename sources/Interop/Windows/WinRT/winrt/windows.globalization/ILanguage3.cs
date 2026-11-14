@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ILanguage3 : ILanguage3.Interface, INativeGuid
 {
+    /// <include file='ILanguage3.xml' path='doc/member[@name="ILanguage3.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ILanguage3);
 
     public void** lpVtbl;

@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFWorkQueueServicesEx : IMFWorkQueueServicesEx.Interface, INativeGuid
 {
+    /// <include file='IMFWorkQueueServicesEx.xml' path='doc/member[@name="IMFWorkQueueServicesEx.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFWorkQueueServicesEx);
 
     public void** lpVtbl;

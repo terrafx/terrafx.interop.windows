@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IExplorerCommandState : IExplorerCommandState.Interface, INativeGuid
 {
+    /// <include file='IExplorerCommandState.xml' path='doc/member[@name="IExplorerCommandState.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IExplorerCommandState);
 
     public void** lpVtbl;

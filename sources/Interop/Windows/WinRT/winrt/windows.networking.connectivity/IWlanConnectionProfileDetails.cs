@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IWlanConnectionProfileDetails : IWlanConnectionProfileDetails.Interface, INativeGuid
 {
+    /// <include file='IWlanConnectionProfileDetails.xml' path='doc/member[@name="IWlanConnectionProfileDetails.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWlanConnectionProfileDetails);
 
     public void** lpVtbl;

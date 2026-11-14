@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICurrencyAmountFactory : ICurrencyAmountFactory.Interface, INativeGuid
 {
+    /// <include file='ICurrencyAmountFactory.xml' path='doc/member[@name="ICurrencyAmountFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICurrencyAmountFactory);
 
     public void** lpVtbl;

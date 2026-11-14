@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IUserDataTaskRecurrenceProperties : IUserDataTaskRecurrenceProperties.Interface, INativeGuid
 {
+    /// <include file='IUserDataTaskRecurrenceProperties.xml' path='doc/member[@name="IUserDataTaskRecurrenceProperties.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUserDataTaskRecurrenceProperties);
 
     public void** lpVtbl;

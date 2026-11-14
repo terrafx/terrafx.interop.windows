@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IBluetoothLEManufacturerData : IBluetoothLEManufacturerData.Interface, INativeGuid
 {
+    /// <include file='IBluetoothLEManufacturerData.xml' path='doc/member[@name="IBluetoothLEManufacturerData.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBluetoothLEManufacturerData);
 
     public void** lpVtbl;

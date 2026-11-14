@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IEnumTfInputProcessorProfiles : IEnumTfInputProcessorProfiles.Interface, INativeGuid
 {
+    /// <include file='IEnumTfInputProcessorProfiles.xml' path='doc/member[@name="IEnumTfInputProcessorProfiles.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IEnumTfInputProcessorProfiles);
 
     public void** lpVtbl;

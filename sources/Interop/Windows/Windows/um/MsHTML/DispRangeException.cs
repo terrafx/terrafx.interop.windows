@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct DispRangeException : DispRangeException.Interface, INativeGuid
 {
+    /// <include file='DispRangeException.xml' path='doc/member[@name="DispRangeException.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_DispRangeException);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IBitmapTransform : IBitmapTransform.Interface, INativeGuid
 {
+    /// <include file='IBitmapTransform.xml' path='doc/member[@name="IBitmapTransform.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBitmapTransform);
 
     public void** lpVtbl;

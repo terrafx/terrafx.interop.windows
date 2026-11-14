@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFPMPClientApp : IMFPMPClientApp.Interface, INativeGuid
 {
+    /// <include file='IMFPMPClientApp.xml' path='doc/member[@name="IMFPMPClientApp.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFPMPClientApp);
 
     public void** lpVtbl;

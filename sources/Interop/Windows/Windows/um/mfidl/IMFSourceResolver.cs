@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFSourceResolver : IMFSourceResolver.Interface, INativeGuid
 {
+    /// <include file='IMFSourceResolver.xml' path='doc/member[@name="IMFSourceResolver.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFSourceResolver);
 
     public void** lpVtbl;

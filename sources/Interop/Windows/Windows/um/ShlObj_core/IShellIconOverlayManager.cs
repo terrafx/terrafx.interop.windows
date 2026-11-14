@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IShellIconOverlayManager : IShellIconOverlayManager.Interface, INativeGuid
 {
+    /// <include file='IShellIconOverlayManager.xml' path='doc/member[@name="IShellIconOverlayManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IShellIconOverlayManager);
 
     public void** lpVtbl;

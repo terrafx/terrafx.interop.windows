@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IAMLatency")]
 public unsafe partial struct IAMPushSource : IAMPushSource.Interface, INativeGuid
 {
+    /// <include file='IAMPushSource.xml' path='doc/member[@name="IAMPushSource.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAMPushSource);
 
     public void** lpVtbl;

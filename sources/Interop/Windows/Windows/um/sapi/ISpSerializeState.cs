@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISpSerializeState : ISpSerializeState.Interface, INativeGuid
 {
+    /// <include file='ISpSerializeState.xml' path='doc/member[@name="ISpSerializeState.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpSerializeState);
 
     public void** lpVtbl;

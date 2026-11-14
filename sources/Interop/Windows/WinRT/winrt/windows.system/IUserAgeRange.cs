@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IUserAgeRange : IUserAgeRange.Interface, INativeGuid
 {
+    /// <include file='IUserAgeRange.xml' path='doc/member[@name="IUserAgeRange.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUserAgeRange);
 
     public void** lpVtbl;

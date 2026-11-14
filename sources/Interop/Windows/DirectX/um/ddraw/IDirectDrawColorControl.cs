@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDirectDrawColorControl : IDirectDrawColorControl.Interface, INativeGuid
 {
+    /// <include file='IDirectDrawColorControl.xml' path='doc/member[@name="IDirectDrawColorControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDirectDrawColorControl);
 
     public void** lpVtbl;

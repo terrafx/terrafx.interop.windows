@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("659CB943-15CA-448D-B99A-875619DB4DE4")]
 public unsafe partial struct CODECAPI_AVEncVideoEnableSpatialAdaptiveQuantization : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncVideoEnableSpatialAdaptiveQuantization.xml' path='doc/member[@name="CODECAPI_AVEncVideoEnableSpatialAdaptiveQuantization.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncVideoEnableSpatialAdaptiveQuantization);
 }

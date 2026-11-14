@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISpiController : ISpiController.Interface, INativeGuid
 {
+    /// <include file='ISpiController.xml' path='doc/member[@name="ISpiController.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpiController);
 
     public void** lpVtbl;

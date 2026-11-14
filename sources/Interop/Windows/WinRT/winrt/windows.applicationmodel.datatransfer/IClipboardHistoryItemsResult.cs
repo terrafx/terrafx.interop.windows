@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IClipboardHistoryItemsResult : IClipboardHistoryItemsResult.Interface, INativeGuid
 {
+    /// <include file='IClipboardHistoryItemsResult.xml' path='doc/member[@name="IClipboardHistoryItemsResult.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IClipboardHistoryItemsResult);
 
     public void** lpVtbl;

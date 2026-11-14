@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IOleInPlaceObject")]
 public unsafe partial struct IOleInPlaceObjectWindowless : IOleInPlaceObjectWindowless.Interface, INativeGuid
 {
+    /// <include file='IOleInPlaceObjectWindowless.xml' path='doc/member[@name="IOleInPlaceObjectWindowless.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IOleInPlaceObjectWindowless);
 
     public void** lpVtbl;

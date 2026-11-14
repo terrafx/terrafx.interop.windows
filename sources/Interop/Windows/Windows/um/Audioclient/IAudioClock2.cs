@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAudioClock2 : IAudioClock2.Interface, INativeGuid
 {
+    /// <include file='IAudioClock2.xml' path='doc/member[@name="IAudioClock2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAudioClock2);
 
     public void** lpVtbl;

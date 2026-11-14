@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct INewWindowManager : INewWindowManager.Interface, INativeGuid
 {
+    /// <include file='INewWindowManager.xml' path='doc/member[@name="INewWindowManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_INewWindowManager);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IBackgroundCondition : IBackgroundCondition.Interface, INativeGuid
 {
+    /// <include file='IBackgroundCondition.xml' path='doc/member[@name="IBackgroundCondition.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBackgroundCondition);
 
     public void** lpVtbl;

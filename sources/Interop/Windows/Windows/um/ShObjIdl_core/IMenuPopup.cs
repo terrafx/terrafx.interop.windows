@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDeskBar")]
 public unsafe partial struct IMenuPopup : IMenuPopup.Interface, INativeGuid
 {
+    /// <include file='IMenuPopup.xml' path='doc/member[@name="IMenuPopup.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMenuPopup);
 
     public void** lpVtbl;

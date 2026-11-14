@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct DispSVGPathSegCurvetoCubicRel : DispSVGPathSegCurvetoCubicRel.Interface, INativeGuid
 {
+    /// <include file='DispSVGPathSegCurvetoCubicRel.xml' path='doc/member[@name="DispSVGPathSegCurvetoCubicRel.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_DispSVGPathSegCurvetoCubicRel);
 
     public void** lpVtbl;

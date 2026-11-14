@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISyncMgrEvent : ISyncMgrEvent.Interface, INativeGuid
 {
+    /// <include file='ISyncMgrEvent.xml' path='doc/member[@name="ISyncMgrEvent.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISyncMgrEvent);
 
     public void** lpVtbl;

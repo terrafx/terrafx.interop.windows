@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IVMRImagePresenter : IVMRImagePresenter.Interface, INativeGuid
 {
+    /// <include file='IVMRImagePresenter.xml' path='doc/member[@name="IVMRImagePresenter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IVMRImagePresenter);
 
     public void** lpVtbl;

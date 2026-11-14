@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IEccCurveNamesStatics : IEccCurveNamesStatics.Interface, INativeGuid
 {
+    /// <include file='IEccCurveNamesStatics.xml' path='doc/member[@name="IEccCurveNamesStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IEccCurveNamesStatics);
 
     public void** lpVtbl;

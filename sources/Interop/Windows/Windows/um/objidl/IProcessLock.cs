@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IProcessLock : IProcessLock.Interface, INativeGuid
 {
+    /// <include file='IProcessLock.xml' path='doc/member[@name="IProcessLock.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IProcessLock);
 
     public void** lpVtbl;

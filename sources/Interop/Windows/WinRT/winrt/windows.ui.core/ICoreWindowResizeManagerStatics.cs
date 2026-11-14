@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICoreWindowResizeManagerStatics : ICoreWindowResizeManagerStatics.Interface, INativeGuid
 {
+    /// <include file='ICoreWindowResizeManagerStatics.xml' path='doc/member[@name="ICoreWindowResizeManagerStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICoreWindowResizeManagerStatics);
 
     public void** lpVtbl;

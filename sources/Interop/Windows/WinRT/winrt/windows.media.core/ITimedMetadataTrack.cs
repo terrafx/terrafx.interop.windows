@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ITimedMetadataTrack : ITimedMetadataTrack.Interface, INativeGuid
 {
+    /// <include file='ITimedMetadataTrack.xml' path='doc/member[@name="ITimedMetadataTrack.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITimedMetadataTrack);
 
     public void** lpVtbl;

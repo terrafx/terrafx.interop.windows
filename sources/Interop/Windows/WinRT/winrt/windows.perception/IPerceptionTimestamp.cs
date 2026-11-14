@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPerceptionTimestamp : IPerceptionTimestamp.Interface, INativeGuid
 {
+    /// <include file='IPerceptionTimestamp.xml' path='doc/member[@name="IPerceptionTimestamp.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPerceptionTimestamp);
 
     public void** lpVtbl;

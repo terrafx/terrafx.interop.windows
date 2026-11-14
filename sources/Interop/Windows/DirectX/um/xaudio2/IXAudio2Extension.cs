@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IXAudio2Extension : IXAudio2Extension.Interface, INativeGuid
 {
+    /// <include file='IXAudio2Extension.xml' path='doc/member[@name="IXAudio2Extension.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IXAudio2Extension);
 
     public void** lpVtbl;

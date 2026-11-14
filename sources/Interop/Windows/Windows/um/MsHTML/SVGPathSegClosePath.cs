@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("305105BD-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct SVGPathSegClosePath : INativeGuid
 {
+    /// <include file='SVGPathSegClosePath.xml' path='doc/member[@name="SVGPathSegClosePath.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SVGPathSegClosePath);
 }

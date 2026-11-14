@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IXMLDOMNode")]
 public unsafe partial struct IXTLRuntime : IXTLRuntime.Interface, INativeGuid
 {
+    /// <include file='IXTLRuntime.xml' path='doc/member[@name="IXTLRuntime.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IXTLRuntime);
 
     public void** lpVtbl;

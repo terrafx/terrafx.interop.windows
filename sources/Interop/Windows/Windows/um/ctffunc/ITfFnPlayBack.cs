@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("ITfFunction")]
 public unsafe partial struct ITfFnPlayBack : ITfFnPlayBack.Interface, INativeGuid
 {
+    /// <include file='ITfFnPlayBack.xml' path='doc/member[@name="ITfFnPlayBack.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfFnPlayBack);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPrintWorkflowForegroundSession : IPrintWorkflowForegroundSession.Interface, INativeGuid
 {
+    /// <include file='IPrintWorkflowForegroundSession.xml' path='doc/member[@name="IPrintWorkflowForegroundSession.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPrintWorkflowForegroundSession);
 
     public void** lpVtbl;

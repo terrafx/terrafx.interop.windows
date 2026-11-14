@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IStringable : IStringable.Interface, INativeGuid
 {
+    /// <include file='IStringable.xml' path='doc/member[@name="IStringable.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IStringable);
 
     public void** lpVtbl;

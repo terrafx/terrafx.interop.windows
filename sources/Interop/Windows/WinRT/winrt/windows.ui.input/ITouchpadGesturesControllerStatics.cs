@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ITouchpadGesturesControllerStatics : ITouchpadGesturesControllerStatics.Interface, INativeGuid
 {
+    /// <include file='ITouchpadGesturesControllerStatics.xml' path='doc/member[@name="ITouchpadGesturesControllerStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITouchpadGesturesControllerStatics);
 
     public void** lpVtbl;

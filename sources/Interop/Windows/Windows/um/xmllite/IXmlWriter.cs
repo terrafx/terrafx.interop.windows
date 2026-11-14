@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IXmlWriter : IXmlWriter.Interface, INativeGuid
 {
+    /// <include file='IXmlWriter.xml' path='doc/member[@name="IXmlWriter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IXmlWriter);
 
     public void** lpVtbl;

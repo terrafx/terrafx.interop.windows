@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("11219420-1768-11D1-95BE-00609797EA4F")]
 public unsafe partial struct ShellLinkObject : INativeGuid
 {
+    /// <include file='ShellLinkObject.xml' path='doc/member[@name="ShellLinkObject.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_ShellLinkObject);
 }

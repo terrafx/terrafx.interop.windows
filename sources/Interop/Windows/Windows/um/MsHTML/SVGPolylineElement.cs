@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("3051057C-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct SVGPolylineElement : INativeGuid
 {
+    /// <include file='SVGPolylineElement.xml' path='doc/member[@name="SVGPolylineElement.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SVGPolylineElement);
 }

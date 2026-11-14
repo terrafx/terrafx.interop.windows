@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IFrameworkViewSource : IFrameworkViewSource.Interface, INativeGuid
 {
+    /// <include file='IFrameworkViewSource.xml' path='doc/member[@name="IFrameworkViewSource.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFrameworkViewSource);
 
     public void** lpVtbl;

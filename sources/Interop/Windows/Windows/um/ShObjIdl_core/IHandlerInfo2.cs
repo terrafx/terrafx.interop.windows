@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHandlerInfo")]
 public unsafe partial struct IHandlerInfo2 : IHandlerInfo2.Interface, INativeGuid
 {
+    /// <include file='IHandlerInfo2.xml' path='doc/member[@name="IHandlerInfo2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHandlerInfo2);
 
     public void** lpVtbl;

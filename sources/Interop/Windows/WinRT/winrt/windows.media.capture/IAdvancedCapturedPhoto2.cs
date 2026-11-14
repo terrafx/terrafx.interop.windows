@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAdvancedCapturedPhoto2 : IAdvancedCapturedPhoto2.Interface, INativeGuid
 {
+    /// <include file='IAdvancedCapturedPhoto2.xml' path='doc/member[@name="IAdvancedCapturedPhoto2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAdvancedCapturedPhoto2);
 
     public void** lpVtbl;

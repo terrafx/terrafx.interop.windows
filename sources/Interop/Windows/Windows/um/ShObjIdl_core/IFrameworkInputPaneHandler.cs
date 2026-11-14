@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IFrameworkInputPaneHandler : IFrameworkInputPaneHandler.Interface, INativeGuid
 {
+    /// <include file='IFrameworkInputPaneHandler.xml' path='doc/member[@name="IFrameworkInputPaneHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFrameworkInputPaneHandler);
 
     public void** lpVtbl;

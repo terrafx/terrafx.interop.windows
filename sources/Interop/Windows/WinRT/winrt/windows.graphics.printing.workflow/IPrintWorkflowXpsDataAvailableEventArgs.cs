@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPrintWorkflowXpsDataAvailableEventArgs : IPrintWorkflowXpsDataAvailableEventArgs.Interface, INativeGuid
 {
+    /// <include file='IPrintWorkflowXpsDataAvailableEventArgs.xml' path='doc/member[@name="IPrintWorkflowXpsDataAvailableEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPrintWorkflowXpsDataAvailableEventArgs);
 
     public void** lpVtbl;

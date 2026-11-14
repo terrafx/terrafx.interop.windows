@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IEnumDiscRecorders : IEnumDiscRecorders.Interface, INativeGuid
 {
+    /// <include file='IEnumDiscRecorders.xml' path='doc/member[@name="IEnumDiscRecorders.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IEnumDiscRecorders);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IFolderView")]
 public unsafe partial struct IFolderView2 : IFolderView2.Interface, INativeGuid
 {
+    /// <include file='IFolderView2.xml' path='doc/member[@name="IFolderView2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFolderView2);
 
     public void** lpVtbl;

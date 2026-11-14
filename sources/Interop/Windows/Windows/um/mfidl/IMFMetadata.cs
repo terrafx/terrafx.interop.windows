@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFMetadata : IMFMetadata.Interface, INativeGuid
 {
+    /// <include file='IMFMetadata.xml' path='doc/member[@name="IMFMetadata.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFMetadata);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IStaticVerbProvider : IStaticVerbProvider.Interface, INativeGuid
 {
+    /// <include file='IStaticVerbProvider.xml' path='doc/member[@name="IStaticVerbProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IStaticVerbProvider);
 
     public void** lpVtbl;

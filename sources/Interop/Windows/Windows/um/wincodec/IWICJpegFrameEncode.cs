@@ -19,6 +19,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IWICJpegFrameEncode : IWICJpegFrameEncode.Interface, INativeGuid
 {
+    /// <include file='IWICJpegFrameEncode.xml' path='doc/member[@name="IWICJpegFrameEncode.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWICJpegFrameEncode);
 
     public void** lpVtbl;

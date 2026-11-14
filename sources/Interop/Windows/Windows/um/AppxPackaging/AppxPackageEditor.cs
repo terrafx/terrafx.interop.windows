@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("F004F2CA-AEBC-4B0D-BF58-E516D5BCC0AB")]
 public unsafe partial struct AppxPackageEditor : INativeGuid
 {
+    /// <include file='AppxPackageEditor.xml' path='doc/member[@name="AppxPackageEditor.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_AppxPackageEditor);
 }

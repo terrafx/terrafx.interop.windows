@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("25ECEC9D-3553-42C0-BB56-D25792104F80")]
 public unsafe partial struct CODECAPI_AVEncDDSurround90DegreeePhaseShift : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncDDSurround90DegreeePhaseShift.xml' path='doc/member[@name="CODECAPI_AVEncDDSurround90DegreeePhaseShift.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncDDSurround90DegreeePhaseShift);
 }

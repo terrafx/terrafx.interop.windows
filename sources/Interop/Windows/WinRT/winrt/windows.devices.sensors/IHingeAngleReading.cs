@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IHingeAngleReading : IHingeAngleReading.Interface, INativeGuid
 {
+    /// <include file='IHingeAngleReading.xml' path='doc/member[@name="IHingeAngleReading.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHingeAngleReading);
 
     public void** lpVtbl;

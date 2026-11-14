@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IPrintDocumentPackageStatusEvent : IPrintDocumentPackageStatusEvent.Interface, INativeGuid
 {
+    /// <include file='IPrintDocumentPackageStatusEvent.xml' path='doc/member[@name="IPrintDocumentPackageStatusEvent.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPrintDocumentPackageStatusEvent);
 
     public void** lpVtbl;

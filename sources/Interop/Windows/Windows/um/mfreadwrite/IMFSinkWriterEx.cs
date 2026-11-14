@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFSinkWriterEx : IMFSinkWriterEx.Interface, INativeGuid
 {
+    /// <include file='IMFSinkWriterEx.xml' path='doc/member[@name="IMFSinkWriterEx.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFSinkWriterEx);
 
     public void** lpVtbl;

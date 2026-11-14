@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("2C941FC9-975B-59BE-A960-9A2A262853A5")]
 public unsafe partial struct ProgressItems : INativeGuid
 {
+    /// <include file='ProgressItems.xml' path='doc/member[@name="ProgressItems.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_ProgressItems);
 }

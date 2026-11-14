@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct INetworkStateChangeEventDetails : INetworkStateChangeEventDetails.Interface, INativeGuid
 {
+    /// <include file='INetworkStateChangeEventDetails.xml' path='doc/member[@name="INetworkStateChangeEventDetails.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_INetworkStateChangeEventDetails);
 
     public void** lpVtbl;

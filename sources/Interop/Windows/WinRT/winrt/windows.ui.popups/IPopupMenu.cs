@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPopupMenu : IPopupMenu.Interface, INativeGuid
 {
+    /// <include file='IPopupMenu.xml' path='doc/member[@name="IPopupMenu.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPopupMenu);
 
     public void** lpVtbl;

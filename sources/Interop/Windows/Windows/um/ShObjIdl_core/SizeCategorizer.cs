@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("55D7B852-F6D1-42F2-AA75-8728A1B2D264")]
 public unsafe partial struct SizeCategorizer : INativeGuid
 {
+    /// <include file='SizeCategorizer.xml' path='doc/member[@name="SizeCategorizer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SizeCategorizer);
 }

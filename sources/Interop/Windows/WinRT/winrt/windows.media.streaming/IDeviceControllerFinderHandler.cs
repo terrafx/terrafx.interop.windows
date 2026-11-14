@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDeviceControllerFinderHandler : IDeviceControllerFinderHandler.Interface, INativeGuid
 {
+    /// <include file='IDeviceControllerFinderHandler.xml' path='doc/member[@name="IDeviceControllerFinderHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDeviceControllerFinderHandler);
 
     public void** lpVtbl;

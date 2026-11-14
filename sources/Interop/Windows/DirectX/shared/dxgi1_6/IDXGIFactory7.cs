@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows10.0.17763.0")]
 public unsafe partial struct IDXGIFactory7 : IDXGIFactory7.Interface, INativeGuid
 {
+    /// <include file='IDXGIFactory7.xml' path='doc/member[@name="IDXGIFactory7.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDXGIFactory7);
 
     public void** lpVtbl;

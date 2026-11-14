@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IObjectArray")]
 public unsafe partial struct IObjectCollection : IObjectCollection.Interface, INativeGuid
 {
+    /// <include file='IObjectCollection.xml' path='doc/member[@name="IObjectCollection.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IObjectCollection);
 
     public void** lpVtbl;

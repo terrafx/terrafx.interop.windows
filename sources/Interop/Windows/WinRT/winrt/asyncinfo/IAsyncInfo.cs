@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IAsyncInfo : IAsyncInfo.Interface, INativeGuid
 {
+    /// <include file='IAsyncInfo.xml' path='doc/member[@name="IAsyncInfo.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAsyncInfo);
 
     public void** lpVtbl;

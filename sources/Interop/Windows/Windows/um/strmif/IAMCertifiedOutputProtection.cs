@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAMCertifiedOutputProtection : IAMCertifiedOutputProtection.Interface, INativeGuid
 {
+    /// <include file='IAMCertifiedOutputProtection.xml' path='doc/member[@name="IAMCertifiedOutputProtection.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAMCertifiedOutputProtection);
 
     public void** lpVtbl;

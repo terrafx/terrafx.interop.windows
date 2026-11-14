@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IMFTimedTextStyle : IMFTimedTextStyle.Interface, INativeGuid
 {
+    /// <include file='IMFTimedTextStyle.xml' path='doc/member[@name="IMFTimedTextStyle.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFTimedTextStyle);
 
     public void** lpVtbl;

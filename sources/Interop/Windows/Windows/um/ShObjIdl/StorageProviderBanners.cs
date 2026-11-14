@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("7CCDF9F4-E576-455A-8BC7-F6EC68D6F063")]
 public unsafe partial struct StorageProviderBanners : INativeGuid
 {
+    /// <include file='StorageProviderBanners.xml' path='doc/member[@name="StorageProviderBanners.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_StorageProviderBanners);
 }

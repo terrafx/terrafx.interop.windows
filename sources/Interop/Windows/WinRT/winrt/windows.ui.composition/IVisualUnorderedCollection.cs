@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IVisualUnorderedCollection : IVisualUnorderedCollection.Interface, INativeGuid
 {
+    /// <include file='IVisualUnorderedCollection.xml' path='doc/member[@name="IVisualUnorderedCollection.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IVisualUnorderedCollection);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAMVfwCompressDialogs : IAMVfwCompressDialogs.Interface, INativeGuid
 {
+    /// <include file='IAMVfwCompressDialogs.xml' path='doc/member[@name="IAMVfwCompressDialogs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAMVfwCompressDialogs);
 
     public void** lpVtbl;

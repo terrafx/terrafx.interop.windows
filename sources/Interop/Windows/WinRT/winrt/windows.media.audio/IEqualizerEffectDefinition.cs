@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IEqualizerEffectDefinition : IEqualizerEffectDefinition.Interface, INativeGuid
 {
+    /// <include file='IEqualizerEffectDefinition.xml' path='doc/member[@name="IEqualizerEffectDefinition.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IEqualizerEffectDefinition);
 
     public void** lpVtbl;

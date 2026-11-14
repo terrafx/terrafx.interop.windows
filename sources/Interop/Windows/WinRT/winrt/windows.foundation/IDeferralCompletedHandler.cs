@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDeferralCompletedHandler : IDeferralCompletedHandler.Interface, INativeGuid
 {
+    /// <include file='IDeferralCompletedHandler.xml' path='doc/member[@name="IDeferralCompletedHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDeferralCompletedHandler);
 
     public void** lpVtbl;

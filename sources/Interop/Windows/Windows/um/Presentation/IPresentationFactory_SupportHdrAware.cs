@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IPresentationFactory_SupportHdrAware : IPresentationFactory_SupportHdrAware.Interface, INativeGuid
 {
+    /// <include file='IPresentationFactory_SupportHdrAware.xml' path='doc/member[@name="IPresentationFactory_SupportHdrAware.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPresentationFactory_SupportHdrAware);
 
     public void** lpVtbl;

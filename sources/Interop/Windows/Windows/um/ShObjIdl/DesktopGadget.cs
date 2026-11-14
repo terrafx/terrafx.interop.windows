@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("924CCC1B-6562-4C85-8657-D177925222B6")]
 public unsafe partial struct DesktopGadget : INativeGuid
 {
+    /// <include file='DesktopGadget.xml' path='doc/member[@name="DesktopGadget.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_DesktopGadget);
 }

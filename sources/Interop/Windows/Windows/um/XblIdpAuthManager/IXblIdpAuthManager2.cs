@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IXblIdpAuthManager2 : IXblIdpAuthManager2.Interface, INativeGuid
 {
+    /// <include file='IXblIdpAuthManager2.xml' path='doc/member[@name="IXblIdpAuthManager2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IXblIdpAuthManager2);
 
     public void** lpVtbl;

@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICompositionRectangleGeometry : ICompositionRectangleGeometry.Interface, INativeGuid
 {
+    /// <include file='ICompositionRectangleGeometry.xml' path='doc/member[@name="ICompositionRectangleGeometry.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICompositionRectangleGeometry);
 
     public void** lpVtbl;

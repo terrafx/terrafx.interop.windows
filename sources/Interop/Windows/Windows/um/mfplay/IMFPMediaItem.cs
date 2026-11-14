@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFPMediaItem : IMFPMediaItem.Interface, INativeGuid
 {
+    /// <include file='IMFPMediaItem.xml' path='doc/member[@name="IMFPMediaItem.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFPMediaItem);
 
     public void** lpVtbl;

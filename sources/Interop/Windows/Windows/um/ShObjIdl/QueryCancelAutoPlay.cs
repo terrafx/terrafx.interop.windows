@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("331F1768-05A9-4DDD-B86E-DAE34DDC998A")]
 public unsafe partial struct QueryCancelAutoPlay : INativeGuid
 {
+    /// <include file='QueryCancelAutoPlay.xml' path='doc/member[@name="QueryCancelAutoPlay.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_QueryCancelAutoPlay);
 }

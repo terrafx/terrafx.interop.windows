@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IAppxContentGroupMapWriter : IAppxContentGroupMapWriter.Interface, INativeGuid
 {
+    /// <include file='IAppxContentGroupMapWriter.xml' path='doc/member[@name="IAppxContentGroupMapWriter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppxContentGroupMapWriter);
 
     public void** lpVtbl;

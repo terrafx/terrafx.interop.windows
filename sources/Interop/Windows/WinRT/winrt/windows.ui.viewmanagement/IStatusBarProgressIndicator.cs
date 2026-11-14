@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IStatusBarProgressIndicator : IStatusBarProgressIndicator.Interface, INativeGuid
 {
+    /// <include file='IStatusBarProgressIndicator.xml' path='doc/member[@name="IStatusBarProgressIndicator.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IStatusBarProgressIndicator);
 
     public void** lpVtbl;

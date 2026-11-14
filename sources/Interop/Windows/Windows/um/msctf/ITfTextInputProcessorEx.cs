@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("ITfTextInputProcessor")]
 public unsafe partial struct ITfTextInputProcessorEx : ITfTextInputProcessorEx.Interface, INativeGuid
 {
+    /// <include file='ITfTextInputProcessorEx.xml' path='doc/member[@name="ITfTextInputProcessorEx.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfTextInputProcessorEx);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IRemoteSystemWatcherErrorOccurredEventArgs : IRemoteSystemWatcherErrorOccurredEventArgs.Interface, INativeGuid
 {
+    /// <include file='IRemoteSystemWatcherErrorOccurredEventArgs.xml' path='doc/member[@name="IRemoteSystemWatcherErrorOccurredEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRemoteSystemWatcherErrorOccurredEventArgs);
 
     public void** lpVtbl;

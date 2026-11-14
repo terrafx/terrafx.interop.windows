@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAppointmentCalendar : IAppointmentCalendar.Interface, INativeGuid
 {
+    /// <include file='IAppointmentCalendar.xml' path='doc/member[@name="IAppointmentCalendar.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppointmentCalendar);
 
     public void** lpVtbl;

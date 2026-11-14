@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1CommandSink3")]
 public unsafe partial struct ID2D1CommandSink4 : ID2D1CommandSink4.Interface, INativeGuid
 {
+    /// <include file='ID2D1CommandSink4.xml' path='doc/member[@name="ID2D1CommandSink4.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1CommandSink4);
 
     public void** lpVtbl;

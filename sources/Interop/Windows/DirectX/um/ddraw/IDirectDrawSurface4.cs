@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDirectDrawSurface4 : IDirectDrawSurface4.Interface, INativeGuid
 {
+    /// <include file='IDirectDrawSurface4.xml' path='doc/member[@name="IDirectDrawSurface4.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDirectDrawSurface4);
 
     public void** lpVtbl;

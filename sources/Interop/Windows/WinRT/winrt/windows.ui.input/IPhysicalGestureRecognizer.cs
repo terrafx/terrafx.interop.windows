@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPhysicalGestureRecognizer : IPhysicalGestureRecognizer.Interface, INativeGuid
 {
+    /// <include file='IPhysicalGestureRecognizer.xml' path='doc/member[@name="IPhysicalGestureRecognizer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPhysicalGestureRecognizer);
 
     public void** lpVtbl;

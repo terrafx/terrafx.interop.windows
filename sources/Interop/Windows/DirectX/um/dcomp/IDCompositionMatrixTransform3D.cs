@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IDCompositionMatrixTransform3D : IDCompositionMatrixTransform3D.Interface, INativeGuid
 {
+    /// <include file='IDCompositionMatrixTransform3D.xml' path='doc/member[@name="IDCompositionMatrixTransform3D.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDCompositionMatrixTransform3D);
 
     public void** lpVtbl;

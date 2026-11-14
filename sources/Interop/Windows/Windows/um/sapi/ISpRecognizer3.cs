@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISpRecognizer3 : ISpRecognizer3.Interface, INativeGuid
 {
+    /// <include file='ISpRecognizer3.xml' path='doc/member[@name="ISpRecognizer3.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpRecognizer3);
 
     public void** lpVtbl;

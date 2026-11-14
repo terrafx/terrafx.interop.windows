@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]
 public unsafe partial struct IDisplayPropertiesEventHandler : IDisplayPropertiesEventHandler.Interface, INativeGuid
 {
+    /// <include file='IDisplayPropertiesEventHandler.xml' path='doc/member[@name="IDisplayPropertiesEventHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDisplayPropertiesEventHandler);
 
     public void** lpVtbl;

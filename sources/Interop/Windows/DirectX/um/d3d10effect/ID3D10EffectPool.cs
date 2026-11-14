@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ID3D10EffectPool : ID3D10EffectPool.Interface, INativeGuid
 {
+    /// <include file='ID3D10EffectPool.xml' path='doc/member[@name="ID3D10EffectPool.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3D10EffectPool);
 
     public void** lpVtbl;

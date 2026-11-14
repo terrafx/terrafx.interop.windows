@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0.14393.0")]
 public unsafe partial struct IAppxEncryptedPackageWriter2 : IAppxEncryptedPackageWriter2.Interface, INativeGuid
 {
+    /// <include file='IAppxEncryptedPackageWriter2.xml' path='doc/member[@name="IAppxEncryptedPackageWriter2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppxEncryptedPackageWriter2);
 
     public void** lpVtbl;

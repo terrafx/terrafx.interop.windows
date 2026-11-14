@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct DispHTCMethodBehavior : DispHTCMethodBehavior.Interface, INativeGuid
 {
+    /// <include file='DispHTCMethodBehavior.xml' path='doc/member[@name="DispHTCMethodBehavior.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_DispHTCMethodBehavior);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IContactCardDelayedDataLoader : IContactCardDelayedDataLoader.Interface, INativeGuid
 {
+    /// <include file='IContactCardDelayedDataLoader.xml' path='doc/member[@name="IContactCardDelayedDataLoader.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IContactCardDelayedDataLoader);
 
     public void** lpVtbl;

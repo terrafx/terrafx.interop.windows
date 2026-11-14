@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IDCompositionEffect")]
 public unsafe partial struct IDCompositionTransform3D : IDCompositionTransform3D.Interface, INativeGuid
 {
+    /// <include file='IDCompositionTransform3D.xml' path='doc/member[@name="IDCompositionTransform3D.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDCompositionTransform3D);
 
     public void** lpVtbl;

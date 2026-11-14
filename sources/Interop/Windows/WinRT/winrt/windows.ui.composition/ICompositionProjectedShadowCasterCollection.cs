@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICompositionProjectedShadowCasterCollection : ICompositionProjectedShadowCasterCollection.Interface, INativeGuid
 {
+    /// <include file='ICompositionProjectedShadowCasterCollection.xml' path='doc/member[@name="ICompositionProjectedShadowCasterCollection.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICompositionProjectedShadowCasterCollection);
 
     public void** lpVtbl;

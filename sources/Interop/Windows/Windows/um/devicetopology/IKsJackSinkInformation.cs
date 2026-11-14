@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IKsJackSinkInformation : IKsJackSinkInformation.Interface, INativeGuid
 {
+    /// <include file='IKsJackSinkInformation.xml' path='doc/member[@name="IKsJackSinkInformation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IKsJackSinkInformation);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IEnumStreamIdMap : IEnumStreamIdMap.Interface, INativeGuid
 {
+    /// <include file='IEnumStreamIdMap.xml' path='doc/member[@name="IEnumStreamIdMap.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IEnumStreamIdMap);
 
     public void** lpVtbl;

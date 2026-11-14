@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IReplaceDevicePropertiesResult : IReplaceDevicePropertiesResult.Interface, INativeGuid
 {
+    /// <include file='IReplaceDevicePropertiesResult.xml' path='doc/member[@name="IReplaceDevicePropertiesResult.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IReplaceDevicePropertiesResult);
 
     public void** lpVtbl;

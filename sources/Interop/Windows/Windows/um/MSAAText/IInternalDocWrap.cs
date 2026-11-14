@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IInternalDocWrap : IInternalDocWrap.Interface, INativeGuid
 {
+    /// <include file='IInternalDocWrap.xml' path='doc/member[@name="IInternalDocWrap.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IInternalDocWrap);
 
     public void** lpVtbl;

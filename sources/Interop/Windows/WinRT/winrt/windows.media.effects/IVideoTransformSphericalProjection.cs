@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IVideoTransformSphericalProjection : IVideoTransformSphericalProjection.Interface, INativeGuid
 {
+    /// <include file='IVideoTransformSphericalProjection.xml' path='doc/member[@name="IVideoTransformSphericalProjection.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IVideoTransformSphericalProjection);
 
     public void** lpVtbl;

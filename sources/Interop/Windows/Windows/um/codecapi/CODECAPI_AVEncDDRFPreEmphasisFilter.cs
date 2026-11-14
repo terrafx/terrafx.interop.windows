@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("21AF44C0-244E-4F3D-A2CC-3D3068B2E73F")]
 public unsafe partial struct CODECAPI_AVEncDDRFPreEmphasisFilter : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncDDRFPreEmphasisFilter.xml' path='doc/member[@name="CODECAPI_AVEncDDRFPreEmphasisFilter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncDDRFPreEmphasisFilter);
 }

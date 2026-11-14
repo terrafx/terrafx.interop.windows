@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IMusicProperties : IMusicProperties.Interface, INativeGuid
 {
+    /// <include file='IMusicProperties.xml' path='doc/member[@name="IMusicProperties.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMusicProperties);
 
     public void** lpVtbl;

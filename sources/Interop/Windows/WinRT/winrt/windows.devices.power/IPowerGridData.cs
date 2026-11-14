@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPowerGridData : IPowerGridData.Interface, INativeGuid
 {
+    /// <include file='IPowerGridData.xml' path='doc/member[@name="IPowerGridData.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPowerGridData);
 
     public void** lpVtbl;

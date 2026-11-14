@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("4A7F884A-EA11-460D-BF57-B88BC75900DE")]
 public unsafe partial struct CODECAPI_AVEncVideoOutputColorTransferFunction : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncVideoOutputColorTransferFunction.xml' path='doc/member[@name="CODECAPI_AVEncVideoOutputColorTransferFunction.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncVideoOutputColorTransferFunction);
 }

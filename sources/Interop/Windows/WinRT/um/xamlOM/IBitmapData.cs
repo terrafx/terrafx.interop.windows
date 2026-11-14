@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows10.0.14393.0")]
 public unsafe partial struct IBitmapData : IBitmapData.Interface, INativeGuid
 {
+    /// <include file='IBitmapData.xml' path='doc/member[@name="IBitmapData.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBitmapData);
 
     public void** lpVtbl;

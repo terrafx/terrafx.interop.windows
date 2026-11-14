@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0.15063.0")]
 public unsafe partial struct ISpatialAudioObjectRenderStreamForHrtf : ISpatialAudioObjectRenderStreamForHrtf.Interface, INativeGuid
 {
+    /// <include file='ISpatialAudioObjectRenderStreamForHrtf.xml' path='doc/member[@name="ISpatialAudioObjectRenderStreamForHrtf.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpatialAudioObjectRenderStreamForHrtf);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISpeechContinuousRecognitionCompletedEventArgs : ISpeechContinuousRecognitionCompletedEventArgs.Interface, INativeGuid
 {
+    /// <include file='ISpeechContinuousRecognitionCompletedEventArgs.xml' path='doc/member[@name="ISpeechContinuousRecognitionCompletedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpeechContinuousRecognitionCompletedEventArgs);
 
     public void** lpVtbl;

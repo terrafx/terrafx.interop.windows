@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAppxAppInstallerReader : IAppxAppInstallerReader.Interface, INativeGuid
 {
+    /// <include file='IAppxAppInstallerReader.xml' path='doc/member[@name="IAppxAppInstallerReader.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppxAppInstallerReader);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IDataWriterFactory : IDataWriterFactory.Interface, INativeGuid
 {
+    /// <include file='IDataWriterFactory.xml' path='doc/member[@name="IDataWriterFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDataWriterFactory);
 
     public void** lpVtbl;

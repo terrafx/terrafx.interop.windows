@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("EFD01300-160F-11D2-BB2E-00805FF7EFCA")]
 public unsafe partial struct CScriptErrorList : INativeGuid
 {
+    /// <include file='CScriptErrorList.xml' path='doc/member[@name="CScriptErrorList.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_CScriptErrorList);
 }

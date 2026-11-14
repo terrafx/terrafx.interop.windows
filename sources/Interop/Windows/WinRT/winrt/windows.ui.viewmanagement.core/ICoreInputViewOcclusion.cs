@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICoreInputViewOcclusion : ICoreInputViewOcclusion.Interface, INativeGuid
 {
+    /// <include file='ICoreInputViewOcclusion.xml' path='doc/member[@name="ICoreInputViewOcclusion.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICoreInputViewOcclusion);
 
     public void** lpVtbl;

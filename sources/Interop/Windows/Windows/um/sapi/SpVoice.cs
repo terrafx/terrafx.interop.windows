@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("96749377-3391-11D2-9EE3-00C04F797396")]
 public unsafe partial struct SpVoice : INativeGuid
 {
+    /// <include file='SpVoice.xml' path='doc/member[@name="SpVoice.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SpVoice);
 }

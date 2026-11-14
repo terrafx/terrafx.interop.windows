@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IWakeOnApproachOptions : IWakeOnApproachOptions.Interface, INativeGuid
 {
+    /// <include file='IWakeOnApproachOptions.xml' path='doc/member[@name="IWakeOnApproachOptions.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWakeOnApproachOptions);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("ITfUIElement")]
 public unsafe partial struct ITfToolTipUIElement : ITfToolTipUIElement.Interface, INativeGuid
 {
+    /// <include file='ITfToolTipUIElement.xml' path='doc/member[@name="ITfToolTipUIElement.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfToolTipUIElement);
 
     public void** lpVtbl;

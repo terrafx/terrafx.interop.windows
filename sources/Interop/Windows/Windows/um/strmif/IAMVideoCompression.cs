@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAMVideoCompression : IAMVideoCompression.Interface, INativeGuid
 {
+    /// <include file='IAMVideoCompression.xml' path='doc/member[@name="IAMVideoCompression.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAMVideoCompression);
 
     public void** lpVtbl;

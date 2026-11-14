@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("2735412B-7F64-5B0F-8F00-5D77AFBE261E")]
 public unsafe partial struct MsftDiscFormat2Erase : INativeGuid
 {
+    /// <include file='MsftDiscFormat2Erase.xml' path='doc/member[@name="MsftDiscFormat2Erase.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_MsftDiscFormat2Erase);
 }

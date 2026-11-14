@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IWICEnumMetadataItem : IWICEnumMetadataItem.Interface, INativeGuid
 {
+    /// <include file='IWICEnumMetadataItem.xml' path='doc/member[@name="IWICEnumMetadataItem.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWICEnumMetadataItem);
 
     public void** lpVtbl;

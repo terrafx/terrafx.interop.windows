@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IRadialControllerMenuItem : IRadialControllerMenuItem.Interface, INativeGuid
 {
+    /// <include file='IRadialControllerMenuItem.xml' path='doc/member[@name="IRadialControllerMenuItem.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRadialControllerMenuItem);
 
     public void** lpVtbl;

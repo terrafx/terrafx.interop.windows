@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAudioOutputSelector : IAudioOutputSelector.Interface, INativeGuid
 {
+    /// <include file='IAudioOutputSelector.xml' path='doc/member[@name="IAudioOutputSelector.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAudioOutputSelector);
 
     public void** lpVtbl;

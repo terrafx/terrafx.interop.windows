@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IDXGISwapChain2 : IDXGISwapChain2.Interface, INativeGuid
 {
+    /// <include file='IDXGISwapChain2.xml' path='doc/member[@name="IDXGISwapChain2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDXGISwapChain2);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1Image")]
 public unsafe partial struct ID2D1Bitmap : ID2D1Bitmap.Interface, INativeGuid
 {
+    /// <include file='ID2D1Bitmap.xml' path='doc/member[@name="ID2D1Bitmap.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1Bitmap);
 
     public void** lpVtbl;

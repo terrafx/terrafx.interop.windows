@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IAMStats : IAMStats.Interface, INativeGuid
 {
+    /// <include file='IAMStats.xml' path='doc/member[@name="IAMStats.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAMStats);
 
     public void** lpVtbl;

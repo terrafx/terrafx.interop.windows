@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpEventProvider")]
 public unsafe partial struct IReadEntityProvider : IReadEntityProvider.Interface, INativeGuid
 {
+    /// <include file='IReadEntityProvider.xml' path='doc/member[@name="IReadEntityProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IReadEntityProvider);
 
     public void** lpVtbl;

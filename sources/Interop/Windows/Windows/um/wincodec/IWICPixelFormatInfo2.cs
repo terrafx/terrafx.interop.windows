@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IWICPixelFormatInfo")]
 public unsafe partial struct IWICPixelFormatInfo2 : IWICPixelFormatInfo2.Interface, INativeGuid
 {
+    /// <include file='IWICPixelFormatInfo2.xml' path='doc/member[@name="IWICPixelFormatInfo2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWICPixelFormatInfo2);
 
     public void** lpVtbl;

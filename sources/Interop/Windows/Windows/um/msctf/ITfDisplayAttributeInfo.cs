@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ITfDisplayAttributeInfo : ITfDisplayAttributeInfo.Interface, INativeGuid
 {
+    /// <include file='ITfDisplayAttributeInfo.xml' path='doc/member[@name="ITfDisplayAttributeInfo.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfDisplayAttributeInfo);
 
     public void** lpVtbl;

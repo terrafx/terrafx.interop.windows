@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IRelatedItem")]
 public unsafe partial struct ICurrentItem : ICurrentItem.Interface, INativeGuid
 {
+    /// <include file='ICurrentItem.xml' path='doc/member[@name="ICurrentItem.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICurrentItem);
 
     public void** lpVtbl;

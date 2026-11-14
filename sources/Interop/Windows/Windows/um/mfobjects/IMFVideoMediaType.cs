@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IMFMediaType")]
 public unsafe partial struct IMFVideoMediaType : IMFVideoMediaType.Interface, INativeGuid
 {
+    /// <include file='IMFVideoMediaType.xml' path='doc/member[@name="IMFVideoMediaType.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFVideoMediaType);
 
     public void** lpVtbl;

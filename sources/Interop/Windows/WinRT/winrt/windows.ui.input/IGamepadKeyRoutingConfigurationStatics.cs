@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IGamepadKeyRoutingConfigurationStatics : IGamepadKeyRoutingConfigurationStatics.Interface, INativeGuid
 {
+    /// <include file='IGamepadKeyRoutingConfigurationStatics.xml' path='doc/member[@name="IGamepadKeyRoutingConfigurationStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGamepadKeyRoutingConfigurationStatics);
 
     public void** lpVtbl;

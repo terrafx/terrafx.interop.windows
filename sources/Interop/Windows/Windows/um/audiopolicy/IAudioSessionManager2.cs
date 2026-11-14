@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IAudioSessionManager")]
 public unsafe partial struct IAudioSessionManager2 : IAudioSessionManager2.Interface, INativeGuid
 {
+    /// <include file='IAudioSessionManager2.xml' path='doc/member[@name="IAudioSessionManager2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAudioSessionManager2);
 
     public void** lpVtbl;

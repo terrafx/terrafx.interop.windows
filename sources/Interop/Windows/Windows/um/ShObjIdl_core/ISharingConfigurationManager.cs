@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISharingConfigurationManager : ISharingConfigurationManager.Interface, INativeGuid
 {
+    /// <include file='ISharingConfigurationManager.xml' path='doc/member[@name="ISharingConfigurationManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISharingConfigurationManager);
 
     public void** lpVtbl;

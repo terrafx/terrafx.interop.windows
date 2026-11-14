@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IHashAlgorithmProviderStatics : IHashAlgorithmProviderStatics.Interface, INativeGuid
 {
+    /// <include file='IHashAlgorithmProviderStatics.xml' path='doc/member[@name="IHashAlgorithmProviderStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHashAlgorithmProviderStatics);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IStorageProviderKnownFolderSyncInfo : IStorageProviderKnownFolderSyncInfo.Interface, INativeGuid
 {
+    /// <include file='IStorageProviderKnownFolderSyncInfo.xml' path='doc/member[@name="IStorageProviderKnownFolderSyncInfo.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IStorageProviderKnownFolderSyncInfo);
 
     public void** lpVtbl;

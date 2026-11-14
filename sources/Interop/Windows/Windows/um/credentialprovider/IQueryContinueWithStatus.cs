@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IQueryContinue")]
 public unsafe partial struct IQueryContinueWithStatus : IQueryContinueWithStatus.Interface, INativeGuid
 {
+    /// <include file='IQueryContinueWithStatus.xml' path='doc/member[@name="IQueryContinueWithStatus.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IQueryContinueWithStatus);
 
     public void** lpVtbl;

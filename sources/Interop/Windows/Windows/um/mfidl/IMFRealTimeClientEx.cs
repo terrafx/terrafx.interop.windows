@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFRealTimeClientEx : IMFRealTimeClientEx.Interface, INativeGuid
 {
+    /// <include file='IMFRealTimeClientEx.xml' path='doc/member[@name="IMFRealTimeClientEx.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFRealTimeClientEx);
 
     public void** lpVtbl;

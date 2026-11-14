@@ -13,6 +13,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("5039D740-F736-449A-84D3-A56202557B87")]
 public unsafe partial struct FXEcho : INativeGuid
 {
+    /// <include file='FXEcho.xml' path='doc/member[@name="FXEcho.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_FXEcho);
 
     [NativeTypeName("#define FXECHO_MIN_WETDRYMIX 0.0f")]

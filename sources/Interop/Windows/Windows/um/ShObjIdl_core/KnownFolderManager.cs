@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("4DF0C730-DF9D-4AE3-9153-AA6B82E9795A")]
 public unsafe partial struct KnownFolderManager : INativeGuid
 {
+    /// <include file='KnownFolderManager.xml' path='doc/member[@name="KnownFolderManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_KnownFolderManager);
 }

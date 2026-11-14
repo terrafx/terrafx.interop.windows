@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IStorageStreamTransaction : IStorageStreamTransaction.Interface, INativeGuid
 {
+    /// <include file='IStorageStreamTransaction.xml' path='doc/member[@name="IStorageStreamTransaction.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IStorageStreamTransaction);
 
     public void** lpVtbl;

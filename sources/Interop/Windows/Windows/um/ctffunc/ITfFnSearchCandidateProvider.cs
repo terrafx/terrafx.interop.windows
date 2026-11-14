@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct ITfFnSearchCandidateProvider : ITfFnSearchCandidateProvider.Interface, INativeGuid
 {
+    /// <include file='ITfFnSearchCandidateProvider.xml' path='doc/member[@name="ITfFnSearchCandidateProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfFnSearchCandidateProvider);
 
     public void** lpVtbl;

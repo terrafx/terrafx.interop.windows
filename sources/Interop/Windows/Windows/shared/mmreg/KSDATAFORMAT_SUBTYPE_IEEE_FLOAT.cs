@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("00000003-0000-0010-8000-00AA00389B71")]
 public unsafe partial struct KSDATAFORMAT_SUBTYPE_IEEE_FLOAT : INativeGuid
 {
+    /// <include file='KSDATAFORMAT_SUBTYPE_IEEE_FLOAT.xml' path='doc/member[@name="KSDATAFORMAT_SUBTYPE_IEEE_FLOAT.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_KSDATAFORMAT_SUBTYPE_IEEE_FLOAT);
 }

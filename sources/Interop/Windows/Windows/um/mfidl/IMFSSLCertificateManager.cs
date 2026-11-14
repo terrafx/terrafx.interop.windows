@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFSSLCertificateManager : IMFSSLCertificateManager.Interface, INativeGuid
 {
+    /// <include file='IMFSSLCertificateManager.xml' path='doc/member[@name="IMFSSLCertificateManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFSSLCertificateManager);
 
     public void** lpVtbl;
