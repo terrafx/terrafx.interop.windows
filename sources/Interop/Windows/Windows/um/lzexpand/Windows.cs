@@ -68,33 +68,43 @@ public static unsafe partial class Windows
     [DllImport("lz32", ExactSpelling = true)]
     public static extern void LZClose(int hFile);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LZERROR_BADINHANDLE"]/*' />
     [NativeTypeName("#define LZERROR_BADINHANDLE (-1)")]
     public const int LZERROR_BADINHANDLE = (-1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LZERROR_BADOUTHANDLE"]/*' />
     [NativeTypeName("#define LZERROR_BADOUTHANDLE (-2)")]
     public const int LZERROR_BADOUTHANDLE = (-2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LZERROR_READ"]/*' />
     [NativeTypeName("#define LZERROR_READ (-3)")]
     public const int LZERROR_READ = (-3);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LZERROR_WRITE"]/*' />
     [NativeTypeName("#define LZERROR_WRITE (-4)")]
     public const int LZERROR_WRITE = (-4);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LZERROR_GLOBALLOC"]/*' />
     [NativeTypeName("#define LZERROR_GLOBALLOC (-5)")]
     public const int LZERROR_GLOBALLOC = (-5);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LZERROR_GLOBLOCK"]/*' />
     [NativeTypeName("#define LZERROR_GLOBLOCK (-6)")]
     public const int LZERROR_GLOBLOCK = (-6);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LZERROR_BADVALUE"]/*' />
     [NativeTypeName("#define LZERROR_BADVALUE (-7)")]
     public const int LZERROR_BADVALUE = (-7);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LZERROR_UNKNOWNALG"]/*' />
     [NativeTypeName("#define LZERROR_UNKNOWNALG (-8)")]
     public const int LZERROR_UNKNOWNALG = (-8);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetExpandedName"]/*' />
     [NativeTypeName("#define GetExpandedName GetExpandedNameW")]
     public static delegate*<char*, char*, int> GetExpandedName => &GetExpandedNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LZOpenFile"]/*' />
     [NativeTypeName("#define LZOpenFile LZOpenFileW")]
     public static delegate*<char*, OFSTRUCT*, ushort, int> LZOpenFile => &LZOpenFileW;
 }

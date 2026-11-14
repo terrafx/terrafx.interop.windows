@@ -82,27 +82,35 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows6.2")]
     public static extern BOOL CloseDecompressor([NativeTypeName("DECOMPRESSOR_HANDLE")] COMPRESSOR_HANDLE DecompressorHandle);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COMPRESS_ALGORITHM_INVALID"]/*' />
     [NativeTypeName("#define COMPRESS_ALGORITHM_INVALID 0")]
     public const int COMPRESS_ALGORITHM_INVALID = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COMPRESS_ALGORITHM_NULL"]/*' />
     [NativeTypeName("#define COMPRESS_ALGORITHM_NULL 1")]
     public const int COMPRESS_ALGORITHM_NULL = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COMPRESS_ALGORITHM_MSZIP"]/*' />
     [NativeTypeName("#define COMPRESS_ALGORITHM_MSZIP 2")]
     public const int COMPRESS_ALGORITHM_MSZIP = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COMPRESS_ALGORITHM_XPRESS"]/*' />
     [NativeTypeName("#define COMPRESS_ALGORITHM_XPRESS 3")]
     public const int COMPRESS_ALGORITHM_XPRESS = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COMPRESS_ALGORITHM_XPRESS_HUFF"]/*' />
     [NativeTypeName("#define COMPRESS_ALGORITHM_XPRESS_HUFF 4")]
     public const int COMPRESS_ALGORITHM_XPRESS_HUFF = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COMPRESS_ALGORITHM_LZMS"]/*' />
     [NativeTypeName("#define COMPRESS_ALGORITHM_LZMS 5")]
     public const int COMPRESS_ALGORITHM_LZMS = 5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COMPRESS_ALGORITHM_MAX"]/*' />
     [NativeTypeName("#define COMPRESS_ALGORITHM_MAX 6")]
     public const int COMPRESS_ALGORITHM_MAX = 6;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COMPRESS_RAW"]/*' />
     [NativeTypeName("#define COMPRESS_RAW (1 << 29)")]
     public const int COMPRESS_RAW = (1 << 29);
 }

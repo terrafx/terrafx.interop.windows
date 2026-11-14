@@ -7,39 +7,51 @@ namespace TerraFX.Interop.WinRT;
 
 public static partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Web_Http_Filters_IHttpBaseProtocolFilter"]/*' />
     [NativeTypeName("const WCHAR[49]")]
     public const string InterfaceName_Windows_Web_Http_Filters_IHttpBaseProtocolFilter = "Windows.Web.Http.Filters.IHttpBaseProtocolFilter";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Web_Http_Filters_IHttpBaseProtocolFilter2"]/*' />
     [NativeTypeName("const WCHAR[50]")]
     public const string InterfaceName_Windows_Web_Http_Filters_IHttpBaseProtocolFilter2 = "Windows.Web.Http.Filters.IHttpBaseProtocolFilter2";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Web_Http_Filters_IHttpBaseProtocolFilter3"]/*' />
     [NativeTypeName("const WCHAR[50]")]
     public const string InterfaceName_Windows_Web_Http_Filters_IHttpBaseProtocolFilter3 = "Windows.Web.Http.Filters.IHttpBaseProtocolFilter3";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Web_Http_Filters_IHttpBaseProtocolFilter4"]/*' />
     [NativeTypeName("const WCHAR[50]")]
     public const string InterfaceName_Windows_Web_Http_Filters_IHttpBaseProtocolFilter4 = "Windows.Web.Http.Filters.IHttpBaseProtocolFilter4";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Web_Http_Filters_IHttpBaseProtocolFilter5"]/*' />
     [NativeTypeName("const WCHAR[50]")]
     public const string InterfaceName_Windows_Web_Http_Filters_IHttpBaseProtocolFilter5 = "Windows.Web.Http.Filters.IHttpBaseProtocolFilter5";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Web_Http_Filters_IHttpBaseProtocolFilterStatics"]/*' />
     [NativeTypeName("const WCHAR[56]")]
     public const string InterfaceName_Windows_Web_Http_Filters_IHttpBaseProtocolFilterStatics = "Windows.Web.Http.Filters.IHttpBaseProtocolFilterStatics";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Web_Http_Filters_IHttpCacheControl"]/*' />
     [NativeTypeName("const WCHAR[43]")]
     public const string InterfaceName_Windows_Web_Http_Filters_IHttpCacheControl = "Windows.Web.Http.Filters.IHttpCacheControl";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Web_Http_Filters_IHttpFilter"]/*' />
     [NativeTypeName("const WCHAR[37]")]
     public const string InterfaceName_Windows_Web_Http_Filters_IHttpFilter = "Windows.Web.Http.Filters.IHttpFilter";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Web_Http_Filters_IHttpServerCustomValidationRequestedEventArgs"]/*' />
     [NativeTypeName("const WCHAR[71]")]
     public const string InterfaceName_Windows_Web_Http_Filters_IHttpServerCustomValidationRequestedEventArgs = "Windows.Web.Http.Filters.IHttpServerCustomValidationRequestedEventArgs";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Web_Http_Filters_HttpBaseProtocolFilter"]/*' />
     [NativeTypeName("const WCHAR[48]")]
     public const string RuntimeClass_Windows_Web_Http_Filters_HttpBaseProtocolFilter = "Windows.Web.Http.Filters.HttpBaseProtocolFilter";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Web_Http_Filters_HttpCacheControl"]/*' />
     [NativeTypeName("const WCHAR[42]")]
     public const string RuntimeClass_Windows_Web_Http_Filters_HttpCacheControl = "Windows.Web.Http.Filters.HttpCacheControl";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Web_Http_Filters_HttpServerCustomValidationRequestedEventArgs"]/*' />
     [NativeTypeName("const WCHAR[70]")]
     public const string RuntimeClass_Windows_Web_Http_Filters_HttpServerCustomValidationRequestedEventArgs = "Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs";
 }

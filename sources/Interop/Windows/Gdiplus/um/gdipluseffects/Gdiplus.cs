@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Gdiplus;
 
 public static unsafe partial class Gdiplus
 {
+    /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.BlurEffectGuid"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid BlurEffectGuid
     {
@@ -37,6 +38,7 @@ public static unsafe partial class Gdiplus
         }
     }
 
+    /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.SharpenEffectGuid"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SharpenEffectGuid
     {
@@ -62,6 +64,7 @@ public static unsafe partial class Gdiplus
         }
     }
 
+    /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.ColorMatrixEffectGuid"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid ColorMatrixEffectGuid
     {
@@ -87,6 +90,7 @@ public static unsafe partial class Gdiplus
         }
     }
 
+    /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.ColorLUTEffectGuid"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid ColorLUTEffectGuid
     {
@@ -112,6 +116,7 @@ public static unsafe partial class Gdiplus
         }
     }
 
+    /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.BrightnessContrastEffectGuid"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid BrightnessContrastEffectGuid
     {
@@ -137,6 +142,7 @@ public static unsafe partial class Gdiplus
         }
     }
 
+    /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.HueSaturationLightnessEffectGuid"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid HueSaturationLightnessEffectGuid
     {
@@ -162,6 +168,7 @@ public static unsafe partial class Gdiplus
         }
     }
 
+    /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.LevelsEffectGuid"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid LevelsEffectGuid
     {
@@ -187,6 +194,7 @@ public static unsafe partial class Gdiplus
         }
     }
 
+    /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.TintEffectGuid"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid TintEffectGuid
     {
@@ -212,6 +220,7 @@ public static unsafe partial class Gdiplus
         }
     }
 
+    /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.ColorBalanceEffectGuid"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid ColorBalanceEffectGuid
     {
@@ -237,6 +246,7 @@ public static unsafe partial class Gdiplus
         }
     }
 
+    /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.RedEyeCorrectionEffectGuid"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid RedEyeCorrectionEffectGuid
     {
@@ -262,6 +272,7 @@ public static unsafe partial class Gdiplus
         }
     }
 
+    /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.ColorCurveEffectGuid"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid ColorCurveEffectGuid
     {

@@ -9,6 +9,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_DDDEVICEID_STRING"]/*' />
     [NativeTypeName("#define MAX_DDDEVICEID_STRING 512")]
     public const int MAX_DDDEVICEID_STRING = 512;
 }

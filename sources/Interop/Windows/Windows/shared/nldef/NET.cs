@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class NET
 {
+    /// <include file='NET.xml' path='doc/member[@name="NET.NET_IF_CURRENT_SESSION"]/*' />
     [NativeTypeName("#define NET_IF_CURRENT_SESSION ((ULONG)-1)")]
     public const uint NET_IF_CURRENT_SESSION = unchecked((uint)(-1));
 }

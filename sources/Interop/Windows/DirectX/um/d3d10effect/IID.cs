@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D10StateBlock"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D10StateBlock
     {
@@ -38,6 +39,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D10EffectType"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D10EffectType
     {
@@ -63,6 +65,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D10EffectVariable"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D10EffectVariable
     {
@@ -88,6 +91,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D10EffectScalarVariable"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D10EffectScalarVariable
     {
@@ -113,6 +117,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D10EffectVectorVariable"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D10EffectVectorVariable
     {
@@ -138,6 +143,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D10EffectMatrixVariable"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D10EffectMatrixVariable
     {
@@ -163,6 +169,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D10EffectStringVariable"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D10EffectStringVariable
     {
@@ -188,6 +195,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D10EffectShaderResourceVariable"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D10EffectShaderResourceVariable
     {
@@ -213,6 +221,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D10EffectRenderTargetViewVariable"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D10EffectRenderTargetViewVariable
     {
@@ -238,6 +247,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D10EffectDepthStencilViewVariable"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D10EffectDepthStencilViewVariable
     {
@@ -263,6 +273,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D10EffectConstantBuffer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D10EffectConstantBuffer
     {
@@ -288,6 +299,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D10EffectShaderVariable"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D10EffectShaderVariable
     {
@@ -313,6 +325,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D10EffectBlendVariable"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D10EffectBlendVariable
     {
@@ -338,6 +351,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D10EffectDepthStencilVariable"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D10EffectDepthStencilVariable
     {
@@ -363,6 +377,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D10EffectRasterizerVariable"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D10EffectRasterizerVariable
     {
@@ -388,6 +403,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D10EffectSamplerVariable"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D10EffectSamplerVariable
     {
@@ -413,6 +429,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D10EffectPass"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D10EffectPass
     {
@@ -438,6 +455,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D10EffectTechnique"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D10EffectTechnique
     {
@@ -463,6 +481,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D10Effect"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D10Effect
     {
@@ -488,6 +507,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D10EffectPool"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D10EffectPool
     {

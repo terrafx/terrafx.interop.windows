@@ -7,42 +7,55 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CDIS
 {
+    /// <include file='CDIS.xml' path='doc/member[@name="CDIS.CDIS_SELECTED"]/*' />
     [NativeTypeName("#define CDIS_SELECTED 0x0001")]
     public const int CDIS_SELECTED = 0x0001;
 
+    /// <include file='CDIS.xml' path='doc/member[@name="CDIS.CDIS_GRAYED"]/*' />
     [NativeTypeName("#define CDIS_GRAYED 0x0002")]
     public const int CDIS_GRAYED = 0x0002;
 
+    /// <include file='CDIS.xml' path='doc/member[@name="CDIS.CDIS_DISABLED"]/*' />
     [NativeTypeName("#define CDIS_DISABLED 0x0004")]
     public const int CDIS_DISABLED = 0x0004;
 
+    /// <include file='CDIS.xml' path='doc/member[@name="CDIS.CDIS_CHECKED"]/*' />
     [NativeTypeName("#define CDIS_CHECKED 0x0008")]
     public const int CDIS_CHECKED = 0x0008;
 
+    /// <include file='CDIS.xml' path='doc/member[@name="CDIS.CDIS_FOCUS"]/*' />
     [NativeTypeName("#define CDIS_FOCUS 0x0010")]
     public const int CDIS_FOCUS = 0x0010;
 
+    /// <include file='CDIS.xml' path='doc/member[@name="CDIS.CDIS_DEFAULT"]/*' />
     [NativeTypeName("#define CDIS_DEFAULT 0x0020")]
     public const int CDIS_DEFAULT = 0x0020;
 
+    /// <include file='CDIS.xml' path='doc/member[@name="CDIS.CDIS_HOT"]/*' />
     [NativeTypeName("#define CDIS_HOT 0x0040")]
     public const int CDIS_HOT = 0x0040;
 
+    /// <include file='CDIS.xml' path='doc/member[@name="CDIS.CDIS_MARKED"]/*' />
     [NativeTypeName("#define CDIS_MARKED 0x0080")]
     public const int CDIS_MARKED = 0x0080;
 
+    /// <include file='CDIS.xml' path='doc/member[@name="CDIS.CDIS_INDETERMINATE"]/*' />
     [NativeTypeName("#define CDIS_INDETERMINATE 0x0100")]
     public const int CDIS_INDETERMINATE = 0x0100;
 
+    /// <include file='CDIS.xml' path='doc/member[@name="CDIS.CDIS_SHOWKEYBOARDCUES"]/*' />
     [NativeTypeName("#define CDIS_SHOWKEYBOARDCUES 0x0200")]
     public const int CDIS_SHOWKEYBOARDCUES = 0x0200;
 
+    /// <include file='CDIS.xml' path='doc/member[@name="CDIS.CDIS_NEARHOT"]/*' />
     [NativeTypeName("#define CDIS_NEARHOT 0x0400")]
     public const int CDIS_NEARHOT = 0x0400;
 
+    /// <include file='CDIS.xml' path='doc/member[@name="CDIS.CDIS_OTHERSIDEHOT"]/*' />
     [NativeTypeName("#define CDIS_OTHERSIDEHOT 0x0800")]
     public const int CDIS_OTHERSIDEHOT = 0x0800;
 
+    /// <include file='CDIS.xml' path='doc/member[@name="CDIS.CDIS_DROPHILITED"]/*' />
     [NativeTypeName("#define CDIS_DROPHILITED 0x1000")]
     public const int CDIS_DROPHILITED = 0x1000;
 }

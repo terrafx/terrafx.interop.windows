@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MFCONNECTOR
 {
+    /// <include file='MFCONNECTOR.xml' path='doc/member[@name="MFCONNECTOR.MFCONNECTOR_SPDIF"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFCONNECTOR_SPDIF
     {
@@ -37,6 +38,7 @@ public static partial class MFCONNECTOR
         }
     }
 
+    /// <include file='MFCONNECTOR.xml' path='doc/member[@name="MFCONNECTOR.MFCONNECTOR_UNKNOWN"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFCONNECTOR_UNKNOWN
     {
@@ -62,6 +64,7 @@ public static partial class MFCONNECTOR
         }
     }
 
+    /// <include file='MFCONNECTOR.xml' path='doc/member[@name="MFCONNECTOR.MFCONNECTOR_PCI"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFCONNECTOR_PCI
     {
@@ -87,6 +90,7 @@ public static partial class MFCONNECTOR
         }
     }
 
+    /// <include file='MFCONNECTOR.xml' path='doc/member[@name="MFCONNECTOR.MFCONNECTOR_PCIX"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFCONNECTOR_PCIX
     {
@@ -112,6 +116,7 @@ public static partial class MFCONNECTOR
         }
     }
 
+    /// <include file='MFCONNECTOR.xml' path='doc/member[@name="MFCONNECTOR.MFCONNECTOR_PCI_Express"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFCONNECTOR_PCI_Express
     {
@@ -137,6 +142,7 @@ public static partial class MFCONNECTOR
         }
     }
 
+    /// <include file='MFCONNECTOR.xml' path='doc/member[@name="MFCONNECTOR.MFCONNECTOR_AGP"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFCONNECTOR_AGP
     {
@@ -162,6 +168,7 @@ public static partial class MFCONNECTOR
         }
     }
 
+    /// <include file='MFCONNECTOR.xml' path='doc/member[@name="MFCONNECTOR.MFCONNECTOR_VGA"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFCONNECTOR_VGA
     {
@@ -187,6 +194,7 @@ public static partial class MFCONNECTOR
         }
     }
 
+    /// <include file='MFCONNECTOR.xml' path='doc/member[@name="MFCONNECTOR.MFCONNECTOR_SVIDEO"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFCONNECTOR_SVIDEO
     {
@@ -212,6 +220,7 @@ public static partial class MFCONNECTOR
         }
     }
 
+    /// <include file='MFCONNECTOR.xml' path='doc/member[@name="MFCONNECTOR.MFCONNECTOR_COMPOSITE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFCONNECTOR_COMPOSITE
     {
@@ -237,6 +246,7 @@ public static partial class MFCONNECTOR
         }
     }
 
+    /// <include file='MFCONNECTOR.xml' path='doc/member[@name="MFCONNECTOR.MFCONNECTOR_COMPONENT"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFCONNECTOR_COMPONENT
     {
@@ -262,6 +272,7 @@ public static partial class MFCONNECTOR
         }
     }
 
+    /// <include file='MFCONNECTOR.xml' path='doc/member[@name="MFCONNECTOR.MFCONNECTOR_DVI"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFCONNECTOR_DVI
     {
@@ -287,6 +298,7 @@ public static partial class MFCONNECTOR
         }
     }
 
+    /// <include file='MFCONNECTOR.xml' path='doc/member[@name="MFCONNECTOR.MFCONNECTOR_HDMI"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFCONNECTOR_HDMI
     {
@@ -312,6 +324,7 @@ public static partial class MFCONNECTOR
         }
     }
 
+    /// <include file='MFCONNECTOR.xml' path='doc/member[@name="MFCONNECTOR.MFCONNECTOR_LVDS"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFCONNECTOR_LVDS
     {
@@ -337,6 +350,7 @@ public static partial class MFCONNECTOR
         }
     }
 
+    /// <include file='MFCONNECTOR.xml' path='doc/member[@name="MFCONNECTOR.MFCONNECTOR_D_JPN"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFCONNECTOR_D_JPN
     {
@@ -362,6 +376,7 @@ public static partial class MFCONNECTOR
         }
     }
 
+    /// <include file='MFCONNECTOR.xml' path='doc/member[@name="MFCONNECTOR.MFCONNECTOR_SDI"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFCONNECTOR_SDI
     {
@@ -387,6 +402,7 @@ public static partial class MFCONNECTOR
         }
     }
 
+    /// <include file='MFCONNECTOR.xml' path='doc/member[@name="MFCONNECTOR.MFCONNECTOR_DISPLAYPORT_EXTERNAL"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFCONNECTOR_DISPLAYPORT_EXTERNAL
     {
@@ -412,6 +428,7 @@ public static partial class MFCONNECTOR
         }
     }
 
+    /// <include file='MFCONNECTOR.xml' path='doc/member[@name="MFCONNECTOR.MFCONNECTOR_DISPLAYPORT_EMBEDDED"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFCONNECTOR_DISPLAYPORT_EMBEDDED
     {
@@ -437,6 +454,7 @@ public static partial class MFCONNECTOR
         }
     }
 
+    /// <include file='MFCONNECTOR.xml' path='doc/member[@name="MFCONNECTOR.MFCONNECTOR_UDI_EXTERNAL"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFCONNECTOR_UDI_EXTERNAL
     {
@@ -462,6 +480,7 @@ public static partial class MFCONNECTOR
         }
     }
 
+    /// <include file='MFCONNECTOR.xml' path='doc/member[@name="MFCONNECTOR.MFCONNECTOR_UDI_EMBEDDED"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFCONNECTOR_UDI_EMBEDDED
     {
@@ -487,6 +506,7 @@ public static partial class MFCONNECTOR
         }
     }
 
+    /// <include file='MFCONNECTOR.xml' path='doc/member[@name="MFCONNECTOR.MFCONNECTOR_MIRACAST"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFCONNECTOR_MIRACAST
     {
@@ -512,6 +532,7 @@ public static partial class MFCONNECTOR
         }
     }
 
+    /// <include file='MFCONNECTOR.xml' path='doc/member[@name="MFCONNECTOR.MFCONNECTOR_TRANSPORT_AGNOSTIC_DIGITAL_MODE_A"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFCONNECTOR_TRANSPORT_AGNOSTIC_DIGITAL_MODE_A
     {
@@ -537,6 +558,7 @@ public static partial class MFCONNECTOR
         }
     }
 
+    /// <include file='MFCONNECTOR.xml' path='doc/member[@name="MFCONNECTOR.MFCONNECTOR_TRANSPORT_AGNOSTIC_DIGITAL_MODE_B"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFCONNECTOR_TRANSPORT_AGNOSTIC_DIGITAL_MODE_B
     {

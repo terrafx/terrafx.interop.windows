@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class FACILITY
 {
+    /// <include file='FACILITY.xml' path='doc/member[@name="FACILITY.FACILITY_MF"]/*' />
     [NativeTypeName("#define FACILITY_MF 0xD")]
     public const int FACILITY_MF = 0xD;
 
+    /// <include file='FACILITY.xml' path='doc/member[@name="FACILITY.FACILITY_MF_WIN32"]/*' />
     [NativeTypeName("#define FACILITY_MF_WIN32 0x7")]
     public const int FACILITY_MF_WIN32 = 0x7;
 }

@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class GUID
 {
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatUnknown"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatUnknown
     {
@@ -37,6 +38,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatIfd"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatIfd
     {
@@ -62,6 +64,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatSubIfd"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatSubIfd
     {
@@ -87,6 +90,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatExif"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatExif
     {
@@ -112,6 +116,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatGps"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatGps
     {
@@ -137,6 +142,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatInterop"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatInterop
     {
@@ -162,6 +168,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatApp0"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatApp0
     {
@@ -187,6 +194,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatApp1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatApp1
     {
@@ -212,6 +220,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatApp13"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatApp13
     {
@@ -237,6 +246,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatIPTC"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatIPTC
     {
@@ -262,6 +272,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatIRB"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatIRB
     {
@@ -287,6 +298,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormat8BIMIPTC"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormat8BIMIPTC
     {
@@ -312,6 +324,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormat8BIMResolutionInfo"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormat8BIMResolutionInfo
     {
@@ -337,6 +350,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormat8BIMIPTCDigest"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormat8BIMIPTCDigest
     {
@@ -362,6 +376,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatXMP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatXMP
     {
@@ -387,6 +402,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatThumbnail"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatThumbnail
     {
@@ -412,6 +428,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatChunktEXt"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatChunktEXt
     {
@@ -437,6 +454,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatXMPStruct"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatXMPStruct
     {
@@ -462,6 +480,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatXMPBag"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatXMPBag
     {
@@ -487,6 +506,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatXMPSeq"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatXMPSeq
     {
@@ -512,6 +532,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatXMPAlt"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatXMPAlt
     {
@@ -537,6 +558,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatLSD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatLSD
     {
@@ -562,6 +584,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatIMD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatIMD
     {
@@ -587,6 +610,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatGCE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatGCE
     {
@@ -612,6 +636,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatAPE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatAPE
     {
@@ -637,6 +662,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatJpegChrominance"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatJpegChrominance
     {
@@ -662,6 +688,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatJpegLuminance"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatJpegLuminance
     {
@@ -687,6 +714,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatJpegComment"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatJpegComment
     {
@@ -712,6 +740,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatGifComment"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatGifComment
     {
@@ -737,6 +766,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatChunkgAMA"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatChunkgAMA
     {
@@ -762,6 +792,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatChunkbKGD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatChunkbKGD
     {
@@ -787,6 +818,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatChunkiTXt"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatChunkiTXt
     {
@@ -812,6 +844,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatChunkcHRM"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatChunkcHRM
     {
@@ -837,6 +870,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatChunkhIST"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatChunkhIST
     {
@@ -862,6 +896,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatChunkiCCP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatChunkiCCP
     {
@@ -887,6 +922,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatChunksRGB"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatChunksRGB
     {
@@ -912,6 +948,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatChunktIME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatChunktIME
     {
@@ -937,6 +974,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatDds"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatDds
     {
@@ -962,6 +1000,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatHeif"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatHeif
     {
@@ -987,6 +1026,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatHeifHDR"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatHeifHDR
     {
@@ -1012,6 +1052,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatWebpANIM"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatWebpANIM
     {
@@ -1037,6 +1078,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatWebpANMF"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatWebpANMF
     {
@@ -1062,6 +1104,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatJpegXLAnim"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatJpegXLAnim
     {
@@ -1087,6 +1130,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatJpegXLAnimFrame"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatJpegXLAnimFrame
     {
@@ -1112,6 +1156,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MetadataFormatGainMap"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MetadataFormatGainMap
     {

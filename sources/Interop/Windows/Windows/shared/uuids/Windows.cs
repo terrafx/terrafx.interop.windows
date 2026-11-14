@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CAPTION_FORMAT_ATSC"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CAPTION_FORMAT_ATSC
     {
@@ -37,6 +38,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CAPTION_FORMAT_DVB"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CAPTION_FORMAT_DVB
     {
@@ -62,6 +64,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CAPTION_FORMAT_DIRECTV"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CAPTION_FORMAT_DIRECTV
     {
@@ -87,6 +90,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CAPTION_FORMAT_ECHOSTAR"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CAPTION_FORMAT_ECHOSTAR
     {
@@ -112,6 +116,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AMPROPSETID_Pin"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid AMPROPSETID_Pin
     {
@@ -137,6 +142,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOOK_UPSTREAM_ONLY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid LOOK_UPSTREAM_ONLY
     {
@@ -162,6 +168,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOOK_DOWNSTREAM_ONLY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid LOOK_DOWNSTREAM_ONLY
     {
@@ -187,6 +194,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DSATTRIB_UDCRTag"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DSATTRIB_UDCRTag
     {
@@ -212,6 +220,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DSATTRIB_PicSampleSeq"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DSATTRIB_PicSampleSeq
     {
@@ -237,6 +246,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DSATTRIB_OptionalVideoAttributes"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DSATTRIB_OptionalVideoAttributes
     {
@@ -262,6 +272,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DSATTRIB_CC_CONTAINER_INFO"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DSATTRIB_CC_CONTAINER_INFO
     {
@@ -287,6 +298,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DSATTRIB_TRANSPORT_PROPERTIES"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DSATTRIB_TRANSPORT_PROPERTIES
     {
@@ -312,6 +324,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DSATTRIB_PBDATAG_ATTRIBUTE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DSATTRIB_PBDATAG_ATTRIBUTE
     {
@@ -337,6 +350,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DSATTRIB_CAPTURE_STREAMTIME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DSATTRIB_CAPTURE_STREAMTIME
     {
@@ -362,6 +376,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DSATTRIB_DSHOW_STREAM_DESC"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DSATTRIB_DSHOW_STREAM_DESC
     {
@@ -387,6 +402,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DSATTRIB_SAMPLE_LIVE_STREAM_TIME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DSATTRIB_SAMPLE_LIVE_STREAM_TIME
     {
@@ -412,6 +428,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UUID_UdriTagTables"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid UUID_UdriTagTables
     {
@@ -437,6 +454,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UUID_WMDRMTagTables"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid UUID_WMDRMTagTables
     {
@@ -462,6 +480,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ENCAPIPARAM_BITRATE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid ENCAPIPARAM_BITRATE
     {
@@ -487,6 +506,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ENCAPIPARAM_PEAK_BITRATE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid ENCAPIPARAM_PEAK_BITRATE
     {
@@ -512,6 +532,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ENCAPIPARAM_BITRATE_MODE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid ENCAPIPARAM_BITRATE_MODE
     {
@@ -537,6 +558,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ENCAPIPARAM_SAP_MODE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid ENCAPIPARAM_SAP_MODE
     {
@@ -562,6 +584,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CODECAPI_CHANGELISTS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CODECAPI_CHANGELISTS
     {
@@ -587,6 +610,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CODECAPI_VIDEO_ENCODER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CODECAPI_VIDEO_ENCODER
     {
@@ -612,6 +636,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CODECAPI_AUDIO_ENCODER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CODECAPI_AUDIO_ENCODER
     {
@@ -637,6 +662,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CODECAPI_SETALLDEFAULTS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CODECAPI_SETALLDEFAULTS
     {
@@ -662,6 +688,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CODECAPI_ALLSETTINGS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CODECAPI_ALLSETTINGS
     {
@@ -687,6 +714,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CODECAPI_SUPPORTSEVENTS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CODECAPI_SUPPORTSEVENTS
     {
@@ -712,6 +740,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CODECAPI_CURRENTCHANGELIST"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CODECAPI_CURRENTCHANGELIST
     {
@@ -737,6 +766,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CODECAPI_AVDecMmcssClass"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CODECAPI_AVDecMmcssClass
     {

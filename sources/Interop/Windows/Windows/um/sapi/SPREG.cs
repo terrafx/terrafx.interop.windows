@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SPREG
 {
+    /// <include file='SPREG.xml' path='doc/member[@name="SPREG.SPREG_USER_ROOT"]/*' />
     [NativeTypeName("#define SPREG_USER_ROOT L\"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Speech\"")]
     public const string SPREG_USER_ROOT = "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Speech";
 
+    /// <include file='SPREG.xml' path='doc/member[@name="SPREG.SPREG_LOCAL_MACHINE_ROOT"]/*' />
     [NativeTypeName("#define SPREG_LOCAL_MACHINE_ROOT L\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\"")]
     public const string SPREG_LOCAL_MACHINE_ROOT = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech";
 
+    /// <include file='SPREG.xml' path='doc/member[@name="SPREG.SPREG_SAFE_USER_TOKENS"]/*' />
     [NativeTypeName("#define SPREG_SAFE_USER_TOKENS L\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\UserTokens\"")]
     public const string SPREG_SAFE_USER_TOKENS = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\UserTokens";
 }

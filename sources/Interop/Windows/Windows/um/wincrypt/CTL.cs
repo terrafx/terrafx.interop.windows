@@ -7,42 +7,55 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class CTL
 {
+    /// <include file='CTL.xml' path='doc/member[@name="CTL.CTL_V1"]/*' />
     [NativeTypeName("#define CTL_V1 0")]
     public const int CTL_V1 = 0;
 
+    /// <include file='CTL.xml' path='doc/member[@name="CTL.CTL_ENTRY_FROM_PROP_CHAIN_FLAG"]/*' />
     [NativeTypeName("#define CTL_ENTRY_FROM_PROP_CHAIN_FLAG 0x1")]
     public const int CTL_ENTRY_FROM_PROP_CHAIN_FLAG = 0x1;
 
+    /// <include file='CTL.xml' path='doc/member[@name="CTL.CTL_ANY_SUBJECT_TYPE"]/*' />
     [NativeTypeName("#define CTL_ANY_SUBJECT_TYPE 1")]
     public const int CTL_ANY_SUBJECT_TYPE = 1;
 
+    /// <include file='CTL.xml' path='doc/member[@name="CTL.CTL_CERT_SUBJECT_TYPE"]/*' />
     [NativeTypeName("#define CTL_CERT_SUBJECT_TYPE 2")]
     public const int CTL_CERT_SUBJECT_TYPE = 2;
 
+    /// <include file='CTL.xml' path='doc/member[@name="CTL.CTL_FIND_ANY"]/*' />
     [NativeTypeName("#define CTL_FIND_ANY 0")]
     public const int CTL_FIND_ANY = 0;
 
+    /// <include file='CTL.xml' path='doc/member[@name="CTL.CTL_FIND_SHA1_HASH"]/*' />
     [NativeTypeName("#define CTL_FIND_SHA1_HASH 1")]
     public const int CTL_FIND_SHA1_HASH = 1;
 
+    /// <include file='CTL.xml' path='doc/member[@name="CTL.CTL_FIND_MD5_HASH"]/*' />
     [NativeTypeName("#define CTL_FIND_MD5_HASH 2")]
     public const int CTL_FIND_MD5_HASH = 2;
 
+    /// <include file='CTL.xml' path='doc/member[@name="CTL.CTL_FIND_USAGE"]/*' />
     [NativeTypeName("#define CTL_FIND_USAGE 3")]
     public const int CTL_FIND_USAGE = 3;
 
+    /// <include file='CTL.xml' path='doc/member[@name="CTL.CTL_FIND_SUBJECT"]/*' />
     [NativeTypeName("#define CTL_FIND_SUBJECT 4")]
     public const int CTL_FIND_SUBJECT = 4;
 
+    /// <include file='CTL.xml' path='doc/member[@name="CTL.CTL_FIND_EXISTING"]/*' />
     [NativeTypeName("#define CTL_FIND_EXISTING 5")]
     public const int CTL_FIND_EXISTING = 5;
 
+    /// <include file='CTL.xml' path='doc/member[@name="CTL.CTL_FIND_NO_LIST_ID_CBDATA"]/*' />
     [NativeTypeName("#define CTL_FIND_NO_LIST_ID_CBDATA 0xFFFFFFFF")]
     public const uint CTL_FIND_NO_LIST_ID_CBDATA = 0xFFFFFFFF;
 
+    /// <include file='CTL.xml' path='doc/member[@name="CTL.CTL_FIND_NO_SIGNER_PTR"]/*' />
     [NativeTypeName("#define CTL_FIND_NO_SIGNER_PTR ((PCERT_INFO) -1)")]
     public static CERT_INFO* CTL_FIND_NO_SIGNER_PTR => unchecked((CERT_INFO*)(-1));
 
+    /// <include file='CTL.xml' path='doc/member[@name="CTL.CTL_FIND_SAME_USAGE_FLAG"]/*' />
     [NativeTypeName("#define CTL_FIND_SAME_USAGE_FLAG 0x1")]
     public const int CTL_FIND_SAME_USAGE_FLAG = 0x1;
 }

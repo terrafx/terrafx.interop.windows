@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MS
 {
+    /// <include file='MS.xml' path='doc/member[@name="MS.MS_CTS_ON"]/*' />
     [NativeTypeName("#define MS_CTS_ON ((DWORD)0x0010)")]
     public const uint MS_CTS_ON = ((uint)(0x0010));
 
+    /// <include file='MS.xml' path='doc/member[@name="MS.MS_DSR_ON"]/*' />
     [NativeTypeName("#define MS_DSR_ON ((DWORD)0x0020)")]
     public const uint MS_DSR_ON = ((uint)(0x0020));
 
+    /// <include file='MS.xml' path='doc/member[@name="MS.MS_RING_ON"]/*' />
     [NativeTypeName("#define MS_RING_ON ((DWORD)0x0040)")]
     public const uint MS_RING_ON = ((uint)(0x0040));
 
+    /// <include file='MS.xml' path='doc/member[@name="MS.MS_RLSD_ON"]/*' />
     [NativeTypeName("#define MS_RLSD_ON ((DWORD)0x0080)")]
     public const uint MS_RLSD_ON = ((uint)(0x0080));
 }

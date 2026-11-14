@@ -7,27 +7,35 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IP
 {
+    /// <include file='IP.xml' path='doc/member[@name="IP.IP_STATS"]/*' />
     [NativeTypeName("#define IP_STATS (IF_ROW             + 1)")]
     public const int IP_STATS = (((0 + 1) + 1) + 1);
 
+    /// <include file='IP.xml' path='doc/member[@name="IP.IP_ADDRTABLE"]/*' />
     [NativeTypeName("#define IP_ADDRTABLE (IP_STATS           + 1)")]
     public const int IP_ADDRTABLE = ((((0 + 1) + 1) + 1) + 1);
 
+    /// <include file='IP.xml' path='doc/member[@name="IP.IP_ADDRROW"]/*' />
     [NativeTypeName("#define IP_ADDRROW (IP_ADDRTABLE       + 1)")]
     public const int IP_ADDRROW = (((((0 + 1) + 1) + 1) + 1) + 1);
 
+    /// <include file='IP.xml' path='doc/member[@name="IP.IP_FORWARDNUMBER"]/*' />
     [NativeTypeName("#define IP_FORWARDNUMBER (IP_ADDRROW         + 1)")]
     public const int IP_FORWARDNUMBER = ((((((0 + 1) + 1) + 1) + 1) + 1) + 1);
 
+    /// <include file='IP.xml' path='doc/member[@name="IP.IP_FORWARDTABLE"]/*' />
     [NativeTypeName("#define IP_FORWARDTABLE (IP_FORWARDNUMBER   + 1)")]
     public const int IP_FORWARDTABLE = (((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1);
 
+    /// <include file='IP.xml' path='doc/member[@name="IP.IP_FORWARDROW"]/*' />
     [NativeTypeName("#define IP_FORWARDROW (IP_FORWARDTABLE    + 1)")]
     public const int IP_FORWARDROW = ((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
 
+    /// <include file='IP.xml' path='doc/member[@name="IP.IP_NETTABLE"]/*' />
     [NativeTypeName("#define IP_NETTABLE (IP_FORWARDROW      + 1)")]
     public const int IP_NETTABLE = (((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
 
+    /// <include file='IP.xml' path='doc/member[@name="IP.IP_NETROW"]/*' />
     [NativeTypeName("#define IP_NETROW (IP_NETTABLE        + 1)")]
     public const int IP_NETROW = ((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
 }

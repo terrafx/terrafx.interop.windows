@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class ID
 {
+    /// <include file='ID.xml' path='doc/member[@name="ID.ID_CMD"]/*' />
     [NativeTypeName("#define ID_CMD 0xEC")]
     public const int ID_CMD = 0xEC;
 }

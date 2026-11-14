@@ -9,24 +9,31 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.navUserInitiatedAction"]/*' />
     [NativeTypeName("#define navUserInitiatedAction navReserved1")]
     public const BrowserNavConstants navUserInitiatedAction = navReserved1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.navDisableDownloadSave"]/*' />
     [NativeTypeName("#define navDisableDownloadSave navReserved2")]
     public const BrowserNavConstants navDisableDownloadSave = navReserved2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.navServerRedirectedVtabSwitch"]/*' />
     [NativeTypeName("#define navServerRedirectedVtabSwitch navReserved3")]
     public const BrowserNavConstants navServerRedirectedVtabSwitch = navReserved3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.navVtabSwitchNotUserInitiatedAction"]/*' />
     [NativeTypeName("#define navVtabSwitchNotUserInitiatedAction navReserved4")]
     public const BrowserNavConstants navVtabSwitchNotUserInitiatedAction = navReserved4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.navCheckDontShowNeedIE"]/*' />
     [NativeTypeName("#define navCheckDontShowNeedIE navReserved5")]
     public const BrowserNavConstants navCheckDontShowNeedIE = navReserved5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.navCheckDontShowNeedHVSI"]/*' />
     [NativeTypeName("#define navCheckDontShowNeedHVSI navReserved6")]
     public const BrowserNavConstants navCheckDontShowNeedHVSI = navReserved6;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.navCheckDontShowHVSINeedHost"]/*' />
     [NativeTypeName("#define navCheckDontShowHVSINeedHost navReserved7")]
     public const BrowserNavConstants navCheckDontShowHVSINeedHost = navReserved7;
 }

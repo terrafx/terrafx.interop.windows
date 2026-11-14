@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_TOUCH_COUNT"]/*' />
     [NativeTypeName("#define MAX_TOUCH_COUNT 256")]
     public const int MAX_TOUCH_COUNT = 256;
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_TOUCH_PREDICTION_FILTER_TAPS"]/*' />
     [NativeTypeName("#define MAX_TOUCH_PREDICTION_FILTER_TAPS 3")]
     public const int MAX_TOUCH_PREDICTION_FILTER_TAPS = 3;
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_LOGICALDPIOVERRIDE"]/*' />
     [NativeTypeName("#define MAX_LOGICALDPIOVERRIDE 2")]
     public const int MAX_LOGICALDPIOVERRIDE = 2;
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_STR_BLOCKREASON"]/*' />
     [NativeTypeName("#define MAX_STR_BLOCKREASON 256")]
     public const int MAX_STR_BLOCKREASON = 256;
 }

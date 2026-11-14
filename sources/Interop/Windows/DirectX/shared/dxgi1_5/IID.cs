@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIOutput5"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIOutput5
     {
@@ -38,6 +39,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGISwapChain4"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGISwapChain4
     {
@@ -63,6 +65,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIDevice4"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIDevice4
     {
@@ -88,6 +91,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIFactory5"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIFactory5
     {

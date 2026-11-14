@@ -9,6 +9,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_ERROR_MESSAGE_CHARS"]/*' />
     [NativeTypeName("#define MAX_ERROR_MESSAGE_CHARS 512")]
     public const int MAX_ERROR_MESSAGE_CHARS = 512;
 }

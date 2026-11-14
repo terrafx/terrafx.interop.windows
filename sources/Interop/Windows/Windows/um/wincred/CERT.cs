@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CERT
 {
+    /// <include file='CERT.xml' path='doc/member[@name="CERT.CERT_HASH_LENGTH"]/*' />
     [NativeTypeName("#define CERT_HASH_LENGTH 20")]
     public const int CERT_HASH_LENGTH = 20;
 }

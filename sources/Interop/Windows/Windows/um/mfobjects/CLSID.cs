@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CLSID
 {
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MFByteStreamProxyClassFactory"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_MFByteStreamProxyClassFactory
     {

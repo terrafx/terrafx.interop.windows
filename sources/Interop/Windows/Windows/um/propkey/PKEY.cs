@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class PKEY
 {
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Address_Country"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Address_Country
     {
@@ -38,6 +39,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Address_CountryCode"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Address_CountryCode
     {
@@ -64,6 +66,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Address_Region"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Address_Region
     {
@@ -90,6 +93,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Address_RegionCode"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Address_RegionCode
     {
@@ -116,6 +120,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Address_Town"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Address_Town
     {
@@ -142,6 +147,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Audio_ChannelCount"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Audio_ChannelCount
     {
@@ -168,6 +174,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Audio_Compression"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Audio_Compression
     {
@@ -194,6 +201,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Audio_EncodingBitrate"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Audio_EncodingBitrate
     {
@@ -220,6 +228,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Audio_Format"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Audio_Format
     {
@@ -246,6 +255,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Audio_IsVariableBitRate"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Audio_IsVariableBitRate
     {
@@ -272,6 +282,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Audio_PeakValue"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Audio_PeakValue
     {
@@ -298,6 +309,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Audio_SampleRate"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Audio_SampleRate
     {
@@ -324,6 +336,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Audio_SampleSize"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Audio_SampleSize
     {
@@ -350,6 +363,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Audio_StreamName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Audio_StreamName
     {
@@ -376,6 +390,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Audio_StreamNumber"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Audio_StreamNumber
     {
@@ -402,6 +417,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Calendar_Duration"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Calendar_Duration
     {
@@ -428,6 +444,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Calendar_IsOnline"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Calendar_IsOnline
     {
@@ -454,6 +471,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Calendar_IsRecurring"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Calendar_IsRecurring
     {
@@ -480,6 +498,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Calendar_Location"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Calendar_Location
     {
@@ -506,6 +525,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Calendar_OptionalAttendeeAddresses"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Calendar_OptionalAttendeeAddresses
     {
@@ -532,6 +552,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Calendar_OptionalAttendeeNames"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Calendar_OptionalAttendeeNames
     {
@@ -558,6 +579,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Calendar_OrganizerAddress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Calendar_OrganizerAddress
     {
@@ -584,6 +606,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Calendar_OrganizerName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Calendar_OrganizerName
     {
@@ -610,6 +633,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Calendar_ReminderTime"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Calendar_ReminderTime
     {
@@ -636,6 +660,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Calendar_RequiredAttendeeAddresses"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Calendar_RequiredAttendeeAddresses
     {
@@ -662,6 +687,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Calendar_RequiredAttendeeNames"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Calendar_RequiredAttendeeNames
     {
@@ -688,6 +714,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Calendar_Resources"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Calendar_Resources
     {
@@ -714,6 +741,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Calendar_ResponseStatus"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Calendar_ResponseStatus
     {
@@ -740,6 +768,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Calendar_ShowTimeAs"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Calendar_ShowTimeAs
     {
@@ -766,6 +795,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Calendar_ShowTimeAsText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Calendar_ShowTimeAsText
     {
@@ -792,6 +822,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Communication_AccountName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Communication_AccountName
     {
@@ -818,6 +849,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Communication_DateItemExpires"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Communication_DateItemExpires
     {
@@ -844,6 +876,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Communication_Direction"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Communication_Direction
     {
@@ -870,6 +903,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Communication_FollowupIconIndex"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Communication_FollowupIconIndex
     {
@@ -896,6 +930,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Communication_HeaderItem"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Communication_HeaderItem
     {
@@ -922,6 +957,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Communication_PolicyTag"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Communication_PolicyTag
     {
@@ -948,6 +984,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Communication_SecurityFlags"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Communication_SecurityFlags
     {
@@ -974,6 +1011,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Communication_Suffix"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Communication_Suffix
     {
@@ -1000,6 +1038,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Communication_TaskStatus"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Communication_TaskStatus
     {
@@ -1026,6 +1065,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Communication_TaskStatusText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Communication_TaskStatusText
     {
@@ -1052,6 +1092,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Computer_DecoratedFreeSpace"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Computer_DecoratedFreeSpace
     {
@@ -1078,6 +1119,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_AccountPictureDynamicVideo"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_AccountPictureDynamicVideo
     {
@@ -1104,6 +1146,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_AccountPictureLarge"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_AccountPictureLarge
     {
@@ -1130,6 +1173,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_AccountPictureSmall"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_AccountPictureSmall
     {
@@ -1156,6 +1200,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_Anniversary"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_Anniversary
     {
@@ -1182,6 +1227,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_AssistantName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_AssistantName
     {
@@ -1208,6 +1254,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_AssistantTelephone"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_AssistantTelephone
     {
@@ -1234,6 +1281,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_Birthday"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_Birthday
     {
@@ -1260,6 +1308,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessAddress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessAddress
     {
@@ -1286,6 +1335,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessAddress1Country"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessAddress1Country
     {
@@ -1312,6 +1362,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessAddress1Locality"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessAddress1Locality
     {
@@ -1338,6 +1389,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessAddress1PostalCode"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessAddress1PostalCode
     {
@@ -1364,6 +1416,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessAddress1Region"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessAddress1Region
     {
@@ -1390,6 +1443,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessAddress1Street"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessAddress1Street
     {
@@ -1416,6 +1470,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessAddress2Country"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessAddress2Country
     {
@@ -1442,6 +1497,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessAddress2Locality"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessAddress2Locality
     {
@@ -1468,6 +1524,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessAddress2PostalCode"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessAddress2PostalCode
     {
@@ -1494,6 +1551,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessAddress2Region"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessAddress2Region
     {
@@ -1520,6 +1578,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessAddress2Street"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessAddress2Street
     {
@@ -1546,6 +1605,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessAddress3Country"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessAddress3Country
     {
@@ -1572,6 +1632,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessAddress3Locality"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessAddress3Locality
     {
@@ -1598,6 +1659,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessAddress3PostalCode"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessAddress3PostalCode
     {
@@ -1624,6 +1686,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessAddress3Region"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessAddress3Region
     {
@@ -1650,6 +1713,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessAddress3Street"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessAddress3Street
     {
@@ -1676,6 +1740,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessAddressCity"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessAddressCity
     {
@@ -1702,6 +1767,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessAddressCountry"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessAddressCountry
     {
@@ -1728,6 +1794,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessAddressPostalCode"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessAddressPostalCode
     {
@@ -1754,6 +1821,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessAddressPostOfficeBox"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessAddressPostOfficeBox
     {
@@ -1780,6 +1848,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessAddressState"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessAddressState
     {
@@ -1806,6 +1875,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessAddressStreet"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessAddressStreet
     {
@@ -1832,6 +1902,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessEmailAddresses"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessEmailAddresses
     {
@@ -1858,6 +1929,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessFaxNumber"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessFaxNumber
     {
@@ -1884,6 +1956,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessHomePage"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessHomePage
     {
@@ -1910,6 +1983,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_BusinessTelephone"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_BusinessTelephone
     {
@@ -1936,6 +2010,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_CallbackTelephone"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_CallbackTelephone
     {
@@ -1962,6 +2037,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_CarTelephone"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_CarTelephone
     {
@@ -1988,6 +2064,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_Children"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_Children
     {
@@ -2014,6 +2091,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_CompanyMainTelephone"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_CompanyMainTelephone
     {
@@ -2040,6 +2118,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_ConnectedServiceDisplayName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_ConnectedServiceDisplayName
     {
@@ -2066,6 +2145,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_ConnectedServiceIdentities"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_ConnectedServiceIdentities
     {
@@ -2092,6 +2172,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_ConnectedServiceName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_ConnectedServiceName
     {
@@ -2118,6 +2199,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_ConnectedServiceSupportedActions"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_ConnectedServiceSupportedActions
     {
@@ -2144,6 +2226,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_DataSuppliers"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_DataSuppliers
     {
@@ -2170,6 +2253,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_Department"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_Department
     {
@@ -2196,6 +2280,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_DisplayBusinessPhoneNumbers"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_DisplayBusinessPhoneNumbers
     {
@@ -2222,6 +2307,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_DisplayHomePhoneNumbers"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_DisplayHomePhoneNumbers
     {
@@ -2248,6 +2334,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_DisplayMobilePhoneNumbers"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_DisplayMobilePhoneNumbers
     {
@@ -2274,6 +2361,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_DisplayOtherPhoneNumbers"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_DisplayOtherPhoneNumbers
     {
@@ -2300,6 +2388,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_EmailAddress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_EmailAddress
     {
@@ -2326,6 +2415,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_EmailAddress2"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_EmailAddress2
     {
@@ -2352,6 +2442,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_EmailAddress3"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_EmailAddress3
     {
@@ -2378,6 +2469,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_EmailAddresses"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_EmailAddresses
     {
@@ -2404,6 +2496,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_EmailName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_EmailName
     {
@@ -2430,6 +2523,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_FileAsName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_FileAsName
     {
@@ -2456,6 +2550,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_FirstName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_FirstName
     {
@@ -2482,6 +2577,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_FullName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_FullName
     {
@@ -2508,6 +2604,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_Gender"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_Gender
     {
@@ -2534,6 +2631,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_GenderValue"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_GenderValue
     {
@@ -2560,6 +2658,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_Hobbies"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_Hobbies
     {
@@ -2586,6 +2685,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_HomeAddress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_HomeAddress
     {
@@ -2612,6 +2712,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_HomeAddress1Country"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_HomeAddress1Country
     {
@@ -2638,6 +2739,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_HomeAddress1Locality"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_HomeAddress1Locality
     {
@@ -2664,6 +2766,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_HomeAddress1PostalCode"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_HomeAddress1PostalCode
     {
@@ -2690,6 +2793,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_HomeAddress1Region"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_HomeAddress1Region
     {
@@ -2716,6 +2820,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_HomeAddress1Street"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_HomeAddress1Street
     {
@@ -2742,6 +2847,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_HomeAddress2Country"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_HomeAddress2Country
     {
@@ -2768,6 +2874,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_HomeAddress2Locality"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_HomeAddress2Locality
     {
@@ -2794,6 +2901,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_HomeAddress2PostalCode"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_HomeAddress2PostalCode
     {
@@ -2820,6 +2928,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_HomeAddress2Region"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_HomeAddress2Region
     {
@@ -2846,6 +2955,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_HomeAddress2Street"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_HomeAddress2Street
     {
@@ -2872,6 +2982,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_HomeAddress3Country"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_HomeAddress3Country
     {
@@ -2898,6 +3009,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_HomeAddress3Locality"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_HomeAddress3Locality
     {
@@ -2924,6 +3036,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_HomeAddress3PostalCode"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_HomeAddress3PostalCode
     {
@@ -2950,6 +3063,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_HomeAddress3Region"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_HomeAddress3Region
     {
@@ -2976,6 +3090,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_HomeAddress3Street"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_HomeAddress3Street
     {
@@ -3002,6 +3117,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_HomeAddressCity"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_HomeAddressCity
     {
@@ -3028,6 +3144,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_HomeAddressCountry"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_HomeAddressCountry
     {
@@ -3054,6 +3171,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_HomeAddressPostalCode"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_HomeAddressPostalCode
     {
@@ -3080,6 +3198,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_HomeAddressPostOfficeBox"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_HomeAddressPostOfficeBox
     {
@@ -3106,6 +3225,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_HomeAddressState"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_HomeAddressState
     {
@@ -3132,6 +3252,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_HomeAddressStreet"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_HomeAddressStreet
     {
@@ -3158,6 +3279,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_HomeEmailAddresses"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_HomeEmailAddresses
     {
@@ -3184,6 +3306,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_HomeFaxNumber"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_HomeFaxNumber
     {
@@ -3210,6 +3333,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_HomeTelephone"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_HomeTelephone
     {
@@ -3236,6 +3360,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_IMAddress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_IMAddress
     {
@@ -3262,6 +3387,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_Initials"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_Initials
     {
@@ -3288,6 +3414,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_JA_CompanyNamePhonetic"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_JA_CompanyNamePhonetic
     {
@@ -3314,6 +3441,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_JA_FirstNamePhonetic"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_JA_FirstNamePhonetic
     {
@@ -3340,6 +3468,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_JA_LastNamePhonetic"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_JA_LastNamePhonetic
     {
@@ -3366,6 +3495,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_JobInfo1CompanyAddress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_JobInfo1CompanyAddress
     {
@@ -3392,6 +3522,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_JobInfo1CompanyName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_JobInfo1CompanyName
     {
@@ -3418,6 +3549,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_JobInfo1Department"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_JobInfo1Department
     {
@@ -3444,6 +3576,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_JobInfo1Manager"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_JobInfo1Manager
     {
@@ -3470,6 +3603,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_JobInfo1OfficeLocation"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_JobInfo1OfficeLocation
     {
@@ -3496,6 +3630,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_JobInfo1Title"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_JobInfo1Title
     {
@@ -3522,6 +3657,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_JobInfo1YomiCompanyName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_JobInfo1YomiCompanyName
     {
@@ -3548,6 +3684,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_JobInfo2CompanyAddress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_JobInfo2CompanyAddress
     {
@@ -3574,6 +3711,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_JobInfo2CompanyName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_JobInfo2CompanyName
     {
@@ -3600,6 +3738,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_JobInfo2Department"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_JobInfo2Department
     {
@@ -3626,6 +3765,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_JobInfo2Manager"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_JobInfo2Manager
     {
@@ -3652,6 +3792,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_JobInfo2OfficeLocation"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_JobInfo2OfficeLocation
     {
@@ -3678,6 +3819,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_JobInfo2Title"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_JobInfo2Title
     {
@@ -3704,6 +3846,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_JobInfo2YomiCompanyName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_JobInfo2YomiCompanyName
     {
@@ -3730,6 +3873,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_JobInfo3CompanyAddress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_JobInfo3CompanyAddress
     {
@@ -3756,6 +3900,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_JobInfo3CompanyName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_JobInfo3CompanyName
     {
@@ -3782,6 +3927,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_JobInfo3Department"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_JobInfo3Department
     {
@@ -3808,6 +3954,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_JobInfo3Manager"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_JobInfo3Manager
     {
@@ -3834,6 +3981,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_JobInfo3OfficeLocation"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_JobInfo3OfficeLocation
     {
@@ -3860,6 +4008,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_JobInfo3Title"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_JobInfo3Title
     {
@@ -3886,6 +4035,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_JobInfo3YomiCompanyName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_JobInfo3YomiCompanyName
     {
@@ -3912,6 +4062,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_JobTitle"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_JobTitle
     {
@@ -3938,6 +4089,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_Label"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_Label
     {
@@ -3964,6 +4116,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_LastName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_LastName
     {
@@ -3990,6 +4143,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_MailingAddress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_MailingAddress
     {
@@ -4016,6 +4170,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_MiddleName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_MiddleName
     {
@@ -4042,6 +4197,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_MobileTelephone"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_MobileTelephone
     {
@@ -4068,6 +4224,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_NickName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_NickName
     {
@@ -4094,6 +4251,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_OfficeLocation"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_OfficeLocation
     {
@@ -4120,6 +4278,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_OtherAddress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_OtherAddress
     {
@@ -4146,6 +4305,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_OtherAddress1Country"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_OtherAddress1Country
     {
@@ -4172,6 +4332,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_OtherAddress1Locality"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_OtherAddress1Locality
     {
@@ -4198,6 +4359,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_OtherAddress1PostalCode"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_OtherAddress1PostalCode
     {
@@ -4224,6 +4386,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_OtherAddress1Region"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_OtherAddress1Region
     {
@@ -4250,6 +4413,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_OtherAddress1Street"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_OtherAddress1Street
     {
@@ -4276,6 +4440,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_OtherAddress2Country"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_OtherAddress2Country
     {
@@ -4302,6 +4467,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_OtherAddress2Locality"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_OtherAddress2Locality
     {
@@ -4328,6 +4494,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_OtherAddress2PostalCode"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_OtherAddress2PostalCode
     {
@@ -4354,6 +4521,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_OtherAddress2Region"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_OtherAddress2Region
     {
@@ -4380,6 +4548,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_OtherAddress2Street"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_OtherAddress2Street
     {
@@ -4406,6 +4575,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_OtherAddress3Country"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_OtherAddress3Country
     {
@@ -4432,6 +4602,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_OtherAddress3Locality"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_OtherAddress3Locality
     {
@@ -4458,6 +4629,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_OtherAddress3PostalCode"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_OtherAddress3PostalCode
     {
@@ -4484,6 +4656,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_OtherAddress3Region"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_OtherAddress3Region
     {
@@ -4510,6 +4683,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_OtherAddress3Street"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_OtherAddress3Street
     {
@@ -4536,6 +4710,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_OtherAddressCity"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_OtherAddressCity
     {
@@ -4562,6 +4737,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_OtherAddressCountry"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_OtherAddressCountry
     {
@@ -4588,6 +4764,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_OtherAddressPostalCode"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_OtherAddressPostalCode
     {
@@ -4614,6 +4791,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_OtherAddressPostOfficeBox"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_OtherAddressPostOfficeBox
     {
@@ -4640,6 +4818,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_OtherAddressState"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_OtherAddressState
     {
@@ -4666,6 +4845,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_OtherAddressStreet"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_OtherAddressStreet
     {
@@ -4692,6 +4872,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_OtherEmailAddresses"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_OtherEmailAddresses
     {
@@ -4718,6 +4899,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_PagerTelephone"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_PagerTelephone
     {
@@ -4744,6 +4926,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_PersonalTitle"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_PersonalTitle
     {
@@ -4770,6 +4953,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_PhoneNumbersCanonical"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_PhoneNumbersCanonical
     {
@@ -4796,6 +4980,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_Prefix"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_Prefix
     {
@@ -4822,6 +5007,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_PrimaryAddressCity"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_PrimaryAddressCity
     {
@@ -4848,6 +5034,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_PrimaryAddressCountry"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_PrimaryAddressCountry
     {
@@ -4874,6 +5061,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_PrimaryAddressPostalCode"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_PrimaryAddressPostalCode
     {
@@ -4900,6 +5088,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_PrimaryAddressPostOfficeBox"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_PrimaryAddressPostOfficeBox
     {
@@ -4926,6 +5115,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_PrimaryAddressState"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_PrimaryAddressState
     {
@@ -4952,6 +5142,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_PrimaryAddressStreet"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_PrimaryAddressStreet
     {
@@ -4978,6 +5169,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_PrimaryEmailAddress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_PrimaryEmailAddress
     {
@@ -5004,6 +5196,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_PrimaryTelephone"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_PrimaryTelephone
     {
@@ -5030,6 +5223,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_Profession"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_Profession
     {
@@ -5056,6 +5250,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_SpouseName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_SpouseName
     {
@@ -5082,6 +5277,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_Suffix"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_Suffix
     {
@@ -5108,6 +5304,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_TelexNumber"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_TelexNumber
     {
@@ -5134,6 +5331,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_TTYTDDTelephone"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_TTYTDDTelephone
     {
@@ -5160,6 +5358,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_WebPage"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_WebPage
     {
@@ -5186,6 +5385,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_Webpage2"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_Webpage2
     {
@@ -5212,6 +5412,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Contact_Webpage3"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Contact_Webpage3
     {
@@ -5238,6 +5439,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AcquisitionID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AcquisitionID
     {
@@ -5264,6 +5466,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ApplicationDefinedProperties"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ApplicationDefinedProperties
     {
@@ -5290,6 +5493,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ApplicationName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ApplicationName
     {
@@ -5316,6 +5520,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AppZoneIdentifier"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AppZoneIdentifier
     {
@@ -5342,6 +5547,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Author"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Author
     {
@@ -5368,6 +5574,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_CachedFileUpdaterContentIdForConflictResolution"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_CachedFileUpdaterContentIdForConflictResolution
     {
@@ -5394,6 +5601,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_CachedFileUpdaterContentIdForStream"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_CachedFileUpdaterContentIdForStream
     {
@@ -5420,6 +5628,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Capacity"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Capacity
     {
@@ -5446,6 +5655,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Category"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Category
     {
@@ -5472,6 +5682,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Comment"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Comment
     {
@@ -5498,6 +5709,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Company"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Company
     {
@@ -5524,6 +5736,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ComputerName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ComputerName
     {
@@ -5550,6 +5763,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ContainedItems"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ContainedItems
     {
@@ -5576,6 +5790,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ContentId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ContentId
     {
@@ -5602,6 +5817,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ContentStatus"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ContentStatus
     {
@@ -5628,6 +5844,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ContentType"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ContentType
     {
@@ -5654,6 +5871,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ContentUri"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ContentUri
     {
@@ -5680,6 +5898,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Copyright"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Copyright
     {
@@ -5706,6 +5925,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_CreatorAppId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_CreatorAppId
     {
@@ -5732,6 +5952,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_CreatorOpenWithUIOptions"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_CreatorOpenWithUIOptions
     {
@@ -5758,6 +5979,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DataObjectFormat"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DataObjectFormat
     {
@@ -5784,6 +6006,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DateAccessed"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DateAccessed
     {
@@ -5810,6 +6033,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DateAcquired"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DateAcquired
     {
@@ -5836,6 +6060,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DateArchived"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DateArchived
     {
@@ -5862,6 +6087,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DateCompleted"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DateCompleted
     {
@@ -5888,6 +6114,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DateCreated"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DateCreated
     {
@@ -5914,6 +6141,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DateImported"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DateImported
     {
@@ -5940,6 +6168,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DateModified"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DateModified
     {
@@ -5966,6 +6195,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DefaultSaveLocationDisplay"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DefaultSaveLocationDisplay
     {
@@ -5992,6 +6222,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DueDate"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DueDate
     {
@@ -6018,6 +6249,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_EndDate"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_EndDate
     {
@@ -6044,6 +6276,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ExpandoProperties"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ExpandoProperties
     {
@@ -6070,6 +6303,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_FileAllocationSize"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_FileAllocationSize
     {
@@ -6096,6 +6330,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_FileAttributes"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_FileAttributes
     {
@@ -6122,6 +6357,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_FileCount"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_FileCount
     {
@@ -6148,6 +6384,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_FileDescription"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_FileDescription
     {
@@ -6174,6 +6411,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_FileExtension"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_FileExtension
     {
@@ -6200,6 +6438,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_FileFRN"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_FileFRN
     {
@@ -6226,6 +6465,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_FileName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_FileName
     {
@@ -6252,6 +6492,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_FileOfflineAvailabilityStatus"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_FileOfflineAvailabilityStatus
     {
@@ -6278,6 +6519,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_FileOwner"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_FileOwner
     {
@@ -6304,6 +6546,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_FilePlaceholderStatus"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_FilePlaceholderStatus
     {
@@ -6330,6 +6573,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_FileVersion"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_FileVersion
     {
@@ -6356,6 +6600,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_FindData"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_FindData
     {
@@ -6382,6 +6627,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_FlagColor"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_FlagColor
     {
@@ -6408,6 +6654,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_FlagColorText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_FlagColorText
     {
@@ -6434,6 +6681,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_FlagStatus"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_FlagStatus
     {
@@ -6460,6 +6708,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_FlagStatusText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_FlagStatusText
     {
@@ -6486,6 +6735,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_FolderKind"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_FolderKind
     {
@@ -6512,6 +6762,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_FolderNameDisplay"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_FolderNameDisplay
     {
@@ -6538,6 +6789,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_FreeSpace"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_FreeSpace
     {
@@ -6564,6 +6816,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_FullText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_FullText
     {
@@ -6590,6 +6843,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_HighKeywords"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_HighKeywords
     {
@@ -6616,6 +6870,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Identity"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Identity
     {
@@ -6642,6 +6897,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Identity_Blob"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Identity_Blob
     {
@@ -6668,6 +6924,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Identity_DisplayName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Identity_DisplayName
     {
@@ -6694,6 +6951,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Identity_InternetSid"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Identity_InternetSid
     {
@@ -6720,6 +6978,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Identity_IsMeIdentity"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Identity_IsMeIdentity
     {
@@ -6746,6 +7005,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Identity_KeyProviderContext"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Identity_KeyProviderContext
     {
@@ -6772,6 +7032,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Identity_KeyProviderName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Identity_KeyProviderName
     {
@@ -6798,6 +7059,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Identity_LogonStatusString"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Identity_LogonStatusString
     {
@@ -6824,6 +7086,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Identity_PrimaryEmailAddress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Identity_PrimaryEmailAddress
     {
@@ -6850,6 +7113,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Identity_PrimarySid"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Identity_PrimarySid
     {
@@ -6876,6 +7140,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Identity_ProviderData"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Identity_ProviderData
     {
@@ -6902,6 +7167,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Identity_ProviderID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Identity_ProviderID
     {
@@ -6928,6 +7194,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Identity_QualifiedUserName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Identity_QualifiedUserName
     {
@@ -6954,6 +7221,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Identity_UniqueID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Identity_UniqueID
     {
@@ -6980,6 +7248,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Identity_UserName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Identity_UserName
     {
@@ -7006,6 +7275,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_IdentityProvider_Name"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_IdentityProvider_Name
     {
@@ -7032,6 +7302,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_IdentityProvider_Picture"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_IdentityProvider_Picture
     {
@@ -7058,6 +7329,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ImageParsingName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ImageParsingName
     {
@@ -7084,6 +7356,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Importance"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Importance
     {
@@ -7110,6 +7383,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ImportanceText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ImportanceText
     {
@@ -7136,6 +7410,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_IsAttachment"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_IsAttachment
     {
@@ -7162,6 +7437,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_IsDefaultNonOwnerSaveLocation"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_IsDefaultNonOwnerSaveLocation
     {
@@ -7188,6 +7464,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_IsDefaultSaveLocation"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_IsDefaultSaveLocation
     {
@@ -7214,6 +7491,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_IsDeleted"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_IsDeleted
     {
@@ -7240,6 +7518,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_IsEncrypted"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_IsEncrypted
     {
@@ -7266,6 +7545,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_IsFlagged"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_IsFlagged
     {
@@ -7292,6 +7572,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_IsFlaggedComplete"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_IsFlaggedComplete
     {
@@ -7318,6 +7599,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_IsIncomplete"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_IsIncomplete
     {
@@ -7344,6 +7626,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_IsLocationSupported"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_IsLocationSupported
     {
@@ -7370,6 +7653,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_IsPinnedToNameSpaceTree"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_IsPinnedToNameSpaceTree
     {
@@ -7396,6 +7680,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_IsRead"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_IsRead
     {
@@ -7422,6 +7707,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_IsSearchOnlyItem"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_IsSearchOnlyItem
     {
@@ -7448,6 +7734,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_IsSendToTarget"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_IsSendToTarget
     {
@@ -7474,6 +7761,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_IsShared"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_IsShared
     {
@@ -7500,6 +7788,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ItemAuthors"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ItemAuthors
     {
@@ -7526,6 +7815,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ItemClassType"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ItemClassType
     {
@@ -7552,6 +7842,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ItemDate"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ItemDate
     {
@@ -7578,6 +7869,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ItemFolderNameDisplay"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ItemFolderNameDisplay
     {
@@ -7604,6 +7896,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ItemFolderPathDisplay"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ItemFolderPathDisplay
     {
@@ -7630,6 +7923,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ItemFolderPathDisplayNarrow"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ItemFolderPathDisplayNarrow
     {
@@ -7683,6 +7977,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ItemName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ItemName
     {
@@ -7709,6 +8004,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ItemNameDisplay"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ItemNameDisplay
     {
@@ -7735,6 +8031,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ItemNameDisplayWithoutExtension"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ItemNameDisplayWithoutExtension
     {
@@ -7761,6 +8058,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ItemNamePrefix"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ItemNamePrefix
     {
@@ -7787,6 +8085,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ItemNameSortOverride"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ItemNameSortOverride
     {
@@ -7813,6 +8112,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ItemParticipants"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ItemParticipants
     {
@@ -7839,6 +8139,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ItemPathDisplay"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ItemPathDisplay
     {
@@ -7865,6 +8166,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ItemPathDisplayNarrow"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ItemPathDisplayNarrow
     {
@@ -7891,6 +8193,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ItemSubType"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ItemSubType
     {
@@ -7917,6 +8220,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ItemType"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ItemType
     {
@@ -7943,6 +8247,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ItemTypeText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ItemTypeText
     {
@@ -7969,6 +8274,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ItemUrl"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ItemUrl
     {
@@ -7995,6 +8301,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Keywords"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Keywords
     {
@@ -8021,6 +8328,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Kind"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Kind
     {
@@ -8047,6 +8355,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_KindText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_KindText
     {
@@ -8073,6 +8382,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Language"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Language
     {
@@ -8099,6 +8409,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_LastSyncError"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_LastSyncError
     {
@@ -8125,6 +8436,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_LastSyncWarning"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_LastSyncWarning
     {
@@ -8151,6 +8463,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_LastWriterPackageFamilyName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_LastWriterPackageFamilyName
     {
@@ -8177,6 +8490,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_LowKeywords"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_LowKeywords
     {
@@ -8203,6 +8517,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_MediumKeywords"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_MediumKeywords
     {
@@ -8229,6 +8544,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_MileageInformation"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_MileageInformation
     {
@@ -8255,6 +8571,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_MIMEType"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_MIMEType
     {
@@ -8281,6 +8598,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Null"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Null
     {
@@ -8307,6 +8625,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_OfflineAvailability"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_OfflineAvailability
     {
@@ -8333,6 +8652,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_OfflineStatus"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_OfflineStatus
     {
@@ -8359,6 +8679,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_OriginalFileName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_OriginalFileName
     {
@@ -8385,6 +8706,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_OwnerSID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_OwnerSID
     {
@@ -8411,6 +8733,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ParentalRating"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ParentalRating
     {
@@ -8437,6 +8760,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ParentalRatingReason"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ParentalRatingReason
     {
@@ -8463,6 +8787,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ParentalRatingsOrganization"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ParentalRatingsOrganization
     {
@@ -8489,6 +8814,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ParsingBindContext"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ParsingBindContext
     {
@@ -8515,6 +8841,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ParsingName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ParsingName
     {
@@ -8541,6 +8868,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ParsingPath"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ParsingPath
     {
@@ -8567,6 +8895,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PerceivedType"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PerceivedType
     {
@@ -8593,6 +8922,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PercentFull"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PercentFull
     {
@@ -8619,6 +8949,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Priority"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Priority
     {
@@ -8645,6 +8976,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PriorityText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PriorityText
     {
@@ -8671,6 +9003,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Project"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Project
     {
@@ -8697,6 +9030,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ProviderItemID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ProviderItemID
     {
@@ -8723,6 +9057,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Rating"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Rating
     {
@@ -8749,6 +9084,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_RatingText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_RatingText
     {
@@ -8775,6 +9111,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_RemoteConflictingFile"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_RemoteConflictingFile
     {
@@ -8801,6 +9138,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Security_AllowedEnterpriseDataProtectionIdentities"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Security_AllowedEnterpriseDataProtectionIdentities
     {
@@ -8827,6 +9165,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Security_EncryptionOwners"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Security_EncryptionOwners
     {
@@ -8853,6 +9192,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Security_EncryptionOwnersDisplay"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Security_EncryptionOwnersDisplay
     {
@@ -8879,6 +9219,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Sensitivity"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Sensitivity
     {
@@ -8905,6 +9246,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_SensitivityText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_SensitivityText
     {
@@ -8931,6 +9273,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_SFGAOFlags"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_SFGAOFlags
     {
@@ -8957,6 +9300,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_SharedWith"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_SharedWith
     {
@@ -8983,6 +9327,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ShareUserRating"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ShareUserRating
     {
@@ -9009,6 +9354,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_SharingStatus"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_SharingStatus
     {
@@ -9035,6 +9381,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Shell_OmitFromView"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Shell_OmitFromView
     {
@@ -9061,6 +9408,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_SimpleRating"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_SimpleRating
     {
@@ -9087,6 +9435,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Size"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Size
     {
@@ -9113,6 +9462,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_SoftwareUsed"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_SoftwareUsed
     {
@@ -9139,6 +9489,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_SourceItem"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_SourceItem
     {
@@ -9165,6 +9516,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_SourcePackageFamilyName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_SourcePackageFamilyName
     {
@@ -9191,6 +9543,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StartDate"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StartDate
     {
@@ -9217,6 +9570,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Status"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Status
     {
@@ -9243,6 +9597,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StorageProviderCallerVersionInformation"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StorageProviderCallerVersionInformation
     {
@@ -9269,6 +9624,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StorageProviderCustomPrimaryIcon"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StorageProviderCustomPrimaryIcon
     {
@@ -9295,6 +9651,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StorageProviderError"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StorageProviderError
     {
@@ -9321,6 +9678,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StorageProviderFileChecksum"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StorageProviderFileChecksum
     {
@@ -9347,6 +9705,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StorageProviderFileCreatedBy"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StorageProviderFileCreatedBy
     {
@@ -9373,6 +9732,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StorageProviderFileDateShared"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StorageProviderFileDateShared
     {
@@ -9399,6 +9759,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StorageProviderFileFlags"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StorageProviderFileFlags
     {
@@ -9425,6 +9786,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StorageProviderFileHasConflict"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StorageProviderFileHasConflict
     {
@@ -9451,6 +9813,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StorageProviderFileIdentifier"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StorageProviderFileIdentifier
     {
@@ -9477,6 +9840,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StorageProviderFileModifiedBy"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StorageProviderFileModifiedBy
     {
@@ -9503,6 +9867,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StorageProviderFileRemoteLocation"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StorageProviderFileRemoteLocation
     {
@@ -9529,6 +9894,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StorageProviderFileRemoteUri"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StorageProviderFileRemoteUri
     {
@@ -9555,6 +9921,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StorageProviderFileSharedBy"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StorageProviderFileSharedBy
     {
@@ -9581,6 +9948,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StorageProviderFileVersion"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StorageProviderFileVersion
     {
@@ -9607,6 +9975,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StorageProviderFileVersionWaterline"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StorageProviderFileVersionWaterline
     {
@@ -9633,6 +10002,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StorageProviderFullyQualifiedId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StorageProviderFullyQualifiedId
     {
@@ -9659,6 +10029,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StorageProviderId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StorageProviderId
     {
@@ -9685,6 +10056,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StorageProviderShareStatuses"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StorageProviderShareStatuses
     {
@@ -9711,6 +10083,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StorageProviderSharingStatus"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StorageProviderSharingStatus
     {
@@ -9737,6 +10110,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StorageProviderStatus"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StorageProviderStatus
     {
@@ -9763,6 +10137,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StorageProviderUserAccountKind"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StorageProviderUserAccountKind
     {
@@ -9789,6 +10164,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StorageProviderUserId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StorageProviderUserId
     {
@@ -9815,6 +10191,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Subject"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Subject
     {
@@ -9841,6 +10218,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_SyncTransferStatus"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_SyncTransferStatus
     {
@@ -9867,6 +10245,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Thumbnail"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Thumbnail
     {
@@ -9893,6 +10272,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ThumbnailCacheId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ThumbnailCacheId
     {
@@ -9919,6 +10299,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ThumbnailStream"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ThumbnailStream
     {
@@ -9945,6 +10326,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Title"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Title
     {
@@ -9971,6 +10353,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_TitleSortOverride"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_TitleSortOverride
     {
@@ -9997,6 +10380,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_TotalFileSize"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_TotalFileSize
     {
@@ -10023,6 +10407,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Trademarks"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Trademarks
     {
@@ -10049,6 +10434,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_TransferOrder"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_TransferOrder
     {
@@ -10075,6 +10461,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_TransferPosition"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_TransferPosition
     {
@@ -10101,6 +10488,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_TransferSize"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_TransferSize
     {
@@ -10127,6 +10515,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_VolumeId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_VolumeId
     {
@@ -10153,6 +10542,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ZoneIdentifier"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ZoneIdentifier
     {
@@ -10179,6 +10569,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Device_PrinterURL"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Device_PrinterURL
     {
@@ -10205,6 +10596,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_Bluetooth_DeviceAddress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_Bluetooth_DeviceAddress
     {
@@ -10231,6 +10623,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_Bluetooth_Flags"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_Bluetooth_Flags
     {
@@ -10257,6 +10650,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_Bluetooth_LastConnectedTime"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_Bluetooth_LastConnectedTime
     {
@@ -10283,6 +10677,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_Bluetooth_Manufacturer"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_Bluetooth_Manufacturer
     {
@@ -10309,6 +10704,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_Bluetooth_ModelNumber"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_Bluetooth_ModelNumber
     {
@@ -10335,6 +10731,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_Bluetooth_ProductId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_Bluetooth_ProductId
     {
@@ -10361,6 +10758,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_Bluetooth_ProductVersion"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_Bluetooth_ProductVersion
     {
@@ -10387,6 +10785,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_Bluetooth_ServiceGuid"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_Bluetooth_ServiceGuid
     {
@@ -10413,6 +10812,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_Bluetooth_VendorId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_Bluetooth_VendorId
     {
@@ -10439,6 +10839,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_Bluetooth_VendorIdSource"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_Bluetooth_VendorIdSource
     {
@@ -10465,6 +10866,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_Hid_IsReadOnly"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_Hid_IsReadOnly
     {
@@ -10491,6 +10893,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_Hid_ProductId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_Hid_ProductId
     {
@@ -10517,6 +10920,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_Hid_UsageId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_Hid_UsageId
     {
@@ -10543,6 +10947,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_Hid_UsagePage"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_Hid_UsagePage
     {
@@ -10569,6 +10974,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_Hid_VendorId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_Hid_VendorId
     {
@@ -10595,6 +11001,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_Hid_VersionNumber"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_Hid_VersionNumber
     {
@@ -10621,6 +11028,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_PrinterDriverDirectory"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_PrinterDriverDirectory
     {
@@ -10647,6 +11055,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_PrinterDriverName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_PrinterDriverName
     {
@@ -10673,6 +11082,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_PrinterEnumerationFlag"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_PrinterEnumerationFlag
     {
@@ -10699,6 +11109,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_PrinterName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_PrinterName
     {
@@ -10725,6 +11136,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_PrinterPortName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_PrinterPortName
     {
@@ -10751,6 +11163,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_Proximity_SupportsNfc"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_Proximity_SupportsNfc
     {
@@ -10777,6 +11190,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_Serial_PortName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_Serial_PortName
     {
@@ -10803,6 +11217,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_Serial_UsbProductId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_Serial_UsbProductId
     {
@@ -10829,6 +11244,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_Serial_UsbVendorId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_Serial_UsbVendorId
     {
@@ -10855,6 +11271,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_WinUsb_DeviceInterfaceClasses"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_WinUsb_DeviceInterfaceClasses
     {
@@ -10881,6 +11298,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_WinUsb_UsbClass"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_WinUsb_UsbClass
     {
@@ -10907,6 +11325,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_WinUsb_UsbProductId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_WinUsb_UsbProductId
     {
@@ -10933,6 +11352,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_WinUsb_UsbProtocol"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_WinUsb_UsbProtocol
     {
@@ -10959,6 +11379,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_WinUsb_UsbSubClass"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_WinUsb_UsbSubClass
     {
@@ -10985,6 +11406,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DeviceInterface_WinUsb_UsbVendorId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DeviceInterface_WinUsb_UsbVendorId
     {
@@ -11011,6 +11433,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_AepId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_AepId
     {
@@ -11037,6 +11460,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_Bluetooth_Cod_Major"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_Bluetooth_Cod_Major
     {
@@ -11063,6 +11487,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_Bluetooth_Cod_Minor"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_Bluetooth_Cod_Minor
     {
@@ -11089,6 +11514,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_Bluetooth_Cod_Services_Audio"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_Bluetooth_Cod_Services_Audio
     {
@@ -11115,6 +11541,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_Bluetooth_Cod_Services_Capturing"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_Bluetooth_Cod_Services_Capturing
     {
@@ -11141,6 +11568,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_Bluetooth_Cod_Services_Information"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_Bluetooth_Cod_Services_Information
     {
@@ -11167,6 +11595,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_Bluetooth_Cod_Services_LimitedDiscovery"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_Bluetooth_Cod_Services_LimitedDiscovery
     {
@@ -11193,6 +11622,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_Bluetooth_Cod_Services_Networking"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_Bluetooth_Cod_Services_Networking
     {
@@ -11219,6 +11649,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_Bluetooth_Cod_Services_ObjectXfer"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_Bluetooth_Cod_Services_ObjectXfer
     {
@@ -11245,6 +11676,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_Bluetooth_Cod_Services_Positioning"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_Bluetooth_Cod_Services_Positioning
     {
@@ -11271,6 +11703,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_Bluetooth_Cod_Services_Rendering"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_Bluetooth_Cod_Services_Rendering
     {
@@ -11297,6 +11730,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_Bluetooth_Cod_Services_Telephony"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_Bluetooth_Cod_Services_Telephony
     {
@@ -11323,6 +11757,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_Bluetooth_LastSeenTime"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_Bluetooth_LastSeenTime
     {
@@ -11349,6 +11784,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_Bluetooth_Le_AddressType"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_Bluetooth_Le_AddressType
     {
@@ -11375,6 +11811,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_Bluetooth_Le_Appearance"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_Bluetooth_Le_Appearance
     {
@@ -11401,6 +11838,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_Bluetooth_Le_Appearance_Category"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_Bluetooth_Le_Appearance_Category
     {
@@ -11427,6 +11865,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_Bluetooth_Le_Appearance_Subcategory"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_Bluetooth_Le_Appearance_Subcategory
     {
@@ -11453,6 +11892,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_Bluetooth_Le_IsCallControlClient"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_Bluetooth_Le_IsCallControlClient
     {
@@ -11479,6 +11919,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_Bluetooth_Le_IsConnectable"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_Bluetooth_Le_IsConnectable
     {
@@ -11505,6 +11946,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_CanPair"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_CanPair
     {
@@ -11531,6 +11973,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_Category"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_Category
     {
@@ -11557,6 +12000,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_ContainerId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_ContainerId
     {
@@ -11583,6 +12027,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_DeviceAddress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_DeviceAddress
     {
@@ -11609,6 +12054,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_IsConnected"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_IsConnected
     {
@@ -11635,6 +12081,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_IsPaired"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_IsPaired
     {
@@ -11661,6 +12108,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_IsPresent"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_IsPresent
     {
@@ -11687,6 +12135,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_Manufacturer"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_Manufacturer
     {
@@ -11713,6 +12162,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_ModelId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_ModelId
     {
@@ -11739,6 +12189,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_ModelName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_ModelName
     {
@@ -11765,6 +12216,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_PointOfService_ConnectionTypes"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_PointOfService_ConnectionTypes
     {
@@ -11791,6 +12243,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_ProtocolId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_ProtocolId
     {
@@ -11817,6 +12270,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Aep_SignalStrength"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Aep_SignalStrength
     {
@@ -11843,6 +12297,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepContainer_CanPair"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepContainer_CanPair
     {
@@ -11869,6 +12324,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepContainer_Categories"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepContainer_Categories
     {
@@ -11895,6 +12351,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepContainer_Children"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepContainer_Children
     {
@@ -11921,6 +12378,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepContainer_ContainerId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepContainer_ContainerId
     {
@@ -11947,6 +12405,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepContainer_DialProtocol_InstalledApplications"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepContainer_DialProtocol_InstalledApplications
     {
@@ -11973,6 +12432,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepContainer_IsPaired"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepContainer_IsPaired
     {
@@ -11999,6 +12459,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepContainer_IsPresent"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepContainer_IsPresent
     {
@@ -12025,6 +12486,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepContainer_Manufacturer"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepContainer_Manufacturer
     {
@@ -12051,6 +12513,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepContainer_ModelIds"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepContainer_ModelIds
     {
@@ -12077,6 +12540,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepContainer_ModelName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepContainer_ModelName
     {
@@ -12103,6 +12567,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepContainer_ProtocolIds"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepContainer_ProtocolIds
     {
@@ -12129,6 +12594,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepContainer_SupportedUriSchemes"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepContainer_SupportedUriSchemes
     {
@@ -12155,6 +12621,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepContainer_SupportsAudio"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepContainer_SupportsAudio
     {
@@ -12181,6 +12648,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepContainer_SupportsCapturing"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepContainer_SupportsCapturing
     {
@@ -12207,6 +12675,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepContainer_SupportsImages"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepContainer_SupportsImages
     {
@@ -12233,6 +12702,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepContainer_SupportsInformation"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepContainer_SupportsInformation
     {
@@ -12259,6 +12729,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepContainer_SupportsLimitedDiscovery"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepContainer_SupportsLimitedDiscovery
     {
@@ -12285,6 +12756,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepContainer_SupportsNetworking"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepContainer_SupportsNetworking
     {
@@ -12311,6 +12783,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepContainer_SupportsObjectTransfer"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepContainer_SupportsObjectTransfer
     {
@@ -12337,6 +12810,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepContainer_SupportsPositioning"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepContainer_SupportsPositioning
     {
@@ -12363,6 +12837,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepContainer_SupportsRendering"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepContainer_SupportsRendering
     {
@@ -12389,6 +12864,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepContainer_SupportsTelephony"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepContainer_SupportsTelephony
     {
@@ -12415,6 +12891,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepContainer_SupportsVideo"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepContainer_SupportsVideo
     {
@@ -12441,6 +12918,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepService_AepId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepService_AepId
     {
@@ -12467,6 +12945,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepService_Bluetooth_CacheMode"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepService_Bluetooth_CacheMode
     {
@@ -12493,6 +12972,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepService_Bluetooth_ServiceGuid"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepService_Bluetooth_ServiceGuid
     {
@@ -12519,6 +12999,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepService_Bluetooth_TargetDevice"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepService_Bluetooth_TargetDevice
     {
@@ -12545,6 +13026,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepService_ContainerId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepService_ContainerId
     {
@@ -12571,6 +13053,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepService_FriendlyName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepService_FriendlyName
     {
@@ -12597,6 +13080,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepService_IoT_ServiceInterfaces"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepService_IoT_ServiceInterfaces
     {
@@ -12623,6 +13107,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepService_ParentAepIsPaired"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepService_ParentAepIsPaired
     {
@@ -12649,6 +13134,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepService_ProtocolId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepService_ProtocolId
     {
@@ -12675,6 +13161,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepService_ServiceClassId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepService_ServiceClassId
     {
@@ -12701,6 +13188,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AepService_ServiceId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AepService_ServiceId
     {
@@ -12727,6 +13215,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AppPackageFamilyName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AppPackageFamilyName
     {
@@ -12753,6 +13242,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AudioDevice_Microphone_EqCoefficientsDb"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AudioDevice_Microphone_EqCoefficientsDb
     {
@@ -12779,6 +13269,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AudioDevice_Microphone_IsFarField"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AudioDevice_Microphone_IsFarField
     {
@@ -12805,6 +13296,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AudioDevice_Microphone_SensitivityInDbfs"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AudioDevice_Microphone_SensitivityInDbfs
     {
@@ -12831,6 +13323,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AudioDevice_Microphone_SensitivityInDbfs2"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AudioDevice_Microphone_SensitivityInDbfs2
     {
@@ -12857,6 +13350,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AudioDevice_Microphone_SignalToNoiseRatioInDb"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AudioDevice_Microphone_SignalToNoiseRatioInDb
     {
@@ -12883,6 +13377,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AudioDevice_RawProcessingSupported"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AudioDevice_RawProcessingSupported
     {
@@ -12909,6 +13404,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_AudioDevice_SpeechProcessingSupported"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_AudioDevice_SpeechProcessingSupported
     {
@@ -12935,6 +13431,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_BatteryLife"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_BatteryLife
     {
@@ -12961,6 +13458,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_BatteryPlusCharging"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_BatteryPlusCharging
     {
@@ -12987,6 +13485,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_BatteryPlusChargingText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_BatteryPlusChargingText
     {
@@ -13013,6 +13512,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Category"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Category
     {
@@ -13039,6 +13539,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_CategoryGroup"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_CategoryGroup
     {
@@ -13065,6 +13566,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_CategoryIds"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_CategoryIds
     {
@@ -13091,6 +13593,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_CategoryPlural"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_CategoryPlural
     {
@@ -13117,6 +13620,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_ChallengeAep"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_ChallengeAep
     {
@@ -13143,6 +13647,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_ChargingState"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_ChargingState
     {
@@ -13169,6 +13674,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Children"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Children
     {
@@ -13195,6 +13701,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_ClassGuid"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_ClassGuid
     {
@@ -13221,6 +13728,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_CompatibleIds"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_CompatibleIds
     {
@@ -13247,6 +13755,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Connected"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Connected
     {
@@ -13273,6 +13782,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_ContainerId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_ContainerId
     {
@@ -13299,6 +13809,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_DefaultTooltip"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_DefaultTooltip
     {
@@ -13325,6 +13836,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_DeviceCapabilities"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_DeviceCapabilities
     {
@@ -13351,6 +13863,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_DeviceCharacteristics"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_DeviceCharacteristics
     {
@@ -13377,6 +13890,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_DeviceDescription1"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_DeviceDescription1
     {
@@ -13403,6 +13917,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_DeviceDescription2"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_DeviceDescription2
     {
@@ -13429,6 +13944,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_DeviceHasProblem"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_DeviceHasProblem
     {
@@ -13455,6 +13971,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_DeviceInstanceId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_DeviceInstanceId
     {
@@ -13481,6 +13998,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_DeviceManufacturer"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_DeviceManufacturer
     {
@@ -13507,6 +14025,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_DevObjectType"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_DevObjectType
     {
@@ -13533,6 +14052,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_DialProtocol_InstalledApplications"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_DialProtocol_InstalledApplications
     {
@@ -13559,6 +14079,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_DiscoveryMethod"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_DiscoveryMethod
     {
@@ -13585,6 +14106,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Dnssd_Domain"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Dnssd_Domain
     {
@@ -13611,6 +14133,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Dnssd_FullName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Dnssd_FullName
     {
@@ -13637,6 +14160,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Dnssd_HostName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Dnssd_HostName
     {
@@ -13663,6 +14187,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Dnssd_InstanceName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Dnssd_InstanceName
     {
@@ -13689,6 +14214,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Dnssd_NetworkAdapterId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Dnssd_NetworkAdapterId
     {
@@ -13715,6 +14241,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Dnssd_PortNumber"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Dnssd_PortNumber
     {
@@ -13741,6 +14268,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Dnssd_Priority"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Dnssd_Priority
     {
@@ -13767,6 +14295,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Dnssd_ServiceName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Dnssd_ServiceName
     {
@@ -13793,6 +14322,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Dnssd_TextAttributes"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Dnssd_TextAttributes
     {
@@ -13819,6 +14349,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Dnssd_Ttl"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Dnssd_Ttl
     {
@@ -13845,6 +14376,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Dnssd_Weight"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Dnssd_Weight
     {
@@ -13871,6 +14403,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_FriendlyName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_FriendlyName
     {
@@ -13897,6 +14430,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_FunctionPaths"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_FunctionPaths
     {
@@ -13923,6 +14457,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_GlyphIcon"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_GlyphIcon
     {
@@ -13949,6 +14484,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_HardwareIds"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_HardwareIds
     {
@@ -13975,6 +14511,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Icon"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Icon
     {
@@ -14001,6 +14538,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_InLocalMachineContainer"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_InLocalMachineContainer
     {
@@ -14027,6 +14565,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_InterfaceClassGuid"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_InterfaceClassGuid
     {
@@ -14053,6 +14592,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_InterfaceEnabled"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_InterfaceEnabled
     {
@@ -14079,6 +14619,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_InterfacePaths"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_InterfacePaths
     {
@@ -14105,6 +14646,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_IpAddress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_IpAddress
     {
@@ -14131,6 +14673,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_IsDefault"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_IsDefault
     {
@@ -14157,6 +14700,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_IsNetworkConnected"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_IsNetworkConnected
     {
@@ -14183,6 +14727,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_IsShared"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_IsShared
     {
@@ -14209,6 +14754,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_IsSoftwareInstalling"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_IsSoftwareInstalling
     {
@@ -14235,6 +14781,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_LaunchDeviceStageFromExplorer"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_LaunchDeviceStageFromExplorer
     {
@@ -14261,6 +14808,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_LocalMachine"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_LocalMachine
     {
@@ -14287,6 +14835,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_LocationPaths"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_LocationPaths
     {
@@ -14313,6 +14862,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Manufacturer"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Manufacturer
     {
@@ -14339,6 +14889,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_MetadataPath"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_MetadataPath
     {
@@ -14365,6 +14916,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_MicrophoneArray_Geometry"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_MicrophoneArray_Geometry
     {
@@ -14391,6 +14943,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_MissedCalls"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_MissedCalls
     {
@@ -14417,6 +14970,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_ModelId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_ModelId
     {
@@ -14443,6 +14997,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_ModelName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_ModelName
     {
@@ -14469,6 +15024,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_ModelNumber"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_ModelNumber
     {
@@ -14495,6 +15051,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_NetworkedTooltip"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_NetworkedTooltip
     {
@@ -14521,6 +15078,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_NetworkName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_NetworkName
     {
@@ -14547,6 +15105,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_NetworkType"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_NetworkType
     {
@@ -14573,6 +15132,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_NewPictures"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_NewPictures
     {
@@ -14599,6 +15159,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Notification"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Notification
     {
@@ -14625,6 +15186,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Notifications_LowBattery"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Notifications_LowBattery
     {
@@ -14651,6 +15213,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Notifications_MissedCall"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Notifications_MissedCall
     {
@@ -14677,6 +15240,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Notifications_NewMessage"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Notifications_NewMessage
     {
@@ -14703,6 +15267,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Notifications_NewVoicemail"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Notifications_NewVoicemail
     {
@@ -14729,6 +15294,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Notifications_StorageFull"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Notifications_StorageFull
     {
@@ -14755,6 +15321,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Notifications_StorageFullLinkText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Notifications_StorageFullLinkText
     {
@@ -14781,6 +15348,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_NotificationStore"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_NotificationStore
     {
@@ -14807,6 +15375,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_NotWorkingProperly"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_NotWorkingProperly
     {
@@ -14833,6 +15402,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Paired"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Paired
     {
@@ -14859,6 +15429,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Panel_PanelGroup"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Panel_PanelGroup
     {
@@ -14885,6 +15456,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Panel_PanelId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Panel_PanelId
     {
@@ -14911,6 +15483,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Parent"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Parent
     {
@@ -14937,6 +15510,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_PhoneLineTransportDevice_Connected"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_PhoneLineTransportDevice_Connected
     {
@@ -14963,6 +15537,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_PhysicalDeviceLocation"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_PhysicalDeviceLocation
     {
@@ -14989,6 +15564,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_PlaybackPositionPercent"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_PlaybackPositionPercent
     {
@@ -15015,6 +15591,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_PlaybackState"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_PlaybackState
     {
@@ -15041,6 +15618,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_PlaybackTitle"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_PlaybackTitle
     {
@@ -15067,6 +15645,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Present"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Present
     {
@@ -15093,6 +15672,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_PresentationUrl"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_PresentationUrl
     {
@@ -15119,6 +15699,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_PrimaryCategory"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_PrimaryCategory
     {
@@ -15145,6 +15726,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_RemainingDuration"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_RemainingDuration
     {
@@ -15171,6 +15753,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_RestrictedInterface"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_RestrictedInterface
     {
@@ -15197,6 +15780,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Roaming"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Roaming
     {
@@ -15223,6 +15807,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_SafeRemovalRequired"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_SafeRemovalRequired
     {
@@ -15249,6 +15834,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_SchematicName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_SchematicName
     {
@@ -15275,6 +15861,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_ServiceAddress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_ServiceAddress
     {
@@ -15301,6 +15888,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_ServiceId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_ServiceId
     {
@@ -15327,6 +15915,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_SharedTooltip"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_SharedTooltip
     {
@@ -15353,6 +15942,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_SignalStrength"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_SignalStrength
     {
@@ -15379,6 +15969,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_SmartCards_ReaderKind"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_SmartCards_ReaderKind
     {
@@ -15405,6 +15996,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Status"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Status
     {
@@ -15431,6 +16023,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Status1"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Status1
     {
@@ -15457,6 +16050,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Status2"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Status2
     {
@@ -15483,6 +16077,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_StorageCapacity"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_StorageCapacity
     {
@@ -15509,6 +16104,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_StorageFreeSpace"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_StorageFreeSpace
     {
@@ -15535,6 +16131,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_StorageFreeSpacePercent"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_StorageFreeSpacePercent
     {
@@ -15561,6 +16158,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_TextMessages"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_TextMessages
     {
@@ -15587,6 +16185,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Voicemail"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Voicemail
     {
@@ -15613,6 +16212,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_WiaDeviceType"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_WiaDeviceType
     {
@@ -15639,6 +16239,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_WiFi_InterfaceGuid"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_WiFi_InterfaceGuid
     {
@@ -15692,6 +16293,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_WiFiDirect_DeviceAddress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_WiFiDirect_DeviceAddress
     {
@@ -15718,6 +16320,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_WiFiDirect_GroupId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_WiFiDirect_GroupId
     {
@@ -15744,6 +16347,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_WiFiDirect_InformationElements"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_WiFiDirect_InformationElements
     {
@@ -15770,6 +16374,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_WiFiDirect_InterfaceAddress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_WiFiDirect_InterfaceAddress
     {
@@ -15796,6 +16401,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_WiFiDirect_InterfaceGuid"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_WiFiDirect_InterfaceGuid
     {
@@ -15822,6 +16428,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_WiFiDirect_IsConnected"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_WiFiDirect_IsConnected
     {
@@ -15848,6 +16455,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_WiFiDirect_IsLegacyDevice"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_WiFiDirect_IsLegacyDevice
     {
@@ -15874,6 +16482,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_WiFiDirect_IsMiracastLcpSupported"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_WiFiDirect_IsMiracastLcpSupported
     {
@@ -15900,6 +16509,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_WiFiDirect_IsVisible"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_WiFiDirect_IsVisible
     {
@@ -15926,6 +16536,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_WiFiDirect_MiracastVersion"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_WiFiDirect_MiracastVersion
     {
@@ -15952,6 +16563,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_WiFiDirect_Services"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_WiFiDirect_Services
     {
@@ -15978,6 +16590,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_WiFiDirect_SupportedChannelList"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_WiFiDirect_SupportedChannelList
     {
@@ -16004,6 +16617,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_WiFiDirectServices_AdvertisementId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_WiFiDirectServices_AdvertisementId
     {
@@ -16030,6 +16644,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_WiFiDirectServices_RequestServiceInformation"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_WiFiDirectServices_RequestServiceInformation
     {
@@ -16056,6 +16671,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_WiFiDirectServices_ServiceAddress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_WiFiDirectServices_ServiceAddress
     {
@@ -16082,6 +16698,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_WiFiDirectServices_ServiceConfigMethods"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_WiFiDirectServices_ServiceConfigMethods
     {
@@ -16108,6 +16725,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_WiFiDirectServices_ServiceInformation"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_WiFiDirectServices_ServiceInformation
     {
@@ -16134,6 +16752,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_WiFiDirectServices_ServiceName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_WiFiDirectServices_ServiceName
     {
@@ -16160,6 +16779,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_WinPhone8CameraFlags"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_WinPhone8CameraFlags
     {
@@ -16186,6 +16806,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Wwan_InterfaceGuid"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Wwan_InterfaceGuid
     {
@@ -16212,6 +16833,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Storage_Portable"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Storage_Portable
     {
@@ -16238,6 +16860,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Storage_RemovableMedia"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Storage_RemovableMedia
     {
@@ -16264,6 +16887,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Storage_SystemCritical"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Storage_SystemCritical
     {
@@ -16290,6 +16914,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Document_ByteCount"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Document_ByteCount
     {
@@ -16316,6 +16941,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Document_CharacterCount"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Document_CharacterCount
     {
@@ -16342,6 +16968,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Document_ClientID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Document_ClientID
     {
@@ -16368,6 +16995,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Document_Contributor"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Document_Contributor
     {
@@ -16394,6 +17022,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Document_DateCreated"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Document_DateCreated
     {
@@ -16420,6 +17049,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Document_DatePrinted"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Document_DatePrinted
     {
@@ -16446,6 +17076,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Document_DateSaved"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Document_DateSaved
     {
@@ -16472,6 +17103,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Document_Division"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Document_Division
     {
@@ -16498,6 +17130,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Document_DocumentID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Document_DocumentID
     {
@@ -16524,6 +17157,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Document_HiddenSlideCount"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Document_HiddenSlideCount
     {
@@ -16550,6 +17184,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Document_LastAuthor"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Document_LastAuthor
     {
@@ -16576,6 +17211,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Document_LineCount"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Document_LineCount
     {
@@ -16602,6 +17238,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Document_Manager"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Document_Manager
     {
@@ -16628,6 +17265,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Document_MultimediaClipCount"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Document_MultimediaClipCount
     {
@@ -16654,6 +17292,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Document_NoteCount"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Document_NoteCount
     {
@@ -16680,6 +17319,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Document_PageCount"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Document_PageCount
     {
@@ -16706,6 +17346,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Document_ParagraphCount"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Document_ParagraphCount
     {
@@ -16732,6 +17373,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Document_PresentationFormat"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Document_PresentationFormat
     {
@@ -16758,6 +17400,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Document_RevisionNumber"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Document_RevisionNumber
     {
@@ -16784,6 +17427,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Document_Security"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Document_Security
     {
@@ -16810,6 +17454,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Document_SlideCount"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Document_SlideCount
     {
@@ -16836,6 +17481,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Document_Template"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Document_Template
     {
@@ -16862,6 +17508,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Document_TotalEditingTime"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Document_TotalEditingTime
     {
@@ -16888,6 +17535,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Document_Version"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Document_Version
     {
@@ -16914,6 +17562,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Document_WordCount"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Document_WordCount
     {
@@ -16940,6 +17589,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DRM_DatePlayExpires"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DRM_DatePlayExpires
     {
@@ -16966,6 +17616,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DRM_DatePlayStarts"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DRM_DatePlayStarts
     {
@@ -16992,6 +17643,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DRM_Description"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DRM_Description
     {
@@ -17018,6 +17670,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DRM_IsDisabled"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DRM_IsDisabled
     {
@@ -17044,6 +17697,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DRM_IsProtected"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DRM_IsProtected
     {
@@ -17070,6 +17724,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DRM_PlayCount"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DRM_PlayCount
     {
@@ -17096,6 +17751,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_Altitude"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_Altitude
     {
@@ -17122,6 +17778,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_AltitudeDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_AltitudeDenominator
     {
@@ -17148,6 +17805,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_AltitudeNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_AltitudeNumerator
     {
@@ -17174,6 +17832,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_AltitudeRef"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_AltitudeRef
     {
@@ -17200,6 +17859,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_AreaInformation"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_AreaInformation
     {
@@ -17226,6 +17886,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_Date"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_Date
     {
@@ -17252,6 +17913,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_DestBearing"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_DestBearing
     {
@@ -17278,6 +17940,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_DestBearingDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_DestBearingDenominator
     {
@@ -17304,6 +17967,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_DestBearingNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_DestBearingNumerator
     {
@@ -17330,6 +17994,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_DestBearingRef"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_DestBearingRef
     {
@@ -17356,6 +18021,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_DestDistance"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_DestDistance
     {
@@ -17382,6 +18048,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_DestDistanceDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_DestDistanceDenominator
     {
@@ -17408,6 +18075,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_DestDistanceNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_DestDistanceNumerator
     {
@@ -17434,6 +18102,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_DestDistanceRef"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_DestDistanceRef
     {
@@ -17460,6 +18129,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_DestLatitude"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_DestLatitude
     {
@@ -17486,6 +18156,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_DestLatitudeDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_DestLatitudeDenominator
     {
@@ -17512,6 +18183,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_DestLatitudeNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_DestLatitudeNumerator
     {
@@ -17538,6 +18210,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_DestLatitudeRef"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_DestLatitudeRef
     {
@@ -17564,6 +18237,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_DestLongitude"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_DestLongitude
     {
@@ -17590,6 +18264,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_DestLongitudeDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_DestLongitudeDenominator
     {
@@ -17616,6 +18291,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_DestLongitudeNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_DestLongitudeNumerator
     {
@@ -17642,6 +18318,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_DestLongitudeRef"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_DestLongitudeRef
     {
@@ -17668,6 +18345,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_Differential"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_Differential
     {
@@ -17694,6 +18372,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_DOP"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_DOP
     {
@@ -17720,6 +18399,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_DOPDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_DOPDenominator
     {
@@ -17746,6 +18426,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_DOPNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_DOPNumerator
     {
@@ -17772,6 +18453,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_ImgDirection"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_ImgDirection
     {
@@ -17798,6 +18480,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_ImgDirectionDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_ImgDirectionDenominator
     {
@@ -17824,6 +18507,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_ImgDirectionNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_ImgDirectionNumerator
     {
@@ -17850,6 +18534,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_ImgDirectionRef"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_ImgDirectionRef
     {
@@ -17876,6 +18561,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_Latitude"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_Latitude
     {
@@ -17902,6 +18588,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_LatitudeDecimal"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_LatitudeDecimal
     {
@@ -17928,6 +18615,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_LatitudeDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_LatitudeDenominator
     {
@@ -17954,6 +18642,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_LatitudeNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_LatitudeNumerator
     {
@@ -17980,6 +18669,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_LatitudeRef"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_LatitudeRef
     {
@@ -18006,6 +18696,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_Longitude"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_Longitude
     {
@@ -18032,6 +18723,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_LongitudeDecimal"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_LongitudeDecimal
     {
@@ -18058,6 +18750,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_LongitudeDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_LongitudeDenominator
     {
@@ -18084,6 +18777,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_LongitudeNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_LongitudeNumerator
     {
@@ -18110,6 +18804,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_LongitudeRef"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_LongitudeRef
     {
@@ -18136,6 +18831,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_MapDatum"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_MapDatum
     {
@@ -18162,6 +18858,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_MeasureMode"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_MeasureMode
     {
@@ -18188,6 +18885,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_ProcessingMethod"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_ProcessingMethod
     {
@@ -18214,6 +18912,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_Satellites"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_Satellites
     {
@@ -18240,6 +18939,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_Speed"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_Speed
     {
@@ -18266,6 +18966,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_SpeedDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_SpeedDenominator
     {
@@ -18292,6 +18993,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_SpeedNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_SpeedNumerator
     {
@@ -18318,6 +19020,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_SpeedRef"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_SpeedRef
     {
@@ -18344,6 +19047,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_Status"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_Status
     {
@@ -18370,6 +19074,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_Track"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_Track
     {
@@ -18396,6 +19101,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_TrackDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_TrackDenominator
     {
@@ -18422,6 +19128,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_TrackNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_TrackNumerator
     {
@@ -18448,6 +19155,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_TrackRef"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_TrackRef
     {
@@ -18474,6 +19182,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_GPS_VersionID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_GPS_VersionID
     {
@@ -18500,6 +19209,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_History_VisitCount"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_History_VisitCount
     {
@@ -18526,6 +19236,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Image_BitDepth"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Image_BitDepth
     {
@@ -18552,6 +19263,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Image_ColorSpace"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Image_ColorSpace
     {
@@ -18578,6 +19290,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Image_CompressedBitsPerPixel"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Image_CompressedBitsPerPixel
     {
@@ -18604,6 +19317,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Image_CompressedBitsPerPixelDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Image_CompressedBitsPerPixelDenominator
     {
@@ -18630,6 +19344,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Image_CompressedBitsPerPixelNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Image_CompressedBitsPerPixelNumerator
     {
@@ -18656,6 +19371,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Image_Compression"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Image_Compression
     {
@@ -18682,6 +19398,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Image_CompressionText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Image_CompressionText
     {
@@ -18708,6 +19425,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Image_Dimensions"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Image_Dimensions
     {
@@ -18734,6 +19452,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Image_HorizontalResolution"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Image_HorizontalResolution
     {
@@ -18760,6 +19479,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Image_HorizontalSize"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Image_HorizontalSize
     {
@@ -18786,6 +19506,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Image_ImageID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Image_ImageID
     {
@@ -18812,6 +19533,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Image_ResolutionUnit"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Image_ResolutionUnit
     {
@@ -18838,6 +19560,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Image_VerticalResolution"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Image_VerticalResolution
     {
@@ -18864,6 +19587,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Image_VerticalSize"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Image_VerticalSize
     {
@@ -18890,6 +19614,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Journal_Contacts"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Journal_Contacts
     {
@@ -18916,6 +19641,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Journal_EntryType"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Journal_EntryType
     {
@@ -18942,6 +19668,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_LayoutPattern_ContentViewModeForBrowse"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_LayoutPattern_ContentViewModeForBrowse
     {
@@ -18968,6 +19695,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_LayoutPattern_ContentViewModeForSearch"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_LayoutPattern_ContentViewModeForSearch
     {
@@ -18994,6 +19722,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_History_SelectionCount"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_History_SelectionCount
     {
@@ -19020,6 +19749,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_History_TargetUrlHostName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_History_TargetUrlHostName
     {
@@ -19046,6 +19776,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Link_Arguments"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Link_Arguments
     {
@@ -19072,6 +19803,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Link_Comment"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Link_Comment
     {
@@ -19098,6 +19830,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Link_DateVisited"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Link_DateVisited
     {
@@ -19124,6 +19857,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Link_Description"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Link_Description
     {
@@ -19150,6 +19884,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Link_FeedItemLocalId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Link_FeedItemLocalId
     {
@@ -19176,6 +19911,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Link_Status"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Link_Status
     {
@@ -19202,6 +19938,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Link_TargetExtension"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Link_TargetExtension
     {
@@ -19228,6 +19965,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Link_TargetParsingPath"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Link_TargetParsingPath
     {
@@ -19254,6 +19992,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Link_TargetSFGAOFlags"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Link_TargetSFGAOFlags
     {
@@ -19280,6 +20019,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Link_TargetUrlHostName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Link_TargetUrlHostName
     {
@@ -19306,6 +20046,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Link_TargetUrlPath"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Link_TargetUrlPath
     {
@@ -19332,6 +20073,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_AuthorUrl"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_AuthorUrl
     {
@@ -19358,6 +20100,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_AverageLevel"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_AverageLevel
     {
@@ -19384,6 +20127,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_ClassPrimaryID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_ClassPrimaryID
     {
@@ -19410,6 +20154,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_ClassSecondaryID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_ClassSecondaryID
     {
@@ -19436,6 +20181,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_CollectionGroupID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_CollectionGroupID
     {
@@ -19462,6 +20208,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_CollectionID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_CollectionID
     {
@@ -19488,6 +20235,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_ContentDistributor"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_ContentDistributor
     {
@@ -19514,6 +20262,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_ContentID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_ContentID
     {
@@ -19540,6 +20289,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_CreatorApplication"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_CreatorApplication
     {
@@ -19566,6 +20316,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_CreatorApplicationVersion"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_CreatorApplicationVersion
     {
@@ -19592,6 +20343,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_DateEncoded"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_DateEncoded
     {
@@ -19618,6 +20370,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_DateReleased"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_DateReleased
     {
@@ -19644,6 +20397,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_DlnaProfileID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_DlnaProfileID
     {
@@ -19670,6 +20424,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_Duration"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_Duration
     {
@@ -19696,6 +20451,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_DVDID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_DVDID
     {
@@ -19722,6 +20478,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_EncodedBy"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_EncodedBy
     {
@@ -19748,6 +20505,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_EncodingSettings"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_EncodingSettings
     {
@@ -19774,6 +20532,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_EpisodeNumber"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_EpisodeNumber
     {
@@ -19800,6 +20559,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_FrameCount"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_FrameCount
     {
@@ -19826,6 +20586,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_MCDI"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_MCDI
     {
@@ -19852,6 +20613,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_MetadataContentProvider"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_MetadataContentProvider
     {
@@ -19878,6 +20640,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_Producer"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_Producer
     {
@@ -19904,6 +20667,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_PromotionUrl"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_PromotionUrl
     {
@@ -19930,6 +20694,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_ProtectionType"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_ProtectionType
     {
@@ -19956,6 +20721,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_ProviderRating"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_ProviderRating
     {
@@ -19982,6 +20748,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_ProviderStyle"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_ProviderStyle
     {
@@ -20008,6 +20775,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_Publisher"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_Publisher
     {
@@ -20034,6 +20802,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_SeasonNumber"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_SeasonNumber
     {
@@ -20060,6 +20829,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_SeriesName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_SeriesName
     {
@@ -20086,6 +20856,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_SubscriptionContentId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_SubscriptionContentId
     {
@@ -20112,6 +20883,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_SubTitle"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_SubTitle
     {
@@ -20138,6 +20910,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_ThumbnailLargePath"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_ThumbnailLargePath
     {
@@ -20164,6 +20937,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_ThumbnailLargeUri"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_ThumbnailLargeUri
     {
@@ -20190,6 +20964,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_ThumbnailSmallPath"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_ThumbnailSmallPath
     {
@@ -20216,6 +20991,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_ThumbnailSmallUri"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_ThumbnailSmallUri
     {
@@ -20242,6 +21018,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_UniqueFileIdentifier"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_UniqueFileIdentifier
     {
@@ -20268,6 +21045,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_UserNoAutoInfo"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_UserNoAutoInfo
     {
@@ -20294,6 +21072,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_UserWebUrl"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_UserWebUrl
     {
@@ -20320,6 +21099,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_Writer"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_Writer
     {
@@ -20346,6 +21126,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Media_Year"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Media_Year
     {
@@ -20372,6 +21153,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Message_AttachmentContents"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Message_AttachmentContents
     {
@@ -20398,6 +21180,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Message_AttachmentNames"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Message_AttachmentNames
     {
@@ -20424,6 +21207,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Message_BccAddress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Message_BccAddress
     {
@@ -20450,6 +21234,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Message_BccName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Message_BccName
     {
@@ -20476,6 +21261,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Message_CcAddress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Message_CcAddress
     {
@@ -20502,6 +21288,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Message_CcName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Message_CcName
     {
@@ -20528,6 +21315,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Message_ConversationID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Message_ConversationID
     {
@@ -20554,6 +21342,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Message_ConversationIndex"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Message_ConversationIndex
     {
@@ -20580,6 +21369,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Message_DateReceived"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Message_DateReceived
     {
@@ -20606,6 +21396,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Message_DateSent"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Message_DateSent
     {
@@ -20632,6 +21423,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Message_Flags"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Message_Flags
     {
@@ -20658,6 +21450,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Message_FromAddress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Message_FromAddress
     {
@@ -20684,6 +21477,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Message_FromName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Message_FromName
     {
@@ -20710,6 +21504,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Message_HasAttachments"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Message_HasAttachments
     {
@@ -20736,6 +21531,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Message_IsFwdOrReply"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Message_IsFwdOrReply
     {
@@ -20762,6 +21558,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Message_MessageClass"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Message_MessageClass
     {
@@ -20788,6 +21585,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Message_Participants"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Message_Participants
     {
@@ -20814,6 +21612,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Message_ProofInProgress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Message_ProofInProgress
     {
@@ -20840,6 +21639,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Message_SenderAddress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Message_SenderAddress
     {
@@ -20866,6 +21666,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Message_SenderName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Message_SenderName
     {
@@ -20892,6 +21693,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Message_Store"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Message_Store
     {
@@ -20918,6 +21720,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Message_ToAddress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Message_ToAddress
     {
@@ -20944,6 +21747,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Message_ToDoFlags"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Message_ToDoFlags
     {
@@ -20970,6 +21774,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Message_ToDoTitle"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Message_ToDoTitle
     {
@@ -20996,6 +21801,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Message_ToName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Message_ToName
     {
@@ -21022,6 +21828,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_MsGraph_ActivityType"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_MsGraph_ActivityType
     {
@@ -21048,6 +21855,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_MsGraph_CompositeId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_MsGraph_CompositeId
     {
@@ -21074,6 +21882,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_MsGraph_DateLastShared"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_MsGraph_DateLastShared
     {
@@ -21100,6 +21909,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_MsGraph_DriveId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_MsGraph_DriveId
     {
@@ -21126,6 +21936,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_MsGraph_GraphFileType"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_MsGraph_GraphFileType
     {
@@ -21152,6 +21963,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_MsGraph_IconUrl"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_MsGraph_IconUrl
     {
@@ -21178,6 +21990,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_MsGraph_ItemId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_MsGraph_ItemId
     {
@@ -21204,6 +22017,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_MsGraph_PrimaryActivityActorDisplayName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_MsGraph_PrimaryActivityActorDisplayName
     {
@@ -21230,6 +22044,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_MsGraph_PrimaryActivityActorUpn"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_MsGraph_PrimaryActivityActorUpn
     {
@@ -21256,6 +22071,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_MsGraph_RecommendationReason"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_MsGraph_RecommendationReason
     {
@@ -21282,6 +22098,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_MsGraph_RecommendationReferenceId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_MsGraph_RecommendationReferenceId
     {
@@ -21308,6 +22125,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_MsGraph_RecommendationResultSourceId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_MsGraph_RecommendationResultSourceId
     {
@@ -21334,6 +22152,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_MsGraph_SharedByEmail"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_MsGraph_SharedByEmail
     {
@@ -21360,6 +22179,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_MsGraph_SharedByName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_MsGraph_SharedByName
     {
@@ -21386,6 +22206,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_MsGraph_WebAccountId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_MsGraph_WebAccountId
     {
@@ -21412,6 +22233,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Music_AlbumArtist"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Music_AlbumArtist
     {
@@ -21438,6 +22260,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Music_AlbumArtistSortOverride"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Music_AlbumArtistSortOverride
     {
@@ -21464,6 +22287,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Music_AlbumID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Music_AlbumID
     {
@@ -21490,6 +22314,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Music_AlbumTitle"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Music_AlbumTitle
     {
@@ -21516,6 +22341,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Music_AlbumTitleSortOverride"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Music_AlbumTitleSortOverride
     {
@@ -21542,6 +22368,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Music_Artist"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Music_Artist
     {
@@ -21568,6 +22395,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Music_ArtistSortOverride"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Music_ArtistSortOverride
     {
@@ -21594,6 +22422,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Music_BeatsPerMinute"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Music_BeatsPerMinute
     {
@@ -21620,6 +22449,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Music_Composer"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Music_Composer
     {
@@ -21646,6 +22476,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Music_ComposerSortOverride"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Music_ComposerSortOverride
     {
@@ -21672,6 +22503,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Music_Conductor"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Music_Conductor
     {
@@ -21698,6 +22530,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Music_ContentGroupDescription"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Music_ContentGroupDescription
     {
@@ -21724,6 +22557,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Music_DiscNumber"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Music_DiscNumber
     {
@@ -21750,6 +22584,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Music_DisplayArtist"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Music_DisplayArtist
     {
@@ -21776,6 +22611,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Music_Genre"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Music_Genre
     {
@@ -21802,6 +22638,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Music_InitialKey"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Music_InitialKey
     {
@@ -21828,6 +22665,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Music_IsCompilation"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Music_IsCompilation
     {
@@ -21854,6 +22692,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Music_Lyrics"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Music_Lyrics
     {
@@ -21880,6 +22719,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Music_Mood"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Music_Mood
     {
@@ -21906,6 +22746,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Music_PartOfSet"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Music_PartOfSet
     {
@@ -21932,6 +22773,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Music_Period"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Music_Period
     {
@@ -21958,6 +22800,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Music_SynchronizedLyrics"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Music_SynchronizedLyrics
     {
@@ -21984,6 +22827,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Music_TrackNumber"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Music_TrackNumber
     {
@@ -22010,6 +22854,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Note_Color"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Note_Color
     {
@@ -22036,6 +22881,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Note_ColorText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Note_ColorText
     {
@@ -22062,6 +22908,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_Aperture"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_Aperture
     {
@@ -22088,6 +22935,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_ApertureDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_ApertureDenominator
     {
@@ -22114,6 +22962,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_ApertureNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_ApertureNumerator
     {
@@ -22140,6 +22989,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_Brightness"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_Brightness
     {
@@ -22166,6 +23016,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_BrightnessDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_BrightnessDenominator
     {
@@ -22192,6 +23043,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_BrightnessNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_BrightnessNumerator
     {
@@ -22218,6 +23070,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_CameraManufacturer"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_CameraManufacturer
     {
@@ -22244,6 +23097,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_CameraModel"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_CameraModel
     {
@@ -22270,6 +23124,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_CameraSerialNumber"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_CameraSerialNumber
     {
@@ -22296,6 +23151,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_Contrast"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_Contrast
     {
@@ -22322,6 +23178,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_ContrastText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_ContrastText
     {
@@ -22348,6 +23205,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_DateTaken"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_DateTaken
     {
@@ -22374,6 +23232,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_DigitalZoom"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_DigitalZoom
     {
@@ -22400,6 +23259,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_DigitalZoomDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_DigitalZoomDenominator
     {
@@ -22426,6 +23286,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_DigitalZoomNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_DigitalZoomNumerator
     {
@@ -22452,6 +23313,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_Event"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_Event
     {
@@ -22478,6 +23340,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_EXIFVersion"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_EXIFVersion
     {
@@ -22504,6 +23367,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_ExposureBias"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_ExposureBias
     {
@@ -22530,6 +23394,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_ExposureBiasDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_ExposureBiasDenominator
     {
@@ -22556,6 +23421,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_ExposureBiasNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_ExposureBiasNumerator
     {
@@ -22582,6 +23448,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_ExposureIndex"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_ExposureIndex
     {
@@ -22608,6 +23475,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_ExposureIndexDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_ExposureIndexDenominator
     {
@@ -22634,6 +23502,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_ExposureIndexNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_ExposureIndexNumerator
     {
@@ -22660,6 +23529,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_ExposureProgram"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_ExposureProgram
     {
@@ -22686,6 +23556,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_ExposureProgramText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_ExposureProgramText
     {
@@ -22712,6 +23583,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_ExposureTime"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_ExposureTime
     {
@@ -22738,6 +23610,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_ExposureTimeDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_ExposureTimeDenominator
     {
@@ -22764,6 +23637,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_ExposureTimeNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_ExposureTimeNumerator
     {
@@ -22790,6 +23664,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_Flash"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_Flash
     {
@@ -22816,6 +23691,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_FlashEnergy"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_FlashEnergy
     {
@@ -22842,6 +23718,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_FlashEnergyDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_FlashEnergyDenominator
     {
@@ -22868,6 +23745,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_FlashEnergyNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_FlashEnergyNumerator
     {
@@ -22894,6 +23772,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_FlashManufacturer"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_FlashManufacturer
     {
@@ -22920,6 +23799,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_FlashModel"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_FlashModel
     {
@@ -22946,6 +23826,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_FlashText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_FlashText
     {
@@ -22972,6 +23853,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_FNumber"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_FNumber
     {
@@ -22998,6 +23880,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_FNumberDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_FNumberDenominator
     {
@@ -23024,6 +23907,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_FNumberNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_FNumberNumerator
     {
@@ -23050,6 +23934,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_FocalLength"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_FocalLength
     {
@@ -23076,6 +23961,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_FocalLengthDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_FocalLengthDenominator
     {
@@ -23102,6 +23988,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_FocalLengthInFilm"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_FocalLengthInFilm
     {
@@ -23128,6 +24015,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_FocalLengthNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_FocalLengthNumerator
     {
@@ -23154,6 +24042,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_FocalPlaneXResolution"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_FocalPlaneXResolution
     {
@@ -23180,6 +24069,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_FocalPlaneXResolutionDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_FocalPlaneXResolutionDenominator
     {
@@ -23206,6 +24096,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_FocalPlaneXResolutionNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_FocalPlaneXResolutionNumerator
     {
@@ -23232,6 +24123,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_FocalPlaneYResolution"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_FocalPlaneYResolution
     {
@@ -23258,6 +24150,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_FocalPlaneYResolutionDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_FocalPlaneYResolutionDenominator
     {
@@ -23284,6 +24177,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_FocalPlaneYResolutionNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_FocalPlaneYResolutionNumerator
     {
@@ -23310,6 +24204,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_GainControl"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_GainControl
     {
@@ -23336,6 +24231,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_GainControlDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_GainControlDenominator
     {
@@ -23362,6 +24258,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_GainControlNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_GainControlNumerator
     {
@@ -23388,6 +24285,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_GainControlText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_GainControlText
     {
@@ -23414,6 +24312,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_ISOSpeed"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_ISOSpeed
     {
@@ -23440,6 +24339,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_LensManufacturer"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_LensManufacturer
     {
@@ -23466,6 +24366,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_LensModel"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_LensModel
     {
@@ -23492,6 +24393,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_LightSource"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_LightSource
     {
@@ -23518,6 +24420,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_MakerNote"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_MakerNote
     {
@@ -23544,6 +24447,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_MakerNoteOffset"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_MakerNoteOffset
     {
@@ -23570,6 +24474,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_MaxAperture"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_MaxAperture
     {
@@ -23596,6 +24501,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_MaxApertureDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_MaxApertureDenominator
     {
@@ -23622,6 +24528,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_MaxApertureNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_MaxApertureNumerator
     {
@@ -23648,6 +24555,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_MeteringMode"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_MeteringMode
     {
@@ -23674,6 +24582,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_MeteringModeText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_MeteringModeText
     {
@@ -23700,6 +24609,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_Orientation"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_Orientation
     {
@@ -23726,6 +24636,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_OrientationText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_OrientationText
     {
@@ -23752,6 +24663,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_PeopleNames"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_PeopleNames
     {
@@ -23778,6 +24690,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_PhotometricInterpretation"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_PhotometricInterpretation
     {
@@ -23804,6 +24717,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_PhotometricInterpretationText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_PhotometricInterpretationText
     {
@@ -23830,6 +24744,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_ProgramMode"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_ProgramMode
     {
@@ -23856,6 +24771,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_ProgramModeText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_ProgramModeText
     {
@@ -23882,6 +24798,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_RelatedSoundFile"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_RelatedSoundFile
     {
@@ -23908,6 +24825,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_Saturation"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_Saturation
     {
@@ -23934,6 +24852,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_SaturationText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_SaturationText
     {
@@ -23960,6 +24879,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_Sharpness"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_Sharpness
     {
@@ -23986,6 +24906,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_SharpnessText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_SharpnessText
     {
@@ -24012,6 +24933,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_ShutterSpeed"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_ShutterSpeed
     {
@@ -24038,6 +24960,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_ShutterSpeedDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_ShutterSpeedDenominator
     {
@@ -24064,6 +24987,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_ShutterSpeedNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_ShutterSpeedNumerator
     {
@@ -24090,6 +25014,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_SubjectDistance"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_SubjectDistance
     {
@@ -24116,6 +25041,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_SubjectDistanceDenominator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_SubjectDistanceDenominator
     {
@@ -24142,6 +25068,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_SubjectDistanceNumerator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_SubjectDistanceNumerator
     {
@@ -24168,6 +25095,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_TagViewAggregate"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_TagViewAggregate
     {
@@ -24194,6 +25122,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_TranscodedForSync"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_TranscodedForSync
     {
@@ -24220,6 +25149,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_WhiteBalance"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_WhiteBalance
     {
@@ -24246,6 +25176,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Photo_WhiteBalanceText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Photo_WhiteBalanceText
     {
@@ -24272,6 +25203,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropGroup_Advanced"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropGroup_Advanced
     {
@@ -24298,6 +25230,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropGroup_Audio"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropGroup_Audio
     {
@@ -24324,6 +25257,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropGroup_Calendar"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropGroup_Calendar
     {
@@ -24350,6 +25284,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropGroup_Camera"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropGroup_Camera
     {
@@ -24376,6 +25311,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropGroup_Contact"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropGroup_Contact
     {
@@ -24402,6 +25338,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropGroup_Content"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropGroup_Content
     {
@@ -24428,6 +25365,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropGroup_Description"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropGroup_Description
     {
@@ -24454,6 +25392,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropGroup_FileSystem"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropGroup_FileSystem
     {
@@ -24480,6 +25419,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropGroup_General"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropGroup_General
     {
@@ -24506,6 +25446,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropGroup_GPS"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropGroup_GPS
     {
@@ -24532,6 +25473,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropGroup_Image"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropGroup_Image
     {
@@ -24558,6 +25500,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropGroup_Media"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropGroup_Media
     {
@@ -24584,6 +25527,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropGroup_MediaAdvanced"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropGroup_MediaAdvanced
     {
@@ -24610,6 +25554,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropGroup_Message"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropGroup_Message
     {
@@ -24636,6 +25581,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropGroup_Music"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropGroup_Music
     {
@@ -24662,6 +25608,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropGroup_Origin"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropGroup_Origin
     {
@@ -24688,6 +25635,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropGroup_PhotoAdvanced"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropGroup_PhotoAdvanced
     {
@@ -24714,6 +25662,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropGroup_RecordedTV"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropGroup_RecordedTV
     {
@@ -24740,6 +25689,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropGroup_Video"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropGroup_Video
     {
@@ -24766,6 +25716,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_InfoTipText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_InfoTipText
     {
@@ -24792,6 +25743,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropList_ConflictPrompt"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropList_ConflictPrompt
     {
@@ -24818,6 +25770,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropList_ContentViewModeForBrowse"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropList_ContentViewModeForBrowse
     {
@@ -24844,6 +25797,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropList_ContentViewModeForSearch"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropList_ContentViewModeForSearch
     {
@@ -24870,6 +25824,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropList_ExtendedTileInfo"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropList_ExtendedTileInfo
     {
@@ -24896,6 +25851,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropList_FileOperationPrompt"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropList_FileOperationPrompt
     {
@@ -24922,6 +25878,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropList_FullDetails"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropList_FullDetails
     {
@@ -24948,6 +25905,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropList_InfoTip"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropList_InfoTip
     {
@@ -24974,6 +25932,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropList_NonPersonal"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropList_NonPersonal
     {
@@ -25000,6 +25959,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropList_PreviewDetails"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropList_PreviewDetails
     {
@@ -25026,6 +25986,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropList_PreviewTitle"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropList_PreviewTitle
     {
@@ -25052,6 +26013,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropList_QuickTip"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropList_QuickTip
     {
@@ -25078,6 +26040,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropList_TileInfo"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropList_TileInfo
     {
@@ -25104,6 +26067,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PropList_XPDetailsPanel"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_PropList_XPDetailsPanel
     {
@@ -25130,6 +26094,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_RecordedTV_ChannelNumber"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_RecordedTV_ChannelNumber
     {
@@ -25156,6 +26121,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_RecordedTV_Credits"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_RecordedTV_Credits
     {
@@ -25182,6 +26148,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_RecordedTV_DateContentExpires"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_RecordedTV_DateContentExpires
     {
@@ -25208,6 +26175,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_RecordedTV_EpisodeName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_RecordedTV_EpisodeName
     {
@@ -25234,6 +26202,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_RecordedTV_IsATSCContent"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_RecordedTV_IsATSCContent
     {
@@ -25260,6 +26229,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_RecordedTV_IsClosedCaptioningAvailable"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_RecordedTV_IsClosedCaptioningAvailable
     {
@@ -25286,6 +26256,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_RecordedTV_IsDTVContent"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_RecordedTV_IsDTVContent
     {
@@ -25312,6 +26283,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_RecordedTV_IsHDContent"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_RecordedTV_IsHDContent
     {
@@ -25338,6 +26310,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_RecordedTV_IsRepeatBroadcast"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_RecordedTV_IsRepeatBroadcast
     {
@@ -25364,6 +26337,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_RecordedTV_IsSAP"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_RecordedTV_IsSAP
     {
@@ -25390,6 +26364,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_RecordedTV_NetworkAffiliation"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_RecordedTV_NetworkAffiliation
     {
@@ -25416,6 +26391,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_RecordedTV_OriginalBroadcastDate"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_RecordedTV_OriginalBroadcastDate
     {
@@ -25442,6 +26418,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_RecordedTV_ProgramDescription"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_RecordedTV_ProgramDescription
     {
@@ -25468,6 +26445,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_RecordedTV_RecordingTime"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_RecordedTV_RecordingTime
     {
@@ -25494,6 +26472,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_RecordedTV_StationCallSign"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_RecordedTV_StationCallSign
     {
@@ -25520,6 +26499,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_RecordedTV_StationName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_RecordedTV_StationName
     {
@@ -25546,6 +26526,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_LocationEmptyString"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_LocationEmptyString
     {
@@ -25572,6 +26553,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Search_AutoCategory"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Search_AutoCategory
     {
@@ -25598,6 +26580,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Search_AutoSummary"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Search_AutoSummary
     {
@@ -25624,6 +26607,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Search_ContainerHash"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Search_ContainerHash
     {
@@ -25650,6 +26634,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Search_Contents"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Search_Contents
     {
@@ -25676,6 +26661,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Search_EntryID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Search_EntryID
     {
@@ -25702,6 +26688,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Search_ExtendedProperties"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Search_ExtendedProperties
     {
@@ -25728,6 +26715,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Search_GatherTime"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Search_GatherTime
     {
@@ -25754,6 +26742,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Search_HitCount"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Search_HitCount
     {
@@ -25780,6 +26769,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Search_IsClosedDirectory"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Search_IsClosedDirectory
     {
@@ -25806,6 +26796,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Search_IsFullyContained"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Search_IsFullyContained
     {
@@ -25832,6 +26823,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Search_MatchKind"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Search_MatchKind
     {
@@ -25858,6 +26850,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Search_MatchTags"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Search_MatchTags
     {
@@ -25884,6 +26877,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Search_OcrContent"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Search_OcrContent
     {
@@ -25910,6 +26904,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Search_QueryFocusedSummary"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Search_QueryFocusedSummary
     {
@@ -25936,6 +26931,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Search_QueryFocusedSummaryWithFallback"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Search_QueryFocusedSummaryWithFallback
     {
@@ -25962,6 +26958,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Search_QueryPropertyHits"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Search_QueryPropertyHits
     {
@@ -25988,6 +26985,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Search_Rank"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Search_Rank
     {
@@ -26014,6 +27012,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Search_Store"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Search_Store
     {
@@ -26040,6 +27039,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Search_UrlToIndex"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Search_UrlToIndex
     {
@@ -26066,6 +27066,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Search_UrlToIndexWithModificationTime"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Search_UrlToIndexWithModificationTime
     {
@@ -26092,6 +27093,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Supplemental_Album"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Supplemental_Album
     {
@@ -26118,6 +27120,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Supplemental_AlbumID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Supplemental_AlbumID
     {
@@ -26144,6 +27147,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Supplemental_Location"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Supplemental_Location
     {
@@ -26170,6 +27174,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Supplemental_Person"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Supplemental_Person
     {
@@ -26196,6 +27201,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Supplemental_ResourceId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Supplemental_ResourceId
     {
@@ -26222,6 +27228,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Supplemental_Tag"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Supplemental_Tag
     {
@@ -26248,6 +27255,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ActivityDate"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ActivityDate
     {
@@ -26274,6 +27282,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ActivityIcon"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ActivityIcon
     {
@@ -26300,6 +27309,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ActivityInfo"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ActivityInfo
     {
@@ -26326,6 +27336,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_DescriptionID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_DescriptionID
     {
@@ -26352,6 +27363,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Home_Grouping"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Home_Grouping
     {
@@ -26378,6 +27390,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Home_IsPinned"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Home_IsPinned
     {
@@ -26404,6 +27417,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Home_ItemFolderPathDisplay"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Home_ItemFolderPathDisplay
     {
@@ -26430,6 +27444,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Home_RecommendationActivityDate"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Home_RecommendationActivityDate
     {
@@ -26456,6 +27471,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Home_RecommendationProviderSource"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Home_RecommendationProviderSource
     {
@@ -26482,6 +27498,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Home_RecommendationReasonIcon"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Home_RecommendationReasonIcon
     {
@@ -26508,6 +27525,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Home_Recommended"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Home_Recommended
     {
@@ -26534,6 +27552,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_InternalName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_InternalName
     {
@@ -26560,6 +27579,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_LibraryLocationsCount"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_LibraryLocationsCount
     {
@@ -26586,6 +27606,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Link_TargetSFGAOFlagsStrings"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Link_TargetSFGAOFlagsStrings
     {
@@ -26612,6 +27633,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Link_TargetUrl"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Link_TargetUrl
     {
@@ -26638,6 +27660,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_NamespaceCLSID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_NamespaceCLSID
     {
@@ -26664,6 +27687,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Shell_CopilotKeyProviderFastPathMessage"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Shell_CopilotKeyProviderFastPathMessage
     {
@@ -26690,6 +27714,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Shell_SFGAOFlagsStrings"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Shell_SFGAOFlagsStrings
     {
@@ -26716,6 +27741,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StatusBarSelectedItemCount"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StatusBarSelectedItemCount
     {
@@ -26742,6 +27768,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StatusBarViewItemCount"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StatusBarViewItemCount
     {
@@ -26768,6 +27795,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StorageProviderState"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StorageProviderState
     {
@@ -26794,6 +27822,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_StorageProviderTransferProgress"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_StorageProviderTransferProgress
     {
@@ -26820,6 +27849,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_WebAccountID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_WebAccountID
     {
@@ -26846,6 +27876,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AppUserModel_ExcludeFromShowInNewInstall"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AppUserModel_ExcludeFromShowInNewInstall
     {
@@ -26872,6 +27903,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AppUserModel_ID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AppUserModel_ID
     {
@@ -26898,6 +27930,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AppUserModel_IsDestListSeparator"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AppUserModel_IsDestListSeparator
     {
@@ -26924,6 +27957,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AppUserModel_IsDualMode"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AppUserModel_IsDualMode
     {
@@ -26950,6 +27984,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AppUserModel_PreventPinning"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AppUserModel_PreventPinning
     {
@@ -26976,6 +28011,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AppUserModel_RelaunchCommand"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AppUserModel_RelaunchCommand
     {
@@ -27002,6 +28038,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AppUserModel_RelaunchDisplayNameResource"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AppUserModel_RelaunchDisplayNameResource
     {
@@ -27028,6 +28065,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AppUserModel_RelaunchIconResource"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AppUserModel_RelaunchIconResource
     {
@@ -27054,6 +28092,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AppUserModel_SettingsCommand"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AppUserModel_SettingsCommand
     {
@@ -27080,6 +28119,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AppUserModel_StartPinOption"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AppUserModel_StartPinOption
     {
@@ -27106,6 +28146,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AppUserModel_ToastActivatorCLSID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AppUserModel_ToastActivatorCLSID
     {
@@ -27132,6 +28173,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AppUserModel_UninstallCommand"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AppUserModel_UninstallCommand
     {
@@ -27158,6 +28200,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AppUserModel_VisualElementsManifestHintPath"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AppUserModel_VisualElementsManifestHintPath
     {
@@ -27184,6 +28227,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_EdgeGesture_DisableTouchWhenFullscreen"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_EdgeGesture_DisableTouchWhenFullscreen
     {
@@ -27210,6 +28254,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Software_DateLastUsed"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Software_DateLastUsed
     {
@@ -27236,6 +28281,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Software_ProductName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Software_ProductName
     {
@@ -27262,6 +28308,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Sync_Comments"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Sync_Comments
     {
@@ -27288,6 +28335,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Sync_ConflictDescription"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Sync_ConflictDescription
     {
@@ -27314,6 +28362,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Sync_ConflictFirstLocation"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Sync_ConflictFirstLocation
     {
@@ -27340,6 +28389,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Sync_ConflictSecondLocation"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Sync_ConflictSecondLocation
     {
@@ -27366,6 +28416,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Sync_HandlerCollectionID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Sync_HandlerCollectionID
     {
@@ -27392,6 +28443,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Sync_HandlerID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Sync_HandlerID
     {
@@ -27418,6 +28470,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Sync_HandlerName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Sync_HandlerName
     {
@@ -27444,6 +28497,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Sync_HandlerType"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Sync_HandlerType
     {
@@ -27470,6 +28524,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Sync_HandlerTypeLabel"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Sync_HandlerTypeLabel
     {
@@ -27496,6 +28551,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Sync_ItemID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Sync_ItemID
     {
@@ -27522,6 +28578,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Sync_ItemName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Sync_ItemName
     {
@@ -27548,6 +28605,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Sync_ProgressPercentage"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Sync_ProgressPercentage
     {
@@ -27574,6 +28632,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Sync_State"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Sync_State
     {
@@ -27600,6 +28659,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Sync_Status"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Sync_Status
     {
@@ -27626,6 +28686,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Task_BillingInformation"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Task_BillingInformation
     {
@@ -27652,6 +28713,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Task_CompletionStatus"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Task_CompletionStatus
     {
@@ -27678,6 +28740,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Task_Owner"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Task_Owner
     {
@@ -27704,6 +28767,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Video_Compression"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Video_Compression
     {
@@ -27730,6 +28794,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Video_Director"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Video_Director
     {
@@ -27756,6 +28821,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Video_EncodingBitrate"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Video_EncodingBitrate
     {
@@ -27782,6 +28848,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Video_FourCC"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Video_FourCC
     {
@@ -27808,6 +28875,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Video_FrameHeight"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Video_FrameHeight
     {
@@ -27834,6 +28902,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Video_FrameRate"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Video_FrameRate
     {
@@ -27860,6 +28929,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Video_FrameWidth"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Video_FrameWidth
     {
@@ -27886,6 +28956,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Video_HorizontalAspectRatio"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Video_HorizontalAspectRatio
     {
@@ -27912,6 +28983,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Video_IsSpherical"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Video_IsSpherical
     {
@@ -27938,6 +29010,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Video_IsStereo"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Video_IsStereo
     {
@@ -27964,6 +29037,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Video_Orientation"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Video_Orientation
     {
@@ -27990,6 +29064,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Video_SampleSize"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Video_SampleSize
     {
@@ -28016,6 +29091,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Video_StreamName"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Video_StreamName
     {
@@ -28042,6 +29118,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Video_StreamNumber"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Video_StreamNumber
     {
@@ -28068,6 +29145,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Video_TotalBitrate"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Video_TotalBitrate
     {
@@ -28094,6 +29172,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Video_TranscodedForSync"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Video_TranscodedForSync
     {
@@ -28120,6 +29199,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Video_VerticalAspectRatio"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Video_VerticalAspectRatio
     {
@@ -28146,6 +29226,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Volume_FileSystem"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Volume_FileSystem
     {
@@ -28172,6 +29253,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Volume_IsMappedDrive"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Volume_IsMappedDrive
     {
@@ -28198,6 +29280,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Volume_IsRoot"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_Volume_IsRoot
     {
@@ -28224,51 +29307,67 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Category_Desc_Singular"]/*' />
     [NativeTypeName("#define PKEY_Devices_Category_Desc_Singular PKEY_Devices_Category")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Category_Desc_Singular => ref PKEY_Devices_Category;
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_CategoryGroup_Desc"]/*' />
     [NativeTypeName("#define PKEY_Devices_CategoryGroup_Desc PKEY_Devices_CategoryGroup")]
     public static ref readonly PROPERTYKEY PKEY_Devices_CategoryGroup_Desc => ref PKEY_Devices_CategoryGroup;
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Category_Desc_Plural"]/*' />
     [NativeTypeName("#define PKEY_Devices_Category_Desc_Plural PKEY_Devices_CategoryPlural")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Category_Desc_Plural => ref PKEY_Devices_CategoryPlural;
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_IsConnected"]/*' />
     [NativeTypeName("#define PKEY_Devices_IsConnected PKEY_Devices_Connected")]
     public static ref readonly PROPERTYKEY PKEY_Devices_IsConnected => ref PKEY_Devices_Connected;
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_IsDefaultDevice"]/*' />
     [NativeTypeName("#define PKEY_Devices_IsDefaultDevice PKEY_Devices_IsDefault")]
     public static ref readonly PROPERTYKEY PKEY_Devices_IsDefaultDevice => ref PKEY_Devices_IsDefault;
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_IsNetworkDevice"]/*' />
     [NativeTypeName("#define PKEY_Devices_IsNetworkDevice PKEY_Devices_IsNetworkConnected")]
     public static ref readonly PROPERTYKEY PKEY_Devices_IsNetworkDevice => ref PKEY_Devices_IsNetworkConnected;
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_IsSharedDevice"]/*' />
     [NativeTypeName("#define PKEY_Devices_IsSharedDevice PKEY_Devices_IsShared")]
     public static ref readonly PROPERTYKEY PKEY_Devices_IsSharedDevice => ref PKEY_Devices_IsShared;
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_IsLocalMachine"]/*' />
     [NativeTypeName("#define PKEY_Devices_IsLocalMachine PKEY_Devices_LocalMachine")]
     public static ref readonly PROPERTYKEY PKEY_Devices_IsLocalMachine => ref PKEY_Devices_LocalMachine;
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Notification_LowBattery"]/*' />
     [NativeTypeName("#define PKEY_Devices_Notification_LowBattery PKEY_Devices_Notifications_LowBattery")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Notification_LowBattery => ref PKEY_Devices_Notifications_LowBattery;
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Notification_MissedCall"]/*' />
     [NativeTypeName("#define PKEY_Devices_Notification_MissedCall PKEY_Devices_Notifications_MissedCall")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Notification_MissedCall => ref PKEY_Devices_Notifications_MissedCall;
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Notification_NewMessage"]/*' />
     [NativeTypeName("#define PKEY_Devices_Notification_NewMessage PKEY_Devices_Notifications_NewMessage")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Notification_NewMessage => ref PKEY_Devices_Notifications_NewMessage;
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Notification_NewVoicemail"]/*' />
     [NativeTypeName("#define PKEY_Devices_Notification_NewVoicemail PKEY_Devices_Notifications_NewVoicemail")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Notification_NewVoicemail => ref PKEY_Devices_Notifications_NewVoicemail;
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Notification_StorageFull"]/*' />
     [NativeTypeName("#define PKEY_Devices_Notification_StorageFull PKEY_Devices_Notifications_StorageFull")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Notification_StorageFull => ref PKEY_Devices_Notifications_StorageFull;
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_Notification_StorageFullLinkText"]/*' />
     [NativeTypeName("#define PKEY_Devices_Notification_StorageFullLinkText PKEY_Devices_Notifications_StorageFullLinkText")]
     public static ref readonly PROPERTYKEY PKEY_Devices_Notification_StorageFullLinkText => ref PKEY_Devices_Notifications_StorageFullLinkText;
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_IsNotWorkingProperly"]/*' />
     [NativeTypeName("#define PKEY_Devices_IsNotWorkingProperly PKEY_Devices_NotWorkingProperly")]
     public static ref readonly PROPERTYKEY PKEY_Devices_IsNotWorkingProperly => ref PKEY_Devices_NotWorkingProperly;
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_IsPaired"]/*' />
     [NativeTypeName("#define PKEY_Devices_IsPaired PKEY_Devices_Paired")]
     public static ref readonly PROPERTYKEY PKEY_Devices_IsPaired => ref PKEY_Devices_Paired;
 }

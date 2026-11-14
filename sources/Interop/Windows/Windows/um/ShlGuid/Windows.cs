@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CGID_Explorer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CGID_Explorer
     {
@@ -37,6 +38,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CGID_ShellDocView"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CGID_ShellDocView
     {
@@ -62,6 +64,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CGID_ShellServiceObject"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CGID_ShellServiceObject
     {
@@ -87,6 +90,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CGID_ExplorerBarDoc"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CGID_ExplorerBarDoc
     {
@@ -112,6 +116,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CGID_DefView"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CGID_DefView
     {
@@ -137,6 +142,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VID_LargeIcons"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid VID_LargeIcons
     {
@@ -162,6 +168,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VID_SmallIcons"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid VID_SmallIcons
     {
@@ -187,6 +194,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VID_List"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid VID_List
     {
@@ -212,6 +220,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VID_Details"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid VID_Details
     {
@@ -237,6 +246,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VID_Tile"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid VID_Tile
     {
@@ -262,6 +272,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VID_Content"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid VID_Content
     {
@@ -287,6 +298,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VID_Thumbnails"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid VID_Thumbnails
     {
@@ -312,6 +324,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VID_ThumbStrip"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid VID_ThumbStrip
     {
@@ -337,6 +350,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CGID_ShortCut"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CGID_ShortCut
     {
@@ -362,6 +376,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CGID_MENUDESKBAR"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CGID_MENUDESKBAR
     {
@@ -387,6 +402,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CPFG_LOGON_USERNAME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CPFG_LOGON_USERNAME
     {
@@ -412,6 +428,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CPFG_LOGON_PASSWORD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CPFG_LOGON_PASSWORD
     {
@@ -437,6 +454,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CPFG_SMARTCARD_USERNAME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CPFG_SMARTCARD_USERNAME
     {
@@ -462,6 +480,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CPFG_SMARTCARD_PIN"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CPFG_SMARTCARD_PIN
     {
@@ -487,6 +506,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CPFG_CREDENTIAL_PROVIDER_LOGO"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CPFG_CREDENTIAL_PROVIDER_LOGO
     {
@@ -512,6 +532,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CPFG_CREDENTIAL_PROVIDER_LABEL"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CPFG_CREDENTIAL_PROVIDER_LABEL
     {
@@ -537,6 +558,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CPFG_STANDALONE_SUBMIT_BUTTON"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CPFG_STANDALONE_SUBMIT_BUTTON
     {
@@ -562,6 +584,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CPFG_STYLE_LINK_AS_BUTTON"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CPFG_STYLE_LINK_AS_BUTTON
     {
@@ -587,6 +610,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ItemCount_Property_GUID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid ItemCount_Property_GUID
     {
@@ -612,6 +636,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SelectedItemCount_Property_GUID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SelectedItemCount_Property_GUID
     {
@@ -637,6 +662,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ItemIndex_Property_GUID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid ItemIndex_Property_GUID
     {
@@ -662,69 +688,91 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDSI_ARTIST"]/*' />
     [NativeTypeName("#define PIDSI_ARTIST 2")]
     public const int PIDSI_ARTIST = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDSI_SONGTITLE"]/*' />
     [NativeTypeName("#define PIDSI_SONGTITLE 3")]
     public const int PIDSI_SONGTITLE = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDSI_ALBUM"]/*' />
     [NativeTypeName("#define PIDSI_ALBUM 4")]
     public const int PIDSI_ALBUM = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDSI_YEAR"]/*' />
     [NativeTypeName("#define PIDSI_YEAR 5")]
     public const int PIDSI_YEAR = 5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDSI_COMMENT"]/*' />
     [NativeTypeName("#define PIDSI_COMMENT 6")]
     public const int PIDSI_COMMENT = 6;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDSI_TRACK"]/*' />
     [NativeTypeName("#define PIDSI_TRACK 7")]
     public const int PIDSI_TRACK = 7;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDSI_GENRE"]/*' />
     [NativeTypeName("#define PIDSI_GENRE 11")]
     public const int PIDSI_GENRE = 11;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDSI_LYRICS"]/*' />
     [NativeTypeName("#define PIDSI_LYRICS 12")]
     public const int PIDSI_LYRICS = 12;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDDRSI_PROTECTED"]/*' />
     [NativeTypeName("#define PIDDRSI_PROTECTED 2")]
     public const int PIDDRSI_PROTECTED = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDDRSI_DESCRIPTION"]/*' />
     [NativeTypeName("#define PIDDRSI_DESCRIPTION 3")]
     public const int PIDDRSI_DESCRIPTION = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDDRSI_PLAYCOUNT"]/*' />
     [NativeTypeName("#define PIDDRSI_PLAYCOUNT 4")]
     public const int PIDDRSI_PLAYCOUNT = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDDRSI_PLAYSTARTS"]/*' />
     [NativeTypeName("#define PIDDRSI_PLAYSTARTS 5")]
     public const int PIDDRSI_PLAYSTARTS = 5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDDRSI_PLAYEXPIRES"]/*' />
     [NativeTypeName("#define PIDDRSI_PLAYEXPIRES 6")]
     public const int PIDDRSI_PLAYEXPIRES = 6;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDASI_FORMAT"]/*' />
     [NativeTypeName("#define PIDASI_FORMAT 0x00000002")]
     public const int PIDASI_FORMAT = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDASI_TIMELENGTH"]/*' />
     [NativeTypeName("#define PIDASI_TIMELENGTH 0x00000003")]
     public const int PIDASI_TIMELENGTH = 0x00000003;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDASI_AVG_DATA_RATE"]/*' />
     [NativeTypeName("#define PIDASI_AVG_DATA_RATE 0x00000004")]
     public const int PIDASI_AVG_DATA_RATE = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDASI_SAMPLE_RATE"]/*' />
     [NativeTypeName("#define PIDASI_SAMPLE_RATE 0x00000005")]
     public const int PIDASI_SAMPLE_RATE = 0x00000005;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDASI_SAMPLE_SIZE"]/*' />
     [NativeTypeName("#define PIDASI_SAMPLE_SIZE 0x00000006")]
     public const int PIDASI_SAMPLE_SIZE = 0x00000006;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDASI_CHANNEL_COUNT"]/*' />
     [NativeTypeName("#define PIDASI_CHANNEL_COUNT 0x00000007")]
     public const int PIDASI_CHANNEL_COUNT = 0x00000007;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDASI_STREAM_NUMBER"]/*' />
     [NativeTypeName("#define PIDASI_STREAM_NUMBER 0x00000008")]
     public const int PIDASI_STREAM_NUMBER = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDASI_STREAM_NAME"]/*' />
     [NativeTypeName("#define PIDASI_STREAM_NAME 0x00000009")]
     public const int PIDASI_STREAM_NAME = 0x00000009;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDASI_COMPRESSION"]/*' />
     [NativeTypeName("#define PIDASI_COMPRESSION 0x0000000A")]
     public const int PIDASI_COMPRESSION = 0x0000000A;
 }

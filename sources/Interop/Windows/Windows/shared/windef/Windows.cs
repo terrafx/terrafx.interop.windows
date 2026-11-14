@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HFILE_ERROR"]/*' />
     [NativeTypeName("#define HFILE_ERROR ((HFILE)-1)")]
     public const int HFILE_ERROR = ((int)(-1));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.APP_LOCAL_DEVICE_ID_SIZE"]/*' />
     [NativeTypeName("#define APP_LOCAL_DEVICE_ID_SIZE 32")]
     public const int APP_LOCAL_DEVICE_ID_SIZE = 32;
 }

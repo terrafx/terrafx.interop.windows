@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MONITOR
 {
+    /// <include file='MONITOR.xml' path='doc/member[@name="MONITOR.MONITOR_DEFAULTTONULL"]/*' />
     [NativeTypeName("#define MONITOR_DEFAULTTONULL 0x00000000")]
     public const int MONITOR_DEFAULTTONULL = 0x00000000;
 
+    /// <include file='MONITOR.xml' path='doc/member[@name="MONITOR.MONITOR_DEFAULTTOPRIMARY"]/*' />
     [NativeTypeName("#define MONITOR_DEFAULTTOPRIMARY 0x00000001")]
     public const int MONITOR_DEFAULTTOPRIMARY = 0x00000001;
 
+    /// <include file='MONITOR.xml' path='doc/member[@name="MONITOR.MONITOR_DEFAULTTONEAREST"]/*' />
     [NativeTypeName("#define MONITOR_DEFAULTTONEAREST 0x00000002")]
     public const int MONITOR_DEFAULTTONEAREST = 0x00000002;
 }

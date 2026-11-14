@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIDisplayControl"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIDisplayControl
     {
@@ -38,6 +39,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIOutputDuplication"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIOutputDuplication
     {
@@ -63,6 +65,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGISurface2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGISurface2
     {
@@ -88,6 +91,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIResource1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIResource1
     {
@@ -113,6 +117,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIDevice2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIDevice2
     {
@@ -138,6 +143,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGISwapChain1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGISwapChain1
     {
@@ -163,6 +169,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIFactory2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIFactory2
     {
@@ -188,6 +195,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIAdapter2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIAdapter2
     {
@@ -213,6 +221,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIOutput1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIOutput1
     {

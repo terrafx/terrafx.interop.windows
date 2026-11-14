@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_PACKET_PROPERTY_COUNT"]/*' />
     [NativeTypeName("#define MAX_PACKET_PROPERTY_COUNT 32")]
     public const int MAX_PACKET_PROPERTY_COUNT = 32;
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_PACKET_BUTTON_COUNT"]/*' />
     [NativeTypeName("#define MAX_PACKET_BUTTON_COUNT 32")]
     public const int MAX_PACKET_BUTTON_COUNT = 32;
 }

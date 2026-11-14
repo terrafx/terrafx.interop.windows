@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class FR
 {
+    /// <include file='FR.xml' path='doc/member[@name="FR.FR_PRIVATE"]/*' />
     [NativeTypeName("#define FR_PRIVATE 0x10")]
     public const int FR_PRIVATE = 0x10;
 
+    /// <include file='FR.xml' path='doc/member[@name="FR.FR_NOT_ENUM"]/*' />
     [NativeTypeName("#define FR_NOT_ENUM 0x20")]
     public const int FR_NOT_ENUM = 0x20;
 }

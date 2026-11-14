@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class DI
 {
+    /// <include file='DI.xml' path='doc/member[@name="DI.DI_APPBANDING"]/*' />
     [NativeTypeName("#define DI_APPBANDING 0x00000001")]
     public const int DI_APPBANDING = 0x00000001;
 
+    /// <include file='DI.xml' path='doc/member[@name="DI.DI_ROPS_READ_DESTINATION"]/*' />
     [NativeTypeName("#define DI_ROPS_READ_DESTINATION 0x00000002")]
     public const int DI_ROPS_READ_DESTINATION = 0x00000002;
 }

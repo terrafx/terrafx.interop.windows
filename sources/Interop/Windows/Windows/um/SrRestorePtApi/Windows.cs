@@ -26,78 +26,103 @@ public static unsafe partial class Windows
     [return: NativeTypeName("DWORD")]
     public static extern uint SRRemoveRestorePoint([NativeTypeName("DWORD")] uint dwRPNum);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIN_EVENT"]/*' />
     [NativeTypeName("#define MIN_EVENT 100")]
     public const int MIN_EVENT = 100;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BEGIN_SYSTEM_CHANGE"]/*' />
     [NativeTypeName("#define BEGIN_SYSTEM_CHANGE 100")]
     public const int BEGIN_SYSTEM_CHANGE = 100;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.END_SYSTEM_CHANGE"]/*' />
     [NativeTypeName("#define END_SYSTEM_CHANGE 101")]
     public const int END_SYSTEM_CHANGE = 101;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BEGIN_NESTED_SYSTEM_CHANGE"]/*' />
     [NativeTypeName("#define BEGIN_NESTED_SYSTEM_CHANGE 102")]
     public const int BEGIN_NESTED_SYSTEM_CHANGE = 102;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.END_NESTED_SYSTEM_CHANGE"]/*' />
     [NativeTypeName("#define END_NESTED_SYSTEM_CHANGE 103")]
     public const int END_NESTED_SYSTEM_CHANGE = 103;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BEGIN_NESTED_SYSTEM_CHANGE_NORP"]/*' />
     [NativeTypeName("#define BEGIN_NESTED_SYSTEM_CHANGE_NORP 104")]
     public const int BEGIN_NESTED_SYSTEM_CHANGE_NORP = 104;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.END_NESTED_SYSTEM_CHANGE_NORP"]/*' />
     [NativeTypeName("#define END_NESTED_SYSTEM_CHANGE_NORP END_NESTED_SYSTEM_CHANGE")]
     public const int END_NESTED_SYSTEM_CHANGE_NORP = 103;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIN_RPT"]/*' />
     [NativeTypeName("#define MIN_RPT 0")]
     public const int MIN_RPT = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.APPLICATION_INSTALL"]/*' />
     [NativeTypeName("#define APPLICATION_INSTALL 0")]
     public const int APPLICATION_INSTALL = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.APPLICATION_UNINSTALL"]/*' />
     [NativeTypeName("#define APPLICATION_UNINSTALL 1")]
     public const int APPLICATION_UNINSTALL = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ACCESSIBILITY_SETTING"]/*' />
     [NativeTypeName("#define ACCESSIBILITY_SETTING 3")]
     public const int ACCESSIBILITY_SETTING = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OE_SETTING"]/*' />
     [NativeTypeName("#define OE_SETTING 4")]
     public const int OE_SETTING = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.APPLICATION_RUN"]/*' />
     [NativeTypeName("#define APPLICATION_RUN 5")]
     public const int APPLICATION_RUN = 5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RESTORE"]/*' />
     [NativeTypeName("#define RESTORE 6")]
     public const int RESTORE = 6;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CHECKPOINT"]/*' />
     [NativeTypeName("#define CHECKPOINT 7")]
     public const int CHECKPOINT = 7;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WINDOWS_SHUTDOWN"]/*' />
     [NativeTypeName("#define WINDOWS_SHUTDOWN 8")]
     public const int WINDOWS_SHUTDOWN = 8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WINDOWS_BOOT"]/*' />
     [NativeTypeName("#define WINDOWS_BOOT 9")]
     public const int WINDOWS_BOOT = 9;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FIRSTRUN"]/*' />
     [NativeTypeName("#define FIRSTRUN 11")]
     public const int FIRSTRUN = 11;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MODIFY_SETTINGS"]/*' />
     [NativeTypeName("#define MODIFY_SETTINGS 12")]
     public const int MODIFY_SETTINGS = 12;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CANCELLED_OPERATION"]/*' />
     [NativeTypeName("#define CANCELLED_OPERATION 13")]
     public const int CANCELLED_OPERATION = 13;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BACKUP"]/*' />
     [NativeTypeName("#define BACKUP 15")]
     public const int BACKUP = 15;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MANUAL_CHECKPOINT"]/*' />
     [NativeTypeName("#define MANUAL_CHECKPOINT 16")]
     public const int MANUAL_CHECKPOINT = 16;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WINDOWS_UPDATE"]/*' />
     [NativeTypeName("#define WINDOWS_UPDATE 17")]
     public const int WINDOWS_UPDATE = 17;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRITICAL_UPDATE"]/*' />
     [NativeTypeName("#define CRITICAL_UPDATE 18")]
     public const int CRITICAL_UPDATE = 18;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRSetRestorePoint"]/*' />
     [NativeTypeName("#define SRSetRestorePoint SRSetRestorePointW")]
     public static delegate*<RESTOREPOINTINFOW*, STATEMGRSTATUS*, BOOL> SRSetRestorePoint => &SRSetRestorePointW;
 }

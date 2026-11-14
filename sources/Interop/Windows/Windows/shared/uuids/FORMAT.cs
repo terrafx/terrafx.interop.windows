@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class FORMAT
 {
+    /// <include file='FORMAT.xml' path='doc/member[@name="FORMAT.FORMAT_None"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FORMAT_None
     {
@@ -37,6 +38,7 @@ public static partial class FORMAT
         }
     }
 
+    /// <include file='FORMAT.xml' path='doc/member[@name="FORMAT.FORMAT_VideoInfo"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FORMAT_VideoInfo
     {
@@ -62,6 +64,7 @@ public static partial class FORMAT
         }
     }
 
+    /// <include file='FORMAT.xml' path='doc/member[@name="FORMAT.FORMAT_VideoInfo2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FORMAT_VideoInfo2
     {
@@ -87,6 +90,7 @@ public static partial class FORMAT
         }
     }
 
+    /// <include file='FORMAT.xml' path='doc/member[@name="FORMAT.FORMAT_WaveFormatEx"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FORMAT_WaveFormatEx
     {
@@ -112,6 +116,7 @@ public static partial class FORMAT
         }
     }
 
+    /// <include file='FORMAT.xml' path='doc/member[@name="FORMAT.FORMAT_MPEGVideo"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FORMAT_MPEGVideo
     {
@@ -137,6 +142,7 @@ public static partial class FORMAT
         }
     }
 
+    /// <include file='FORMAT.xml' path='doc/member[@name="FORMAT.FORMAT_MPEGStreams"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FORMAT_MPEGStreams
     {
@@ -162,6 +168,7 @@ public static partial class FORMAT
         }
     }
 
+    /// <include file='FORMAT.xml' path='doc/member[@name="FORMAT.FORMAT_DvInfo"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FORMAT_DvInfo
     {
@@ -187,6 +194,7 @@ public static partial class FORMAT
         }
     }
 
+    /// <include file='FORMAT.xml' path='doc/member[@name="FORMAT.FORMAT_525WSS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FORMAT_525WSS
     {
@@ -212,6 +220,7 @@ public static partial class FORMAT
         }
     }
 
+    /// <include file='FORMAT.xml' path='doc/member[@name="FORMAT.FORMAT_AnalogVideo"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FORMAT_AnalogVideo
     {
@@ -237,6 +246,7 @@ public static partial class FORMAT
         }
     }
 
+    /// <include file='FORMAT.xml' path='doc/member[@name="FORMAT.FORMAT_CAPTIONED_H264VIDEO"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FORMAT_CAPTIONED_H264VIDEO
     {
@@ -262,6 +272,7 @@ public static partial class FORMAT
         }
     }
 
+    /// <include file='FORMAT.xml' path='doc/member[@name="FORMAT.FORMAT_CC_CONTAINER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FORMAT_CC_CONTAINER
     {
@@ -287,6 +298,7 @@ public static partial class FORMAT
         }
     }
 
+    /// <include file='FORMAT.xml' path='doc/member[@name="FORMAT.FORMAT_CAPTIONED_MPEG2VIDEO"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FORMAT_CAPTIONED_MPEG2VIDEO
     {

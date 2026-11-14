@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class TCP
 {
+    /// <include file='TCP.xml' path='doc/member[@name="TCP.TCP_NODELAY"]/*' />
     [NativeTypeName("#define TCP_NODELAY 0x0001")]
     public const int TCP_NODELAY = 0x0001;
 }

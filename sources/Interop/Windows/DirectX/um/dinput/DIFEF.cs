@@ -7,12 +7,15 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DIFEF
 {
+    /// <include file='DIFEF.xml' path='doc/member[@name="DIFEF.DIFEF_DEFAULT"]/*' />
     [NativeTypeName("#define DIFEF_DEFAULT 0x00000000")]
     public const int DIFEF_DEFAULT = 0x00000000;
 
+    /// <include file='DIFEF.xml' path='doc/member[@name="DIFEF.DIFEF_INCLUDENONSTANDARD"]/*' />
     [NativeTypeName("#define DIFEF_INCLUDENONSTANDARD 0x00000001")]
     public const int DIFEF_INCLUDENONSTANDARD = 0x00000001;
 
+    /// <include file='DIFEF.xml' path='doc/member[@name="DIFEF.DIFEF_MODIFYIFNEEDED"]/*' />
     [NativeTypeName("#define DIFEF_MODIFYIFNEEDED 0x00000010")]
     public const int DIFEF_MODIFYIFNEEDED = 0x00000010;
 }

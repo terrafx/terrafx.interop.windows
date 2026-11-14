@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class EVENTLOG
 {
+    /// <include file='EVENTLOG.xml' path='doc/member[@name="EVENTLOG.EVENTLOG_FULL_INFO"]/*' />
     [NativeTypeName("#define EVENTLOG_FULL_INFO 0")]
     public const int EVENTLOG_FULL_INFO = 0;
 }

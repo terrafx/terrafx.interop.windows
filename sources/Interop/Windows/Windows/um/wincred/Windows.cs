@@ -254,72 +254,95 @@ public static unsafe partial class Windows
     [return: NativeTypeName("DWORD")]
     public static extern uint CredUIReadSSOCredW([NativeTypeName("PCWSTR")] char* pszRealm, [NativeTypeName("PWSTR *")] char** ppszUsername);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BACK_BUTTON_IDENTIFY_AUTH_PACKAGE"]/*' />
     [NativeTypeName("#define BACK_BUTTON_IDENTIFY_AUTH_PACKAGE 0xCAD00001")]
     public const uint BACK_BUTTON_IDENTIFY_AUTH_PACKAGE = 0xCAD00001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CredWrite"]/*' />
     [NativeTypeName("#define CredWrite CredWriteW")]
     public static delegate*<CREDENTIALW*, uint, BOOL> CredWrite => &CredWriteW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CredRead"]/*' />
     [NativeTypeName("#define CredRead CredReadW")]
     public static delegate*<char*, uint, uint, CREDENTIALW**, BOOL> CredRead => &CredReadW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CredEnumerate"]/*' />
     [NativeTypeName("#define CredEnumerate CredEnumerateW")]
     public static delegate*<char*, uint, uint*, CREDENTIALW***, BOOL> CredEnumerate => &CredEnumerateW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CredWriteDomainCredentials"]/*' />
     [NativeTypeName("#define CredWriteDomainCredentials CredWriteDomainCredentialsW")]
     public static delegate*<CREDENTIAL_TARGET_INFORMATIONW*, CREDENTIALW*, uint, BOOL> CredWriteDomainCredentials => &CredWriteDomainCredentialsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CredReadDomainCredentials"]/*' />
     [NativeTypeName("#define CredReadDomainCredentials CredReadDomainCredentialsW")]
     public static delegate*<CREDENTIAL_TARGET_INFORMATIONW*, uint, uint*, CREDENTIALW***, BOOL> CredReadDomainCredentials => &CredReadDomainCredentialsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CredDelete"]/*' />
     [NativeTypeName("#define CredDelete CredDeleteW")]
     public static delegate*<char*, uint, uint, BOOL> CredDelete => &CredDeleteW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CredRename"]/*' />
     [NativeTypeName("#define CredRename CredRenameW")]
     public static delegate*<char*, char*, uint, uint, BOOL> CredRename => &CredRenameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CredGetTargetInfo"]/*' />
     [NativeTypeName("#define CredGetTargetInfo CredGetTargetInfoW")]
     public static delegate*<char*, uint, CREDENTIAL_TARGET_INFORMATIONW**, BOOL> CredGetTargetInfo => &CredGetTargetInfoW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CredMarshalCredential"]/*' />
     [NativeTypeName("#define CredMarshalCredential CredMarshalCredentialW")]
     public static delegate*<CRED_MARSHAL_TYPE, void*, char**, BOOL> CredMarshalCredential => &CredMarshalCredentialW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CredUnmarshalCredential"]/*' />
     [NativeTypeName("#define CredUnmarshalCredential CredUnmarshalCredentialW")]
     public static delegate*<char*, CRED_MARSHAL_TYPE*, void**, BOOL> CredUnmarshalCredential => &CredUnmarshalCredentialW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CredIsMarshaledCredential"]/*' />
     [NativeTypeName("#define CredIsMarshaledCredential CredIsMarshaledCredentialW")]
     public static delegate*<char*, BOOL> CredIsMarshaledCredential => &CredIsMarshaledCredentialW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CredUnPackAuthenticationBuffer"]/*' />
     [NativeTypeName("#define CredUnPackAuthenticationBuffer CredUnPackAuthenticationBufferW")]
     public static delegate*<uint, void*, uint, char*, uint*, char*, uint*, char*, uint*, BOOL> CredUnPackAuthenticationBuffer => &CredUnPackAuthenticationBufferW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CredPackAuthenticationBuffer"]/*' />
     [NativeTypeName("#define CredPackAuthenticationBuffer CredPackAuthenticationBufferW")]
     public static delegate*<uint, char*, char*, byte*, uint*, BOOL> CredPackAuthenticationBuffer => &CredPackAuthenticationBufferW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CredProtect"]/*' />
     [NativeTypeName("#define CredProtect CredProtectW")]
     public static delegate*<BOOL, char*, uint, char*, uint*, CRED_PROTECTION_TYPE*, BOOL> CredProtect => &CredProtectW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CredUnprotect"]/*' />
     [NativeTypeName("#define CredUnprotect CredUnprotectW")]
     public static delegate*<BOOL, char*, uint, char*, uint*, BOOL> CredUnprotect => &CredUnprotectW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CredIsProtected"]/*' />
     [NativeTypeName("#define CredIsProtected CredIsProtectedW")]
     public static delegate*<char*, CRED_PROTECTION_TYPE*, BOOL> CredIsProtected => &CredIsProtectedW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CredFindBestCredential"]/*' />
     [NativeTypeName("#define CredFindBestCredential CredFindBestCredentialW")]
     public static delegate*<char*, uint, uint, CREDENTIALW**, BOOL> CredFindBestCredential => &CredFindBestCredentialW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CredUIPromptForCredentials"]/*' />
     [NativeTypeName("#define CredUIPromptForCredentials CredUIPromptForCredentialsW")]
     public static delegate*<CREDUI_INFOW*, char*, SecHandle*, uint, char*, uint, char*, uint, BOOL*, uint, uint> CredUIPromptForCredentials => &CredUIPromptForCredentialsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CredUIPromptForWindowsCredentials"]/*' />
     [NativeTypeName("#define CredUIPromptForWindowsCredentials CredUIPromptForWindowsCredentialsW")]
     public static delegate*<CREDUI_INFOW*, uint, uint*, void*, uint, void**, uint*, BOOL*, uint, uint> CredUIPromptForWindowsCredentials => &CredUIPromptForWindowsCredentialsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CredUIParseUserName"]/*' />
     [NativeTypeName("#define CredUIParseUserName CredUIParseUserNameW")]
     public static delegate*<char*, char*, uint, char*, uint, uint> CredUIParseUserName => &CredUIParseUserNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CredUICmdLinePromptForCredentials"]/*' />
     [NativeTypeName("#define CredUICmdLinePromptForCredentials CredUICmdLinePromptForCredentialsW")]
     public static delegate*<char*, SecHandle*, uint, char*, uint, char*, uint, BOOL*, uint, uint> CredUICmdLinePromptForCredentials => &CredUICmdLinePromptForCredentialsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CredUIConfirmCredentials"]/*' />
     [NativeTypeName("#define CredUIConfirmCredentials CredUIConfirmCredentialsW")]
     public static delegate*<char*, BOOL, uint> CredUIConfirmCredentials => &CredUIConfirmCredentialsW;
 }

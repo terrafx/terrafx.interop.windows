@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class TC
 {
+    /// <include file='TC.xml' path='doc/member[@name="TC.TC_NORMAL"]/*' />
     [NativeTypeName("#define TC_NORMAL 0")]
     public const int TC_NORMAL = 0;
 
+    /// <include file='TC.xml' path='doc/member[@name="TC.TC_HARDERR"]/*' />
     [NativeTypeName("#define TC_HARDERR 1")]
     public const int TC_HARDERR = 1;
 
+    /// <include file='TC.xml' path='doc/member[@name="TC.TC_GP_TRAP"]/*' />
     [NativeTypeName("#define TC_GP_TRAP 2")]
     public const int TC_GP_TRAP = 2;
 
+    /// <include file='TC.xml' path='doc/member[@name="TC.TC_SIGNAL"]/*' />
     [NativeTypeName("#define TC_SIGNAL 3")]
     public const int TC_SIGNAL = 3;
 }

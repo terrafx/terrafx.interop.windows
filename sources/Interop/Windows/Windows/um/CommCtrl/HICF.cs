@@ -7,33 +7,43 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class HICF
 {
+    /// <include file='HICF.xml' path='doc/member[@name="HICF.HICF_OTHER"]/*' />
     [NativeTypeName("#define HICF_OTHER 0x00000000")]
     public const int HICF_OTHER = 0x00000000;
 
+    /// <include file='HICF.xml' path='doc/member[@name="HICF.HICF_MOUSE"]/*' />
     [NativeTypeName("#define HICF_MOUSE 0x00000001")]
     public const int HICF_MOUSE = 0x00000001;
 
+    /// <include file='HICF.xml' path='doc/member[@name="HICF.HICF_ARROWKEYS"]/*' />
     [NativeTypeName("#define HICF_ARROWKEYS 0x00000002")]
     public const int HICF_ARROWKEYS = 0x00000002;
 
+    /// <include file='HICF.xml' path='doc/member[@name="HICF.HICF_ACCELERATOR"]/*' />
     [NativeTypeName("#define HICF_ACCELERATOR 0x00000004")]
     public const int HICF_ACCELERATOR = 0x00000004;
 
+    /// <include file='HICF.xml' path='doc/member[@name="HICF.HICF_DUPACCEL"]/*' />
     [NativeTypeName("#define HICF_DUPACCEL 0x00000008")]
     public const int HICF_DUPACCEL = 0x00000008;
 
+    /// <include file='HICF.xml' path='doc/member[@name="HICF.HICF_ENTERING"]/*' />
     [NativeTypeName("#define HICF_ENTERING 0x00000010")]
     public const int HICF_ENTERING = 0x00000010;
 
+    /// <include file='HICF.xml' path='doc/member[@name="HICF.HICF_LEAVING"]/*' />
     [NativeTypeName("#define HICF_LEAVING 0x00000020")]
     public const int HICF_LEAVING = 0x00000020;
 
+    /// <include file='HICF.xml' path='doc/member[@name="HICF.HICF_RESELECT"]/*' />
     [NativeTypeName("#define HICF_RESELECT 0x00000040")]
     public const int HICF_RESELECT = 0x00000040;
 
+    /// <include file='HICF.xml' path='doc/member[@name="HICF.HICF_LMOUSE"]/*' />
     [NativeTypeName("#define HICF_LMOUSE 0x00000080")]
     public const int HICF_LMOUSE = 0x00000080;
 
+    /// <include file='HICF.xml' path='doc/member[@name="HICF.HICF_TOGGLEDROPDOWN"]/*' />
     [NativeTypeName("#define HICF_TOGGLEDROPDOWN 0x00000100")]
     public const int HICF_TOGGLEDROPDOWN = 0x00000100;
 }

@@ -405,135 +405,179 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     public static extern MSIHANDLE MsiGetLastErrorRecord();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MSI_NULL_INTEGER"]/*' />
     [NativeTypeName("#define MSI_NULL_INTEGER 0x80000000")]
     public const uint MSI_NULL_INTEGER = 0x80000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MSIDBOPEN_READONLY"]/*' />
     [NativeTypeName("#define MSIDBOPEN_READONLY (LPCTSTR)0")]
     public static char* MSIDBOPEN_READONLY => (char*)(0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MSIDBOPEN_TRANSACT"]/*' />
     [NativeTypeName("#define MSIDBOPEN_TRANSACT (LPCTSTR)1")]
     public static char* MSIDBOPEN_TRANSACT => (char*)(1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MSIDBOPEN_DIRECT"]/*' />
     [NativeTypeName("#define MSIDBOPEN_DIRECT (LPCTSTR)2")]
     public static char* MSIDBOPEN_DIRECT => (char*)(2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MSIDBOPEN_CREATE"]/*' />
     [NativeTypeName("#define MSIDBOPEN_CREATE (LPCTSTR)3")]
     public static char* MSIDBOPEN_CREATE => (char*)(3);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MSIDBOPEN_CREATEDIRECT"]/*' />
     [NativeTypeName("#define MSIDBOPEN_CREATEDIRECT (LPCTSTR)4")]
     public static char* MSIDBOPEN_CREATEDIRECT => (char*)(4);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MSIDBOPEN_PATCHFILE"]/*' />
     [NativeTypeName("#define MSIDBOPEN_PATCHFILE 32/sizeof(*MSIDBOPEN_READONLY)")]
     public const uint MSIDBOPEN_PATCHFILE = 32 / 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INSTALLMESSAGE_TYPEMASK"]/*' />
     [NativeTypeName("#define INSTALLMESSAGE_TYPEMASK 0xFF000000L")]
     public const uint INSTALLMESSAGE_TYPEMASK = 0xFF000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDatabaseOpenView"]/*' />
     [NativeTypeName("#define MsiDatabaseOpenView MsiDatabaseOpenViewW")]
     public static delegate*<MSIHANDLE, char*, MSIHANDLE*, uint> MsiDatabaseOpenView => &MsiDatabaseOpenViewW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiViewGetError"]/*' />
     [NativeTypeName("#define MsiViewGetError MsiViewGetErrorW")]
     public static delegate*<MSIHANDLE, char*, uint*, MSIDBERROR> MsiViewGetError => &MsiViewGetErrorW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDatabaseGetPrimaryKeys"]/*' />
     [NativeTypeName("#define MsiDatabaseGetPrimaryKeys MsiDatabaseGetPrimaryKeysW")]
     public static delegate*<MSIHANDLE, char*, MSIHANDLE*, uint> MsiDatabaseGetPrimaryKeys => &MsiDatabaseGetPrimaryKeysW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDatabaseIsTablePersistent"]/*' />
     [NativeTypeName("#define MsiDatabaseIsTablePersistent MsiDatabaseIsTablePersistentW")]
     public static delegate*<MSIHANDLE, char*, MSICONDITION> MsiDatabaseIsTablePersistent => &MsiDatabaseIsTablePersistentW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetSummaryInformation"]/*' />
     [NativeTypeName("#define MsiGetSummaryInformation MsiGetSummaryInformationW")]
     public static delegate*<MSIHANDLE, char*, uint, MSIHANDLE*, uint> MsiGetSummaryInformation => &MsiGetSummaryInformationW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSummaryInfoSetProperty"]/*' />
     [NativeTypeName("#define MsiSummaryInfoSetProperty MsiSummaryInfoSetPropertyW")]
     public static delegate*<MSIHANDLE, uint, uint, int, FILETIME*, char*, uint> MsiSummaryInfoSetProperty => &MsiSummaryInfoSetPropertyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSummaryInfoGetProperty"]/*' />
     [NativeTypeName("#define MsiSummaryInfoGetProperty MsiSummaryInfoGetPropertyW")]
     public static delegate*<MSIHANDLE, uint, uint*, int*, FILETIME*, char*, uint*, uint> MsiSummaryInfoGetProperty => &MsiSummaryInfoGetPropertyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiOpenDatabase"]/*' />
     [NativeTypeName("#define MsiOpenDatabase MsiOpenDatabaseW")]
     public static delegate*<char*, char*, MSIHANDLE*, uint> MsiOpenDatabase => &MsiOpenDatabaseW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDatabaseImport"]/*' />
     [NativeTypeName("#define MsiDatabaseImport MsiDatabaseImportW")]
     public static delegate*<MSIHANDLE, char*, char*, uint> MsiDatabaseImport => &MsiDatabaseImportW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDatabaseExport"]/*' />
     [NativeTypeName("#define MsiDatabaseExport MsiDatabaseExportW")]
     public static delegate*<MSIHANDLE, char*, char*, char*, uint> MsiDatabaseExport => &MsiDatabaseExportW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDatabaseMerge"]/*' />
     [NativeTypeName("#define MsiDatabaseMerge MsiDatabaseMergeW")]
     public static delegate*<MSIHANDLE, MSIHANDLE, char*, uint> MsiDatabaseMerge => &MsiDatabaseMergeW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDatabaseGenerateTransform"]/*' />
     [NativeTypeName("#define MsiDatabaseGenerateTransform MsiDatabaseGenerateTransformW")]
     public static delegate*<MSIHANDLE, MSIHANDLE, char*, int, int, uint> MsiDatabaseGenerateTransform => &MsiDatabaseGenerateTransformW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDatabaseApplyTransform"]/*' />
     [NativeTypeName("#define MsiDatabaseApplyTransform MsiDatabaseApplyTransformW")]
     public static delegate*<MSIHANDLE, char*, int, uint> MsiDatabaseApplyTransform => &MsiDatabaseApplyTransformW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiCreateTransformSummaryInfo"]/*' />
     [NativeTypeName("#define MsiCreateTransformSummaryInfo MsiCreateTransformSummaryInfoW")]
     public static delegate*<MSIHANDLE, MSIHANDLE, char*, int, int, uint> MsiCreateTransformSummaryInfo => &MsiCreateTransformSummaryInfoW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiRecordSetString"]/*' />
     [NativeTypeName("#define MsiRecordSetString MsiRecordSetStringW")]
     public static delegate*<MSIHANDLE, uint, char*, uint> MsiRecordSetString => &MsiRecordSetStringW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiRecordGetString"]/*' />
     [NativeTypeName("#define MsiRecordGetString MsiRecordGetStringW")]
     public static delegate*<MSIHANDLE, uint, char*, uint*, uint> MsiRecordGetString => &MsiRecordGetStringW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiRecordSetStream"]/*' />
     [NativeTypeName("#define MsiRecordSetStream MsiRecordSetStreamW")]
     public static delegate*<MSIHANDLE, uint, char*, uint> MsiRecordSetStream => &MsiRecordSetStreamW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSetProperty"]/*' />
     [NativeTypeName("#define MsiSetProperty MsiSetPropertyW")]
     public static delegate*<MSIHANDLE, char*, char*, uint> MsiSetProperty => &MsiSetPropertyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetProperty"]/*' />
     [NativeTypeName("#define MsiGetProperty MsiGetPropertyW")]
     public static delegate*<MSIHANDLE, char*, char*, uint*, uint> MsiGetProperty => &MsiGetPropertyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiFormatRecord"]/*' />
     [NativeTypeName("#define MsiFormatRecord MsiFormatRecordW")]
     public static delegate*<MSIHANDLE, MSIHANDLE, char*, uint*, uint> MsiFormatRecord => &MsiFormatRecordW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDoAction"]/*' />
     [NativeTypeName("#define MsiDoAction MsiDoActionW")]
     public static delegate*<MSIHANDLE, char*, uint> MsiDoAction => &MsiDoActionW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSequence"]/*' />
     [NativeTypeName("#define MsiSequence MsiSequenceW")]
     public static delegate*<MSIHANDLE, char*, int, uint> MsiSequence => &MsiSequenceW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEvaluateCondition"]/*' />
     [NativeTypeName("#define MsiEvaluateCondition MsiEvaluateConditionW")]
     public static delegate*<MSIHANDLE, char*, MSICONDITION> MsiEvaluateCondition => &MsiEvaluateConditionW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetFeatureState"]/*' />
     [NativeTypeName("#define MsiGetFeatureState MsiGetFeatureStateW")]
     public static delegate*<MSIHANDLE, char*, INSTALLSTATE*, INSTALLSTATE*, uint> MsiGetFeatureState => &MsiGetFeatureStateW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSetFeatureState"]/*' />
     [NativeTypeName("#define MsiSetFeatureState MsiSetFeatureStateW")]
     public static delegate*<MSIHANDLE, char*, INSTALLSTATE, uint> MsiSetFeatureState => &MsiSetFeatureStateW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSetFeatureAttributes"]/*' />
     [NativeTypeName("#define MsiSetFeatureAttributes MsiSetFeatureAttributesW")]
     public static delegate*<MSIHANDLE, char*, uint, uint> MsiSetFeatureAttributes => &MsiSetFeatureAttributesW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetComponentState"]/*' />
     [NativeTypeName("#define MsiGetComponentState MsiGetComponentStateW")]
     public static delegate*<MSIHANDLE, char*, INSTALLSTATE*, INSTALLSTATE*, uint> MsiGetComponentState => &MsiGetComponentStateW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSetComponentState"]/*' />
     [NativeTypeName("#define MsiSetComponentState MsiSetComponentStateW")]
     public static delegate*<MSIHANDLE, char*, INSTALLSTATE, uint> MsiSetComponentState => &MsiSetComponentStateW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetFeatureCost"]/*' />
     [NativeTypeName("#define MsiGetFeatureCost MsiGetFeatureCostW")]
     public static delegate*<MSIHANDLE, char*, MSICOSTTREE, INSTALLSTATE, int*, uint> MsiGetFeatureCost => &MsiGetFeatureCostW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnumComponentCosts"]/*' />
     [NativeTypeName("#define MsiEnumComponentCosts MsiEnumComponentCostsW")]
     public static delegate*<MSIHANDLE, char*, uint, INSTALLSTATE, char*, uint*, int*, int*, uint> MsiEnumComponentCosts => &MsiEnumComponentCostsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetFeatureValidStates"]/*' />
     [NativeTypeName("#define MsiGetFeatureValidStates MsiGetFeatureValidStatesW")]
     public static delegate*<MSIHANDLE, char*, uint*, uint> MsiGetFeatureValidStates => &MsiGetFeatureValidStatesW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetSourcePath"]/*' />
     [NativeTypeName("#define MsiGetSourcePath MsiGetSourcePathW")]
     public static delegate*<MSIHANDLE, char*, char*, uint*, uint> MsiGetSourcePath => &MsiGetSourcePathW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetTargetPath"]/*' />
     [NativeTypeName("#define MsiGetTargetPath MsiGetTargetPathW")]
     public static delegate*<MSIHANDLE, char*, char*, uint*, uint> MsiGetTargetPath => &MsiGetTargetPathW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSetTargetPath"]/*' />
     [NativeTypeName("#define MsiSetTargetPath MsiSetTargetPathW")]
     public static delegate*<MSIHANDLE, char*, char*, uint> MsiSetTargetPath => &MsiSetTargetPathW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiPreviewDialog"]/*' />
     [NativeTypeName("#define MsiPreviewDialog MsiPreviewDialogW")]
     public static delegate*<MSIHANDLE, char*, uint> MsiPreviewDialog => &MsiPreviewDialogW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiPreviewBillboard"]/*' />
     [NativeTypeName("#define MsiPreviewBillboard MsiPreviewBillboardW")]
     public static delegate*<MSIHANDLE, char*, char*, uint> MsiPreviewBillboard => &MsiPreviewBillboardW;
 }

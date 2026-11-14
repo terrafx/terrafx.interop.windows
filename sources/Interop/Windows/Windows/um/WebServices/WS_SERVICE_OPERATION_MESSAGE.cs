@@ -7,5 +7,6 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class WS_SERVICE_OPERATION_MESSAGE
 {
+    /// <include file='WS_SERVICE_OPERATION_MESSAGE.xml' path='doc/member[@name="WS_SERVICE_OPERATION_MESSAGE.WS_SERVICE_OPERATION_MESSAGE_NILLABLE_ELEMENT"]/*' />
     public const int WS_SERVICE_OPERATION_MESSAGE_NILLABLE_ELEMENT = 0x1;
 }

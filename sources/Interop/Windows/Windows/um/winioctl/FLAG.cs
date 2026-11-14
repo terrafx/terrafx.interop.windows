@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class FLAG
 {
+    /// <include file='FLAG.xml' path='doc/member[@name="FLAG.FLAG_USN_TRACK_MODIFIED_RANGES_ENABLE"]/*' />
     [NativeTypeName("#define FLAG_USN_TRACK_MODIFIED_RANGES_ENABLE 0x00000001")]
     public const int FLAG_USN_TRACK_MODIFIED_RANGES_ENABLE = 0x00000001;
 }

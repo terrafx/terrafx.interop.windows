@@ -9,39 +9,51 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class SP
 {
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_LOW_CONFIDENCE"]/*' />
     [NativeTypeName("#define SP_LOW_CONFIDENCE ( -1 )")]
     public const int SP_LOW_CONFIDENCE = (-1);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_NORMAL_CONFIDENCE"]/*' />
     [NativeTypeName("#define SP_NORMAL_CONFIDENCE ( 0 )")]
     public const int SP_NORMAL_CONFIDENCE = (0);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_HIGH_CONFIDENCE"]/*' />
     [NativeTypeName("#define SP_HIGH_CONFIDENCE ( +1 )")]
     public const int SP_HIGH_CONFIDENCE = (+1);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_MAX_WORD_LENGTH"]/*' />
     [NativeTypeName("#define SP_MAX_WORD_LENGTH ( 128 )")]
     public const int SP_MAX_WORD_LENGTH = (128);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_MAX_PRON_LENGTH"]/*' />
     [NativeTypeName("#define SP_MAX_PRON_LENGTH ( 384 )")]
     public const int SP_MAX_PRON_LENGTH = (384);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_EMULATE_RESULT"]/*' />
     [NativeTypeName("#define SP_EMULATE_RESULT ( 0x40000000 )")]
     public const int SP_EMULATE_RESULT = (0x40000000);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_SPPHRASESIZE_500"]/*' />
     [NativeTypeName("#define SP_SPPHRASESIZE_500 sizeof(SPPHRASE_50)")]
     public static uint SP_SPPHRASESIZE_500 => unchecked((uint)((uint)(sizeof(SPPHRASE_50))));
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_SPPHRASESIZE_530"]/*' />
     [NativeTypeName("#define SP_SPPHRASESIZE_530 sizeof(SPPHRASE_53)")]
     public static uint SP_SPPHRASESIZE_530 => unchecked((uint)((uint)(sizeof(SPPHRASE_53))));
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_GETWHOLEPHRASE"]/*' />
     [NativeTypeName("#define SP_GETWHOLEPHRASE SPPR_ALL_ELEMENTS")]
     public const SPPHRASERNG SP_GETWHOLEPHRASE = SPPR_ALL_ELEMENTS;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_STREAMPOS_ASAP"]/*' />
     [NativeTypeName("#define SP_STREAMPOS_ASAP ( 0 )")]
     public const int SP_STREAMPOS_ASAP = (0);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_STREAMPOS_REALTIME"]/*' />
     [NativeTypeName("#define SP_STREAMPOS_REALTIME ( -1 )")]
     public const int SP_STREAMPOS_REALTIME = (-1);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_MAX_LANGIDS"]/*' />
     [NativeTypeName("#define SP_MAX_LANGIDS ( 20 )")]
     public const int SP_MAX_LANGIDS = (20);
 }

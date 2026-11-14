@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIObject"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIObject
     {
@@ -38,6 +39,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIDeviceSubObject"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIDeviceSubObject
     {
@@ -63,6 +65,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIResource"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIResource
     {
@@ -88,6 +91,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIKeyedMutex"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIKeyedMutex
     {
@@ -113,6 +117,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGISurface"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGISurface
     {
@@ -138,6 +143,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGISurface1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGISurface1
     {
@@ -163,6 +169,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIAdapter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIAdapter
     {
@@ -188,6 +195,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIOutput"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIOutput
     {
@@ -213,6 +221,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGISwapChain"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGISwapChain
     {
@@ -238,6 +247,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIFactory"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIFactory
     {
@@ -263,6 +273,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIDevice"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIDevice
     {
@@ -288,6 +299,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIFactory1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIFactory1
     {
@@ -313,6 +325,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIAdapter1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIAdapter1
     {
@@ -338,6 +351,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIDevice1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIDevice1
     {

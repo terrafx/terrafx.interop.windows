@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class EVENT
 {
+    /// <include file='EVENT.xml' path='doc/member[@name="EVENT.EVENT_SRCSPEW_START"]/*' />
     [NativeTypeName("#define EVENT_SRCSPEW_START 100")]
     public const int EVENT_SRCSPEW_START = 100;
 
+    /// <include file='EVENT.xml' path='doc/member[@name="EVENT.EVENT_SRCSPEW"]/*' />
     [NativeTypeName("#define EVENT_SRCSPEW 100")]
     public const int EVENT_SRCSPEW = 100;
 
+    /// <include file='EVENT.xml' path='doc/member[@name="EVENT.EVENT_SRCSPEW_END"]/*' />
     [NativeTypeName("#define EVENT_SRCSPEW_END 199")]
     public const int EVENT_SRCSPEW_END = 199;
 }

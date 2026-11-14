@@ -7,18 +7,23 @@ namespace TerraFX.Interop.WinRT;
 
 public static partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Media_Transcoding_IMediaTranscoder"]/*' />
     [NativeTypeName("const WCHAR[43]")]
     public const string InterfaceName_Windows_Media_Transcoding_IMediaTranscoder = "Windows.Media.Transcoding.IMediaTranscoder";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Media_Transcoding_IMediaTranscoder2"]/*' />
     [NativeTypeName("const WCHAR[44]")]
     public const string InterfaceName_Windows_Media_Transcoding_IMediaTranscoder2 = "Windows.Media.Transcoding.IMediaTranscoder2";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Media_Transcoding_IPrepareTranscodeResult"]/*' />
     [NativeTypeName("const WCHAR[50]")]
     public const string InterfaceName_Windows_Media_Transcoding_IPrepareTranscodeResult = "Windows.Media.Transcoding.IPrepareTranscodeResult";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Media_Transcoding_MediaTranscoder"]/*' />
     [NativeTypeName("const WCHAR[42]")]
     public const string RuntimeClass_Windows_Media_Transcoding_MediaTranscoder = "Windows.Media.Transcoding.MediaTranscoder";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Media_Transcoding_PrepareTranscodeResult"]/*' />
     [NativeTypeName("const WCHAR[49]")]
     public const string RuntimeClass_Windows_Media_Transcoding_PrepareTranscodeResult = "Windows.Media.Transcoding.PrepareTranscodeResult";
 }

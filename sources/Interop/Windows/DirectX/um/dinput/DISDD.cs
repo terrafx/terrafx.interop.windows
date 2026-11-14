@@ -7,6 +7,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DISDD
 {
+    /// <include file='DISDD.xml' path='doc/member[@name="DISDD.DISDD_CONTINUE"]/*' />
     [NativeTypeName("#define DISDD_CONTINUE 0x00000001")]
     public const int DISDD_CONTINUE = 0x00000001;
 }

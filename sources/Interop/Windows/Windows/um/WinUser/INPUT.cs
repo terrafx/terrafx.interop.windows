@@ -69,12 +69,15 @@ public partial struct INPUT
         public HARDWAREINPUT hi;
     }
 
+    /// <include file='INPUT.xml' path='doc/member[@name="INPUT.INPUT_MOUSE"]/*' />
     [NativeTypeName("#define INPUT_MOUSE 0")]
     public const int INPUT_MOUSE = 0;
 
+    /// <include file='INPUT.xml' path='doc/member[@name="INPUT.INPUT_KEYBOARD"]/*' />
     [NativeTypeName("#define INPUT_KEYBOARD 1")]
     public const int INPUT_KEYBOARD = 1;
 
+    /// <include file='INPUT.xml' path='doc/member[@name="INPUT.INPUT_HARDWARE"]/*' />
     [NativeTypeName("#define INPUT_HARDWARE 2")]
     public const int INPUT_HARDWARE = 2;
 }

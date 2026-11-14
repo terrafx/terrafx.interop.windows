@@ -7,18 +7,23 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DDBLTFAST
 {
+    /// <include file='DDBLTFAST.xml' path='doc/member[@name="DDBLTFAST.DDBLTFAST_NOCOLORKEY"]/*' />
     [NativeTypeName("#define DDBLTFAST_NOCOLORKEY 0x00000000")]
     public const int DDBLTFAST_NOCOLORKEY = 0x00000000;
 
+    /// <include file='DDBLTFAST.xml' path='doc/member[@name="DDBLTFAST.DDBLTFAST_SRCCOLORKEY"]/*' />
     [NativeTypeName("#define DDBLTFAST_SRCCOLORKEY 0x00000001")]
     public const int DDBLTFAST_SRCCOLORKEY = 0x00000001;
 
+    /// <include file='DDBLTFAST.xml' path='doc/member[@name="DDBLTFAST.DDBLTFAST_DESTCOLORKEY"]/*' />
     [NativeTypeName("#define DDBLTFAST_DESTCOLORKEY 0x00000002")]
     public const int DDBLTFAST_DESTCOLORKEY = 0x00000002;
 
+    /// <include file='DDBLTFAST.xml' path='doc/member[@name="DDBLTFAST.DDBLTFAST_WAIT"]/*' />
     [NativeTypeName("#define DDBLTFAST_WAIT 0x00000010")]
     public const int DDBLTFAST_WAIT = 0x00000010;
 
+    /// <include file='DDBLTFAST.xml' path='doc/member[@name="DDBLTFAST.DDBLTFAST_DONOTWAIT"]/*' />
     [NativeTypeName("#define DDBLTFAST_DONOTWAIT 0x00000020")]
     public const int DDBLTFAST_DONOTWAIT = 0x00000020;
 }

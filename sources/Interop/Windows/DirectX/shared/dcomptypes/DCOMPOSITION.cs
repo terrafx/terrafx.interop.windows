@@ -7,6 +7,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DCOMPOSITION
 {
+    /// <include file='DCOMPOSITION.xml' path='doc/member[@name="DCOMPOSITION.DCOMPOSITION_MAX_WAITFORCOMPOSITORCLOCK_OBJECTS"]/*' />
     [NativeTypeName("#define DCOMPOSITION_MAX_WAITFORCOMPOSITORCLOCK_OBJECTS 32")]
     public const int DCOMPOSITION_MAX_WAITFORCOMPOSITORCLOCK_OBJECTS = 32;
 }

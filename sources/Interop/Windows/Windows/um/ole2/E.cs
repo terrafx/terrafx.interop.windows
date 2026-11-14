@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class E
 {
+    /// <include file='E.xml' path='doc/member[@name="E.E_DRAW"]/*' />
     [NativeTypeName("#define E_DRAW VIEW_E_DRAW")]
     public const int E_DRAW = unchecked((int)(0x80040140));
 }

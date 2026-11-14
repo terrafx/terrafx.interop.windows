@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public partial struct SID
 {
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_URLExecutionContext"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_URLExecutionContext
     {
@@ -38,6 +39,7 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_LaunchSourceViewSizePreference"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_LaunchSourceViewSizePreference
     {
@@ -63,6 +65,7 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_LaunchTargetViewSizePreference"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_LaunchTargetViewSizePreference
     {
@@ -88,6 +91,7 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_LaunchSourceAppUserModelId"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_LaunchSourceAppUserModelId
     {
@@ -113,6 +117,7 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_ShellExecuteNamedPropertyStore"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_ShellExecuteNamedPropertyStore
     {
@@ -138,42 +143,55 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_ShellTaskScheduler"]/*' />
     [NativeTypeName("#define SID_ShellTaskScheduler IID_IShellTaskScheduler")]
     public static ref readonly Guid SID_ShellTaskScheduler => ref IID_IShellTaskScheduler;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SFolderView"]/*' />
     [NativeTypeName("#define SID_SFolderView IID_IFolderView")]
     public static ref readonly Guid SID_SFolderView => ref IID_IFolderView;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SExplorerBrowserFrame"]/*' />
     [NativeTypeName("#define SID_SExplorerBrowserFrame IID_ICommDlgBrowser")]
     public static ref readonly Guid SID_SExplorerBrowserFrame => ref IID_ICommDlgBrowser;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SProfferService"]/*' />
     [NativeTypeName("#define SID_SProfferService IID_IProfferService")]
     public static ref readonly Guid SID_SProfferService => ref IID_IProfferService;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SBandSite"]/*' />
     [NativeTypeName("#define SID_SBandSite IID_IBandSite")]
     public static ref readonly Guid SID_SBandSite => ref IID_IBandSite;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SNewWindowManager"]/*' />
     [NativeTypeName("#define SID_SNewWindowManager IID_INewWindowManager")]
     public static ref readonly Guid SID_SNewWindowManager => ref IID_INewWindowManager;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SNewMenuClient"]/*' />
     [NativeTypeName("#define SID_SNewMenuClient IID_INewMenuClient")]
     public static ref readonly Guid SID_SNewMenuClient => ref IID_INewMenuClient;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SNavigationPane"]/*' />
     [NativeTypeName("#define SID_SNavigationPane IID_INameSpaceTreeControl")]
     public static ref readonly Guid SID_SNavigationPane => ref IID_INameSpaceTreeControl;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_ExplorerPaneVisibility"]/*' />
     [NativeTypeName("#define SID_ExplorerPaneVisibility IID_IExplorerPaneVisibility")]
     public static ref readonly Guid SID_ExplorerPaneVisibility => ref IID_IExplorerPaneVisibility;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_ExecuteCommandHost"]/*' />
     [NativeTypeName("#define SID_ExecuteCommandHost IID_IExecuteCommandHost")]
     public static ref readonly Guid SID_ExecuteCommandHost => ref IID_IExecuteCommandHost;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_HandlerInfo"]/*' />
     [NativeTypeName("#define SID_HandlerInfo IID_IHandlerInfo")]
     public static ref readonly Guid SID_HandlerInfo => ref IID_IHandlerInfo;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SHandlerActivationHost"]/*' />
     [NativeTypeName("#define SID_SHandlerActivationHost IID_IHandlerActivationHost")]
     public static ref readonly Guid SID_SHandlerActivationHost => ref IID_IHandlerActivationHost;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_AppActivationUIInfo"]/*' />
     [NativeTypeName("#define SID_AppActivationUIInfo IID_IAppActivationUIInfo")]
     public static ref readonly Guid SID_AppActivationUIInfo => ref IID_IAppActivationUIInfo;
 }

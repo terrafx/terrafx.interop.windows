@@ -7,6 +7,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DIEB
 {
+    /// <include file='DIEB.xml' path='doc/member[@name="DIEB.DIEB_NOTRIGGER"]/*' />
     [NativeTypeName("#define DIEB_NOTRIGGER 0xFFFFFFFF")]
     public const uint DIEB_NOTRIGGER = 0xFFFFFFFF;
 }

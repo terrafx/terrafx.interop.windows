@@ -1506,1557 +1506,2075 @@ public static unsafe partial class Windows
     [return: NativeTypeName("DWORD")]
     public static extern uint wglSwapMultipleBuffers(uint param0, [NativeTypeName("const WGLSWAP *")] WGLSWAP* param1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRCCOPY"]/*' />
     [NativeTypeName("#define SRCCOPY (DWORD)0x00CC0020")]
     public const uint SRCCOPY = (uint)(0x00CC0020);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRCPAINT"]/*' />
     [NativeTypeName("#define SRCPAINT (DWORD)0x00EE0086")]
     public const uint SRCPAINT = (uint)(0x00EE0086);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRCAND"]/*' />
     [NativeTypeName("#define SRCAND (DWORD)0x008800C6")]
     public const uint SRCAND = (uint)(0x008800C6);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRCINVERT"]/*' />
     [NativeTypeName("#define SRCINVERT (DWORD)0x00660046")]
     public const uint SRCINVERT = (uint)(0x00660046);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRCERASE"]/*' />
     [NativeTypeName("#define SRCERASE (DWORD)0x00440328")]
     public const uint SRCERASE = (uint)(0x00440328);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NOTSRCCOPY"]/*' />
     [NativeTypeName("#define NOTSRCCOPY (DWORD)0x00330008")]
     public const uint NOTSRCCOPY = (uint)(0x00330008);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NOTSRCERASE"]/*' />
     [NativeTypeName("#define NOTSRCERASE (DWORD)0x001100A6")]
     public const uint NOTSRCERASE = (uint)(0x001100A6);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MERGECOPY"]/*' />
     [NativeTypeName("#define MERGECOPY (DWORD)0x00C000CA")]
     public const uint MERGECOPY = (uint)(0x00C000CA);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MERGEPAINT"]/*' />
     [NativeTypeName("#define MERGEPAINT (DWORD)0x00BB0226")]
     public const uint MERGEPAINT = (uint)(0x00BB0226);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PATCOPY"]/*' />
     [NativeTypeName("#define PATCOPY (DWORD)0x00F00021")]
     public const uint PATCOPY = (uint)(0x00F00021);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PATPAINT"]/*' />
     [NativeTypeName("#define PATPAINT (DWORD)0x00FB0A09")]
     public const uint PATPAINT = (uint)(0x00FB0A09);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PATINVERT"]/*' />
     [NativeTypeName("#define PATINVERT (DWORD)0x005A0049")]
     public const uint PATINVERT = (uint)(0x005A0049);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DSTINVERT"]/*' />
     [NativeTypeName("#define DSTINVERT (DWORD)0x00550009")]
     public const uint DSTINVERT = (uint)(0x00550009);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BLACKNESS"]/*' />
     [NativeTypeName("#define BLACKNESS (DWORD)0x00000042")]
     public const uint BLACKNESS = (uint)(0x00000042);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WHITENESS"]/*' />
     [NativeTypeName("#define WHITENESS (DWORD)0x00FF0062")]
     public const uint WHITENESS = (uint)(0x00FF0062);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NOMIRRORBITMAP"]/*' />
     [NativeTypeName("#define NOMIRRORBITMAP (DWORD)0x80000000")]
     public const uint NOMIRRORBITMAP = (uint)(0x80000000);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CAPTUREBLT"]/*' />
     [NativeTypeName("#define CAPTUREBLT (DWORD)0x40000000")]
     public const uint CAPTUREBLT = (uint)(0x40000000);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GDI_ERROR"]/*' />
     [NativeTypeName("#define GDI_ERROR (0xFFFFFFFFL)")]
     public const uint GDI_ERROR = (0xFFFFFFFF);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ERROR"]/*' />
     [NativeTypeName("#define ERROR 0")]
     public const int ERROR = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NULLREGION"]/*' />
     [NativeTypeName("#define NULLREGION 1")]
     public const int NULLREGION = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SIMPLEREGION"]/*' />
     [NativeTypeName("#define SIMPLEREGION 2")]
     public const int SIMPLEREGION = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COMPLEXREGION"]/*' />
     [NativeTypeName("#define COMPLEXREGION 3")]
     public const int COMPLEXREGION = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RGN_ERROR"]/*' />
     [NativeTypeName("#define RGN_ERROR ERROR")]
     public const int RGN_ERROR = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RGN_AND"]/*' />
     [NativeTypeName("#define RGN_AND 1")]
     public const int RGN_AND = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RGN_OR"]/*' />
     [NativeTypeName("#define RGN_OR 2")]
     public const int RGN_OR = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RGN_XOR"]/*' />
     [NativeTypeName("#define RGN_XOR 3")]
     public const int RGN_XOR = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RGN_DIFF"]/*' />
     [NativeTypeName("#define RGN_DIFF 4")]
     public const int RGN_DIFF = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RGN_COPY"]/*' />
     [NativeTypeName("#define RGN_COPY 5")]
     public const int RGN_COPY = 5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RGN_MIN"]/*' />
     [NativeTypeName("#define RGN_MIN RGN_AND")]
     public const int RGN_MIN = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RGN_MAX"]/*' />
     [NativeTypeName("#define RGN_MAX RGN_COPY")]
     public const int RGN_MAX = 5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BLACKONWHITE"]/*' />
     [NativeTypeName("#define BLACKONWHITE 1")]
     public const int BLACKONWHITE = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WHITEONBLACK"]/*' />
     [NativeTypeName("#define WHITEONBLACK 2")]
     public const int WHITEONBLACK = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COLORONCOLOR"]/*' />
     [NativeTypeName("#define COLORONCOLOR 3")]
     public const int COLORONCOLOR = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HALFTONE"]/*' />
     [NativeTypeName("#define HALFTONE 4")]
     public const int HALFTONE = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MAXSTRETCHBLTMODE"]/*' />
     [NativeTypeName("#define MAXSTRETCHBLTMODE 4")]
     public const int MAXSTRETCHBLTMODE = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STRETCH_ANDSCANS"]/*' />
     [NativeTypeName("#define STRETCH_ANDSCANS BLACKONWHITE")]
     public const int STRETCH_ANDSCANS = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STRETCH_ORSCANS"]/*' />
     [NativeTypeName("#define STRETCH_ORSCANS WHITEONBLACK")]
     public const int STRETCH_ORSCANS = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STRETCH_DELETESCANS"]/*' />
     [NativeTypeName("#define STRETCH_DELETESCANS COLORONCOLOR")]
     public const int STRETCH_DELETESCANS = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STRETCH_HALFTONE"]/*' />
     [NativeTypeName("#define STRETCH_HALFTONE HALFTONE")]
     public const int STRETCH_HALFTONE = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ALTERNATE"]/*' />
     [NativeTypeName("#define ALTERNATE 1")]
     public const int ALTERNATE = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WINDING"]/*' />
     [NativeTypeName("#define WINDING 2")]
     public const int WINDING = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.POLYFILL_LAST"]/*' />
     [NativeTypeName("#define POLYFILL_LAST 2")]
     public const int POLYFILL_LAST = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LAYOUT_RTL"]/*' />
     [NativeTypeName("#define LAYOUT_RTL 0x00000001")]
     public const int LAYOUT_RTL = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LAYOUT_BTT"]/*' />
     [NativeTypeName("#define LAYOUT_BTT 0x00000002")]
     public const int LAYOUT_BTT = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LAYOUT_VBH"]/*' />
     [NativeTypeName("#define LAYOUT_VBH 0x00000004")]
     public const int LAYOUT_VBH = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LAYOUT_ORIENTATIONMASK"]/*' />
     [NativeTypeName("#define LAYOUT_ORIENTATIONMASK (LAYOUT_RTL | LAYOUT_BTT | LAYOUT_VBH)")]
     public const int LAYOUT_ORIENTATIONMASK = (0x00000001 | 0x00000002 | 0x00000004);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LAYOUT_BITMAPORIENTATIONPRESERVED"]/*' />
     [NativeTypeName("#define LAYOUT_BITMAPORIENTATIONPRESERVED 0x00000008")]
     public const int LAYOUT_BITMAPORIENTATIONPRESERVED = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VTA_BASELINE"]/*' />
     [NativeTypeName("#define VTA_BASELINE TA_BASELINE")]
     public const int VTA_BASELINE = 24;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VTA_LEFT"]/*' />
     [NativeTypeName("#define VTA_LEFT TA_BOTTOM")]
     public const int VTA_LEFT = 8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VTA_RIGHT"]/*' />
     [NativeTypeName("#define VTA_RIGHT TA_TOP")]
     public const int VTA_RIGHT = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VTA_CENTER"]/*' />
     [NativeTypeName("#define VTA_CENTER TA_CENTER")]
     public const int VTA_CENTER = 6;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VTA_BOTTOM"]/*' />
     [NativeTypeName("#define VTA_BOTTOM TA_RIGHT")]
     public const int VTA_BOTTOM = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VTA_TOP"]/*' />
     [NativeTypeName("#define VTA_TOP TA_LEFT")]
     public const int VTA_TOP = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ETO_OPAQUE"]/*' />
     [NativeTypeName("#define ETO_OPAQUE 0x0002")]
     public const int ETO_OPAQUE = 0x0002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ETO_CLIPPED"]/*' />
     [NativeTypeName("#define ETO_CLIPPED 0x0004")]
     public const int ETO_CLIPPED = 0x0004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ETO_GLYPH_INDEX"]/*' />
     [NativeTypeName("#define ETO_GLYPH_INDEX 0x0010")]
     public const int ETO_GLYPH_INDEX = 0x0010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ETO_RTLREADING"]/*' />
     [NativeTypeName("#define ETO_RTLREADING 0x0080")]
     public const int ETO_RTLREADING = 0x0080;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ETO_NUMERICSLOCAL"]/*' />
     [NativeTypeName("#define ETO_NUMERICSLOCAL 0x0400")]
     public const int ETO_NUMERICSLOCAL = 0x0400;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ETO_NUMERICSLATIN"]/*' />
     [NativeTypeName("#define ETO_NUMERICSLATIN 0x0800")]
     public const int ETO_NUMERICSLATIN = 0x0800;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ETO_IGNORELANGUAGE"]/*' />
     [NativeTypeName("#define ETO_IGNORELANGUAGE 0x1000")]
     public const int ETO_IGNORELANGUAGE = 0x1000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ETO_PDY"]/*' />
     [NativeTypeName("#define ETO_PDY 0x2000")]
     public const int ETO_PDY = 0x2000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ETO_REVERSE_INDEX_MAP"]/*' />
     [NativeTypeName("#define ETO_REVERSE_INDEX_MAP 0x10000")]
     public const int ETO_REVERSE_INDEX_MAP = 0x10000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ASPECT_FILTERING"]/*' />
     [NativeTypeName("#define ASPECT_FILTERING 0x0001")]
     public const int ASPECT_FILTERING = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DCB_RESET"]/*' />
     [NativeTypeName("#define DCB_RESET 0x0001")]
     public const int DCB_RESET = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DCB_ACCUMULATE"]/*' />
     [NativeTypeName("#define DCB_ACCUMULATE 0x0002")]
     public const int DCB_ACCUMULATE = 0x0002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DCB_DIRTY"]/*' />
     [NativeTypeName("#define DCB_DIRTY DCB_ACCUMULATE")]
     public const int DCB_DIRTY = 0x0002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DCB_SET"]/*' />
     [NativeTypeName("#define DCB_SET (DCB_RESET | DCB_ACCUMULATE)")]
     public const int DCB_SET = (0x0001 | 0x0002);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DCB_ENABLE"]/*' />
     [NativeTypeName("#define DCB_ENABLE 0x0004")]
     public const int DCB_ENABLE = 0x0004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DCB_DISABLE"]/*' />
     [NativeTypeName("#define DCB_DISABLE 0x0008")]
     public const int DCB_DISABLE = 0x0008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NEWFRAME"]/*' />
     [NativeTypeName("#define NEWFRAME 1")]
     public const int NEWFRAME = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ABORTDOC"]/*' />
     [NativeTypeName("#define ABORTDOC 2")]
     public const int ABORTDOC = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NEXTBAND"]/*' />
     [NativeTypeName("#define NEXTBAND 3")]
     public const int NEXTBAND = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SETCOLORTABLE"]/*' />
     [NativeTypeName("#define SETCOLORTABLE 4")]
     public const int SETCOLORTABLE = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GETCOLORTABLE"]/*' />
     [NativeTypeName("#define GETCOLORTABLE 5")]
     public const int GETCOLORTABLE = 5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FLUSHOUTPUT"]/*' />
     [NativeTypeName("#define FLUSHOUTPUT 6")]
     public const int FLUSHOUTPUT = 6;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DRAFTMODE"]/*' />
     [NativeTypeName("#define DRAFTMODE 7")]
     public const int DRAFTMODE = 7;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QUERYESCSUPPORT"]/*' />
     [NativeTypeName("#define QUERYESCSUPPORT 8")]
     public const int QUERYESCSUPPORT = 8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SETABORTPROC"]/*' />
     [NativeTypeName("#define SETABORTPROC 9")]
     public const int SETABORTPROC = 9;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STARTDOC"]/*' />
     [NativeTypeName("#define STARTDOC 10")]
     public const int STARTDOC = 10;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ENDDOC"]/*' />
     [NativeTypeName("#define ENDDOC 11")]
     public const int ENDDOC = 11;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GETPHYSPAGESIZE"]/*' />
     [NativeTypeName("#define GETPHYSPAGESIZE 12")]
     public const int GETPHYSPAGESIZE = 12;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GETPRINTINGOFFSET"]/*' />
     [NativeTypeName("#define GETPRINTINGOFFSET 13")]
     public const int GETPRINTINGOFFSET = 13;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GETSCALINGFACTOR"]/*' />
     [NativeTypeName("#define GETSCALINGFACTOR 14")]
     public const int GETSCALINGFACTOR = 14;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCOMMENT"]/*' />
     [NativeTypeName("#define MFCOMMENT 15")]
     public const int MFCOMMENT = 15;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GETPENWIDTH"]/*' />
     [NativeTypeName("#define GETPENWIDTH 16")]
     public const int GETPENWIDTH = 16;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SETCOPYCOUNT"]/*' />
     [NativeTypeName("#define SETCOPYCOUNT 17")]
     public const int SETCOPYCOUNT = 17;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SELECTPAPERSOURCE"]/*' />
     [NativeTypeName("#define SELECTPAPERSOURCE 18")]
     public const int SELECTPAPERSOURCE = 18;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DEVICEDATA"]/*' />
     [NativeTypeName("#define DEVICEDATA 19")]
     public const int DEVICEDATA = 19;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PASSTHROUGH"]/*' />
     [NativeTypeName("#define PASSTHROUGH 19")]
     public const int PASSTHROUGH = 19;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GETTECHNOLGY"]/*' />
     [NativeTypeName("#define GETTECHNOLGY 20")]
     public const int GETTECHNOLGY = 20;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GETTECHNOLOGY"]/*' />
     [NativeTypeName("#define GETTECHNOLOGY 20")]
     public const int GETTECHNOLOGY = 20;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SETLINECAP"]/*' />
     [NativeTypeName("#define SETLINECAP 21")]
     public const int SETLINECAP = 21;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SETLINEJOIN"]/*' />
     [NativeTypeName("#define SETLINEJOIN 22")]
     public const int SETLINEJOIN = 22;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SETMITERLIMIT"]/*' />
     [NativeTypeName("#define SETMITERLIMIT 23")]
     public const int SETMITERLIMIT = 23;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BANDINFO"]/*' />
     [NativeTypeName("#define BANDINFO 24")]
     public const int BANDINFO = 24;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DRAWPATTERNRECT"]/*' />
     [NativeTypeName("#define DRAWPATTERNRECT 25")]
     public const int DRAWPATTERNRECT = 25;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GETVECTORPENSIZE"]/*' />
     [NativeTypeName("#define GETVECTORPENSIZE 26")]
     public const int GETVECTORPENSIZE = 26;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GETVECTORBRUSHSIZE"]/*' />
     [NativeTypeName("#define GETVECTORBRUSHSIZE 27")]
     public const int GETVECTORBRUSHSIZE = 27;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ENABLEDUPLEX"]/*' />
     [NativeTypeName("#define ENABLEDUPLEX 28")]
     public const int ENABLEDUPLEX = 28;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GETSETPAPERBINS"]/*' />
     [NativeTypeName("#define GETSETPAPERBINS 29")]
     public const int GETSETPAPERBINS = 29;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GETSETPRINTORIENT"]/*' />
     [NativeTypeName("#define GETSETPRINTORIENT 30")]
     public const int GETSETPRINTORIENT = 30;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ENUMPAPERBINS"]/*' />
     [NativeTypeName("#define ENUMPAPERBINS 31")]
     public const int ENUMPAPERBINS = 31;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SETDIBSCALING"]/*' />
     [NativeTypeName("#define SETDIBSCALING 32")]
     public const int SETDIBSCALING = 32;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EPSPRINTING"]/*' />
     [NativeTypeName("#define EPSPRINTING 33")]
     public const int EPSPRINTING = 33;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ENUMPAPERMETRICS"]/*' />
     [NativeTypeName("#define ENUMPAPERMETRICS 34")]
     public const int ENUMPAPERMETRICS = 34;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GETSETPAPERMETRICS"]/*' />
     [NativeTypeName("#define GETSETPAPERMETRICS 35")]
     public const int GETSETPAPERMETRICS = 35;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.POSTSCRIPT_DATA"]/*' />
     [NativeTypeName("#define POSTSCRIPT_DATA 37")]
     public const int POSTSCRIPT_DATA = 37;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.POSTSCRIPT_IGNORE"]/*' />
     [NativeTypeName("#define POSTSCRIPT_IGNORE 38")]
     public const int POSTSCRIPT_IGNORE = 38;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MOUSETRAILS"]/*' />
     [NativeTypeName("#define MOUSETRAILS 39")]
     public const int MOUSETRAILS = 39;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GETDEVICEUNITS"]/*' />
     [NativeTypeName("#define GETDEVICEUNITS 42")]
     public const int GETDEVICEUNITS = 42;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GETEXTENDEDTEXTMETRICS"]/*' />
     [NativeTypeName("#define GETEXTENDEDTEXTMETRICS 256")]
     public const int GETEXTENDEDTEXTMETRICS = 256;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GETEXTENTTABLE"]/*' />
     [NativeTypeName("#define GETEXTENTTABLE 257")]
     public const int GETEXTENTTABLE = 257;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GETPAIRKERNTABLE"]/*' />
     [NativeTypeName("#define GETPAIRKERNTABLE 258")]
     public const int GETPAIRKERNTABLE = 258;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GETTRACKKERNTABLE"]/*' />
     [NativeTypeName("#define GETTRACKKERNTABLE 259")]
     public const int GETTRACKKERNTABLE = 259;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EXTTEXTOUT"]/*' />
     [NativeTypeName("#define EXTTEXTOUT 512")]
     public const int EXTTEXTOUT = 512;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GETFACENAME"]/*' />
     [NativeTypeName("#define GETFACENAME 513")]
     public const int GETFACENAME = 513;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DOWNLOADFACE"]/*' />
     [NativeTypeName("#define DOWNLOADFACE 514")]
     public const int DOWNLOADFACE = 514;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ENABLERELATIVEWIDTHS"]/*' />
     [NativeTypeName("#define ENABLERELATIVEWIDTHS 768")]
     public const int ENABLERELATIVEWIDTHS = 768;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ENABLEPAIRKERNING"]/*' />
     [NativeTypeName("#define ENABLEPAIRKERNING 769")]
     public const int ENABLEPAIRKERNING = 769;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SETKERNTRACK"]/*' />
     [NativeTypeName("#define SETKERNTRACK 770")]
     public const int SETKERNTRACK = 770;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SETALLJUSTVALUES"]/*' />
     [NativeTypeName("#define SETALLJUSTVALUES 771")]
     public const int SETALLJUSTVALUES = 771;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SETCHARSET"]/*' />
     [NativeTypeName("#define SETCHARSET 772")]
     public const int SETCHARSET = 772;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STRETCHBLT"]/*' />
     [NativeTypeName("#define STRETCHBLT 2048")]
     public const int STRETCHBLT = 2048;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.METAFILE_DRIVER"]/*' />
     [NativeTypeName("#define METAFILE_DRIVER 2049")]
     public const int METAFILE_DRIVER = 2049;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GETSETSCREENPARAMS"]/*' />
     [NativeTypeName("#define GETSETSCREENPARAMS 3072")]
     public const int GETSETSCREENPARAMS = 3072;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QUERYDIBSUPPORT"]/*' />
     [NativeTypeName("#define QUERYDIBSUPPORT 3073")]
     public const int QUERYDIBSUPPORT = 3073;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BEGIN_PATH"]/*' />
     [NativeTypeName("#define BEGIN_PATH 4096")]
     public const int BEGIN_PATH = 4096;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLIP_TO_PATH"]/*' />
     [NativeTypeName("#define CLIP_TO_PATH 4097")]
     public const int CLIP_TO_PATH = 4097;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.END_PATH"]/*' />
     [NativeTypeName("#define END_PATH 4098")]
     public const int END_PATH = 4098;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EXT_DEVICE_CAPS"]/*' />
     [NativeTypeName("#define EXT_DEVICE_CAPS 4099")]
     public const int EXT_DEVICE_CAPS = 4099;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RESTORE_CTM"]/*' />
     [NativeTypeName("#define RESTORE_CTM 4100")]
     public const int RESTORE_CTM = 4100;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SAVE_CTM"]/*' />
     [NativeTypeName("#define SAVE_CTM 4101")]
     public const int SAVE_CTM = 4101;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TRANSFORM_CTM"]/*' />
     [NativeTypeName("#define TRANSFORM_CTM 4107")]
     public const int TRANSFORM_CTM = 4107;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OPENCHANNEL"]/*' />
     [NativeTypeName("#define OPENCHANNEL 4110")]
     public const int OPENCHANNEL = 4110;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DOWNLOADHEADER"]/*' />
     [NativeTypeName("#define DOWNLOADHEADER 4111")]
     public const int DOWNLOADHEADER = 4111;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLOSECHANNEL"]/*' />
     [NativeTypeName("#define CLOSECHANNEL 4112")]
     public const int CLOSECHANNEL = 4112;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.POSTSCRIPT_PASSTHROUGH"]/*' />
     [NativeTypeName("#define POSTSCRIPT_PASSTHROUGH 4115")]
     public const int POSTSCRIPT_PASSTHROUGH = 4115;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ENCAPSULATED_POSTSCRIPT"]/*' />
     [NativeTypeName("#define ENCAPSULATED_POSTSCRIPT 4116")]
     public const int ENCAPSULATED_POSTSCRIPT = 4116;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.POSTSCRIPT_IDENTIFY"]/*' />
     [NativeTypeName("#define POSTSCRIPT_IDENTIFY 4117")]
     public const int POSTSCRIPT_IDENTIFY = 4117;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.POSTSCRIPT_INJECTION"]/*' />
     [NativeTypeName("#define POSTSCRIPT_INJECTION 4118")]
     public const int POSTSCRIPT_INJECTION = 4118;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CHECKJPEGFORMAT"]/*' />
     [NativeTypeName("#define CHECKJPEGFORMAT 4119")]
     public const int CHECKJPEGFORMAT = 4119;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CHECKPNGFORMAT"]/*' />
     [NativeTypeName("#define CHECKPNGFORMAT 4120")]
     public const int CHECKPNGFORMAT = 4120;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GDIPLUS_TS_QUERYVER"]/*' />
     [NativeTypeName("#define GDIPLUS_TS_QUERYVER 4122")]
     public const int GDIPLUS_TS_QUERYVER = 4122;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GDIPLUS_TS_RECORD"]/*' />
     [NativeTypeName("#define GDIPLUS_TS_RECORD 4123")]
     public const int GDIPLUS_TS_RECORD = 4123;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MILCORE_TS_QUERYVER_RESULT_FALSE"]/*' />
     [NativeTypeName("#define MILCORE_TS_QUERYVER_RESULT_FALSE 0x0")]
     public const int MILCORE_TS_QUERYVER_RESULT_FALSE = 0x0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MILCORE_TS_QUERYVER_RESULT_TRUE"]/*' />
     [NativeTypeName("#define MILCORE_TS_QUERYVER_RESULT_TRUE 0x7FFFFFFF")]
     public const int MILCORE_TS_QUERYVER_RESULT_TRUE = 0x7FFFFFFF;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPCLPASSTHROUGH2"]/*' />
     [NativeTypeName("#define SPCLPASSTHROUGH2 4568")]
     public const int SPCLPASSTHROUGH2 = 4568;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PSIDENT_GDICENTRIC"]/*' />
     [NativeTypeName("#define PSIDENT_GDICENTRIC 0")]
     public const int PSIDENT_GDICENTRIC = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PSIDENT_PSCENTRIC"]/*' />
     [NativeTypeName("#define PSIDENT_PSCENTRIC 1")]
     public const int PSIDENT_PSCENTRIC = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FEATURESETTING_NUP"]/*' />
     [NativeTypeName("#define FEATURESETTING_NUP 0")]
     public const int FEATURESETTING_NUP = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FEATURESETTING_OUTPUT"]/*' />
     [NativeTypeName("#define FEATURESETTING_OUTPUT 1")]
     public const int FEATURESETTING_OUTPUT = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FEATURESETTING_PSLEVEL"]/*' />
     [NativeTypeName("#define FEATURESETTING_PSLEVEL 2")]
     public const int FEATURESETTING_PSLEVEL = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FEATURESETTING_CUSTPAPER"]/*' />
     [NativeTypeName("#define FEATURESETTING_CUSTPAPER 3")]
     public const int FEATURESETTING_CUSTPAPER = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FEATURESETTING_MIRROR"]/*' />
     [NativeTypeName("#define FEATURESETTING_MIRROR 4")]
     public const int FEATURESETTING_MIRROR = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FEATURESETTING_NEGATIVE"]/*' />
     [NativeTypeName("#define FEATURESETTING_NEGATIVE 5")]
     public const int FEATURESETTING_NEGATIVE = 5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FEATURESETTING_PROTOCOL"]/*' />
     [NativeTypeName("#define FEATURESETTING_PROTOCOL 6")]
     public const int FEATURESETTING_PROTOCOL = 6;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FEATURESETTING_PRIVATE_BEGIN"]/*' />
     [NativeTypeName("#define FEATURESETTING_PRIVATE_BEGIN 0x1000")]
     public const int FEATURESETTING_PRIVATE_BEGIN = 0x1000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FEATURESETTING_PRIVATE_END"]/*' />
     [NativeTypeName("#define FEATURESETTING_PRIVATE_END 0x1FFF")]
     public const int FEATURESETTING_PRIVATE_END = 0x1FFF;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPROTOCOL_ASCII"]/*' />
     [NativeTypeName("#define PSPROTOCOL_ASCII 0")]
     public const int PSPROTOCOL_ASCII = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPROTOCOL_BCP"]/*' />
     [NativeTypeName("#define PSPROTOCOL_BCP 1")]
     public const int PSPROTOCOL_BCP = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPROTOCOL_TBCP"]/*' />
     [NativeTypeName("#define PSPROTOCOL_TBCP 2")]
     public const int PSPROTOCOL_TBCP = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPROTOCOL_BINARY"]/*' />
     [NativeTypeName("#define PSPROTOCOL_BINARY 3")]
     public const int PSPROTOCOL_BINARY = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QDI_SETDIBITS"]/*' />
     [NativeTypeName("#define QDI_SETDIBITS 1")]
     public const int QDI_SETDIBITS = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QDI_GETDIBITS"]/*' />
     [NativeTypeName("#define QDI_GETDIBITS 2")]
     public const int QDI_GETDIBITS = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QDI_DIBTOSCREEN"]/*' />
     [NativeTypeName("#define QDI_DIBTOSCREEN 4")]
     public const int QDI_DIBTOSCREEN = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QDI_STRETCHDIB"]/*' />
     [NativeTypeName("#define QDI_STRETCHDIB 8")]
     public const int QDI_STRETCHDIB = 8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PR_JOBSTATUS"]/*' />
     [NativeTypeName("#define PR_JOBSTATUS 0x0000")]
     public const int PR_JOBSTATUS = 0x0000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GDI_OBJ_LAST"]/*' />
     [NativeTypeName("#define GDI_OBJ_LAST OBJ_COLORSPACE")]
     public const int GDI_OBJ_LAST = 14;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GDI_MIN_OBJ_TYPE"]/*' />
     [NativeTypeName("#define GDI_MIN_OBJ_TYPE OBJ_PEN")]
     public const int GDI_MIN_OBJ_TYPE = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GDI_MAX_OBJ_TYPE"]/*' />
     [NativeTypeName("#define GDI_MAX_OBJ_TYPE GDI_OBJ_LAST")]
     public const int GDI_MAX_OBJ_TYPE = 14;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MWT_IDENTITY"]/*' />
     [NativeTypeName("#define MWT_IDENTITY 1")]
     public const int MWT_IDENTITY = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MWT_LEFTMULTIPLY"]/*' />
     [NativeTypeName("#define MWT_LEFTMULTIPLY 2")]
     public const int MWT_LEFTMULTIPLY = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MWT_RIGHTMULTIPLY"]/*' />
     [NativeTypeName("#define MWT_RIGHTMULTIPLY 3")]
     public const int MWT_RIGHTMULTIPLY = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MWT_MIN"]/*' />
     [NativeTypeName("#define MWT_MIN MWT_IDENTITY")]
     public const int MWT_MIN = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MWT_MAX"]/*' />
     [NativeTypeName("#define MWT_MAX MWT_RIGHTMULTIPLY")]
     public const int MWT_MAX = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LCS_SIGNATURE"]/*' />
     [NativeTypeName("#define LCS_SIGNATURE 'PSOC'")]
     public const int LCS_SIGNATURE = 0x50534F43;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LCS_sRGB"]/*' />
     [NativeTypeName("#define LCS_sRGB 'sRGB'")]
     public const int LCS_sRGB = 0x73524742;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LCS_WINDOWS_COLOR_SPACE"]/*' />
     [NativeTypeName("#define LCS_WINDOWS_COLOR_SPACE 'Win '")]
     public const int LCS_WINDOWS_COLOR_SPACE = 0x57696E20;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LCS_CALIBRATED_RGB"]/*' />
     [NativeTypeName("#define LCS_CALIBRATED_RGB 0x00000000L")]
     public const int LCS_CALIBRATED_RGB = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LCS_GM_BUSINESS"]/*' />
     [NativeTypeName("#define LCS_GM_BUSINESS 0x00000001L")]
     public const int LCS_GM_BUSINESS = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LCS_GM_GRAPHICS"]/*' />
     [NativeTypeName("#define LCS_GM_GRAPHICS 0x00000002L")]
     public const int LCS_GM_GRAPHICS = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LCS_GM_IMAGES"]/*' />
     [NativeTypeName("#define LCS_GM_IMAGES 0x00000004L")]
     public const int LCS_GM_IMAGES = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LCS_GM_ABS_COLORIMETRIC"]/*' />
     [NativeTypeName("#define LCS_GM_ABS_COLORIMETRIC 0x00000008L")]
     public const int LCS_GM_ABS_COLORIMETRIC = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PROFILE_LINKED"]/*' />
     [NativeTypeName("#define PROFILE_LINKED 'LINK'")]
     public const int PROFILE_LINKED = 0x4C494E4B;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PROFILE_EMBEDDED"]/*' />
     [NativeTypeName("#define PROFILE_EMBEDDED 'MBED'")]
     public const int PROFILE_EMBEDDED = 0x4D424544;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TCI_SRCCHARSET"]/*' />
     [NativeTypeName("#define TCI_SRCCHARSET 1")]
     public const int TCI_SRCCHARSET = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TCI_SRCCODEPAGE"]/*' />
     [NativeTypeName("#define TCI_SRCCODEPAGE 2")]
     public const int TCI_SRCCODEPAGE = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TCI_SRCFONTSIG"]/*' />
     [NativeTypeName("#define TCI_SRCFONTSIG 3")]
     public const int TCI_SRCFONTSIG = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TCI_SRCLOCALE"]/*' />
     [NativeTypeName("#define TCI_SRCLOCALE 0x1000")]
     public const int TCI_SRCLOCALE = 0x1000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TMPF_FIXED_PITCH"]/*' />
     [NativeTypeName("#define TMPF_FIXED_PITCH 0x01")]
     public const int TMPF_FIXED_PITCH = 0x01;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TMPF_VECTOR"]/*' />
     [NativeTypeName("#define TMPF_VECTOR 0x02")]
     public const int TMPF_VECTOR = 0x02;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TMPF_DEVICE"]/*' />
     [NativeTypeName("#define TMPF_DEVICE 0x08")]
     public const int TMPF_DEVICE = 0x08;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TMPF_TRUETYPE"]/*' />
     [NativeTypeName("#define TMPF_TRUETYPE 0x04")]
     public const int TMPF_TRUETYPE = 0x04;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NTM_REGULAR"]/*' />
     [NativeTypeName("#define NTM_REGULAR 0x00000040L")]
     public const int NTM_REGULAR = 0x00000040;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NTM_BOLD"]/*' />
     [NativeTypeName("#define NTM_BOLD 0x00000020L")]
     public const int NTM_BOLD = 0x00000020;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NTM_ITALIC"]/*' />
     [NativeTypeName("#define NTM_ITALIC 0x00000001L")]
     public const int NTM_ITALIC = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NTM_NONNEGATIVE_AC"]/*' />
     [NativeTypeName("#define NTM_NONNEGATIVE_AC 0x00010000")]
     public const int NTM_NONNEGATIVE_AC = 0x00010000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NTM_PS_OPENTYPE"]/*' />
     [NativeTypeName("#define NTM_PS_OPENTYPE 0x00020000")]
     public const int NTM_PS_OPENTYPE = 0x00020000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NTM_TT_OPENTYPE"]/*' />
     [NativeTypeName("#define NTM_TT_OPENTYPE 0x00040000")]
     public const int NTM_TT_OPENTYPE = 0x00040000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NTM_MULTIPLEMASTER"]/*' />
     [NativeTypeName("#define NTM_MULTIPLEMASTER 0x00080000")]
     public const int NTM_MULTIPLEMASTER = 0x00080000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NTM_TYPE1"]/*' />
     [NativeTypeName("#define NTM_TYPE1 0x00100000")]
     public const int NTM_TYPE1 = 0x00100000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NTM_DSIG"]/*' />
     [NativeTypeName("#define NTM_DSIG 0x00200000")]
     public const int NTM_DSIG = 0x00200000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LF_FACESIZE"]/*' />
     [NativeTypeName("#define LF_FACESIZE 32")]
     public const int LF_FACESIZE = 32;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LF_FULLFACESIZE"]/*' />
     [NativeTypeName("#define LF_FULLFACESIZE 64")]
     public const int LF_FULLFACESIZE = 64;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLIP_DEFAULT_PRECIS"]/*' />
     [NativeTypeName("#define CLIP_DEFAULT_PRECIS 0")]
     public const int CLIP_DEFAULT_PRECIS = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLIP_CHARACTER_PRECIS"]/*' />
     [NativeTypeName("#define CLIP_CHARACTER_PRECIS 1")]
     public const int CLIP_CHARACTER_PRECIS = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLIP_STROKE_PRECIS"]/*' />
     [NativeTypeName("#define CLIP_STROKE_PRECIS 2")]
     public const int CLIP_STROKE_PRECIS = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLIP_MASK"]/*' />
     [NativeTypeName("#define CLIP_MASK 0xf")]
     public const int CLIP_MASK = 0xf;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLIP_LH_ANGLES"]/*' />
     [NativeTypeName("#define CLIP_LH_ANGLES (1<<4)")]
     public const int CLIP_LH_ANGLES = (1 << 4);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLIP_TT_ALWAYS"]/*' />
     [NativeTypeName("#define CLIP_TT_ALWAYS (2<<4)")]
     public const int CLIP_TT_ALWAYS = (2 << 4);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLIP_DFA_DISABLE"]/*' />
     [NativeTypeName("#define CLIP_DFA_DISABLE (4<<4)")]
     public const int CLIP_DFA_DISABLE = (4 << 4);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLIP_EMBEDDED"]/*' />
     [NativeTypeName("#define CLIP_EMBEDDED (8<<4)")]
     public const int CLIP_EMBEDDED = (8 << 4);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DRAFT_QUALITY"]/*' />
     [NativeTypeName("#define DRAFT_QUALITY 1")]
     public const int DRAFT_QUALITY = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PROOF_QUALITY"]/*' />
     [NativeTypeName("#define PROOF_QUALITY 2")]
     public const int PROOF_QUALITY = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NONANTIALIASED_QUALITY"]/*' />
     [NativeTypeName("#define NONANTIALIASED_QUALITY 3")]
     public const int NONANTIALIASED_QUALITY = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ANTIALIASED_QUALITY"]/*' />
     [NativeTypeName("#define ANTIALIASED_QUALITY 4")]
     public const int ANTIALIASED_QUALITY = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLEARTYPE_QUALITY"]/*' />
     [NativeTypeName("#define CLEARTYPE_QUALITY 5")]
     public const int CLEARTYPE_QUALITY = 5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLEARTYPE_NATURAL_QUALITY"]/*' />
     [NativeTypeName("#define CLEARTYPE_NATURAL_QUALITY 6")]
     public const int CLEARTYPE_NATURAL_QUALITY = 6;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FIXED_PITCH"]/*' />
     [NativeTypeName("#define FIXED_PITCH 1")]
     public const int FIXED_PITCH = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VARIABLE_PITCH"]/*' />
     [NativeTypeName("#define VARIABLE_PITCH 2")]
     public const int VARIABLE_PITCH = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MONO_FONT"]/*' />
     [NativeTypeName("#define MONO_FONT 8")]
     public const int MONO_FONT = 8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ANSI_CHARSET"]/*' />
     [NativeTypeName("#define ANSI_CHARSET 0")]
     public const int ANSI_CHARSET = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMBOL_CHARSET"]/*' />
     [NativeTypeName("#define SYMBOL_CHARSET 2")]
     public const int SYMBOL_CHARSET = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHIFTJIS_CHARSET"]/*' />
     [NativeTypeName("#define SHIFTJIS_CHARSET 128")]
     public const int SHIFTJIS_CHARSET = 128;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HANGEUL_CHARSET"]/*' />
     [NativeTypeName("#define HANGEUL_CHARSET 129")]
     public const int HANGEUL_CHARSET = 129;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HANGUL_CHARSET"]/*' />
     [NativeTypeName("#define HANGUL_CHARSET 129")]
     public const int HANGUL_CHARSET = 129;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GB2312_CHARSET"]/*' />
     [NativeTypeName("#define GB2312_CHARSET 134")]
     public const int GB2312_CHARSET = 134;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CHINESEBIG5_CHARSET"]/*' />
     [NativeTypeName("#define CHINESEBIG5_CHARSET 136")]
     public const int CHINESEBIG5_CHARSET = 136;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OEM_CHARSET"]/*' />
     [NativeTypeName("#define OEM_CHARSET 255")]
     public const int OEM_CHARSET = 255;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.JOHAB_CHARSET"]/*' />
     [NativeTypeName("#define JOHAB_CHARSET 130")]
     public const int JOHAB_CHARSET = 130;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HEBREW_CHARSET"]/*' />
     [NativeTypeName("#define HEBREW_CHARSET 177")]
     public const int HEBREW_CHARSET = 177;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ARABIC_CHARSET"]/*' />
     [NativeTypeName("#define ARABIC_CHARSET 178")]
     public const int ARABIC_CHARSET = 178;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GREEK_CHARSET"]/*' />
     [NativeTypeName("#define GREEK_CHARSET 161")]
     public const int GREEK_CHARSET = 161;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TURKISH_CHARSET"]/*' />
     [NativeTypeName("#define TURKISH_CHARSET 162")]
     public const int TURKISH_CHARSET = 162;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VIETNAMESE_CHARSET"]/*' />
     [NativeTypeName("#define VIETNAMESE_CHARSET 163")]
     public const int VIETNAMESE_CHARSET = 163;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.THAI_CHARSET"]/*' />
     [NativeTypeName("#define THAI_CHARSET 222")]
     public const int THAI_CHARSET = 222;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EASTEUROPE_CHARSET"]/*' />
     [NativeTypeName("#define EASTEUROPE_CHARSET 238")]
     public const int EASTEUROPE_CHARSET = 238;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RUSSIAN_CHARSET"]/*' />
     [NativeTypeName("#define RUSSIAN_CHARSET 204")]
     public const int RUSSIAN_CHARSET = 204;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MAC_CHARSET"]/*' />
     [NativeTypeName("#define MAC_CHARSET 77")]
     public const int MAC_CHARSET = 77;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BALTIC_CHARSET"]/*' />
     [NativeTypeName("#define BALTIC_CHARSET 186")]
     public const int BALTIC_CHARSET = 186;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FF_DONTCARE"]/*' />
     [NativeTypeName("#define FF_DONTCARE 0x00")]
     public const int FF_DONTCARE = 0x00;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FF_ROMAN"]/*' />
     [NativeTypeName("#define FF_ROMAN 0x10")]
     public const int FF_ROMAN = 0x10;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FF_SWISS"]/*' />
     [NativeTypeName("#define FF_SWISS 0x20")]
     public const int FF_SWISS = 0x20;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FF_MODERN"]/*' />
     [NativeTypeName("#define FF_MODERN 0x30")]
     public const int FF_MODERN = 0x30;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FF_SCRIPT"]/*' />
     [NativeTypeName("#define FF_SCRIPT 0x40")]
     public const int FF_SCRIPT = 0x40;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FF_DECORATIVE"]/*' />
     [NativeTypeName("#define FF_DECORATIVE 0x50")]
     public const int FF_DECORATIVE = 0x50;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PANOSE_COUNT"]/*' />
     [NativeTypeName("#define PANOSE_COUNT 10")]
     public const int PANOSE_COUNT = 10;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ELF_VENDOR_SIZE"]/*' />
     [NativeTypeName("#define ELF_VENDOR_SIZE 4")]
     public const int ELF_VENDOR_SIZE = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ELF_VERSION"]/*' />
     [NativeTypeName("#define ELF_VERSION 0")]
     public const int ELF_VERSION = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ELF_CULTURE_LATIN"]/*' />
     [NativeTypeName("#define ELF_CULTURE_LATIN 0")]
     public const int ELF_CULTURE_LATIN = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RASTER_FONTTYPE"]/*' />
     [NativeTypeName("#define RASTER_FONTTYPE 0x0001")]
     public const int RASTER_FONTTYPE = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DEVICE_FONTTYPE"]/*' />
     [NativeTypeName("#define DEVICE_FONTTYPE 0x0002")]
     public const int DEVICE_FONTTYPE = 0x0002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TRUETYPE_FONTTYPE"]/*' />
     [NativeTypeName("#define TRUETYPE_FONTTYPE 0x0004")]
     public const int TRUETYPE_FONTTYPE = 0x0004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TRANSPARENT"]/*' />
     [NativeTypeName("#define TRANSPARENT 1")]
     public const int TRANSPARENT = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OPAQUE"]/*' />
     [NativeTypeName("#define OPAQUE 2")]
     public const int OPAQUE = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BKMODE_LAST"]/*' />
     [NativeTypeName("#define BKMODE_LAST 2")]
     public const int BKMODE_LAST = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GM_COMPATIBLE"]/*' />
     [NativeTypeName("#define GM_COMPATIBLE 1")]
     public const int GM_COMPATIBLE = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GM_ADVANCED"]/*' />
     [NativeTypeName("#define GM_ADVANCED 2")]
     public const int GM_ADVANCED = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GM_LAST"]/*' />
     [NativeTypeName("#define GM_LAST 2")]
     public const int GM_LAST = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PT_CLOSEFIGURE"]/*' />
     [NativeTypeName("#define PT_CLOSEFIGURE 0x01")]
     public const int PT_CLOSEFIGURE = 0x01;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PT_LINETO"]/*' />
     [NativeTypeName("#define PT_LINETO 0x02")]
     public const int PT_LINETO = 0x02;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PT_BEZIERTO"]/*' />
     [NativeTypeName("#define PT_BEZIERTO 0x04")]
     public const int PT_BEZIERTO = 0x04;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PT_MOVETO"]/*' />
     [NativeTypeName("#define PT_MOVETO 0x06")]
     public const int PT_MOVETO = 0x06;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ABSOLUTE"]/*' />
     [NativeTypeName("#define ABSOLUTE 1")]
     public const int ABSOLUTE = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RELATIVE"]/*' />
     [NativeTypeName("#define RELATIVE 2")]
     public const int RELATIVE = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WHITE_BRUSH"]/*' />
     [NativeTypeName("#define WHITE_BRUSH 0")]
     public const int WHITE_BRUSH = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LTGRAY_BRUSH"]/*' />
     [NativeTypeName("#define LTGRAY_BRUSH 1")]
     public const int LTGRAY_BRUSH = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GRAY_BRUSH"]/*' />
     [NativeTypeName("#define GRAY_BRUSH 2")]
     public const int GRAY_BRUSH = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DKGRAY_BRUSH"]/*' />
     [NativeTypeName("#define DKGRAY_BRUSH 3")]
     public const int DKGRAY_BRUSH = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BLACK_BRUSH"]/*' />
     [NativeTypeName("#define BLACK_BRUSH 4")]
     public const int BLACK_BRUSH = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NULL_BRUSH"]/*' />
     [NativeTypeName("#define NULL_BRUSH 5")]
     public const int NULL_BRUSH = 5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HOLLOW_BRUSH"]/*' />
     [NativeTypeName("#define HOLLOW_BRUSH NULL_BRUSH")]
     public const int HOLLOW_BRUSH = 5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WHITE_PEN"]/*' />
     [NativeTypeName("#define WHITE_PEN 6")]
     public const int WHITE_PEN = 6;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BLACK_PEN"]/*' />
     [NativeTypeName("#define BLACK_PEN 7")]
     public const int BLACK_PEN = 7;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NULL_PEN"]/*' />
     [NativeTypeName("#define NULL_PEN 8")]
     public const int NULL_PEN = 8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OEM_FIXED_FONT"]/*' />
     [NativeTypeName("#define OEM_FIXED_FONT 10")]
     public const int OEM_FIXED_FONT = 10;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ANSI_FIXED_FONT"]/*' />
     [NativeTypeName("#define ANSI_FIXED_FONT 11")]
     public const int ANSI_FIXED_FONT = 11;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ANSI_VAR_FONT"]/*' />
     [NativeTypeName("#define ANSI_VAR_FONT 12")]
     public const int ANSI_VAR_FONT = 12;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STOCK_LAST"]/*' />
     [NativeTypeName("#define STOCK_LAST 19")]
     public const int STOCK_LAST = 19;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLR_INVALID"]/*' />
     [NativeTypeName("#define CLR_INVALID 0xFFFFFFFF")]
     public const uint CLR_INVALID = 0xFFFFFFFF;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HS_HORIZONTAL"]/*' />
     [NativeTypeName("#define HS_HORIZONTAL 0")]
     public const int HS_HORIZONTAL = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HS_VERTICAL"]/*' />
     [NativeTypeName("#define HS_VERTICAL 1")]
     public const int HS_VERTICAL = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HS_FDIAGONAL"]/*' />
     [NativeTypeName("#define HS_FDIAGONAL 2")]
     public const int HS_FDIAGONAL = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HS_BDIAGONAL"]/*' />
     [NativeTypeName("#define HS_BDIAGONAL 3")]
     public const int HS_BDIAGONAL = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HS_CROSS"]/*' />
     [NativeTypeName("#define HS_CROSS 4")]
     public const int HS_CROSS = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HS_DIAGCROSS"]/*' />
     [NativeTypeName("#define HS_DIAGCROSS 5")]
     public const int HS_DIAGCROSS = 5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HS_API_MAX"]/*' />
     [NativeTypeName("#define HS_API_MAX 12")]
     public const int HS_API_MAX = 12;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AD_COUNTERCLOCKWISE"]/*' />
     [NativeTypeName("#define AD_COUNTERCLOCKWISE 1")]
     public const int AD_COUNTERCLOCKWISE = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AD_CLOCKWISE"]/*' />
     [NativeTypeName("#define AD_CLOCKWISE 2")]
     public const int AD_CLOCKWISE = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DRIVERVERSION"]/*' />
     [NativeTypeName("#define DRIVERVERSION 0")]
     public const int DRIVERVERSION = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TECHNOLOGY"]/*' />
     [NativeTypeName("#define TECHNOLOGY 2")]
     public const int TECHNOLOGY = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HORZSIZE"]/*' />
     [NativeTypeName("#define HORZSIZE 4")]
     public const int HORZSIZE = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VERTSIZE"]/*' />
     [NativeTypeName("#define VERTSIZE 6")]
     public const int VERTSIZE = 6;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HORZRES"]/*' />
     [NativeTypeName("#define HORZRES 8")]
     public const int HORZRES = 8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VERTRES"]/*' />
     [NativeTypeName("#define VERTRES 10")]
     public const int VERTRES = 10;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BITSPIXEL"]/*' />
     [NativeTypeName("#define BITSPIXEL 12")]
     public const int BITSPIXEL = 12;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PLANES"]/*' />
     [NativeTypeName("#define PLANES 14")]
     public const int PLANES = 14;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NUMBRUSHES"]/*' />
     [NativeTypeName("#define NUMBRUSHES 16")]
     public const int NUMBRUSHES = 16;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NUMPENS"]/*' />
     [NativeTypeName("#define NUMPENS 18")]
     public const int NUMPENS = 18;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NUMMARKERS"]/*' />
     [NativeTypeName("#define NUMMARKERS 20")]
     public const int NUMMARKERS = 20;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NUMFONTS"]/*' />
     [NativeTypeName("#define NUMFONTS 22")]
     public const int NUMFONTS = 22;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NUMCOLORS"]/*' />
     [NativeTypeName("#define NUMCOLORS 24")]
     public const int NUMCOLORS = 24;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PDEVICESIZE"]/*' />
     [NativeTypeName("#define PDEVICESIZE 26")]
     public const int PDEVICESIZE = 26;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CURVECAPS"]/*' />
     [NativeTypeName("#define CURVECAPS 28")]
     public const int CURVECAPS = 28;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LINECAPS"]/*' />
     [NativeTypeName("#define LINECAPS 30")]
     public const int LINECAPS = 30;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.POLYGONALCAPS"]/*' />
     [NativeTypeName("#define POLYGONALCAPS 32")]
     public const int POLYGONALCAPS = 32;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TEXTCAPS"]/*' />
     [NativeTypeName("#define TEXTCAPS 34")]
     public const int TEXTCAPS = 34;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLIPCAPS"]/*' />
     [NativeTypeName("#define CLIPCAPS 36")]
     public const int CLIPCAPS = 36;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RASTERCAPS"]/*' />
     [NativeTypeName("#define RASTERCAPS 38")]
     public const int RASTERCAPS = 38;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ASPECTX"]/*' />
     [NativeTypeName("#define ASPECTX 40")]
     public const int ASPECTX = 40;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ASPECTY"]/*' />
     [NativeTypeName("#define ASPECTY 42")]
     public const int ASPECTY = 42;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ASPECTXY"]/*' />
     [NativeTypeName("#define ASPECTXY 44")]
     public const int ASPECTXY = 44;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOGPIXELSX"]/*' />
     [NativeTypeName("#define LOGPIXELSX 88")]
     public const int LOGPIXELSX = 88;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOGPIXELSY"]/*' />
     [NativeTypeName("#define LOGPIXELSY 90")]
     public const int LOGPIXELSY = 90;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SIZEPALETTE"]/*' />
     [NativeTypeName("#define SIZEPALETTE 104")]
     public const int SIZEPALETTE = 104;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NUMRESERVED"]/*' />
     [NativeTypeName("#define NUMRESERVED 106")]
     public const int NUMRESERVED = 106;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COLORRES"]/*' />
     [NativeTypeName("#define COLORRES 108")]
     public const int COLORRES = 108;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PHYSICALWIDTH"]/*' />
     [NativeTypeName("#define PHYSICALWIDTH 110")]
     public const int PHYSICALWIDTH = 110;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PHYSICALHEIGHT"]/*' />
     [NativeTypeName("#define PHYSICALHEIGHT 111")]
     public const int PHYSICALHEIGHT = 111;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PHYSICALOFFSETX"]/*' />
     [NativeTypeName("#define PHYSICALOFFSETX 112")]
     public const int PHYSICALOFFSETX = 112;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PHYSICALOFFSETY"]/*' />
     [NativeTypeName("#define PHYSICALOFFSETY 113")]
     public const int PHYSICALOFFSETY = 113;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SCALINGFACTORX"]/*' />
     [NativeTypeName("#define SCALINGFACTORX 114")]
     public const int SCALINGFACTORX = 114;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SCALINGFACTORY"]/*' />
     [NativeTypeName("#define SCALINGFACTORY 115")]
     public const int SCALINGFACTORY = 115;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VREFRESH"]/*' />
     [NativeTypeName("#define VREFRESH 116")]
     public const int VREFRESH = 116;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DESKTOPVERTRES"]/*' />
     [NativeTypeName("#define DESKTOPVERTRES 117")]
     public const int DESKTOPVERTRES = 117;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DESKTOPHORZRES"]/*' />
     [NativeTypeName("#define DESKTOPHORZRES 118")]
     public const int DESKTOPHORZRES = 118;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BLTALIGNMENT"]/*' />
     [NativeTypeName("#define BLTALIGNMENT 119")]
     public const int BLTALIGNMENT = 119;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHADEBLENDCAPS"]/*' />
     [NativeTypeName("#define SHADEBLENDCAPS 120")]
     public const int SHADEBLENDCAPS = 120;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COLORMGMTCAPS"]/*' />
     [NativeTypeName("#define COLORMGMTCAPS 121")]
     public const int COLORMGMTCAPS = 121;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LC_NONE"]/*' />
     [NativeTypeName("#define LC_NONE 0")]
     public const int LC_NONE = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LC_POLYLINE"]/*' />
     [NativeTypeName("#define LC_POLYLINE 2")]
     public const int LC_POLYLINE = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LC_MARKER"]/*' />
     [NativeTypeName("#define LC_MARKER 4")]
     public const int LC_MARKER = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LC_POLYMARKER"]/*' />
     [NativeTypeName("#define LC_POLYMARKER 8")]
     public const int LC_POLYMARKER = 8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LC_WIDE"]/*' />
     [NativeTypeName("#define LC_WIDE 16")]
     public const int LC_WIDE = 16;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LC_STYLED"]/*' />
     [NativeTypeName("#define LC_STYLED 32")]
     public const int LC_STYLED = 32;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LC_WIDESTYLED"]/*' />
     [NativeTypeName("#define LC_WIDESTYLED 64")]
     public const int LC_WIDESTYLED = 64;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LC_INTERIORS"]/*' />
     [NativeTypeName("#define LC_INTERIORS 128")]
     public const int LC_INTERIORS = 128;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CP_NONE"]/*' />
     [NativeTypeName("#define CP_NONE 0")]
     public const int CP_NONE = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CP_RECTANGLE"]/*' />
     [NativeTypeName("#define CP_RECTANGLE 1")]
     public const int CP_RECTANGLE = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CP_REGION"]/*' />
     [NativeTypeName("#define CP_REGION 2")]
     public const int CP_REGION = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DIB_RGB_COLORS"]/*' />
     [NativeTypeName("#define DIB_RGB_COLORS 0")]
     public const int DIB_RGB_COLORS = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DIB_PAL_COLORS"]/*' />
     [NativeTypeName("#define DIB_PAL_COLORS 1")]
     public const int DIB_PAL_COLORS = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYSPAL_ERROR"]/*' />
     [NativeTypeName("#define SYSPAL_ERROR 0")]
     public const int SYSPAL_ERROR = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYSPAL_STATIC"]/*' />
     [NativeTypeName("#define SYSPAL_STATIC 1")]
     public const int SYSPAL_STATIC = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYSPAL_NOSTATIC"]/*' />
     [NativeTypeName("#define SYSPAL_NOSTATIC 2")]
     public const int SYSPAL_NOSTATIC = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYSPAL_NOSTATIC256"]/*' />
     [NativeTypeName("#define SYSPAL_NOSTATIC256 3")]
     public const int SYSPAL_NOSTATIC256 = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CBM_INIT"]/*' />
     [NativeTypeName("#define CBM_INIT 0x04L")]
     public const int CBM_INIT = 0x04;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FLOODFILLBORDER"]/*' />
     [NativeTypeName("#define FLOODFILLBORDER 0")]
     public const int FLOODFILLBORDER = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FLOODFILLSURFACE"]/*' />
     [NativeTypeName("#define FLOODFILLSURFACE 1")]
     public const int FLOODFILLSURFACE = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CCHDEVICENAME"]/*' />
     [NativeTypeName("#define CCHDEVICENAME 32")]
     public const int CCHDEVICENAME = 32;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CCHFORMNAME"]/*' />
     [NativeTypeName("#define CCHFORMNAME 32")]
     public const int CCHFORMNAME = 32;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMORIENT_PORTRAIT"]/*' />
     [NativeTypeName("#define DMORIENT_PORTRAIT 1")]
     public const int DMORIENT_PORTRAIT = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMORIENT_LANDSCAPE"]/*' />
     [NativeTypeName("#define DMORIENT_LANDSCAPE 2")]
     public const int DMORIENT_LANDSCAPE = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMRES_DRAFT"]/*' />
     [NativeTypeName("#define DMRES_DRAFT (-1)")]
     public const int DMRES_DRAFT = (-1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMRES_LOW"]/*' />
     [NativeTypeName("#define DMRES_LOW (-2)")]
     public const int DMRES_LOW = (-2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMRES_MEDIUM"]/*' />
     [NativeTypeName("#define DMRES_MEDIUM (-3)")]
     public const int DMRES_MEDIUM = (-3);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMRES_HIGH"]/*' />
     [NativeTypeName("#define DMRES_HIGH (-4)")]
     public const int DMRES_HIGH = (-4);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMCOLOR_MONOCHROME"]/*' />
     [NativeTypeName("#define DMCOLOR_MONOCHROME 1")]
     public const int DMCOLOR_MONOCHROME = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMCOLOR_COLOR"]/*' />
     [NativeTypeName("#define DMCOLOR_COLOR 2")]
     public const int DMCOLOR_COLOR = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMDUP_SIMPLEX"]/*' />
     [NativeTypeName("#define DMDUP_SIMPLEX 1")]
     public const int DMDUP_SIMPLEX = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMDUP_VERTICAL"]/*' />
     [NativeTypeName("#define DMDUP_VERTICAL 2")]
     public const int DMDUP_VERTICAL = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMDUP_HORIZONTAL"]/*' />
     [NativeTypeName("#define DMDUP_HORIZONTAL 3")]
     public const int DMDUP_HORIZONTAL = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMTT_BITMAP"]/*' />
     [NativeTypeName("#define DMTT_BITMAP 1")]
     public const int DMTT_BITMAP = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMTT_DOWNLOAD"]/*' />
     [NativeTypeName("#define DMTT_DOWNLOAD 2")]
     public const int DMTT_DOWNLOAD = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMTT_SUBDEV"]/*' />
     [NativeTypeName("#define DMTT_SUBDEV 3")]
     public const int DMTT_SUBDEV = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMTT_DOWNLOAD_OUTLINE"]/*' />
     [NativeTypeName("#define DMTT_DOWNLOAD_OUTLINE 4")]
     public const int DMTT_DOWNLOAD_OUTLINE = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMCOLLATE_FALSE"]/*' />
     [NativeTypeName("#define DMCOLLATE_FALSE 0")]
     public const int DMCOLLATE_FALSE = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMCOLLATE_TRUE"]/*' />
     [NativeTypeName("#define DMCOLLATE_TRUE 1")]
     public const int DMCOLLATE_TRUE = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMDO_DEFAULT"]/*' />
     [NativeTypeName("#define DMDO_DEFAULT 0")]
     public const int DMDO_DEFAULT = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMDO_90"]/*' />
     [NativeTypeName("#define DMDO_90 1")]
     public const int DMDO_90 = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMDO_180"]/*' />
     [NativeTypeName("#define DMDO_180 2")]
     public const int DMDO_180 = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMDO_270"]/*' />
     [NativeTypeName("#define DMDO_270 3")]
     public const int DMDO_270 = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMDFO_DEFAULT"]/*' />
     [NativeTypeName("#define DMDFO_DEFAULT 0")]
     public const int DMDFO_DEFAULT = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMDFO_STRETCH"]/*' />
     [NativeTypeName("#define DMDFO_STRETCH 1")]
     public const int DMDFO_STRETCH = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMDFO_CENTER"]/*' />
     [NativeTypeName("#define DMDFO_CENTER 2")]
     public const int DMDFO_CENTER = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMDISPLAYFLAGS_TEXTMODE"]/*' />
     [NativeTypeName("#define DMDISPLAYFLAGS_TEXTMODE 0x00000004")]
     public const int DMDISPLAYFLAGS_TEXTMODE = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMNUP_SYSTEM"]/*' />
     [NativeTypeName("#define DMNUP_SYSTEM 1")]
     public const int DMNUP_SYSTEM = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMNUP_ONEUP"]/*' />
     [NativeTypeName("#define DMNUP_ONEUP 2")]
     public const int DMNUP_ONEUP = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMICMMETHOD_NONE"]/*' />
     [NativeTypeName("#define DMICMMETHOD_NONE 1")]
     public const int DMICMMETHOD_NONE = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMICMMETHOD_SYSTEM"]/*' />
     [NativeTypeName("#define DMICMMETHOD_SYSTEM 2")]
     public const int DMICMMETHOD_SYSTEM = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMICMMETHOD_DRIVER"]/*' />
     [NativeTypeName("#define DMICMMETHOD_DRIVER 3")]
     public const int DMICMMETHOD_DRIVER = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMICMMETHOD_DEVICE"]/*' />
     [NativeTypeName("#define DMICMMETHOD_DEVICE 4")]
     public const int DMICMMETHOD_DEVICE = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMICMMETHOD_USER"]/*' />
     [NativeTypeName("#define DMICMMETHOD_USER 256")]
     public const int DMICMMETHOD_USER = 256;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMICM_SATURATE"]/*' />
     [NativeTypeName("#define DMICM_SATURATE 1")]
     public const int DMICM_SATURATE = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMICM_CONTRAST"]/*' />
     [NativeTypeName("#define DMICM_CONTRAST 2")]
     public const int DMICM_CONTRAST = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMICM_COLORIMETRIC"]/*' />
     [NativeTypeName("#define DMICM_COLORIMETRIC 3")]
     public const int DMICM_COLORIMETRIC = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMICM_ABS_COLORIMETRIC"]/*' />
     [NativeTypeName("#define DMICM_ABS_COLORIMETRIC 4")]
     public const int DMICM_ABS_COLORIMETRIC = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMICM_USER"]/*' />
     [NativeTypeName("#define DMICM_USER 256")]
     public const int DMICM_USER = 256;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMMEDIA_STANDARD"]/*' />
     [NativeTypeName("#define DMMEDIA_STANDARD 1")]
     public const int DMMEDIA_STANDARD = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMMEDIA_TRANSPARENCY"]/*' />
     [NativeTypeName("#define DMMEDIA_TRANSPARENCY 2")]
     public const int DMMEDIA_TRANSPARENCY = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMMEDIA_GLOSSY"]/*' />
     [NativeTypeName("#define DMMEDIA_GLOSSY 3")]
     public const int DMMEDIA_GLOSSY = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMMEDIA_USER"]/*' />
     [NativeTypeName("#define DMMEDIA_USER 256")]
     public const int DMMEDIA_USER = 256;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QDC_ALL_PATHS"]/*' />
     [NativeTypeName("#define QDC_ALL_PATHS 0x00000001")]
     public const int QDC_ALL_PATHS = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QDC_ONLY_ACTIVE_PATHS"]/*' />
     [NativeTypeName("#define QDC_ONLY_ACTIVE_PATHS 0x00000002")]
     public const int QDC_ONLY_ACTIVE_PATHS = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QDC_DATABASE_CURRENT"]/*' />
     [NativeTypeName("#define QDC_DATABASE_CURRENT 0x00000004")]
     public const int QDC_DATABASE_CURRENT = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QDC_VIRTUAL_MODE_AWARE"]/*' />
     [NativeTypeName("#define QDC_VIRTUAL_MODE_AWARE 0x00000010")]
     public const int QDC_VIRTUAL_MODE_AWARE = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QDC_INCLUDE_HMD"]/*' />
     [NativeTypeName("#define QDC_INCLUDE_HMD 0x00000020")]
     public const int QDC_INCLUDE_HMD = 0x00000020;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QDC_VIRTUAL_REFRESH_RATE_AWARE"]/*' />
     [NativeTypeName("#define QDC_VIRTUAL_REFRESH_RATE_AWARE 0x00000040")]
     public const int QDC_VIRTUAL_REFRESH_RATE_AWARE = 0x00000040;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RDH_RECTANGLES"]/*' />
     [NativeTypeName("#define RDH_RECTANGLES 1")]
     public const int RDH_RECTANGLES = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYSRGN"]/*' />
     [NativeTypeName("#define SYSRGN 4")]
     public const int SYSRGN = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GGO_METRICS"]/*' />
     [NativeTypeName("#define GGO_METRICS 0")]
     public const int GGO_METRICS = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GGO_BITMAP"]/*' />
     [NativeTypeName("#define GGO_BITMAP 1")]
     public const int GGO_BITMAP = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GGO_NATIVE"]/*' />
     [NativeTypeName("#define GGO_NATIVE 2")]
     public const int GGO_NATIVE = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GGO_BEZIER"]/*' />
     [NativeTypeName("#define GGO_BEZIER 3")]
     public const int GGO_BEZIER = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GGO_GRAY2_BITMAP"]/*' />
     [NativeTypeName("#define GGO_GRAY2_BITMAP 4")]
     public const int GGO_GRAY2_BITMAP = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GGO_GRAY4_BITMAP"]/*' />
     [NativeTypeName("#define GGO_GRAY4_BITMAP 5")]
     public const int GGO_GRAY4_BITMAP = 5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GGO_GRAY8_BITMAP"]/*' />
     [NativeTypeName("#define GGO_GRAY8_BITMAP 6")]
     public const int GGO_GRAY8_BITMAP = 6;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GGO_GLYPH_INDEX"]/*' />
     [NativeTypeName("#define GGO_GLYPH_INDEX 0x0080")]
     public const int GGO_GLYPH_INDEX = 0x0080;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GGO_UNHINTED"]/*' />
     [NativeTypeName("#define GGO_UNHINTED 0x0100")]
     public const int GGO_UNHINTED = 0x0100;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TT_POLYGON_TYPE"]/*' />
     [NativeTypeName("#define TT_POLYGON_TYPE 24")]
     public const int TT_POLYGON_TYPE = 24;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TT_PRIM_LINE"]/*' />
     [NativeTypeName("#define TT_PRIM_LINE 1")]
     public const int TT_PRIM_LINE = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TT_PRIM_QSPLINE"]/*' />
     [NativeTypeName("#define TT_PRIM_QSPLINE 2")]
     public const int TT_PRIM_QSPLINE = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TT_PRIM_CSPLINE"]/*' />
     [NativeTypeName("#define TT_PRIM_CSPLINE 3")]
     public const int TT_PRIM_CSPLINE = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FLI_MASK"]/*' />
     [NativeTypeName("#define FLI_MASK 0x103B")]
     public const int FLI_MASK = 0x103B;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FLI_GLYPHS"]/*' />
     [NativeTypeName("#define FLI_GLYPHS 0x00040000L")]
     public const int FLI_GLYPHS = 0x00040000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GCPGLYPH_LINKBEFORE"]/*' />
     [NativeTypeName("#define GCPGLYPH_LINKBEFORE 0x8000")]
     public const int GCPGLYPH_LINKBEFORE = 0x8000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GCPGLYPH_LINKAFTER"]/*' />
     [NativeTypeName("#define GCPGLYPH_LINKAFTER 0x4000")]
     public const int GCPGLYPH_LINKAFTER = 0x4000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TT_AVAILABLE"]/*' />
     [NativeTypeName("#define TT_AVAILABLE 0x0001")]
     public const int TT_AVAILABLE = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TT_ENABLED"]/*' />
     [NativeTypeName("#define TT_ENABLED 0x0002")]
     public const int TT_ENABLED = 0x0002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AddFontResource"]/*' />
     [NativeTypeName("#define AddFontResource AddFontResourceW")]
     public static delegate*<char*, int> AddFontResource => &AddFontResourceW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CopyMetaFile"]/*' />
     [NativeTypeName("#define CopyMetaFile CopyMetaFileW")]
     public static delegate*<HMETAFILE, char*, HMETAFILE> CopyMetaFile => &CopyMetaFileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDC"]/*' />
     [NativeTypeName("#define CreateDC CreateDCW")]
     public static delegate*<char*, char*, char*, DEVMODEW*, HDC> CreateDC => &CreateDCW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateFontIndirect"]/*' />
     [NativeTypeName("#define CreateFontIndirect CreateFontIndirectW")]
     public static delegate*<LOGFONTW*, HFONT> CreateFontIndirect => &CreateFontIndirectW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateFont"]/*' />
     [NativeTypeName("#define CreateFont CreateFontW")]
     public static delegate*<int, int, int, int, int, uint, uint, uint, uint, uint, uint, uint, uint, char*, HFONT> CreateFont => &CreateFontW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateIC"]/*' />
     [NativeTypeName("#define CreateIC CreateICW")]
     public static delegate*<char*, char*, char*, DEVMODEW*, HDC> CreateIC => &CreateICW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateMetaFile"]/*' />
     [NativeTypeName("#define CreateMetaFile CreateMetaFileW")]
     public static delegate*<char*, HDC> CreateMetaFile => &CreateMetaFileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateScalableFontResource"]/*' />
     [NativeTypeName("#define CreateScalableFontResource CreateScalableFontResourceW")]
     public static delegate*<uint, char*, char*, char*, BOOL> CreateScalableFontResource => &CreateScalableFontResourceW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PRINTRATEUNIT_PPM"]/*' />
     [NativeTypeName("#define PRINTRATEUNIT_PPM 1")]
     public const int PRINTRATEUNIT_PPM = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PRINTRATEUNIT_CPS"]/*' />
     [NativeTypeName("#define PRINTRATEUNIT_CPS 2")]
     public const int PRINTRATEUNIT_CPS = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PRINTRATEUNIT_LPM"]/*' />
     [NativeTypeName("#define PRINTRATEUNIT_LPM 3")]
     public const int PRINTRATEUNIT_LPM = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PRINTRATEUNIT_IPM"]/*' />
     [NativeTypeName("#define PRINTRATEUNIT_IPM 4")]
     public const int PRINTRATEUNIT_IPM = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DCTT_BITMAP"]/*' />
     [NativeTypeName("#define DCTT_BITMAP 0x0000001L")]
     public const int DCTT_BITMAP = 0x0000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DCTT_DOWNLOAD"]/*' />
     [NativeTypeName("#define DCTT_DOWNLOAD 0x0000002L")]
     public const int DCTT_DOWNLOAD = 0x0000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DCTT_SUBDEV"]/*' />
     [NativeTypeName("#define DCTT_SUBDEV 0x0000004L")]
     public const int DCTT_SUBDEV = 0x0000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DCTT_DOWNLOAD_OUTLINE"]/*' />
     [NativeTypeName("#define DCTT_DOWNLOAD_OUTLINE 0x0000008L")]
     public const int DCTT_DOWNLOAD_OUTLINE = 0x0000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DCBA_FACEUPNONE"]/*' />
     [NativeTypeName("#define DCBA_FACEUPNONE 0x0000")]
     public const int DCBA_FACEUPNONE = 0x0000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DCBA_FACEUPCENTER"]/*' />
     [NativeTypeName("#define DCBA_FACEUPCENTER 0x0001")]
     public const int DCBA_FACEUPCENTER = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DCBA_FACEUPLEFT"]/*' />
     [NativeTypeName("#define DCBA_FACEUPLEFT 0x0002")]
     public const int DCBA_FACEUPLEFT = 0x0002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DCBA_FACEUPRIGHT"]/*' />
     [NativeTypeName("#define DCBA_FACEUPRIGHT 0x0003")]
     public const int DCBA_FACEUPRIGHT = 0x0003;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DCBA_FACEDOWNNONE"]/*' />
     [NativeTypeName("#define DCBA_FACEDOWNNONE 0x0100")]
     public const int DCBA_FACEDOWNNONE = 0x0100;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DCBA_FACEDOWNCENTER"]/*' />
     [NativeTypeName("#define DCBA_FACEDOWNCENTER 0x0101")]
     public const int DCBA_FACEDOWNCENTER = 0x0101;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DCBA_FACEDOWNLEFT"]/*' />
     [NativeTypeName("#define DCBA_FACEDOWNLEFT 0x0102")]
     public const int DCBA_FACEDOWNLEFT = 0x0102;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DCBA_FACEDOWNRIGHT"]/*' />
     [NativeTypeName("#define DCBA_FACEDOWNRIGHT 0x0103")]
     public const int DCBA_FACEDOWNRIGHT = 0x0103;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumFontFamiliesEx"]/*' />
     [NativeTypeName("#define EnumFontFamiliesEx EnumFontFamiliesExW")]
     public static delegate*<HDC, LOGFONTW*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, LPARAM, int>, LPARAM, uint, int> EnumFontFamiliesEx => &EnumFontFamiliesExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumFontFamilies"]/*' />
     [NativeTypeName("#define EnumFontFamilies EnumFontFamiliesW")]
     public static delegate*<HDC, char*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, LPARAM, int>, LPARAM, int> EnumFontFamilies => &EnumFontFamiliesW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumFonts"]/*' />
     [NativeTypeName("#define EnumFonts EnumFontsW")]
     public static delegate*<HDC, char*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, LPARAM, int>, LPARAM, int> EnumFonts => &EnumFontsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCharWidth"]/*' />
     [NativeTypeName("#define GetCharWidth GetCharWidthW")]
     public static delegate*<HDC, uint, uint, int*, BOOL> GetCharWidth => &GetCharWidthW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCharWidth32"]/*' />
     [NativeTypeName("#define GetCharWidth32 GetCharWidth32W")]
     public static delegate*<HDC, uint, uint, int*, BOOL> GetCharWidth32 => &GetCharWidth32W;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCharWidthFloat"]/*' />
     [NativeTypeName("#define GetCharWidthFloat GetCharWidthFloatW")]
     public static delegate*<HDC, uint, uint, float*, BOOL> GetCharWidthFloat => &GetCharWidthFloatW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCharABCWidths"]/*' />
     [NativeTypeName("#define GetCharABCWidths GetCharABCWidthsW")]
     public static delegate*<HDC, uint, uint, ABC*, BOOL> GetCharABCWidths => &GetCharABCWidthsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCharABCWidthsFloat"]/*' />
     [NativeTypeName("#define GetCharABCWidthsFloat GetCharABCWidthsFloatW")]
     public static delegate*<HDC, uint, uint, ABCFLOAT*, BOOL> GetCharABCWidthsFloat => &GetCharABCWidthsFloatW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetGlyphOutline"]/*' />
     [NativeTypeName("#define GetGlyphOutline GetGlyphOutlineW")]
     public static delegate*<HDC, uint, uint, GLYPHMETRICS*, uint, void*, MAT2*, uint> GetGlyphOutline => &GetGlyphOutlineW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMetaFile"]/*' />
     [NativeTypeName("#define GetMetaFile GetMetaFileW")]
     public static delegate*<char*, HMETAFILE> GetMetaFile => &GetMetaFileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetOutlineTextMetrics"]/*' />
     [NativeTypeName("#define GetOutlineTextMetrics GetOutlineTextMetricsW")]
     public static delegate*<HDC, uint, OUTLINETEXTMETRICW*, uint> GetOutlineTextMetrics => &GetOutlineTextMetricsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextExtentPoint"]/*' />
     [NativeTypeName("#define GetTextExtentPoint GetTextExtentPointW")]
     public static delegate*<HDC, char*, int, SIZE*, BOOL> GetTextExtentPoint => &GetTextExtentPointW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextExtentPoint32"]/*' />
     [NativeTypeName("#define GetTextExtentPoint32 GetTextExtentPoint32W")]
     public static delegate*<HDC, char*, int, SIZE*, BOOL> GetTextExtentPoint32 => &GetTextExtentPoint32W;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextExtentExPoint"]/*' />
     [NativeTypeName("#define GetTextExtentExPoint GetTextExtentExPointW")]
     public static delegate*<HDC, char*, int, int, int*, int*, SIZE*, BOOL> GetTextExtentExPoint => &GetTextExtentExPointW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCharacterPlacement"]/*' />
     [NativeTypeName("#define GetCharacterPlacement GetCharacterPlacementW")]
     public static delegate*<HDC, char*, int, int, GCP_RESULTSW*, uint, uint> GetCharacterPlacement => &GetCharacterPlacementW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GS_8BIT_INDICES"]/*' />
     [NativeTypeName("#define GS_8BIT_INDICES 0x00000001")]
     public const int GS_8BIT_INDICES = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GGI_MARK_NONEXISTING_GLYPHS"]/*' />
     [NativeTypeName("#define GGI_MARK_NONEXISTING_GLYPHS 0X0001")]
     public const int GGI_MARK_NONEXISTING_GLYPHS = 0X0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetGlyphIndices"]/*' />
     [NativeTypeName("#define GetGlyphIndices GetGlyphIndicesW")]
     public static delegate*<HDC, char*, int, ushort*, uint, uint> GetGlyphIndices => &GetGlyphIndicesW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STAMP_DESIGNVECTOR"]/*' />
     [NativeTypeName("#define STAMP_DESIGNVECTOR (0x8000000 + 'd' + ('v' << 8))")]
     public const int STAMP_DESIGNVECTOR = (0x8000000 + (sbyte)('d') + ((sbyte)('v') << 8));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STAMP_AXESLIST"]/*' />
     [NativeTypeName("#define STAMP_AXESLIST (0x8000000 + 'a' + ('l' << 8))")]
     public const int STAMP_AXESLIST = (0x8000000 + (sbyte)('a') + ((sbyte)('l') << 8));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STAMP_TRUETYPE_VARIATION"]/*' />
     [NativeTypeName("#define STAMP_TRUETYPE_VARIATION (0x8000000 + 't' + ('v' << 8))")]
     public const int STAMP_TRUETYPE_VARIATION = (0x8000000 + (sbyte)('t') + ((sbyte)('v') << 8));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STAMP_CFF2"]/*' />
     [NativeTypeName("#define STAMP_CFF2 (0x8000000 + 'c' + ('v' << 8))")]
     public const int STAMP_CFF2 = (0x8000000 + (sbyte)('c') + ((sbyte)('v') << 8));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AddFontResourceEx"]/*' />
     [NativeTypeName("#define AddFontResourceEx AddFontResourceExW")]
     public static delegate*<char*, uint, void*, int> AddFontResourceEx => &AddFontResourceExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RemoveFontResourceEx"]/*' />
     [NativeTypeName("#define RemoveFontResourceEx RemoveFontResourceExW")]
     public static delegate*<char*, uint, void*, BOOL> RemoveFontResourceEx => &RemoveFontResourceExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateFontIndirectEx"]/*' />
     [NativeTypeName("#define CreateFontIndirectEx CreateFontIndirectExW")]
     public static delegate*<ENUMLOGFONTEXDVW*, HFONT> CreateFontIndirectEx => &CreateFontIndirectExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ResetDC"]/*' />
     [NativeTypeName("#define ResetDC ResetDCW")]
     public static delegate*<HDC, DEVMODEW*, HDC> ResetDC => &ResetDCW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RemoveFontResource"]/*' />
     [NativeTypeName("#define RemoveFontResource RemoveFontResourceW")]
     public static delegate*<char*, BOOL> RemoveFontResource => &RemoveFontResourceW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AC_SRC_OVER"]/*' />
     [NativeTypeName("#define AC_SRC_OVER 0x00")]
     public const int AC_SRC_OVER = 0x00;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AC_SRC_ALPHA"]/*' />
     [NativeTypeName("#define AC_SRC_ALPHA 0x01")]
     public const int AC_SRC_ALPHA = 0x01;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GRADIENT_FILL_RECT_H"]/*' />
     [NativeTypeName("#define GRADIENT_FILL_RECT_H 0x00000000")]
     public const int GRADIENT_FILL_RECT_H = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GRADIENT_FILL_RECT_V"]/*' />
     [NativeTypeName("#define GRADIENT_FILL_RECT_V 0x00000001")]
     public const int GRADIENT_FILL_RECT_V = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GRADIENT_FILL_TRIANGLE"]/*' />
     [NativeTypeName("#define GRADIENT_FILL_TRIANGLE 0x00000002")]
     public const int GRADIENT_FILL_TRIANGLE = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GRADIENT_FILL_OP_FLAG"]/*' />
     [NativeTypeName("#define GRADIENT_FILL_OP_FLAG 0x000000ff")]
     public const int GRADIENT_FILL_OP_FLAG = 0x000000ff;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CopyEnhMetaFile"]/*' />
     [NativeTypeName("#define CopyEnhMetaFile CopyEnhMetaFileW")]
     public static delegate*<HENHMETAFILE, char*, HENHMETAFILE> CopyEnhMetaFile => &CopyEnhMetaFileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateEnhMetaFile"]/*' />
     [NativeTypeName("#define CreateEnhMetaFile CreateEnhMetaFileW")]
     public static delegate*<HDC, char*, RECT*, char*, HDC> CreateEnhMetaFile => &CreateEnhMetaFileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetEnhMetaFile"]/*' />
     [NativeTypeName("#define GetEnhMetaFile GetEnhMetaFileW")]
     public static delegate*<char*, HENHMETAFILE> GetEnhMetaFile => &GetEnhMetaFileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetEnhMetaFileDescription"]/*' />
     [NativeTypeName("#define GetEnhMetaFileDescription GetEnhMetaFileDescriptionW")]
     public static delegate*<HENHMETAFILE, uint, char*, uint> GetEnhMetaFileDescription => &GetEnhMetaFileDescriptionW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextMetrics"]/*' />
     [NativeTypeName("#define GetTextMetrics GetTextMetricsW")]
     public static delegate*<HDC, TEXTMETRICW*, BOOL> GetTextMetrics => &GetTextMetricsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CA_NEGATIVE"]/*' />
     [NativeTypeName("#define CA_NEGATIVE 0x0001")]
     public const int CA_NEGATIVE = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CA_LOG_FILTER"]/*' />
     [NativeTypeName("#define CA_LOG_FILTER 0x0002")]
     public const int CA_LOG_FILTER = 0x0002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RGB_GAMMA_MIN"]/*' />
     [NativeTypeName("#define RGB_GAMMA_MIN (WORD)02500")]
     public const ushort RGB_GAMMA_MIN = (ushort)(02500);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RGB_GAMMA_MAX"]/*' />
     [NativeTypeName("#define RGB_GAMMA_MAX (WORD)65000")]
     public const ushort RGB_GAMMA_MAX = (ushort)(65000);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REFERENCE_WHITE_MIN"]/*' />
     [NativeTypeName("#define REFERENCE_WHITE_MIN (WORD)6000")]
     public const ushort REFERENCE_WHITE_MIN = (ushort)(6000);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REFERENCE_WHITE_MAX"]/*' />
     [NativeTypeName("#define REFERENCE_WHITE_MAX (WORD)10000")]
     public const ushort REFERENCE_WHITE_MAX = (ushort)(10000);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REFERENCE_BLACK_MIN"]/*' />
     [NativeTypeName("#define REFERENCE_BLACK_MIN (WORD)0")]
     public const ushort REFERENCE_BLACK_MIN = (ushort)(0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REFERENCE_BLACK_MAX"]/*' />
     [NativeTypeName("#define REFERENCE_BLACK_MAX (WORD)4000")]
     public const ushort REFERENCE_BLACK_MAX = (ushort)(4000);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StartDoc"]/*' />
     [NativeTypeName("#define StartDoc StartDocW")]
     public static delegate*<HDC, DOCINFOW*, int> StartDoc => &StartDocW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetObject"]/*' />
     [NativeTypeName("#define GetObject GetObjectW")]
     public static delegate*<HANDLE, int, void*, int> GetObject => &GetObjectW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TextOut"]/*' />
     [NativeTypeName("#define TextOut TextOutW")]
     public static delegate*<HDC, int, int, char*, int, BOOL> TextOut => &TextOutW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ExtTextOut"]/*' />
     [NativeTypeName("#define ExtTextOut ExtTextOutW")]
     public static delegate*<HDC, int, int, uint, RECT*, char*, uint, int*, BOOL> ExtTextOut => &ExtTextOutW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PolyTextOut"]/*' />
     [NativeTypeName("#define PolyTextOut PolyTextOutW")]
     public static delegate*<HDC, POLYTEXTW*, int, BOOL> PolyTextOut => &PolyTextOutW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextFace"]/*' />
     [NativeTypeName("#define GetTextFace GetTextFaceW")]
     public static delegate*<HDC, int, char*, int> GetTextFace => &GetTextFaceW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FONTMAPPER_MAX"]/*' />
     [NativeTypeName("#define FONTMAPPER_MAX 10")]
     public const int FONTMAPPER_MAX = 10;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetKerningPairs"]/*' />
     [NativeTypeName("#define GetKerningPairs GetKerningPairsW")]
     public static delegate*<HDC, uint, KERNINGPAIR*, uint> GetKerningPairs => &GetKerningPairsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetLogColorSpace"]/*' />
     [NativeTypeName("#define GetLogColorSpace GetLogColorSpaceW")]
     public static delegate*<HCOLORSPACE, LOGCOLORSPACEW*, uint, BOOL> GetLogColorSpace => &GetLogColorSpaceW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateColorSpace"]/*' />
     [NativeTypeName("#define CreateColorSpace CreateColorSpaceW")]
     public static delegate*<LOGCOLORSPACEW*, HCOLORSPACE> CreateColorSpace => &CreateColorSpaceW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetICMProfile"]/*' />
     [NativeTypeName("#define GetICMProfile GetICMProfileW")]
     public static delegate*<HDC, uint*, char*, BOOL> GetICMProfile => &GetICMProfileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetICMProfile"]/*' />
     [NativeTypeName("#define SetICMProfile SetICMProfileW")]
     public static delegate*<HDC, char*, BOOL> SetICMProfile => &SetICMProfileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumICMProfiles"]/*' />
     [NativeTypeName("#define EnumICMProfiles EnumICMProfilesW")]
     public static delegate*<HDC, delegate* unmanaged<char*, LPARAM, int>, LPARAM, int> EnumICMProfiles => &EnumICMProfilesW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UpdateICMRegKey"]/*' />
     [NativeTypeName("#define UpdateICMRegKey UpdateICMRegKeyW")]
     public static delegate*<uint, char*, char*, uint, BOOL> UpdateICMRegKey => &UpdateICMRegKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ENHMETA_SIGNATURE"]/*' />
     [NativeTypeName("#define ENHMETA_SIGNATURE 0x464D4520")]
     public const int ENHMETA_SIGNATURE = 0x464D4520;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ENHMETA_STOCK_OBJECT"]/*' />
     [NativeTypeName("#define ENHMETA_STOCK_OBJECT 0x80000000")]
     public const uint ENHMETA_STOCK_OBJECT = 0x80000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SETICMPROFILE_EMBEDED"]/*' />
     [NativeTypeName("#define SETICMPROFILE_EMBEDED 0x00000001")]
     public const int SETICMPROFILE_EMBEDED = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CREATECOLORSPACE_EMBEDED"]/*' />
     [NativeTypeName("#define CREATECOLORSPACE_EMBEDED 0x00000001")]
     public const int CREATECOLORSPACE_EMBEDED = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COLORMATCHTOTARGET_EMBEDED"]/*' />
     [NativeTypeName("#define COLORMATCHTOTARGET_EMBEDED 0x00000001")]
     public const int COLORMATCHTOTARGET_EMBEDED = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GDICOMMENT_IDENTIFIER"]/*' />
     [NativeTypeName("#define GDICOMMENT_IDENTIFIER 0x43494447")]
     public const int GDICOMMENT_IDENTIFIER = 0x43494447;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GDICOMMENT_WINDOWS_METAFILE"]/*' />
     [NativeTypeName("#define GDICOMMENT_WINDOWS_METAFILE 0x80000001")]
     public const uint GDICOMMENT_WINDOWS_METAFILE = 0x80000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GDICOMMENT_BEGINGROUP"]/*' />
     [NativeTypeName("#define GDICOMMENT_BEGINGROUP 0x00000002")]
     public const int GDICOMMENT_BEGINGROUP = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GDICOMMENT_ENDGROUP"]/*' />
     [NativeTypeName("#define GDICOMMENT_ENDGROUP 0x00000003")]
     public const int GDICOMMENT_ENDGROUP = 0x00000003;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GDICOMMENT_MULTIFORMATS"]/*' />
     [NativeTypeName("#define GDICOMMENT_MULTIFORMATS 0x40000004")]
     public const int GDICOMMENT_MULTIFORMATS = 0x40000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EPS_SIGNATURE"]/*' />
     [NativeTypeName("#define EPS_SIGNATURE 0x46535045")]
     public const int EPS_SIGNATURE = 0x46535045;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GDICOMMENT_UNICODE_STRING"]/*' />
     [NativeTypeName("#define GDICOMMENT_UNICODE_STRING 0x00000040")]
     public const int GDICOMMENT_UNICODE_STRING = 0x00000040;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GDICOMMENT_UNICODE_END"]/*' />
     [NativeTypeName("#define GDICOMMENT_UNICODE_END 0x00000080")]
     public const int GDICOMMENT_UNICODE_END = 0x00000080;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wglUseFontBitmaps"]/*' />
     [NativeTypeName("#define wglUseFontBitmaps wglUseFontBitmapsW")]
     public static delegate*<HDC, uint, uint, uint, BOOL> wglUseFontBitmaps => &wglUseFontBitmapsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wglUseFontOutlines"]/*' />
     [NativeTypeName("#define wglUseFontOutlines wglUseFontOutlinesW")]
     public static delegate*<HDC, uint, uint, uint, float, float, int, GLYPHMETRICSFLOAT*, BOOL> wglUseFontOutlines => &wglUseFontOutlinesW;
 }

@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public partial struct SID
 {
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SEditCommandTarget"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_SEditCommandTarget
     {
@@ -38,6 +39,7 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SHTMLEditHost"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_SHTMLEditHost
     {
@@ -63,6 +65,7 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SHTMLEditServices"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_SHTMLEditServices
     {
@@ -88,12 +91,15 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SHTMLWindow"]/*' />
     [NativeTypeName("#define SID_SHTMLWindow IID_IHTMLWindow2")]
     public static ref readonly Guid SID_SHTMLWindow => ref IID_IHTMLWindow2;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SElementBehaviorFactory"]/*' />
     [NativeTypeName("#define SID_SElementBehaviorFactory IID_IElementBehaviorFactory")]
     public static ref readonly Guid SID_SElementBehaviorFactory => ref IID_IElementBehaviorFactory;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_STrackingProtection"]/*' />
     [NativeTypeName("#define SID_STrackingProtection IID_ITrackingProtection")]
     public static ref readonly Guid SID_STrackingProtection => ref IID_ITrackingProtection;
 }

@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AUDIOCLOCK_CHARACTERISTIC_FIXED_FREQ"]/*' />
     [NativeTypeName("#define AUDIOCLOCK_CHARACTERISTIC_FIXED_FREQ 0x00000001")]
     public const int AUDIOCLOCK_CHARACTERISTIC_FIXED_FREQ = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AMBISONICS_PARAM_VERSION_1"]/*' />
     [NativeTypeName("#define AMBISONICS_PARAM_VERSION_1 1")]
     public const int AMBISONICS_PARAM_VERSION_1 = 1;
 }

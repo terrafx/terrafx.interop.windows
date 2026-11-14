@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class HTTP
 {
+    /// <include file='HTTP.xml' path='doc/member[@name="HTTP.HTTP_TRACE_EVENT_FLAG_STATIC_DESCRIPTIVE_FIELDS"]/*' />
     [NativeTypeName("#define HTTP_TRACE_EVENT_FLAG_STATIC_DESCRIPTIVE_FIELDS 0x01")]
     public const int HTTP_TRACE_EVENT_FLAG_STATIC_DESCRIPTIVE_FIELDS = 0x01;
 
+    /// <include file='HTTP.xml' path='doc/member[@name="HTTP.HTTP_TRACE_LEVEL_START"]/*' />
     [NativeTypeName("#define HTTP_TRACE_LEVEL_START 6")]
     public const int HTTP_TRACE_LEVEL_START = 6;
 
+    /// <include file='HTTP.xml' path='doc/member[@name="HTTP.HTTP_TRACE_LEVEL_END"]/*' />
     [NativeTypeName("#define HTTP_TRACE_LEVEL_END 7")]
     public const int HTTP_TRACE_LEVEL_END = 7;
 }

@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_INTERFACE_NAME_LEN"]/*' />
     [NativeTypeName("#define MAX_INTERFACE_NAME_LEN 256")]
     public const int MAX_INTERFACE_NAME_LEN = 256;
 }

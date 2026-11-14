@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CLSID
 {
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DirectDraw"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DirectDraw
     {
@@ -38,6 +39,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DirectDraw7"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DirectDraw7
     {
@@ -63,6 +65,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DirectDrawClipper"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DirectDrawClipper
     {

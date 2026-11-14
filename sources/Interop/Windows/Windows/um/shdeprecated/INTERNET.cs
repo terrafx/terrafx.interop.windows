@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class INTERNET
 {
+    /// <include file='INTERNET.xml' path='doc/member[@name="INTERNET.INTERNET_MAX_PATH_LENGTH"]/*' />
     [NativeTypeName("#define INTERNET_MAX_PATH_LENGTH 2048")]
     public const int INTERNET_MAX_PATH_LENGTH = 2048;
 
+    /// <include file='INTERNET.xml' path='doc/member[@name="INTERNET.INTERNET_MAX_SCHEME_LENGTH"]/*' />
     [NativeTypeName("#define INTERNET_MAX_SCHEME_LENGTH 32")]
     public const int INTERNET_MAX_SCHEME_LENGTH = 32;
 
+    /// <include file='INTERNET.xml' path='doc/member[@name="INTERNET.INTERNET_MAX_URL_LENGTH"]/*' />
     [NativeTypeName("#define INTERNET_MAX_URL_LENGTH (INTERNET_MAX_SCHEME_LENGTH \\\r\n                                        + sizeof(\"://\") \\\r\n                                        + INTERNET_MAX_PATH_LENGTH)")]
     public const uint INTERNET_MAX_URL_LENGTH = (32 + 4 + 2048);
 }

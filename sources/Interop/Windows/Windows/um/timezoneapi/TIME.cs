@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class TIME
 {
+    /// <include file='TIME.xml' path='doc/member[@name="TIME.TIME_ZONE_ID_INVALID"]/*' />
     [NativeTypeName("#define TIME_ZONE_ID_INVALID ((DWORD)0xFFFFFFFF)")]
     public const uint TIME_ZONE_ID_INVALID = ((uint)(0xFFFFFFFF));
 }

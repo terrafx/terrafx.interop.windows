@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MF
 {
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_INITIALIZED"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_INITIALIZED
     {
@@ -37,6 +38,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_PREVIEW_STARTED"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_PREVIEW_STARTED
     {
@@ -62,6 +64,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_PREVIEW_STOPPED"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_PREVIEW_STOPPED
     {
@@ -87,6 +90,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_RECORD_STARTED"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_RECORD_STARTED
     {
@@ -112,6 +116,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_RECORD_STOPPED"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_RECORD_STOPPED
     {
@@ -137,6 +142,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_PHOTO_TAKEN"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_PHOTO_TAKEN
     {
@@ -162,6 +168,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_SOURCE_CURRENT_DEVICE_MEDIA_TYPE_SET"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_SOURCE_CURRENT_DEVICE_MEDIA_TYPE_SET
     {
@@ -187,6 +194,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_ERROR"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_ERROR
     {
@@ -212,6 +220,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_EFFECT_ADDED"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_EFFECT_ADDED
     {
@@ -237,6 +246,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_EFFECT_REMOVED"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_EFFECT_REMOVED
     {
@@ -262,6 +272,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_ALL_EFFECTS_REMOVED"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_ALL_EFFECTS_REMOVED
     {
@@ -287,6 +298,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_SINK_PREPARED"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_SINK_PREPARED
     {
@@ -312,6 +324,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_OUTPUT_MEDIA_TYPE_SET"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_OUTPUT_MEDIA_TYPE_SET
     {
@@ -337,6 +350,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_CAMERA_STREAM_BLOCKED"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_CAMERA_STREAM_BLOCKED
     {
@@ -362,6 +376,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_CAMERA_STREAM_UNBLOCKED"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_CAMERA_STREAM_UNBLOCKED
     {
@@ -387,6 +402,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_D3D_MANAGER"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_D3D_MANAGER
     {
@@ -412,6 +428,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_RECORD_SINK_VIDEO_MAX_UNPROCESSED_SAMPLES"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_RECORD_SINK_VIDEO_MAX_UNPROCESSED_SAMPLES
     {
@@ -437,6 +454,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_RECORD_SINK_AUDIO_MAX_UNPROCESSED_SAMPLES"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_RECORD_SINK_AUDIO_MAX_UNPROCESSED_SAMPLES
     {
@@ -462,6 +480,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_RECORD_SINK_VIDEO_MAX_PROCESSED_SAMPLES"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_RECORD_SINK_VIDEO_MAX_PROCESSED_SAMPLES
     {
@@ -487,6 +506,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_RECORD_SINK_AUDIO_MAX_PROCESSED_SAMPLES"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_RECORD_SINK_AUDIO_MAX_PROCESSED_SAMPLES
     {
@@ -512,6 +532,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_USE_AUDIO_DEVICE_ONLY"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_USE_AUDIO_DEVICE_ONLY
     {
@@ -537,6 +558,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_USE_VIDEO_DEVICE_ONLY"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_USE_VIDEO_DEVICE_ONLY
     {
@@ -562,6 +584,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_DISABLE_HARDWARE_TRANSFORMS"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_DISABLE_HARDWARE_TRANSFORMS
     {
@@ -587,6 +610,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_DISABLE_DXVA"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_DISABLE_DXVA
     {
@@ -612,6 +636,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_MEDIASOURCE_CONFIG"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_MEDIASOURCE_CONFIG
     {
@@ -637,6 +662,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_DECODER_MFT_FIELDOFUSE_UNLOCK_Attribute"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_DECODER_MFT_FIELDOFUSE_UNLOCK_Attribute
     {
@@ -662,6 +688,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_ENCODER_MFT_FIELDOFUSE_UNLOCK_Attribute"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_ENCODER_MFT_FIELDOFUSE_UNLOCK_Attribute
     {
@@ -687,6 +714,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_ENABLE_CAMERA_STREAMSTATE_NOTIFICATION"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_ENABLE_CAMERA_STREAMSTATE_NOTIFICATION
     {
@@ -712,6 +740,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_MEDIA_CATEGORY"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_MEDIA_CATEGORY
     {
@@ -737,6 +766,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_AUDIO_PROCESSING"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_AUDIO_PROCESSING
     {
@@ -762,6 +792,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_EVENT_GENERATOR_GUID"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_EVENT_GENERATOR_GUID
     {
@@ -787,6 +818,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_EVENT_STREAM_INDEX"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_EVENT_STREAM_INDEX
     {
@@ -812,6 +844,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_SELECTEDCAMERAPROFILE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_SELECTEDCAMERAPROFILE
     {
@@ -837,6 +870,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_ENGINE_SELECTEDCAMERAPROFILE_INDEX"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CAPTURE_ENGINE_SELECTEDCAMERAPROFILE_INDEX
     {

@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class EP
 {
+    /// <include file='EP.xml' path='doc/member[@name="EP.EP_NavPane"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid EP_NavPane
     {
@@ -37,6 +38,7 @@ public static partial class EP
         }
     }
 
+    /// <include file='EP.xml' path='doc/member[@name="EP.EP_Commands"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid EP_Commands
     {
@@ -62,6 +64,7 @@ public static partial class EP
         }
     }
 
+    /// <include file='EP.xml' path='doc/member[@name="EP.EP_Commands_Organize"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid EP_Commands_Organize
     {
@@ -87,6 +90,7 @@ public static partial class EP
         }
     }
 
+    /// <include file='EP.xml' path='doc/member[@name="EP.EP_Commands_View"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid EP_Commands_View
     {
@@ -112,6 +116,7 @@ public static partial class EP
         }
     }
 
+    /// <include file='EP.xml' path='doc/member[@name="EP.EP_DetailsPane"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid EP_DetailsPane
     {
@@ -137,6 +142,7 @@ public static partial class EP
         }
     }
 
+    /// <include file='EP.xml' path='doc/member[@name="EP.EP_PreviewPane"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid EP_PreviewPane
     {
@@ -162,6 +168,7 @@ public static partial class EP
         }
     }
 
+    /// <include file='EP.xml' path='doc/member[@name="EP.EP_QueryPane"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid EP_QueryPane
     {
@@ -187,6 +194,7 @@ public static partial class EP
         }
     }
 
+    /// <include file='EP.xml' path='doc/member[@name="EP.EP_AdvQueryPane"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid EP_AdvQueryPane
     {
@@ -212,6 +220,7 @@ public static partial class EP
         }
     }
 
+    /// <include file='EP.xml' path='doc/member[@name="EP.EP_StatusBar"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid EP_StatusBar
     {
@@ -237,6 +246,7 @@ public static partial class EP
         }
     }
 
+    /// <include file='EP.xml' path='doc/member[@name="EP.EP_Ribbon"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid EP_Ribbon
     {

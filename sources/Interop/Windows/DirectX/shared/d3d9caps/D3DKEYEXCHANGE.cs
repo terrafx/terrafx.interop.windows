@@ -12,6 +12,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3DKEYEXCHANGE
 {
+    /// <include file='D3DKEYEXCHANGE.xml' path='doc/member[@name="D3DKEYEXCHANGE.D3DKEYEXCHANGE_RSAES_OAEP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3DKEYEXCHANGE_RSAES_OAEP
     {
@@ -37,6 +38,7 @@ public static partial class D3DKEYEXCHANGE
         }
     }
 
+    /// <include file='D3DKEYEXCHANGE.xml' path='doc/member[@name="D3DKEYEXCHANGE.D3DKEYEXCHANGE_DXVA"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3DKEYEXCHANGE_DXVA
     {

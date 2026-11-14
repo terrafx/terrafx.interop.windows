@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SHUTDOWN
 {
+    /// <include file='SHUTDOWN.xml' path='doc/member[@name="SHUTDOWN.SHUTDOWN_NORETRY"]/*' />
     [NativeTypeName("#define SHUTDOWN_NORETRY 0x00000001")]
     public const int SHUTDOWN_NORETRY = 0x00000001;
 }

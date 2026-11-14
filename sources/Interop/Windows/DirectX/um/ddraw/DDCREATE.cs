@@ -7,9 +7,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DDCREATE
 {
+    /// <include file='DDCREATE.xml' path='doc/member[@name="DDCREATE.DDCREATE_HARDWAREONLY"]/*' />
     [NativeTypeName("#define DDCREATE_HARDWAREONLY 0x00000001l")]
     public const int DDCREATE_HARDWAREONLY = 0x00000001;
 
+    /// <include file='DDCREATE.xml' path='doc/member[@name="DDCREATE.DDCREATE_EMULATIONONLY"]/*' />
     [NativeTypeName("#define DDCREATE_EMULATIONONLY 0x00000002l")]
     public const int DDCREATE_EMULATIONONLY = 0x00000002;
 }

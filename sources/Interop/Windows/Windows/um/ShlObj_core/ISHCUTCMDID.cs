@@ -7,8 +7,12 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class ISHCUTCMDID
 {
+    /// <include file='ISHCUTCMDID.xml' path='doc/member[@name="ISHCUTCMDID.ISHCUTCMDID_DOWNLOADICON"]/*' />
     public const int ISHCUTCMDID_DOWNLOADICON = 0;
+    /// <include file='ISHCUTCMDID.xml' path='doc/member[@name="ISHCUTCMDID.ISHCUTCMDID_INTSHORTCUTCREATE"]/*' />
     public const int ISHCUTCMDID_INTSHORTCUTCREATE = 1;
+    /// <include file='ISHCUTCMDID.xml' path='doc/member[@name="ISHCUTCMDID.ISHCUTCMDID_COMMITHISTORY"]/*' />
     public const int ISHCUTCMDID_COMMITHISTORY = 2;
+    /// <include file='ISHCUTCMDID.xml' path='doc/member[@name="ISHCUTCMDID.ISHCUTCMDID_SETUSERAWURL"]/*' />
     public const int ISHCUTCMDID_SETUSERAWURL = 3;
 }

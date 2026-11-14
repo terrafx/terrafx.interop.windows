@@ -7,9 +7,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DWRITE
 {
+    /// <include file='DWRITE.xml' path='doc/member[@name="DWRITE.DWRITE_ALPHA_MAX"]/*' />
     [NativeTypeName("#define DWRITE_ALPHA_MAX 255")]
     public const int DWRITE_ALPHA_MAX = 255;
 
+    /// <include file='DWRITE.xml' path='doc/member[@name="DWRITE.DWRITE_ERR_BASE"]/*' />
     [NativeTypeName("#define DWRITE_ERR_BASE 0x5000")]
     public const int DWRITE_ERR_BASE = 0x5000;
 }

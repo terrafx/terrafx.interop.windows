@@ -70,6 +70,7 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows6.3")]
     public static extern uint PssWalkMarkerSeekToBeginning(HPSSWALK WalkMarkerHandle);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PSS_PERF_RESOLUTION"]/*' />
     [NativeTypeName("#define PSS_PERF_RESOLUTION 1000000")]
     public const int PSS_PERF_RESOLUTION = 1000000;
 }

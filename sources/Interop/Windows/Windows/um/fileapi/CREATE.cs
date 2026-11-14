@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CREATE
 {
+    /// <include file='CREATE.xml' path='doc/member[@name="CREATE.CREATE_NEW"]/*' />
     [NativeTypeName("#define CREATE_NEW 1")]
     public const int CREATE_NEW = 1;
 
+    /// <include file='CREATE.xml' path='doc/member[@name="CREATE.CREATE_ALWAYS"]/*' />
     [NativeTypeName("#define CREATE_ALWAYS 2")]
     public const int CREATE_ALWAYS = 2;
 }

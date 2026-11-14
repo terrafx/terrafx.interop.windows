@@ -7,18 +7,23 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class DEFAULT
 {
+    /// <include file='DEFAULT.xml' path='doc/member[@name="DEFAULT.DEFAULT_QUALITY"]/*' />
     [NativeTypeName("#define DEFAULT_QUALITY 0")]
     public const int DEFAULT_QUALITY = 0;
 
+    /// <include file='DEFAULT.xml' path='doc/member[@name="DEFAULT.DEFAULT_PITCH"]/*' />
     [NativeTypeName("#define DEFAULT_PITCH 0")]
     public const int DEFAULT_PITCH = 0;
 
+    /// <include file='DEFAULT.xml' path='doc/member[@name="DEFAULT.DEFAULT_CHARSET"]/*' />
     [NativeTypeName("#define DEFAULT_CHARSET 1")]
     public const int DEFAULT_CHARSET = 1;
 
+    /// <include file='DEFAULT.xml' path='doc/member[@name="DEFAULT.DEFAULT_PALETTE"]/*' />
     [NativeTypeName("#define DEFAULT_PALETTE 15")]
     public const int DEFAULT_PALETTE = 15;
 
+    /// <include file='DEFAULT.xml' path='doc/member[@name="DEFAULT.DEFAULT_GUI_FONT"]/*' />
     [NativeTypeName("#define DEFAULT_GUI_FONT 17")]
     public const int DEFAULT_GUI_FONT = 17;
 }

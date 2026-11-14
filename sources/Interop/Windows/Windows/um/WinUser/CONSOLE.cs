@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CONSOLE
 {
+    /// <include file='CONSOLE.xml' path='doc/member[@name="CONSOLE.CONSOLE_CARET_SELECTION"]/*' />
     [NativeTypeName("#define CONSOLE_CARET_SELECTION 0x0001")]
     public const int CONSOLE_CARET_SELECTION = 0x0001;
 
+    /// <include file='CONSOLE.xml' path='doc/member[@name="CONSOLE.CONSOLE_CARET_VISIBLE"]/*' />
     [NativeTypeName("#define CONSOLE_CARET_VISIBLE 0x0002")]
     public const int CONSOLE_CARET_VISIBLE = 0x0002;
 }

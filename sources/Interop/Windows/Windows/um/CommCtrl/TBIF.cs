@@ -7,27 +7,35 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class TBIF
 {
+    /// <include file='TBIF.xml' path='doc/member[@name="TBIF.TBIF_IMAGE"]/*' />
     [NativeTypeName("#define TBIF_IMAGE 0x00000001")]
     public const int TBIF_IMAGE = 0x00000001;
 
+    /// <include file='TBIF.xml' path='doc/member[@name="TBIF.TBIF_TEXT"]/*' />
     [NativeTypeName("#define TBIF_TEXT 0x00000002")]
     public const int TBIF_TEXT = 0x00000002;
 
+    /// <include file='TBIF.xml' path='doc/member[@name="TBIF.TBIF_STATE"]/*' />
     [NativeTypeName("#define TBIF_STATE 0x00000004")]
     public const int TBIF_STATE = 0x00000004;
 
+    /// <include file='TBIF.xml' path='doc/member[@name="TBIF.TBIF_STYLE"]/*' />
     [NativeTypeName("#define TBIF_STYLE 0x00000008")]
     public const int TBIF_STYLE = 0x00000008;
 
+    /// <include file='TBIF.xml' path='doc/member[@name="TBIF.TBIF_LPARAM"]/*' />
     [NativeTypeName("#define TBIF_LPARAM 0x00000010")]
     public const int TBIF_LPARAM = 0x00000010;
 
+    /// <include file='TBIF.xml' path='doc/member[@name="TBIF.TBIF_COMMAND"]/*' />
     [NativeTypeName("#define TBIF_COMMAND 0x00000020")]
     public const int TBIF_COMMAND = 0x00000020;
 
+    /// <include file='TBIF.xml' path='doc/member[@name="TBIF.TBIF_SIZE"]/*' />
     [NativeTypeName("#define TBIF_SIZE 0x00000040")]
     public const int TBIF_SIZE = 0x00000040;
 
+    /// <include file='TBIF.xml' path='doc/member[@name="TBIF.TBIF_BYINDEX"]/*' />
     [NativeTypeName("#define TBIF_BYINDEX 0x80000000")]
     public const uint TBIF_BYINDEX = 0x80000000;
 }

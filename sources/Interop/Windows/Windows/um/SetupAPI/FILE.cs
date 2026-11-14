@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class FILE
 {
+    /// <include file='FILE.xml' path='doc/member[@name="FILE.FILE_COMPRESSION_NONE"]/*' />
     [NativeTypeName("#define FILE_COMPRESSION_NONE 0")]
     public const int FILE_COMPRESSION_NONE = 0;
 
+    /// <include file='FILE.xml' path='doc/member[@name="FILE.FILE_COMPRESSION_WINLZA"]/*' />
     [NativeTypeName("#define FILE_COMPRESSION_WINLZA 1")]
     public const int FILE_COMPRESSION_WINLZA = 1;
 
+    /// <include file='FILE.xml' path='doc/member[@name="FILE.FILE_COMPRESSION_MSZIP"]/*' />
     [NativeTypeName("#define FILE_COMPRESSION_MSZIP 2")]
     public const int FILE_COMPRESSION_MSZIP = 2;
 
+    /// <include file='FILE.xml' path='doc/member[@name="FILE.FILE_COMPRESSION_NTCAB"]/*' />
     [NativeTypeName("#define FILE_COMPRESSION_NTCAB 3")]
     public const int FILE_COMPRESSION_NTCAB = 3;
 }

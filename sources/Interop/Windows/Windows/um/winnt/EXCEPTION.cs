@@ -7,42 +7,55 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class EXCEPTION
 {
+    /// <include file='EXCEPTION.xml' path='doc/member[@name="EXCEPTION.EXCEPTION_READ_FAULT"]/*' />
     [NativeTypeName("#define EXCEPTION_READ_FAULT 0")]
     public const int EXCEPTION_READ_FAULT = 0;
 
+    /// <include file='EXCEPTION.xml' path='doc/member[@name="EXCEPTION.EXCEPTION_WRITE_FAULT"]/*' />
     [NativeTypeName("#define EXCEPTION_WRITE_FAULT 1")]
     public const int EXCEPTION_WRITE_FAULT = 1;
 
+    /// <include file='EXCEPTION.xml' path='doc/member[@name="EXCEPTION.EXCEPTION_EXECUTE_FAULT"]/*' />
     [NativeTypeName("#define EXCEPTION_EXECUTE_FAULT 8")]
     public const int EXCEPTION_EXECUTE_FAULT = 8;
 
+    /// <include file='EXCEPTION.xml' path='doc/member[@name="EXCEPTION.EXCEPTION_NONCONTINUABLE"]/*' />
     [NativeTypeName("#define EXCEPTION_NONCONTINUABLE 0x1")]
     public const int EXCEPTION_NONCONTINUABLE = 0x1;
 
+    /// <include file='EXCEPTION.xml' path='doc/member[@name="EXCEPTION.EXCEPTION_UNWINDING"]/*' />
     [NativeTypeName("#define EXCEPTION_UNWINDING 0x2")]
     public const int EXCEPTION_UNWINDING = 0x2;
 
+    /// <include file='EXCEPTION.xml' path='doc/member[@name="EXCEPTION.EXCEPTION_EXIT_UNWIND"]/*' />
     [NativeTypeName("#define EXCEPTION_EXIT_UNWIND 0x4")]
     public const int EXCEPTION_EXIT_UNWIND = 0x4;
 
+    /// <include file='EXCEPTION.xml' path='doc/member[@name="EXCEPTION.EXCEPTION_STACK_INVALID"]/*' />
     [NativeTypeName("#define EXCEPTION_STACK_INVALID 0x8")]
     public const int EXCEPTION_STACK_INVALID = 0x8;
 
+    /// <include file='EXCEPTION.xml' path='doc/member[@name="EXCEPTION.EXCEPTION_NESTED_CALL"]/*' />
     [NativeTypeName("#define EXCEPTION_NESTED_CALL 0x10")]
     public const int EXCEPTION_NESTED_CALL = 0x10;
 
+    /// <include file='EXCEPTION.xml' path='doc/member[@name="EXCEPTION.EXCEPTION_TARGET_UNWIND"]/*' />
     [NativeTypeName("#define EXCEPTION_TARGET_UNWIND 0x20")]
     public const int EXCEPTION_TARGET_UNWIND = 0x20;
 
+    /// <include file='EXCEPTION.xml' path='doc/member[@name="EXCEPTION.EXCEPTION_COLLIDED_UNWIND"]/*' />
     [NativeTypeName("#define EXCEPTION_COLLIDED_UNWIND 0x40")]
     public const int EXCEPTION_COLLIDED_UNWIND = 0x40;
 
+    /// <include file='EXCEPTION.xml' path='doc/member[@name="EXCEPTION.EXCEPTION_SOFTWARE_ORIGINATE"]/*' />
     [NativeTypeName("#define EXCEPTION_SOFTWARE_ORIGINATE 0x80")]
     public const int EXCEPTION_SOFTWARE_ORIGINATE = 0x80;
 
+    /// <include file='EXCEPTION.xml' path='doc/member[@name="EXCEPTION.EXCEPTION_UNWIND"]/*' />
     [NativeTypeName("#define EXCEPTION_UNWIND (EXCEPTION_UNWINDING | EXCEPTION_EXIT_UNWIND | \\\r\n                          EXCEPTION_TARGET_UNWIND | EXCEPTION_COLLIDED_UNWIND)")]
     public const int EXCEPTION_UNWIND = (0x2 | 0x4 | 0x20 | 0x40);
 
+    /// <include file='EXCEPTION.xml' path='doc/member[@name="EXCEPTION.EXCEPTION_MAXIMUM_PARAMETERS"]/*' />
     [NativeTypeName("#define EXCEPTION_MAXIMUM_PARAMETERS 15")]
     public const int EXCEPTION_MAXIMUM_PARAMETERS = 15;
 }

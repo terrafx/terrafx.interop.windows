@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class FMTID
 {
+    /// <include file='FMTID.xml' path='doc/member[@name="FMTID.FMTID_Intshcut"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FMTID_Intshcut
     {
@@ -37,6 +38,7 @@ public static partial class FMTID
         }
     }
 
+    /// <include file='FMTID.xml' path='doc/member[@name="FMTID.FMTID_InternetSite"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FMTID_InternetSite
     {
@@ -62,6 +64,7 @@ public static partial class FMTID
         }
     }
 
+    /// <include file='FMTID.xml' path='doc/member[@name="FMTID.FMTID_ShellDetails"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FMTID_ShellDetails
     {
@@ -87,6 +90,7 @@ public static partial class FMTID
         }
     }
 
+    /// <include file='FMTID.xml' path='doc/member[@name="FMTID.FMTID_Storage"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FMTID_Storage
     {
@@ -112,6 +116,7 @@ public static partial class FMTID
         }
     }
 
+    /// <include file='FMTID.xml' path='doc/member[@name="FMTID.FMTID_ImageProperties"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FMTID_ImageProperties
     {
@@ -137,6 +142,7 @@ public static partial class FMTID
         }
     }
 
+    /// <include file='FMTID.xml' path='doc/member[@name="FMTID.FMTID_CustomImageProperties"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FMTID_CustomImageProperties
     {
@@ -162,6 +168,7 @@ public static partial class FMTID
         }
     }
 
+    /// <include file='FMTID.xml' path='doc/member[@name="FMTID.FMTID_LibraryProperties"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FMTID_LibraryProperties
     {
@@ -187,6 +194,7 @@ public static partial class FMTID
         }
     }
 
+    /// <include file='FMTID.xml' path='doc/member[@name="FMTID.FMTID_Displaced"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FMTID_Displaced
     {
@@ -212,6 +220,7 @@ public static partial class FMTID
         }
     }
 
+    /// <include file='FMTID.xml' path='doc/member[@name="FMTID.FMTID_Briefcase"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FMTID_Briefcase
     {
@@ -237,6 +246,7 @@ public static partial class FMTID
         }
     }
 
+    /// <include file='FMTID.xml' path='doc/member[@name="FMTID.FMTID_Misc"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FMTID_Misc
     {
@@ -262,6 +272,7 @@ public static partial class FMTID
         }
     }
 
+    /// <include file='FMTID.xml' path='doc/member[@name="FMTID.FMTID_WebView"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FMTID_WebView
     {
@@ -287,6 +298,7 @@ public static partial class FMTID
         }
     }
 
+    /// <include file='FMTID.xml' path='doc/member[@name="FMTID.FMTID_MUSIC"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FMTID_MUSIC
     {
@@ -312,6 +324,7 @@ public static partial class FMTID
         }
     }
 
+    /// <include file='FMTID.xml' path='doc/member[@name="FMTID.FMTID_DRM"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FMTID_DRM
     {
@@ -337,6 +350,7 @@ public static partial class FMTID
         }
     }
 
+    /// <include file='FMTID.xml' path='doc/member[@name="FMTID.FMTID_Volume"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FMTID_Volume
     {
@@ -362,6 +376,7 @@ public static partial class FMTID
         }
     }
 
+    /// <include file='FMTID.xml' path='doc/member[@name="FMTID.FMTID_Query"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FMTID_Query
     {

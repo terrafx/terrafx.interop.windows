@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TCPIP_OWNING_MODULE_SIZE"]/*' />
     [NativeTypeName("#define TCPIP_OWNING_MODULE_SIZE 16")]
     public const int TCPIP_OWNING_MODULE_SIZE = 16;
 }

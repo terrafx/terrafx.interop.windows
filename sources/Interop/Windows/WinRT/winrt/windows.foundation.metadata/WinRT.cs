@@ -7,9 +7,11 @@ namespace TerraFX.Interop.WinRT;
 
 public static partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Foundation_Metadata_IApiInformationStatics"]/*' />
     [NativeTypeName("const WCHAR[51]")]
     public const string InterfaceName_Windows_Foundation_Metadata_IApiInformationStatics = "Windows.Foundation.Metadata.IApiInformationStatics";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Foundation_Metadata_ApiInformation"]/*' />
     [NativeTypeName("const WCHAR[43]")]
     public const string RuntimeClass_Windows_Foundation_Metadata_ApiInformation = "Windows.Foundation.Metadata.ApiInformation";
 }

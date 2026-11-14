@@ -7,39 +7,51 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class FILE
 {
+    /// <include file='FILE.xml' path='doc/member[@name="FILE.FILE_MAP_WRITE"]/*' />
     [NativeTypeName("#define FILE_MAP_WRITE SECTION_MAP_WRITE")]
     public const int FILE_MAP_WRITE = 0x0002;
 
+    /// <include file='FILE.xml' path='doc/member[@name="FILE.FILE_MAP_READ"]/*' />
     [NativeTypeName("#define FILE_MAP_READ SECTION_MAP_READ")]
     public const int FILE_MAP_READ = 0x0004;
 
+    /// <include file='FILE.xml' path='doc/member[@name="FILE.FILE_MAP_ALL_ACCESS"]/*' />
     [NativeTypeName("#define FILE_MAP_ALL_ACCESS SECTION_ALL_ACCESS")]
     public const int FILE_MAP_ALL_ACCESS = ((0x000F0000) | 0x0001 | 0x0002 | 0x0004 | 0x0008 | 0x0010);
 
+    /// <include file='FILE.xml' path='doc/member[@name="FILE.FILE_MAP_EXECUTE"]/*' />
     [NativeTypeName("#define FILE_MAP_EXECUTE SECTION_MAP_EXECUTE_EXPLICIT")]
     public const int FILE_MAP_EXECUTE = 0x0020;
 
+    /// <include file='FILE.xml' path='doc/member[@name="FILE.FILE_MAP_COPY"]/*' />
     [NativeTypeName("#define FILE_MAP_COPY 0x00000001")]
     public const int FILE_MAP_COPY = 0x00000001;
 
+    /// <include file='FILE.xml' path='doc/member[@name="FILE.FILE_MAP_RESERVE"]/*' />
     [NativeTypeName("#define FILE_MAP_RESERVE 0x80000000")]
     public const uint FILE_MAP_RESERVE = 0x80000000;
 
+    /// <include file='FILE.xml' path='doc/member[@name="FILE.FILE_MAP_TARGETS_INVALID"]/*' />
     [NativeTypeName("#define FILE_MAP_TARGETS_INVALID 0x40000000")]
     public const int FILE_MAP_TARGETS_INVALID = 0x40000000;
 
+    /// <include file='FILE.xml' path='doc/member[@name="FILE.FILE_MAP_LARGE_PAGES"]/*' />
     [NativeTypeName("#define FILE_MAP_LARGE_PAGES 0x20000000")]
     public const int FILE_MAP_LARGE_PAGES = 0x20000000;
 
+    /// <include file='FILE.xml' path='doc/member[@name="FILE.FILE_CACHE_MAX_HARD_ENABLE"]/*' />
     [NativeTypeName("#define FILE_CACHE_MAX_HARD_ENABLE 0x00000001")]
     public const int FILE_CACHE_MAX_HARD_ENABLE = 0x00000001;
 
+    /// <include file='FILE.xml' path='doc/member[@name="FILE.FILE_CACHE_MAX_HARD_DISABLE"]/*' />
     [NativeTypeName("#define FILE_CACHE_MAX_HARD_DISABLE 0x00000002")]
     public const int FILE_CACHE_MAX_HARD_DISABLE = 0x00000002;
 
+    /// <include file='FILE.xml' path='doc/member[@name="FILE.FILE_CACHE_MIN_HARD_ENABLE"]/*' />
     [NativeTypeName("#define FILE_CACHE_MIN_HARD_ENABLE 0x00000004")]
     public const int FILE_CACHE_MIN_HARD_ENABLE = 0x00000004;
 
+    /// <include file='FILE.xml' path='doc/member[@name="FILE.FILE_CACHE_MIN_HARD_DISABLE"]/*' />
     [NativeTypeName("#define FILE_CACHE_MIN_HARD_DISABLE 0x00000008")]
     public const int FILE_CACHE_MIN_HARD_DISABLE = 0x00000008;
 }

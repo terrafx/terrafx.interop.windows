@@ -7,75 +7,99 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MMSYSERR
 {
+    /// <include file='MMSYSERR.xml' path='doc/member[@name="MMSYSERR.MMSYSERR_BASE"]/*' />
     [NativeTypeName("#define MMSYSERR_BASE 0")]
     public const int MMSYSERR_BASE = 0;
 
+    /// <include file='MMSYSERR.xml' path='doc/member[@name="MMSYSERR.MMSYSERR_NOERROR"]/*' />
     [NativeTypeName("#define MMSYSERR_NOERROR 0")]
     public const int MMSYSERR_NOERROR = 0;
 
+    /// <include file='MMSYSERR.xml' path='doc/member[@name="MMSYSERR.MMSYSERR_ERROR"]/*' />
     [NativeTypeName("#define MMSYSERR_ERROR (MMSYSERR_BASE + 1)")]
     public const int MMSYSERR_ERROR = (0 + 1);
 
+    /// <include file='MMSYSERR.xml' path='doc/member[@name="MMSYSERR.MMSYSERR_BADDEVICEID"]/*' />
     [NativeTypeName("#define MMSYSERR_BADDEVICEID (MMSYSERR_BASE + 2)")]
     public const int MMSYSERR_BADDEVICEID = (0 + 2);
 
+    /// <include file='MMSYSERR.xml' path='doc/member[@name="MMSYSERR.MMSYSERR_NOTENABLED"]/*' />
     [NativeTypeName("#define MMSYSERR_NOTENABLED (MMSYSERR_BASE + 3)")]
     public const int MMSYSERR_NOTENABLED = (0 + 3);
 
+    /// <include file='MMSYSERR.xml' path='doc/member[@name="MMSYSERR.MMSYSERR_ALLOCATED"]/*' />
     [NativeTypeName("#define MMSYSERR_ALLOCATED (MMSYSERR_BASE + 4)")]
     public const int MMSYSERR_ALLOCATED = (0 + 4);
 
+    /// <include file='MMSYSERR.xml' path='doc/member[@name="MMSYSERR.MMSYSERR_INVALHANDLE"]/*' />
     [NativeTypeName("#define MMSYSERR_INVALHANDLE (MMSYSERR_BASE + 5)")]
     public const int MMSYSERR_INVALHANDLE = (0 + 5);
 
+    /// <include file='MMSYSERR.xml' path='doc/member[@name="MMSYSERR.MMSYSERR_NODRIVER"]/*' />
     [NativeTypeName("#define MMSYSERR_NODRIVER (MMSYSERR_BASE + 6)")]
     public const int MMSYSERR_NODRIVER = (0 + 6);
 
+    /// <include file='MMSYSERR.xml' path='doc/member[@name="MMSYSERR.MMSYSERR_NOMEM"]/*' />
     [NativeTypeName("#define MMSYSERR_NOMEM (MMSYSERR_BASE + 7)")]
     public const int MMSYSERR_NOMEM = (0 + 7);
 
+    /// <include file='MMSYSERR.xml' path='doc/member[@name="MMSYSERR.MMSYSERR_NOTSUPPORTED"]/*' />
     [NativeTypeName("#define MMSYSERR_NOTSUPPORTED (MMSYSERR_BASE + 8)")]
     public const int MMSYSERR_NOTSUPPORTED = (0 + 8);
 
+    /// <include file='MMSYSERR.xml' path='doc/member[@name="MMSYSERR.MMSYSERR_BADERRNUM"]/*' />
     [NativeTypeName("#define MMSYSERR_BADERRNUM (MMSYSERR_BASE + 9)")]
     public const int MMSYSERR_BADERRNUM = (0 + 9);
 
+    /// <include file='MMSYSERR.xml' path='doc/member[@name="MMSYSERR.MMSYSERR_INVALFLAG"]/*' />
     [NativeTypeName("#define MMSYSERR_INVALFLAG (MMSYSERR_BASE + 10)")]
     public const int MMSYSERR_INVALFLAG = (0 + 10);
 
+    /// <include file='MMSYSERR.xml' path='doc/member[@name="MMSYSERR.MMSYSERR_INVALPARAM"]/*' />
     [NativeTypeName("#define MMSYSERR_INVALPARAM (MMSYSERR_BASE + 11)")]
     public const int MMSYSERR_INVALPARAM = (0 + 11);
 
+    /// <include file='MMSYSERR.xml' path='doc/member[@name="MMSYSERR.MMSYSERR_HANDLEBUSY"]/*' />
     [NativeTypeName("#define MMSYSERR_HANDLEBUSY (MMSYSERR_BASE + 12)")]
     public const int MMSYSERR_HANDLEBUSY = (0 + 12);
 
+    /// <include file='MMSYSERR.xml' path='doc/member[@name="MMSYSERR.MMSYSERR_INVALIDALIAS"]/*' />
     [NativeTypeName("#define MMSYSERR_INVALIDALIAS (MMSYSERR_BASE + 13)")]
     public const int MMSYSERR_INVALIDALIAS = (0 + 13);
 
+    /// <include file='MMSYSERR.xml' path='doc/member[@name="MMSYSERR.MMSYSERR_BADDB"]/*' />
     [NativeTypeName("#define MMSYSERR_BADDB (MMSYSERR_BASE + 14)")]
     public const int MMSYSERR_BADDB = (0 + 14);
 
+    /// <include file='MMSYSERR.xml' path='doc/member[@name="MMSYSERR.MMSYSERR_KEYNOTFOUND"]/*' />
     [NativeTypeName("#define MMSYSERR_KEYNOTFOUND (MMSYSERR_BASE + 15)")]
     public const int MMSYSERR_KEYNOTFOUND = (0 + 15);
 
+    /// <include file='MMSYSERR.xml' path='doc/member[@name="MMSYSERR.MMSYSERR_READERROR"]/*' />
     [NativeTypeName("#define MMSYSERR_READERROR (MMSYSERR_BASE + 16)")]
     public const int MMSYSERR_READERROR = (0 + 16);
 
+    /// <include file='MMSYSERR.xml' path='doc/member[@name="MMSYSERR.MMSYSERR_WRITEERROR"]/*' />
     [NativeTypeName("#define MMSYSERR_WRITEERROR (MMSYSERR_BASE + 17)")]
     public const int MMSYSERR_WRITEERROR = (0 + 17);
 
+    /// <include file='MMSYSERR.xml' path='doc/member[@name="MMSYSERR.MMSYSERR_DELETEERROR"]/*' />
     [NativeTypeName("#define MMSYSERR_DELETEERROR (MMSYSERR_BASE + 18)")]
     public const int MMSYSERR_DELETEERROR = (0 + 18);
 
+    /// <include file='MMSYSERR.xml' path='doc/member[@name="MMSYSERR.MMSYSERR_VALNOTFOUND"]/*' />
     [NativeTypeName("#define MMSYSERR_VALNOTFOUND (MMSYSERR_BASE + 19)")]
     public const int MMSYSERR_VALNOTFOUND = (0 + 19);
 
+    /// <include file='MMSYSERR.xml' path='doc/member[@name="MMSYSERR.MMSYSERR_NODRIVERCB"]/*' />
     [NativeTypeName("#define MMSYSERR_NODRIVERCB (MMSYSERR_BASE + 20)")]
     public const int MMSYSERR_NODRIVERCB = (0 + 20);
 
+    /// <include file='MMSYSERR.xml' path='doc/member[@name="MMSYSERR.MMSYSERR_MOREDATA"]/*' />
     [NativeTypeName("#define MMSYSERR_MOREDATA (MMSYSERR_BASE + 21)")]
     public const int MMSYSERR_MOREDATA = (0 + 21);
 
+    /// <include file='MMSYSERR.xml' path='doc/member[@name="MMSYSERR.MMSYSERR_LASTERROR"]/*' />
     [NativeTypeName("#define MMSYSERR_LASTERROR (MMSYSERR_BASE + 21)")]
     public const int MMSYSERR_LASTERROR = (0 + 21);
 }

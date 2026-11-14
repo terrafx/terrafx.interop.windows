@@ -278,273 +278,363 @@ public static unsafe partial class Windows
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmDisableLegacyIME();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STYLE_DESCRIPTION_SIZE"]/*' />
     [NativeTypeName("#define STYLE_DESCRIPTION_SIZE 32")]
     public const int STYLE_DESCRIPTION_SIZE = 32;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMEMENUITEM_STRING_SIZE"]/*' />
     [NativeTypeName("#define IMEMENUITEM_STRING_SIZE 80")]
     public const int IMEMENUITEM_STRING_SIZE = 80;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmInstallIME"]/*' />
     [NativeTypeName("#define ImmInstallIME ImmInstallIMEW")]
     public static delegate*<char*, char*, HKL> ImmInstallIME => &ImmInstallIMEW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetDescription"]/*' />
     [NativeTypeName("#define ImmGetDescription ImmGetDescriptionW")]
     public static delegate*<HKL, char*, uint, uint> ImmGetDescription => &ImmGetDescriptionW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetIMEFileName"]/*' />
     [NativeTypeName("#define ImmGetIMEFileName ImmGetIMEFileNameW")]
     public static delegate*<HKL, char*, uint, uint> ImmGetIMEFileName => &ImmGetIMEFileNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetCompositionString"]/*' />
     [NativeTypeName("#define ImmGetCompositionString ImmGetCompositionStringW")]
     public static delegate*<HIMC, uint, void*, uint, int> ImmGetCompositionString => &ImmGetCompositionStringW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmSetCompositionString"]/*' />
     [NativeTypeName("#define ImmSetCompositionString ImmSetCompositionStringW")]
     public static delegate*<HIMC, uint, void*, uint, void*, uint, BOOL> ImmSetCompositionString => &ImmSetCompositionStringW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetCandidateListCount"]/*' />
     [NativeTypeName("#define ImmGetCandidateListCount ImmGetCandidateListCountW")]
     public static delegate*<HIMC, uint*, uint> ImmGetCandidateListCount => &ImmGetCandidateListCountW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetCandidateList"]/*' />
     [NativeTypeName("#define ImmGetCandidateList ImmGetCandidateListW")]
     public static delegate*<HIMC, uint, CANDIDATELIST*, uint, uint> ImmGetCandidateList => &ImmGetCandidateListW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetGuideLine"]/*' />
     [NativeTypeName("#define ImmGetGuideLine ImmGetGuideLineW")]
     public static delegate*<HIMC, uint, char*, uint, uint> ImmGetGuideLine => &ImmGetGuideLineW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetCompositionFont"]/*' />
     [NativeTypeName("#define ImmGetCompositionFont ImmGetCompositionFontW")]
     public static delegate*<HIMC, LOGFONTW*, BOOL> ImmGetCompositionFont => &ImmGetCompositionFontW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmSetCompositionFont"]/*' />
     [NativeTypeName("#define ImmSetCompositionFont ImmSetCompositionFontW")]
     public static delegate*<HIMC, LOGFONTW*, BOOL> ImmSetCompositionFont => &ImmSetCompositionFontW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmConfigureIME"]/*' />
     [NativeTypeName("#define ImmConfigureIME ImmConfigureIMEW")]
     public static delegate*<HKL, HWND, uint, void*, BOOL> ImmConfigureIME => &ImmConfigureIMEW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmEscape"]/*' />
     [NativeTypeName("#define ImmEscape ImmEscapeW")]
     public static delegate*<HKL, HIMC, uint, void*, LRESULT> ImmEscape => &ImmEscapeW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetConversionList"]/*' />
     [NativeTypeName("#define ImmGetConversionList ImmGetConversionListW")]
     public static delegate*<HKL, HIMC, char*, CANDIDATELIST*, uint, uint, uint> ImmGetConversionList => &ImmGetConversionListW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmIsUIMessage"]/*' />
     [NativeTypeName("#define ImmIsUIMessage ImmIsUIMessageW")]
     public static delegate*<HWND, uint, WPARAM, LPARAM, BOOL> ImmIsUIMessage => &ImmIsUIMessageW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmRegisterWord"]/*' />
     [NativeTypeName("#define ImmRegisterWord ImmRegisterWordW")]
     public static delegate*<HKL, char*, uint, char*, BOOL> ImmRegisterWord => &ImmRegisterWordW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmUnregisterWord"]/*' />
     [NativeTypeName("#define ImmUnregisterWord ImmUnregisterWordW")]
     public static delegate*<HKL, char*, uint, char*, BOOL> ImmUnregisterWord => &ImmUnregisterWordW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetRegisterWordStyle"]/*' />
     [NativeTypeName("#define ImmGetRegisterWordStyle ImmGetRegisterWordStyleW")]
     public static delegate*<HKL, uint, STYLEBUFW*, uint> ImmGetRegisterWordStyle => &ImmGetRegisterWordStyleW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmEnumRegisterWord"]/*' />
     [NativeTypeName("#define ImmEnumRegisterWord ImmEnumRegisterWordW")]
     public static delegate*<HKL, delegate* unmanaged<char*, uint, char*, void*, int>, char*, uint, char*, void*, uint> ImmEnumRegisterWord => &ImmEnumRegisterWordW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetImeMenuItems"]/*' />
     [NativeTypeName("#define ImmGetImeMenuItems ImmGetImeMenuItemsW")]
     public static delegate*<HIMC, uint, uint, IMEMENUITEMINFOW*, IMEMENUITEMINFOW*, uint, uint> ImmGetImeMenuItems => &ImmGetImeMenuItemsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ISC_SHOWUICANDIDATEWINDOW"]/*' />
     [NativeTypeName("#define ISC_SHOWUICANDIDATEWINDOW 0x00000001")]
     public const int ISC_SHOWUICANDIDATEWINDOW = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ISC_SHOWUICOMPOSITIONWINDOW"]/*' />
     [NativeTypeName("#define ISC_SHOWUICOMPOSITIONWINDOW 0x80000000")]
     public const uint ISC_SHOWUICOMPOSITIONWINDOW = 0x80000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ISC_SHOWUIGUIDELINE"]/*' />
     [NativeTypeName("#define ISC_SHOWUIGUIDELINE 0x40000000")]
     public const int ISC_SHOWUIGUIDELINE = 0x40000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ISC_SHOWUIALLCANDIDATEWINDOW"]/*' />
     [NativeTypeName("#define ISC_SHOWUIALLCANDIDATEWINDOW 0x0000000F")]
     public const int ISC_SHOWUIALLCANDIDATEWINDOW = 0x0000000F;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ISC_SHOWUIALL"]/*' />
     [NativeTypeName("#define ISC_SHOWUIALL 0xC000000F")]
     public const uint ISC_SHOWUIALL = 0xC000000F;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CPS_COMPLETE"]/*' />
     [NativeTypeName("#define CPS_COMPLETE 0x0001")]
     public const int CPS_COMPLETE = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CPS_CONVERT"]/*' />
     [NativeTypeName("#define CPS_CONVERT 0x0002")]
     public const int CPS_CONVERT = 0x0002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CPS_REVERT"]/*' />
     [NativeTypeName("#define CPS_REVERT 0x0003")]
     public const int CPS_REVERT = 0x0003;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CPS_CANCEL"]/*' />
     [NativeTypeName("#define CPS_CANCEL 0x0004")]
     public const int CPS_CANCEL = 0x0004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMEVER_0310"]/*' />
     [NativeTypeName("#define IMEVER_0310 0x0003000A")]
     public const int IMEVER_0310 = 0x0003000A;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMEVER_0400"]/*' />
     [NativeTypeName("#define IMEVER_0400 0x00040000")]
     public const int IMEVER_0400 = 0x00040000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SELECT_CAP_CONVERSION"]/*' />
     [NativeTypeName("#define SELECT_CAP_CONVERSION 0x00000001")]
     public const int SELECT_CAP_CONVERSION = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SELECT_CAP_SENTENCE"]/*' />
     [NativeTypeName("#define SELECT_CAP_SENTENCE 0x00000002")]
     public const int SELECT_CAP_SENTENCE = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GGL_LEVEL"]/*' />
     [NativeTypeName("#define GGL_LEVEL 0x00000001")]
     public const int GGL_LEVEL = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GGL_INDEX"]/*' />
     [NativeTypeName("#define GGL_INDEX 0x00000002")]
     public const int GGL_INDEX = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GGL_STRING"]/*' />
     [NativeTypeName("#define GGL_STRING 0x00000003")]
     public const int GGL_STRING = 0x00000003;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GGL_PRIVATE"]/*' />
     [NativeTypeName("#define GGL_PRIVATE 0x00000004")]
     public const int GGL_PRIVATE = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IGP_GETIMEVERSION"]/*' />
     [NativeTypeName("#define IGP_GETIMEVERSION (DWORD)(-4)")]
     public const uint IGP_GETIMEVERSION = unchecked((uint)(-4));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IGP_PROPERTY"]/*' />
     [NativeTypeName("#define IGP_PROPERTY 0x00000004")]
     public const int IGP_PROPERTY = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IGP_CONVERSION"]/*' />
     [NativeTypeName("#define IGP_CONVERSION 0x00000008")]
     public const int IGP_CONVERSION = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IGP_SENTENCE"]/*' />
     [NativeTypeName("#define IGP_SENTENCE 0x0000000c")]
     public const int IGP_SENTENCE = 0x0000000c;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IGP_UI"]/*' />
     [NativeTypeName("#define IGP_UI 0x00000010")]
     public const int IGP_UI = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IGP_SETCOMPSTR"]/*' />
     [NativeTypeName("#define IGP_SETCOMPSTR 0x00000014")]
     public const int IGP_SETCOMPSTR = 0x00000014;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IGP_SELECT"]/*' />
     [NativeTypeName("#define IGP_SELECT 0x00000018")]
     public const int IGP_SELECT = 0x00000018;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ATTR_INPUT"]/*' />
     [NativeTypeName("#define ATTR_INPUT 0x00")]
     public const int ATTR_INPUT = 0x00;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ATTR_TARGET_CONVERTED"]/*' />
     [NativeTypeName("#define ATTR_TARGET_CONVERTED 0x01")]
     public const int ATTR_TARGET_CONVERTED = 0x01;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ATTR_CONVERTED"]/*' />
     [NativeTypeName("#define ATTR_CONVERTED 0x02")]
     public const int ATTR_CONVERTED = 0x02;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ATTR_TARGET_NOTCONVERTED"]/*' />
     [NativeTypeName("#define ATTR_TARGET_NOTCONVERTED 0x03")]
     public const int ATTR_TARGET_NOTCONVERTED = 0x03;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ATTR_INPUT_ERROR"]/*' />
     [NativeTypeName("#define ATTR_INPUT_ERROR 0x04")]
     public const int ATTR_INPUT_ERROR = 0x04;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ATTR_FIXEDCONVERTED"]/*' />
     [NativeTypeName("#define ATTR_FIXEDCONVERTED 0x05")]
     public const int ATTR_FIXEDCONVERTED = 0x05;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CFS_DEFAULT"]/*' />
     [NativeTypeName("#define CFS_DEFAULT 0x0000")]
     public const int CFS_DEFAULT = 0x0000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CFS_RECT"]/*' />
     [NativeTypeName("#define CFS_RECT 0x0001")]
     public const int CFS_RECT = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CFS_POINT"]/*' />
     [NativeTypeName("#define CFS_POINT 0x0002")]
     public const int CFS_POINT = 0x0002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CFS_FORCE_POSITION"]/*' />
     [NativeTypeName("#define CFS_FORCE_POSITION 0x0020")]
     public const int CFS_FORCE_POSITION = 0x0020;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CFS_CANDIDATEPOS"]/*' />
     [NativeTypeName("#define CFS_CANDIDATEPOS 0x0040")]
     public const int CFS_CANDIDATEPOS = 0x0040;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CFS_EXCLUDE"]/*' />
     [NativeTypeName("#define CFS_EXCLUDE 0x0080")]
     public const int CFS_EXCLUDE = 0x0080;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMR_COMPOSITIONWINDOW"]/*' />
     [NativeTypeName("#define IMR_COMPOSITIONWINDOW 0x0001")]
     public const int IMR_COMPOSITIONWINDOW = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMR_CANDIDATEWINDOW"]/*' />
     [NativeTypeName("#define IMR_CANDIDATEWINDOW 0x0002")]
     public const int IMR_CANDIDATEWINDOW = 0x0002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMR_COMPOSITIONFONT"]/*' />
     [NativeTypeName("#define IMR_COMPOSITIONFONT 0x0003")]
     public const int IMR_COMPOSITIONFONT = 0x0003;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMR_RECONVERTSTRING"]/*' />
     [NativeTypeName("#define IMR_RECONVERTSTRING 0x0004")]
     public const int IMR_RECONVERTSTRING = 0x0004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMR_CONFIRMRECONVERTSTRING"]/*' />
     [NativeTypeName("#define IMR_CONFIRMRECONVERTSTRING 0x0005")]
     public const int IMR_CONFIRMRECONVERTSTRING = 0x0005;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMR_QUERYCHARPOSITION"]/*' />
     [NativeTypeName("#define IMR_QUERYCHARPOSITION 0x0006")]
     public const int IMR_QUERYCHARPOSITION = 0x0006;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMR_DOCUMENTFEED"]/*' />
     [NativeTypeName("#define IMR_DOCUMENTFEED 0x0007")]
     public const int IMR_DOCUMENTFEED = 0x0007;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMM_ERROR_NODATA"]/*' />
     [NativeTypeName("#define IMM_ERROR_NODATA (-1)")]
     public const int IMM_ERROR_NODATA = (-1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMM_ERROR_GENERAL"]/*' />
     [NativeTypeName("#define IMM_ERROR_GENERAL (-2)")]
     public const int IMM_ERROR_GENERAL = (-2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IACE_CHILDREN"]/*' />
     [NativeTypeName("#define IACE_CHILDREN 0x0001")]
     public const int IACE_CHILDREN = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IACE_DEFAULT"]/*' />
     [NativeTypeName("#define IACE_DEFAULT 0x0010")]
     public const int IACE_DEFAULT = 0x0010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IACE_IGNORENOCONTEXT"]/*' />
     [NativeTypeName("#define IACE_IGNORENOCONTEXT 0x0020")]
     public const int IACE_IGNORENOCONTEXT = 0x0020;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IGIMIF_RIGHTMENU"]/*' />
     [NativeTypeName("#define IGIMIF_RIGHTMENU 0x0001")]
     public const int IGIMIF_RIGHTMENU = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IGIMII_CMODE"]/*' />
     [NativeTypeName("#define IGIMII_CMODE 0x0001")]
     public const int IGIMII_CMODE = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IGIMII_SMODE"]/*' />
     [NativeTypeName("#define IGIMII_SMODE 0x0002")]
     public const int IGIMII_SMODE = 0x0002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IGIMII_CONFIGURE"]/*' />
     [NativeTypeName("#define IGIMII_CONFIGURE 0x0004")]
     public const int IGIMII_CONFIGURE = 0x0004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IGIMII_TOOLS"]/*' />
     [NativeTypeName("#define IGIMII_TOOLS 0x0008")]
     public const int IGIMII_TOOLS = 0x0008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IGIMII_HELP"]/*' />
     [NativeTypeName("#define IGIMII_HELP 0x0010")]
     public const int IGIMII_HELP = 0x0010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IGIMII_OTHER"]/*' />
     [NativeTypeName("#define IGIMII_OTHER 0x0020")]
     public const int IGIMII_OTHER = 0x0020;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IGIMII_INPUTTOOLS"]/*' />
     [NativeTypeName("#define IGIMII_INPUTTOOLS 0x0040")]
     public const int IGIMII_INPUTTOOLS = 0x0040;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMFT_RADIOCHECK"]/*' />
     [NativeTypeName("#define IMFT_RADIOCHECK 0x00001")]
     public const int IMFT_RADIOCHECK = 0x00001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMFT_SEPARATOR"]/*' />
     [NativeTypeName("#define IMFT_SEPARATOR 0x00002")]
     public const int IMFT_SEPARATOR = 0x00002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMFT_SUBMENU"]/*' />
     [NativeTypeName("#define IMFT_SUBMENU 0x00004")]
     public const int IMFT_SUBMENU = 0x00004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMFS_GRAYED"]/*' />
     [NativeTypeName("#define IMFS_GRAYED MFS_GRAYED")]
     public const int IMFS_GRAYED = 0x00000003;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMFS_DISABLED"]/*' />
     [NativeTypeName("#define IMFS_DISABLED MFS_DISABLED")]
     public const int IMFS_DISABLED = 0x00000003;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMFS_CHECKED"]/*' />
     [NativeTypeName("#define IMFS_CHECKED MFS_CHECKED")]
     public const int IMFS_CHECKED = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMFS_HILITE"]/*' />
     [NativeTypeName("#define IMFS_HILITE MFS_HILITE")]
     public const int IMFS_HILITE = 0x00000080;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMFS_ENABLED"]/*' />
     [NativeTypeName("#define IMFS_ENABLED MFS_ENABLED")]
     public const int IMFS_ENABLED = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMFS_UNCHECKED"]/*' />
     [NativeTypeName("#define IMFS_UNCHECKED MFS_UNCHECKED")]
     public const int IMFS_UNCHECKED = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMFS_UNHILITE"]/*' />
     [NativeTypeName("#define IMFS_UNHILITE MFS_UNHILITE")]
     public const int IMFS_UNHILITE = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMFS_DEFAULT"]/*' />
     [NativeTypeName("#define IMFS_DEFAULT MFS_DEFAULT")]
     public const int IMFS_DEFAULT = 0x00001000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SOFTKEYBOARD_TYPE_T1"]/*' />
     [NativeTypeName("#define SOFTKEYBOARD_TYPE_T1 0x0001")]
     public const int SOFTKEYBOARD_TYPE_T1 = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SOFTKEYBOARD_TYPE_C1"]/*' />
     [NativeTypeName("#define SOFTKEYBOARD_TYPE_C1 0x0002")]
     public const int SOFTKEYBOARD_TYPE_C1 = 0x0002;
 }

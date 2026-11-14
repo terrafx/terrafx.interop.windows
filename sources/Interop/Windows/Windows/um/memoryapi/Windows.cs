@@ -357,15 +357,19 @@ public static unsafe partial class Windows
     [DllImport("kernelbase", ExactSpelling = true)]
     public static extern BOOL QueryPartitionInformation(HANDLE Partition, WIN32_MEMORY_PARTITION_INFORMATION_CLASS PartitionInformationClass, [NativeTypeName("PVOID")] void* PartitionInformation, [NativeTypeName("ULONG")] uint PartitionInformationLength);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateFileMapping"]/*' />
     [NativeTypeName("#define CreateFileMapping CreateFileMappingW")]
     public static delegate*<HANDLE, SECURITY_ATTRIBUTES*, uint, uint, uint, char*, HANDLE> CreateFileMapping => &CreateFileMappingW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenFileMapping"]/*' />
     [NativeTypeName("#define OpenFileMapping OpenFileMappingW")]
     public static delegate*<uint, BOOL, char*, HANDLE> OpenFileMapping => &OpenFileMappingW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateFileMappingNuma"]/*' />
     [NativeTypeName("#define CreateFileMappingNuma CreateFileMappingNumaW")]
     public static delegate*<HANDLE, SECURITY_ATTRIBUTES*, uint, uint, uint, char*, uint, HANDLE> CreateFileMappingNuma => &CreateFileMappingNumaW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MEHC_PATROL_SCRUBBER_PRESENT"]/*' />
     [NativeTypeName("#define MEHC_PATROL_SCRUBBER_PRESENT 0x1")]
     public const int MEHC_PATROL_SCRUBBER_PRESENT = 0x1;
 }

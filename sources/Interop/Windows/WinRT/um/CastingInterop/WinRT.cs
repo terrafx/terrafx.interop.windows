@@ -7,12 +7,15 @@ namespace TerraFX.Interop.WinRT;
 
 public static partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.CastingSourceInfo_Property_PreferredSourceUriScheme"]/*' />
     [NativeTypeName("const WCHAR[25]")]
     public const string CastingSourceInfo_Property_PreferredSourceUriScheme = "PreferredSourceUriScheme";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.CastingSourceInfo_Property_CastingTypes"]/*' />
     [NativeTypeName("const WCHAR[13]")]
     public const string CastingSourceInfo_Property_CastingTypes = "CastingTypes";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.CastingSourceInfo_Property_ProtectedMedia"]/*' />
     [NativeTypeName("const WCHAR[15]")]
     public const string CastingSourceInfo_Property_ProtectedMedia = "ProtectedMedia";
 }

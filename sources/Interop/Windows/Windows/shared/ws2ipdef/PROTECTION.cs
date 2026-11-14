@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class PROTECTION
 {
+    /// <include file='PROTECTION.xml' path='doc/member[@name="PROTECTION.PROTECTION_LEVEL_UNRESTRICTED"]/*' />
     [NativeTypeName("#define PROTECTION_LEVEL_UNRESTRICTED 10")]
     public const int PROTECTION_LEVEL_UNRESTRICTED = 10;
 
+    /// <include file='PROTECTION.xml' path='doc/member[@name="PROTECTION.PROTECTION_LEVEL_EDGERESTRICTED"]/*' />
     [NativeTypeName("#define PROTECTION_LEVEL_EDGERESTRICTED 20")]
     public const int PROTECTION_LEVEL_EDGERESTRICTED = 20;
 
+    /// <include file='PROTECTION.xml' path='doc/member[@name="PROTECTION.PROTECTION_LEVEL_RESTRICTED"]/*' />
     [NativeTypeName("#define PROTECTION_LEVEL_RESTRICTED 30")]
     public const int PROTECTION_LEVEL_RESTRICTED = 30;
 
+    /// <include file='PROTECTION.xml' path='doc/member[@name="PROTECTION.PROTECTION_LEVEL_DEFAULT"]/*' />
     [NativeTypeName("#define PROTECTION_LEVEL_DEFAULT ((UINT)-1)")]
     public const uint PROTECTION_LEVEL_DEFAULT = unchecked((uint)(-1));
 }

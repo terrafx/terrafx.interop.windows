@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MFTranscodeContainerType
 {
+    /// <include file='MFTranscodeContainerType.xml' path='doc/member[@name="MFTranscodeContainerType.MFTranscodeContainerType_ASF"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFTranscodeContainerType_ASF
     {
@@ -37,6 +38,7 @@ public static partial class MFTranscodeContainerType
         }
     }
 
+    /// <include file='MFTranscodeContainerType.xml' path='doc/member[@name="MFTranscodeContainerType.MFTranscodeContainerType_MPEG4"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFTranscodeContainerType_MPEG4
     {
@@ -62,6 +64,7 @@ public static partial class MFTranscodeContainerType
         }
     }
 
+    /// <include file='MFTranscodeContainerType.xml' path='doc/member[@name="MFTranscodeContainerType.MFTranscodeContainerType_MP3"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFTranscodeContainerType_MP3
     {
@@ -87,6 +90,7 @@ public static partial class MFTranscodeContainerType
         }
     }
 
+    /// <include file='MFTranscodeContainerType.xml' path='doc/member[@name="MFTranscodeContainerType.MFTranscodeContainerType_FLAC"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFTranscodeContainerType_FLAC
     {
@@ -112,6 +116,7 @@ public static partial class MFTranscodeContainerType
         }
     }
 
+    /// <include file='MFTranscodeContainerType.xml' path='doc/member[@name="MFTranscodeContainerType.MFTranscodeContainerType_3GP"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFTranscodeContainerType_3GP
     {
@@ -137,6 +142,7 @@ public static partial class MFTranscodeContainerType
         }
     }
 
+    /// <include file='MFTranscodeContainerType.xml' path='doc/member[@name="MFTranscodeContainerType.MFTranscodeContainerType_AC3"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFTranscodeContainerType_AC3
     {
@@ -162,6 +168,7 @@ public static partial class MFTranscodeContainerType
         }
     }
 
+    /// <include file='MFTranscodeContainerType.xml' path='doc/member[@name="MFTranscodeContainerType.MFTranscodeContainerType_ADTS"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFTranscodeContainerType_ADTS
     {
@@ -187,6 +194,7 @@ public static partial class MFTranscodeContainerType
         }
     }
 
+    /// <include file='MFTranscodeContainerType.xml' path='doc/member[@name="MFTranscodeContainerType.MFTranscodeContainerType_MPEG2"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFTranscodeContainerType_MPEG2
     {
@@ -212,6 +220,7 @@ public static partial class MFTranscodeContainerType
         }
     }
 
+    /// <include file='MFTranscodeContainerType.xml' path='doc/member[@name="MFTranscodeContainerType.MFTranscodeContainerType_WAVE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFTranscodeContainerType_WAVE
     {
@@ -237,6 +246,7 @@ public static partial class MFTranscodeContainerType
         }
     }
 
+    /// <include file='MFTranscodeContainerType.xml' path='doc/member[@name="MFTranscodeContainerType.MFTranscodeContainerType_AVI"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFTranscodeContainerType_AVI
     {
@@ -262,6 +272,7 @@ public static partial class MFTranscodeContainerType
         }
     }
 
+    /// <include file='MFTranscodeContainerType.xml' path='doc/member[@name="MFTranscodeContainerType.MFTranscodeContainerType_FMPEG4"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFTranscodeContainerType_FMPEG4
     {
@@ -287,6 +298,7 @@ public static partial class MFTranscodeContainerType
         }
     }
 
+    /// <include file='MFTranscodeContainerType.xml' path='doc/member[@name="MFTranscodeContainerType.MFTranscodeContainerType_AMR"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFTranscodeContainerType_AMR
     {

@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class PS
 {
+    /// <include file='PS.xml' path='doc/member[@name="PS.PS_OPENTYPE_FONTTYPE"]/*' />
     [NativeTypeName("#define PS_OPENTYPE_FONTTYPE 0x10000")]
     public const int PS_OPENTYPE_FONTTYPE = 0x10000;
 }

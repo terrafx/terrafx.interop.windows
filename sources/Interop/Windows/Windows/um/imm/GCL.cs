@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class GCL
 {
+    /// <include file='GCL.xml' path='doc/member[@name="GCL.GCL_CONVERSION"]/*' />
     [NativeTypeName("#define GCL_CONVERSION 0x0001")]
     public const int GCL_CONVERSION = 0x0001;
 
+    /// <include file='GCL.xml' path='doc/member[@name="GCL.GCL_REVERSECONVERSION"]/*' />
     [NativeTypeName("#define GCL_REVERSECONVERSION 0x0002")]
     public const int GCL_REVERSECONVERSION = 0x0002;
 
+    /// <include file='GCL.xml' path='doc/member[@name="GCL.GCL_REVERSE_LENGTH"]/*' />
     [NativeTypeName("#define GCL_REVERSE_LENGTH 0x0003")]
     public const int GCL_REVERSE_LENGTH = 0x0003;
 }

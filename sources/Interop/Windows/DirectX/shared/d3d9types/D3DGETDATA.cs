@@ -7,6 +7,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3DGETDATA
 {
+    /// <include file='D3DGETDATA.xml' path='doc/member[@name="D3DGETDATA.D3DGETDATA_FLUSH"]/*' />
     [NativeTypeName("#define D3DGETDATA_FLUSH (1 << 0)")]
     public const int D3DGETDATA_FLUSH = (1 << 0);
 }

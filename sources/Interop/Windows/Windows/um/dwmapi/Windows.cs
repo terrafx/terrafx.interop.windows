@@ -11,12 +11,15 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.c_DwmMaxQueuedBuffers"]/*' />
     [NativeTypeName("const UINT")]
     public const uint c_DwmMaxQueuedBuffers = 8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.c_DwmMaxMonitors"]/*' />
     [NativeTypeName("const UINT")]
     public const uint c_DwmMaxMonitors = 16;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.c_DwmMaxAdapters"]/*' />
     [NativeTypeName("const UINT")]
     public const uint c_DwmMaxAdapters = 16;
 
@@ -149,9 +152,11 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows10.0.17134.0")]
     public static extern HRESULT DwmGetUnmetTabRequirements(HWND appWindow, [NativeTypeName("enum DWM_TAB_WINDOW_REQUIREMENTS *")] DWM_TAB_WINDOW_REQUIREMENTS* value);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DWMWA_COLOR_DEFAULT"]/*' />
     [NativeTypeName("#define DWMWA_COLOR_DEFAULT 0xFFFFFFFF")]
     public const uint DWMWA_COLOR_DEFAULT = 0xFFFFFFFF;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DWMWA_COLOR_NONE"]/*' />
     [NativeTypeName("#define DWMWA_COLOR_NONE 0xFFFFFFFE")]
     public const uint DWMWA_COLOR_NONE = 0xFFFFFFFE;
 }

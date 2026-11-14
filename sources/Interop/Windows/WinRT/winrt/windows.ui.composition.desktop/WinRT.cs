@@ -7,9 +7,11 @@ namespace TerraFX.Interop.WinRT;
 
 public static partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_UI_Composition_Desktop_IDesktopWindowTarget"]/*' />
     [NativeTypeName("const WCHAR[52]")]
     public const string InterfaceName_Windows_UI_Composition_Desktop_IDesktopWindowTarget = "Windows.UI.Composition.Desktop.IDesktopWindowTarget";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_UI_Composition_Desktop_DesktopWindowTarget"]/*' />
     [NativeTypeName("const WCHAR[51]")]
     public const string RuntimeClass_Windows_UI_Composition_Desktop_DesktopWindowTarget = "Windows.UI.Composition.Desktop.DesktopWindowTarget";
 }

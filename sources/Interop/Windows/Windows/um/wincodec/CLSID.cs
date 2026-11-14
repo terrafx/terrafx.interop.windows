@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CLSID
 {
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICImagingFactory1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICImagingFactory1
     {
@@ -37,6 +38,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICImagingFactory2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICImagingFactory2
     {
@@ -62,6 +64,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICPngDecoder1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICPngDecoder1
     {
@@ -87,6 +90,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICPngDecoder2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICPngDecoder2
     {
@@ -112,6 +116,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICBmpDecoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICBmpDecoder
     {
@@ -137,6 +142,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICIcoDecoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICIcoDecoder
     {
@@ -162,6 +168,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICJpegDecoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICJpegDecoder
     {
@@ -187,6 +194,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICGifDecoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICGifDecoder
     {
@@ -212,6 +220,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICTiffDecoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICTiffDecoder
     {
@@ -237,6 +246,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICWmpDecoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICWmpDecoder
     {
@@ -262,6 +272,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICDdsDecoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICDdsDecoder
     {
@@ -287,6 +298,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICBmpEncoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICBmpEncoder
     {
@@ -312,6 +324,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICPngEncoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICPngEncoder
     {
@@ -337,6 +350,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICJpegEncoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICJpegEncoder
     {
@@ -362,6 +376,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICGifEncoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICGifEncoder
     {
@@ -387,6 +402,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICTiffEncoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICTiffEncoder
     {
@@ -412,6 +428,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICWmpEncoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICWmpEncoder
     {
@@ -437,6 +454,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICDdsEncoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICDdsEncoder
     {
@@ -462,6 +480,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICAdngDecoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICAdngDecoder
     {
@@ -487,6 +506,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICJpegQualcommPhoneEncoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICJpegQualcommPhoneEncoder
     {
@@ -512,6 +532,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICHeifDecoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICHeifDecoder
     {
@@ -537,6 +558,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICHeifEncoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICHeifEncoder
     {
@@ -562,6 +584,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICWebpDecoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICWebpDecoder
     {
@@ -587,6 +610,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICRAWDecoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICRAWDecoder
     {
@@ -612,6 +636,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICJpegXLDecoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICJpegXLDecoder
     {
@@ -637,6 +662,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICJpegXLEncoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICJpegXLEncoder
     {
@@ -662,6 +688,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICImagingCategories"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICImagingCategories
     {
@@ -687,6 +714,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICDefaultFormatConverter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICDefaultFormatConverter
     {
@@ -712,6 +740,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICFormatConverterHighColor"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICFormatConverterHighColor
     {
@@ -737,6 +766,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICFormatConverterNChannel"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICFormatConverterNChannel
     {
@@ -762,6 +792,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICFormatConverterWMPhoto"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICFormatConverterWMPhoto
     {
@@ -787,6 +818,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICPlanarFormatConverter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICPlanarFormatConverter
     {

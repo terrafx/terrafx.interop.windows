@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class PPM
 {
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_PERFSTATE_CHANGE_GUID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid PPM_PERFSTATE_CHANGE_GUID
     {
@@ -37,6 +38,7 @@ public static partial class PPM
         }
     }
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_PERFSTATE_DOMAIN_CHANGE_GUID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid PPM_PERFSTATE_DOMAIN_CHANGE_GUID
     {
@@ -62,6 +64,7 @@ public static partial class PPM
         }
     }
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_IDLESTATE_CHANGE_GUID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid PPM_IDLESTATE_CHANGE_GUID
     {
@@ -87,6 +90,7 @@ public static partial class PPM
         }
     }
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_PERFSTATES_DATA_GUID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid PPM_PERFSTATES_DATA_GUID
     {
@@ -112,6 +116,7 @@ public static partial class PPM
         }
     }
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_IDLESTATES_DATA_GUID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid PPM_IDLESTATES_DATA_GUID
     {
@@ -137,6 +142,7 @@ public static partial class PPM
         }
     }
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_IDLE_ACCOUNTING_GUID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid PPM_IDLE_ACCOUNTING_GUID
     {
@@ -162,6 +168,7 @@ public static partial class PPM
         }
     }
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_IDLE_ACCOUNTING_EX_GUID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid PPM_IDLE_ACCOUNTING_EX_GUID
     {
@@ -187,6 +194,7 @@ public static partial class PPM
         }
     }
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_THERMALCONSTRAINT_GUID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid PPM_THERMALCONSTRAINT_GUID
     {
@@ -212,6 +220,7 @@ public static partial class PPM
         }
     }
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_PERFMON_PERFSTATE_GUID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid PPM_PERFMON_PERFSTATE_GUID
     {
@@ -237,6 +246,7 @@ public static partial class PPM
         }
     }
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_THERMAL_POLICY_CHANGE_GUID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid PPM_THERMAL_POLICY_CHANGE_GUID
     {
@@ -262,93 +272,123 @@ public static partial class PPM
         }
     }
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_FIRMWARE_ACPI1C2"]/*' />
     [NativeTypeName("#define PPM_FIRMWARE_ACPI1C2 0x00000001")]
     public const int PPM_FIRMWARE_ACPI1C2 = 0x00000001;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_FIRMWARE_ACPI1C3"]/*' />
     [NativeTypeName("#define PPM_FIRMWARE_ACPI1C3 0x00000002")]
     public const int PPM_FIRMWARE_ACPI1C3 = 0x00000002;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_FIRMWARE_ACPI1TSTATES"]/*' />
     [NativeTypeName("#define PPM_FIRMWARE_ACPI1TSTATES 0x00000004")]
     public const int PPM_FIRMWARE_ACPI1TSTATES = 0x00000004;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_FIRMWARE_CST"]/*' />
     [NativeTypeName("#define PPM_FIRMWARE_CST 0x00000008")]
     public const int PPM_FIRMWARE_CST = 0x00000008;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_FIRMWARE_CSD"]/*' />
     [NativeTypeName("#define PPM_FIRMWARE_CSD 0x00000010")]
     public const int PPM_FIRMWARE_CSD = 0x00000010;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_FIRMWARE_PCT"]/*' />
     [NativeTypeName("#define PPM_FIRMWARE_PCT 0x00000020")]
     public const int PPM_FIRMWARE_PCT = 0x00000020;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_FIRMWARE_PSS"]/*' />
     [NativeTypeName("#define PPM_FIRMWARE_PSS 0x00000040")]
     public const int PPM_FIRMWARE_PSS = 0x00000040;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_FIRMWARE_XPSS"]/*' />
     [NativeTypeName("#define PPM_FIRMWARE_XPSS 0x00000080")]
     public const int PPM_FIRMWARE_XPSS = 0x00000080;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_FIRMWARE_PPC"]/*' />
     [NativeTypeName("#define PPM_FIRMWARE_PPC 0x00000100")]
     public const int PPM_FIRMWARE_PPC = 0x00000100;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_FIRMWARE_PSD"]/*' />
     [NativeTypeName("#define PPM_FIRMWARE_PSD 0x00000200")]
     public const int PPM_FIRMWARE_PSD = 0x00000200;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_FIRMWARE_PTC"]/*' />
     [NativeTypeName("#define PPM_FIRMWARE_PTC 0x00000400")]
     public const int PPM_FIRMWARE_PTC = 0x00000400;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_FIRMWARE_TSS"]/*' />
     [NativeTypeName("#define PPM_FIRMWARE_TSS 0x00000800")]
     public const int PPM_FIRMWARE_TSS = 0x00000800;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_FIRMWARE_TPC"]/*' />
     [NativeTypeName("#define PPM_FIRMWARE_TPC 0x00001000")]
     public const int PPM_FIRMWARE_TPC = 0x00001000;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_FIRMWARE_TSD"]/*' />
     [NativeTypeName("#define PPM_FIRMWARE_TSD 0x00002000")]
     public const int PPM_FIRMWARE_TSD = 0x00002000;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_FIRMWARE_PCCH"]/*' />
     [NativeTypeName("#define PPM_FIRMWARE_PCCH 0x00004000")]
     public const int PPM_FIRMWARE_PCCH = 0x00004000;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_FIRMWARE_PCCP"]/*' />
     [NativeTypeName("#define PPM_FIRMWARE_PCCP 0x00008000")]
     public const int PPM_FIRMWARE_PCCP = 0x00008000;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_FIRMWARE_OSC"]/*' />
     [NativeTypeName("#define PPM_FIRMWARE_OSC 0x00010000")]
     public const int PPM_FIRMWARE_OSC = 0x00010000;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_FIRMWARE_PDC"]/*' />
     [NativeTypeName("#define PPM_FIRMWARE_PDC 0x00020000")]
     public const int PPM_FIRMWARE_PDC = 0x00020000;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_FIRMWARE_CPC"]/*' />
     [NativeTypeName("#define PPM_FIRMWARE_CPC 0x00040000")]
     public const int PPM_FIRMWARE_CPC = 0x00040000;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_FIRMWARE_LPI"]/*' />
     [NativeTypeName("#define PPM_FIRMWARE_LPI 0x00080000")]
     public const int PPM_FIRMWARE_LPI = 0x00080000;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_PERFORMANCE_IMPLEMENTATION_NONE"]/*' />
     [NativeTypeName("#define PPM_PERFORMANCE_IMPLEMENTATION_NONE 0x00000000")]
     public const int PPM_PERFORMANCE_IMPLEMENTATION_NONE = 0x00000000;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_PERFORMANCE_IMPLEMENTATION_PSTATES"]/*' />
     [NativeTypeName("#define PPM_PERFORMANCE_IMPLEMENTATION_PSTATES 0x00000001")]
     public const int PPM_PERFORMANCE_IMPLEMENTATION_PSTATES = 0x00000001;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_PERFORMANCE_IMPLEMENTATION_PCCV1"]/*' />
     [NativeTypeName("#define PPM_PERFORMANCE_IMPLEMENTATION_PCCV1 0x00000002")]
     public const int PPM_PERFORMANCE_IMPLEMENTATION_PCCV1 = 0x00000002;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_PERFORMANCE_IMPLEMENTATION_CPPC"]/*' />
     [NativeTypeName("#define PPM_PERFORMANCE_IMPLEMENTATION_CPPC 0x00000003")]
     public const int PPM_PERFORMANCE_IMPLEMENTATION_CPPC = 0x00000003;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_PERFORMANCE_IMPLEMENTATION_PEP"]/*' />
     [NativeTypeName("#define PPM_PERFORMANCE_IMPLEMENTATION_PEP 0x00000004")]
     public const int PPM_PERFORMANCE_IMPLEMENTATION_PEP = 0x00000004;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_IDLE_IMPLEMENTATION_NONE"]/*' />
     [NativeTypeName("#define PPM_IDLE_IMPLEMENTATION_NONE 0x00000000")]
     public const int PPM_IDLE_IMPLEMENTATION_NONE = 0x00000000;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_IDLE_IMPLEMENTATION_CSTATES"]/*' />
     [NativeTypeName("#define PPM_IDLE_IMPLEMENTATION_CSTATES 0x00000001")]
     public const int PPM_IDLE_IMPLEMENTATION_CSTATES = 0x00000001;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_IDLE_IMPLEMENTATION_PEP"]/*' />
     [NativeTypeName("#define PPM_IDLE_IMPLEMENTATION_PEP 0x00000002")]
     public const int PPM_IDLE_IMPLEMENTATION_PEP = 0x00000002;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_IDLE_IMPLEMENTATION_MICROPEP"]/*' />
     [NativeTypeName("#define PPM_IDLE_IMPLEMENTATION_MICROPEP 0x00000003")]
     public const int PPM_IDLE_IMPLEMENTATION_MICROPEP = 0x00000003;
 
+    /// <include file='PPM.xml' path='doc/member[@name="PPM.PPM_IDLE_IMPLEMENTATION_LPISTATES"]/*' />
     [NativeTypeName("#define PPM_IDLE_IMPLEMENTATION_LPISTATES 0x00000004")]
     public const int PPM_IDLE_IMPLEMENTATION_LPISTATES = 0x00000004;
 }

@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class UI
 {
+    /// <include file='UI.xml' path='doc/member[@name="UI.UI_CAP_SOFTKBD"]/*' />
     [NativeTypeName("#define UI_CAP_SOFTKBD 0x00010000")]
     public const int UI_CAP_SOFTKBD = 0x00010000;
 }

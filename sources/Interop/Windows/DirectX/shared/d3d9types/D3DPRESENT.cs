@@ -7,6 +7,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3DPRESENT
 {
+    /// <include file='D3DPRESENT.xml' path='doc/member[@name="D3DPRESENT.D3DPRESENT_RATE_DEFAULT"]/*' />
     [NativeTypeName("#define D3DPRESENT_RATE_DEFAULT 0x00000000")]
     public const int D3DPRESENT_RATE_DEFAULT = 0x00000000;
 }

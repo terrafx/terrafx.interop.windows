@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CENTRAL_ACCESSPOLICY
 {
+    /// <include file='CENTRAL_ACCESSPOLICY.xml' path='doc/member[@name="CENTRAL_ACCESSPOLICY.CENTRAL_ACCESS_POLICY_OWNER_RIGHTS_PRESENT_FLAG"]/*' />
     [NativeTypeName("#define CENTRAL_ACCESS_POLICY_OWNER_RIGHTS_PRESENT_FLAG 0x00000001")]
     public const int CENTRAL_ACCESS_POLICY_OWNER_RIGHTS_PRESENT_FLAG = 0x00000001;
 
+    /// <include file='CENTRAL_ACCESSPOLICY.xml' path='doc/member[@name="CENTRAL_ACCESSPOLICY.CENTRAL_ACCESS_POLICY_STAGED_OWNER_RIGHTS_PRESENT_FLAG"]/*' />
     [NativeTypeName("#define CENTRAL_ACCESS_POLICY_STAGED_OWNER_RIGHTS_PRESENT_FLAG 0x00000100")]
     public const int CENTRAL_ACCESS_POLICY_STAGED_OWNER_RIGHTS_PRESENT_FLAG = 0x00000100;
 
+    /// <include file='CENTRAL_ACCESSPOLICY.xml' path='doc/member[@name="CENTRAL_ACCESSPOLICY.CENTRAL_ACCESS_POLICY_STAGED_FLAG"]/*' />
     [NativeTypeName("#define CENTRAL_ACCESS_POLICY_STAGED_FLAG 0x00010000")]
     public const int CENTRAL_ACCESS_POLICY_STAGED_FLAG = 0x00010000;
 
+    /// <include file='CENTRAL_ACCESSPOLICY.xml' path='doc/member[@name="CENTRAL_ACCESSPOLICY.CENTRAL_ACCESS_POLICY_VALID_FLAG_MASK"]/*' />
     [NativeTypeName("#define CENTRAL_ACCESS_POLICY_VALID_FLAG_MASK (                                                               \\\r\n            CENTRAL_ACCESS_POLICY_OWNER_RIGHTS_PRESENT_FLAG         |   \\\r\n            CENTRAL_ACCESS_POLICY_STAGED_OWNER_RIGHTS_PRESENT_FLAG  |   \\\r\n            CENTRAL_ACCESS_POLICY_STAGED_FLAG                           \\\r\n        )")]
     public const int CENTRAL_ACCESS_POLICY_VALID_FLAG_MASK = (0x00000001 | 0x00000100 | 0x00010000);
 }

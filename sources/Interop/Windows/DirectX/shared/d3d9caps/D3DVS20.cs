@@ -7,21 +7,27 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3DVS20
 {
+    /// <include file='D3DVS20.xml' path='doc/member[@name="D3DVS20.D3DVS20_MAX_DYNAMICFLOWCONTROLDEPTH"]/*' />
     [NativeTypeName("#define D3DVS20_MAX_DYNAMICFLOWCONTROLDEPTH 24")]
     public const int D3DVS20_MAX_DYNAMICFLOWCONTROLDEPTH = 24;
 
+    /// <include file='D3DVS20.xml' path='doc/member[@name="D3DVS20.D3DVS20_MIN_DYNAMICFLOWCONTROLDEPTH"]/*' />
     [NativeTypeName("#define D3DVS20_MIN_DYNAMICFLOWCONTROLDEPTH 0")]
     public const int D3DVS20_MIN_DYNAMICFLOWCONTROLDEPTH = 0;
 
+    /// <include file='D3DVS20.xml' path='doc/member[@name="D3DVS20.D3DVS20_MAX_NUMTEMPS"]/*' />
     [NativeTypeName("#define D3DVS20_MAX_NUMTEMPS 32")]
     public const int D3DVS20_MAX_NUMTEMPS = 32;
 
+    /// <include file='D3DVS20.xml' path='doc/member[@name="D3DVS20.D3DVS20_MIN_NUMTEMPS"]/*' />
     [NativeTypeName("#define D3DVS20_MIN_NUMTEMPS 12")]
     public const int D3DVS20_MIN_NUMTEMPS = 12;
 
+    /// <include file='D3DVS20.xml' path='doc/member[@name="D3DVS20.D3DVS20_MAX_STATICFLOWCONTROLDEPTH"]/*' />
     [NativeTypeName("#define D3DVS20_MAX_STATICFLOWCONTROLDEPTH 4")]
     public const int D3DVS20_MAX_STATICFLOWCONTROLDEPTH = 4;
 
+    /// <include file='D3DVS20.xml' path='doc/member[@name="D3DVS20.D3DVS20_MIN_STATICFLOWCONTROLDEPTH"]/*' />
     [NativeTypeName("#define D3DVS20_MIN_STATICFLOWCONTROLDEPTH 1")]
     public const int D3DVS20_MIN_STATICFLOWCONTROLDEPTH = 1;
 }

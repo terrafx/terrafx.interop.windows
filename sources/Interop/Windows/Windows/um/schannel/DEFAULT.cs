@@ -9,12 +9,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class DEFAULT
 {
+    /// <include file='DEFAULT.xml' path='doc/member[@name="DEFAULT.DEFAULT_TLS_SSP_NAME_A"]/*' />
     [NativeTypeName("#define DEFAULT_TLS_SSP_NAME_A \"Default TLS SSP\"")]
     public static ReadOnlySpan<byte> DEFAULT_TLS_SSP_NAME_A => "Default TLS SSP"u8;
 
+    /// <include file='DEFAULT.xml' path='doc/member[@name="DEFAULT.DEFAULT_TLS_SSP_NAME_W"]/*' />
     [NativeTypeName("#define DEFAULT_TLS_SSP_NAME_W L\"Default TLS SSP\"")]
     public const string DEFAULT_TLS_SSP_NAME_W = "Default TLS SSP";
 
+    /// <include file='DEFAULT.xml' path='doc/member[@name="DEFAULT.DEFAULT_TLS_SSP_NAME"]/*' />
     [NativeTypeName("#define DEFAULT_TLS_SSP_NAME DEFAULT_TLS_SSP_NAME_W")]
     public const string DEFAULT_TLS_SSP_NAME = "Default TLS SSP";
 }

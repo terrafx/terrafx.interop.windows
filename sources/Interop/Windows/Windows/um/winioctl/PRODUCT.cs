@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class PRODUCT
 {
+    /// <include file='PRODUCT.xml' path='doc/member[@name="PRODUCT.PRODUCT_ID_LENGTH"]/*' />
     [NativeTypeName("#define PRODUCT_ID_LENGTH 16")]
     public const int PRODUCT_ID_LENGTH = 16;
 }

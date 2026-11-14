@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class PKEY
 {
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AudioEndpoint_FormFactor"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_FormFactor
     {
@@ -38,6 +39,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AudioEndpoint_ControlPanelPageProvider"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_ControlPanelPageProvider
     {
@@ -64,6 +66,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AudioEndpoint_Association"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_Association
     {
@@ -90,6 +93,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AudioEndpoint_PhysicalSpeakers"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_PhysicalSpeakers
     {
@@ -116,6 +120,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AudioEndpoint_GUID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_GUID
     {
@@ -142,6 +147,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AudioEndpoint_Disable_SysFx"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_Disable_SysFx
     {
@@ -168,6 +174,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AudioEndpoint_FullRangeSpeakers"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_FullRangeSpeakers
     {
@@ -194,6 +201,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AudioEndpoint_Supports_EventDriven_Mode"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_Supports_EventDriven_Mode
     {
@@ -220,6 +228,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AudioEndpoint_JackSubType"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_JackSubType
     {
@@ -246,6 +255,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AudioEndpoint_Default_VolumeInDb"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_Default_VolumeInDb
     {
@@ -272,6 +282,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AudioEndpoint_Max_VolumeInDb"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_Max_VolumeInDb
     {
@@ -298,6 +309,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AudioEndpoint_Min_VolumeInDb"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AudioEndpoint_Min_VolumeInDb
     {
@@ -351,6 +363,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AudioEngine_DeviceFormat"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AudioEngine_DeviceFormat
     {
@@ -377,6 +390,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AudioEngine_OEMFormat"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AudioEngine_OEMFormat
     {
@@ -403,6 +417,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AudioEndpointLogo_IconEffects"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AudioEndpointLogo_IconEffects
     {
@@ -429,6 +444,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AudioEndpointLogo_IconPath"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AudioEndpointLogo_IconPath
     {
@@ -455,6 +471,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AudioEndpointSettings_MenuText"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AudioEndpointSettings_MenuText
     {
@@ -481,6 +498,7 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_AudioEndpointSettings_LaunchContract"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_AudioEndpointSettings_LaunchContract
     {

@@ -9,9 +9,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3D
 {
+    /// <include file='D3D.xml' path='doc/member[@name="D3D.D3D_SDK_VERSION"]/*' />
     [NativeTypeName("#define D3D_SDK_VERSION 32")]
     public const int D3D_SDK_VERSION = 32;
 
+    /// <include file='D3D.xml' path='doc/member[@name="D3D.D3D_OK"]/*' />
     [NativeTypeName("#define D3D_OK S_OK")]
     public const int D3D_OK = ((int)(0));
 }

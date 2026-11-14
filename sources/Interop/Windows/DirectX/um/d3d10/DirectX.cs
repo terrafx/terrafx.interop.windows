@@ -13,9 +13,11 @@ public static partial class DirectX
         return MipSlice + ArraySlice * MipLevels;
     }
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX._FACD3D10"]/*' />
     [NativeTypeName("#define _FACD3D10 ( 0x879 )")]
     public const int _FACD3D10 = (0x879);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX._FACD3D10DEBUG"]/*' />
     [NativeTypeName("#define _FACD3D10DEBUG ( ( _FACD3D10 + 1 )  )")]
     public const int _FACD3D10DEBUG = (((0x879) + 1));
 }

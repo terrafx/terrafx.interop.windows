@@ -34,12 +34,15 @@ public static unsafe partial class Windows
     [return: NativeTypeName("MMRESULT")]
     public static extern uint timeEndPeriod(uint uPeriod);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TIMERR_NOERROR"]/*' />
     [NativeTypeName("#define TIMERR_NOERROR (0)")]
     public const int TIMERR_NOERROR = (0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TIMERR_NOCANDO"]/*' />
     [NativeTypeName("#define TIMERR_NOCANDO (TIMERR_BASE+1)")]
     public const int TIMERR_NOCANDO = (96 + 1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TIMERR_STRUCT"]/*' />
     [NativeTypeName("#define TIMERR_STRUCT (TIMERR_BASE+33)")]
     public const int TIMERR_STRUCT = (96 + 33);
 }

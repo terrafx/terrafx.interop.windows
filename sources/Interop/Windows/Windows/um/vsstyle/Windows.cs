@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TMTVS_RESERVEDLOW"]/*' />
     [NativeTypeName("#define TMTVS_RESERVEDLOW 100000")]
     public const int TMTVS_RESERVEDLOW = 100000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TMTVS_RESERVEDHIGH"]/*' />
     [NativeTypeName("#define TMTVS_RESERVEDHIGH 19999")]
     public const int TMTVS_RESERVEDHIGH = 19999;
 }

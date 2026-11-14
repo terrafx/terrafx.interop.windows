@@ -7,18 +7,23 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AMCOPYPROTECT_RestrictDuplication"]/*' />
     [NativeTypeName("#define AMCOPYPROTECT_RestrictDuplication 0x00000001")]
     public const int AMCOPYPROTECT_RestrictDuplication = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AMCONTROL_USED"]/*' />
     [NativeTypeName("#define AMCONTROL_USED 0x00000001")]
     public const int AMCONTROL_USED = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AMCONTROL_PAD_TO_4x3"]/*' />
     [NativeTypeName("#define AMCONTROL_PAD_TO_4x3 0x00000002")]
     public const int AMCONTROL_PAD_TO_4x3 = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AMCONTROL_PAD_TO_16x9"]/*' />
     [NativeTypeName("#define AMCONTROL_PAD_TO_16x9 0x00000004")]
     public const int AMCONTROL_PAD_TO_16x9 = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AMCONTROL_COLORINFO_PRESENT"]/*' />
     [NativeTypeName("#define AMCONTROL_COLORINFO_PRESENT 0x00000080")]
     public const int AMCONTROL_COLORINFO_PRESENT = 0x00000080;
 }

@@ -7,42 +7,55 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class RPI
 {
+    /// <include file='RPI.xml' path='doc/member[@name="RPI.RPI_FLAG_SMB2_SHARECAP_TIMEWARP"]/*' />
     [NativeTypeName("#define RPI_FLAG_SMB2_SHARECAP_TIMEWARP 0x00000002")]
     public const int RPI_FLAG_SMB2_SHARECAP_TIMEWARP = 0x00000002;
 
+    /// <include file='RPI.xml' path='doc/member[@name="RPI.RPI_FLAG_SMB2_SHARECAP_DFS"]/*' />
     [NativeTypeName("#define RPI_FLAG_SMB2_SHARECAP_DFS 0x00000008")]
     public const int RPI_FLAG_SMB2_SHARECAP_DFS = 0x00000008;
 
+    /// <include file='RPI.xml' path='doc/member[@name="RPI.RPI_FLAG_SMB2_SHARECAP_CONTINUOUS_AVAILABILITY"]/*' />
     [NativeTypeName("#define RPI_FLAG_SMB2_SHARECAP_CONTINUOUS_AVAILABILITY 0x00000010")]
     public const int RPI_FLAG_SMB2_SHARECAP_CONTINUOUS_AVAILABILITY = 0x00000010;
 
+    /// <include file='RPI.xml' path='doc/member[@name="RPI.RPI_FLAG_SMB2_SHARECAP_SCALEOUT"]/*' />
     [NativeTypeName("#define RPI_FLAG_SMB2_SHARECAP_SCALEOUT 0x00000020")]
     public const int RPI_FLAG_SMB2_SHARECAP_SCALEOUT = 0x00000020;
 
+    /// <include file='RPI.xml' path='doc/member[@name="RPI.RPI_FLAG_SMB2_SHARECAP_CLUSTER"]/*' />
     [NativeTypeName("#define RPI_FLAG_SMB2_SHARECAP_CLUSTER 0x00000040")]
     public const int RPI_FLAG_SMB2_SHARECAP_CLUSTER = 0x00000040;
 
+    /// <include file='RPI.xml' path='doc/member[@name="RPI.RPI_SMB2_SHAREFLAG_ENCRYPT_DATA"]/*' />
     [NativeTypeName("#define RPI_SMB2_SHAREFLAG_ENCRYPT_DATA 0x00000001")]
     public const int RPI_SMB2_SHAREFLAG_ENCRYPT_DATA = 0x00000001;
 
+    /// <include file='RPI.xml' path='doc/member[@name="RPI.RPI_SMB2_SHAREFLAG_COMPRESS_DATA"]/*' />
     [NativeTypeName("#define RPI_SMB2_SHAREFLAG_COMPRESS_DATA 0x00000002")]
     public const int RPI_SMB2_SHAREFLAG_COMPRESS_DATA = 0x00000002;
 
+    /// <include file='RPI.xml' path='doc/member[@name="RPI.RPI_SMB2_FLAG_SERVERCAP_DFS"]/*' />
     [NativeTypeName("#define RPI_SMB2_FLAG_SERVERCAP_DFS 0x00000001")]
     public const int RPI_SMB2_FLAG_SERVERCAP_DFS = 0x00000001;
 
+    /// <include file='RPI.xml' path='doc/member[@name="RPI.RPI_SMB2_FLAG_SERVERCAP_LEASING"]/*' />
     [NativeTypeName("#define RPI_SMB2_FLAG_SERVERCAP_LEASING 0x00000002")]
     public const int RPI_SMB2_FLAG_SERVERCAP_LEASING = 0x00000002;
 
+    /// <include file='RPI.xml' path='doc/member[@name="RPI.RPI_SMB2_FLAG_SERVERCAP_LARGEMTU"]/*' />
     [NativeTypeName("#define RPI_SMB2_FLAG_SERVERCAP_LARGEMTU 0x00000004")]
     public const int RPI_SMB2_FLAG_SERVERCAP_LARGEMTU = 0x00000004;
 
+    /// <include file='RPI.xml' path='doc/member[@name="RPI.RPI_SMB2_FLAG_SERVERCAP_MULTICHANNEL"]/*' />
     [NativeTypeName("#define RPI_SMB2_FLAG_SERVERCAP_MULTICHANNEL 0x00000008")]
     public const int RPI_SMB2_FLAG_SERVERCAP_MULTICHANNEL = 0x00000008;
 
+    /// <include file='RPI.xml' path='doc/member[@name="RPI.RPI_SMB2_FLAG_SERVERCAP_PERSISTENT_HANDLES"]/*' />
     [NativeTypeName("#define RPI_SMB2_FLAG_SERVERCAP_PERSISTENT_HANDLES 0x00000010")]
     public const int RPI_SMB2_FLAG_SERVERCAP_PERSISTENT_HANDLES = 0x00000010;
 
+    /// <include file='RPI.xml' path='doc/member[@name="RPI.RPI_SMB2_FLAG_SERVERCAP_DIRECTORY_LEASING"]/*' />
     [NativeTypeName("#define RPI_SMB2_FLAG_SERVERCAP_DIRECTORY_LEASING 0x00000020")]
     public const int RPI_SMB2_FLAG_SERVERCAP_DIRECTORY_LEASING = 0x00000020;
 }

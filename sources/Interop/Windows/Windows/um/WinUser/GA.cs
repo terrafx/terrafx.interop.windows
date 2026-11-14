@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class GA
 {
+    /// <include file='GA.xml' path='doc/member[@name="GA.GA_PARENT"]/*' />
     [NativeTypeName("#define GA_PARENT 1")]
     public const int GA_PARENT = 1;
 
+    /// <include file='GA.xml' path='doc/member[@name="GA.GA_ROOT"]/*' />
     [NativeTypeName("#define GA_ROOT 2")]
     public const int GA_ROOT = 2;
 
+    /// <include file='GA.xml' path='doc/member[@name="GA.GA_ROOTOWNER"]/*' />
     [NativeTypeName("#define GA_ROOTOWNER 3")]
     public const int GA_ROOTOWNER = 3;
 }

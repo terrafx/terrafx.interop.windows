@@ -352,57 +352,75 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows10.0.22621.0")]
     public static extern uint WinHttpFreeProxySettingsEx(WINHTTP_PROXY_SETTINGS_TYPE ProxySettingsType, [NativeTypeName("PVOID")] void* pProxySettingsEx);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NETWORKING_KEY_BUFSIZE"]/*' />
     [NativeTypeName("#define NETWORKING_KEY_BUFSIZE 128")]
     public const int NETWORKING_KEY_BUFSIZE = 128;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.API_RECEIVE_RESPONSE"]/*' />
     [NativeTypeName("#define API_RECEIVE_RESPONSE (1)")]
     public const int API_RECEIVE_RESPONSE = (1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.API_QUERY_DATA_AVAILABLE"]/*' />
     [NativeTypeName("#define API_QUERY_DATA_AVAILABLE (2)")]
     public const int API_QUERY_DATA_AVAILABLE = (2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.API_READ_DATA"]/*' />
     [NativeTypeName("#define API_READ_DATA (3)")]
     public const int API_READ_DATA = (3);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.API_WRITE_DATA"]/*' />
     [NativeTypeName("#define API_WRITE_DATA (4)")]
     public const int API_WRITE_DATA = (4);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.API_SEND_REQUEST"]/*' />
     [NativeTypeName("#define API_SEND_REQUEST (5)")]
     public const int API_SEND_REQUEST = (5);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.API_GET_PROXY_FOR_URL"]/*' />
     [NativeTypeName("#define API_GET_PROXY_FOR_URL (6)")]
     public const int API_GET_PROXY_FOR_URL = (6);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.API_GET_PROXY_SETTINGS"]/*' />
     [NativeTypeName("#define API_GET_PROXY_SETTINGS (7)")]
     public const int API_GET_PROXY_SETTINGS = (7);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ICU_NO_ENCODE"]/*' />
     [NativeTypeName("#define ICU_NO_ENCODE 0x20000000")]
     public const int ICU_NO_ENCODE = 0x20000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ICU_DECODE"]/*' />
     [NativeTypeName("#define ICU_DECODE 0x10000000")]
     public const int ICU_DECODE = 0x10000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ICU_NO_META"]/*' />
     [NativeTypeName("#define ICU_NO_META 0x08000000")]
     public const int ICU_NO_META = 0x08000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ICU_ENCODE_SPACES_ONLY"]/*' />
     [NativeTypeName("#define ICU_ENCODE_SPACES_ONLY 0x04000000")]
     public const int ICU_ENCODE_SPACES_ONLY = 0x04000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ICU_BROWSER_MODE"]/*' />
     [NativeTypeName("#define ICU_BROWSER_MODE 0x02000000")]
     public const int ICU_BROWSER_MODE = 0x02000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ICU_ENCODE_PERCENT"]/*' />
     [NativeTypeName("#define ICU_ENCODE_PERCENT 0x00001000")]
     public const int ICU_ENCODE_PERCENT = 0x00001000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ICU_ESCAPE"]/*' />
     [NativeTypeName("#define ICU_ESCAPE 0x80000000")]
     public const uint ICU_ESCAPE = 0x80000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ICU_INCLUDE_DEFAULT_PORT"]/*' />
     [NativeTypeName("#define ICU_INCLUDE_DEFAULT_PORT 0x00008000")]
     public const int ICU_INCLUDE_DEFAULT_PORT = 0x00008000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ICU_REJECT_USERPWD"]/*' />
     [NativeTypeName("#define ICU_REJECT_USERPWD 0x00004000")]
     public const int ICU_REJECT_USERPWD = 0x00004000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ICU_ESCAPE_AUTHORITY"]/*' />
     [NativeTypeName("#define ICU_ESCAPE_AUTHORITY 0x00002000")]
     public const int ICU_ESCAPE_AUTHORITY = 0x00002000;
 }

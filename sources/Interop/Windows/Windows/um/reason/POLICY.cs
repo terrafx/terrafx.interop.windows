@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class POLICY
 {
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_SHOWREASONUI_NEVER"]/*' />
     [NativeTypeName("#define POLICY_SHOWREASONUI_NEVER 0")]
     public const int POLICY_SHOWREASONUI_NEVER = 0;
 
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_SHOWREASONUI_ALWAYS"]/*' />
     [NativeTypeName("#define POLICY_SHOWREASONUI_ALWAYS 1")]
     public const int POLICY_SHOWREASONUI_ALWAYS = 1;
 
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_SHOWREASONUI_WORKSTATIONONLY"]/*' />
     [NativeTypeName("#define POLICY_SHOWREASONUI_WORKSTATIONONLY 2")]
     public const int POLICY_SHOWREASONUI_WORKSTATIONONLY = 2;
 
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_SHOWREASONUI_SERVERONLY"]/*' />
     [NativeTypeName("#define POLICY_SHOWREASONUI_SERVERONLY 3")]
     public const int POLICY_SHOWREASONUI_SERVERONLY = 3;
 }

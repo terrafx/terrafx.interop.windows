@@ -122,12 +122,15 @@ public static unsafe partial class Windows
     [DllImport("hlink", ExactSpelling = true)]
     public static extern HRESULT HlinkTranslateURL([NativeTypeName("LPCWSTR")] char* pwzURL, [NativeTypeName("DWORD")] uint grfFlags, [NativeTypeName("LPWSTR *")] char** ppwzTranslatedURL);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HLINK_E_FIRST"]/*' />
     [NativeTypeName("#define HLINK_E_FIRST (OLE_E_LAST+1)")]
     public const int HLINK_E_FIRST = unchecked(((int)(0x800400FF)) + 1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HLINK_S_FIRST"]/*' />
     [NativeTypeName("#define HLINK_S_FIRST (OLE_S_LAST+1)")]
     public const int HLINK_S_FIRST = (((int)(0x000400FF)) + 1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HLINK_S_DONTHIDE"]/*' />
     [NativeTypeName("#define HLINK_S_DONTHIDE (HLINK_S_FIRST)")]
     public const int HLINK_S_DONTHIDE = ((((int)(0x000400FF)) + 1));
 }
