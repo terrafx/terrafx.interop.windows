@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICoreApplicationUnhandledError : ICoreApplicationUnhandledError.Interface, INativeGuid
 {
+    /// <include file='ICoreApplicationUnhandledError.xml' path='doc/member[@name="ICoreApplicationUnhandledError.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICoreApplicationUnhandledError);
 
     public void** lpVtbl;

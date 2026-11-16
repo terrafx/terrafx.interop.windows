@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("FBEB8A05-BEEE-4442-804E-409D6C4515E9")]
 public unsafe partial struct CDBurn : INativeGuid
 {
+    /// <include file='CDBurn.xml' path='doc/member[@name="CDBurn.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_CDBurn);
 }

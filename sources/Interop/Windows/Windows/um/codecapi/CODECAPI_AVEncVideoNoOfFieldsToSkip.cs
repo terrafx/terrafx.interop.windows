@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("A97E1240-1427-4C16-A7F7-3DCFD8BA4CC5")]
 public unsafe partial struct CODECAPI_AVEncVideoNoOfFieldsToSkip : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncVideoNoOfFieldsToSkip.xml' path='doc/member[@name="CODECAPI_AVEncVideoNoOfFieldsToSkip.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncVideoNoOfFieldsToSkip);
 }

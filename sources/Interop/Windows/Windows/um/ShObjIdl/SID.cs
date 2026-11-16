@@ -14,6 +14,7 @@ namespace TerraFX.Interop.Windows;
 
 public partial struct SID
 {
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SCommandBarState"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_SCommandBarState
     {
@@ -39,21 +40,27 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_WizardSite"]/*' />
     [NativeTypeName("#define SID_WizardSite IID_IWizardSite")]
     public static ref readonly Guid SID_WizardSite => ref IID_IWizardSite;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_WebWizardHost"]/*' />
     [NativeTypeName("#define SID_WebWizardHost IID_IWebWizardExtension")]
     public static ref readonly Guid SID_WebWizardHost => ref IID_IWebWizardExtension;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_CDWizardHost"]/*' />
     [NativeTypeName("#define SID_CDWizardHost IID_ICDBurnExt")]
     public static ref readonly Guid SID_CDWizardHost => ref IID_ICDBurnExt;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_EnumerableView"]/*' />
     [NativeTypeName("#define SID_EnumerableView IID_IEnumerableView")]
     public static ref readonly Guid SID_EnumerableView => ref IID_IEnumerableView;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SBandHost"]/*' />
     [NativeTypeName("#define SID_SBandHost IID_IBandHost")]
     public static ref readonly Guid SID_SBandHost => ref IID_IBandHost;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_PublishingWizard"]/*' />
     [NativeTypeName("#define SID_PublishingWizard CLSID_PublishingWizard")]
     public static ref readonly Guid SID_PublishingWizard => ref CLSID_PublishingWizard;
 }

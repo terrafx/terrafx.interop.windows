@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICompositorWithRadialGradient : ICompositorWithRadialGradient.Interface, INativeGuid
 {
+    /// <include file='ICompositorWithRadialGradient.xml' path='doc/member[@name="ICompositorWithRadialGradient.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICompositorWithRadialGradient);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IHttpBaseProtocolFilter2 : IHttpBaseProtocolFilter2.Interface, INativeGuid
 {
+    /// <include file='IHttpBaseProtocolFilter2.xml' path='doc/member[@name="IHttpBaseProtocolFilter2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpBaseProtocolFilter2);
 
     public void** lpVtbl;

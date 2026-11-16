@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct ID2D1GeometryRealization : ID2D1GeometryRealization.Interface, INativeGuid
 {
+    /// <include file='ID2D1GeometryRealization.xml' path='doc/member[@name="ID2D1GeometryRealization.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1GeometryRealization);
 
     public void** lpVtbl;

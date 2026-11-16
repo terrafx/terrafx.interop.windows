@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAudioEffectsPackConfigurationStatics : IAudioEffectsPackConfigurationStatics.Interface, INativeGuid
 {
+    /// <include file='IAudioEffectsPackConfigurationStatics.xml' path='doc/member[@name="IAudioEffectsPackConfigurationStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAudioEffectsPackConfigurationStatics);
 
     public void** lpVtbl;

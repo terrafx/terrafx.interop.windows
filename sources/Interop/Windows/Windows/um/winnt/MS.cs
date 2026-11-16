@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MS
 {
+    /// <include file='MS.xml' path='doc/member[@name="MS.MS_PPM_SOFTWARE_ALL"]/*' />
     [NativeTypeName("#define MS_PPM_SOFTWARE_ALL 0x1")]
     public const int MS_PPM_SOFTWARE_ALL = 0x1;
 }

@@ -7,27 +7,35 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class ERROR
 {
+    /// <include file='ERROR.xml' path='doc/member[@name="ERROR.ERROR_HISTORY_DIRECTORY_ENTRY_DEFAULT_COUNT"]/*' />
     [NativeTypeName("#define ERROR_HISTORY_DIRECTORY_ENTRY_DEFAULT_COUNT 8")]
     public const int ERROR_HISTORY_DIRECTORY_ENTRY_DEFAULT_COUNT = 8;
 
+    /// <include file='ERROR.xml' path='doc/member[@name="ERROR.ERROR_LABEL_UNREADABLE"]/*' />
     [NativeTypeName("#define ERROR_LABEL_UNREADABLE 0x00000001")]
     public const int ERROR_LABEL_UNREADABLE = 0x00000001;
 
+    /// <include file='ERROR.xml' path='doc/member[@name="ERROR.ERROR_LABEL_QUESTIONABLE"]/*' />
     [NativeTypeName("#define ERROR_LABEL_QUESTIONABLE 0x00000002")]
     public const int ERROR_LABEL_QUESTIONABLE = 0x00000002;
 
+    /// <include file='ERROR.xml' path='doc/member[@name="ERROR.ERROR_SLOT_NOT_PRESENT"]/*' />
     [NativeTypeName("#define ERROR_SLOT_NOT_PRESENT 0x00000004")]
     public const int ERROR_SLOT_NOT_PRESENT = 0x00000004;
 
+    /// <include file='ERROR.xml' path='doc/member[@name="ERROR.ERROR_DRIVE_NOT_INSTALLED"]/*' />
     [NativeTypeName("#define ERROR_DRIVE_NOT_INSTALLED 0x00000008")]
     public const int ERROR_DRIVE_NOT_INSTALLED = 0x00000008;
 
+    /// <include file='ERROR.xml' path='doc/member[@name="ERROR.ERROR_TRAY_MALFUNCTION"]/*' />
     [NativeTypeName("#define ERROR_TRAY_MALFUNCTION 0x00000010")]
     public const int ERROR_TRAY_MALFUNCTION = 0x00000010;
 
+    /// <include file='ERROR.xml' path='doc/member[@name="ERROR.ERROR_INIT_STATUS_NEEDED"]/*' />
     [NativeTypeName("#define ERROR_INIT_STATUS_NEEDED 0x00000011")]
     public const int ERROR_INIT_STATUS_NEEDED = 0x00000011;
 
+    /// <include file='ERROR.xml' path='doc/member[@name="ERROR.ERROR_UNHANDLED_ERROR"]/*' />
     [NativeTypeName("#define ERROR_UNHANDLED_ERROR 0xFFFFFFFF")]
     public const uint ERROR_UNHANDLED_ERROR = 0xFFFFFFFF;
 }

@@ -10,6 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 public partial struct SID
 {
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SOleUndoManager"]/*' />
     [NativeTypeName("#define SID_SOleUndoManager IID_IOleUndoManager")]
     public static ref readonly Guid SID_SOleUndoManager => ref IID_IOleUndoManager;
 }

@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class S
 {
+    /// <include file='S.xml' path='doc/member[@name="S.S_ASYNCHRONOUS"]/*' />
     [NativeTypeName("#define S_ASYNCHRONOUS MK_S_ASYNCHRONOUS")]
     public const int S_ASYNCHRONOUS = ((int)(0x000401E8));
 }

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IGetCapabilitiesKey : IGetCapabilitiesKey.Interface, INativeGuid
 {
+    /// <include file='IGetCapabilitiesKey.xml' path='doc/member[@name="IGetCapabilitiesKey.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGetCapabilitiesKey);
 
     public void** lpVtbl;

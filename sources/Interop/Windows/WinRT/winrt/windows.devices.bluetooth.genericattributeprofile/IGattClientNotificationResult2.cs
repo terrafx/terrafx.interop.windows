@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IGattClientNotificationResult2 : IGattClientNotificationResult2.Interface, INativeGuid
 {
+    /// <include file='IGattClientNotificationResult2.xml' path='doc/member[@name="IGattClientNotificationResult2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGattClientNotificationResult2);
 
     public void** lpVtbl;

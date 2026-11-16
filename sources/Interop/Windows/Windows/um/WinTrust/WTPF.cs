@@ -7,36 +7,47 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class WTPF
 {
+    /// <include file='WTPF.xml' path='doc/member[@name="WTPF.WTPF_TRUSTTEST"]/*' />
     [NativeTypeName("#define WTPF_TRUSTTEST 0x00000020")]
     public const int WTPF_TRUSTTEST = 0x00000020;
 
+    /// <include file='WTPF.xml' path='doc/member[@name="WTPF.WTPF_TESTCANBEVALID"]/*' />
     [NativeTypeName("#define WTPF_TESTCANBEVALID 0x00000080")]
     public const int WTPF_TESTCANBEVALID = 0x00000080;
 
+    /// <include file='WTPF.xml' path='doc/member[@name="WTPF.WTPF_IGNOREEXPIRATION"]/*' />
     [NativeTypeName("#define WTPF_IGNOREEXPIRATION 0x00000100")]
     public const int WTPF_IGNOREEXPIRATION = 0x00000100;
 
+    /// <include file='WTPF.xml' path='doc/member[@name="WTPF.WTPF_IGNOREREVOKATION"]/*' />
     [NativeTypeName("#define WTPF_IGNOREREVOKATION 0x00000200")]
     public const int WTPF_IGNOREREVOKATION = 0x00000200;
 
+    /// <include file='WTPF.xml' path='doc/member[@name="WTPF.WTPF_OFFLINEOK_IND"]/*' />
     [NativeTypeName("#define WTPF_OFFLINEOK_IND 0x00000400")]
     public const int WTPF_OFFLINEOK_IND = 0x00000400;
 
+    /// <include file='WTPF.xml' path='doc/member[@name="WTPF.WTPF_OFFLINEOK_COM"]/*' />
     [NativeTypeName("#define WTPF_OFFLINEOK_COM 0x00000800")]
     public const int WTPF_OFFLINEOK_COM = 0x00000800;
 
+    /// <include file='WTPF.xml' path='doc/member[@name="WTPF.WTPF_OFFLINEOKNBU_IND"]/*' />
     [NativeTypeName("#define WTPF_OFFLINEOKNBU_IND 0x00001000")]
     public const int WTPF_OFFLINEOKNBU_IND = 0x00001000;
 
+    /// <include file='WTPF.xml' path='doc/member[@name="WTPF.WTPF_OFFLINEOKNBU_COM"]/*' />
     [NativeTypeName("#define WTPF_OFFLINEOKNBU_COM 0x00002000")]
     public const int WTPF_OFFLINEOKNBU_COM = 0x00002000;
 
+    /// <include file='WTPF.xml' path='doc/member[@name="WTPF.WTPF_VERIFY_V1_OFF"]/*' />
     [NativeTypeName("#define WTPF_VERIFY_V1_OFF 0x00010000")]
     public const int WTPF_VERIFY_V1_OFF = 0x00010000;
 
+    /// <include file='WTPF.xml' path='doc/member[@name="WTPF.WTPF_IGNOREREVOCATIONONTS"]/*' />
     [NativeTypeName("#define WTPF_IGNOREREVOCATIONONTS 0x00020000")]
     public const int WTPF_IGNOREREVOCATIONONTS = 0x00020000;
 
+    /// <include file='WTPF.xml' path='doc/member[@name="WTPF.WTPF_ALLOWONLYPERTRUST"]/*' />
     [NativeTypeName("#define WTPF_ALLOWONLYPERTRUST 0x00040000")]
     public const int WTPF_ALLOWONLYPERTRUST = 0x00040000;
 }

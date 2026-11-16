@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMLOperatorShapeInferrer : IMLOperatorShapeInferrer.Interface, INativeGuid
 {
+    /// <include file='IMLOperatorShapeInferrer.xml' path='doc/member[@name="IMLOperatorShapeInferrer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMLOperatorShapeInferrer);
 
     public void** lpVtbl;

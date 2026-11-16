@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows10.0.19041.0")]
 public unsafe partial struct ICompositionDrawingSurfaceInterop2 : ICompositionDrawingSurfaceInterop2.Interface, INativeGuid
 {
+    /// <include file='ICompositionDrawingSurfaceInterop2.xml' path='doc/member[@name="ICompositionDrawingSurfaceInterop2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICompositionDrawingSurfaceInterop2);
 
     public void** lpVtbl;

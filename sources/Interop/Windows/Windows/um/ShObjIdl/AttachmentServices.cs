@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("4125DD96-E03A-4103-8F70-E0597D803B9C")]
 public unsafe partial struct AttachmentServices : INativeGuid
 {
+    /// <include file='AttachmentServices.xml' path='doc/member[@name="AttachmentServices.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_AttachmentServices);
 }

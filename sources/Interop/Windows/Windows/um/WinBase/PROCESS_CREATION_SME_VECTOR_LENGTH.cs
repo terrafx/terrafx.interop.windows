@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct PROCESS_CREATION_SME_VECTOR_LENGTH
 {
     /// <include file='PROCESS_CREATION_SME_VECTOR_LENGTH.xml' path='doc/member[@name="PROCESS_CREATION_SME_VECTOR_LENGTH.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winbase_L3640_C5")]
+    [NativeTypeName("__AnonymousRecord_winbase_L3650_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='PROCESS_CREATION_SME_VECTOR_LENGTH.xml' path='doc/member[@name="PROCESS_CREATION_SME_VECTOR_LENGTH.Reserved"]/*' />
@@ -74,7 +74,7 @@ public partial struct PROCESS_CREATION_SME_VECTOR_LENGTH
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winbase_L3642_C9")]
+        [NativeTypeName("__AnonymousRecord_winbase_L3652_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

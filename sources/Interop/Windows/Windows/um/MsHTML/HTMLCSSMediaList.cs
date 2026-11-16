@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("30510732-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct HTMLCSSMediaList : INativeGuid
 {
+    /// <include file='HTMLCSSMediaList.xml' path='doc/member[@name="HTMLCSSMediaList.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_HTMLCSSMediaList);
 }

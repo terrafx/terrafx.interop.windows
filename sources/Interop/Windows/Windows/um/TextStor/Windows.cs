@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GXFPF_ROUND_NEAREST"]/*' />
     [NativeTypeName("#define GXFPF_ROUND_NEAREST ( 0x1 )")]
     public const int GXFPF_ROUND_NEAREST = (0x1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GXFPF_NEAREST"]/*' />
     [NativeTypeName("#define GXFPF_NEAREST ( 0x2 )")]
     public const int GXFPF_NEAREST = (0x2);
 }

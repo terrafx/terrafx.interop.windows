@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFByteStreamProxyClassFactory : IMFByteStreamProxyClassFactory.Interface, INativeGuid
 {
+    /// <include file='IMFByteStreamProxyClassFactory.xml' path='doc/member[@name="IMFByteStreamProxyClassFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFByteStreamProxyClassFactory);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ICastingController : ICastingController.Interface, INativeGuid
 {
+    /// <include file='ICastingController.xml' path='doc/member[@name="ICastingController.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICastingController);
 
     public void** lpVtbl;

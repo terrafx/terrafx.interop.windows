@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IMouseEventArgs : IMouseEventArgs.Interface, INativeGuid
 {
+    /// <include file='IMouseEventArgs.xml' path='doc/member[@name="IMouseEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMouseEventArgs);
 
     public void** lpVtbl;

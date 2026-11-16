@@ -15,7 +15,7 @@ public partial struct BOOT_AREA_INFO
     public uint BootSectorCount;
 
     /// <include file='BOOT_AREA_INFO.xml' path='doc/member[@name="BOOT_AREA_INFO.BootSectors"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.28000.0/um/winioctl.h:14407:5)[2]")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.28000.0/um/winioctl.h:14464:5)[2]")]
     public _BootSectors_e__FixedBuffer BootSectors;
 
     /// <include file='_BootSectors_e__Struct.xml' path='doc/member[@name="_BootSectors_e__Struct"]/*' />

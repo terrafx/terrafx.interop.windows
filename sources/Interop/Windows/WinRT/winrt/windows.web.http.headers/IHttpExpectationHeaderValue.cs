@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IHttpExpectationHeaderValue : IHttpExpectationHeaderValue.Interface, INativeGuid
 {
+    /// <include file='IHttpExpectationHeaderValue.xml' path='doc/member[@name="IHttpExpectationHeaderValue.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpExpectationHeaderValue);
 
     public void** lpVtbl;

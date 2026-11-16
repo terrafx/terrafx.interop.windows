@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IContactManager : IContactManager.Interface, INativeGuid
 {
+    /// <include file='IContactManager.xml' path='doc/member[@name="IContactManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IContactManager);
 
     public void** lpVtbl;

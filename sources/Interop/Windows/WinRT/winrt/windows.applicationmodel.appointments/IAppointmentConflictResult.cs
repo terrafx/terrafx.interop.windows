@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAppointmentConflictResult : IAppointmentConflictResult.Interface, INativeGuid
 {
+    /// <include file='IAppointmentConflictResult.xml' path='doc/member[@name="IAppointmentConflictResult.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppointmentConflictResult);
 
     public void** lpVtbl;

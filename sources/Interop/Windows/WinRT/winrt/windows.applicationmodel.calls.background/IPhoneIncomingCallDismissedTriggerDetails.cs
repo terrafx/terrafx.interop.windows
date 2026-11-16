@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("PhoneIncomingCallDismissedTriggerDetails is deprecated and might not work for all platforms. For more info, see MSDN.")]
 public unsafe partial struct IPhoneIncomingCallDismissedTriggerDetails : IPhoneIncomingCallDismissedTriggerDetails.Interface, INativeGuid
 {
+    /// <include file='IPhoneIncomingCallDismissedTriggerDetails.xml' path='doc/member[@name="IPhoneIncomingCallDismissedTriggerDetails.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPhoneIncomingCallDismissedTriggerDetails);
 
     public void** lpVtbl;

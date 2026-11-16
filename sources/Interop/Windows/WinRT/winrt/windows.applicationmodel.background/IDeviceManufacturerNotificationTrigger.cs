@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("DeviceManufacturerNotificationTrigger is deprecated and might not work on all platforms")]
 public unsafe partial struct IDeviceManufacturerNotificationTrigger : IDeviceManufacturerNotificationTrigger.Interface, INativeGuid
 {
+    /// <include file='IDeviceManufacturerNotificationTrigger.xml' path='doc/member[@name="IDeviceManufacturerNotificationTrigger.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDeviceManufacturerNotificationTrigger);
 
     public void** lpVtbl;

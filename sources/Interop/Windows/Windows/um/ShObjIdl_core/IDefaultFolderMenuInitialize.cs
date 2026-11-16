@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IDefaultFolderMenuInitialize : IDefaultFolderMenuInitialize.Interface, INativeGuid
 {
+    /// <include file='IDefaultFolderMenuInitialize.xml' path='doc/member[@name="IDefaultFolderMenuInitialize.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDefaultFolderMenuInitialize);
 
     public void** lpVtbl;

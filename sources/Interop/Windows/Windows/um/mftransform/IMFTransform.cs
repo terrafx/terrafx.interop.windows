@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFTransform : IMFTransform.Interface, INativeGuid
 {
+    /// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFTransform);
 
     public void** lpVtbl;

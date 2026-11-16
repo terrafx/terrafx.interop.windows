@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ITfInsertAtSelection : ITfInsertAtSelection.Interface, INativeGuid
 {
+    /// <include file='ITfInsertAtSelection.xml' path='doc/member[@name="ITfInsertAtSelection.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfInsertAtSelection);
 
     public void** lpVtbl;

@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CLSID
 {
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICUnknownMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICUnknownMetadataReader
     {
@@ -37,6 +38,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICUnknownMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICUnknownMetadataWriter
     {
@@ -62,6 +64,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICApp0MetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICApp0MetadataWriter
     {
@@ -87,6 +90,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICApp0MetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICApp0MetadataReader
     {
@@ -112,6 +116,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICApp1MetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICApp1MetadataWriter
     {
@@ -137,6 +142,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICApp1MetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICApp1MetadataReader
     {
@@ -162,6 +168,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICApp13MetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICApp13MetadataWriter
     {
@@ -187,6 +194,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICApp13MetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICApp13MetadataReader
     {
@@ -212,6 +220,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICIfdMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICIfdMetadataReader
     {
@@ -237,6 +246,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICIfdMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICIfdMetadataWriter
     {
@@ -262,6 +272,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICSubIfdMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICSubIfdMetadataReader
     {
@@ -287,6 +298,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICSubIfdMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICSubIfdMetadataWriter
     {
@@ -312,6 +324,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICExifMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICExifMetadataReader
     {
@@ -337,6 +350,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICExifMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICExifMetadataWriter
     {
@@ -362,6 +376,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICGpsMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICGpsMetadataReader
     {
@@ -387,6 +402,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICGpsMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICGpsMetadataWriter
     {
@@ -412,6 +428,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICInteropMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICInteropMetadataReader
     {
@@ -437,6 +454,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICInteropMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICInteropMetadataWriter
     {
@@ -462,6 +480,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICThumbnailMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICThumbnailMetadataReader
     {
@@ -487,6 +506,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICThumbnailMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICThumbnailMetadataWriter
     {
@@ -512,6 +532,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICIPTCMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICIPTCMetadataReader
     {
@@ -537,6 +558,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICIPTCMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICIPTCMetadataWriter
     {
@@ -562,6 +584,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICIRBMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICIRBMetadataReader
     {
@@ -587,6 +610,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICIRBMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICIRBMetadataWriter
     {
@@ -612,6 +636,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WIC8BIMIPTCMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WIC8BIMIPTCMetadataReader
     {
@@ -637,6 +662,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WIC8BIMIPTCMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WIC8BIMIPTCMetadataWriter
     {
@@ -662,6 +688,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WIC8BIMResolutionInfoMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WIC8BIMResolutionInfoMetadataReader
     {
@@ -687,6 +714,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WIC8BIMResolutionInfoMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WIC8BIMResolutionInfoMetadataWriter
     {
@@ -712,6 +740,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WIC8BIMIPTCDigestMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WIC8BIMIPTCDigestMetadataReader
     {
@@ -737,6 +766,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WIC8BIMIPTCDigestMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WIC8BIMIPTCDigestMetadataWriter
     {
@@ -762,6 +792,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICPngTextMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICPngTextMetadataReader
     {
@@ -787,6 +818,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICPngTextMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICPngTextMetadataWriter
     {
@@ -812,6 +844,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICXMPMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICXMPMetadataReader
     {
@@ -837,6 +870,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICXMPMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICXMPMetadataWriter
     {
@@ -862,6 +896,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICXMPStructMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICXMPStructMetadataReader
     {
@@ -887,6 +922,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICXMPStructMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICXMPStructMetadataWriter
     {
@@ -912,6 +948,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICXMPBagMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICXMPBagMetadataReader
     {
@@ -937,6 +974,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICXMPBagMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICXMPBagMetadataWriter
     {
@@ -962,6 +1000,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICXMPSeqMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICXMPSeqMetadataReader
     {
@@ -987,6 +1026,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICXMPSeqMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICXMPSeqMetadataWriter
     {
@@ -1012,6 +1052,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICXMPAltMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICXMPAltMetadataReader
     {
@@ -1037,6 +1078,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICXMPAltMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICXMPAltMetadataWriter
     {
@@ -1062,6 +1104,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICLSDMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICLSDMetadataReader
     {
@@ -1087,6 +1130,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICLSDMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICLSDMetadataWriter
     {
@@ -1112,6 +1156,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICGCEMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICGCEMetadataReader
     {
@@ -1137,6 +1182,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICGCEMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICGCEMetadataWriter
     {
@@ -1162,6 +1208,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICIMDMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICIMDMetadataReader
     {
@@ -1187,6 +1234,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICIMDMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICIMDMetadataWriter
     {
@@ -1212,6 +1260,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICAPEMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICAPEMetadataReader
     {
@@ -1237,6 +1286,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICAPEMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICAPEMetadataWriter
     {
@@ -1262,6 +1312,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICJpegChrominanceMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICJpegChrominanceMetadataReader
     {
@@ -1287,6 +1338,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICJpegChrominanceMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICJpegChrominanceMetadataWriter
     {
@@ -1312,6 +1364,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICJpegLuminanceMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICJpegLuminanceMetadataReader
     {
@@ -1337,6 +1390,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICJpegLuminanceMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICJpegLuminanceMetadataWriter
     {
@@ -1362,6 +1416,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICJpegCommentMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICJpegCommentMetadataReader
     {
@@ -1387,6 +1442,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICJpegCommentMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICJpegCommentMetadataWriter
     {
@@ -1412,6 +1468,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICGifCommentMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICGifCommentMetadataReader
     {
@@ -1437,6 +1494,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICGifCommentMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICGifCommentMetadataWriter
     {
@@ -1462,6 +1520,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICPngGamaMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICPngGamaMetadataReader
     {
@@ -1487,6 +1546,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICPngGamaMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICPngGamaMetadataWriter
     {
@@ -1512,6 +1572,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICPngBkgdMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICPngBkgdMetadataReader
     {
@@ -1537,6 +1598,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICPngBkgdMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICPngBkgdMetadataWriter
     {
@@ -1562,6 +1624,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICPngItxtMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICPngItxtMetadataReader
     {
@@ -1587,6 +1650,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICPngItxtMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICPngItxtMetadataWriter
     {
@@ -1612,6 +1676,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICPngChrmMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICPngChrmMetadataReader
     {
@@ -1637,6 +1702,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICPngChrmMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICPngChrmMetadataWriter
     {
@@ -1662,6 +1728,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICPngHistMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICPngHistMetadataReader
     {
@@ -1687,6 +1754,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICPngHistMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICPngHistMetadataWriter
     {
@@ -1712,6 +1780,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICPngIccpMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICPngIccpMetadataReader
     {
@@ -1737,6 +1806,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICPngIccpMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICPngIccpMetadataWriter
     {
@@ -1762,6 +1832,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICPngSrgbMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICPngSrgbMetadataReader
     {
@@ -1787,6 +1858,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICPngSrgbMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICPngSrgbMetadataWriter
     {
@@ -1812,6 +1884,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICPngTimeMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICPngTimeMetadataReader
     {
@@ -1837,6 +1910,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICPngTimeMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICPngTimeMetadataWriter
     {
@@ -1862,6 +1936,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICDdsMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICDdsMetadataReader
     {
@@ -1887,6 +1962,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICDdsMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICDdsMetadataWriter
     {
@@ -1912,6 +1988,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICHeifMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICHeifMetadataReader
     {
@@ -1937,6 +2014,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICHeifMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICHeifMetadataWriter
     {
@@ -1962,6 +2040,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICHeifHDRMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICHeifHDRMetadataReader
     {
@@ -1987,6 +2066,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICHeifHDRMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICHeifHDRMetadataWriter
     {
@@ -2012,6 +2092,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICWebpAnimMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICWebpAnimMetadataReader
     {
@@ -2037,6 +2118,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICWebpAnmfMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICWebpAnmfMetadataReader
     {
@@ -2062,6 +2144,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICJpegXLAnimMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICJpegXLAnimMetadataReader
     {
@@ -2087,6 +2170,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICJpegXLAnimMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICJpegXLAnimMetadataWriter
     {
@@ -2112,6 +2196,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICJpegXLAnimFrameMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICJpegXLAnimFrameMetadataReader
     {
@@ -2137,6 +2222,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICJpegXLAnimFrameMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICJpegXLAnimFrameMetadataWriter
     {
@@ -2162,6 +2248,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICGainMapMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICGainMapMetadataReader
     {
@@ -2187,6 +2274,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WICGainMapMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICGainMapMetadataWriter
     {

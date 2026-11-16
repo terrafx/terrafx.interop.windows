@@ -7,27 +7,35 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class UI
 {
+    /// <include file='UI.xml' path='doc/member[@name="UI.UI_ANIMATION_SECONDS_EVENTUALLY"]/*' />
     [NativeTypeName("#define UI_ANIMATION_SECONDS_EVENTUALLY ( -1 )")]
     public const int UI_ANIMATION_SECONDS_EVENTUALLY = (-1);
 
+    /// <include file='UI.xml' path='doc/member[@name="UI.UI_ANIMATION_KEYFRAME_STORYBOARD_START"]/*' />
     [NativeTypeName("#define UI_ANIMATION_KEYFRAME_STORYBOARD_START ( ( UI_ANIMATION_KEYFRAME  )-1 )")]
     public static UI_ANIMATION_KEYFRAME UI_ANIMATION_KEYFRAME_STORYBOARD_START => unchecked((UI_ANIMATION_KEYFRAME)(-1));
 
+    /// <include file='UI.xml' path='doc/member[@name="UI.UI_ANIMATION_REPEAT_INDEFINITELY"]/*' />
     [NativeTypeName("#define UI_ANIMATION_REPEAT_INDEFINITELY ( -1 )")]
     public const int UI_ANIMATION_REPEAT_INDEFINITELY = (-1);
 
+    /// <include file='UI.xml' path='doc/member[@name="UI.UI_ANIMATION_REPEAT_INDEFINITELY_CONCLUDE_AT_END"]/*' />
     [NativeTypeName("#define UI_ANIMATION_REPEAT_INDEFINITELY_CONCLUDE_AT_END ( UI_ANIMATION_REPEAT_INDEFINITELY )")]
     public const int UI_ANIMATION_REPEAT_INDEFINITELY_CONCLUDE_AT_END = ((-1));
 
+    /// <include file='UI.xml' path='doc/member[@name="UI.UI_ANIMATION_REPEAT_INDEFINITELY_CONCLUDE_AT_START"]/*' />
     [NativeTypeName("#define UI_ANIMATION_REPEAT_INDEFINITELY_CONCLUDE_AT_START ( -2 )")]
     public const int UI_ANIMATION_REPEAT_INDEFINITELY_CONCLUDE_AT_START = (-2);
 
+    /// <include file='UI.xml' path='doc/member[@name="UI.UI_ANIMATION_SECONDS_INFINITE"]/*' />
     [NativeTypeName("#define UI_ANIMATION_SECONDS_INFINITE ( -1 )")]
     public const int UI_ANIMATION_SECONDS_INFINITE = (-1);
 
+    /// <include file='UI.xml' path='doc/member[@name="UI.UI_ANIMATION_DIMENSION_UNKNOWN"]/*' />
     [NativeTypeName("#define UI_ANIMATION_DIMENSION_UNKNOWN ( ( UINT  )-1 )")]
     public const uint UI_ANIMATION_DIMENSION_UNKNOWN = unchecked((uint)(-1));
 
+    /// <include file='UI.xml' path='doc/member[@name="UI.UI_ANIMATION_ITERATION_NONE"]/*' />
     [NativeTypeName("#define UI_ANIMATION_ITERATION_NONE ( ( UINT32  )-1 )")]
     public const uint UI_ANIMATION_ITERATION_NONE = unchecked((uint)(-1));
 }

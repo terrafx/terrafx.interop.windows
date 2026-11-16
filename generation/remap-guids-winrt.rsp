@@ -1,0 +1,6 @@
+--remap
+IID_IContact=@IID_WinRT_IContact
+IID_IDisplayServices=@IID_WinRT_IDisplayServices
+IID_IMediaControl=@IID_WinRT_IMediaControl
+IID_ISpeechRecognizer=@IID_WinRT_ISpeechRecognizer
+IID_IUserNotification=@IID_WinRT_IUserNotification

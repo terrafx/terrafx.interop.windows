@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IShellFavoritesNameSpace")]
 public unsafe partial struct IShellNameSpace : IShellNameSpace.Interface, INativeGuid
 {
+    /// <include file='IShellNameSpace.xml' path='doc/member[@name="IShellNameSpace.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IShellNameSpace);
 
     public void** lpVtbl;

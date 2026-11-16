@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class GUID
 {
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_TS_SERVICE_DATAOBJECT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_TS_SERVICE_DATAOBJECT
     {
@@ -37,6 +38,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_TS_SERVICE_ACCESSIBLE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_TS_SERVICE_ACCESSIBLE
     {
@@ -62,6 +64,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_TS_SERVICE_ACTIVEX"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_TS_SERVICE_ACTIVEX
     {

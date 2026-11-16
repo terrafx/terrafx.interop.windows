@@ -7,9 +7,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3DENUM
 {
+    /// <include file='D3DENUM.xml' path='doc/member[@name="D3DENUM.D3DENUM_WHQL_LEVEL"]/*' />
     [NativeTypeName("#define D3DENUM_WHQL_LEVEL 0x00000002L")]
     public const int D3DENUM_WHQL_LEVEL = 0x00000002;
 
+    /// <include file='D3DENUM.xml' path='doc/member[@name="D3DENUM.D3DENUM_NO_DRIVERVERSION"]/*' />
     [NativeTypeName("#define D3DENUM_NO_DRIVERVERSION 0x00000004L")]
     public const int D3DENUM_NO_DRIVERVERSION = 0x00000004;
 }

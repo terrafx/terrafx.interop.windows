@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAttestationChallengeHandler : IAttestationChallengeHandler.Interface, INativeGuid
 {
+    /// <include file='IAttestationChallengeHandler.xml' path='doc/member[@name="IAttestationChallengeHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAttestationChallengeHandler);
 
     public void** lpVtbl;

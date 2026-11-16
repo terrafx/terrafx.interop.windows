@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IRemoteSystemKindFilter : IRemoteSystemKindFilter.Interface, INativeGuid
 {
+    /// <include file='IRemoteSystemKindFilter.xml' path='doc/member[@name="IRemoteSystemKindFilter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRemoteSystemKindFilter);
 
     public void** lpVtbl;

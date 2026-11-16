@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ICDBurnExt : ICDBurnExt.Interface, INativeGuid
 {
+    /// <include file='ICDBurnExt.xml' path='doc/member[@name="ICDBurnExt.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICDBurnExt);
 
     public void** lpVtbl;

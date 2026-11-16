@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct DispDOMMutationEvent : DispDOMMutationEvent.Interface, INativeGuid
 {
+    /// <include file='DispDOMMutationEvent.xml' path='doc/member[@name="DispDOMMutationEvent.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_DispDOMMutationEvent);
 
     public void** lpVtbl;

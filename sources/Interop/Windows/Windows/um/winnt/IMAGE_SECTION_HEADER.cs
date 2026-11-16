@@ -16,7 +16,7 @@ public partial struct IMAGE_SECTION_HEADER
     public _Name_e__FixedBuffer Name;
 
     /// <include file='IMAGE_SECTION_HEADER.xml' path='doc/member[@name="IMAGE_SECTION_HEADER.Misc"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L20687_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L21520_C5")]
     public _Misc_e__Union Misc;
 
     /// <include file='IMAGE_SECTION_HEADER.xml' path='doc/member[@name="IMAGE_SECTION_HEADER.VirtualAddress"]/*' />

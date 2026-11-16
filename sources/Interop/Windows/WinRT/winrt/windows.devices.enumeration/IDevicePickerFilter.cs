@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IDevicePickerFilter : IDevicePickerFilter.Interface, INativeGuid
 {
+    /// <include file='IDevicePickerFilter.xml' path='doc/member[@name="IDevicePickerFilter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDevicePickerFilter);
 
     public void** lpVtbl;

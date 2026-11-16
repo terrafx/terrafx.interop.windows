@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDiscMasterProgressEvents : IDiscMasterProgressEvents.Interface, INativeGuid
 {
+    /// <include file='IDiscMasterProgressEvents.xml' path='doc/member[@name="IDiscMasterProgressEvents.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDiscMasterProgressEvents);
 
     public void** lpVtbl;

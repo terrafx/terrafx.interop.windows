@@ -64,21 +64,27 @@ public static unsafe partial class Windows
     [return: NativeTypeName("DWORD")]
     public static extern uint RmGetFilterList([NativeTypeName("DWORD")] uint dwSessionHandle, [NativeTypeName("PBYTE")] byte* pbFilterBuf, [NativeTypeName("DWORD")] uint cbFilterBuf, [NativeTypeName("LPDWORD")] uint* cbFilterBufNeeded);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RM_SESSION_KEY_LEN"]/*' />
     [NativeTypeName("#define RM_SESSION_KEY_LEN sizeof(GUID)")]
     public const uint RM_SESSION_KEY_LEN = 16;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CCH_RM_SESSION_KEY"]/*' />
     [NativeTypeName("#define CCH_RM_SESSION_KEY RM_SESSION_KEY_LEN*2")]
     public const uint CCH_RM_SESSION_KEY = 16 * 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CCH_RM_MAX_APP_NAME"]/*' />
     [NativeTypeName("#define CCH_RM_MAX_APP_NAME 255")]
     public const int CCH_RM_MAX_APP_NAME = 255;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CCH_RM_MAX_SVC_NAME"]/*' />
     [NativeTypeName("#define CCH_RM_MAX_SVC_NAME 63")]
     public const int CCH_RM_MAX_SVC_NAME = 63;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RM_INVALID_TS_SESSION"]/*' />
     [NativeTypeName("#define RM_INVALID_TS_SESSION -1")]
     public const int RM_INVALID_TS_SESSION = -1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RM_INVALID_PROCESS"]/*' />
     [NativeTypeName("#define RM_INVALID_PROCESS -1")]
     public const int RM_INVALID_PROCESS = -1;
 }

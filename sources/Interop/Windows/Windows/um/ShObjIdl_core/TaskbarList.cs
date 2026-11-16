@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("56FDF344-FD6D-11D0-958A-006097C9A090")]
 public unsafe partial struct TaskbarList : INativeGuid
 {
+    /// <include file='TaskbarList.xml' path='doc/member[@name="TaskbarList.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_TaskbarList);
 }

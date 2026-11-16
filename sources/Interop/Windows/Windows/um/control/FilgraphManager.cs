@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("E436EBB3-524F-11CE-9F53-0020AF0BA770")]
 public unsafe partial struct FilgraphManager : INativeGuid
 {
+    /// <include file='FilgraphManager.xml' path='doc/member[@name="FilgraphManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_FilgraphManager);
 }

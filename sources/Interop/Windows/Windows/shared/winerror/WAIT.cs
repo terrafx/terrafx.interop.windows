@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class WAIT
 {
+    /// <include file='WAIT.xml' path='doc/member[@name="WAIT.WAIT_TIMEOUT"]/*' />
     [NativeTypeName("#define WAIT_TIMEOUT 258L")]
     public const int WAIT_TIMEOUT = 258;
 }

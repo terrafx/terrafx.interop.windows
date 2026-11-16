@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("00021400-0000-0000-C000-000000000046")]
 public unsafe partial struct ShellDesktop : INativeGuid
 {
+    /// <include file='ShellDesktop.xml' path='doc/member[@name="ShellDesktop.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_ShellDesktop);
 }

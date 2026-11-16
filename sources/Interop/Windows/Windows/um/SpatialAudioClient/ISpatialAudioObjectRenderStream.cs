@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("ISpatialAudioObjectRenderStreamBase")]
 public unsafe partial struct ISpatialAudioObjectRenderStream : ISpatialAudioObjectRenderStream.Interface, INativeGuid
 {
+    /// <include file='ISpatialAudioObjectRenderStream.xml' path='doc/member[@name="ISpatialAudioObjectRenderStream.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpatialAudioObjectRenderStream);
 
     public void** lpVtbl;

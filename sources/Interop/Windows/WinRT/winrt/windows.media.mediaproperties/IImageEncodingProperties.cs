@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IImageEncodingProperties : IImageEncodingProperties.Interface, INativeGuid
 {
+    /// <include file='IImageEncodingProperties.xml' path='doc/member[@name="IImageEncodingProperties.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IImageEncodingProperties);
 
     public void** lpVtbl;

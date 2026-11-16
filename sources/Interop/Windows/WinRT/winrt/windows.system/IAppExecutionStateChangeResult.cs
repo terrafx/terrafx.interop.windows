@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAppExecutionStateChangeResult : IAppExecutionStateChangeResult.Interface, INativeGuid
 {
+    /// <include file='IAppExecutionStateChangeResult.xml' path='doc/member[@name="IAppExecutionStateChangeResult.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppExecutionStateChangeResult);
 
     public void** lpVtbl;

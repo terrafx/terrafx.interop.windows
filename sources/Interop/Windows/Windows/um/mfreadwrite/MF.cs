@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MF
 {
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SOURCE_READER_ASYNC_CALLBACK"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_SOURCE_READER_ASYNC_CALLBACK
     {
@@ -37,6 +38,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SOURCE_READER_D3D_MANAGER"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_SOURCE_READER_D3D_MANAGER
     {
@@ -62,6 +64,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SOURCE_READER_DISABLE_DXVA"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_SOURCE_READER_DISABLE_DXVA
     {
@@ -87,6 +90,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SOURCE_READER_MEDIASOURCE_CONFIG"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_SOURCE_READER_MEDIASOURCE_CONFIG
     {
@@ -112,6 +116,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SOURCE_READER_MEDIASOURCE_CHARACTERISTICS"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_SOURCE_READER_MEDIASOURCE_CHARACTERISTICS
     {
@@ -137,6 +142,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SOURCE_READER_ENABLE_VIDEO_PROCESSING"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_SOURCE_READER_ENABLE_VIDEO_PROCESSING
     {
@@ -162,6 +168,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SOURCE_READER_ENABLE_ADVANCED_VIDEO_PROCESSING"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_SOURCE_READER_ENABLE_ADVANCED_VIDEO_PROCESSING
     {
@@ -187,6 +194,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SOURCE_READER_DISABLE_CAMERA_PLUGINS"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_SOURCE_READER_DISABLE_CAMERA_PLUGINS
     {
@@ -212,6 +220,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SOURCE_READER_DISCONNECT_MEDIASOURCE_ON_SHUTDOWN"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_SOURCE_READER_DISCONNECT_MEDIASOURCE_ON_SHUTDOWN
     {
@@ -237,6 +246,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SOURCE_READER_ENABLE_TRANSCODE_ONLY_TRANSFORMS"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_SOURCE_READER_ENABLE_TRANSCODE_ONLY_TRANSFORMS
     {
@@ -262,6 +272,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SOURCE_READER_D3D11_BIND_FLAGS"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_SOURCE_READER_D3D11_BIND_FLAGS
     {
@@ -287,6 +298,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SOURCE_READER_PASSTHROUGH_MODE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_SOURCE_READER_PASSTHROUGH_MODE
     {
@@ -312,6 +324,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SINK_WRITER_ASYNC_CALLBACK"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_SINK_WRITER_ASYNC_CALLBACK
     {
@@ -337,6 +350,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SINK_WRITER_DISABLE_THROTTLING"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_SINK_WRITER_DISABLE_THROTTLING
     {
@@ -362,6 +376,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SINK_WRITER_D3D_MANAGER"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_SINK_WRITER_D3D_MANAGER
     {
@@ -387,6 +402,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SINK_WRITER_ENCODER_CONFIG"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_SINK_WRITER_ENCODER_CONFIG
     {
@@ -412,6 +428,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_READWRITE_DISABLE_CONVERTERS"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_READWRITE_DISABLE_CONVERTERS
     {
@@ -437,6 +454,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_READWRITE_ENABLE_HARDWARE_TRANSFORMS"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_READWRITE_ENABLE_HARDWARE_TRANSFORMS
     {
@@ -462,6 +480,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_READWRITE_USE_ONLY_HARDWARE_TRANSFORMS"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_READWRITE_USE_ONLY_HARDWARE_TRANSFORMS
     {
@@ -487,6 +506,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_READWRITE_MMCSS_CLASS"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_READWRITE_MMCSS_CLASS
     {
@@ -512,6 +532,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_READWRITE_MMCSS_PRIORITY"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_READWRITE_MMCSS_PRIORITY
     {
@@ -537,6 +558,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_READWRITE_MMCSS_CLASS_AUDIO"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_READWRITE_MMCSS_CLASS_AUDIO
     {
@@ -562,6 +584,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_READWRITE_MMCSS_PRIORITY_AUDIO"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_READWRITE_MMCSS_PRIORITY_AUDIO
     {
@@ -587,6 +610,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_READWRITE_D3D_OPTIONAL"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_READWRITE_D3D_OPTIONAL
     {
@@ -612,6 +636,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIASINK_AUTOFINALIZE_SUPPORTED"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIASINK_AUTOFINALIZE_SUPPORTED
     {
@@ -637,6 +662,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIASINK_ENABLE_AUTOFINALIZE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIASINK_ENABLE_AUTOFINALIZE
     {
@@ -662,6 +688,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_READWRITE_ENABLE_AUTOFINALIZE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_READWRITE_ENABLE_AUTOFINALIZE
     {

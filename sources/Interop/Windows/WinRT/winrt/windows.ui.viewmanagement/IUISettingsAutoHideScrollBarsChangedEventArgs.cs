@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IUISettingsAutoHideScrollBarsChangedEventArgs : IUISettingsAutoHideScrollBarsChangedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IUISettingsAutoHideScrollBarsChangedEventArgs.xml' path='doc/member[@name="IUISettingsAutoHideScrollBarsChangedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUISettingsAutoHideScrollBarsChangedEventArgs);
 
     public void** lpVtbl;

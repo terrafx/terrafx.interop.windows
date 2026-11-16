@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IHumanPresenceSettingsStatics : IHumanPresenceSettingsStatics.Interface, INativeGuid
 {
+    /// <include file='IHumanPresenceSettingsStatics.xml' path='doc/member[@name="IHumanPresenceSettingsStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHumanPresenceSettingsStatics);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISupportPackagedComElevationEnabledClasses : ISupportPackagedComElevationEnabledClasses.Interface, INativeGuid
 {
+    /// <include file='ISupportPackagedComElevationEnabledClasses.xml' path='doc/member[@name="ISupportPackagedComElevationEnabledClasses.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISupportPackagedComElevationEnabledClasses);
 
     public void** lpVtbl;

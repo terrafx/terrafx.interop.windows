@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IKsFormatSupport : IKsFormatSupport.Interface, INativeGuid
 {
+    /// <include file='IKsFormatSupport.xml' path='doc/member[@name="IKsFormatSupport.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IKsFormatSupport);
 
     public void** lpVtbl;

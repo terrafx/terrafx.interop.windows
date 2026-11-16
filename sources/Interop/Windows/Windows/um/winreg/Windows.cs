@@ -464,150 +464,199 @@ public static unsafe partial class Windows
     [return: NativeTypeName("LSTATUS")]
     public static extern int RegSaveKeyExW(HKEY hKey, [NativeTypeName("LPCWSTR")] char* lpFile, [NativeTypeName("const LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes, [NativeTypeName("DWORD")] uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PROVIDER_KEEPS_VALUE_LENGTH"]/*' />
     [NativeTypeName("#define PROVIDER_KEEPS_VALUE_LENGTH 0x1")]
     public const int PROVIDER_KEEPS_VALUE_LENGTH = 0x1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WIN31_CLASS"]/*' />
     [NativeTypeName("#define WIN31_CLASS NULL")]
     public const int WIN31_CLASS = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegConnectRegistry"]/*' />
     [NativeTypeName("#define RegConnectRegistry RegConnectRegistryW")]
     public static delegate*<char*, HKEY, HKEY*, int> RegConnectRegistry => &RegConnectRegistryW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegConnectRegistryEx"]/*' />
     [NativeTypeName("#define RegConnectRegistryEx RegConnectRegistryExW")]
     public static delegate*<char*, HKEY, uint, HKEY*, int> RegConnectRegistryEx => &RegConnectRegistryExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegCreateKey"]/*' />
     [NativeTypeName("#define RegCreateKey RegCreateKeyW")]
     public static delegate*<HKEY, char*, HKEY*, int> RegCreateKey => &RegCreateKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegCreateKeyEx"]/*' />
     [NativeTypeName("#define RegCreateKeyEx RegCreateKeyExW")]
     public static delegate*<HKEY, char*, uint, char*, uint, uint, SECURITY_ATTRIBUTES*, HKEY*, uint*, int> RegCreateKeyEx => &RegCreateKeyExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegCreateKeyTransacted"]/*' />
     [NativeTypeName("#define RegCreateKeyTransacted RegCreateKeyTransactedW")]
     public static delegate*<HKEY, char*, uint, char*, uint, uint, SECURITY_ATTRIBUTES*, HKEY*, uint*, HANDLE, void*, int> RegCreateKeyTransacted => &RegCreateKeyTransactedW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegDeleteKey"]/*' />
     [NativeTypeName("#define RegDeleteKey RegDeleteKeyW")]
     public static delegate*<HKEY, char*, int> RegDeleteKey => &RegDeleteKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegDeleteKeyEx"]/*' />
     [NativeTypeName("#define RegDeleteKeyEx RegDeleteKeyExW")]
     public static delegate*<HKEY, char*, uint, uint, int> RegDeleteKeyEx => &RegDeleteKeyExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegDeleteKeyTransacted"]/*' />
     [NativeTypeName("#define RegDeleteKeyTransacted RegDeleteKeyTransactedW")]
     public static delegate*<HKEY, char*, uint, uint, HANDLE, void*, int> RegDeleteKeyTransacted => &RegDeleteKeyTransactedW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegDeleteValue"]/*' />
     [NativeTypeName("#define RegDeleteValue RegDeleteValueW")]
     public static delegate*<HKEY, char*, int> RegDeleteValue => &RegDeleteValueW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegEnumKey"]/*' />
     [NativeTypeName("#define RegEnumKey RegEnumKeyW")]
     public static delegate*<HKEY, uint, char*, uint, int> RegEnumKey => &RegEnumKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegEnumKeyEx"]/*' />
     [NativeTypeName("#define RegEnumKeyEx RegEnumKeyExW")]
     public static delegate*<HKEY, uint, char*, uint*, uint*, char*, uint*, FILETIME*, int> RegEnumKeyEx => &RegEnumKeyExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegEnumValue"]/*' />
     [NativeTypeName("#define RegEnumValue RegEnumValueW")]
     public static delegate*<HKEY, uint, char*, uint*, uint*, uint*, byte*, uint*, int> RegEnumValue => &RegEnumValueW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegLoadKey"]/*' />
     [NativeTypeName("#define RegLoadKey RegLoadKeyW")]
     public static delegate*<HKEY, char*, char*, int> RegLoadKey => &RegLoadKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegOpenKey"]/*' />
     [NativeTypeName("#define RegOpenKey RegOpenKeyW")]
     public static delegate*<HKEY, char*, HKEY*, int> RegOpenKey => &RegOpenKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegOpenKeyEx"]/*' />
     [NativeTypeName("#define RegOpenKeyEx RegOpenKeyExW")]
     public static delegate*<HKEY, char*, uint, uint, HKEY*, int> RegOpenKeyEx => &RegOpenKeyExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegOpenKeyTransacted"]/*' />
     [NativeTypeName("#define RegOpenKeyTransacted RegOpenKeyTransactedW")]
     public static delegate*<HKEY, char*, uint, uint, HKEY*, HANDLE, void*, int> RegOpenKeyTransacted => &RegOpenKeyTransactedW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegQueryInfoKey"]/*' />
     [NativeTypeName("#define RegQueryInfoKey RegQueryInfoKeyW")]
     public static delegate*<HKEY, char*, uint*, uint*, uint*, uint*, uint*, uint*, uint*, uint*, uint*, FILETIME*, int> RegQueryInfoKey => &RegQueryInfoKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegQueryValue"]/*' />
     [NativeTypeName("#define RegQueryValue RegQueryValueW")]
     public static delegate*<HKEY, char*, char*, int*, int> RegQueryValue => &RegQueryValueW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegQueryMultipleValues"]/*' />
     [NativeTypeName("#define RegQueryMultipleValues RegQueryMultipleValuesW")]
     public static delegate*<HKEY, VALENTW*, uint, char*, uint*, int> RegQueryMultipleValues => &RegQueryMultipleValuesW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegQueryValueEx"]/*' />
     [NativeTypeName("#define RegQueryValueEx RegQueryValueExW")]
     public static delegate*<HKEY, char*, uint*, uint*, byte*, uint*, int> RegQueryValueEx => &RegQueryValueExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegReplaceKey"]/*' />
     [NativeTypeName("#define RegReplaceKey RegReplaceKeyW")]
     public static delegate*<HKEY, char*, char*, char*, int> RegReplaceKey => &RegReplaceKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegRestoreKey"]/*' />
     [NativeTypeName("#define RegRestoreKey RegRestoreKeyW")]
     public static delegate*<HKEY, char*, uint, int> RegRestoreKey => &RegRestoreKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegSaveKey"]/*' />
     [NativeTypeName("#define RegSaveKey RegSaveKeyW")]
     public static delegate*<HKEY, char*, SECURITY_ATTRIBUTES*, int> RegSaveKey => &RegSaveKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegSetValue"]/*' />
     [NativeTypeName("#define RegSetValue RegSetValueW")]
     public static delegate*<HKEY, char*, uint, char*, uint, int> RegSetValue => &RegSetValueW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegSetValueEx"]/*' />
     [NativeTypeName("#define RegSetValueEx RegSetValueExW")]
     public static delegate*<HKEY, char*, uint, uint, byte*, uint, int> RegSetValueEx => &RegSetValueExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegUnLoadKey"]/*' />
     [NativeTypeName("#define RegUnLoadKey RegUnLoadKeyW")]
     public static delegate*<HKEY, char*, int> RegUnLoadKey => &RegUnLoadKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegDeleteKeyValue"]/*' />
     [NativeTypeName("#define RegDeleteKeyValue RegDeleteKeyValueW")]
     public static delegate*<HKEY, char*, char*, int> RegDeleteKeyValue => &RegDeleteKeyValueW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegSetKeyValue"]/*' />
     [NativeTypeName("#define RegSetKeyValue RegSetKeyValueW")]
     public static delegate*<HKEY, char*, char*, uint, void*, uint, int> RegSetKeyValue => &RegSetKeyValueW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegDeleteTree"]/*' />
     [NativeTypeName("#define RegDeleteTree RegDeleteTreeW")]
     public static delegate*<HKEY, char*, int> RegDeleteTree => &RegDeleteTreeW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegGetValue"]/*' />
     [NativeTypeName("#define RegGetValue RegGetValueW")]
     public static delegate*<HKEY, char*, char*, uint, uint*, void*, uint*, int> RegGetValue => &RegGetValueW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegCopyTree"]/*' />
     [NativeTypeName("#define RegCopyTree RegCopyTreeW")]
     public static delegate*<HKEY, char*, HKEY, int> RegCopyTree => &RegCopyTreeW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegLoadMUIString"]/*' />
     [NativeTypeName("#define RegLoadMUIString RegLoadMUIStringW")]
     public static delegate*<HKEY, char*, char*, uint, uint*, uint, char*, int> RegLoadMUIString => &RegLoadMUIStringW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegLoadAppKey"]/*' />
     [NativeTypeName("#define RegLoadAppKey RegLoadAppKeyW")]
     public static delegate*<char*, HKEY*, uint, uint, uint, int> RegLoadAppKey => &RegLoadAppKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InitiateSystemShutdown"]/*' />
     [NativeTypeName("#define InitiateSystemShutdown InitiateSystemShutdownW")]
     public static delegate*<char*, char*, uint, BOOL, BOOL, BOOL> InitiateSystemShutdown => &InitiateSystemShutdownW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AbortSystemShutdown"]/*' />
     [NativeTypeName("#define AbortSystemShutdown AbortSystemShutdownW")]
     public static delegate*<char*, BOOL> AbortSystemShutdown => &AbortSystemShutdownW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REASON_SWINSTALL"]/*' />
     [NativeTypeName("#define REASON_SWINSTALL (SHTDN_REASON_MAJOR_SOFTWARE|SHTDN_REASON_MINOR_INSTALLATION)")]
     public const int REASON_SWINSTALL = (0x00030000 | 0x00000002);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REASON_HWINSTALL"]/*' />
     [NativeTypeName("#define REASON_HWINSTALL (SHTDN_REASON_MAJOR_HARDWARE|SHTDN_REASON_MINOR_INSTALLATION)")]
     public const int REASON_HWINSTALL = (0x00010000 | 0x00000002);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REASON_SERVICEHANG"]/*' />
     [NativeTypeName("#define REASON_SERVICEHANG (SHTDN_REASON_MAJOR_SOFTWARE|SHTDN_REASON_MINOR_HUNG)")]
     public const int REASON_SERVICEHANG = (0x00030000 | 0x00000005);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REASON_UNSTABLE"]/*' />
     [NativeTypeName("#define REASON_UNSTABLE (SHTDN_REASON_MAJOR_SYSTEM|SHTDN_REASON_MINOR_UNSTABLE)")]
     public const int REASON_UNSTABLE = (0x00050000 | 0x00000006);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REASON_SWHWRECONF"]/*' />
     [NativeTypeName("#define REASON_SWHWRECONF (SHTDN_REASON_MAJOR_SOFTWARE|SHTDN_REASON_MINOR_RECONFIG)")]
     public const int REASON_SWHWRECONF = (0x00030000 | 0x00000004);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REASON_OTHER"]/*' />
     [NativeTypeName("#define REASON_OTHER (SHTDN_REASON_MAJOR_OTHER|SHTDN_REASON_MINOR_OTHER)")]
     public const int REASON_OTHER = (0x00000000 | 0x00000000);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REASON_UNKNOWN"]/*' />
     [NativeTypeName("#define REASON_UNKNOWN SHTDN_REASON_UNKNOWN")]
     public const int REASON_UNKNOWN = 0x000000ff;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REASON_LEGACY_API"]/*' />
     [NativeTypeName("#define REASON_LEGACY_API SHTDN_REASON_LEGACY_API")]
     public const uint REASON_LEGACY_API = (0x00070000 | 0x80000000);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REASON_PLANNED_FLAG"]/*' />
     [NativeTypeName("#define REASON_PLANNED_FLAG SHTDN_REASON_FLAG_PLANNED")]
     public const uint REASON_PLANNED_FLAG = 0x80000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InitiateSystemShutdownEx"]/*' />
     [NativeTypeName("#define InitiateSystemShutdownEx InitiateSystemShutdownExW")]
     public static delegate*<char*, char*, uint, BOOL, BOOL, uint, BOOL> InitiateSystemShutdownEx => &InitiateSystemShutdownExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InitiateShutdown"]/*' />
     [NativeTypeName("#define InitiateShutdown InitiateShutdownW")]
     public static delegate*<char*, char*, uint, uint, uint, uint> InitiateShutdown => &InitiateShutdownW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegSaveKeyEx"]/*' />
     [NativeTypeName("#define RegSaveKeyEx RegSaveKeyExW")]
     public static delegate*<HKEY, char*, SECURITY_ATTRIBUTES*, uint, int> RegSaveKeyEx => &RegSaveKeyExW;
 }

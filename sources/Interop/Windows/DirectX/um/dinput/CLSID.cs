@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CLSID
 {
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DirectInput"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DirectInput
     {
@@ -38,6 +39,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DirectInputDevice"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DirectInputDevice
     {
@@ -63,6 +65,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DirectInput8"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DirectInput8
     {
@@ -88,6 +91,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DirectInputDevice8"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DirectInputDevice8
     {

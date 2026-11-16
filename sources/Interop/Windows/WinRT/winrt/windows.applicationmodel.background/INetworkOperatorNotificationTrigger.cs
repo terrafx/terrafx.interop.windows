@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct INetworkOperatorNotificationTrigger : INetworkOperatorNotificationTrigger.Interface, INativeGuid
 {
+    /// <include file='INetworkOperatorNotificationTrigger.xml' path='doc/member[@name="INetworkOperatorNotificationTrigger.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_INetworkOperatorNotificationTrigger);
 
     public void** lpVtbl;

@@ -19,8 +19,16 @@ public partial struct PROCESSOR_RELATIONSHIP
     /// <include file='PROCESSOR_RELATIONSHIP.xml' path='doc/member[@name="PROCESSOR_RELATIONSHIP.EfficiencyClass"]/*' />
     public byte EfficiencyClass;
 
+    /// <include file='PROCESSOR_RELATIONSHIP.xml' path='doc/member[@name="PROCESSOR_RELATIONSHIP.RelativePerformance"]/*' />
+    [NativeTypeName("WORD")]
+    public ushort RelativePerformance;
+
+    /// <include file='PROCESSOR_RELATIONSHIP.xml' path='doc/member[@name="PROCESSOR_RELATIONSHIP.RelativeEfficiency"]/*' />
+    [NativeTypeName("WORD")]
+    public ushort RelativeEfficiency;
+
     /// <include file='PROCESSOR_RELATIONSHIP.xml' path='doc/member[@name="PROCESSOR_RELATIONSHIP.Reserved"]/*' />
-    [NativeTypeName("BYTE[20]")]
+    [NativeTypeName("BYTE[16]")]
     public _Reserved_e__FixedBuffer Reserved;
 
     /// <include file='PROCESSOR_RELATIONSHIP.xml' path='doc/member[@name="PROCESSOR_RELATIONSHIP.GroupCount"]/*' />
@@ -32,7 +40,7 @@ public partial struct PROCESSOR_RELATIONSHIP
     public _GroupMask_e__FixedBuffer GroupMask;
 
     /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
-    [InlineArray(20)]
+    [InlineArray(16)]
     public partial struct _Reserved_e__FixedBuffer
     {
         public byte e0;

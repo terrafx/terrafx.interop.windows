@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ILowLagPhotoControl : ILowLagPhotoControl.Interface, INativeGuid
 {
+    /// <include file='ILowLagPhotoControl.xml' path='doc/member[@name="ILowLagPhotoControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ILowLagPhotoControl);
 
     public void** lpVtbl;

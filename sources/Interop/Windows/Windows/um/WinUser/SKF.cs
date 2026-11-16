@@ -7,78 +7,103 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SKF
 {
+    /// <include file='SKF.xml' path='doc/member[@name="SKF.SKF_STICKYKEYSON"]/*' />
     [NativeTypeName("#define SKF_STICKYKEYSON 0x00000001")]
     public const int SKF_STICKYKEYSON = 0x00000001;
 
+    /// <include file='SKF.xml' path='doc/member[@name="SKF.SKF_AVAILABLE"]/*' />
     [NativeTypeName("#define SKF_AVAILABLE 0x00000002")]
     public const int SKF_AVAILABLE = 0x00000002;
 
+    /// <include file='SKF.xml' path='doc/member[@name="SKF.SKF_HOTKEYACTIVE"]/*' />
     [NativeTypeName("#define SKF_HOTKEYACTIVE 0x00000004")]
     public const int SKF_HOTKEYACTIVE = 0x00000004;
 
+    /// <include file='SKF.xml' path='doc/member[@name="SKF.SKF_CONFIRMHOTKEY"]/*' />
     [NativeTypeName("#define SKF_CONFIRMHOTKEY 0x00000008")]
     public const int SKF_CONFIRMHOTKEY = 0x00000008;
 
+    /// <include file='SKF.xml' path='doc/member[@name="SKF.SKF_HOTKEYSOUND"]/*' />
     [NativeTypeName("#define SKF_HOTKEYSOUND 0x00000010")]
     public const int SKF_HOTKEYSOUND = 0x00000010;
 
+    /// <include file='SKF.xml' path='doc/member[@name="SKF.SKF_INDICATOR"]/*' />
     [NativeTypeName("#define SKF_INDICATOR 0x00000020")]
     public const int SKF_INDICATOR = 0x00000020;
 
+    /// <include file='SKF.xml' path='doc/member[@name="SKF.SKF_AUDIBLEFEEDBACK"]/*' />
     [NativeTypeName("#define SKF_AUDIBLEFEEDBACK 0x00000040")]
     public const int SKF_AUDIBLEFEEDBACK = 0x00000040;
 
+    /// <include file='SKF.xml' path='doc/member[@name="SKF.SKF_TRISTATE"]/*' />
     [NativeTypeName("#define SKF_TRISTATE 0x00000080")]
     public const int SKF_TRISTATE = 0x00000080;
 
+    /// <include file='SKF.xml' path='doc/member[@name="SKF.SKF_TWOKEYSOFF"]/*' />
     [NativeTypeName("#define SKF_TWOKEYSOFF 0x00000100")]
     public const int SKF_TWOKEYSOFF = 0x00000100;
 
+    /// <include file='SKF.xml' path='doc/member[@name="SKF.SKF_LALTLATCHED"]/*' />
     [NativeTypeName("#define SKF_LALTLATCHED 0x10000000")]
     public const int SKF_LALTLATCHED = 0x10000000;
 
+    /// <include file='SKF.xml' path='doc/member[@name="SKF.SKF_LCTLLATCHED"]/*' />
     [NativeTypeName("#define SKF_LCTLLATCHED 0x04000000")]
     public const int SKF_LCTLLATCHED = 0x04000000;
 
+    /// <include file='SKF.xml' path='doc/member[@name="SKF.SKF_LSHIFTLATCHED"]/*' />
     [NativeTypeName("#define SKF_LSHIFTLATCHED 0x01000000")]
     public const int SKF_LSHIFTLATCHED = 0x01000000;
 
+    /// <include file='SKF.xml' path='doc/member[@name="SKF.SKF_RALTLATCHED"]/*' />
     [NativeTypeName("#define SKF_RALTLATCHED 0x20000000")]
     public const int SKF_RALTLATCHED = 0x20000000;
 
+    /// <include file='SKF.xml' path='doc/member[@name="SKF.SKF_RCTLLATCHED"]/*' />
     [NativeTypeName("#define SKF_RCTLLATCHED 0x08000000")]
     public const int SKF_RCTLLATCHED = 0x08000000;
 
+    /// <include file='SKF.xml' path='doc/member[@name="SKF.SKF_RSHIFTLATCHED"]/*' />
     [NativeTypeName("#define SKF_RSHIFTLATCHED 0x02000000")]
     public const int SKF_RSHIFTLATCHED = 0x02000000;
 
+    /// <include file='SKF.xml' path='doc/member[@name="SKF.SKF_LWINLATCHED"]/*' />
     [NativeTypeName("#define SKF_LWINLATCHED 0x40000000")]
     public const int SKF_LWINLATCHED = 0x40000000;
 
+    /// <include file='SKF.xml' path='doc/member[@name="SKF.SKF_RWINLATCHED"]/*' />
     [NativeTypeName("#define SKF_RWINLATCHED 0x80000000")]
     public const uint SKF_RWINLATCHED = 0x80000000;
 
+    /// <include file='SKF.xml' path='doc/member[@name="SKF.SKF_LALTLOCKED"]/*' />
     [NativeTypeName("#define SKF_LALTLOCKED 0x00100000")]
     public const int SKF_LALTLOCKED = 0x00100000;
 
+    /// <include file='SKF.xml' path='doc/member[@name="SKF.SKF_LCTLLOCKED"]/*' />
     [NativeTypeName("#define SKF_LCTLLOCKED 0x00040000")]
     public const int SKF_LCTLLOCKED = 0x00040000;
 
+    /// <include file='SKF.xml' path='doc/member[@name="SKF.SKF_LSHIFTLOCKED"]/*' />
     [NativeTypeName("#define SKF_LSHIFTLOCKED 0x00010000")]
     public const int SKF_LSHIFTLOCKED = 0x00010000;
 
+    /// <include file='SKF.xml' path='doc/member[@name="SKF.SKF_RALTLOCKED"]/*' />
     [NativeTypeName("#define SKF_RALTLOCKED 0x00200000")]
     public const int SKF_RALTLOCKED = 0x00200000;
 
+    /// <include file='SKF.xml' path='doc/member[@name="SKF.SKF_RCTLLOCKED"]/*' />
     [NativeTypeName("#define SKF_RCTLLOCKED 0x00080000")]
     public const int SKF_RCTLLOCKED = 0x00080000;
 
+    /// <include file='SKF.xml' path='doc/member[@name="SKF.SKF_RSHIFTLOCKED"]/*' />
     [NativeTypeName("#define SKF_RSHIFTLOCKED 0x00020000")]
     public const int SKF_RSHIFTLOCKED = 0x00020000;
 
+    /// <include file='SKF.xml' path='doc/member[@name="SKF.SKF_LWINLOCKED"]/*' />
     [NativeTypeName("#define SKF_LWINLOCKED 0x00400000")]
     public const int SKF_LWINLOCKED = 0x00400000;
 
+    /// <include file='SKF.xml' path='doc/member[@name="SKF.SKF_RWINLOCKED"]/*' />
     [NativeTypeName("#define SKF_RWINLOCKED 0x00800000")]
     public const int SKF_RWINLOCKED = 0x00800000;
 }

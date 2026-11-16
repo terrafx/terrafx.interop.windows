@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpEventProvider")]
 public unsafe partial struct IGlobalStopListeningProvider : IGlobalStopListeningProvider.Interface, INativeGuid
 {
+    /// <include file='IGlobalStopListeningProvider.xml' path='doc/member[@name="IGlobalStopListeningProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGlobalStopListeningProvider);
 
     public void** lpVtbl;

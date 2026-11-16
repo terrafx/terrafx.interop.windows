@@ -513,237 +513,315 @@ public static unsafe partial class Windows
     [return: NativeTypeName("MMRESULT")]
     public static extern uint mixerSetControlDetails(HMIXEROBJ hmxobj, [NativeTypeName("LPMIXERCONTROLDETAILS")] MIXERCONTROLDETAILS* pmxcd, [NativeTypeName("DWORD")] uint fdwDetails);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WAVERR_BADFORMAT"]/*' />
     [NativeTypeName("#define WAVERR_BADFORMAT (WAVERR_BASE + 0)")]
     public const int WAVERR_BADFORMAT = (32 + 0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WAVERR_STILLPLAYING"]/*' />
     [NativeTypeName("#define WAVERR_STILLPLAYING (WAVERR_BASE + 1)")]
     public const int WAVERR_STILLPLAYING = (32 + 1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WAVERR_UNPREPARED"]/*' />
     [NativeTypeName("#define WAVERR_UNPREPARED (WAVERR_BASE + 2)")]
     public const int WAVERR_UNPREPARED = (32 + 2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WAVERR_SYNC"]/*' />
     [NativeTypeName("#define WAVERR_SYNC (WAVERR_BASE + 3)")]
     public const int WAVERR_SYNC = (32 + 3);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WAVERR_LASTERROR"]/*' />
     [NativeTypeName("#define WAVERR_LASTERROR (WAVERR_BASE + 3)")]
     public const int WAVERR_LASTERROR = (32 + 3);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WOM_OPEN"]/*' />
     [NativeTypeName("#define WOM_OPEN MM_WOM_OPEN")]
     public const int WOM_OPEN = 0x3BB;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WOM_CLOSE"]/*' />
     [NativeTypeName("#define WOM_CLOSE MM_WOM_CLOSE")]
     public const int WOM_CLOSE = 0x3BC;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WOM_DONE"]/*' />
     [NativeTypeName("#define WOM_DONE MM_WOM_DONE")]
     public const int WOM_DONE = 0x3BD;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WIM_OPEN"]/*' />
     [NativeTypeName("#define WIM_OPEN MM_WIM_OPEN")]
     public const int WIM_OPEN = 0x3BE;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WIM_CLOSE"]/*' />
     [NativeTypeName("#define WIM_CLOSE MM_WIM_CLOSE")]
     public const int WIM_CLOSE = 0x3BF;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WIM_DATA"]/*' />
     [NativeTypeName("#define WIM_DATA MM_WIM_DATA")]
     public const int WIM_DATA = 0x3C0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WHDR_DONE"]/*' />
     [NativeTypeName("#define WHDR_DONE 0x00000001")]
     public const int WHDR_DONE = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WHDR_PREPARED"]/*' />
     [NativeTypeName("#define WHDR_PREPARED 0x00000002")]
     public const int WHDR_PREPARED = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WHDR_BEGINLOOP"]/*' />
     [NativeTypeName("#define WHDR_BEGINLOOP 0x00000004")]
     public const int WHDR_BEGINLOOP = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WHDR_ENDLOOP"]/*' />
     [NativeTypeName("#define WHDR_ENDLOOP 0x00000008")]
     public const int WHDR_ENDLOOP = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WHDR_INQUEUE"]/*' />
     [NativeTypeName("#define WHDR_INQUEUE 0x00000010")]
     public const int WHDR_INQUEUE = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WAVECAPS_PITCH"]/*' />
     [NativeTypeName("#define WAVECAPS_PITCH 0x0001")]
     public const int WAVECAPS_PITCH = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WAVECAPS_PLAYBACKRATE"]/*' />
     [NativeTypeName("#define WAVECAPS_PLAYBACKRATE 0x0002")]
     public const int WAVECAPS_PLAYBACKRATE = 0x0002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WAVECAPS_VOLUME"]/*' />
     [NativeTypeName("#define WAVECAPS_VOLUME 0x0004")]
     public const int WAVECAPS_VOLUME = 0x0004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WAVECAPS_LRVOLUME"]/*' />
     [NativeTypeName("#define WAVECAPS_LRVOLUME 0x0008")]
     public const int WAVECAPS_LRVOLUME = 0x0008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WAVECAPS_SYNC"]/*' />
     [NativeTypeName("#define WAVECAPS_SYNC 0x0010")]
     public const int WAVECAPS_SYNC = 0x0010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WAVECAPS_SAMPLEACCURATE"]/*' />
     [NativeTypeName("#define WAVECAPS_SAMPLEACCURATE 0x0020")]
     public const int WAVECAPS_SAMPLEACCURATE = 0x0020;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.waveOutGetDevCaps"]/*' />
     [NativeTypeName("#define waveOutGetDevCaps waveOutGetDevCapsW")]
     public static delegate*<nuint, WAVEOUTCAPSW*, uint, uint> waveOutGetDevCaps => &waveOutGetDevCapsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.waveOutGetErrorText"]/*' />
     [NativeTypeName("#define waveOutGetErrorText waveOutGetErrorTextW")]
     public static delegate*<uint, char*, uint, uint> waveOutGetErrorText => &waveOutGetErrorTextW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.waveInGetDevCaps"]/*' />
     [NativeTypeName("#define waveInGetDevCaps waveInGetDevCapsW")]
     public static delegate*<nuint, WAVEINCAPSW*, uint, uint> waveInGetDevCaps => &waveInGetDevCapsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.waveInGetErrorText"]/*' />
     [NativeTypeName("#define waveInGetErrorText waveInGetErrorTextW")]
     public static delegate*<uint, char*, uint, uint> waveInGetErrorText => &waveInGetErrorTextW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIDIPATCHSIZE"]/*' />
     [NativeTypeName("#define MIDIPATCHSIZE 128")]
     public const int MIDIPATCHSIZE = 128;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MOM_OPEN"]/*' />
     [NativeTypeName("#define MOM_OPEN MM_MOM_OPEN")]
     public const int MOM_OPEN = 0x3C7;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MOM_CLOSE"]/*' />
     [NativeTypeName("#define MOM_CLOSE MM_MOM_CLOSE")]
     public const int MOM_CLOSE = 0x3C8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MOM_DONE"]/*' />
     [NativeTypeName("#define MOM_DONE MM_MOM_DONE")]
     public const int MOM_DONE = 0x3C9;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MOM_POSITIONCB"]/*' />
     [NativeTypeName("#define MOM_POSITIONCB MM_MOM_POSITIONCB")]
     public const int MOM_POSITIONCB = 0x3CA;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIDIMAPPER"]/*' />
     [NativeTypeName("#define MIDIMAPPER ((UINT)-1)")]
     public const uint MIDIMAPPER = unchecked((uint)(-1));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIDI_MAPPER"]/*' />
     [NativeTypeName("#define MIDI_MAPPER ((UINT)-1)")]
     public const uint MIDI_MAPPER = unchecked((uint)(-1));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIDI_IO_STATUS"]/*' />
     [NativeTypeName("#define MIDI_IO_STATUS 0x00000020L")]
     public const int MIDI_IO_STATUS = 0x00000020;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIDI_CACHE_ALL"]/*' />
     [NativeTypeName("#define MIDI_CACHE_ALL 1")]
     public const int MIDI_CACHE_ALL = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIDI_CACHE_BESTFIT"]/*' />
     [NativeTypeName("#define MIDI_CACHE_BESTFIT 2")]
     public const int MIDI_CACHE_BESTFIT = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIDI_CACHE_QUERY"]/*' />
     [NativeTypeName("#define MIDI_CACHE_QUERY 3")]
     public const int MIDI_CACHE_QUERY = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIDI_UNCACHE"]/*' />
     [NativeTypeName("#define MIDI_UNCACHE 4")]
     public const int MIDI_UNCACHE = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIDICAPS_VOLUME"]/*' />
     [NativeTypeName("#define MIDICAPS_VOLUME 0x0001")]
     public const int MIDICAPS_VOLUME = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIDICAPS_LRVOLUME"]/*' />
     [NativeTypeName("#define MIDICAPS_LRVOLUME 0x0002")]
     public const int MIDICAPS_LRVOLUME = 0x0002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIDICAPS_CACHE"]/*' />
     [NativeTypeName("#define MIDICAPS_CACHE 0x0004")]
     public const int MIDICAPS_CACHE = 0x0004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIDICAPS_STREAM"]/*' />
     [NativeTypeName("#define MIDICAPS_STREAM 0x0008")]
     public const int MIDICAPS_STREAM = 0x0008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MHDR_DONE"]/*' />
     [NativeTypeName("#define MHDR_DONE 0x00000001")]
     public const int MHDR_DONE = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MHDR_PREPARED"]/*' />
     [NativeTypeName("#define MHDR_PREPARED 0x00000002")]
     public const int MHDR_PREPARED = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MHDR_INQUEUE"]/*' />
     [NativeTypeName("#define MHDR_INQUEUE 0x00000004")]
     public const int MHDR_INQUEUE = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MHDR_ISSTRM"]/*' />
     [NativeTypeName("#define MHDR_ISSTRM 0x00000008")]
     public const int MHDR_ISSTRM = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MEVT_F_SHORT"]/*' />
     [NativeTypeName("#define MEVT_F_SHORT 0x00000000L")]
     public const int MEVT_F_SHORT = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MEVT_F_LONG"]/*' />
     [NativeTypeName("#define MEVT_F_LONG 0x80000000L")]
     public const uint MEVT_F_LONG = 0x80000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MEVT_F_CALLBACK"]/*' />
     [NativeTypeName("#define MEVT_F_CALLBACK 0x40000000L")]
     public const int MEVT_F_CALLBACK = 0x40000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MEVT_SHORTMSG"]/*' />
     [NativeTypeName("#define MEVT_SHORTMSG ((BYTE)0x00)")]
     public const byte MEVT_SHORTMSG = ((byte)(0x00));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MEVT_TEMPO"]/*' />
     [NativeTypeName("#define MEVT_TEMPO ((BYTE)0x01)")]
     public const byte MEVT_TEMPO = ((byte)(0x01));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MEVT_NOP"]/*' />
     [NativeTypeName("#define MEVT_NOP ((BYTE)0x02)")]
     public const byte MEVT_NOP = ((byte)(0x02));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MEVT_LONGMSG"]/*' />
     [NativeTypeName("#define MEVT_LONGMSG ((BYTE)0x80)")]
     public const byte MEVT_LONGMSG = ((byte)(0x80));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MEVT_COMMENT"]/*' />
     [NativeTypeName("#define MEVT_COMMENT ((BYTE)0x82)")]
     public const byte MEVT_COMMENT = ((byte)(0x82));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MEVT_VERSION"]/*' />
     [NativeTypeName("#define MEVT_VERSION ((BYTE)0x84)")]
     public const byte MEVT_VERSION = ((byte)(0x84));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIDISTRM_ERROR"]/*' />
     [NativeTypeName("#define MIDISTRM_ERROR (-2)")]
     public const int MIDISTRM_ERROR = (-2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIDIPROP_SET"]/*' />
     [NativeTypeName("#define MIDIPROP_SET 0x80000000L")]
     public const uint MIDIPROP_SET = 0x80000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIDIPROP_GET"]/*' />
     [NativeTypeName("#define MIDIPROP_GET 0x40000000L")]
     public const int MIDIPROP_GET = 0x40000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIDIPROP_TIMEDIV"]/*' />
     [NativeTypeName("#define MIDIPROP_TIMEDIV 0x00000001L")]
     public const int MIDIPROP_TIMEDIV = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIDIPROP_TEMPO"]/*' />
     [NativeTypeName("#define MIDIPROP_TEMPO 0x00000002L")]
     public const int MIDIPROP_TEMPO = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.midiOutGetDevCaps"]/*' />
     [NativeTypeName("#define midiOutGetDevCaps midiOutGetDevCapsW")]
     public static delegate*<nuint, MIDIOUTCAPSW*, uint, uint> midiOutGetDevCaps => &midiOutGetDevCapsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.midiOutGetErrorText"]/*' />
     [NativeTypeName("#define midiOutGetErrorText midiOutGetErrorTextW")]
     public static delegate*<uint, char*, uint, uint> midiOutGetErrorText => &midiOutGetErrorTextW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.midiInGetDevCaps"]/*' />
     [NativeTypeName("#define midiInGetDevCaps midiInGetDevCapsW")]
     public static delegate*<nuint, MIDIINCAPSW*, uint, uint> midiInGetDevCaps => &midiInGetDevCapsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.midiInGetErrorText"]/*' />
     [NativeTypeName("#define midiInGetErrorText midiInGetErrorTextW")]
     public static delegate*<uint, char*, uint, uint> midiInGetErrorText => &midiInGetErrorTextW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AUX_MAPPER"]/*' />
     [NativeTypeName("#define AUX_MAPPER ((UINT)-1)")]
     public const uint AUX_MAPPER = unchecked((uint)(-1));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AUXCAPS_CDAUDIO"]/*' />
     [NativeTypeName("#define AUXCAPS_CDAUDIO 1")]
     public const int AUXCAPS_CDAUDIO = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AUXCAPS_AUXIN"]/*' />
     [NativeTypeName("#define AUXCAPS_AUXIN 2")]
     public const int AUXCAPS_AUXIN = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AUXCAPS_VOLUME"]/*' />
     [NativeTypeName("#define AUXCAPS_VOLUME 0x0001")]
     public const int AUXCAPS_VOLUME = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AUXCAPS_LRVOLUME"]/*' />
     [NativeTypeName("#define AUXCAPS_LRVOLUME 0x0002")]
     public const int AUXCAPS_LRVOLUME = 0x0002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.auxGetDevCaps"]/*' />
     [NativeTypeName("#define auxGetDevCaps auxGetDevCapsW")]
     public static delegate*<nuint, AUXCAPSW*, uint, uint> auxGetDevCaps => &auxGetDevCapsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIXERR_INVALLINE"]/*' />
     [NativeTypeName("#define MIXERR_INVALLINE (MIXERR_BASE + 0)")]
     public const int MIXERR_INVALLINE = (1024 + 0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIXERR_INVALCONTROL"]/*' />
     [NativeTypeName("#define MIXERR_INVALCONTROL (MIXERR_BASE + 1)")]
     public const int MIXERR_INVALCONTROL = (1024 + 1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIXERR_INVALVALUE"]/*' />
     [NativeTypeName("#define MIXERR_INVALVALUE (MIXERR_BASE + 2)")]
     public const int MIXERR_INVALVALUE = (1024 + 2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIXERR_LASTERROR"]/*' />
     [NativeTypeName("#define MIXERR_LASTERROR (MIXERR_BASE + 2)")]
     public const int MIXERR_LASTERROR = (1024 + 2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.mixerGetDevCaps"]/*' />
     [NativeTypeName("#define mixerGetDevCaps mixerGetDevCapsW")]
     public static delegate*<nuint, MIXERCAPSW*, uint, uint> mixerGetDevCaps => &mixerGetDevCapsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.mixerGetLineInfo"]/*' />
     [NativeTypeName("#define mixerGetLineInfo mixerGetLineInfoW")]
     public static delegate*<HMIXEROBJ, MIXERLINEW*, uint, uint> mixerGetLineInfo => &mixerGetLineInfoW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.mixerGetLineControls"]/*' />
     [NativeTypeName("#define mixerGetLineControls mixerGetLineControlsW")]
     public static delegate*<HMIXEROBJ, MIXERLINECONTROLSW*, uint, uint> mixerGetLineControls => &mixerGetLineControlsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.mixerGetControlDetails"]/*' />
     [NativeTypeName("#define mixerGetControlDetails mixerGetControlDetailsW")]
     public static delegate*<HMIXEROBJ, MIXERCONTROLDETAILS*, uint, uint> mixerGetControlDetails => &mixerGetControlDetailsW;
 }

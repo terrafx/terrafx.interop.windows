@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFMediaKeySystemAccess : IMFMediaKeySystemAccess.Interface, INativeGuid
 {
+    /// <include file='IMFMediaKeySystemAccess.xml' path='doc/member[@name="IMFMediaKeySystemAccess.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFMediaKeySystemAccess);
 
     public void** lpVtbl;

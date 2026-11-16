@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("597D4FB0-47FD-4AFF-89B9-C6CFAE8CF08E")]
 public unsafe partial struct ManipulationProcessor : INativeGuid
 {
+    /// <include file='ManipulationProcessor.xml' path='doc/member[@name="ManipulationProcessor.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_ManipulationProcessor);
 }

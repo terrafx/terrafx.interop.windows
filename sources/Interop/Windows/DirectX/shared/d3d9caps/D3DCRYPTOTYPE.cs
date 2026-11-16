@@ -12,6 +12,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3DCRYPTOTYPE
 {
+    /// <include file='D3DCRYPTOTYPE.xml' path='doc/member[@name="D3DCRYPTOTYPE.D3DCRYPTOTYPE_AES128_CTR"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3DCRYPTOTYPE_AES128_CTR
     {
@@ -37,6 +38,7 @@ public static partial class D3DCRYPTOTYPE
         }
     }
 
+    /// <include file='D3DCRYPTOTYPE.xml' path='doc/member[@name="D3DCRYPTOTYPE.D3DCRYPTOTYPE_PROPRIETARY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3DCRYPTOTYPE_PROPRIETARY
     {

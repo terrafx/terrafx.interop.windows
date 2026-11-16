@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows10.0.19043.0")]
 public unsafe partial struct IDWriteFactory7 : IDWriteFactory7.Interface, INativeGuid
 {
+    /// <include file='IDWriteFactory7.xml' path='doc/member[@name="IDWriteFactory7.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDWriteFactory7);
 
     public void** lpVtbl;

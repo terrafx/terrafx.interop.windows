@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ICodecAPI : ICodecAPI.Interface, INativeGuid
 {
+    /// <include file='ICodecAPI.xml' path='doc/member[@name="ICodecAPI.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICodecAPI);
 
     public void** lpVtbl;

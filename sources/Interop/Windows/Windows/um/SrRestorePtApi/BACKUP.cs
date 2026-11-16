@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class BACKUP
 {
+    /// <include file='BACKUP.xml' path='doc/member[@name="BACKUP.BACKUP_RECOVERY"]/*' />
     [NativeTypeName("#define BACKUP_RECOVERY 14")]
     public const int BACKUP_RECOVERY = 14;
 }

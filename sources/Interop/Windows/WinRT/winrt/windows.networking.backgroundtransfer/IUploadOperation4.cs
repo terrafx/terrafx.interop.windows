@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IUploadOperation4 : IUploadOperation4.Interface, INativeGuid
 {
+    /// <include file='IUploadOperation4.xml' path='doc/member[@name="IUploadOperation4.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUploadOperation4);
 
     public void** lpVtbl;

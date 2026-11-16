@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IInternetBindInfo")]
 public unsafe partial struct IInternetBindInfoEx : IInternetBindInfoEx.Interface, INativeGuid
 {
+    /// <include file='IInternetBindInfoEx.xml' path='doc/member[@name="IInternetBindInfoEx.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IInternetBindInfoEx);
 
     public void** lpVtbl;

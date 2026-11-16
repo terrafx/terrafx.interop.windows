@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IExplorerPaneVisibility : IExplorerPaneVisibility.Interface, INativeGuid
 {
+    /// <include file='IExplorerPaneVisibility.xml' path='doc/member[@name="IExplorerPaneVisibility.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IExplorerPaneVisibility);
 
     public void** lpVtbl;

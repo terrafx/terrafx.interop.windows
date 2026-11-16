@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1TransformNode")]
 public unsafe partial struct ID2D1OffsetTransform : ID2D1OffsetTransform.Interface, INativeGuid
 {
+    /// <include file='ID2D1OffsetTransform.xml' path='doc/member[@name="ID2D1OffsetTransform.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1OffsetTransform);
 
     public void** lpVtbl;

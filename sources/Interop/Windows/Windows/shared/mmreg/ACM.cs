@@ -7,39 +7,51 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class ACM
 {
+    /// <include file='ACM.xml' path='doc/member[@name="ACM.ACM_MPEG_LAYER1"]/*' />
     [NativeTypeName("#define ACM_MPEG_LAYER1 (0x0001)")]
     public const int ACM_MPEG_LAYER1 = (0x0001);
 
+    /// <include file='ACM.xml' path='doc/member[@name="ACM.ACM_MPEG_LAYER2"]/*' />
     [NativeTypeName("#define ACM_MPEG_LAYER2 (0x0002)")]
     public const int ACM_MPEG_LAYER2 = (0x0002);
 
+    /// <include file='ACM.xml' path='doc/member[@name="ACM.ACM_MPEG_LAYER3"]/*' />
     [NativeTypeName("#define ACM_MPEG_LAYER3 (0x0004)")]
     public const int ACM_MPEG_LAYER3 = (0x0004);
 
+    /// <include file='ACM.xml' path='doc/member[@name="ACM.ACM_MPEG_STEREO"]/*' />
     [NativeTypeName("#define ACM_MPEG_STEREO (0x0001)")]
     public const int ACM_MPEG_STEREO = (0x0001);
 
+    /// <include file='ACM.xml' path='doc/member[@name="ACM.ACM_MPEG_JOINTSTEREO"]/*' />
     [NativeTypeName("#define ACM_MPEG_JOINTSTEREO (0x0002)")]
     public const int ACM_MPEG_JOINTSTEREO = (0x0002);
 
+    /// <include file='ACM.xml' path='doc/member[@name="ACM.ACM_MPEG_DUALCHANNEL"]/*' />
     [NativeTypeName("#define ACM_MPEG_DUALCHANNEL (0x0004)")]
     public const int ACM_MPEG_DUALCHANNEL = (0x0004);
 
+    /// <include file='ACM.xml' path='doc/member[@name="ACM.ACM_MPEG_SINGLECHANNEL"]/*' />
     [NativeTypeName("#define ACM_MPEG_SINGLECHANNEL (0x0008)")]
     public const int ACM_MPEG_SINGLECHANNEL = (0x0008);
 
+    /// <include file='ACM.xml' path='doc/member[@name="ACM.ACM_MPEG_PRIVATEBIT"]/*' />
     [NativeTypeName("#define ACM_MPEG_PRIVATEBIT (0x0001)")]
     public const int ACM_MPEG_PRIVATEBIT = (0x0001);
 
+    /// <include file='ACM.xml' path='doc/member[@name="ACM.ACM_MPEG_COPYRIGHT"]/*' />
     [NativeTypeName("#define ACM_MPEG_COPYRIGHT (0x0002)")]
     public const int ACM_MPEG_COPYRIGHT = (0x0002);
 
+    /// <include file='ACM.xml' path='doc/member[@name="ACM.ACM_MPEG_ORIGINALHOME"]/*' />
     [NativeTypeName("#define ACM_MPEG_ORIGINALHOME (0x0004)")]
     public const int ACM_MPEG_ORIGINALHOME = (0x0004);
 
+    /// <include file='ACM.xml' path='doc/member[@name="ACM.ACM_MPEG_PROTECTIONBIT"]/*' />
     [NativeTypeName("#define ACM_MPEG_PROTECTIONBIT (0x0008)")]
     public const int ACM_MPEG_PROTECTIONBIT = (0x0008);
 
+    /// <include file='ACM.xml' path='doc/member[@name="ACM.ACM_MPEG_ID_MPEG1"]/*' />
     [NativeTypeName("#define ACM_MPEG_ID_MPEG1 (0x0010)")]
     public const int ACM_MPEG_ID_MPEG1 = (0x0010);
 }

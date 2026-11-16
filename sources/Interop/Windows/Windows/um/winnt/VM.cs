@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class VM
 {
+    /// <include file='VM.xml' path='doc/member[@name="VM.VM_PREFETCH_TO_WORKING_SET"]/*' />
     [NativeTypeName("#define VM_PREFETCH_TO_WORKING_SET 0x1")]
     public const int VM_PREFETCH_TO_WORKING_SET = 0x1;
 }

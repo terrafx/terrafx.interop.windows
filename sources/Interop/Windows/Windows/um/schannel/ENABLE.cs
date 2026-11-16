@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class ENABLE
 {
+    /// <include file='ENABLE.xml' path='doc/member[@name="ENABLE.ENABLE_TLS_CLIENT_EARLY_START"]/*' />
     [NativeTypeName("#define ENABLE_TLS_CLIENT_EARLY_START 0x00000001")]
     public const int ENABLE_TLS_CLIENT_EARLY_START = 0x00000001;
 }

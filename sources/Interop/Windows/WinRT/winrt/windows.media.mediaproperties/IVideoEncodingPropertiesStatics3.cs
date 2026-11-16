@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IVideoEncodingPropertiesStatics3 : IVideoEncodingPropertiesStatics3.Interface, INativeGuid
 {
+    /// <include file='IVideoEncodingPropertiesStatics3.xml' path='doc/member[@name="IVideoEncodingPropertiesStatics3.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IVideoEncodingPropertiesStatics3);
 
     public void** lpVtbl;

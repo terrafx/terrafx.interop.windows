@@ -7,21 +7,27 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3D10
 {
+    /// <include file='D3D10.xml' path='doc/member[@name="D3D10.D3D10_EFFECT_COMPILE_CHILD_EFFECT"]/*' />
     [NativeTypeName("#define D3D10_EFFECT_COMPILE_CHILD_EFFECT (1 << 0)")]
     public const int D3D10_EFFECT_COMPILE_CHILD_EFFECT = (1 << 0);
 
+    /// <include file='D3D10.xml' path='doc/member[@name="D3D10.D3D10_EFFECT_COMPILE_ALLOW_SLOW_OPS"]/*' />
     [NativeTypeName("#define D3D10_EFFECT_COMPILE_ALLOW_SLOW_OPS (1 << 1)")]
     public const int D3D10_EFFECT_COMPILE_ALLOW_SLOW_OPS = (1 << 1);
 
+    /// <include file='D3D10.xml' path='doc/member[@name="D3D10.D3D10_EFFECT_SINGLE_THREADED"]/*' />
     [NativeTypeName("#define D3D10_EFFECT_SINGLE_THREADED (1 << 3)")]
     public const int D3D10_EFFECT_SINGLE_THREADED = (1 << 3);
 
+    /// <include file='D3D10.xml' path='doc/member[@name="D3D10.D3D10_EFFECT_VARIABLE_POOLED"]/*' />
     [NativeTypeName("#define D3D10_EFFECT_VARIABLE_POOLED (1 << 0)")]
     public const int D3D10_EFFECT_VARIABLE_POOLED = (1 << 0);
 
+    /// <include file='D3D10.xml' path='doc/member[@name="D3D10.D3D10_EFFECT_VARIABLE_ANNOTATION"]/*' />
     [NativeTypeName("#define D3D10_EFFECT_VARIABLE_ANNOTATION (1 << 1)")]
     public const int D3D10_EFFECT_VARIABLE_ANNOTATION = (1 << 1);
 
+    /// <include file='D3D10.xml' path='doc/member[@name="D3D10.D3D10_EFFECT_VARIABLE_EXPLICIT_BIND_POINT"]/*' />
     [NativeTypeName("#define D3D10_EFFECT_VARIABLE_EXPLICIT_BIND_POINT (1 << 2)")]
     public const int D3D10_EFFECT_VARIABLE_EXPLICIT_BIND_POINT = (1 << 2);
 }

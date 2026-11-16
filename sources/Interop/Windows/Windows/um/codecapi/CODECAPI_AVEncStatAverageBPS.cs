@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("CA6724DB-7059-4351-8B43-F82198826A14")]
 public unsafe partial struct CODECAPI_AVEncStatAverageBPS : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncStatAverageBPS.xml' path='doc/member[@name="CODECAPI_AVEncStatAverageBPS.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncStatAverageBPS);
 }

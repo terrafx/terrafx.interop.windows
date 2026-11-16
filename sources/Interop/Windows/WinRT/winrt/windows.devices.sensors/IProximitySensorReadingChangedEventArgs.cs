@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IProximitySensorReadingChangedEventArgs : IProximitySensorReadingChangedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IProximitySensorReadingChangedEventArgs.xml' path='doc/member[@name="IProximitySensorReadingChangedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IProximitySensorReadingChangedEventArgs);
 
     public void** lpVtbl;

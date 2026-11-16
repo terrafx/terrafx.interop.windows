@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISystemGPSProperties : ISystemGPSProperties.Interface, INativeGuid
 {
+    /// <include file='ISystemGPSProperties.xml' path='doc/member[@name="ISystemGPSProperties.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISystemGPSProperties);
 
     public void** lpVtbl;

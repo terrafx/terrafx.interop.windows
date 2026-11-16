@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("98332DF8-03CD-476B-89FA-3F9E442DEC9F")]
 public unsafe partial struct CODECAPI_AVEncCommonQualityVsSpeed : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncCommonQualityVsSpeed.xml' path='doc/member[@name="CODECAPI_AVEncCommonQualityVsSpeed.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncCommonQualityVsSpeed);
 }

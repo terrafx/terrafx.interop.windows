@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IAMTuner")]
 public unsafe partial struct IBPCSatelliteTuner : IBPCSatelliteTuner.Interface, INativeGuid
 {
+    /// <include file='IBPCSatelliteTuner.xml' path='doc/member[@name="IBPCSatelliteTuner.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBPCSatelliteTuner);
 
     public void** lpVtbl;

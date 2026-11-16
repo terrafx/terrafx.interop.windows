@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IOpenControlPanel : IOpenControlPanel.Interface, INativeGuid
 {
+    /// <include file='IOpenControlPanel.xml' path='doc/member[@name="IOpenControlPanel.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IOpenControlPanel);
 
     public void** lpVtbl;

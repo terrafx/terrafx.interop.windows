@@ -13,11 +13,11 @@ namespace TerraFX.Interop.Windows;
 public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
 {
     /// <include file='IMAGE_RESOURCE_DIRECTORY_ENTRY.xml' path='doc/member[@name="IMAGE_RESOURCE_DIRECTORY_ENTRY.Anonymous1"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L21771_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L22604_C5")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='IMAGE_RESOURCE_DIRECTORY_ENTRY.xml' path='doc/member[@name="IMAGE_RESOURCE_DIRECTORY_ENTRY.Anonymous2"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L21779_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L22612_C5")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NameOffset"]/*' />
@@ -123,7 +123,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
     {
         /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L21772_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L22605_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Name"]/*' />
@@ -188,7 +188,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
 
         /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L21781_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L22614_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0.19041.0")]
 public unsafe partial struct IMFRelativePanelReport : IMFRelativePanelReport.Interface, INativeGuid
 {
+    /// <include file='IMFRelativePanelReport.xml' path='doc/member[@name="IMFRelativePanelReport.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFRelativePanelReport);
 
     public void** lpVtbl;

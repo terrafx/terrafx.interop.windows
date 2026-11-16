@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAudioGraphSettings2 : IAudioGraphSettings2.Interface, INativeGuid
 {
+    /// <include file='IAudioGraphSettings2.xml' path='doc/member[@name="IAudioGraphSettings2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAudioGraphSettings2);
 
     public void** lpVtbl;

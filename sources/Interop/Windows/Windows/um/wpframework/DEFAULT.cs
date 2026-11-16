@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class DEFAULT
 {
+    /// <include file='DEFAULT.xml' path='doc/member[@name="DEFAULT.DEFAULT_PROTOCOL_MANAGER_INIT_FUNCTION"]/*' />
     [NativeTypeName("#define DEFAULT_PROTOCOL_MANAGER_INIT_FUNCTION L\"GetProtocolManager\"")]
     public const string DEFAULT_PROTOCOL_MANAGER_INIT_FUNCTION = "GetProtocolManager";
 }

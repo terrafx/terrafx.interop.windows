@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IQualityControl : IQualityControl.Interface, INativeGuid
 {
+    /// <include file='IQualityControl.xml' path='doc/member[@name="IQualityControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IQualityControl);
 
     public void** lpVtbl;

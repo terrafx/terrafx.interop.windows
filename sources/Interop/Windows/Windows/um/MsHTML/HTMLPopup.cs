@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("3050F667-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct HTMLPopup : INativeGuid
 {
+    /// <include file='HTMLPopup.xml' path='doc/member[@name="HTMLPopup.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_HTMLPopup);
 }

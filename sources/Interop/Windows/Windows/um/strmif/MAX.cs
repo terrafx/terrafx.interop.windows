@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_PIN_NAME"]/*' />
     [NativeTypeName("#define MAX_PIN_NAME 128")]
     public const int MAX_PIN_NAME = 128;
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_FILTER_NAME"]/*' />
     [NativeTypeName("#define MAX_FILTER_NAME 128")]
     public const int MAX_FILTER_NAME = 128;
 }

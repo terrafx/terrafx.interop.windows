@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPenButtonListener : IPenButtonListener.Interface, INativeGuid
 {
+    /// <include file='IPenButtonListener.xml' path='doc/member[@name="IPenButtonListener.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPenButtonListener);
 
     public void** lpVtbl;

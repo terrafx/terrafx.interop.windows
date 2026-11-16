@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("4F414126-DFE3-4629-99EE-797978317EAD")]
 public unsafe partial struct SpPhoneticAlphabetConverter : INativeGuid
 {
+    /// <include file='SpPhoneticAlphabetConverter.xml' path='doc/member[@name="SpPhoneticAlphabetConverter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SpPhoneticAlphabetConverter);
 }

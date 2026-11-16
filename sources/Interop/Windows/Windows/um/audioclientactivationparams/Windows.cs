@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VIRTUAL_AUDIO_DEVICE_PROCESS_LOOPBACK"]/*' />
     [NativeTypeName("#define VIRTUAL_AUDIO_DEVICE_PROCESS_LOOPBACK L\"VAD\\Process_Loopback\"")]
     public const string VIRTUAL_AUDIO_DEVICE_PROCESS_LOOPBACK = "VAD\\Process_Loopback";
 }

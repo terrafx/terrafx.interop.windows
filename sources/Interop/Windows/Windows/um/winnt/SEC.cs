@@ -7,39 +7,51 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SEC
 {
+    /// <include file='SEC.xml' path='doc/member[@name="SEC.SEC_HUGE_PAGES"]/*' />
     [NativeTypeName("#define SEC_HUGE_PAGES 0x00020000")]
     public const int SEC_HUGE_PAGES = 0x00020000;
 
+    /// <include file='SEC.xml' path='doc/member[@name="SEC.SEC_PARTITION_OWNER_HANDLE"]/*' />
     [NativeTypeName("#define SEC_PARTITION_OWNER_HANDLE 0x00040000")]
     public const int SEC_PARTITION_OWNER_HANDLE = 0x00040000;
 
+    /// <include file='SEC.xml' path='doc/member[@name="SEC.SEC_64K_PAGES"]/*' />
     [NativeTypeName("#define SEC_64K_PAGES 0x00080000")]
     public const int SEC_64K_PAGES = 0x00080000;
 
+    /// <include file='SEC.xml' path='doc/member[@name="SEC.SEC_FILE"]/*' />
     [NativeTypeName("#define SEC_FILE 0x00800000")]
     public const int SEC_FILE = 0x00800000;
 
+    /// <include file='SEC.xml' path='doc/member[@name="SEC.SEC_IMAGE"]/*' />
     [NativeTypeName("#define SEC_IMAGE 0x01000000")]
     public const int SEC_IMAGE = 0x01000000;
 
+    /// <include file='SEC.xml' path='doc/member[@name="SEC.SEC_PROTECTED_IMAGE"]/*' />
     [NativeTypeName("#define SEC_PROTECTED_IMAGE 0x02000000")]
     public const int SEC_PROTECTED_IMAGE = 0x02000000;
 
+    /// <include file='SEC.xml' path='doc/member[@name="SEC.SEC_RESERVE"]/*' />
     [NativeTypeName("#define SEC_RESERVE 0x04000000")]
     public const int SEC_RESERVE = 0x04000000;
 
+    /// <include file='SEC.xml' path='doc/member[@name="SEC.SEC_COMMIT"]/*' />
     [NativeTypeName("#define SEC_COMMIT 0x08000000")]
     public const int SEC_COMMIT = 0x08000000;
 
+    /// <include file='SEC.xml' path='doc/member[@name="SEC.SEC_NOCACHE"]/*' />
     [NativeTypeName("#define SEC_NOCACHE 0x10000000")]
     public const int SEC_NOCACHE = 0x10000000;
 
+    /// <include file='SEC.xml' path='doc/member[@name="SEC.SEC_WRITECOMBINE"]/*' />
     [NativeTypeName("#define SEC_WRITECOMBINE 0x40000000")]
     public const int SEC_WRITECOMBINE = 0x40000000;
 
+    /// <include file='SEC.xml' path='doc/member[@name="SEC.SEC_LARGE_PAGES"]/*' />
     [NativeTypeName("#define SEC_LARGE_PAGES 0x80000000")]
     public const uint SEC_LARGE_PAGES = 0x80000000;
 
+    /// <include file='SEC.xml' path='doc/member[@name="SEC.SEC_IMAGE_NO_EXECUTE"]/*' />
     [NativeTypeName("#define SEC_IMAGE_NO_EXECUTE (SEC_IMAGE | SEC_NOCACHE)")]
     public const int SEC_IMAGE_NO_EXECUTE = (0x01000000 | 0x10000000);
 }

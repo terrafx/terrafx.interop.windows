@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]
 public unsafe partial struct IDisplayPropertiesStatics : IDisplayPropertiesStatics.Interface, INativeGuid
 {
+    /// <include file='IDisplayPropertiesStatics.xml' path='doc/member[@name="IDisplayPropertiesStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDisplayPropertiesStatics);
 
     public void** lpVtbl;

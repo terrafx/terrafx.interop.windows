@@ -9,132 +9,175 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class WC
 {
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_HEADERA"]/*' />
     [NativeTypeName("#define WC_HEADERA \"SysHeader32\"")]
     public static ReadOnlySpan<byte> WC_HEADERA => "SysHeader32"u8;
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_HEADERW"]/*' />
     [NativeTypeName("#define WC_HEADERW L\"SysHeader32\"")]
     public const string WC_HEADERW = "SysHeader32";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_HEADER"]/*' />
     [NativeTypeName("#define WC_HEADER WC_HEADERW")]
     public const string WC_HEADER = "SysHeader32";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_LINK"]/*' />
     [NativeTypeName("#define WC_LINK L\"SysLink\"")]
     public const string WC_LINK = "SysLink";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_LISTVIEWA"]/*' />
     [NativeTypeName("#define WC_LISTVIEWA \"SysListView32\"")]
     public static ReadOnlySpan<byte> WC_LISTVIEWA => "SysListView32"u8;
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_LISTVIEWW"]/*' />
     [NativeTypeName("#define WC_LISTVIEWW L\"SysListView32\"")]
     public const string WC_LISTVIEWW = "SysListView32";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_LISTVIEW"]/*' />
     [NativeTypeName("#define WC_LISTVIEW WC_LISTVIEWW")]
     public const string WC_LISTVIEW = "SysListView32";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_TREEVIEWA"]/*' />
     [NativeTypeName("#define WC_TREEVIEWA \"SysTreeView32\"")]
     public static ReadOnlySpan<byte> WC_TREEVIEWA => "SysTreeView32"u8;
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_TREEVIEWW"]/*' />
     [NativeTypeName("#define WC_TREEVIEWW L\"SysTreeView32\"")]
     public const string WC_TREEVIEWW = "SysTreeView32";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_TREEVIEW"]/*' />
     [NativeTypeName("#define WC_TREEVIEW WC_TREEVIEWW")]
     public const string WC_TREEVIEW = "SysTreeView32";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_COMBOBOXEXW"]/*' />
     [NativeTypeName("#define WC_COMBOBOXEXW L\"ComboBoxEx32\"")]
     public const string WC_COMBOBOXEXW = "ComboBoxEx32";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_COMBOBOXEXA"]/*' />
     [NativeTypeName("#define WC_COMBOBOXEXA \"ComboBoxEx32\"")]
     public static ReadOnlySpan<byte> WC_COMBOBOXEXA => "ComboBoxEx32"u8;
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_COMBOBOXEX"]/*' />
     [NativeTypeName("#define WC_COMBOBOXEX WC_COMBOBOXEXW")]
     public const string WC_COMBOBOXEX = "ComboBoxEx32";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_TABCONTROLA"]/*' />
     [NativeTypeName("#define WC_TABCONTROLA \"SysTabControl32\"")]
     public static ReadOnlySpan<byte> WC_TABCONTROLA => "SysTabControl32"u8;
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_TABCONTROLW"]/*' />
     [NativeTypeName("#define WC_TABCONTROLW L\"SysTabControl32\"")]
     public const string WC_TABCONTROLW = "SysTabControl32";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_TABCONTROL"]/*' />
     [NativeTypeName("#define WC_TABCONTROL WC_TABCONTROLW")]
     public const string WC_TABCONTROL = "SysTabControl32";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_IPADDRESSW"]/*' />
     [NativeTypeName("#define WC_IPADDRESSW L\"SysIPAddress32\"")]
     public const string WC_IPADDRESSW = "SysIPAddress32";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_IPADDRESSA"]/*' />
     [NativeTypeName("#define WC_IPADDRESSA \"SysIPAddress32\"")]
     public static ReadOnlySpan<byte> WC_IPADDRESSA => "SysIPAddress32"u8;
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_IPADDRESS"]/*' />
     [NativeTypeName("#define WC_IPADDRESS WC_IPADDRESSW")]
     public const string WC_IPADDRESS = "SysIPAddress32";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_PAGESCROLLERW"]/*' />
     [NativeTypeName("#define WC_PAGESCROLLERW L\"SysPager\"")]
     public const string WC_PAGESCROLLERW = "SysPager";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_PAGESCROLLERA"]/*' />
     [NativeTypeName("#define WC_PAGESCROLLERA \"SysPager\"")]
     public static ReadOnlySpan<byte> WC_PAGESCROLLERA => "SysPager"u8;
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_PAGESCROLLER"]/*' />
     [NativeTypeName("#define WC_PAGESCROLLER WC_PAGESCROLLERW")]
     public const string WC_PAGESCROLLER = "SysPager";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_NATIVEFONTCTLW"]/*' />
     [NativeTypeName("#define WC_NATIVEFONTCTLW L\"NativeFontCtl\"")]
     public const string WC_NATIVEFONTCTLW = "NativeFontCtl";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_NATIVEFONTCTLA"]/*' />
     [NativeTypeName("#define WC_NATIVEFONTCTLA \"NativeFontCtl\"")]
     public static ReadOnlySpan<byte> WC_NATIVEFONTCTLA => "NativeFontCtl"u8;
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_NATIVEFONTCTL"]/*' />
     [NativeTypeName("#define WC_NATIVEFONTCTL WC_NATIVEFONTCTLW")]
     public const string WC_NATIVEFONTCTL = "NativeFontCtl";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_BUTTONA"]/*' />
     [NativeTypeName("#define WC_BUTTONA \"Button\"")]
     public static ReadOnlySpan<byte> WC_BUTTONA => "Button"u8;
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_BUTTONW"]/*' />
     [NativeTypeName("#define WC_BUTTONW L\"Button\"")]
     public const string WC_BUTTONW = "Button";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_BUTTON"]/*' />
     [NativeTypeName("#define WC_BUTTON WC_BUTTONW")]
     public const string WC_BUTTON = "Button";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_STATICA"]/*' />
     [NativeTypeName("#define WC_STATICA \"Static\"")]
     public static ReadOnlySpan<byte> WC_STATICA => "Static"u8;
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_STATICW"]/*' />
     [NativeTypeName("#define WC_STATICW L\"Static\"")]
     public const string WC_STATICW = "Static";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_STATIC"]/*' />
     [NativeTypeName("#define WC_STATIC WC_STATICW")]
     public const string WC_STATIC = "Static";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_EDITA"]/*' />
     [NativeTypeName("#define WC_EDITA \"Edit\"")]
     public static ReadOnlySpan<byte> WC_EDITA => "Edit"u8;
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_EDITW"]/*' />
     [NativeTypeName("#define WC_EDITW L\"Edit\"")]
     public const string WC_EDITW = "Edit";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_EDIT"]/*' />
     [NativeTypeName("#define WC_EDIT WC_EDITW")]
     public const string WC_EDIT = "Edit";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_LISTBOXA"]/*' />
     [NativeTypeName("#define WC_LISTBOXA \"ListBox\"")]
     public static ReadOnlySpan<byte> WC_LISTBOXA => "ListBox"u8;
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_LISTBOXW"]/*' />
     [NativeTypeName("#define WC_LISTBOXW L\"ListBox\"")]
     public const string WC_LISTBOXW = "ListBox";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_LISTBOX"]/*' />
     [NativeTypeName("#define WC_LISTBOX WC_LISTBOXW")]
     public const string WC_LISTBOX = "ListBox";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_COMBOBOXA"]/*' />
     [NativeTypeName("#define WC_COMBOBOXA \"ComboBox\"")]
     public static ReadOnlySpan<byte> WC_COMBOBOXA => "ComboBox"u8;
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_COMBOBOXW"]/*' />
     [NativeTypeName("#define WC_COMBOBOXW L\"ComboBox\"")]
     public const string WC_COMBOBOXW = "ComboBox";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_COMBOBOX"]/*' />
     [NativeTypeName("#define WC_COMBOBOX WC_COMBOBOXW")]
     public const string WC_COMBOBOX = "ComboBox";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_SCROLLBARA"]/*' />
     [NativeTypeName("#define WC_SCROLLBARA \"ScrollBar\"")]
     public static ReadOnlySpan<byte> WC_SCROLLBARA => "ScrollBar"u8;
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_SCROLLBARW"]/*' />
     [NativeTypeName("#define WC_SCROLLBARW L\"ScrollBar\"")]
     public const string WC_SCROLLBARW = "ScrollBar";
 
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_SCROLLBAR"]/*' />
     [NativeTypeName("#define WC_SCROLLBAR WC_SCROLLBARW")]
     public const string WC_SCROLLBAR = "ScrollBar";
 }

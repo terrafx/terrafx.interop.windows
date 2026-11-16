@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IRemoteSystemWebAccountFilter : IRemoteSystemWebAccountFilter.Interface, INativeGuid
 {
+    /// <include file='IRemoteSystemWebAccountFilter.xml' path='doc/member[@name="IRemoteSystemWebAccountFilter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRemoteSystemWebAccountFilter);
 
     public void** lpVtbl;

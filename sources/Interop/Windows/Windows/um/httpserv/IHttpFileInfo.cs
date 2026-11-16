@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpCacheSpecificData")]
 public unsafe partial struct IHttpFileInfo : IHttpFileInfo.Interface, INativeGuid
 {
+    /// <include file='IHttpFileInfo.xml' path='doc/member[@name="IHttpFileInfo.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpFileInfo);
 
     public void** lpVtbl;

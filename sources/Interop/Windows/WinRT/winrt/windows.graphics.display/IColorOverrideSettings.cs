@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IColorOverrideSettings : IColorOverrideSettings.Interface, INativeGuid
 {
+    /// <include file='IColorOverrideSettings.xml' path='doc/member[@name="IColorOverrideSettings.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IColorOverrideSettings);
 
     public void** lpVtbl;

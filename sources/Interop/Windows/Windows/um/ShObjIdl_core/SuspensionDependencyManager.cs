@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("6B273FC5-61FD-4918-95A2-C3B5E9D7F581")]
 public unsafe partial struct SuspensionDependencyManager : INativeGuid
 {
+    /// <include file='SuspensionDependencyManager.xml' path='doc/member[@name="SuspensionDependencyManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SuspensionDependencyManager);
 }

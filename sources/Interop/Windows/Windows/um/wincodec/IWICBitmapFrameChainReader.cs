@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IWICBitmapFrameChainReader : IWICBitmapFrameChainReader.Interface, INativeGuid
 {
+    /// <include file='IWICBitmapFrameChainReader.xml' path='doc/member[@name="IWICBitmapFrameChainReader.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWICBitmapFrameChainReader);
 
     public void** lpVtbl;

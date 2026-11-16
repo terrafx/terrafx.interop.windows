@@ -87,9 +87,9 @@ public static unsafe partial class Windows
 
     public static HMODULE GetWindowInstance(HWND hwnd) => ((HMODULE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE));
 
-    public static uint GetWindowStyle(HWND hwnd) => ((uint)GetWindowLong(hwnd, GWL_STYLE));
+    public static uint GetWindowStyle(HWND hwnd) => unchecked((uint)GetWindowLong(hwnd, GWL_STYLE));
 
-    public static uint GetWindowExStyle(HWND hwnd) => ((uint)GetWindowLong(hwnd, GWL_EXSTYLE));
+    public static uint GetWindowExStyle(HWND hwnd) => unchecked((uint)GetWindowLong(hwnd, GWL_EXSTYLE));
 
     public static HWND GetWindowOwner(HWND hwnd) => GetWindow(hwnd, GW_OWNER);
 
@@ -174,7 +174,7 @@ public static unsafe partial class Windows
     /* void Cls_OnCompacting(HWND hwnd, UINT compactRatio) */
     public static LRESULT HANDLE_WM_COMPACTING(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, uint, void> fn)
     {
-        fn((hwnd), (uint)(wParam));
+        fn((hwnd), unchecked((uint)wParam.Value));
         return 0;
     }
 
@@ -241,7 +241,7 @@ public static unsafe partial class Windows
     /* void Cls_OnSpoolerStatus(HWND hwnd, UINT status, int cJobInQueue) */
     public static LRESULT HANDLE_WM_SPOOLERSTATUS(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, uint, int, void> fn)
     {
-        fn((hwnd), (uint)(wParam), (int)(short)LOWORD(lParam));
+        fn((hwnd), unchecked((uint)wParam.Value), unchecked((int)(short)LOWORD(lParam)));
         return 0;
     }
 
@@ -271,7 +271,7 @@ public static unsafe partial class Windows
     /* void Cls_OnPower(HWND hwnd, int code) */
     public static LRESULT HANDLE_WM_POWER(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int, void> fn)
     {
-        fn((hwnd), (int)(wParam));
+        fn((hwnd), unchecked((int)wParam.Value));
         return 0;
     }
 
@@ -298,7 +298,7 @@ public static unsafe partial class Windows
     /* void Cls_OnQuit(HWND hwnd, int exitCode) */
     public static LRESULT HANDLE_WM_QUIT(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int, void> fn)
     {
-        fn((hwnd), (int)(wParam));
+        fn((hwnd), unchecked((int)wParam.Value));
         return 0;
     }
 
@@ -348,7 +348,7 @@ public static unsafe partial class Windows
     /* void Cls_OnShowWindow(HWND hwnd, BOOL fShow, UINT status) */
     public static LRESULT HANDLE_WM_SHOWWINDOW(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, BOOL, uint, void> fn)
     {
-        fn((hwnd), (BOOL)(wParam), (uint)(lParam));
+        fn((hwnd), (BOOL)(wParam), unchecked((uint)lParam.Value));
         return 0;
     }
 
@@ -387,17 +387,17 @@ public static unsafe partial class Windows
 
     /* INT Cls_OnGetText(HWND hwnd, int cchTextMax, LPTSTR lpszText) */
     public static LRESULT HANDLE_WM_GETTEXT(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int, char*, int> fn)
-        => (LRESULT)(uint)(int)fn((hwnd), (int)(wParam), (char*)(lParam));
+        => (LRESULT)unchecked((uint)(int)fn((hwnd), unchecked((int)wParam.Value), (char*)(lParam)));
 
     public static int FORWARD_WM_GETTEXT(HWND hwnd, int cchTextMax, char* lpszText, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
-        => (int)(uint)fn((hwnd), WM_GETTEXT, (WPARAM)(int)(cchTextMax), (LPARAM)(char*)(lpszText));
+        => unchecked((int)(uint)fn((hwnd), WM_GETTEXT, (WPARAM)(int)(cchTextMax), (LPARAM)(char*)(lpszText)));
 
     /* INT Cls_OnGetTextLength(HWND hwnd) */
     public static LRESULT HANDLE_WM_GETTEXTLENGTH(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int> fn)
-        => (LRESULT)(uint)(int)fn(hwnd);
+        => (LRESULT)unchecked((uint)(int)fn(hwnd));
 
     public static int FORWARD_WM_GETTEXTLENGTH(HWND hwnd, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
-        => (int)(uint)fn((hwnd), WM_GETTEXTLENGTH, 0u, 0);
+        => unchecked((int)(uint)fn((hwnd), WM_GETTEXTLENGTH, 0u, 0));
 
     /* BOOL Cls_OnWindowPosChanging(HWND hwnd, LPWINDOWPOS lpwpos) */
     public static LRESULT HANDLE_WM_WINDOWPOSCHANGING(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, WINDOWPOS*, BOOL> fn)
@@ -419,7 +419,7 @@ public static unsafe partial class Windows
     /* void Cls_OnMove(HWND hwnd, int x, int y) */
     public static LRESULT HANDLE_WM_MOVE(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int, int, void> fn)
     {
-        fn((hwnd), (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam));
+        fn((hwnd), unchecked((int)(short)LOWORD(lParam)), unchecked((int)(short)HIWORD(lParam)));
         return 0;
     }
 
@@ -429,7 +429,7 @@ public static unsafe partial class Windows
     /* void Cls_OnSize(HWND hwnd, UINT state, int cx, int cy) */
     public static LRESULT HANDLE_WM_SIZE(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, uint, int, int, void> fn)
     {
-        fn((hwnd), (uint)(wParam), (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam));
+        fn((hwnd), unchecked((uint)wParam.Value), unchecked((int)(short)LOWORD(lParam)), unchecked((int)(short)HIWORD(lParam)));
         return 0;
     }
 
@@ -506,17 +506,17 @@ public static unsafe partial class Windows
 
     /* UINT Cls_OnNCHitTest(HWND hwnd, int x, int y) */
     public static LRESULT HANDLE_WM_NCHITTEST(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int, int, uint> fn)
-        => (LRESULT)(uint)(uint)fn((hwnd), (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam));
+        => (LRESULT)(uint)(uint)fn((hwnd), unchecked((int)(short)LOWORD(lParam)), unchecked((int)(short)HIWORD(lParam)));
 
     public static uint FORWARD_WM_NCHITTEST(HWND hwnd, int x, int y, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
         => (uint)(uint)fn((hwnd), WM_NCHITTEST, 0u, MAKELPARAM((x), (y)));
 
     /* HICON Cls_OnQueryDragIcon(HWND hwnd) */
     public static LRESULT HANDLE_WM_QUERYDRAGICON(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, HICON> fn)
-        => (LRESULT)(uint)(uint)fn(hwnd);
+        => (LRESULT)fn(hwnd);
 
     public static HICON FORWARD_WM_QUERYDRAGICON(HWND hwnd, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
-        => (HICON)(uint)(uint)fn((hwnd), WM_QUERYDRAGICON, 0u, 0);
+        => (HICON)fn((hwnd), WM_QUERYDRAGICON, 0u, 0);
 
     /* void Cls_OnDropFiles(HWND hwnd, HDROP hdrop) */
     public static LRESULT HANDLE_WM_DROPFILES(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, HDROP, void> fn)
@@ -541,7 +541,7 @@ public static unsafe partial class Windows
     /* void Cls_OnActivateApp(HWND hwnd, BOOL fActivate, DWORD dwThreadId) */
     public static LRESULT HANDLE_WM_ACTIVATEAPP(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, BOOL, uint, void> fn)
     {
-        fn((hwnd), (BOOL)(wParam), (uint)(lParam));
+        fn((hwnd), (BOOL)(wParam), unchecked((uint)lParam.Value));
         return 0;
     }
 
@@ -578,7 +578,7 @@ public static unsafe partial class Windows
     /* void Cls_OnKey(HWND hwnd, UINT vk, BOOL fDown, int cRepeat, UINT flags) */
     public static LRESULT HANDLE_WM_KEYDOWN(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, uint, BOOL, int, uint, void> fn)
     {
-        fn((hwnd), (uint)(wParam), TRUE, (int)(short)LOWORD(lParam), (uint)HIWORD(lParam));
+        fn((hwnd), unchecked((uint)wParam.Value), TRUE, unchecked((int)(short)LOWORD(lParam)), (uint)HIWORD(lParam));
         return 0;
     }
 
@@ -588,7 +588,7 @@ public static unsafe partial class Windows
     /* void Cls_OnKey(HWND hwnd, UINT vk, BOOL fDown, int cRepeat, UINT flags) */
     public static LRESULT HANDLE_WM_KEYUP(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, uint, BOOL, int, uint, void> fn)
     {
-        fn((hwnd), (uint)(wParam), FALSE, (int)(short)LOWORD(lParam), (uint)HIWORD(lParam));
+        fn((hwnd), unchecked((uint)wParam.Value), FALSE, unchecked((int)(short)LOWORD(lParam)), (uint)HIWORD(lParam));
         return 0;
     }
 
@@ -598,7 +598,7 @@ public static unsafe partial class Windows
     /* void Cls_OnChar(HWND hwnd, TCHAR ch, int cRepeat) */
     public static LRESULT HANDLE_WM_CHAR(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, ushort, int, void> fn)
     {
-        fn((hwnd), (ushort)(wParam), (int)(short)LOWORD(lParam));
+        fn((hwnd), unchecked((ushort)wParam.Value), unchecked((int)(short)LOWORD(lParam)));
         return 0;
     }
 
@@ -608,7 +608,7 @@ public static unsafe partial class Windows
     /* void Cls_OnDeadChar(HWND hwnd, TCHAR ch, int cRepeat) */
     public static LRESULT HANDLE_WM_DEADCHAR(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, ushort, int, void> fn)
     {
-        fn((hwnd), (ushort)(wParam), (int)(short)LOWORD(lParam));
+        fn((hwnd), unchecked((ushort)wParam.Value), unchecked((int)(short)LOWORD(lParam)));
         return 0;
     }
 
@@ -618,7 +618,7 @@ public static unsafe partial class Windows
     /* void Cls_OnSysKey(HWND hwnd, UINT vk, BOOL fDown, int cRepeat, UINT flags) */
     public static LRESULT HANDLE_WM_SYSKEYDOWN(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, uint, BOOL, int, uint, void> fn)
     {
-        fn((hwnd), (uint)(wParam), TRUE, (int)(short)LOWORD(lParam), (uint)HIWORD(lParam));
+        fn((hwnd), unchecked((uint)wParam.Value), TRUE, unchecked((int)(short)LOWORD(lParam)), (uint)HIWORD(lParam));
         return 0;
     }
 
@@ -628,7 +628,7 @@ public static unsafe partial class Windows
     /* void Cls_OnSysKey(HWND hwnd, UINT vk, BOOL fDown, int cRepeat, UINT flags) */
     public static LRESULT HANDLE_WM_SYSKEYUP(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, uint, BOOL, int, uint, void> fn)
     {
-        fn((hwnd), (uint)(wParam), FALSE, (int)(short)LOWORD(lParam), (uint)HIWORD(lParam));
+        fn((hwnd), unchecked((uint)wParam.Value), FALSE, unchecked((int)(short)LOWORD(lParam)), (uint)HIWORD(lParam));
         return 0;
     }
 
@@ -638,7 +638,7 @@ public static unsafe partial class Windows
     /* void Cls_OnSysChar(HWND hwnd, TCHAR ch, int cRepeat) */
     public static LRESULT HANDLE_WM_SYSCHAR(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, ushort, int, void> fn)
     {
-        fn((hwnd), (ushort)(wParam), (int)(short)LOWORD(lParam));
+        fn((hwnd), unchecked((ushort)wParam.Value), unchecked((int)(short)LOWORD(lParam)));
         return 0;
     }
 
@@ -648,7 +648,7 @@ public static unsafe partial class Windows
     /* void Cls_OnSysDeadChar(HWND hwnd, TCHAR ch, int cRepeat) */
     public static LRESULT HANDLE_WM_SYSDEADCHAR(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, ushort, int, void> fn)
     {
-        fn((hwnd), (ushort)(wParam), (int)(short)LOWORD(lParam));
+        fn((hwnd), unchecked((ushort)wParam.Value), unchecked((int)(short)LOWORD(lParam)));
         return 0;
     }
 
@@ -658,7 +658,7 @@ public static unsafe partial class Windows
     /* void Cls_OnMouseMove(HWND hwnd, int x, int y, UINT keyFlags) */
     public static LRESULT HANDLE_WM_MOUSEMOVE(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int, int, uint, void> fn)
     {
-        fn((hwnd), (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam), (uint)(wParam));
+        fn((hwnd), unchecked((int)(short)LOWORD(lParam)), unchecked((int)(short)HIWORD(lParam)), unchecked((uint)wParam.Value));
         return 0;
     }
 
@@ -668,7 +668,7 @@ public static unsafe partial class Windows
     /* void Cls_OnLButtonDown(HWND hwnd, BOOL fDoubleClick, int x, int y, UINT keyFlags) */
     public static LRESULT HANDLE_WM_LBUTTONDOWN(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, BOOL, int, int, uint, void> fn)
     {
-        fn((hwnd), FALSE, (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam), (uint)(wParam));
+        fn((hwnd), FALSE, unchecked((int)(short)LOWORD(lParam)), unchecked((int)(short)HIWORD(lParam)), unchecked((uint)wParam.Value));
         return 0;
     }
 
@@ -678,14 +678,14 @@ public static unsafe partial class Windows
     /* void Cls_OnLButtonDown(HWND hwnd, BOOL fDoubleClick, int x, int y, UINT keyFlags) */
     public static LRESULT HANDLE_WM_LBUTTONDBLCLK(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, BOOL, int, int, uint, void> fn)
     {
-        fn((hwnd), TRUE, (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam), (uint)(wParam));
+        fn((hwnd), TRUE, unchecked((int)(short)LOWORD(lParam)), unchecked((int)(short)HIWORD(lParam)), unchecked((uint)wParam.Value));
         return 0;
     }
 
     /* void Cls_OnLButtonUp(HWND hwnd, int x, int y, UINT keyFlags) */
     public static LRESULT HANDLE_WM_LBUTTONUP(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int, int, uint, void> fn)
     {
-        fn((hwnd), (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam), (uint)(wParam));
+        fn((hwnd), unchecked((int)(short)LOWORD(lParam)), unchecked((int)(short)HIWORD(lParam)), unchecked((uint)wParam.Value));
         return 0;
     }
 
@@ -695,7 +695,7 @@ public static unsafe partial class Windows
     /* void Cls_OnRButtonDown(HWND hwnd, BOOL fDoubleClick, int x, int y, UINT keyFlags) */
     public static LRESULT HANDLE_WM_RBUTTONDOWN(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, BOOL, int, int, uint, void> fn)
     {
-        fn((hwnd), FALSE, (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam), (uint)(wParam));
+        fn((hwnd), FALSE, unchecked((int)(short)LOWORD(lParam)), unchecked((int)(short)HIWORD(lParam)), unchecked((uint)wParam.Value));
         return 0;
     }
 
@@ -705,14 +705,14 @@ public static unsafe partial class Windows
     /* void Cls_OnRButtonDown(HWND hwnd, BOOL fDoubleClick, int x, int y, UINT keyFlags) */
     public static LRESULT HANDLE_WM_RBUTTONDBLCLK(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, BOOL, int, int, uint, void> fn)
     {
-        fn((hwnd), TRUE, (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam), (uint)(wParam));
+        fn((hwnd), TRUE, unchecked((int)(short)LOWORD(lParam)), unchecked((int)(short)HIWORD(lParam)), unchecked((uint)wParam.Value));
         return 0;
     }
 
     /* void Cls_OnRButtonUp(HWND hwnd, int x, int y, UINT flags) */
     public static LRESULT HANDLE_WM_RBUTTONUP(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int, int, uint, void> fn)
     {
-        fn((hwnd), (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam), (uint)(wParam));
+        fn((hwnd), unchecked((int)(short)LOWORD(lParam)), unchecked((int)(short)HIWORD(lParam)), unchecked((uint)wParam.Value));
         return 0;
     }
 
@@ -722,7 +722,7 @@ public static unsafe partial class Windows
     /* void Cls_OnMButtonDown(HWND hwnd, BOOL fDoubleClick, int x, int y, UINT keyFlags) */
     public static LRESULT HANDLE_WM_MBUTTONDOWN(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, BOOL, int, int, uint, void> fn)
     {
-        fn((hwnd), FALSE, (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam), (uint)(wParam));
+        fn((hwnd), FALSE, unchecked((int)(short)LOWORD(lParam)), unchecked((int)(short)HIWORD(lParam)), unchecked((uint)wParam.Value));
         return 0;
     }
 
@@ -732,14 +732,14 @@ public static unsafe partial class Windows
     /* void Cls_OnMButtonDown(HWND hwnd, BOOL fDoubleClick, int x, int y, UINT keyFlags) */
     public static LRESULT HANDLE_WM_MBUTTONDBLCLK(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, BOOL, int, int, uint, void> fn)
     {
-        fn((hwnd), TRUE, (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam), (uint)(wParam));
+        fn((hwnd), TRUE, unchecked((int)(short)LOWORD(lParam)), unchecked((int)(short)HIWORD(lParam)), unchecked((uint)wParam.Value));
         return 0;
     }
 
     /* void Cls_OnMButtonUp(HWND hwnd, int x, int y, UINT flags) */
     public static LRESULT HANDLE_WM_MBUTTONUP(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int, int, uint, void> fn)
     {
-        fn((hwnd), (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam), (uint)(wParam));
+        fn((hwnd), unchecked((int)(short)LOWORD(lParam)), unchecked((int)(short)HIWORD(lParam)), unchecked((uint)wParam.Value));
         return 0;
     }
 
@@ -749,7 +749,7 @@ public static unsafe partial class Windows
     /* void Cls_OnMouseWheel(HWND hwnd, int xPos, int yPos, int zDelta, UINT fwKeys) */
     public static LRESULT HANDLE_WM_MOUSEWHEEL(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int, int, int, uint, void> fn)
     {
-        fn((hwnd), (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam), (int)(short)HIWORD(wParam), (uint)(short)LOWORD(wParam));
+        fn((hwnd), unchecked((int)(short)LOWORD(lParam)), unchecked((int)(short)HIWORD(lParam)), unchecked((int)(short)HIWORD(wParam)), (uint)(short)LOWORD(wParam));
         return 0;
     }
 
@@ -759,7 +759,7 @@ public static unsafe partial class Windows
     /* void Cls_OnNCMouseMove(HWND hwnd, int x, int y, UINT codeHitTest) */
     public static LRESULT HANDLE_WM_NCMOUSEMOVE(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int, int, uint, void> fn)
     {
-        fn((hwnd), (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam), (uint)(wParam));
+        fn((hwnd), unchecked((int)(short)LOWORD(lParam)), unchecked((int)(short)HIWORD(lParam)), unchecked((uint)wParam.Value));
         return 0;
     }
 
@@ -769,7 +769,7 @@ public static unsafe partial class Windows
     /* void Cls_OnNCLButtonDown(HWND hwnd, BOOL fDoubleClick, int x, int y, UINT codeHitTest) */
     public static LRESULT HANDLE_WM_NCLBUTTONDOWN(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, BOOL, int, int, uint, void> fn)
     {
-        fn((hwnd), FALSE, (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam), (uint)(wParam));
+        fn((hwnd), FALSE, unchecked((int)(short)LOWORD(lParam)), unchecked((int)(short)HIWORD(lParam)), unchecked((uint)wParam.Value));
         return 0;
     }
 
@@ -779,14 +779,14 @@ public static unsafe partial class Windows
     /* void Cls_OnNCLButtonDown(HWND hwnd, BOOL fDoubleClick, int x, int y, UINT codeHitTest) */
     public static LRESULT HANDLE_WM_NCLBUTTONDBLCLK(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, BOOL, int, int, uint, void> fn)
     {
-        fn((hwnd), TRUE, (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam), (uint)(wParam));
+        fn((hwnd), TRUE, unchecked((int)(short)LOWORD(lParam)), unchecked((int)(short)HIWORD(lParam)), unchecked((uint)wParam.Value));
         return 0;
     }
 
     /* void Cls_OnNCLButtonUp(HWND hwnd, int x, int y, UINT codeHitTest) */
     public static LRESULT HANDLE_WM_NCLBUTTONUP(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int, int, uint, void> fn)
     {
-        fn((hwnd), (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam), (uint)(wParam));
+        fn((hwnd), unchecked((int)(short)LOWORD(lParam)), unchecked((int)(short)HIWORD(lParam)), unchecked((uint)wParam.Value));
         return 0;
     }
 
@@ -796,7 +796,7 @@ public static unsafe partial class Windows
     /* void Cls_OnNCRButtonDown(HWND hwnd, BOOL fDoubleClick, int x, int y, UINT codeHitTest) */
     public static LRESULT HANDLE_WM_NCRBUTTONDOWN(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, BOOL, int, int, uint, void> fn)
     {
-        fn((hwnd), FALSE, (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam), (uint)(wParam));
+        fn((hwnd), FALSE, unchecked((int)(short)LOWORD(lParam)), unchecked((int)(short)HIWORD(lParam)), unchecked((uint)wParam.Value));
         return 0;
     }
 
@@ -806,14 +806,14 @@ public static unsafe partial class Windows
     /* void Cls_OnNCRButtonDown(HWND hwnd, BOOL fDoubleClick, int x, int y, UINT codeHitTest) */
     public static LRESULT HANDLE_WM_NCRBUTTONDBLCLK(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, BOOL, int, int, uint, void> fn)
     {
-        fn((hwnd), TRUE, (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam), (uint)(wParam));
+        fn((hwnd), TRUE, unchecked((int)(short)LOWORD(lParam)), unchecked((int)(short)HIWORD(lParam)), unchecked((uint)wParam.Value));
         return 0;
     }
 
     /* void Cls_OnNCRButtonUp(HWND hwnd, int x, int y, UINT codeHitTest) */
     public static LRESULT HANDLE_WM_NCRBUTTONUP(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int, int, uint, void> fn)
     {
-        fn((hwnd), (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam), (uint)(wParam));
+        fn((hwnd), unchecked((int)(short)LOWORD(lParam)), unchecked((int)(short)HIWORD(lParam)), unchecked((uint)wParam.Value));
         return 0;
     }
 
@@ -823,7 +823,7 @@ public static unsafe partial class Windows
     /* void Cls_OnNCMButtonDown(HWND hwnd, BOOL fDoubleClick, int x, int y, UINT codeHitTest) */
     public static LRESULT HANDLE_WM_NCMBUTTONDOWN(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, BOOL, int, int, uint, void> fn)
     {
-        fn((hwnd), FALSE, (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam), (uint)(wParam));
+        fn((hwnd), FALSE, unchecked((int)(short)LOWORD(lParam)), unchecked((int)(short)HIWORD(lParam)), unchecked((uint)wParam.Value));
         return 0;
     }
 
@@ -833,14 +833,14 @@ public static unsafe partial class Windows
     /* void Cls_OnNCMButtonDown(HWND hwnd, BOOL fDoubleClick, int x, int y, UINT codeHitTest) */
     public static LRESULT HANDLE_WM_NCMBUTTONDBLCLK(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, BOOL, int, int, uint, void> fn)
     {
-        fn((hwnd), TRUE, (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam), (uint)(wParam));
+        fn((hwnd), TRUE, unchecked((int)(short)LOWORD(lParam)), unchecked((int)(short)HIWORD(lParam)), unchecked((uint)wParam.Value));
         return 0;
     }
 
     /* void Cls_OnNCMButtonUp(HWND hwnd, int x, int y, UINT codeHitTest) */
     public static LRESULT HANDLE_WM_NCMBUTTONUP(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int, int, uint, void> fn)
     {
-        fn((hwnd), (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam), (uint)(wParam));
+        fn((hwnd), unchecked((int)(short)LOWORD(lParam)), unchecked((int)(short)HIWORD(lParam)), unchecked((uint)wParam.Value));
         return 0;
     }
 
@@ -849,10 +849,10 @@ public static unsafe partial class Windows
 
     /* int Cls_OnMouseActivate(HWND hwnd, HWND hwndTopLevel, UINT codeHitTest, UINT msg) */
     public static LRESULT HANDLE_WM_MOUSEACTIVATE(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, HWND, uint, uint, int> fn)
-        => (LRESULT)(uint)(int)fn((hwnd), (HWND)(wParam), (uint)LOWORD(lParam), (uint)HIWORD(lParam));
+        => (LRESULT)unchecked((uint)(int)fn((hwnd), (HWND)(wParam), (uint)LOWORD(lParam), (uint)HIWORD(lParam)));
 
     public static int FORWARD_WM_MOUSEACTIVATE(HWND hwnd, HWND hwndTopLevel, uint codeHitTest, uint msg, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
-        => (int)(uint)fn((hwnd), WM_MOUSEACTIVATE, (WPARAM)(HWND)(hwndTopLevel), MAKELPARAM((codeHitTest), (msg)));
+        => unchecked((int)(uint)fn((hwnd), WM_MOUSEACTIVATE, (WPARAM)(HWND)(hwndTopLevel), MAKELPARAM((codeHitTest), (msg))));
 
     /* void Cls_OnCancelMode(HWND hwnd) */
     public static LRESULT HANDLE_WM_CANCELMODE(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, void> fn)
@@ -867,7 +867,7 @@ public static unsafe partial class Windows
     /* void Cls_OnTimer(HWND hwnd, UINT id) */
     public static LRESULT HANDLE_WM_TIMER(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, uint, void> fn)
     {
-        fn((hwnd), (uint)(wParam));
+        fn((hwnd), unchecked((uint)wParam.Value));
         return 0;
     }
 
@@ -897,7 +897,7 @@ public static unsafe partial class Windows
     /* void Cls_OnMenuSelect(HWND hwnd, HMENU hmenu, int item, HMENU hmenuPopup, UINT flags) */
     public static LRESULT HANDLE_WM_MENUSELECT(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, HMENU, int, HMENU, uint, void> fn)
     {
-        fn((hwnd), (HMENU)(lParam), ((HIWORD(wParam) & MF_POPUP) != 0) ? 0 : (int)(LOWORD(wParam)), ((HIWORD(wParam) & MF_POPUP) != 0) ? GetSubMenu((HMENU)lParam, LOWORD(wParam)) : HMENU.NULL, (uint)(((short)HIWORD(wParam) == -1) ? 0xFFFFFFFF : HIWORD(wParam)));
+        fn((hwnd), (HMENU)(lParam), ((HIWORD(wParam) & MF_POPUP) != 0) ? 0 : (int)(LOWORD(wParam)), ((HIWORD(wParam) & MF_POPUP) != 0) ? GetSubMenu((HMENU)lParam, LOWORD(wParam)) : HMENU.NULL, (uint)((unchecked((short)HIWORD(wParam)) == -1) ? 0xFFFFFFFF : HIWORD(wParam)));
         return 0;
     }
 
@@ -924,7 +924,7 @@ public static unsafe partial class Windows
     /* void Cls_OnHScroll(HWND hwnd, HWND hwndCtl, UINT code, int pos) */
     public static LRESULT HANDLE_WM_HSCROLL(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, HWND, uint, int, void> fn)
     {
-        fn((hwnd), (HWND)(lParam), (uint)(LOWORD(wParam)), (int)(short)HIWORD(wParam));
+        fn((hwnd), (HWND)(lParam), (uint)(LOWORD(wParam)), unchecked((int)(short)HIWORD(wParam)));
         return 0;
     }
 
@@ -934,7 +934,7 @@ public static unsafe partial class Windows
     /* void Cls_OnVScroll(HWND hwnd, HWND hwndCtl, UINT code, int pos) */
     public static LRESULT HANDLE_WM_VSCROLL(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, HWND, uint, int, void> fn)
     {
-        fn((hwnd), (HWND)(lParam), (uint)(LOWORD(wParam)), (int)(short)HIWORD(wParam));
+        fn((hwnd), (HWND)(lParam), (uint)(LOWORD(wParam)), unchecked((int)(short)HIWORD(wParam)));
         return 0;
     }
 
@@ -993,7 +993,7 @@ public static unsafe partial class Windows
 
     /* HANDLE Cls_OnRenderFormat(HWND hwnd, UINT fmt) */
     public static LRESULT HANDLE_WM_RENDERFORMAT(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, uint, HANDLE> fn)
-        => (LRESULT)(nuint)(HANDLE)fn((hwnd), (uint)(wParam));
+        => (LRESULT)(nuint)(HANDLE)fn((hwnd), unchecked((uint)wParam.Value));
 
     public static HANDLE FORWARD_WM_RENDERFORMAT(HWND hwnd, uint fmt, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
         => (HANDLE)(nuint)fn((hwnd), WM_RENDERFORMAT, (WPARAM)(uint)(fmt), 0);
@@ -1053,7 +1053,7 @@ public static unsafe partial class Windows
     /* void Cls_OnVScrollClipboard(HWND hwnd, HWND hwndCBViewer, UINT code, int pos) */
     public static LRESULT HANDLE_WM_VSCROLLCLIPBOARD(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, HWND, uint, int, void> fn)
     {
-        fn((hwnd), (HWND)(wParam), (uint)LOWORD(lParam), (int)(short)HIWORD(lParam));
+        fn((hwnd), (HWND)(wParam), (uint)LOWORD(lParam), unchecked((int)(short)HIWORD(lParam)));
         return 0;
     }
 
@@ -1063,7 +1063,7 @@ public static unsafe partial class Windows
     /* void Cls_OnHScrollClipboard(HWND hwnd, HWND hwndCBViewer, UINT code, int pos) */
     public static LRESULT HANDLE_WM_HSCROLLCLIPBOARD(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, HWND, uint, int, void> fn)
     {
-        fn((hwnd), (HWND)(wParam), (uint)LOWORD(lParam), (int)(short)HIWORD(lParam));
+        fn((hwnd), (HWND)(wParam), (uint)LOWORD(lParam), unchecked((int)(short)HIWORD(lParam)));
         return 0;
     }
 
@@ -1073,7 +1073,7 @@ public static unsafe partial class Windows
     /* void Cls_OnAskCBFormatName(HWND hwnd, int cchMax, LPTSTR rgchName) */
     public static LRESULT HANDLE_WM_ASKCBFORMATNAME(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int, char*, void> fn)
     {
-        fn((hwnd), (int)(wParam), (char*)(lParam));
+        fn((hwnd), unchecked((int)wParam.Value), (char*)(lParam));
         return 0;
     }
 
@@ -1100,7 +1100,7 @@ public static unsafe partial class Windows
     /* void Cls_OnSysCommand(HWND hwnd, UINT cmd, int x, int y) */
     public static LRESULT HANDLE_WM_SYSCOMMAND(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, uint, int, int, void> fn)
     {
-        fn((hwnd), (uint)(wParam), (int)(short)LOWORD(lParam), (int)(short)HIWORD(lParam));
+        fn((hwnd), unchecked((uint)wParam.Value), unchecked((int)(short)LOWORD(lParam)), unchecked((int)(short)HIWORD(lParam)));
         return 0;
     }
 
@@ -1109,10 +1109,10 @@ public static unsafe partial class Windows
 
     /* HWND Cls_MDICreate(HWND hwnd, const LPMDICREATESTRUCT lpmcs) */
     public static LRESULT HANDLE_WM_MDICREATE(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, MDICREATESTRUCTW*, HWND> fn)
-        => (LRESULT)(uint)(uint)fn((hwnd), (MDICREATESTRUCTW*)(lParam));
+        => (LRESULT)fn((hwnd), (MDICREATESTRUCTW*)(lParam));
 
     public static HWND FORWARD_WM_MDICREATE(HWND hwnd, MDICREATESTRUCTW* lpmcs, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
-        => (HWND)(uint)(uint)fn((hwnd), WM_MDICREATE, 0u, (LPARAM)(MDICREATESTRUCTW*)(lpmcs));
+        => (HWND)fn((hwnd), WM_MDICREATE, 0u, (LPARAM)(MDICREATESTRUCTW*)(lpmcs));
 
     /* void Cls_MDIDestroy(HWND hwnd, HWND hwndDestroy) */
     public static LRESULT HANDLE_WM_MDIDESTROY(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, HWND, void> fn)
@@ -1164,14 +1164,14 @@ public static unsafe partial class Windows
 
     /* BOOL Cls_MDITile(HWND hwnd, UINT cmd) */
     public static LRESULT HANDLE_WM_MDITILE(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, uint, BOOL> fn)
-        => (LRESULT)(uint)fn((hwnd), (uint)(wParam));
+        => (LRESULT)(uint)fn((hwnd), unchecked((uint)wParam.Value));
 
     public static BOOL FORWARD_WM_MDITILE(HWND hwnd, uint cmd, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
         => (BOOL)(uint)fn((hwnd), WM_MDITILE, (WPARAM)(cmd), 0);
 
     /* BOOL Cls_MDICascade(HWND hwnd, UINT cmd) */
     public static LRESULT HANDLE_WM_MDICASCADE(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, uint, BOOL> fn)
-        => (LRESULT)(uint)fn((hwnd), (uint)(wParam));
+        => (LRESULT)(uint)fn((hwnd), unchecked((uint)wParam.Value));
 
     public static BOOL FORWARD_WM_MDICASCADE(HWND hwnd, uint cmd, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
         => (BOOL)(uint)fn((hwnd), WM_MDICASCADE, (WPARAM)(cmd), 0);
@@ -1237,7 +1237,7 @@ public static unsafe partial class Windows
     /* void Cls_OnEnterIdle(HWND hwnd, UINT source, HWND hwndSource) */
     public static LRESULT HANDLE_WM_ENTERIDLE(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, uint, HWND, void> fn)
     {
-        fn((hwnd), (uint)(wParam), (HWND)(lParam));
+        fn((hwnd), unchecked((uint)wParam.Value), (HWND)(lParam));
         return 0;
     }
 
@@ -1343,24 +1343,24 @@ public static unsafe partial class Windows
 
     /* int Cls_OnCompareItem(HWND hwnd, const COMPAREITEMSTRUCT * lpCompareItem) */
     public static LRESULT HANDLE_WM_COMPAREITEM(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, COMPAREITEMSTRUCT*, int> fn)
-        => (LRESULT)(uint)(int)fn((hwnd), (COMPAREITEMSTRUCT*)(lParam));
+        => (LRESULT)unchecked((uint)(int)fn((hwnd), (COMPAREITEMSTRUCT*)(lParam)));
 
     public static int FORWARD_WM_COMPAREITEM(HWND hwnd, COMPAREITEMSTRUCT* lpCompareItem, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
-        => (int)(uint)fn((hwnd), WM_COMPAREITEM, (WPARAM)(((COMPAREITEMSTRUCT*)(lpCompareItem))->CtlID), (LPARAM)(COMPAREITEMSTRUCT*)(lpCompareItem));
+        => unchecked((int)(uint)fn((hwnd), WM_COMPAREITEM, (WPARAM)(((COMPAREITEMSTRUCT*)(lpCompareItem))->CtlID), (LPARAM)(COMPAREITEMSTRUCT*)(lpCompareItem)));
 
     /* int Cls_OnVkeyToItem(HWND hwnd, UINT vk, HWND hwndListbox, int iCaret) */
     public static LRESULT HANDLE_WM_VKEYTOITEM(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, uint, HWND, int, int> fn)
-        => (LRESULT)(uint)(int)fn((hwnd), (uint)LOWORD(wParam), (HWND)(lParam), (int)(short)HIWORD(wParam));
+        => (LRESULT)unchecked((uint)(int)fn((hwnd), (uint)LOWORD(wParam), (HWND)(lParam), unchecked((int)(short)HIWORD(wParam))));
 
     public static int FORWARD_WM_VKEYTOITEM(HWND hwnd, uint vk, HWND hwndListBox, int iCaret, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
-        => (int)(uint)fn((hwnd), WM_VKEYTOITEM, MAKEWPARAM((vk), (nuint)(iCaret)), (LPARAM)(hwndListBox));
+        => unchecked((int)(uint)fn((hwnd), WM_VKEYTOITEM, MAKEWPARAM((vk), (nuint)(iCaret)), (LPARAM)(hwndListBox)));
 
     /* int Cls_OnCharToItem(HWND hwnd, UINT ch, HWND hwndListbox, int iCaret) */
     public static LRESULT HANDLE_WM_CHARTOITEM(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, uint, HWND, int, int> fn)
-        => (LRESULT)(uint)(int)fn((hwnd), (uint)LOWORD(wParam), (HWND)(lParam), (int)(short)HIWORD(wParam));
+        => (LRESULT)unchecked((uint)(int)fn((hwnd), (uint)LOWORD(wParam), (HWND)(lParam), unchecked((int)(short)HIWORD(wParam))));
 
     public static int FORWARD_WM_CHARTOITEM(HWND hwnd, uint ch, HWND hwndListBox, int iCaret, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
-        => (int)(uint)fn((hwnd), WM_CHARTOITEM, MAKEWPARAM((uint)(ch), (uint)(iCaret)), (LPARAM)(hwndListBox));
+        => unchecked((int)(uint)fn((hwnd), WM_CHARTOITEM, MAKEWPARAM((uint)(ch), (uint)(iCaret)), (LPARAM)(hwndListBox)));
 
     /* void Cls_OnQueueSync(HWND hwnd) */
     public static LRESULT HANDLE_WM_QUEUESYNC(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, void> fn)
@@ -1375,7 +1375,7 @@ public static unsafe partial class Windows
     /* void Cls_OnCommNotify(HWND hwnd, int cid, UINT flags) */
     public static LRESULT HANDLE_WM_COMMNOTIFY(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int, uint, void> fn)
     {
-        fn((hwnd), (int)(wParam), (uint)LOWORD(lParam));
+        fn((hwnd), unchecked((int)wParam.Value), (uint)LOWORD(lParam));
         return 0;
     }
 
@@ -1385,7 +1385,7 @@ public static unsafe partial class Windows
     /* void Cls_OnDisplayChange(HWND hwnd, UINT bitsPerPixel, UINT cxScreen, UINT cyScreen) */
     public static LRESULT HANDLE_WM_DISPLAYCHANGE(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, uint, uint, uint, void> fn)
     {
-        fn((hwnd), (uint)(wParam), (uint)LOWORD(lParam), (uint)HIWORD(lParam));
+        fn((hwnd), unchecked((uint)wParam.Value), (uint)LOWORD(lParam), (uint)HIWORD(lParam));
         return 0;
     }
 
@@ -1394,7 +1394,7 @@ public static unsafe partial class Windows
 
     /* BOOL Cls_OnDeviceChange(HWND hwnd, UINT uEvent, DWORD dwEventData) */
     public static LRESULT HANDLE_WM_DEVICECHANGE(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, uint, uint, BOOL> fn)
-        => (LRESULT)(uint)(BOOL)fn((hwnd), (uint)(wParam), (uint)(lParam));
+        => (LRESULT)(uint)(BOOL)fn((hwnd), unchecked((uint)wParam.Value), unchecked((uint)lParam.Value));
 
     public static BOOL FORWARD_WM_DEVICECHANGE(HWND hwnd, uint uEvent, uint dwEventData, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
         => (BOOL)(uint)fn((hwnd), WM_DEVICECHANGE, (WPARAM)(uint)(uEvent), (LPARAM)(uint)(dwEventData));
@@ -1402,7 +1402,7 @@ public static unsafe partial class Windows
     /* void Cls_OnContextMenu(HWND hwnd, HWND hwndContext, UINT xPos, UINT yPos) */
     public static LRESULT HANDLE_WM_CONTEXTMENU(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, HWND, uint, uint, void> fn)
     {
-        fn((hwnd), (HWND)(wParam), (uint)(int)(short)LOWORD(lParam), (uint)(int)(short)HIWORD(lParam));
+        fn((hwnd), (HWND)(wParam), unchecked((uint)(int)(short)LOWORD(lParam)), unchecked((uint)(int)(short)HIWORD(lParam)));
         return 0;
     }
 
@@ -1421,7 +1421,7 @@ public static unsafe partial class Windows
     /* void Cls_OnHotKey(HWND hwnd, int idHotKey, UINT fuModifiers, UINT vk) */
     public static LRESULT HANDLE_WM_HOTKEY(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int, uint, uint, void> fn)
     {
-        fn((hwnd), (int)(wParam), (uint)LOWORD(lParam), (uint)HIWORD(lParam));
+        fn((hwnd), unchecked((int)wParam.Value), (uint)LOWORD(lParam), (uint)HIWORD(lParam));
         return 0;
     }
 
@@ -1452,11 +1452,11 @@ public static unsafe partial class Windows
 
     public static BOOL Button_SetText(HWND hwndCtl, char* lpsz) => SetWindowText((hwndCtl), (lpsz));
 
-    public static int Button_GetCheck(HWND hwndCtl) => ((int)(uint)SNDMSG((hwndCtl), BM_GETCHECK, 0u, 0));
+    public static int Button_GetCheck(HWND hwndCtl) => (unchecked((int)(uint)SNDMSG((hwndCtl), BM_GETCHECK, 0u, 0)));
 
     public static void Button_SetCheck(HWND hwndCtl, int check) => SNDMSG((hwndCtl), BM_SETCHECK, (WPARAM)(int)(check), 0);
 
-    public static int Button_GetState(HWND hwndCtl) => ((int)(uint)SNDMSG((hwndCtl), BM_GETSTATE, 0u, 0));
+    public static int Button_GetState(HWND hwndCtl) => (unchecked((int)(uint)SNDMSG((hwndCtl), BM_GETSTATE, 0u, 0)));
 
     public static uint Button_SetState(HWND hwndCtl, int state) => ((uint)(uint)SNDMSG((hwndCtl), BM_SETSTATE, (WPARAM)(int)(state), 0));
 
@@ -1474,12 +1474,12 @@ public static unsafe partial class Windows
 
     public static void Edit_LimitText(HWND hwndCtl, int cchMax) => SNDMSG((hwndCtl), EM_LIMITTEXT, (WPARAM)(cchMax), 0);
 
-    public static int Edit_GetLineCount(HWND hwndCtl) => ((int)(uint)SNDMSG((hwndCtl), EM_GETLINECOUNT, 0u, 0));
+    public static int Edit_GetLineCount(HWND hwndCtl) => (unchecked((int)(uint)SNDMSG((hwndCtl), EM_GETLINECOUNT, 0u, 0)));
 
     public static int Edit_GetLine(HWND hwndCtl, int line, char* lpch, int cchMax)
     {
         *((int*)(lpch)) = (cchMax);
-        return ((int)(uint)SNDMSG((hwndCtl), EM_GETLINE, (WPARAM)(int)(line), (LPARAM)(char*)(lpch)));
+        return (unchecked((int)(uint)SNDMSG((hwndCtl), EM_GETLINE, (WPARAM)(int)(line), (LPARAM)(char*)(lpch))));
     }
 
     public static void Edit_GetRect(HWND hwndCtl, RECT* lprc) => SNDMSG((hwndCtl), EM_GETRECT, 0u, (LPARAM)(RECT*)(lprc));
@@ -1500,11 +1500,11 @@ public static unsafe partial class Windows
 
     public static BOOL Edit_ScrollCaret(HWND hwndCtl) => ((BOOL)(uint)SNDMSG((hwndCtl), EM_SCROLLCARET, 0u, 0));
 
-    public static int Edit_LineFromChar(HWND hwndCtl, int ich) => ((int)(uint)SNDMSG((hwndCtl), EM_LINEFROMCHAR, (WPARAM)(int)(ich), 0));
+    public static int Edit_LineFromChar(HWND hwndCtl, int ich) => (unchecked((int)(uint)SNDMSG((hwndCtl), EM_LINEFROMCHAR, (WPARAM)(int)(ich), 0)));
 
-    public static int Edit_LineIndex(HWND hwndCtl, int line) => ((int)(uint)SNDMSG((hwndCtl), EM_LINEINDEX, (WPARAM)(int)(line), 0));
+    public static int Edit_LineIndex(HWND hwndCtl, int line) => (unchecked((int)(uint)SNDMSG((hwndCtl), EM_LINEINDEX, (WPARAM)(int)(line), 0)));
 
-    public static int Edit_LineLength(HWND hwndCtl, int line) => ((int)(uint)SNDMSG((hwndCtl), EM_LINELENGTH, (WPARAM)(int)(line), 0));
+    public static int Edit_LineLength(HWND hwndCtl, int line) => (unchecked((int)(uint)SNDMSG((hwndCtl), EM_LINELENGTH, (WPARAM)(int)(line), 0)));
 
     public static void Edit_Scroll(HWND hwndCtl, WPARAM dv, LPARAM dh) => SNDMSG((hwndCtl), EM_LINESCROLL, (WPARAM)(dh), (LPARAM)(dv));
 
@@ -1524,7 +1524,7 @@ public static unsafe partial class Windows
 
     public static void Edit_SetHandle(HWND hwndCtl, HLOCAL h) => SNDMSG((hwndCtl), EM_SETHANDLE, (WPARAM)(nuint)(HLOCAL)(h), 0);
 
-    public static int Edit_GetFirstVisibleLine(HWND hwndCtl) => ((int)(uint)SNDMSG((hwndCtl), EM_GETFIRSTVISIBLELINE, 0u, 0));
+    public static int Edit_GetFirstVisibleLine(HWND hwndCtl) => (unchecked((int)(uint)SNDMSG((hwndCtl), EM_GETFIRSTVISIBLELINE, 0u, 0)));
 
     public static BOOL Edit_SetReadOnly(HWND hwndCtl, BOOL fReadOnly) => ((BOOL)(uint)SNDMSG((hwndCtl), EM_SETREADONLY, (WPARAM)(BOOL)(fReadOnly), 0));
 
@@ -1553,75 +1553,75 @@ public static unsafe partial class Windows
 
     public static BOOL ListBox_Enable(HWND hwndCtl, BOOL fEnable) => EnableWindow((hwndCtl), (fEnable));
 
-    public static int ListBox_GetCount(HWND hwndCtl) => ((int)(uint)SNDMSG((hwndCtl), LB_GETCOUNT, 0u, 0));
+    public static int ListBox_GetCount(HWND hwndCtl) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_GETCOUNT, 0u, 0)));
 
     public static BOOL ListBox_ResetContent(HWND hwndCtl) => ((BOOL)(uint)SNDMSG((hwndCtl), LB_RESETCONTENT, 0u, 0));
 
-    public static int ListBox_AddString(HWND hwndCtl, char* lpsz) => ((int)(uint)SNDMSG((hwndCtl), LB_ADDSTRING, 0u, (LPARAM)(char*)(lpsz)));
+    public static int ListBox_AddString(HWND hwndCtl, char* lpsz) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_ADDSTRING, 0u, (LPARAM)(char*)(lpsz))));
 
-    public static int ListBox_InsertString(HWND hwndCtl, int index, char* lpsz) => ((int)(uint)SNDMSG((hwndCtl), LB_INSERTSTRING, (WPARAM)(int)(index), (LPARAM)(char*)(lpsz)));
+    public static int ListBox_InsertString(HWND hwndCtl, int index, char* lpsz) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_INSERTSTRING, (WPARAM)(int)(index), (LPARAM)(char*)(lpsz))));
 
-    public static int ListBox_AddItemData(HWND hwndCtl, LPARAM data) => ((int)(uint)SNDMSG((hwndCtl), LB_ADDSTRING, 0u, (LPARAM)(data)));
+    public static int ListBox_AddItemData(HWND hwndCtl, LPARAM data) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_ADDSTRING, 0u, (LPARAM)(data))));
 
-    public static int ListBox_InsertItemData(HWND hwndCtl, int index, LPARAM data) => ((int)(uint)SNDMSG((hwndCtl), LB_INSERTSTRING, (WPARAM)(int)(index), (LPARAM)(data)));
+    public static int ListBox_InsertItemData(HWND hwndCtl, int index, LPARAM data) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_INSERTSTRING, (WPARAM)(int)(index), (LPARAM)(data))));
 
-    public static int ListBox_DeleteString(HWND hwndCtl, int index) => ((int)(uint)SNDMSG((hwndCtl), LB_DELETESTRING, (WPARAM)(int)(index), 0));
+    public static int ListBox_DeleteString(HWND hwndCtl, int index) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_DELETESTRING, (WPARAM)(int)(index), 0)));
 
-    public static int ListBox_GetTextLen(HWND hwndCtl, int index) => ((int)(uint)SNDMSG((hwndCtl), LB_GETTEXTLEN, (WPARAM)(int)(index), 0));
+    public static int ListBox_GetTextLen(HWND hwndCtl, int index) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_GETTEXTLEN, (WPARAM)(int)(index), 0)));
 
-    public static int ListBox_GetText(HWND hwndCtl, int index, char* lpszBuffer) => ((int)(uint)SNDMSG((hwndCtl), LB_GETTEXT, (WPARAM)(int)(index), (LPARAM)(char*)(lpszBuffer)));
+    public static int ListBox_GetText(HWND hwndCtl, int index, char* lpszBuffer) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_GETTEXT, (WPARAM)(int)(index), (LPARAM)(char*)(lpszBuffer))));
 
     public static LRESULT ListBox_GetItemData(HWND hwndCtl, int index) => ((LRESULT)(nuint)SNDMSG((hwndCtl), LB_GETITEMDATA, (WPARAM)(int)(index), 0));
 
-    public static int ListBox_SetItemData(HWND hwndCtl, int index, LPARAM data) => ((int)(uint)SNDMSG((hwndCtl), LB_SETITEMDATA, (WPARAM)(int)(index), (LPARAM)(data)));
+    public static int ListBox_SetItemData(HWND hwndCtl, int index, LPARAM data) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_SETITEMDATA, (WPARAM)(int)(index), (LPARAM)(data))));
 
-    public static int ListBox_FindString(HWND hwndCtl, int indexStart, char* lpszFind) => ((int)(uint)SNDMSG((hwndCtl), LB_FINDSTRING, (WPARAM)(int)(indexStart), (LPARAM)(char*)(lpszFind)));
+    public static int ListBox_FindString(HWND hwndCtl, int indexStart, char* lpszFind) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_FINDSTRING, (WPARAM)(int)(indexStart), (LPARAM)(char*)(lpszFind))));
 
-    public static int ListBox_FindItemData(HWND hwndCtl, int indexStart, LPARAM data) => ((int)(uint)SNDMSG((hwndCtl), LB_FINDSTRING, (WPARAM)(int)(indexStart), (LPARAM)(data)));
+    public static int ListBox_FindItemData(HWND hwndCtl, int indexStart, LPARAM data) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_FINDSTRING, (WPARAM)(int)(indexStart), (LPARAM)(data))));
 
-    public static int ListBox_SetSel(HWND hwndCtl, BOOL fSelect, LPARAM index) => ((int)(uint)SNDMSG((hwndCtl), LB_SETSEL, (WPARAM)(BOOL)(fSelect), (LPARAM)(index)));
+    public static int ListBox_SetSel(HWND hwndCtl, BOOL fSelect, LPARAM index) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_SETSEL, (WPARAM)(BOOL)(fSelect), (LPARAM)(index))));
 
-    public static int ListBox_SelItemRange(HWND hwndCtl, BOOL fSelect, ushort first, ushort last) => ((int)(uint)SNDMSG((hwndCtl), LB_SELITEMRANGE, (WPARAM)(BOOL)(fSelect), MAKELPARAM((first), (last))));
+    public static int ListBox_SelItemRange(HWND hwndCtl, BOOL fSelect, ushort first, ushort last) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_SELITEMRANGE, (WPARAM)(BOOL)(fSelect), MAKELPARAM((first), (last)))));
 
-    public static int ListBox_GetCurSel(HWND hwndCtl) => ((int)(uint)SNDMSG((hwndCtl), LB_GETCURSEL, 0u, 0));
+    public static int ListBox_GetCurSel(HWND hwndCtl) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_GETCURSEL, 0u, 0)));
 
-    public static int ListBox_SetCurSel(HWND hwndCtl, int index) => ((int)(uint)SNDMSG((hwndCtl), LB_SETCURSEL, (WPARAM)(int)(index), 0));
+    public static int ListBox_SetCurSel(HWND hwndCtl, int index) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_SETCURSEL, (WPARAM)(int)(index), 0)));
 
-    public static int ListBox_SelectString(HWND hwndCtl, int indexStart, char* lpszFind) => ((int)(uint)SNDMSG((hwndCtl), LB_SELECTSTRING, (WPARAM)(int)(indexStart), (LPARAM)(char*)(lpszFind)));
+    public static int ListBox_SelectString(HWND hwndCtl, int indexStart, char* lpszFind) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_SELECTSTRING, (WPARAM)(int)(indexStart), (LPARAM)(char*)(lpszFind))));
 
-    public static int ListBox_SelectItemData(HWND hwndCtl, int indexStart, LPARAM data) => ((int)(uint)SNDMSG((hwndCtl), LB_SELECTSTRING, (WPARAM)(int)(indexStart), (LPARAM)(data)));
+    public static int ListBox_SelectItemData(HWND hwndCtl, int indexStart, LPARAM data) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_SELECTSTRING, (WPARAM)(int)(indexStart), (LPARAM)(data))));
 
-    public static int ListBox_GetSel(HWND hwndCtl, int index) => ((int)(uint)SNDMSG((hwndCtl), LB_GETSEL, (WPARAM)(int)(index), 0));
+    public static int ListBox_GetSel(HWND hwndCtl, int index) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_GETSEL, (WPARAM)(int)(index), 0)));
 
-    public static int ListBox_GetSelCount(HWND hwndCtl) => ((int)(uint)SNDMSG((hwndCtl), LB_GETSELCOUNT, 0u, 0));
+    public static int ListBox_GetSelCount(HWND hwndCtl) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_GETSELCOUNT, 0u, 0)));
 
-    public static int ListBox_GetTopIndex(HWND hwndCtl) => ((int)(uint)SNDMSG((hwndCtl), LB_GETTOPINDEX, 0u, 0));
+    public static int ListBox_GetTopIndex(HWND hwndCtl) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_GETTOPINDEX, 0u, 0)));
 
-    public static int ListBox_GetSelItems(HWND hwndCtl, int cItems, int* lpItems) => ((int)(uint)SNDMSG((hwndCtl), LB_GETSELITEMS, (WPARAM)(int)(cItems), (LPARAM)(int*)(lpItems)));
+    public static int ListBox_GetSelItems(HWND hwndCtl, int cItems, int* lpItems) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_GETSELITEMS, (WPARAM)(int)(cItems), (LPARAM)(int*)(lpItems))));
 
-    public static int ListBox_SetTopIndex(HWND hwndCtl, int indexTop) => ((int)(uint)SNDMSG((hwndCtl), LB_SETTOPINDEX, (WPARAM)(int)(indexTop), 0));
+    public static int ListBox_SetTopIndex(HWND hwndCtl, int indexTop) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_SETTOPINDEX, (WPARAM)(int)(indexTop), 0)));
 
     public static void ListBox_SetColumnWidth(HWND hwndCtl, int cxColumn) => SNDMSG((hwndCtl), LB_SETCOLUMNWIDTH, (WPARAM)(int)(cxColumn), 0);
 
-    public static int ListBox_GetHorizontalExtent(HWND hwndCtl) => ((int)(uint)SNDMSG((hwndCtl), LB_GETHORIZONTALEXTENT, 0u, 0));
+    public static int ListBox_GetHorizontalExtent(HWND hwndCtl) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_GETHORIZONTALEXTENT, 0u, 0)));
 
     public static void ListBox_SetHorizontalExtent(HWND hwndCtl, int cxExtent) => SNDMSG((hwndCtl), LB_SETHORIZONTALEXTENT, (WPARAM)(int)(cxExtent), 0);
 
     public static BOOL ListBox_SetTabStops(HWND hwndCtl, int cTabs, int* lpTabs) => ((BOOL)(uint)SNDMSG((hwndCtl), LB_SETTABSTOPS, (WPARAM)(int)(cTabs), (LPARAM)(int*)(lpTabs)));
 
-    public static int ListBox_GetItemRect(HWND hwndCtl, int index, RECT* lprc) => ((int)(uint)SNDMSG((hwndCtl), LB_GETITEMRECT, (WPARAM)(int)(index), (LPARAM)(RECT*)(lprc)));
+    public static int ListBox_GetItemRect(HWND hwndCtl, int index, RECT* lprc) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_GETITEMRECT, (WPARAM)(int)(index), (LPARAM)(RECT*)(lprc))));
 
-    public static int ListBox_SetCaretIndex(HWND hwndCtl, int index) => ((int)(uint)SNDMSG((hwndCtl), LB_SETCARETINDEX, (WPARAM)(int)(index), 0));
+    public static int ListBox_SetCaretIndex(HWND hwndCtl, int index) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_SETCARETINDEX, (WPARAM)(int)(index), 0)));
 
-    public static int ListBox_GetCaretIndex(HWND hwndCtl) => ((int)(uint)SNDMSG((hwndCtl), LB_GETCARETINDEX, 0u, 0));
+    public static int ListBox_GetCaretIndex(HWND hwndCtl) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_GETCARETINDEX, 0u, 0)));
 
-    public static int ListBox_FindStringExact(HWND hwndCtl, int indexStart, char* lpszFind) => ((int)(uint)SNDMSG((hwndCtl), LB_FINDSTRINGEXACT, (WPARAM)(int)(indexStart), (LPARAM)(char*)(lpszFind)));
+    public static int ListBox_FindStringExact(HWND hwndCtl, int indexStart, char* lpszFind) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_FINDSTRINGEXACT, (WPARAM)(int)(indexStart), (LPARAM)(char*)(lpszFind))));
 
-    public static int ListBox_SetItemHeight(HWND hwndCtl, int index, ushort cy) => ((int)(uint)SNDMSG((hwndCtl), LB_SETITEMHEIGHT, (WPARAM)(int)(index), MAKELPARAM((cy), 0)));
+    public static int ListBox_SetItemHeight(HWND hwndCtl, int index, ushort cy) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_SETITEMHEIGHT, (WPARAM)(int)(index), MAKELPARAM((cy), 0))));
 
-    public static int ListBox_GetItemHeight(HWND hwndCtl, int index) => ((int)(uint)SNDMSG((hwndCtl), LB_GETITEMHEIGHT, (WPARAM)(int)(index), 0));
+    public static int ListBox_GetItemHeight(HWND hwndCtl, int index) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_GETITEMHEIGHT, (WPARAM)(int)(index), 0)));
 
-    public static int ListBox_Dir(HWND hwndCtl, uint attrs, char* lpszFileSpec) => ((int)(uint)SNDMSG((hwndCtl), LB_DIR, (WPARAM)(uint)(attrs), (LPARAM)(char*)(lpszFileSpec)));
+    public static int ListBox_Dir(HWND hwndCtl, uint attrs, char* lpszFileSpec) => (unchecked((int)(uint)SNDMSG((hwndCtl), LB_DIR, (WPARAM)(uint)(attrs), (LPARAM)(char*)(lpszFileSpec))));
 
     /****** ComboBox control message APIs ****************************************/
 
@@ -1633,63 +1633,63 @@ public static unsafe partial class Windows
 
     public static BOOL ComboBox_SetText(HWND hwndCtl, char* lpsz) => SetWindowText((hwndCtl), (lpsz));
 
-    public static int ComboBox_LimitText(HWND hwndCtl, int cchLimit) => ((int)(uint)SNDMSG((hwndCtl), CB_LIMITTEXT, (WPARAM)(int)(cchLimit), 0));
+    public static int ComboBox_LimitText(HWND hwndCtl, int cchLimit) => (unchecked((int)(uint)SNDMSG((hwndCtl), CB_LIMITTEXT, (WPARAM)(int)(cchLimit), 0)));
 
     public static uint ComboBox_GetEditSel(HWND hwndCtl) => ((uint)SNDMSG((hwndCtl), CB_GETEDITSEL, 0u, 0));
 
-    public static int ComboBox_SetEditSel(HWND hwndCtl, ushort ichStart, ushort ichEnd) => ((int)(uint)SNDMSG((hwndCtl), CB_SETEDITSEL, 0u, MAKELPARAM((ichStart), (ichEnd))));
+    public static int ComboBox_SetEditSel(HWND hwndCtl, ushort ichStart, ushort ichEnd) => (unchecked((int)(uint)SNDMSG((hwndCtl), CB_SETEDITSEL, 0u, MAKELPARAM((ichStart), (ichEnd)))));
 
-    public static int ComboBox_GetCount(HWND hwndCtl) => ((int)(uint)SNDMSG((hwndCtl), CB_GETCOUNT, 0u, 0));
+    public static int ComboBox_GetCount(HWND hwndCtl) => (unchecked((int)(uint)SNDMSG((hwndCtl), CB_GETCOUNT, 0u, 0)));
 
-    public static int ComboBox_ResetContent(HWND hwndCtl) => ((int)(uint)SNDMSG((hwndCtl), CB_RESETCONTENT, 0u, 0));
+    public static int ComboBox_ResetContent(HWND hwndCtl) => (unchecked((int)(uint)SNDMSG((hwndCtl), CB_RESETCONTENT, 0u, 0)));
 
-    public static int ComboBox_AddString(HWND hwndCtl, char* lpsz) => ((int)(uint)SNDMSG((hwndCtl), CB_ADDSTRING, 0u, (LPARAM)(char*)(lpsz)));
+    public static int ComboBox_AddString(HWND hwndCtl, char* lpsz) => (unchecked((int)(uint)SNDMSG((hwndCtl), CB_ADDSTRING, 0u, (LPARAM)(char*)(lpsz))));
 
-    public static int ComboBox_InsertString(HWND hwndCtl, int index, char* lpsz) => ((int)(uint)SNDMSG((hwndCtl), CB_INSERTSTRING, (WPARAM)(int)(index), (LPARAM)(char*)(lpsz)));
+    public static int ComboBox_InsertString(HWND hwndCtl, int index, char* lpsz) => (unchecked((int)(uint)SNDMSG((hwndCtl), CB_INSERTSTRING, (WPARAM)(int)(index), (LPARAM)(char*)(lpsz))));
 
-    public static int ComboBox_AddItemData(HWND hwndCtl, LPARAM data) => ((int)(uint)SNDMSG((hwndCtl), CB_ADDSTRING, 0u, (LPARAM)(data)));
+    public static int ComboBox_AddItemData(HWND hwndCtl, LPARAM data) => (unchecked((int)(uint)SNDMSG((hwndCtl), CB_ADDSTRING, 0u, (LPARAM)(data))));
 
-    public static int ComboBox_InsertItemData(HWND hwndCtl, int index, LPARAM data) => ((int)(uint)SNDMSG((hwndCtl), CB_INSERTSTRING, (WPARAM)(int)(index), (LPARAM)(data)));
+    public static int ComboBox_InsertItemData(HWND hwndCtl, int index, LPARAM data) => (unchecked((int)(uint)SNDMSG((hwndCtl), CB_INSERTSTRING, (WPARAM)(int)(index), (LPARAM)(data))));
 
-    public static int ComboBox_DeleteString(HWND hwndCtl, int index) => ((int)(uint)SNDMSG((hwndCtl), CB_DELETESTRING, (WPARAM)(int)(index), 0));
+    public static int ComboBox_DeleteString(HWND hwndCtl, int index) => (unchecked((int)(uint)SNDMSG((hwndCtl), CB_DELETESTRING, (WPARAM)(int)(index), 0)));
 
-    public static int ComboBox_GetLBTextLen(HWND hwndCtl, int index) => ((int)(uint)SNDMSG((hwndCtl), CB_GETLBTEXTLEN, (WPARAM)(int)(index), 0));
+    public static int ComboBox_GetLBTextLen(HWND hwndCtl, int index) => (unchecked((int)(uint)SNDMSG((hwndCtl), CB_GETLBTEXTLEN, (WPARAM)(int)(index), 0)));
 
-    public static int ComboBox_GetLBText(HWND hwndCtl, int index, char* lpszBuffer) => ((int)(uint)SNDMSG((hwndCtl), CB_GETLBTEXT, (WPARAM)(int)(index), (LPARAM)(char*)(lpszBuffer)));
+    public static int ComboBox_GetLBText(HWND hwndCtl, int index, char* lpszBuffer) => (unchecked((int)(uint)SNDMSG((hwndCtl), CB_GETLBTEXT, (WPARAM)(int)(index), (LPARAM)(char*)(lpszBuffer))));
 
     public static LRESULT ComboBox_GetItemData(HWND hwndCtl, int index) => ((LRESULT)(nuint)SNDMSG((hwndCtl), CB_GETITEMDATA, (WPARAM)(int)(index), 0));
 
-    public static int ComboBox_SetItemData(HWND hwndCtl, int index, LPARAM data) => ((int)(uint)SNDMSG((hwndCtl), CB_SETITEMDATA, (WPARAM)(int)(index), (LPARAM)(data)));
+    public static int ComboBox_SetItemData(HWND hwndCtl, int index, LPARAM data) => (unchecked((int)(uint)SNDMSG((hwndCtl), CB_SETITEMDATA, (WPARAM)(int)(index), (LPARAM)(data))));
 
-    public static int ComboBox_FindString(HWND hwndCtl, int indexStart, char* lpszFind) => ((int)(uint)SNDMSG((hwndCtl), CB_FINDSTRING, (WPARAM)(int)(indexStart), (LPARAM)(char*)(lpszFind)));
+    public static int ComboBox_FindString(HWND hwndCtl, int indexStart, char* lpszFind) => (unchecked((int)(uint)SNDMSG((hwndCtl), CB_FINDSTRING, (WPARAM)(int)(indexStart), (LPARAM)(char*)(lpszFind))));
 
-    public static int ComboBox_FindItemData(HWND hwndCtl, int indexStart, LPARAM data) => ((int)(uint)SNDMSG((hwndCtl), CB_FINDSTRING, (WPARAM)(int)(indexStart), (LPARAM)(data)));
+    public static int ComboBox_FindItemData(HWND hwndCtl, int indexStart, LPARAM data) => (unchecked((int)(uint)SNDMSG((hwndCtl), CB_FINDSTRING, (WPARAM)(int)(indexStart), (LPARAM)(data))));
 
-    public static int ComboBox_GetCurSel(HWND hwndCtl) => ((int)(uint)SNDMSG((hwndCtl), CB_GETCURSEL, 0u, 0));
+    public static int ComboBox_GetCurSel(HWND hwndCtl) => (unchecked((int)(uint)SNDMSG((hwndCtl), CB_GETCURSEL, 0u, 0)));
 
-    public static int ComboBox_SetCurSel(HWND hwndCtl, int index) => ((int)(uint)SNDMSG((hwndCtl), CB_SETCURSEL, (WPARAM)(int)(index), 0));
+    public static int ComboBox_SetCurSel(HWND hwndCtl, int index) => (unchecked((int)(uint)SNDMSG((hwndCtl), CB_SETCURSEL, (WPARAM)(int)(index), 0)));
 
-    public static int ComboBox_SelectString(HWND hwndCtl, int indexStart, char* lpszSelect) => ((int)(uint)SNDMSG((hwndCtl), CB_SELECTSTRING, (WPARAM)(int)(indexStart), (LPARAM)(char*)(lpszSelect)));
+    public static int ComboBox_SelectString(HWND hwndCtl, int indexStart, char* lpszSelect) => (unchecked((int)(uint)SNDMSG((hwndCtl), CB_SELECTSTRING, (WPARAM)(int)(indexStart), (LPARAM)(char*)(lpszSelect))));
 
-    public static int ComboBox_SelectItemData(HWND hwndCtl, int indexStart, LPARAM data) => ((int)(uint)SNDMSG((hwndCtl), CB_SELECTSTRING, (WPARAM)(int)(indexStart), (LPARAM)(data)));
+    public static int ComboBox_SelectItemData(HWND hwndCtl, int indexStart, LPARAM data) => (unchecked((int)(uint)SNDMSG((hwndCtl), CB_SELECTSTRING, (WPARAM)(int)(indexStart), (LPARAM)(data))));
 
-    public static int ComboBox_Dir(HWND hwndCtl, uint attrs, char* lpszFileSpec) => ((int)(uint)SNDMSG((hwndCtl), CB_DIR, (WPARAM)(uint)(attrs), (LPARAM)(char*)(lpszFileSpec)));
+    public static int ComboBox_Dir(HWND hwndCtl, uint attrs, char* lpszFileSpec) => (unchecked((int)(uint)SNDMSG((hwndCtl), CB_DIR, (WPARAM)(uint)(attrs), (LPARAM)(char*)(lpszFileSpec))));
 
     public static BOOL ComboBox_ShowDropdown(HWND hwndCtl, BOOL fShow) => ((BOOL)(uint)SNDMSG((hwndCtl), CB_SHOWDROPDOWN, (WPARAM)(BOOL)(fShow), 0));
 
-    public static int ComboBox_FindStringExact(HWND hwndCtl, int indexStart, char* lpszFind) => ((int)(uint)SNDMSG((hwndCtl), CB_FINDSTRINGEXACT, (WPARAM)(int)(indexStart), (LPARAM)(char*)(lpszFind)));
+    public static int ComboBox_FindStringExact(HWND hwndCtl, int indexStart, char* lpszFind) => (unchecked((int)(uint)SNDMSG((hwndCtl), CB_FINDSTRINGEXACT, (WPARAM)(int)(indexStart), (LPARAM)(char*)(lpszFind))));
 
     public static BOOL ComboBox_GetDroppedState(HWND hwndCtl) => ((BOOL)(uint)SNDMSG((hwndCtl), CB_GETDROPPEDSTATE, 0u, 0));
 
     public static void ComboBox_GetDroppedControlRect(HWND hwndCtl, RECT* lprc) => SNDMSG((hwndCtl), CB_GETDROPPEDCONTROLRECT, 0u, (LPARAM)(RECT*)(lprc));
 
-    public static int ComboBox_GetItemHeight(HWND hwndCtl) => ((int)(uint)SNDMSG((hwndCtl), CB_GETITEMHEIGHT, 0u, 0));
+    public static int ComboBox_GetItemHeight(HWND hwndCtl) => (unchecked((int)(uint)SNDMSG((hwndCtl), CB_GETITEMHEIGHT, 0u, 0)));
 
-    public static int ComboBox_SetItemHeight(HWND hwndCtl, int index, int cyItem) => ((int)(uint)SNDMSG((hwndCtl), CB_SETITEMHEIGHT, (WPARAM)(int)(index), (LPARAM)(int)cyItem));
+    public static int ComboBox_SetItemHeight(HWND hwndCtl, int index, int cyItem) => (unchecked((int)(uint)SNDMSG((hwndCtl), CB_SETITEMHEIGHT, (WPARAM)(int)(index), (LPARAM)(int)cyItem)));
 
     public static uint ComboBox_GetExtendedUI(HWND hwndCtl) => ((uint)(uint)SNDMSG((hwndCtl), CB_GETEXTENDEDUI, 0u, 0));
 
-    public static int ComboBox_SetExtendedUI(HWND hwndCtl, uint flags) => ((int)(uint)SNDMSG((hwndCtl), CB_SETEXTENDEDUI, (WPARAM)(uint)(flags), 0));
+    public static int ComboBox_SetExtendedUI(HWND hwndCtl, uint flags) => (unchecked((int)(uint)SNDMSG((hwndCtl), CB_SETEXTENDEDUI, (WPARAM)(uint)(flags), 0)));
 
     /****** Alternate porting layer macros ****************************************/
 
@@ -1699,9 +1699,9 @@ public static unsafe partial class Windows
 
     public static LPARAM GET_LPARAM(WPARAM wp, LPARAM lp) => (lp);
 
-    public static int GET_X_LPARAM(LPARAM lp) => ((int)(short)LOWORD(lp));
+    public static int GET_X_LPARAM(LPARAM lp) => (unchecked((int)(short)LOWORD(lp)));
 
-    public static int GET_Y_LPARAM(LPARAM lp) => ((int)(short)HIWORD(lp));
+    public static int GET_Y_LPARAM(LPARAM lp) => (unchecked((int)(short)HIWORD(lp)));
 
     public static ushort GET_WM_ACTIVATE_STATE(WPARAM wp, LPARAM lp) => LOWORD(wp);
 
@@ -1739,7 +1739,7 @@ public static unsafe partial class Windows
 
     public static ushort GET_WM_MENUSELECT_CMD(WPARAM wp, LPARAM lp) => LOWORD(wp);
 
-    public static uint GET_WM_MENUSELECT_FLAGS(WPARAM wp, LPARAM lp) => (uint)(int)(short)HIWORD(wp);
+    public static uint GET_WM_MENUSELECT_FLAGS(WPARAM wp, LPARAM lp) => unchecked((uint)(int)(short)HIWORD(wp));
 
     public static HMENU GET_WM_MENUSELECT_HMENU(WPARAM wp, LPARAM lp) => (HMENU)(lp);
 
@@ -1771,15 +1771,15 @@ public static unsafe partial class Windows
 
     public static HWND GET_WM_PARENTNOTIFY_HWNDCHILD(WPARAM wp, LPARAM lp) => (HWND)(lp);
 
-    public static int GET_WM_PARENTNOTIFY_X(WPARAM wp, LPARAM lp) => (int)(short)LOWORD(lp);
+    public static int GET_WM_PARENTNOTIFY_X(WPARAM wp, LPARAM lp) => unchecked((int)(short)LOWORD(lp));
 
-    public static int GET_WM_PARENTNOTIFY_Y(WPARAM wp, LPARAM lp) => (int)(short)HIWORD(lp);
+    public static int GET_WM_PARENTNOTIFY_Y(WPARAM wp, LPARAM lp) => unchecked((int)(short)HIWORD(lp));
 
     public static (WPARAM wp, LPARAM lp) GET_WM_PARENTNOTIFY_MPS(ushort msg, ushort id, HWND hwnd) => ((WPARAM)MAKELONG(id, msg), (LPARAM)(hwnd));
 
     public static (WPARAM wp, LPARAM lp) GET_WM_PARENTNOTIFY2_MPS(ushort msg, int x, int y) => ((WPARAM)MAKELONG(0, msg), MAKELONG(x, y));
 
-    public static int GET_WM_VKEYTOITEM_CODE(WPARAM wp, LPARAM lp) => (int)(short)LOWORD(wp);
+    public static int GET_WM_VKEYTOITEM_CODE(WPARAM wp, LPARAM lp) => unchecked((int)(short)LOWORD(wp));
 
     public static ushort GET_WM_VKEYTOITEM_ITEM(WPARAM wp, LPARAM lp) => HIWORD(wp);
 

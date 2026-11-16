@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("2E9E59C0-B437-4981-A647-9C34B9B90891")]
 public unsafe partial struct SyncSetupFolder : INativeGuid
 {
+    /// <include file='SyncSetupFolder.xml' path='doc/member[@name="SyncSetupFolder.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SyncSetupFolder);
 }

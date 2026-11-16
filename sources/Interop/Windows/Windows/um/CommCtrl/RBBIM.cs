@@ -7,45 +7,59 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class RBBIM
 {
+    /// <include file='RBBIM.xml' path='doc/member[@name="RBBIM.RBBIM_STYLE"]/*' />
     [NativeTypeName("#define RBBIM_STYLE 0x00000001")]
     public const int RBBIM_STYLE = 0x00000001;
 
+    /// <include file='RBBIM.xml' path='doc/member[@name="RBBIM.RBBIM_COLORS"]/*' />
     [NativeTypeName("#define RBBIM_COLORS 0x00000002")]
     public const int RBBIM_COLORS = 0x00000002;
 
+    /// <include file='RBBIM.xml' path='doc/member[@name="RBBIM.RBBIM_TEXT"]/*' />
     [NativeTypeName("#define RBBIM_TEXT 0x00000004")]
     public const int RBBIM_TEXT = 0x00000004;
 
+    /// <include file='RBBIM.xml' path='doc/member[@name="RBBIM.RBBIM_IMAGE"]/*' />
     [NativeTypeName("#define RBBIM_IMAGE 0x00000008")]
     public const int RBBIM_IMAGE = 0x00000008;
 
+    /// <include file='RBBIM.xml' path='doc/member[@name="RBBIM.RBBIM_CHILD"]/*' />
     [NativeTypeName("#define RBBIM_CHILD 0x00000010")]
     public const int RBBIM_CHILD = 0x00000010;
 
+    /// <include file='RBBIM.xml' path='doc/member[@name="RBBIM.RBBIM_CHILDSIZE"]/*' />
     [NativeTypeName("#define RBBIM_CHILDSIZE 0x00000020")]
     public const int RBBIM_CHILDSIZE = 0x00000020;
 
+    /// <include file='RBBIM.xml' path='doc/member[@name="RBBIM.RBBIM_SIZE"]/*' />
     [NativeTypeName("#define RBBIM_SIZE 0x00000040")]
     public const int RBBIM_SIZE = 0x00000040;
 
+    /// <include file='RBBIM.xml' path='doc/member[@name="RBBIM.RBBIM_BACKGROUND"]/*' />
     [NativeTypeName("#define RBBIM_BACKGROUND 0x00000080")]
     public const int RBBIM_BACKGROUND = 0x00000080;
 
+    /// <include file='RBBIM.xml' path='doc/member[@name="RBBIM.RBBIM_ID"]/*' />
     [NativeTypeName("#define RBBIM_ID 0x00000100")]
     public const int RBBIM_ID = 0x00000100;
 
+    /// <include file='RBBIM.xml' path='doc/member[@name="RBBIM.RBBIM_IDEALSIZE"]/*' />
     [NativeTypeName("#define RBBIM_IDEALSIZE 0x00000200")]
     public const int RBBIM_IDEALSIZE = 0x00000200;
 
+    /// <include file='RBBIM.xml' path='doc/member[@name="RBBIM.RBBIM_LPARAM"]/*' />
     [NativeTypeName("#define RBBIM_LPARAM 0x00000400")]
     public const int RBBIM_LPARAM = 0x00000400;
 
+    /// <include file='RBBIM.xml' path='doc/member[@name="RBBIM.RBBIM_HEADERSIZE"]/*' />
     [NativeTypeName("#define RBBIM_HEADERSIZE 0x00000800")]
     public const int RBBIM_HEADERSIZE = 0x00000800;
 
+    /// <include file='RBBIM.xml' path='doc/member[@name="RBBIM.RBBIM_CHEVRONLOCATION"]/*' />
     [NativeTypeName("#define RBBIM_CHEVRONLOCATION 0x00001000")]
     public const int RBBIM_CHEVRONLOCATION = 0x00001000;
 
+    /// <include file='RBBIM.xml' path='doc/member[@name="RBBIM.RBBIM_CHEVRONSTATE"]/*' />
     [NativeTypeName("#define RBBIM_CHEVRONSTATE 0x00002000")]
     public const int RBBIM_CHEVRONSTATE = 0x00002000;
 }

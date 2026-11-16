@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CLSID
 {
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AudioFrameNativeFactory"]/*' />
     [NativeTypeName("const CLSID")]
     public static ref readonly Guid CLSID_AudioFrameNativeFactory
     {
@@ -38,6 +39,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_VideoFrameNativeFactory"]/*' />
     [NativeTypeName("const CLSID")]
     public static ref readonly Guid CLSID_VideoFrameNativeFactory
     {

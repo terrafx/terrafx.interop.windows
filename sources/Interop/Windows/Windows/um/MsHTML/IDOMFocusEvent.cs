@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IDOMFocusEvent : IDOMFocusEvent.Interface, INativeGuid
 {
+    /// <include file='IDOMFocusEvent.xml' path='doc/member[@name="IDOMFocusEvent.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDOMFocusEvent);
 
     public void** lpVtbl;

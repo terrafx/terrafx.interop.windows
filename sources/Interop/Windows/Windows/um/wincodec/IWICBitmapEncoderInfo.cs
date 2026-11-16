@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IWICBitmapCodecInfo")]
 public unsafe partial struct IWICBitmapEncoderInfo : IWICBitmapEncoderInfo.Interface, INativeGuid
 {
+    /// <include file='IWICBitmapEncoderInfo.xml' path='doc/member[@name="IWICBitmapEncoderInfo.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWICBitmapEncoderInfo);
 
     public void** lpVtbl;

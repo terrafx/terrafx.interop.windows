@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDeskBandInfo : IDeskBandInfo.Interface, INativeGuid
 {
+    /// <include file='IDeskBandInfo.xml' path='doc/member[@name="IDeskBandInfo.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDeskBandInfo);
 
     public void** lpVtbl;

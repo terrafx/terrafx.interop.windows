@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFByteStreamCacheControl : IMFByteStreamCacheControl.Interface, INativeGuid
 {
+    /// <include file='IMFByteStreamCacheControl.xml' path='doc/member[@name="IMFByteStreamCacheControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFByteStreamCacheControl);
 
     public void** lpVtbl;

@@ -7,81 +7,107 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class APPX
 {
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_PACKAGING_INTERNAL"]/*' />
     [NativeTypeName("#define APPX_E_PACKAGING_INTERNAL _HRESULT_TYPEDEF_(0x80080200L)")]
     public const int APPX_E_PACKAGING_INTERNAL = unchecked((int)(0x80080200));
 
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_INTERLEAVING_NOT_ALLOWED"]/*' />
     [NativeTypeName("#define APPX_E_INTERLEAVING_NOT_ALLOWED _HRESULT_TYPEDEF_(0x80080201L)")]
     public const int APPX_E_INTERLEAVING_NOT_ALLOWED = unchecked((int)(0x80080201));
 
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_RELATIONSHIPS_NOT_ALLOWED"]/*' />
     [NativeTypeName("#define APPX_E_RELATIONSHIPS_NOT_ALLOWED _HRESULT_TYPEDEF_(0x80080202L)")]
     public const int APPX_E_RELATIONSHIPS_NOT_ALLOWED = unchecked((int)(0x80080202));
 
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_MISSING_REQUIRED_FILE"]/*' />
     [NativeTypeName("#define APPX_E_MISSING_REQUIRED_FILE _HRESULT_TYPEDEF_(0x80080203L)")]
     public const int APPX_E_MISSING_REQUIRED_FILE = unchecked((int)(0x80080203));
 
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_INVALID_MANIFEST"]/*' />
     [NativeTypeName("#define APPX_E_INVALID_MANIFEST _HRESULT_TYPEDEF_(0x80080204L)")]
     public const int APPX_E_INVALID_MANIFEST = unchecked((int)(0x80080204));
 
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_INVALID_BLOCKMAP"]/*' />
     [NativeTypeName("#define APPX_E_INVALID_BLOCKMAP _HRESULT_TYPEDEF_(0x80080205L)")]
     public const int APPX_E_INVALID_BLOCKMAP = unchecked((int)(0x80080205));
 
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_CORRUPT_CONTENT"]/*' />
     [NativeTypeName("#define APPX_E_CORRUPT_CONTENT _HRESULT_TYPEDEF_(0x80080206L)")]
     public const int APPX_E_CORRUPT_CONTENT = unchecked((int)(0x80080206));
 
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_BLOCK_HASH_INVALID"]/*' />
     [NativeTypeName("#define APPX_E_BLOCK_HASH_INVALID _HRESULT_TYPEDEF_(0x80080207L)")]
     public const int APPX_E_BLOCK_HASH_INVALID = unchecked((int)(0x80080207));
 
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_REQUESTED_RANGE_TOO_LARGE"]/*' />
     [NativeTypeName("#define APPX_E_REQUESTED_RANGE_TOO_LARGE _HRESULT_TYPEDEF_(0x80080208L)")]
     public const int APPX_E_REQUESTED_RANGE_TOO_LARGE = unchecked((int)(0x80080208));
 
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_INVALID_SIP_CLIENT_DATA"]/*' />
     [NativeTypeName("#define APPX_E_INVALID_SIP_CLIENT_DATA _HRESULT_TYPEDEF_(0x80080209L)")]
     public const int APPX_E_INVALID_SIP_CLIENT_DATA = unchecked((int)(0x80080209));
 
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_INVALID_KEY_INFO"]/*' />
     [NativeTypeName("#define APPX_E_INVALID_KEY_INFO _HRESULT_TYPEDEF_(0x8008020AL)")]
     public const int APPX_E_INVALID_KEY_INFO = unchecked((int)(0x8008020A));
 
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_INVALID_CONTENTGROUPMAP"]/*' />
     [NativeTypeName("#define APPX_E_INVALID_CONTENTGROUPMAP _HRESULT_TYPEDEF_(0x8008020BL)")]
     public const int APPX_E_INVALID_CONTENTGROUPMAP = unchecked((int)(0x8008020B));
 
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_INVALID_APPINSTALLER"]/*' />
     [NativeTypeName("#define APPX_E_INVALID_APPINSTALLER _HRESULT_TYPEDEF_(0x8008020CL)")]
     public const int APPX_E_INVALID_APPINSTALLER = unchecked((int)(0x8008020C));
 
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_DELTA_BASELINE_VERSION_MISMATCH"]/*' />
     [NativeTypeName("#define APPX_E_DELTA_BASELINE_VERSION_MISMATCH _HRESULT_TYPEDEF_(0x8008020DL)")]
     public const int APPX_E_DELTA_BASELINE_VERSION_MISMATCH = unchecked((int)(0x8008020D));
 
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_DELTA_PACKAGE_MISSING_FILE"]/*' />
     [NativeTypeName("#define APPX_E_DELTA_PACKAGE_MISSING_FILE _HRESULT_TYPEDEF_(0x8008020EL)")]
     public const int APPX_E_DELTA_PACKAGE_MISSING_FILE = unchecked((int)(0x8008020E));
 
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_INVALID_DELTA_PACKAGE"]/*' />
     [NativeTypeName("#define APPX_E_INVALID_DELTA_PACKAGE _HRESULT_TYPEDEF_(0x8008020FL)")]
     public const int APPX_E_INVALID_DELTA_PACKAGE = unchecked((int)(0x8008020F));
 
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_DELTA_APPENDED_PACKAGE_NOT_ALLOWED"]/*' />
     [NativeTypeName("#define APPX_E_DELTA_APPENDED_PACKAGE_NOT_ALLOWED _HRESULT_TYPEDEF_(0x80080210L)")]
     public const int APPX_E_DELTA_APPENDED_PACKAGE_NOT_ALLOWED = unchecked((int)(0x80080210));
 
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_INVALID_PACKAGING_LAYOUT"]/*' />
     [NativeTypeName("#define APPX_E_INVALID_PACKAGING_LAYOUT _HRESULT_TYPEDEF_(0x80080211L)")]
     public const int APPX_E_INVALID_PACKAGING_LAYOUT = unchecked((int)(0x80080211));
 
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_INVALID_PACKAGESIGNCONFIG"]/*' />
     [NativeTypeName("#define APPX_E_INVALID_PACKAGESIGNCONFIG _HRESULT_TYPEDEF_(0x80080212L)")]
     public const int APPX_E_INVALID_PACKAGESIGNCONFIG = unchecked((int)(0x80080212));
 
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_RESOURCESPRI_NOT_ALLOWED"]/*' />
     [NativeTypeName("#define APPX_E_RESOURCESPRI_NOT_ALLOWED _HRESULT_TYPEDEF_(0x80080213L)")]
     public const int APPX_E_RESOURCESPRI_NOT_ALLOWED = unchecked((int)(0x80080213));
 
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_FILE_COMPRESSION_MISMATCH"]/*' />
     [NativeTypeName("#define APPX_E_FILE_COMPRESSION_MISMATCH _HRESULT_TYPEDEF_(0x80080214L)")]
     public const int APPX_E_FILE_COMPRESSION_MISMATCH = unchecked((int)(0x80080214));
 
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_INVALID_PAYLOAD_PACKAGE_EXTENSION"]/*' />
     [NativeTypeName("#define APPX_E_INVALID_PAYLOAD_PACKAGE_EXTENSION _HRESULT_TYPEDEF_(0x80080215L)")]
     public const int APPX_E_INVALID_PAYLOAD_PACKAGE_EXTENSION = unchecked((int)(0x80080215));
 
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_INVALID_ENCRYPTION_EXCLUSION_FILE_LIST"]/*' />
     [NativeTypeName("#define APPX_E_INVALID_ENCRYPTION_EXCLUSION_FILE_LIST _HRESULT_TYPEDEF_(0x80080216L)")]
     public const int APPX_E_INVALID_ENCRYPTION_EXCLUSION_FILE_LIST = unchecked((int)(0x80080216));
 
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_INVALID_PACKAGE_FOLDER_ACLS"]/*' />
     [NativeTypeName("#define APPX_E_INVALID_PACKAGE_FOLDER_ACLS _HRESULT_TYPEDEF_(0x80080217L)")]
     public const int APPX_E_INVALID_PACKAGE_FOLDER_ACLS = unchecked((int)(0x80080217));
 
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_INVALID_PUBLISHER_BRIDGING"]/*' />
     [NativeTypeName("#define APPX_E_INVALID_PUBLISHER_BRIDGING _HRESULT_TYPEDEF_(0x80080218L)")]
     public const int APPX_E_INVALID_PUBLISHER_BRIDGING = unchecked((int)(0x80080218));
 
+    /// <include file='APPX.xml' path='doc/member[@name="APPX.APPX_E_DIGEST_MISMATCH"]/*' />
     [NativeTypeName("#define APPX_E_DIGEST_MISMATCH _HRESULT_TYPEDEF_(0x80080219L)")]
     public const int APPX_E_DIGEST_MISMATCH = unchecked((int)(0x80080219));
 }

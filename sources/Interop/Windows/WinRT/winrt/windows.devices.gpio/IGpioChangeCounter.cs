@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IGpioChangeCounter : IGpioChangeCounter.Interface, INativeGuid
 {
+    /// <include file='IGpioChangeCounter.xml' path='doc/member[@name="IGpioChangeCounter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGpioChangeCounter);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPhoneTriggerFactory : IPhoneTriggerFactory.Interface, INativeGuid
 {
+    /// <include file='IPhoneTriggerFactory.xml' path='doc/member[@name="IPhoneTriggerFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPhoneTriggerFactory);
 
     public void** lpVtbl;

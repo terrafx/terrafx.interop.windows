@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IEmailQueryTextSearch : IEmailQueryTextSearch.Interface, INativeGuid
 {
+    /// <include file='IEmailQueryTextSearch.xml' path='doc/member[@name="IEmailQueryTextSearch.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IEmailQueryTextSearch);
 
     public void** lpVtbl;

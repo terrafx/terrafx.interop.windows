@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MFNETSOURCE
 {
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_SSLCERTIFICATE_MANAGER"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_SSLCERTIFICATE_MANAGER
     {
@@ -37,6 +38,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_RESOURCE_FILTER"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_RESOURCE_FILTER
     {
@@ -62,6 +64,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_STATISTICS_SERVICE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_STATISTICS_SERVICE
     {
@@ -87,6 +90,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_STATISTICS"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_STATISTICS
     {
@@ -112,6 +116,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_BUFFERINGTIME"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_BUFFERINGTIME
     {
@@ -137,6 +142,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_ACCELERATEDSTREAMINGDURATION"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_ACCELERATEDSTREAMINGDURATION
     {
@@ -162,6 +168,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_MAXUDPACCELERATEDSTREAMINGDURATION"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_MAXUDPACCELERATEDSTREAMINGDURATION
     {
@@ -187,6 +194,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_MAXBUFFERTIMEMS"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_MAXBUFFERTIMEMS
     {
@@ -212,6 +220,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_CONNECTIONBANDWIDTH"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_CONNECTIONBANDWIDTH
     {
@@ -237,6 +246,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_CACHEENABLED"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_CACHEENABLED
     {
@@ -262,6 +272,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_AUTORECONNECTLIMIT"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_AUTORECONNECTLIMIT
     {
@@ -287,6 +298,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_RESENDSENABLED"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_RESENDSENABLED
     {
@@ -312,6 +324,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_THINNINGENABLED"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_THINNINGENABLED
     {
@@ -337,6 +350,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_PROTOCOL"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_PROTOCOL
     {
@@ -362,6 +376,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_TRANSPORT"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_TRANSPORT
     {
@@ -387,6 +402,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_PREVIEWMODEENABLED"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_PREVIEWMODEENABLED
     {
@@ -412,6 +428,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_CREDENTIAL_MANAGER"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_CREDENTIAL_MANAGER
     {
@@ -437,6 +454,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_PPBANDWIDTH"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_PPBANDWIDTH
     {
@@ -462,6 +480,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_AUTORECONNECTPROGRESS"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_AUTORECONNECTPROGRESS
     {
@@ -487,6 +506,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_PROXYLOCATORFACTORY"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_PROXYLOCATORFACTORY
     {
@@ -512,6 +532,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_BROWSERUSERAGENT"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_BROWSERUSERAGENT
     {
@@ -537,6 +558,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_BROWSERWEBPAGE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_BROWSERWEBPAGE
     {
@@ -562,6 +584,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_PLAYERVERSION"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_PLAYERVERSION
     {
@@ -587,6 +610,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_PLAYERID"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_PLAYERID
     {
@@ -612,6 +636,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_HOSTEXE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_HOSTEXE
     {
@@ -637,6 +662,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_HOSTVERSION"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_HOSTVERSION
     {
@@ -662,6 +688,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_PLAYERUSERAGENT"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_PLAYERUSERAGENT
     {
@@ -687,6 +714,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_CLIENTGUID"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_CLIENTGUID
     {
@@ -712,6 +740,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_LOGURL"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_LOGURL
     {
@@ -737,6 +766,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_ENABLE_UDP"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_ENABLE_UDP
     {
@@ -762,6 +792,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_ENABLE_TCP"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_ENABLE_TCP
     {
@@ -787,6 +818,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_ENABLE_MSB"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_ENABLE_MSB
     {
@@ -812,6 +844,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_ENABLE_RTSP"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_ENABLE_RTSP
     {
@@ -837,6 +870,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_ENABLE_HTTP"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_ENABLE_HTTP
     {
@@ -862,6 +896,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_ENABLE_STREAMING"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_ENABLE_STREAMING
     {
@@ -887,6 +922,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_ENABLE_DOWNLOAD"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_ENABLE_DOWNLOAD
     {
@@ -912,6 +948,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_ENABLE_PRIVATEMODE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_ENABLE_PRIVATEMODE
     {
@@ -937,6 +974,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_UDP_PORT_RANGE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_UDP_PORT_RANGE
     {
@@ -962,6 +1000,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_PROXYINFO"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_PROXYINFO
     {
@@ -987,6 +1026,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_DRMNET_LICENSE_REPRESENTATION"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_DRMNET_LICENSE_REPRESENTATION
     {
@@ -1012,6 +1052,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_PROXYSETTINGS"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_PROXYSETTINGS
     {
@@ -1037,6 +1078,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_PROXYHOSTNAME"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_PROXYHOSTNAME
     {
@@ -1062,6 +1104,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_PROXYPORT"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_PROXYPORT
     {
@@ -1087,6 +1130,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_PROXYEXCEPTIONLIST"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_PROXYEXCEPTIONLIST
     {
@@ -1112,6 +1156,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_PROXYBYPASSFORLOCAL"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_PROXYBYPASSFORLOCAL
     {
@@ -1137,6 +1182,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_PROXYRERUNAUTODETECTION"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_PROXYRERUNAUTODETECTION
     {
@@ -1162,6 +1208,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_STREAM_LANGUAGE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_STREAM_LANGUAGE
     {
@@ -1187,6 +1234,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_LOGPARAMS"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_LOGPARAMS
     {
@@ -1212,6 +1260,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_PEERMANAGER"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_PEERMANAGER
     {
@@ -1237,6 +1286,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_FRIENDLYNAME"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_FRIENDLYNAME
     {
@@ -1262,6 +1312,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_CROSS_ORIGIN_SUPPORT"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_CROSS_ORIGIN_SUPPORT
     {
@@ -1287,6 +1338,7 @@ public static partial class MFNETSOURCE
         }
     }
 
+    /// <include file='MFNETSOURCE.xml' path='doc/member[@name="MFNETSOURCE.MFNETSOURCE_HTTP_DOWNLOAD_SESSION_PROVIDER"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNETSOURCE_HTTP_DOWNLOAD_SESSION_PROVIDER
     {

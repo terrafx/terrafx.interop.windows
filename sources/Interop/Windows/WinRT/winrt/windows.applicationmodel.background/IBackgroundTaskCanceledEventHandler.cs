@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IBackgroundTaskCanceledEventHandler : IBackgroundTaskCanceledEventHandler.Interface, INativeGuid
 {
+    /// <include file='IBackgroundTaskCanceledEventHandler.xml' path='doc/member[@name="IBackgroundTaskCanceledEventHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBackgroundTaskCanceledEventHandler);
 
     public void** lpVtbl;

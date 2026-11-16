@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IWhiteBalanceControl : IWhiteBalanceControl.Interface, INativeGuid
 {
+    /// <include file='IWhiteBalanceControl.xml' path='doc/member[@name="IWhiteBalanceControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWhiteBalanceControl);
 
     public void** lpVtbl;

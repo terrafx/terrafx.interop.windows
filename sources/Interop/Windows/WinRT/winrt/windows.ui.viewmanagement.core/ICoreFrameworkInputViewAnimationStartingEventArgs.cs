@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICoreFrameworkInputViewAnimationStartingEventArgs : ICoreFrameworkInputViewAnimationStartingEventArgs.Interface, INativeGuid
 {
+    /// <include file='ICoreFrameworkInputViewAnimationStartingEventArgs.xml' path='doc/member[@name="ICoreFrameworkInputViewAnimationStartingEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICoreFrameworkInputViewAnimationStartingEventArgs);
 
     public void** lpVtbl;

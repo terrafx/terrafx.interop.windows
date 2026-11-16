@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IPinFlowControl : IPinFlowControl.Interface, INativeGuid
 {
+    /// <include file='IPinFlowControl.xml' path='doc/member[@name="IPinFlowControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPinFlowControl);
 
     public void** lpVtbl;

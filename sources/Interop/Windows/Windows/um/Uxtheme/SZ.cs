@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SZ
 {
+    /// <include file='SZ.xml' path='doc/member[@name="SZ.SZ_THDOCPROP_DISPLAYNAME"]/*' />
     [NativeTypeName("#define SZ_THDOCPROP_DISPLAYNAME L\"DisplayName\"")]
     public const string SZ_THDOCPROP_DISPLAYNAME = "DisplayName";
 
+    /// <include file='SZ.xml' path='doc/member[@name="SZ.SZ_THDOCPROP_CANONICALNAME"]/*' />
     [NativeTypeName("#define SZ_THDOCPROP_CANONICALNAME L\"ThemeName\"")]
     public const string SZ_THDOCPROP_CANONICALNAME = "ThemeName";
 
+    /// <include file='SZ.xml' path='doc/member[@name="SZ.SZ_THDOCPROP_TOOLTIP"]/*' />
     [NativeTypeName("#define SZ_THDOCPROP_TOOLTIP L\"ToolTip\"")]
     public const string SZ_THDOCPROP_TOOLTIP = "ToolTip";
 
+    /// <include file='SZ.xml' path='doc/member[@name="SZ.SZ_THDOCPROP_AUTHOR"]/*' />
     [NativeTypeName("#define SZ_THDOCPROP_AUTHOR L\"author\"")]
     public const string SZ_THDOCPROP_AUTHOR = "author";
 }

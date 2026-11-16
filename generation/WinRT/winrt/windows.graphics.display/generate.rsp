@@ -1,5 +1,6 @@
 @../../../settings.rsp
 @../../../remap.rsp
+@../../../remap-guids-winrt.rsp
 --exclude
 ABI::Windows::Graphics::Display::IID_IAdvancedColorInfo
 ABI::Windows::Graphics::Display::IID_IBrightnessOverride
@@ -34,8 +35,6 @@ WinRT
 TerraFX.Interop.WinRT
 --output
 ../../../../sources/Interop/Windows/WinRT/winrt/windows.graphics.display
---remap
-IID_IDisplayServices=@IID_WinRT_IDisplayServices
 --test-output
 ../../../../tests/Interop/Windows/WinRT/winrt/windows.graphics.display
 --traverse

@@ -516,24 +516,31 @@ public static unsafe partial class Windows
     [return: NativeTypeName("LPVOID")]
     public static extern void* TlsGetValue2([NativeTypeName("DWORD")] uint dwTlsIndex);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TLS_OUT_OF_INDEXES"]/*' />
     [NativeTypeName("#define TLS_OUT_OF_INDEXES ((DWORD)0xFFFFFFFF)")]
     public const uint TLS_OUT_OF_INDEXES = ((uint)(0xFFFFFFFF));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateProcess"]/*' />
     [NativeTypeName("#define CreateProcess CreateProcessW")]
     public static delegate*<char*, char*, SECURITY_ATTRIBUTES*, SECURITY_ATTRIBUTES*, BOOL, uint, void*, char*, STARTUPINFOW*, PROCESS_INFORMATION*, BOOL> CreateProcess => &CreateProcessW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetStartupInfo"]/*' />
     [NativeTypeName("#define GetStartupInfo GetStartupInfoW")]
     public static delegate*<STARTUPINFOW*, void> GetStartupInfo => &GetStartupInfoW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateProcessAsUser"]/*' />
     [NativeTypeName("#define CreateProcessAsUser CreateProcessAsUserW")]
     public static delegate*<HANDLE, char*, char*, SECURITY_ATTRIBUTES*, SECURITY_ATTRIBUTES*, BOOL, uint, void*, char*, STARTUPINFOW*, PROCESS_INFORMATION*, BOOL> CreateProcessAsUser => &CreateProcessAsUserW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PME_CURRENT_VERSION"]/*' />
     [NativeTypeName("#define PME_CURRENT_VERSION 1")]
     public const int PME_CURRENT_VERSION = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PME_FAILFAST_ON_COMMIT_FAIL_DISABLE"]/*' />
     [NativeTypeName("#define PME_FAILFAST_ON_COMMIT_FAIL_DISABLE 0x0")]
     public const int PME_FAILFAST_ON_COMMIT_FAIL_DISABLE = 0x0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PME_FAILFAST_ON_COMMIT_FAIL_ENABLE"]/*' />
     [NativeTypeName("#define PME_FAILFAST_ON_COMMIT_FAIL_ENABLE 0x1")]
     public const int PME_FAILFAST_ON_COMMIT_FAIL_ENABLE = 0x1;
 }

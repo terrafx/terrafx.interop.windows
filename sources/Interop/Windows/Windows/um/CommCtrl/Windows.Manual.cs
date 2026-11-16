@@ -362,4 +362,30 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define BCCL_NOGLYPH (HIMAGELIST)(-1)")]
     public static HIMAGELIST BCCL_NOGLYPH => (HIMAGELIST)(-1);
+
+    [return: NativeTypeName("#define INDEXTOOVERLAYMASK(i) ((i) << 8)")]
+    public static int INDEXTOOVERLAYMASK(int i) => unchecked(i << 8);
+
+    [return: NativeTypeName("#define INDEXTOSTATEIMAGEMASK(i) ((i) << 12)")]
+    public static int INDEXTOSTATEIMAGEMASK(int i) => unchecked(i << 12);
+
+    [return: NativeTypeName("#define MAKEIPADDRESS(b1,b2,b3,b4) ((LPARAM)(((DWORD)(b1)<<24)+((DWORD)(b2)<<16)+((DWORD)(b3)<<8)+((DWORD)(b4))))")]
+    public static LPARAM MAKEIPADDRESS(uint b1, uint b2, uint b3, uint b4)
+        => unchecked((LPARAM)((b1 << 24) + (b2 << 16) + (b3 << 8) + b4));
+
+    [return: NativeTypeName("#define MAKEIPRANGE(low, high) ((LPARAM)(WORD)(((BYTE)(high) << 8) + (BYTE)(low)))")]
+    public static LPARAM MAKEIPRANGE(int low, int high)
+        => (LPARAM)(ushort)unchecked(((byte)high << 8) + (byte)low);
+
+    [return: NativeTypeName("#define FIRST_IPADDRESS(x) (((x) >> 24) & 0xff)")]
+    public static nint FIRST_IPADDRESS(LPARAM x) => (x.Value >> 24) & 0xFF;
+
+    [return: NativeTypeName("#define SECOND_IPADDRESS(x) (((x) >> 16) & 0xff)")]
+    public static nint SECOND_IPADDRESS(LPARAM x) => (x.Value >> 16) & 0xFF;
+
+    [return: NativeTypeName("#define THIRD_IPADDRESS(x) (((x) >> 8) & 0xff)")]
+    public static nint THIRD_IPADDRESS(LPARAM x) => (x.Value >> 8) & 0xFF;
+
+    [return: NativeTypeName("#define FOURTH_IPADDRESS(x) ((x) & 0xff)")]
+    public static nint FOURTH_IPADDRESS(LPARAM x) => x.Value & 0xFF;
 }

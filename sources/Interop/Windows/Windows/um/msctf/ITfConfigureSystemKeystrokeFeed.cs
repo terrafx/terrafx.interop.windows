@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ITfConfigureSystemKeystrokeFeed : ITfConfigureSystemKeystrokeFeed.Interface, INativeGuid
 {
+    /// <include file='ITfConfigureSystemKeystrokeFeed.xml' path='doc/member[@name="ITfConfigureSystemKeystrokeFeed.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfConfigureSystemKeystrokeFeed);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDVEnc : IDVEnc.Interface, INativeGuid
 {
+    /// <include file='IDVEnc.xml' path='doc/member[@name="IDVEnc.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDVEnc);
 
     public void** lpVtbl;

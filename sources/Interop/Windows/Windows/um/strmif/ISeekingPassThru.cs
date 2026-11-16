@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISeekingPassThru : ISeekingPassThru.Interface, INativeGuid
 {
+    /// <include file='ISeekingPassThru.xml' path='doc/member[@name="ISeekingPassThru.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISeekingPassThru);
 
     public void** lpVtbl;

@@ -1,5 +1,6 @@
 @../../../settings.rsp
 @../../../remap.rsp
+@../../../remap-guids-winrt.rsp
 --exclude
 ABI::Windows::ApplicationModel::Contacts::IID_IAggregateContactManager
 ABI::Windows::ApplicationModel::Contacts::IID_IAggregateContactManager2
@@ -90,8 +91,6 @@ WinRT
 TerraFX.Interop.WinRT
 --output
 ../../../../sources/Interop/Windows/WinRT/winrt/windows.applicationmodel.contacts
---remap
-IID_IContact=@IID_WinRT_IContact
 --test-output
 ../../../../tests/Interop/Windows/WinRT/winrt/windows.applicationmodel.contacts
 --traverse

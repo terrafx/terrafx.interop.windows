@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISyncMgrSessionCreator : ISyncMgrSessionCreator.Interface, INativeGuid
 {
+    /// <include file='ISyncMgrSessionCreator.xml' path='doc/member[@name="ISyncMgrSessionCreator.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISyncMgrSessionCreator);
 
     public void** lpVtbl;

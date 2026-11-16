@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows10.0.19043.0")]
 public unsafe partial struct IDWriteFontResource : IDWriteFontResource.Interface, INativeGuid
 {
+    /// <include file='IDWriteFontResource.xml' path='doc/member[@name="IDWriteFontResource.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDWriteFontResource);
 
     public void** lpVtbl;

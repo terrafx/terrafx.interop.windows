@@ -9,36 +9,47 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3DFMT
 {
+    /// <include file='D3DFMT.xml' path='doc/member[@name="D3DFMT.D3DFMT_R8G8B8"]/*' />
     [NativeTypeName("#define D3DFMT_R8G8B8 20")]
     public const int D3DFMT_R8G8B8 = 20;
 
+    /// <include file='D3DFMT.xml' path='doc/member[@name="D3DFMT.D3DFMT_A8R8G8B8"]/*' />
     [NativeTypeName("#define D3DFMT_A8R8G8B8 21")]
     public const int D3DFMT_A8R8G8B8 = 21;
 
+    /// <include file='D3DFMT.xml' path='doc/member[@name="D3DFMT.D3DFMT_X8R8G8B8"]/*' />
     [NativeTypeName("#define D3DFMT_X8R8G8B8 22")]
     public const int D3DFMT_X8R8G8B8 = 22;
 
+    /// <include file='D3DFMT.xml' path='doc/member[@name="D3DFMT.D3DFMT_R5G6B5"]/*' />
     [NativeTypeName("#define D3DFMT_R5G6B5 23")]
     public const int D3DFMT_R5G6B5 = 23;
 
+    /// <include file='D3DFMT.xml' path='doc/member[@name="D3DFMT.D3DFMT_X1R5G5B5"]/*' />
     [NativeTypeName("#define D3DFMT_X1R5G5B5 24")]
     public const int D3DFMT_X1R5G5B5 = 24;
 
+    /// <include file='D3DFMT.xml' path='doc/member[@name="D3DFMT.D3DFMT_A2B10G10R10"]/*' />
     [NativeTypeName("#define D3DFMT_A2B10G10R10 31")]
     public const int D3DFMT_A2B10G10R10 = 31;
 
+    /// <include file='D3DFMT.xml' path='doc/member[@name="D3DFMT.D3DFMT_P8"]/*' />
     [NativeTypeName("#define D3DFMT_P8 41")]
     public const int D3DFMT_P8 = 41;
 
+    /// <include file='D3DFMT.xml' path='doc/member[@name="D3DFMT.D3DFMT_L8"]/*' />
     [NativeTypeName("#define D3DFMT_L8 50")]
     public const int D3DFMT_L8 = 50;
 
+    /// <include file='D3DFMT.xml' path='doc/member[@name="D3DFMT.D3DFMT_D16"]/*' />
     [NativeTypeName("#define D3DFMT_D16 80")]
     public const int D3DFMT_D16 = 80;
 
+    /// <include file='D3DFMT.xml' path='doc/member[@name="D3DFMT.D3DFMT_L16"]/*' />
     [NativeTypeName("#define D3DFMT_L16 81")]
     public const int D3DFMT_L16 = 81;
 
+    /// <include file='D3DFMT.xml' path='doc/member[@name="D3DFMT.D3DFMT_A16B16G16R16F"]/*' />
     [NativeTypeName("#define D3DFMT_A16B16G16R16F 113")]
     public const int D3DFMT_A16B16G16R16F = 113;
 }

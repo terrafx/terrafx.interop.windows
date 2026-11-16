@@ -7,21 +7,27 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SIO
 {
+    /// <include file='SIO.xml' path='doc/member[@name="SIO.SIO_GET_INTERFACE_LIST"]/*' />
     [NativeTypeName("#define SIO_GET_INTERFACE_LIST _IOR('t', 127, ULONG)")]
     public const int SIO_GET_INTERFACE_LIST = (0x40000000 | (((int)(4) & 0x7f) << 16) | (((sbyte)('t')) << 8) | (127));
 
+    /// <include file='SIO.xml' path='doc/member[@name="SIO.SIO_GET_INTERFACE_LIST_EX"]/*' />
     [NativeTypeName("#define SIO_GET_INTERFACE_LIST_EX _IOR('t', 126, ULONG)")]
     public const int SIO_GET_INTERFACE_LIST_EX = (0x40000000 | (((int)(4) & 0x7f) << 16) | (((sbyte)('t')) << 8) | (126));
 
+    /// <include file='SIO.xml' path='doc/member[@name="SIO.SIO_SET_MULTICAST_FILTER"]/*' />
     [NativeTypeName("#define SIO_SET_MULTICAST_FILTER _IOW('t', 125, ULONG)")]
     public const uint SIO_SET_MULTICAST_FILTER = unchecked(0x80000000 | (((int)(4) & 0x7f) << 16) | (((sbyte)('t')) << 8) | (125));
 
+    /// <include file='SIO.xml' path='doc/member[@name="SIO.SIO_GET_MULTICAST_FILTER"]/*' />
     [NativeTypeName("#define SIO_GET_MULTICAST_FILTER _IOW('t', 124 | IOC_IN, ULONG)")]
     public const uint SIO_GET_MULTICAST_FILTER = unchecked(0x80000000 | (((int)(4) & 0x7f) << 16) | (((sbyte)('t')) << 8) | (124 | 0x80000000));
 
+    /// <include file='SIO.xml' path='doc/member[@name="SIO.SIO_IDEAL_SEND_BACKLOG_QUERY"]/*' />
     [NativeTypeName("#define SIO_IDEAL_SEND_BACKLOG_QUERY _IOR('t', 123, ULONG)")]
     public const int SIO_IDEAL_SEND_BACKLOG_QUERY = (0x40000000 | (((int)(4) & 0x7f) << 16) | (((sbyte)('t')) << 8) | (123));
 
+    /// <include file='SIO.xml' path='doc/member[@name="SIO.SIO_IDEAL_SEND_BACKLOG_CHANGE"]/*' />
     [NativeTypeName("#define SIO_IDEAL_SEND_BACKLOG_CHANGE _IO('t', 122)")]
     public const int SIO_IDEAL_SEND_BACKLOG_CHANGE = (0x20000000 | (((sbyte)('t')) << 8) | (122));
 }

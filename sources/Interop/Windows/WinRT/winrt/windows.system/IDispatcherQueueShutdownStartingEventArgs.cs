@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IDispatcherQueueShutdownStartingEventArgs : IDispatcherQueueShutdownStartingEventArgs.Interface, INativeGuid
 {
+    /// <include file='IDispatcherQueueShutdownStartingEventArgs.xml' path='doc/member[@name="IDispatcherQueueShutdownStartingEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDispatcherQueueShutdownStartingEventArgs);
 
     public void** lpVtbl;

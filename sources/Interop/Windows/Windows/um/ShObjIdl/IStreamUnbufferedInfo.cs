@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IStreamUnbufferedInfo : IStreamUnbufferedInfo.Interface, INativeGuid
 {
+    /// <include file='IStreamUnbufferedInfo.xml' path='doc/member[@name="IStreamUnbufferedInfo.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IStreamUnbufferedInfo);
 
     public void** lpVtbl;

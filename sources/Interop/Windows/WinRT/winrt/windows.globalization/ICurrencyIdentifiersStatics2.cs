@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICurrencyIdentifiersStatics2 : ICurrencyIdentifiersStatics2.Interface, INativeGuid
 {
+    /// <include file='ICurrencyIdentifiersStatics2.xml' path='doc/member[@name="ICurrencyIdentifiersStatics2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICurrencyIdentifiersStatics2);
 
     public void** lpVtbl;

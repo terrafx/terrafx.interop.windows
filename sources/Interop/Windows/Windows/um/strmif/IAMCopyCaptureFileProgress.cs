@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAMCopyCaptureFileProgress : IAMCopyCaptureFileProgress.Interface, INativeGuid
 {
+    /// <include file='IAMCopyCaptureFileProgress.xml' path='doc/member[@name="IAMCopyCaptureFileProgress.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAMCopyCaptureFileProgress);
 
     public void** lpVtbl;

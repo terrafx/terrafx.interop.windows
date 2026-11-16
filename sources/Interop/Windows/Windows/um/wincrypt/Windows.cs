@@ -1307,342 +1307,483 @@ public static unsafe partial class Windows
     [DllImport("crypt32", ExactSpelling = true)]
     public static extern BOOL CertIsWeakHash([NativeTypeName("DWORD")] uint dwHashUseType, [NativeTypeName("LPCWSTR")] char* pwszCNGHashAlgid, [NativeTypeName("DWORD")] uint dwChainFlags, [NativeTypeName("PCCERT_CHAIN_CONTEXT")] CERT_CHAIN_CONTEXT* pSignerChainContext, [NativeTypeName("LPFILETIME")] FILETIME* pTimeStamp, [NativeTypeName("LPCWSTR")] char* pwszFileName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RSA1024BIT_KEY"]/*' />
     [NativeTypeName("#define RSA1024BIT_KEY 0x04000000")]
     public const int RSA1024BIT_KEY = 0x04000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SIMPLEBLOB"]/*' />
     [NativeTypeName("#define SIMPLEBLOB 0x1")]
     public const int SIMPLEBLOB = 0x1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PUBLICKEYBLOB"]/*' />
     [NativeTypeName("#define PUBLICKEYBLOB 0x6")]
     public const int PUBLICKEYBLOB = 0x6;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PRIVATEKEYBLOB"]/*' />
     [NativeTypeName("#define PRIVATEKEYBLOB 0x7")]
     public const int PRIVATEKEYBLOB = 0x7;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PLAINTEXTKEYBLOB"]/*' />
     [NativeTypeName("#define PLAINTEXTKEYBLOB 0x8")]
     public const int PLAINTEXTKEYBLOB = 0x8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OPAQUEKEYBLOB"]/*' />
     [NativeTypeName("#define OPAQUEKEYBLOB 0x9")]
     public const int OPAQUEKEYBLOB = 0x9;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PUBLICKEYBLOBEX"]/*' />
     [NativeTypeName("#define PUBLICKEYBLOBEX 0xA")]
     public const int PUBLICKEYBLOBEX = 0xA;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMMETRICWRAPKEYBLOB"]/*' />
     [NativeTypeName("#define SYMMETRICWRAPKEYBLOB 0xB")]
     public const int SYMMETRICWRAPKEYBLOB = 0xB;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.KEYSTATEBLOB"]/*' />
     [NativeTypeName("#define KEYSTATEBLOB 0xC")]
     public const int KEYSTATEBLOB = 0xC;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AT_KEYEXCHANGE"]/*' />
     [NativeTypeName("#define AT_KEYEXCHANGE 1")]
     public const int AT_KEYEXCHANGE = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AT_SIGNATURE"]/*' />
     [NativeTypeName("#define AT_SIGNATURE 2")]
     public const int AT_SIGNATURE = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PKCS5_PADDING"]/*' />
     [NativeTypeName("#define PKCS5_PADDING 1")]
     public const int PKCS5_PADDING = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RANDOM_PADDING"]/*' />
     [NativeTypeName("#define RANDOM_PADDING 2")]
     public const int RANDOM_PADDING = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ZERO_PADDING"]/*' />
     [NativeTypeName("#define ZERO_PADDING 3")]
     public const int ZERO_PADDING = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HP_ALGID"]/*' />
     [NativeTypeName("#define HP_ALGID 0x0001")]
     public const int HP_ALGID = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HP_HASHVAL"]/*' />
     [NativeTypeName("#define HP_HASHVAL 0x0002")]
     public const int HP_HASHVAL = 0x0002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HP_HASHSIZE"]/*' />
     [NativeTypeName("#define HP_HASHSIZE 0x0004")]
     public const int HP_HASHSIZE = 0x0004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HP_HMAC_INFO"]/*' />
     [NativeTypeName("#define HP_HMAC_INFO 0x0005")]
     public const int HP_HMAC_INFO = 0x0005;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HP_TLS1PRF_LABEL"]/*' />
     [NativeTypeName("#define HP_TLS1PRF_LABEL 0x0006")]
     public const int HP_TLS1PRF_LABEL = 0x0006;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HP_TLS1PRF_SEED"]/*' />
     [NativeTypeName("#define HP_TLS1PRF_SEED 0x0007")]
     public const int HP_TLS1PRF_SEED = 0x0007;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MAXUIDLEN"]/*' />
     [NativeTypeName("#define MAXUIDLEN 64")]
     public const int MAXUIDLEN = 64;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EXPO_OFFLOAD_REG_VALUE"]/*' />
     [NativeTypeName("#define EXPO_OFFLOAD_REG_VALUE \"ExpoOffload\"")]
     public static ReadOnlySpan<byte> EXPO_OFFLOAD_REG_VALUE => "ExpoOffload"u8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EXPO_OFFLOAD_FUNC_NAME"]/*' />
     [NativeTypeName("#define EXPO_OFFLOAD_FUNC_NAME \"OffloadModExpo\"")]
     public static ReadOnlySpan<byte> EXPO_OFFLOAD_FUNC_NAME => "OffloadModExpo"u8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.szKEY_CRYPTOAPI_PRIVATE_KEY_OPTIONS"]/*' />
     [NativeTypeName("#define szKEY_CRYPTOAPI_PRIVATE_KEY_OPTIONS \"Software\\Policies\\Microsoft\\Cryptography\"")]
     public static ReadOnlySpan<byte> szKEY_CRYPTOAPI_PRIVATE_KEY_OPTIONS => "Software\\Policies\\Microsoft\\Cryptography"u8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.szKEY_CACHE_ENABLED"]/*' />
     [NativeTypeName("#define szKEY_CACHE_ENABLED \"CachePrivateKeys\"")]
     public static ReadOnlySpan<byte> szKEY_CACHE_ENABLED => "CachePrivateKeys"u8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.szKEY_CACHE_SECONDS"]/*' />
     [NativeTypeName("#define szKEY_CACHE_SECONDS \"PrivateKeyLifetimeSeconds\"")]
     public static ReadOnlySpan<byte> szKEY_CACHE_SECONDS => "PrivateKeyLifetimeSeconds"u8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.szPRIV_KEY_CACHE_MAX_ITEMS"]/*' />
     [NativeTypeName("#define szPRIV_KEY_CACHE_MAX_ITEMS \"PrivKeyCacheMaxItems\"")]
     public static ReadOnlySpan<byte> szPRIV_KEY_CACHE_MAX_ITEMS => "PrivKeyCacheMaxItems"u8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.cPRIV_KEY_CACHE_MAX_ITEMS_DEFAULT"]/*' />
     [NativeTypeName("#define cPRIV_KEY_CACHE_MAX_ITEMS_DEFAULT 20")]
     public const int cPRIV_KEY_CACHE_MAX_ITEMS_DEFAULT = 20;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.szPRIV_KEY_CACHE_PURGE_INTERVAL_SECONDS"]/*' />
     [NativeTypeName("#define szPRIV_KEY_CACHE_PURGE_INTERVAL_SECONDS \"PrivKeyCachePurgeIntervalSeconds\"")]
     public static ReadOnlySpan<byte> szPRIV_KEY_CACHE_PURGE_INTERVAL_SECONDS => "PrivKeyCachePurgeIntervalSeconds"u8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.cPRIV_KEY_CACHE_PURGE_INTERVAL_SECONDS_DEFAULT"]/*' />
     [NativeTypeName("#define cPRIV_KEY_CACHE_PURGE_INTERVAL_SECONDS_DEFAULT 86400")]
     public const int cPRIV_KEY_CACHE_PURGE_INTERVAL_SECONDS_DEFAULT = 86400;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CUR_BLOB_VERSION"]/*' />
     [NativeTypeName("#define CUR_BLOB_VERSION 2")]
     public const int CUR_BLOB_VERSION = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INTERNATIONAL_USAGE"]/*' />
     [NativeTypeName("#define INTERNATIONAL_USAGE 0x00000001")]
     public const int INTERNATIONAL_USAGE = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptAcquireContext"]/*' />
     [NativeTypeName("#define CryptAcquireContext CryptAcquireContextW")]
     public static delegate*<HCRYPTPROV*, char*, char*, uint, uint, BOOL> CryptAcquireContext => &CryptAcquireContextW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSignHash"]/*' />
     [NativeTypeName("#define CryptSignHash CryptSignHashW")]
     public static delegate*<HCRYPTHASH, uint, char*, uint, byte*, uint*, BOOL> CryptSignHash => &CryptSignHashW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptVerifySignature"]/*' />
     [NativeTypeName("#define CryptVerifySignature CryptVerifySignatureW")]
     public static delegate*<HCRYPTHASH, byte*, uint, HCRYPTKEY, char*, uint, BOOL> CryptVerifySignature => &CryptVerifySignatureW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSetProvider"]/*' />
     [NativeTypeName("#define CryptSetProvider CryptSetProviderW")]
     public static delegate*<char*, uint, BOOL> CryptSetProvider => &CryptSetProviderW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSetProviderEx"]/*' />
     [NativeTypeName("#define CryptSetProviderEx CryptSetProviderExW")]
     public static delegate*<char*, uint, uint*, uint, BOOL> CryptSetProviderEx => &CryptSetProviderExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptGetDefaultProvider"]/*' />
     [NativeTypeName("#define CryptGetDefaultProvider CryptGetDefaultProviderW")]
     public static delegate*<uint, uint*, uint, char*, uint*, BOOL> CryptGetDefaultProvider => &CryptGetDefaultProviderW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptEnumProviderTypes"]/*' />
     [NativeTypeName("#define CryptEnumProviderTypes CryptEnumProviderTypesW")]
     public static delegate*<uint, uint*, uint, uint*, char*, uint*, BOOL> CryptEnumProviderTypes => &CryptEnumProviderTypesW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptEnumProviders"]/*' />
     [NativeTypeName("#define CryptEnumProviders CryptEnumProvidersW")]
     public static delegate*<uint, uint*, uint, uint*, char*, uint*, BOOL> CryptEnumProviders => &CryptEnumProvidersW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RSA_CSP_PUBLICKEYBLOB"]/*' />
     [NativeTypeName("#define RSA_CSP_PUBLICKEYBLOB ((LPCSTR) 19)")]
     public static sbyte* RSA_CSP_PUBLICKEYBLOB => ((sbyte*)(19));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.X942_DH_PARAMETERS"]/*' />
     [NativeTypeName("#define X942_DH_PARAMETERS ((LPCSTR) 50)")]
     public static sbyte* X942_DH_PARAMETERS => ((sbyte*)(50));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.X942_OTHER_INFO"]/*' />
     [NativeTypeName("#define X942_OTHER_INFO ((LPCSTR) 52)")]
     public static sbyte* X942_OTHER_INFO => ((sbyte*)(52));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CNG_RSA_PUBLIC_KEY_BLOB"]/*' />
     [NativeTypeName("#define CNG_RSA_PUBLIC_KEY_BLOB ((LPCSTR) 72)")]
     public static sbyte* CNG_RSA_PUBLIC_KEY_BLOB => ((sbyte*)(72));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ECC_CMS_SHARED_INFO"]/*' />
     [NativeTypeName("#define ECC_CMS_SHARED_INFO ((LPCSTR) 77)")]
     public static sbyte* ECC_CMS_SHARED_INFO => ((sbyte*)(77));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CNG_RSA_PRIVATE_KEY_BLOB"]/*' />
     [NativeTypeName("#define CNG_RSA_PRIVATE_KEY_BLOB ((LPCSTR) 83)")]
     public static sbyte* CNG_RSA_PRIVATE_KEY_BLOB => ((sbyte*)(83));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PKCS7_SIGNER_INFO"]/*' />
     [NativeTypeName("#define PKCS7_SIGNER_INFO ((LPCSTR) 500)")]
     public static sbyte* PKCS7_SIGNER_INFO => ((sbyte*)(500));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMS_SIGNER_INFO"]/*' />
     [NativeTypeName("#define CMS_SIGNER_INFO ((LPCSTR) 501)")]
     public static sbyte* CMS_SIGNER_INFO => ((sbyte*)(501));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wszURI_NTDS_OBJECTSID_PREFIX"]/*' />
     [NativeTypeName("#define wszURI_NTDS_OBJECTSID_PREFIX L\"tag:microsoft.com,2022-09-14:sid:\"")]
     public const string wszURI_NTDS_OBJECTSID_PREFIX = "tag:microsoft.com,2022-09-14:sid:";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SITE_PIN_RULES_ALL_SUBDOMAINS_FLAG"]/*' />
     [NativeTypeName("#define SITE_PIN_RULES_ALL_SUBDOMAINS_FLAG 0x1")]
     public const int SITE_PIN_RULES_ALL_SUBDOMAINS_FLAG = 0x1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CROSS_CERT_DIST_POINT_ERR_INDEX_MASK"]/*' />
     [NativeTypeName("#define CROSS_CERT_DIST_POINT_ERR_INDEX_MASK 0xFF")]
     public const int CROSS_CERT_DIST_POINT_ERR_INDEX_MASK = 0xFF;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CROSS_CERT_DIST_POINT_ERR_INDEX_SHIFT"]/*' />
     [NativeTypeName("#define CROSS_CERT_DIST_POINT_ERR_INDEX_SHIFT 24")]
     public const int CROSS_CERT_DIST_POINT_ERR_INDEX_SHIFT = 24;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SORTED_CTL_EXT_FLAGS_OFFSET"]/*' />
     [NativeTypeName("#define SORTED_CTL_EXT_FLAGS_OFFSET (0*4)")]
     public const int SORTED_CTL_EXT_FLAGS_OFFSET = (0 * 4);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SORTED_CTL_EXT_COUNT_OFFSET"]/*' />
     [NativeTypeName("#define SORTED_CTL_EXT_COUNT_OFFSET (1*4)")]
     public const int SORTED_CTL_EXT_COUNT_OFFSET = (1 * 4);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SORTED_CTL_EXT_MAX_COLLISION_OFFSET"]/*' />
     [NativeTypeName("#define SORTED_CTL_EXT_MAX_COLLISION_OFFSET (2*4)")]
     public const int SORTED_CTL_EXT_MAX_COLLISION_OFFSET = (2 * 4);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SORTED_CTL_EXT_HASH_BUCKET_OFFSET"]/*' />
     [NativeTypeName("#define SORTED_CTL_EXT_HASH_BUCKET_OFFSET (3*4)")]
     public const int SORTED_CTL_EXT_HASH_BUCKET_OFFSET = (3 * 4);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SORTED_CTL_EXT_HASHED_SUBJECT_IDENTIFIER_FLAG"]/*' />
     [NativeTypeName("#define SORTED_CTL_EXT_HASHED_SUBJECT_IDENTIFIER_FLAG 0x1")]
     public const int SORTED_CTL_EXT_HASHED_SUBJECT_IDENTIFIER_FLAG = 0x1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.szOIDVerisign_MessageType"]/*' />
     [NativeTypeName("#define szOIDVerisign_MessageType \"2.16.840.1.113733.1.9.2\"")]
     public static ReadOnlySpan<byte> szOIDVerisign_MessageType => "2.16.840.1.113733.1.9.2"u8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.szOIDVerisign_PkiStatus"]/*' />
     [NativeTypeName("#define szOIDVerisign_PkiStatus \"2.16.840.1.113733.1.9.3\"")]
     public static ReadOnlySpan<byte> szOIDVerisign_PkiStatus => "2.16.840.1.113733.1.9.3"u8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.szOIDVerisign_FailInfo"]/*' />
     [NativeTypeName("#define szOIDVerisign_FailInfo \"2.16.840.1.113733.1.9.4\"")]
     public static ReadOnlySpan<byte> szOIDVerisign_FailInfo => "2.16.840.1.113733.1.9.4"u8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.szOIDVerisign_SenderNonce"]/*' />
     [NativeTypeName("#define szOIDVerisign_SenderNonce \"2.16.840.1.113733.1.9.5\"")]
     public static ReadOnlySpan<byte> szOIDVerisign_SenderNonce => "2.16.840.1.113733.1.9.5"u8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.szOIDVerisign_RecipientNonce"]/*' />
     [NativeTypeName("#define szOIDVerisign_RecipientNonce \"2.16.840.1.113733.1.9.6\"")]
     public static ReadOnlySpan<byte> szOIDVerisign_RecipientNonce => "2.16.840.1.113733.1.9.6"u8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.szOIDVerisign_TransactionID"]/*' />
     [NativeTypeName("#define szOIDVerisign_TransactionID \"2.16.840.1.113733.1.9.7\"")]
     public static ReadOnlySpan<byte> szOIDVerisign_TransactionID => "2.16.840.1.113733.1.9.7"u8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NETSCAPE_SSL_CLIENT_AUTH_CERT_TYPE"]/*' />
     [NativeTypeName("#define NETSCAPE_SSL_CLIENT_AUTH_CERT_TYPE 0x80")]
     public const int NETSCAPE_SSL_CLIENT_AUTH_CERT_TYPE = 0x80;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NETSCAPE_SSL_SERVER_AUTH_CERT_TYPE"]/*' />
     [NativeTypeName("#define NETSCAPE_SSL_SERVER_AUTH_CERT_TYPE 0x40")]
     public const int NETSCAPE_SSL_SERVER_AUTH_CERT_TYPE = 0x40;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NETSCAPE_SMIME_CERT_TYPE"]/*' />
     [NativeTypeName("#define NETSCAPE_SMIME_CERT_TYPE 0x20")]
     public const int NETSCAPE_SMIME_CERT_TYPE = 0x20;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NETSCAPE_SIGN_CERT_TYPE"]/*' />
     [NativeTypeName("#define NETSCAPE_SIGN_CERT_TYPE 0x10")]
     public const int NETSCAPE_SIGN_CERT_TYPE = 0x10;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NETSCAPE_SSL_CA_CERT_TYPE"]/*' />
     [NativeTypeName("#define NETSCAPE_SSL_CA_CERT_TYPE 0x04")]
     public const int NETSCAPE_SSL_CA_CERT_TYPE = 0x04;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NETSCAPE_SMIME_CA_CERT_TYPE"]/*' />
     [NativeTypeName("#define NETSCAPE_SMIME_CA_CERT_TYPE 0x02")]
     public const int NETSCAPE_SMIME_CA_CERT_TYPE = 0x02;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NETSCAPE_SIGN_CA_CERT_TYPE"]/*' />
     [NativeTypeName("#define NETSCAPE_SIGN_CA_CERT_TYPE 0x01")]
     public const int NETSCAPE_SIGN_CA_CERT_TYPE = 0x01;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_MLDSA_44_ALGORITHM"]/*' />
     [NativeTypeName("#define CRYPT32_MLDSA_44_ALGORITHM BCRYPT_MLDSA_ALGORITHM, ")]
     public const string CRYPT32_MLDSA_44_ALGORITHM = "ML-DSA:44";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_MLDSA_65_ALGORITHM"]/*' />
     [NativeTypeName("#define CRYPT32_MLDSA_65_ALGORITHM BCRYPT_MLDSA_ALGORITHM, ")]
     public const string CRYPT32_MLDSA_65_ALGORITHM = "ML-DSA:65";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_MLDSA_87_ALGORITHM"]/*' />
     [NativeTypeName("#define CRYPT32_MLDSA_87_ALGORITHM BCRYPT_MLDSA_ALGORITHM, ")]
     public const string CRYPT32_MLDSA_87_ALGORITHM = "ML-DSA:87";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_COMPOSITE_MLDSA_44_ECDSA_P256_SHA256_ALGORITHM"]/*' />
+    [NativeTypeName("#define CRYPT32_COMPOSITE_MLDSA_44_ECDSA_P256_SHA256_ALGORITHM BCRYPT_COMPOSITE_MLDSA_ALGORITHM, ")]
+    public const string CRYPT32_COMPOSITE_MLDSA_44_ECDSA_P256_SHA256_ALGORITHM = "Composite-ML-DSA:44-ECDSA-P256-SHA256";
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_COMPOSITE_MLDSA_65_ECDSA_P256_SHA512_ALGORITHM"]/*' />
+    [NativeTypeName("#define CRYPT32_COMPOSITE_MLDSA_65_ECDSA_P256_SHA512_ALGORITHM BCRYPT_COMPOSITE_MLDSA_ALGORITHM, ")]
+    public const string CRYPT32_COMPOSITE_MLDSA_65_ECDSA_P256_SHA512_ALGORITHM = "Composite-ML-DSA:65-ECDSA-P256-SHA512";
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_COMPOSITE_MLDSA_65_ECDSA_P384_SHA512_ALGORITHM"]/*' />
+    [NativeTypeName("#define CRYPT32_COMPOSITE_MLDSA_65_ECDSA_P384_SHA512_ALGORITHM BCRYPT_COMPOSITE_MLDSA_ALGORITHM, ")]
+    public const string CRYPT32_COMPOSITE_MLDSA_65_ECDSA_P384_SHA512_ALGORITHM = "Composite-ML-DSA:65-ECDSA-P384-SHA512";
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_COMPOSITE_MLDSA_87_ECDSA_P384_SHA512_ALGORITHM"]/*' />
+    [NativeTypeName("#define CRYPT32_COMPOSITE_MLDSA_87_ECDSA_P384_SHA512_ALGORITHM BCRYPT_COMPOSITE_MLDSA_ALGORITHM, ")]
+    public const string CRYPT32_COMPOSITE_MLDSA_87_ECDSA_P384_SHA512_ALGORITHM = "Composite-ML-DSA:87-ECDSA-P384-SHA512";
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_MLKEM_512_ALGORITHM"]/*' />
     [NativeTypeName("#define CRYPT32_MLKEM_512_ALGORITHM BCRYPT_MLKEM_ALGORITHM, ")]
     public const string CRYPT32_MLKEM_512_ALGORITHM = "ML-KEM:512";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_MLKEM_768_ALGORITHM"]/*' />
     [NativeTypeName("#define CRYPT32_MLKEM_768_ALGORITHM BCRYPT_MLKEM_ALGORITHM, ")]
     public const string CRYPT32_MLKEM_768_ALGORITHM = "ML-KEM:768";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_MLKEM_1024_ALGORITHM"]/*' />
     [NativeTypeName("#define CRYPT32_MLKEM_1024_ALGORITHM BCRYPT_MLKEM_ALGORITHM, ")]
     public const string CRYPT32_MLKEM_1024_ALGORITHM = "ML-KEM:1024";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_COMPOSITE_MLKEM_768_P256_ALGORITHM"]/*' />
+    [NativeTypeName("#define CRYPT32_COMPOSITE_MLKEM_768_P256_ALGORITHM BCRYPT_COMPOSITE_MLKEM_ALGORITHM, ")]
+    public const string CRYPT32_COMPOSITE_MLKEM_768_P256_ALGORITHM = "Composite-ML-KEM:768-P256";
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_COMPOSITE_MLKEM_768_X25519_ALGORITHM"]/*' />
+    [NativeTypeName("#define CRYPT32_COMPOSITE_MLKEM_768_X25519_ALGORITHM BCRYPT_COMPOSITE_MLKEM_ALGORITHM, ")]
+    public const string CRYPT32_COMPOSITE_MLKEM_768_X25519_ALGORITHM = "Composite-ML-KEM:768-X25519";
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_COMPOSITE_MLKEM_1024_P384_ALGORITHM"]/*' />
+    [NativeTypeName("#define CRYPT32_COMPOSITE_MLKEM_1024_P384_ALGORITHM BCRYPT_COMPOSITE_MLKEM_ALGORITHM, ")]
+    public const string CRYPT32_COMPOSITE_MLKEM_1024_P384_ALGORITHM = "Composite-ML-KEM:1024-P384";
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_SLHDSA_SHA2_128S_ALGORITHM"]/*' />
     [NativeTypeName("#define CRYPT32_SLHDSA_SHA2_128S_ALGORITHM BCRYPT_SLHDSA_ALGORITHM, ")]
     public const string CRYPT32_SLHDSA_SHA2_128S_ALGORITHM = "SLH-DSA:SHA2-128s";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_SLHDSA_SHAKE_128S_ALGORITHM"]/*' />
     [NativeTypeName("#define CRYPT32_SLHDSA_SHAKE_128S_ALGORITHM BCRYPT_SLHDSA_ALGORITHM, ")]
     public const string CRYPT32_SLHDSA_SHAKE_128S_ALGORITHM = "SLH-DSA:SHAKE-128s";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_SLHDSA_SHA2_128F_ALGORITHM"]/*' />
     [NativeTypeName("#define CRYPT32_SLHDSA_SHA2_128F_ALGORITHM BCRYPT_SLHDSA_ALGORITHM, ")]
     public const string CRYPT32_SLHDSA_SHA2_128F_ALGORITHM = "SLH-DSA:SHA2-128f";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_SLHDSA_SHAKE_128F_ALGORITHM"]/*' />
     [NativeTypeName("#define CRYPT32_SLHDSA_SHAKE_128F_ALGORITHM BCRYPT_SLHDSA_ALGORITHM, ")]
     public const string CRYPT32_SLHDSA_SHAKE_128F_ALGORITHM = "SLH-DSA:SHAKE-128f";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_SLHDSA_SHA2_192S_ALGORITHM"]/*' />
     [NativeTypeName("#define CRYPT32_SLHDSA_SHA2_192S_ALGORITHM BCRYPT_SLHDSA_ALGORITHM, ")]
     public const string CRYPT32_SLHDSA_SHA2_192S_ALGORITHM = "SLH-DSA:SHA2-192s";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_SLHDSA_SHAKE_192S_ALGORITHM"]/*' />
     [NativeTypeName("#define CRYPT32_SLHDSA_SHAKE_192S_ALGORITHM BCRYPT_SLHDSA_ALGORITHM, ")]
     public const string CRYPT32_SLHDSA_SHAKE_192S_ALGORITHM = "SLH-DSA:SHAKE-192s";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_SLHDSA_SHA2_192F_ALGORITHM"]/*' />
     [NativeTypeName("#define CRYPT32_SLHDSA_SHA2_192F_ALGORITHM BCRYPT_SLHDSA_ALGORITHM, ")]
     public const string CRYPT32_SLHDSA_SHA2_192F_ALGORITHM = "SLH-DSA:SHA2-192f";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_SLHDSA_SHAKE_192F_ALGORITHM"]/*' />
     [NativeTypeName("#define CRYPT32_SLHDSA_SHAKE_192F_ALGORITHM BCRYPT_SLHDSA_ALGORITHM, ")]
     public const string CRYPT32_SLHDSA_SHAKE_192F_ALGORITHM = "SLH-DSA:SHAKE-192f";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_SLHDSA_SHA2_256S_ALGORITHM"]/*' />
     [NativeTypeName("#define CRYPT32_SLHDSA_SHA2_256S_ALGORITHM BCRYPT_SLHDSA_ALGORITHM, ")]
     public const string CRYPT32_SLHDSA_SHA2_256S_ALGORITHM = "SLH-DSA:SHA2-256s";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_SLHDSA_SHAKE_256S_ALGORITHM"]/*' />
     [NativeTypeName("#define CRYPT32_SLHDSA_SHAKE_256S_ALGORITHM BCRYPT_SLHDSA_ALGORITHM, ")]
     public const string CRYPT32_SLHDSA_SHAKE_256S_ALGORITHM = "SLH-DSA:SHAKE-256s";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_SLHDSA_SHA2_256F_ALGORITHM"]/*' />
     [NativeTypeName("#define CRYPT32_SLHDSA_SHA2_256F_ALGORITHM BCRYPT_SLHDSA_ALGORITHM, ")]
     public const string CRYPT32_SLHDSA_SHA2_256F_ALGORITHM = "SLH-DSA:SHA2-256f";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_SLHDSA_SHAKE_256F_ALGORITHM"]/*' />
     [NativeTypeName("#define CRYPT32_SLHDSA_SHAKE_256F_ALGORITHM BCRYPT_SLHDSA_ALGORITHM, ")]
     public const string CRYPT32_SLHDSA_SHAKE_256F_ALGORITHM = "SLH-DSA:SHAKE-256f";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CertRDNValueToStr"]/*' />
     [NativeTypeName("#define CertRDNValueToStr CertRDNValueToStrW")]
     public static delegate*<uint, CRYPT_DATA_BLOB*, char*, uint, uint> CertRDNValueToStr => &CertRDNValueToStrW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CertNameToStr"]/*' />
     [NativeTypeName("#define CertNameToStr CertNameToStrW")]
     public static delegate*<uint, CRYPT_DATA_BLOB*, uint, char*, uint, uint> CertNameToStr => &CertNameToStrW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CertStrToName"]/*' />
     [NativeTypeName("#define CertStrToName CertStrToNameW")]
     public static delegate*<uint, char*, uint, void*, byte*, uint*, char**, BOOL> CertStrToName => &CertStrToNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CertGetNameString"]/*' />
     [NativeTypeName("#define CertGetNameString CertGetNameStringW")]
     public static delegate*<CERT_CONTEXT*, uint, uint, void*, char*, uint, uint> CertGetNameString => &CertGetNameStringW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CertOpenSystemStore"]/*' />
     [NativeTypeName("#define CertOpenSystemStore CertOpenSystemStoreW")]
     public static delegate*<HCRYPTPROV_LEGACY, char*, HCERTSTORE> CertOpenSystemStore => &CertOpenSystemStoreW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CertAddEncodedCertificateToSystemStore"]/*' />
     [NativeTypeName("#define CertAddEncodedCertificateToSystemStore CertAddEncodedCertificateToSystemStoreW")]
     public static delegate*<char*, byte*, uint, BOOL> CertAddEncodedCertificateToSystemStore => &CertAddEncodedCertificateToSystemStoreW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CREDENTIAL_OID_PASSWORD_CREDENTIALS_A"]/*' />
     [NativeTypeName("#define CREDENTIAL_OID_PASSWORD_CREDENTIALS_A ((LPCSTR)1)")]
     public static sbyte* CREDENTIAL_OID_PASSWORD_CREDENTIALS_A => ((sbyte*)(1));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CREDENTIAL_OID_PASSWORD_CREDENTIALS_W"]/*' />
     [NativeTypeName("#define CREDENTIAL_OID_PASSWORD_CREDENTIALS_W ((LPCSTR)2)")]
     public static sbyte* CREDENTIAL_OID_PASSWORD_CREDENTIALS_W => ((sbyte*)(2));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CREDENTIAL_OID_PASSWORD_CREDENTIALS"]/*' />
     [NativeTypeName("#define CREDENTIAL_OID_PASSWORD_CREDENTIALS CREDENTIAL_OID_PASSWORD_CREDENTIALS_W")]
     public static sbyte* CREDENTIAL_OID_PASSWORD_CREDENTIALS => ((sbyte*)(2));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptRetrieveObjectByUrl"]/*' />
     [NativeTypeName("#define CryptRetrieveObjectByUrl CryptRetrieveObjectByUrlW")]
     public static delegate*<char*, sbyte*, uint, uint, void**, HCRYPTASYNC, CRYPT_CREDENTIALS*, void*, CRYPT_RETRIEVE_AUX_INFO*, BOOL> CryptRetrieveObjectByUrl => &CryptRetrieveObjectByUrlW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.USAGE_MATCH_TYPE_AND"]/*' />
     [NativeTypeName("#define USAGE_MATCH_TYPE_AND 0x00000000")]
     public const int USAGE_MATCH_TYPE_AND = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.USAGE_MATCH_TYPE_OR"]/*' />
     [NativeTypeName("#define USAGE_MATCH_TYPE_OR 0x00000001")]
     public const int USAGE_MATCH_TYPE_OR = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REVOCATION_OID_CRL_REVOCATION"]/*' />
     [NativeTypeName("#define REVOCATION_OID_CRL_REVOCATION ((LPCSTR)1)")]
     public static sbyte* REVOCATION_OID_CRL_REVOCATION => ((sbyte*)(1));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AUTHTYPE_CLIENT"]/*' />
     [NativeTypeName("#define AUTHTYPE_CLIENT 1")]
     public const int AUTHTYPE_CLIENT = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AUTHTYPE_SERVER"]/*' />
     [NativeTypeName("#define AUTHTYPE_SERVER 2")]
     public const int AUTHTYPE_SERVER = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BASIC_CONSTRAINTS_CERT_CHAIN_POLICY_CA_FLAG"]/*' />
     [NativeTypeName("#define BASIC_CONSTRAINTS_CERT_CHAIN_POLICY_CA_FLAG 0x80000000")]
     public const uint BASIC_CONSTRAINTS_CERT_CHAIN_POLICY_CA_FLAG = 0x80000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BASIC_CONSTRAINTS_CERT_CHAIN_POLICY_END_ENTITY_FLAG"]/*' />
     [NativeTypeName("#define BASIC_CONSTRAINTS_CERT_CHAIN_POLICY_END_ENTITY_FLAG 0x40000000")]
     public const int BASIC_CONSTRAINTS_CERT_CHAIN_POLICY_END_ENTITY_FLAG = 0x40000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MICROSOFT_ROOT_CERT_CHAIN_POLICY_ENABLE_TEST_ROOT_FLAG"]/*' />
     [NativeTypeName("#define MICROSOFT_ROOT_CERT_CHAIN_POLICY_ENABLE_TEST_ROOT_FLAG 0x00010000")]
     public const int MICROSOFT_ROOT_CERT_CHAIN_POLICY_ENABLE_TEST_ROOT_FLAG = 0x00010000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MICROSOFT_ROOT_CERT_CHAIN_POLICY_CHECK_APPLICATION_ROOT_FLAG"]/*' />
     [NativeTypeName("#define MICROSOFT_ROOT_CERT_CHAIN_POLICY_CHECK_APPLICATION_ROOT_FLAG 0x00020000")]
     public const int MICROSOFT_ROOT_CERT_CHAIN_POLICY_CHECK_APPLICATION_ROOT_FLAG = 0x00020000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MICROSOFT_ROOT_CERT_CHAIN_POLICY_DISABLE_FLIGHT_ROOT_FLAG"]/*' />
     [NativeTypeName("#define MICROSOFT_ROOT_CERT_CHAIN_POLICY_DISABLE_FLIGHT_ROOT_FLAG 0x00040000")]
     public const int MICROSOFT_ROOT_CERT_CHAIN_POLICY_DISABLE_FLIGHT_ROOT_FLAG = 0x00040000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptStringToBinary"]/*' />
     [NativeTypeName("#define CryptStringToBinary CryptStringToBinaryW")]
     public static delegate*<char*, uint, uint, byte*, uint*, uint*, uint*, BOOL> CryptStringToBinary => &CryptStringToBinaryW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptBinaryToString"]/*' />
     [NativeTypeName("#define CryptBinaryToString CryptBinaryToStringW")]
     public static delegate*<byte*, uint, uint, char*, uint*, BOOL> CryptBinaryToString => &CryptBinaryToStringW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REPORT_NO_PRIVATE_KEY"]/*' />
     [NativeTypeName("#define REPORT_NO_PRIVATE_KEY 0x0001")]
     public const int REPORT_NO_PRIVATE_KEY = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REPORT_NOT_ABLE_TO_EXPORT_PRIVATE_KEY"]/*' />
     [NativeTypeName("#define REPORT_NOT_ABLE_TO_EXPORT_PRIVATE_KEY 0x0002")]
     public const int REPORT_NOT_ABLE_TO_EXPORT_PRIVATE_KEY = 0x0002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EXPORT_PRIVATE_KEYS"]/*' />
     [NativeTypeName("#define EXPORT_PRIVATE_KEYS 0x0004")]
     public const int EXPORT_PRIVATE_KEYS = 0x0004;
 }

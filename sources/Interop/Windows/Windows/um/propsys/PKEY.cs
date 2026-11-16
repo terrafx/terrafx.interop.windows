@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class PKEY
 {
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_PIDSTR_MAX"]/*' />
     [NativeTypeName("#define PKEY_PIDSTR_MAX 10")]
     public const int PKEY_PIDSTR_MAX = 10;
 }

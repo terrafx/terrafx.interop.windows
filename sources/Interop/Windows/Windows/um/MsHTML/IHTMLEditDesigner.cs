@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IHTMLEditDesigner : IHTMLEditDesigner.Interface, INativeGuid
 {
+    /// <include file='IHTMLEditDesigner.xml' path='doc/member[@name="IHTMLEditDesigner.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHTMLEditDesigner);
 
     public void** lpVtbl;

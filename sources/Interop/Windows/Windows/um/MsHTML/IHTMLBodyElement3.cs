@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IHTMLBodyElement3 : IHTMLBodyElement3.Interface, INativeGuid
 {
+    /// <include file='IHTMLBodyElement3.xml' path='doc/member[@name="IHTMLBodyElement3.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHTMLBodyElement3);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISpLexicon : ISpLexicon.Interface, INativeGuid
 {
+    /// <include file='ISpLexicon.xml' path='doc/member[@name="ISpLexicon.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpLexicon);
 
     public void** lpVtbl;

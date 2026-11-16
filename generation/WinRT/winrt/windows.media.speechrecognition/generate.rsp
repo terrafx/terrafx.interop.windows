@@ -1,5 +1,6 @@
 @../../../settings.rsp
 @../../../remap.rsp
+@../../../remap-guids-winrt.rsp
 --exclude
 ABI::Windows::Media::SpeechRecognition::IID_ISpeechContinuousRecognitionCompletedEventArgs
 ABI::Windows::Media::SpeechRecognition::IID_ISpeechContinuousRecognitionResultGeneratedEventArgs
@@ -44,8 +45,6 @@ WinRT
 TerraFX.Interop.WinRT
 --output
 ../../../../sources/Interop/Windows/WinRT/winrt/windows.media.speechrecognition
---remap
-IID_ISpeechRecognizer=@IID_WinRT_ISpeechRecognizer
 --test-output
 ../../../../tests/Interop/Windows/WinRT/winrt/windows.media.speechrecognition
 --traverse

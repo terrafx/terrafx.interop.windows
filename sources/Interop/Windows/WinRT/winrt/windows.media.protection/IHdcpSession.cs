@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IHdcpSession : IHdcpSession.Interface, INativeGuid
 {
+    /// <include file='IHdcpSession.xml' path='doc/member[@name="IHdcpSession.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHdcpSession);
 
     public void** lpVtbl;

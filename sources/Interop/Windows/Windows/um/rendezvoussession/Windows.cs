@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DIID_DRendezvousSessionEvents"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid DIID_DRendezvousSessionEvents
     {

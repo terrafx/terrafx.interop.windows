@@ -95,6 +95,7 @@ public unsafe partial struct COLOR
         public void* reserved2;
     }
 
+    /// <include file='COLOR.xml' path='doc/member[@name="COLOR.COLOR_MATCH_VERSION"]/*' />
     [NativeTypeName("#define COLOR_MATCH_VERSION 0x0200")]
     public const int COLOR_MATCH_VERSION = 0x0200;
 }

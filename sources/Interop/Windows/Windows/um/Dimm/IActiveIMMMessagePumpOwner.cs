@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IActiveIMMMessagePumpOwner : IActiveIMMMessagePumpOwner.Interface, INativeGuid
 {
+    /// <include file='IActiveIMMMessagePumpOwner.xml' path='doc/member[@name="IActiveIMMMessagePumpOwner.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IActiveIMMMessagePumpOwner);
 
     public void** lpVtbl;

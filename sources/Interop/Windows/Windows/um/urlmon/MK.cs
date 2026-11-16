@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MK
 {
+    /// <include file='MK.xml' path='doc/member[@name="MK.MK_S_ASYNCHRONOUS"]/*' />
     [NativeTypeName("#define MK_S_ASYNCHRONOUS _HRESULT_TYPEDEF_(0x000401E8L)")]
     public const int MK_S_ASYNCHRONOUS = ((int)(0x000401E8));
 }

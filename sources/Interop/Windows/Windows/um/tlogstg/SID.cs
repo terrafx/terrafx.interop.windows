@@ -10,6 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 public partial struct SID
 {
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_STravelLogCursor"]/*' />
     [NativeTypeName("#define SID_STravelLogCursor IID_ITravelLogStg")]
     public static ref readonly Guid SID_STravelLogCursor => ref IID_ITravelLogStg;
 }

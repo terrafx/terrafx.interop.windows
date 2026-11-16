@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class PROC
 {
+    /// <include file='PROC.xml' path='doc/member[@name="PROC.PROC_IDLE_BUCKET_COUNT"]/*' />
     [NativeTypeName("#define PROC_IDLE_BUCKET_COUNT 6")]
     public const int PROC_IDLE_BUCKET_COUNT = 6;
 
+    /// <include file='PROC.xml' path='doc/member[@name="PROC.PROC_IDLE_BUCKET_COUNT_EX"]/*' />
     [NativeTypeName("#define PROC_IDLE_BUCKET_COUNT_EX 16")]
     public const int PROC_IDLE_BUCKET_COUNT_EX = 16;
 }

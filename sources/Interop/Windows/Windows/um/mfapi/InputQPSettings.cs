@@ -31,7 +31,7 @@ public partial struct InputQPSettings
     [NativeTypeName("INT16")]
     public short maxValue;
 
-    /// <include file='InputQPSettings.xml' path='doc/member[@name="InputQPSettings.steps"]/*' />
+    /// <include file='InputQPSettings.xml' path='doc/member[@name="InputQPSettings.step"]/*' />
     [NativeTypeName("UINT16")]
-    public ushort steps;
+    public ushort step;
 }

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IRequestingFocusOnKeyboardInputEventArgs : IRequestingFocusOnKeyboardInputEventArgs.Interface, INativeGuid
 {
+    /// <include file='IRequestingFocusOnKeyboardInputEventArgs.xml' path='doc/member[@name="IRequestingFocusOnKeyboardInputEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRequestingFocusOnKeyboardInputEventArgs);
 
     public void** lpVtbl;

@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("IWalletRelevantLocation is deprecated and might not work on all platforms. For more info, see MSDN.")]
 public unsafe partial struct IWalletRelevantLocation : IWalletRelevantLocation.Interface, INativeGuid
 {
+    /// <include file='IWalletRelevantLocation.xml' path='doc/member[@name="IWalletRelevantLocation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWalletRelevantLocation);
 
     public void** lpVtbl;

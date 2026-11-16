@@ -7,87 +7,115 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class TBSIMP
 {
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_BUFFER_TOO_SMALL"]/*' />
     [NativeTypeName("#define TBSIMP_E_BUFFER_TOO_SMALL _HRESULT_TYPEDEF_(0x80290200L)")]
     public const int TBSIMP_E_BUFFER_TOO_SMALL = unchecked((int)(0x80290200));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_CLEANUP_FAILED"]/*' />
     [NativeTypeName("#define TBSIMP_E_CLEANUP_FAILED _HRESULT_TYPEDEF_(0x80290201L)")]
     public const int TBSIMP_E_CLEANUP_FAILED = unchecked((int)(0x80290201));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_INVALID_CONTEXT_HANDLE"]/*' />
     [NativeTypeName("#define TBSIMP_E_INVALID_CONTEXT_HANDLE _HRESULT_TYPEDEF_(0x80290202L)")]
     public const int TBSIMP_E_INVALID_CONTEXT_HANDLE = unchecked((int)(0x80290202));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_INVALID_CONTEXT_PARAM"]/*' />
     [NativeTypeName("#define TBSIMP_E_INVALID_CONTEXT_PARAM _HRESULT_TYPEDEF_(0x80290203L)")]
     public const int TBSIMP_E_INVALID_CONTEXT_PARAM = unchecked((int)(0x80290203));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_TPM_ERROR"]/*' />
     [NativeTypeName("#define TBSIMP_E_TPM_ERROR _HRESULT_TYPEDEF_(0x80290204L)")]
     public const int TBSIMP_E_TPM_ERROR = unchecked((int)(0x80290204));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_HASH_BAD_KEY"]/*' />
     [NativeTypeName("#define TBSIMP_E_HASH_BAD_KEY _HRESULT_TYPEDEF_(0x80290205L)")]
     public const int TBSIMP_E_HASH_BAD_KEY = unchecked((int)(0x80290205));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_DUPLICATE_VHANDLE"]/*' />
     [NativeTypeName("#define TBSIMP_E_DUPLICATE_VHANDLE _HRESULT_TYPEDEF_(0x80290206L)")]
     public const int TBSIMP_E_DUPLICATE_VHANDLE = unchecked((int)(0x80290206));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_INVALID_OUTPUT_POINTER"]/*' />
     [NativeTypeName("#define TBSIMP_E_INVALID_OUTPUT_POINTER _HRESULT_TYPEDEF_(0x80290207L)")]
     public const int TBSIMP_E_INVALID_OUTPUT_POINTER = unchecked((int)(0x80290207));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_INVALID_PARAMETER"]/*' />
     [NativeTypeName("#define TBSIMP_E_INVALID_PARAMETER _HRESULT_TYPEDEF_(0x80290208L)")]
     public const int TBSIMP_E_INVALID_PARAMETER = unchecked((int)(0x80290208));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_RPC_INIT_FAILED"]/*' />
     [NativeTypeName("#define TBSIMP_E_RPC_INIT_FAILED _HRESULT_TYPEDEF_(0x80290209L)")]
     public const int TBSIMP_E_RPC_INIT_FAILED = unchecked((int)(0x80290209));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_SCHEDULER_NOT_RUNNING"]/*' />
     [NativeTypeName("#define TBSIMP_E_SCHEDULER_NOT_RUNNING _HRESULT_TYPEDEF_(0x8029020AL)")]
     public const int TBSIMP_E_SCHEDULER_NOT_RUNNING = unchecked((int)(0x8029020A));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_COMMAND_CANCELED"]/*' />
     [NativeTypeName("#define TBSIMP_E_COMMAND_CANCELED _HRESULT_TYPEDEF_(0x8029020BL)")]
     public const int TBSIMP_E_COMMAND_CANCELED = unchecked((int)(0x8029020B));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_OUT_OF_MEMORY"]/*' />
     [NativeTypeName("#define TBSIMP_E_OUT_OF_MEMORY _HRESULT_TYPEDEF_(0x8029020CL)")]
     public const int TBSIMP_E_OUT_OF_MEMORY = unchecked((int)(0x8029020C));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_LIST_NO_MORE_ITEMS"]/*' />
     [NativeTypeName("#define TBSIMP_E_LIST_NO_MORE_ITEMS _HRESULT_TYPEDEF_(0x8029020DL)")]
     public const int TBSIMP_E_LIST_NO_MORE_ITEMS = unchecked((int)(0x8029020D));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_LIST_NOT_FOUND"]/*' />
     [NativeTypeName("#define TBSIMP_E_LIST_NOT_FOUND _HRESULT_TYPEDEF_(0x8029020EL)")]
     public const int TBSIMP_E_LIST_NOT_FOUND = unchecked((int)(0x8029020E));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_NOT_ENOUGH_SPACE"]/*' />
     [NativeTypeName("#define TBSIMP_E_NOT_ENOUGH_SPACE _HRESULT_TYPEDEF_(0x8029020FL)")]
     public const int TBSIMP_E_NOT_ENOUGH_SPACE = unchecked((int)(0x8029020F));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_NOT_ENOUGH_TPM_CONTEXTS"]/*' />
     [NativeTypeName("#define TBSIMP_E_NOT_ENOUGH_TPM_CONTEXTS _HRESULT_TYPEDEF_(0x80290210L)")]
     public const int TBSIMP_E_NOT_ENOUGH_TPM_CONTEXTS = unchecked((int)(0x80290210));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_COMMAND_FAILED"]/*' />
     [NativeTypeName("#define TBSIMP_E_COMMAND_FAILED _HRESULT_TYPEDEF_(0x80290211L)")]
     public const int TBSIMP_E_COMMAND_FAILED = unchecked((int)(0x80290211));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_UNKNOWN_ORDINAL"]/*' />
     [NativeTypeName("#define TBSIMP_E_UNKNOWN_ORDINAL _HRESULT_TYPEDEF_(0x80290212L)")]
     public const int TBSIMP_E_UNKNOWN_ORDINAL = unchecked((int)(0x80290212));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_RESOURCE_EXPIRED"]/*' />
     [NativeTypeName("#define TBSIMP_E_RESOURCE_EXPIRED _HRESULT_TYPEDEF_(0x80290213L)")]
     public const int TBSIMP_E_RESOURCE_EXPIRED = unchecked((int)(0x80290213));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_INVALID_RESOURCE"]/*' />
     [NativeTypeName("#define TBSIMP_E_INVALID_RESOURCE _HRESULT_TYPEDEF_(0x80290214L)")]
     public const int TBSIMP_E_INVALID_RESOURCE = unchecked((int)(0x80290214));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_NOTHING_TO_UNLOAD"]/*' />
     [NativeTypeName("#define TBSIMP_E_NOTHING_TO_UNLOAD _HRESULT_TYPEDEF_(0x80290215L)")]
     public const int TBSIMP_E_NOTHING_TO_UNLOAD = unchecked((int)(0x80290215));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_HASH_TABLE_FULL"]/*' />
     [NativeTypeName("#define TBSIMP_E_HASH_TABLE_FULL _HRESULT_TYPEDEF_(0x80290216L)")]
     public const int TBSIMP_E_HASH_TABLE_FULL = unchecked((int)(0x80290216));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_TOO_MANY_TBS_CONTEXTS"]/*' />
     [NativeTypeName("#define TBSIMP_E_TOO_MANY_TBS_CONTEXTS _HRESULT_TYPEDEF_(0x80290217L)")]
     public const int TBSIMP_E_TOO_MANY_TBS_CONTEXTS = unchecked((int)(0x80290217));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_TOO_MANY_RESOURCES"]/*' />
     [NativeTypeName("#define TBSIMP_E_TOO_MANY_RESOURCES _HRESULT_TYPEDEF_(0x80290218L)")]
     public const int TBSIMP_E_TOO_MANY_RESOURCES = unchecked((int)(0x80290218));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_PPI_NOT_SUPPORTED"]/*' />
     [NativeTypeName("#define TBSIMP_E_PPI_NOT_SUPPORTED _HRESULT_TYPEDEF_(0x80290219L)")]
     public const int TBSIMP_E_PPI_NOT_SUPPORTED = unchecked((int)(0x80290219));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_TPM_INCOMPATIBLE"]/*' />
     [NativeTypeName("#define TBSIMP_E_TPM_INCOMPATIBLE _HRESULT_TYPEDEF_(0x8029021AL)")]
     public const int TBSIMP_E_TPM_INCOMPATIBLE = unchecked((int)(0x8029021A));
 
+    /// <include file='TBSIMP.xml' path='doc/member[@name="TBSIMP.TBSIMP_E_NO_EVENT_LOG"]/*' />
     [NativeTypeName("#define TBSIMP_E_NO_EVENT_LOG _HRESULT_TYPEDEF_(0x8029021BL)")]
     public const int TBSIMP_E_NO_EVENT_LOG = unchecked((int)(0x8029021B));
 }

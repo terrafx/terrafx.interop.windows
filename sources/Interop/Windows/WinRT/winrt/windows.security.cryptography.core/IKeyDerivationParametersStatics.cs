@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IKeyDerivationParametersStatics : IKeyDerivationParametersStatics.Interface, INativeGuid
 {
+    /// <include file='IKeyDerivationParametersStatics.xml' path='doc/member[@name="IKeyDerivationParametersStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IKeyDerivationParametersStatics);
 
     public void** lpVtbl;

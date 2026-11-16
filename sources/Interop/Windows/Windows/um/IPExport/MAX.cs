@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_ADAPTER_NAME"]/*' />
     [NativeTypeName("#define MAX_ADAPTER_NAME 128")]
     public const int MAX_ADAPTER_NAME = 128;
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_IP_STATUS"]/*' />
     [NativeTypeName("#define MAX_IP_STATUS IP_GENERAL_FAILURE")]
     public const int MAX_IP_STATUS = (11000 + 50);
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_OPT_SIZE"]/*' />
     [NativeTypeName("#define MAX_OPT_SIZE 40")]
     public const int MAX_OPT_SIZE = 40;
 }

@@ -7,114 +7,151 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class AF
 {
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_UNSPEC"]/*' />
     [NativeTypeName("#define AF_UNSPEC 0")]
     public const int AF_UNSPEC = 0;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_UNIX"]/*' />
     [NativeTypeName("#define AF_UNIX 1")]
     public const int AF_UNIX = 1;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_INET"]/*' />
     [NativeTypeName("#define AF_INET 2")]
     public const int AF_INET = 2;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_IMPLINK"]/*' />
     [NativeTypeName("#define AF_IMPLINK 3")]
     public const int AF_IMPLINK = 3;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_PUP"]/*' />
     [NativeTypeName("#define AF_PUP 4")]
     public const int AF_PUP = 4;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_CHAOS"]/*' />
     [NativeTypeName("#define AF_CHAOS 5")]
     public const int AF_CHAOS = 5;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_NS"]/*' />
     [NativeTypeName("#define AF_NS 6")]
     public const int AF_NS = 6;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_IPX"]/*' />
     [NativeTypeName("#define AF_IPX AF_NS")]
     public const int AF_IPX = 6;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_ISO"]/*' />
     [NativeTypeName("#define AF_ISO 7")]
     public const int AF_ISO = 7;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_OSI"]/*' />
     [NativeTypeName("#define AF_OSI AF_ISO")]
     public const int AF_OSI = 7;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_ECMA"]/*' />
     [NativeTypeName("#define AF_ECMA 8")]
     public const int AF_ECMA = 8;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_DATAKIT"]/*' />
     [NativeTypeName("#define AF_DATAKIT 9")]
     public const int AF_DATAKIT = 9;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_CCITT"]/*' />
     [NativeTypeName("#define AF_CCITT 10")]
     public const int AF_CCITT = 10;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_SNA"]/*' />
     [NativeTypeName("#define AF_SNA 11")]
     public const int AF_SNA = 11;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_DECnet"]/*' />
     [NativeTypeName("#define AF_DECnet 12")]
     public const int AF_DECnet = 12;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_DLI"]/*' />
     [NativeTypeName("#define AF_DLI 13")]
     public const int AF_DLI = 13;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_LAT"]/*' />
     [NativeTypeName("#define AF_LAT 14")]
     public const int AF_LAT = 14;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_HYLINK"]/*' />
     [NativeTypeName("#define AF_HYLINK 15")]
     public const int AF_HYLINK = 15;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_APPLETALK"]/*' />
     [NativeTypeName("#define AF_APPLETALK 16")]
     public const int AF_APPLETALK = 16;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_NETBIOS"]/*' />
     [NativeTypeName("#define AF_NETBIOS 17")]
     public const int AF_NETBIOS = 17;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_VOICEVIEW"]/*' />
     [NativeTypeName("#define AF_VOICEVIEW 18")]
     public const int AF_VOICEVIEW = 18;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_FIREFOX"]/*' />
     [NativeTypeName("#define AF_FIREFOX 19")]
     public const int AF_FIREFOX = 19;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_UNKNOWN1"]/*' />
     [NativeTypeName("#define AF_UNKNOWN1 20")]
     public const int AF_UNKNOWN1 = 20;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_BAN"]/*' />
     [NativeTypeName("#define AF_BAN 21")]
     public const int AF_BAN = 21;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_ATM"]/*' />
     [NativeTypeName("#define AF_ATM 22")]
     public const int AF_ATM = 22;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_INET6"]/*' />
     [NativeTypeName("#define AF_INET6 23")]
     public const int AF_INET6 = 23;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_CLUSTER"]/*' />
     [NativeTypeName("#define AF_CLUSTER 24")]
     public const int AF_CLUSTER = 24;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_12844"]/*' />
     [NativeTypeName("#define AF_12844 25")]
     public const int AF_12844 = 25;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_IRDA"]/*' />
     [NativeTypeName("#define AF_IRDA 26")]
     public const int AF_IRDA = 26;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_NETDES"]/*' />
     [NativeTypeName("#define AF_NETDES 28")]
     public const int AF_NETDES = 28;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_TCNPROCESS"]/*' />
     [NativeTypeName("#define AF_TCNPROCESS 29")]
     public const int AF_TCNPROCESS = 29;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_TCNMESSAGE"]/*' />
     [NativeTypeName("#define AF_TCNMESSAGE 30")]
     public const int AF_TCNMESSAGE = 30;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_ICLFXBM"]/*' />
     [NativeTypeName("#define AF_ICLFXBM 31")]
     public const int AF_ICLFXBM = 31;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_BTH"]/*' />
     [NativeTypeName("#define AF_BTH 32")]
     public const int AF_BTH = 32;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_LINK"]/*' />
     [NativeTypeName("#define AF_LINK 33")]
     public const int AF_LINK = 33;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_HYPERV"]/*' />
     [NativeTypeName("#define AF_HYPERV 34")]
     public const int AF_HYPERV = 34;
 
+    /// <include file='AF.xml' path='doc/member[@name="AF.AF_MAX"]/*' />
     [NativeTypeName("#define AF_MAX 35")]
     public const int AF_MAX = 35;
 }

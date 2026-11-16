@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
-public static partial class IID
+public static unsafe partial class IID
 {
     public static ref readonly Guid IID_IBackgroundEnergyManagerStatics
     {
@@ -76,6 +76,30 @@ public static partial class IID
                 0xC7,
                 0xFB,
                 0xD1,
+                0x5B
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IPowerManagerStatics2
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xC3, 0x46, 0xA4, 0x67,
+                0x2E, 0x4F,
+                0x56, 0x5D,
+                0xB2,
+                0xE8,
+                0x77,
+                0x07,
+                0xC2,
+                0x64,
+                0x74,
                 0x5B
             ];
 

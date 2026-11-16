@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISelectableWordSegment : ISelectableWordSegment.Interface, INativeGuid
 {
+    /// <include file='ISelectableWordSegment.xml' path='doc/member[@name="ISelectableWordSegment.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISelectableWordSegment);
 
     public void** lpVtbl;

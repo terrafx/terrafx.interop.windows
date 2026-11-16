@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ITfMouseSink : ITfMouseSink.Interface, INativeGuid
 {
+    /// <include file='ITfMouseSink.xml' path='doc/member[@name="ITfMouseSink.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfMouseSink);
 
     public void** lpVtbl;

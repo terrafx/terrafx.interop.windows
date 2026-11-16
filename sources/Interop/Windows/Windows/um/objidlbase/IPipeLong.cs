@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IPipeLong : IPipeLong.Interface, INativeGuid
 {
+    /// <include file='IPipeLong.xml' path='doc/member[@name="IPipeLong.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPipeLong);
 
     public void** lpVtbl;

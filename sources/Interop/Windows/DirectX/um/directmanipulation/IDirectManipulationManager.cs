@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IDirectManipulationManager : IDirectManipulationManager.Interface, INativeGuid
 {
+    /// <include file='IDirectManipulationManager.xml' path='doc/member[@name="IDirectManipulationManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDirectManipulationManager);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IActiveDesktopP : IActiveDesktopP.Interface, INativeGuid
 {
+    /// <include file='IActiveDesktopP.xml' path='doc/member[@name="IActiveDesktopP.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IActiveDesktopP);
 
     public void** lpVtbl;

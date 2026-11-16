@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IRichEditTextRange : IRichEditTextRange.Interface, INativeGuid
 {
+    /// <include file='IRichEditTextRange.xml' path='doc/member[@name="IRichEditTextRange.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRichEditTextRange);
 
     public void** lpVtbl;

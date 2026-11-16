@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMediaSample2Config : IMediaSample2Config.Interface, INativeGuid
 {
+    /// <include file='IMediaSample2Config.xml' path='doc/member[@name="IMediaSample2Config.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMediaSample2Config);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISystemMediaTransportControlsTimelineProperties : ISystemMediaTransportControlsTimelineProperties.Interface, INativeGuid
 {
+    /// <include file='ISystemMediaTransportControlsTimelineProperties.xml' path='doc/member[@name="ISystemMediaTransportControlsTimelineProperties.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISystemMediaTransportControlsTimelineProperties);
 
     public void** lpVtbl;

@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SYSTEM
 {
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_FONT"]/*' />
     [NativeTypeName("#define SYSTEM_FONT 13")]
     public const int SYSTEM_FONT = 13;
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_FIXED_FONT"]/*' />
     [NativeTypeName("#define SYSTEM_FIXED_FONT 16")]
     public const int SYSTEM_FIXED_FONT = 16;
 }

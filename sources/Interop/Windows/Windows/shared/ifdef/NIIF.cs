@@ -7,42 +7,55 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class NIIF
 {
+    /// <include file='NIIF.xml' path='doc/member[@name="NIIF.NIIF_HARDWARE_INTERFACE"]/*' />
     [NativeTypeName("#define NIIF_HARDWARE_INTERFACE 0x00000001")]
     public const int NIIF_HARDWARE_INTERFACE = 0x00000001;
 
+    /// <include file='NIIF.xml' path='doc/member[@name="NIIF.NIIF_FILTER_INTERFACE"]/*' />
     [NativeTypeName("#define NIIF_FILTER_INTERFACE 0x00000002")]
     public const int NIIF_FILTER_INTERFACE = 0x00000002;
 
+    /// <include file='NIIF.xml' path='doc/member[@name="NIIF.NIIF_NDIS_RESERVED1"]/*' />
     [NativeTypeName("#define NIIF_NDIS_RESERVED1 0x00000004")]
     public const int NIIF_NDIS_RESERVED1 = 0x00000004;
 
+    /// <include file='NIIF.xml' path='doc/member[@name="NIIF.NIIF_NDIS_RESERVED2"]/*' />
     [NativeTypeName("#define NIIF_NDIS_RESERVED2 0x00000008")]
     public const int NIIF_NDIS_RESERVED2 = 0x00000008;
 
+    /// <include file='NIIF.xml' path='doc/member[@name="NIIF.NIIF_NDIS_RESERVED3"]/*' />
     [NativeTypeName("#define NIIF_NDIS_RESERVED3 0x00000010")]
     public const int NIIF_NDIS_RESERVED3 = 0x00000010;
 
+    /// <include file='NIIF.xml' path='doc/member[@name="NIIF.NIIF_NDIS_WDM_INTERFACE"]/*' />
     [NativeTypeName("#define NIIF_NDIS_WDM_INTERFACE 0x00000020")]
     public const int NIIF_NDIS_WDM_INTERFACE = 0x00000020;
 
+    /// <include file='NIIF.xml' path='doc/member[@name="NIIF.NIIF_NDIS_ENDPOINT_INTERFACE"]/*' />
     [NativeTypeName("#define NIIF_NDIS_ENDPOINT_INTERFACE 0x00000040")]
     public const int NIIF_NDIS_ENDPOINT_INTERFACE = 0x00000040;
 
+    /// <include file='NIIF.xml' path='doc/member[@name="NIIF.NIIF_NDIS_ISCSI_INTERFACE"]/*' />
     [NativeTypeName("#define NIIF_NDIS_ISCSI_INTERFACE 0x00000080")]
     public const int NIIF_NDIS_ISCSI_INTERFACE = 0x00000080;
 
+    /// <include file='NIIF.xml' path='doc/member[@name="NIIF.NIIF_NDIS_RESERVED4"]/*' />
     [NativeTypeName("#define NIIF_NDIS_RESERVED4 0x00000100")]
     public const int NIIF_NDIS_RESERVED4 = 0x00000100;
 
+    /// <include file='NIIF.xml' path='doc/member[@name="NIIF.NIIF_WAN_TUNNEL_TYPE_UNKNOWN"]/*' />
     [NativeTypeName("#define NIIF_WAN_TUNNEL_TYPE_UNKNOWN ((ULONG)(-1))")]
     public const uint NIIF_WAN_TUNNEL_TYPE_UNKNOWN = unchecked((uint)(-1));
 
+    /// <include file='NIIF.xml' path='doc/member[@name="NIIF.NIIF_BUS_NUMBER_UNKNOWN"]/*' />
     [NativeTypeName("#define NIIF_BUS_NUMBER_UNKNOWN ((ULONG)(-1))")]
     public const uint NIIF_BUS_NUMBER_UNKNOWN = unchecked((uint)(-1));
 
+    /// <include file='NIIF.xml' path='doc/member[@name="NIIF.NIIF_SLOT_NUMBER_UNKNOWN"]/*' />
     [NativeTypeName("#define NIIF_SLOT_NUMBER_UNKNOWN ((ULONG)(-1))")]
     public const uint NIIF_SLOT_NUMBER_UNKNOWN = unchecked((uint)(-1));
 
+    /// <include file='NIIF.xml' path='doc/member[@name="NIIF.NIIF_FUNCTION_NUMBER_UNKNOWN"]/*' />
     [NativeTypeName("#define NIIF_FUNCTION_NUMBER_UNKNOWN ((ULONG)(-1))")]
     public const uint NIIF_FUNCTION_NUMBER_UNKNOWN = unchecked((uint)(-1));
 }

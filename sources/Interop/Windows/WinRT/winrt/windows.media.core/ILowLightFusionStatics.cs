@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ILowLightFusionStatics : ILowLightFusionStatics.Interface, INativeGuid
 {
+    /// <include file='ILowLightFusionStatics.xml' path='doc/member[@name="ILowLightFusionStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ILowLightFusionStatics);
 
     public void** lpVtbl;

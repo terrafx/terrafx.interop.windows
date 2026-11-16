@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IUIAnimationPriorityComparison2 : IUIAnimationPriorityComparison2.Interface, INativeGuid
 {
+    /// <include file='IUIAnimationPriorityComparison2.xml' path='doc/member[@name="IUIAnimationPriorityComparison2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUIAnimationPriorityComparison2);
 
     public void** lpVtbl;

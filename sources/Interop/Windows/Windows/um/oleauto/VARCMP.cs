@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class VARCMP
 {
+    /// <include file='VARCMP.xml' path='doc/member[@name="VARCMP.VARCMP_LT"]/*' />
     [NativeTypeName("#define VARCMP_LT 0")]
     public const int VARCMP_LT = 0;
 
+    /// <include file='VARCMP.xml' path='doc/member[@name="VARCMP.VARCMP_EQ"]/*' />
     [NativeTypeName("#define VARCMP_EQ 1")]
     public const int VARCMP_EQ = 1;
 
+    /// <include file='VARCMP.xml' path='doc/member[@name="VARCMP.VARCMP_GT"]/*' />
     [NativeTypeName("#define VARCMP_GT 2")]
     public const int VARCMP_GT = 2;
 
+    /// <include file='VARCMP.xml' path='doc/member[@name="VARCMP.VARCMP_NULL"]/*' />
     [NativeTypeName("#define VARCMP_NULL 3")]
     public const int VARCMP_NULL = 3;
 }

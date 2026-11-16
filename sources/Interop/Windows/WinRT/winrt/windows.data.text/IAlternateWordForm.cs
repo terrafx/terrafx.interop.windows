@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAlternateWordForm : IAlternateWordForm.Interface, INativeGuid
 {
+    /// <include file='IAlternateWordForm.xml' path='doc/member[@name="IAlternateWordForm.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAlternateWordForm);
 
     public void** lpVtbl;

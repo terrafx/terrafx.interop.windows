@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IRebootNeededEventHandler : IRebootNeededEventHandler.Interface, INativeGuid
 {
+    /// <include file='IRebootNeededEventHandler.xml' path='doc/member[@name="IRebootNeededEventHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRebootNeededEventHandler);
 
     public void** lpVtbl;

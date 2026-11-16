@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAccessibilitySettings : IAccessibilitySettings.Interface, INativeGuid
 {
+    /// <include file='IAccessibilitySettings.xml' path='doc/member[@name="IAccessibilitySettings.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAccessibilitySettings);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFHDCPStatus : IMFHDCPStatus.Interface, INativeGuid
 {
+    /// <include file='IMFHDCPStatus.xml' path='doc/member[@name="IMFHDCPStatus.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFHDCPStatus);
 
     public void** lpVtbl;

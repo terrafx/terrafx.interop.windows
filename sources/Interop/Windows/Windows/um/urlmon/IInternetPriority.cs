@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IInternetPriority : IInternetPriority.Interface, INativeGuid
 {
+    /// <include file='IInternetPriority.xml' path='doc/member[@name="IInternetPriority.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IInternetPriority);
 
     public void** lpVtbl;

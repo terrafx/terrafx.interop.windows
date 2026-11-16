@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IUserAuthenticationStatusChangeDeferral : IUserAuthenticationStatusChangeDeferral.Interface, INativeGuid
 {
+    /// <include file='IUserAuthenticationStatusChangeDeferral.xml' path='doc/member[@name="IUserAuthenticationStatusChangeDeferral.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUserAuthenticationStatusChangeDeferral);
 
     public void** lpVtbl;

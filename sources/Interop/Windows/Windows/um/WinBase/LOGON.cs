@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class LOGON
 {
+    /// <include file='LOGON.xml' path='doc/member[@name="LOGON.LOGON_WITH_PROFILE"]/*' />
     [NativeTypeName("#define LOGON_WITH_PROFILE 0x00000001")]
     public const int LOGON_WITH_PROFILE = 0x00000001;
 
+    /// <include file='LOGON.xml' path='doc/member[@name="LOGON.LOGON_NETCREDENTIALS_ONLY"]/*' />
     [NativeTypeName("#define LOGON_NETCREDENTIALS_ONLY 0x00000002")]
     public const int LOGON_NETCREDENTIALS_ONLY = 0x00000002;
 
+    /// <include file='LOGON.xml' path='doc/member[@name="LOGON.LOGON_ZERO_PASSWORD_BUFFER"]/*' />
     [NativeTypeName("#define LOGON_ZERO_PASSWORD_BUFFER 0x80000000")]
     public const uint LOGON_ZERO_PASSWORD_BUFFER = 0x80000000;
 }

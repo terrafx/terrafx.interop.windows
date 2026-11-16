@@ -7,72 +7,95 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class POLICY
 {
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_AUDIT_EVENT_UNCHANGED"]/*' />
     [NativeTypeName("#define POLICY_AUDIT_EVENT_UNCHANGED (0x00000000L)")]
     public const int POLICY_AUDIT_EVENT_UNCHANGED = (0x00000000);
 
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_AUDIT_EVENT_SUCCESS"]/*' />
     [NativeTypeName("#define POLICY_AUDIT_EVENT_SUCCESS (0x00000001L)")]
     public const int POLICY_AUDIT_EVENT_SUCCESS = (0x00000001);
 
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_AUDIT_EVENT_FAILURE"]/*' />
     [NativeTypeName("#define POLICY_AUDIT_EVENT_FAILURE (0x00000002L)")]
     public const int POLICY_AUDIT_EVENT_FAILURE = (0x00000002);
 
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_AUDIT_EVENT_NONE"]/*' />
     [NativeTypeName("#define POLICY_AUDIT_EVENT_NONE (0x00000004L)")]
     public const int POLICY_AUDIT_EVENT_NONE = (0x00000004);
 
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_AUDIT_EVENT_MASK"]/*' />
     [NativeTypeName("#define POLICY_AUDIT_EVENT_MASK (POLICY_AUDIT_EVENT_SUCCESS | \\\r\n     POLICY_AUDIT_EVENT_FAILURE | \\\r\n     POLICY_AUDIT_EVENT_UNCHANGED | \\\r\n     POLICY_AUDIT_EVENT_NONE)")]
     public const int POLICY_AUDIT_EVENT_MASK = ((0x00000001) | (0x00000002) | (0x00000000) | (0x00000004));
 
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_VIEW_LOCAL_INFORMATION"]/*' />
     [NativeTypeName("#define POLICY_VIEW_LOCAL_INFORMATION 0x00000001L")]
     public const int POLICY_VIEW_LOCAL_INFORMATION = 0x00000001;
 
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_VIEW_AUDIT_INFORMATION"]/*' />
     [NativeTypeName("#define POLICY_VIEW_AUDIT_INFORMATION 0x00000002L")]
     public const int POLICY_VIEW_AUDIT_INFORMATION = 0x00000002;
 
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_GET_PRIVATE_INFORMATION"]/*' />
     [NativeTypeName("#define POLICY_GET_PRIVATE_INFORMATION 0x00000004L")]
     public const int POLICY_GET_PRIVATE_INFORMATION = 0x00000004;
 
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_TRUST_ADMIN"]/*' />
     [NativeTypeName("#define POLICY_TRUST_ADMIN 0x00000008L")]
     public const int POLICY_TRUST_ADMIN = 0x00000008;
 
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_CREATE_ACCOUNT"]/*' />
     [NativeTypeName("#define POLICY_CREATE_ACCOUNT 0x00000010L")]
     public const int POLICY_CREATE_ACCOUNT = 0x00000010;
 
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_CREATE_SECRET"]/*' />
     [NativeTypeName("#define POLICY_CREATE_SECRET 0x00000020L")]
     public const int POLICY_CREATE_SECRET = 0x00000020;
 
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_CREATE_PRIVILEGE"]/*' />
     [NativeTypeName("#define POLICY_CREATE_PRIVILEGE 0x00000040L")]
     public const int POLICY_CREATE_PRIVILEGE = 0x00000040;
 
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_SET_DEFAULT_QUOTA_LIMITS"]/*' />
     [NativeTypeName("#define POLICY_SET_DEFAULT_QUOTA_LIMITS 0x00000080L")]
     public const int POLICY_SET_DEFAULT_QUOTA_LIMITS = 0x00000080;
 
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_SET_AUDIT_REQUIREMENTS"]/*' />
     [NativeTypeName("#define POLICY_SET_AUDIT_REQUIREMENTS 0x00000100L")]
     public const int POLICY_SET_AUDIT_REQUIREMENTS = 0x00000100;
 
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_AUDIT_LOG_ADMIN"]/*' />
     [NativeTypeName("#define POLICY_AUDIT_LOG_ADMIN 0x00000200L")]
     public const int POLICY_AUDIT_LOG_ADMIN = 0x00000200;
 
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_SERVER_ADMIN"]/*' />
     [NativeTypeName("#define POLICY_SERVER_ADMIN 0x00000400L")]
     public const int POLICY_SERVER_ADMIN = 0x00000400;
 
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_LOOKUP_NAMES"]/*' />
     [NativeTypeName("#define POLICY_LOOKUP_NAMES 0x00000800L")]
     public const int POLICY_LOOKUP_NAMES = 0x00000800;
 
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_NOTIFICATION"]/*' />
     [NativeTypeName("#define POLICY_NOTIFICATION 0x00001000L")]
     public const int POLICY_NOTIFICATION = 0x00001000;
 
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_ALL_ACCESS"]/*' />
     [NativeTypeName("#define POLICY_ALL_ACCESS (STANDARD_RIGHTS_REQUIRED         |\\\r\n                               POLICY_VIEW_LOCAL_INFORMATION    |\\\r\n                               POLICY_VIEW_AUDIT_INFORMATION    |\\\r\n                               POLICY_GET_PRIVATE_INFORMATION   |\\\r\n                               POLICY_TRUST_ADMIN               |\\\r\n                               POLICY_CREATE_ACCOUNT            |\\\r\n                               POLICY_CREATE_SECRET             |\\\r\n                               POLICY_CREATE_PRIVILEGE          |\\\r\n                               POLICY_SET_DEFAULT_QUOTA_LIMITS  |\\\r\n                               POLICY_SET_AUDIT_REQUIREMENTS    |\\\r\n                               POLICY_AUDIT_LOG_ADMIN           |\\\r\n                               POLICY_SERVER_ADMIN              |\\\r\n                               POLICY_LOOKUP_NAMES)")]
     public const int POLICY_ALL_ACCESS = ((0x000F0000) | 0x00000001 | 0x00000002 | 0x00000004 | 0x00000008 | 0x00000010 | 0x00000020 | 0x00000040 | 0x00000080 | 0x00000100 | 0x00000200 | 0x00000400 | 0x00000800);
 
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_READ"]/*' />
     [NativeTypeName("#define POLICY_READ (STANDARD_RIGHTS_READ             |\\\r\n                               POLICY_VIEW_AUDIT_INFORMATION    |\\\r\n                               POLICY_GET_PRIVATE_INFORMATION)")]
     public const int POLICY_READ = (((0x00020000)) | 0x00000002 | 0x00000004);
 
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_WRITE"]/*' />
     [NativeTypeName("#define POLICY_WRITE (STANDARD_RIGHTS_WRITE            |\\\r\n                               POLICY_TRUST_ADMIN               |\\\r\n                               POLICY_CREATE_ACCOUNT            |\\\r\n                               POLICY_CREATE_SECRET             |\\\r\n                               POLICY_CREATE_PRIVILEGE          |\\\r\n                               POLICY_SET_DEFAULT_QUOTA_LIMITS  |\\\r\n                               POLICY_SET_AUDIT_REQUIREMENTS    |\\\r\n                               POLICY_AUDIT_LOG_ADMIN           |\\\r\n                               POLICY_SERVER_ADMIN)")]
     public const int POLICY_WRITE = (((0x00020000)) | 0x00000008 | 0x00000010 | 0x00000020 | 0x00000040 | 0x00000080 | 0x00000100 | 0x00000200 | 0x00000400);
 
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_EXECUTE"]/*' />
     [NativeTypeName("#define POLICY_EXECUTE (STANDARD_RIGHTS_EXECUTE          |\\\r\n                               POLICY_VIEW_LOCAL_INFORMATION    |\\\r\n                               POLICY_LOOKUP_NAMES)")]
     public const int POLICY_EXECUTE = (((0x00020000)) | 0x00000001 | 0x00000800);
 
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_KERBEROS_VALIDATE_CLIENT"]/*' />
     [NativeTypeName("#define POLICY_KERBEROS_VALIDATE_CLIENT 0x00000080")]
     public const int POLICY_KERBEROS_VALIDATE_CLIENT = 0x00000080;
 }

@@ -7,186 +7,247 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class X509
 {
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_ASN_ENCODING"]/*' />
     [NativeTypeName("#define X509_ASN_ENCODING 0x00000001")]
     public const int X509_ASN_ENCODING = 0x00000001;
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_NDR_ENCODING"]/*' />
     [NativeTypeName("#define X509_NDR_ENCODING 0x00000002")]
     public const int X509_NDR_ENCODING = 0x00000002;
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_CERT"]/*' />
     [NativeTypeName("#define X509_CERT ((LPCSTR) 1)")]
     public static sbyte* X509_CERT => ((sbyte*)(1));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_CERT_TO_BE_SIGNED"]/*' />
     [NativeTypeName("#define X509_CERT_TO_BE_SIGNED ((LPCSTR) 2)")]
     public static sbyte* X509_CERT_TO_BE_SIGNED => ((sbyte*)(2));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_CERT_CRL_TO_BE_SIGNED"]/*' />
     [NativeTypeName("#define X509_CERT_CRL_TO_BE_SIGNED ((LPCSTR) 3)")]
     public static sbyte* X509_CERT_CRL_TO_BE_SIGNED => ((sbyte*)(3));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_CERT_REQUEST_TO_BE_SIGNED"]/*' />
     [NativeTypeName("#define X509_CERT_REQUEST_TO_BE_SIGNED ((LPCSTR) 4)")]
     public static sbyte* X509_CERT_REQUEST_TO_BE_SIGNED => ((sbyte*)(4));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_NAME_VALUE"]/*' />
     [NativeTypeName("#define X509_NAME_VALUE ((LPCSTR) 6)")]
     public static sbyte* X509_NAME_VALUE => ((sbyte*)(6));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_PUBLIC_KEY_INFO"]/*' />
     [NativeTypeName("#define X509_PUBLIC_KEY_INFO ((LPCSTR) 8)")]
     public static sbyte* X509_PUBLIC_KEY_INFO => ((sbyte*)(8));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_EXTENSIONS"]/*' />
     [NativeTypeName("#define X509_EXTENSIONS ((LPCSTR) 5)")]
     public static sbyte* X509_EXTENSIONS => ((sbyte*)(5));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_NAME"]/*' />
     [NativeTypeName("#define X509_NAME ((LPCSTR) 7)")]
     public static sbyte* X509_NAME => ((sbyte*)(7));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_AUTHORITY_KEY_ID"]/*' />
     [NativeTypeName("#define X509_AUTHORITY_KEY_ID ((LPCSTR) 9)")]
     public static sbyte* X509_AUTHORITY_KEY_ID => ((sbyte*)(9));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_KEY_ATTRIBUTES"]/*' />
     [NativeTypeName("#define X509_KEY_ATTRIBUTES ((LPCSTR) 10)")]
     public static sbyte* X509_KEY_ATTRIBUTES => ((sbyte*)(10));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_KEY_USAGE_RESTRICTION"]/*' />
     [NativeTypeName("#define X509_KEY_USAGE_RESTRICTION ((LPCSTR) 11)")]
     public static sbyte* X509_KEY_USAGE_RESTRICTION => ((sbyte*)(11));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_ALTERNATE_NAME"]/*' />
     [NativeTypeName("#define X509_ALTERNATE_NAME ((LPCSTR) 12)")]
     public static sbyte* X509_ALTERNATE_NAME => ((sbyte*)(12));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_BASIC_CONSTRAINTS"]/*' />
     [NativeTypeName("#define X509_BASIC_CONSTRAINTS ((LPCSTR) 13)")]
     public static sbyte* X509_BASIC_CONSTRAINTS => ((sbyte*)(13));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_KEY_USAGE"]/*' />
     [NativeTypeName("#define X509_KEY_USAGE ((LPCSTR) 14)")]
     public static sbyte* X509_KEY_USAGE => ((sbyte*)(14));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_BASIC_CONSTRAINTS2"]/*' />
     [NativeTypeName("#define X509_BASIC_CONSTRAINTS2 ((LPCSTR) 15)")]
     public static sbyte* X509_BASIC_CONSTRAINTS2 => ((sbyte*)(15));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_CERT_POLICIES"]/*' />
     [NativeTypeName("#define X509_CERT_POLICIES ((LPCSTR) 16)")]
     public static sbyte* X509_CERT_POLICIES => ((sbyte*)(16));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_UNICODE_NAME"]/*' />
     [NativeTypeName("#define X509_UNICODE_NAME ((LPCSTR) 20)")]
     public static sbyte* X509_UNICODE_NAME => ((sbyte*)(20));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_KEYGEN_REQUEST_TO_BE_SIGNED"]/*' />
     [NativeTypeName("#define X509_KEYGEN_REQUEST_TO_BE_SIGNED ((LPCSTR) 21)")]
     public static sbyte* X509_KEYGEN_REQUEST_TO_BE_SIGNED => ((sbyte*)(21));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_UNICODE_NAME_VALUE"]/*' />
     [NativeTypeName("#define X509_UNICODE_NAME_VALUE ((LPCSTR) 24)")]
     public static sbyte* X509_UNICODE_NAME_VALUE => ((sbyte*)(24));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_ANY_STRING"]/*' />
     [NativeTypeName("#define X509_ANY_STRING X509_NAME_VALUE")]
     public static sbyte* X509_ANY_STRING => ((sbyte*)(6));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_UNICODE_ANY_STRING"]/*' />
     [NativeTypeName("#define X509_UNICODE_ANY_STRING X509_UNICODE_NAME_VALUE")]
     public static sbyte* X509_UNICODE_ANY_STRING => ((sbyte*)(24));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_OCTET_STRING"]/*' />
     [NativeTypeName("#define X509_OCTET_STRING ((LPCSTR) 25)")]
     public static sbyte* X509_OCTET_STRING => ((sbyte*)(25));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_BITS"]/*' />
     [NativeTypeName("#define X509_BITS ((LPCSTR) 26)")]
     public static sbyte* X509_BITS => ((sbyte*)(26));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_INTEGER"]/*' />
     [NativeTypeName("#define X509_INTEGER ((LPCSTR) 27)")]
     public static sbyte* X509_INTEGER => ((sbyte*)(27));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_MULTI_BYTE_INTEGER"]/*' />
     [NativeTypeName("#define X509_MULTI_BYTE_INTEGER ((LPCSTR) 28)")]
     public static sbyte* X509_MULTI_BYTE_INTEGER => ((sbyte*)(28));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_ENUMERATED"]/*' />
     [NativeTypeName("#define X509_ENUMERATED ((LPCSTR) 29)")]
     public static sbyte* X509_ENUMERATED => ((sbyte*)(29));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_CHOICE_OF_TIME"]/*' />
     [NativeTypeName("#define X509_CHOICE_OF_TIME ((LPCSTR) 30)")]
     public static sbyte* X509_CHOICE_OF_TIME => ((sbyte*)(30));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_AUTHORITY_KEY_ID2"]/*' />
     [NativeTypeName("#define X509_AUTHORITY_KEY_ID2 ((LPCSTR) 31)")]
     public static sbyte* X509_AUTHORITY_KEY_ID2 => ((sbyte*)(31));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_AUTHORITY_INFO_ACCESS"]/*' />
     [NativeTypeName("#define X509_AUTHORITY_INFO_ACCESS ((LPCSTR) 32)")]
     public static sbyte* X509_AUTHORITY_INFO_ACCESS => ((sbyte*)(32));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_SUBJECT_INFO_ACCESS"]/*' />
     [NativeTypeName("#define X509_SUBJECT_INFO_ACCESS X509_AUTHORITY_INFO_ACCESS")]
     public static sbyte* X509_SUBJECT_INFO_ACCESS => ((sbyte*)(32));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_CRL_REASON_CODE"]/*' />
     [NativeTypeName("#define X509_CRL_REASON_CODE X509_ENUMERATED")]
     public static sbyte* X509_CRL_REASON_CODE => ((sbyte*)(29));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_SEQUENCE_OF_ANY"]/*' />
     [NativeTypeName("#define X509_SEQUENCE_OF_ANY ((LPCSTR) 34)")]
     public static sbyte* X509_SEQUENCE_OF_ANY => ((sbyte*)(34));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_CRL_DIST_POINTS"]/*' />
     [NativeTypeName("#define X509_CRL_DIST_POINTS ((LPCSTR) 35)")]
     public static sbyte* X509_CRL_DIST_POINTS => ((sbyte*)(35));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_ENHANCED_KEY_USAGE"]/*' />
     [NativeTypeName("#define X509_ENHANCED_KEY_USAGE ((LPCSTR) 36)")]
     public static sbyte* X509_ENHANCED_KEY_USAGE => ((sbyte*)(36));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_MULTI_BYTE_UINT"]/*' />
     [NativeTypeName("#define X509_MULTI_BYTE_UINT ((LPCSTR) 38)")]
     public static sbyte* X509_MULTI_BYTE_UINT => ((sbyte*)(38));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_DSS_PUBLICKEY"]/*' />
     [NativeTypeName("#define X509_DSS_PUBLICKEY X509_MULTI_BYTE_UINT")]
     public static sbyte* X509_DSS_PUBLICKEY => ((sbyte*)(38));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_DSS_PARAMETERS"]/*' />
     [NativeTypeName("#define X509_DSS_PARAMETERS ((LPCSTR) 39)")]
     public static sbyte* X509_DSS_PARAMETERS => ((sbyte*)(39));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_DSS_SIGNATURE"]/*' />
     [NativeTypeName("#define X509_DSS_SIGNATURE ((LPCSTR) 40)")]
     public static sbyte* X509_DSS_SIGNATURE => ((sbyte*)(40));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_QC_STATEMENTS_EXT"]/*' />
     [NativeTypeName("#define X509_QC_STATEMENTS_EXT ((LPCSTR) 42)")]
     public static sbyte* X509_QC_STATEMENTS_EXT => ((sbyte*)(42));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_PKIX_POLICY_QUALIFIER_USERNOTICE"]/*' />
     [NativeTypeName("#define X509_PKIX_POLICY_QUALIFIER_USERNOTICE ((LPCSTR) 46)")]
     public static sbyte* X509_PKIX_POLICY_QUALIFIER_USERNOTICE => ((sbyte*)(46));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_DH_PUBLICKEY"]/*' />
     [NativeTypeName("#define X509_DH_PUBLICKEY X509_MULTI_BYTE_UINT")]
     public static sbyte* X509_DH_PUBLICKEY => ((sbyte*)(38));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_DH_PARAMETERS"]/*' />
     [NativeTypeName("#define X509_DH_PARAMETERS ((LPCSTR) 47)")]
     public static sbyte* X509_DH_PARAMETERS => ((sbyte*)(47));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_ECC_SIGNATURE"]/*' />
     [NativeTypeName("#define X509_ECC_SIGNATURE ((LPCSTR) 47)")]
     public static sbyte* X509_ECC_SIGNATURE => ((sbyte*)(47));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_BITS_WITHOUT_TRAILING_ZEROES"]/*' />
     [NativeTypeName("#define X509_BITS_WITHOUT_TRAILING_ZEROES ((LPCSTR) 51)")]
     public static sbyte* X509_BITS_WITHOUT_TRAILING_ZEROES => ((sbyte*)(51));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_CERT_PAIR"]/*' />
     [NativeTypeName("#define X509_CERT_PAIR ((LPCSTR) 53)")]
     public static sbyte* X509_CERT_PAIR => ((sbyte*)(53));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_ISSUING_DIST_POINT"]/*' />
     [NativeTypeName("#define X509_ISSUING_DIST_POINT ((LPCSTR) 54)")]
     public static sbyte* X509_ISSUING_DIST_POINT => ((sbyte*)(54));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_NAME_CONSTRAINTS"]/*' />
     [NativeTypeName("#define X509_NAME_CONSTRAINTS ((LPCSTR) 55)")]
     public static sbyte* X509_NAME_CONSTRAINTS => ((sbyte*)(55));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_POLICY_MAPPINGS"]/*' />
     [NativeTypeName("#define X509_POLICY_MAPPINGS ((LPCSTR) 56)")]
     public static sbyte* X509_POLICY_MAPPINGS => ((sbyte*)(56));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_POLICY_CONSTRAINTS"]/*' />
     [NativeTypeName("#define X509_POLICY_CONSTRAINTS ((LPCSTR) 57)")]
     public static sbyte* X509_POLICY_CONSTRAINTS => ((sbyte*)(57));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_CROSS_CERT_DIST_POINTS"]/*' />
     [NativeTypeName("#define X509_CROSS_CERT_DIST_POINTS ((LPCSTR) 58)")]
     public static sbyte* X509_CROSS_CERT_DIST_POINTS => ((sbyte*)(58));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_CERTIFICATE_TEMPLATE"]/*' />
     [NativeTypeName("#define X509_CERTIFICATE_TEMPLATE ((LPCSTR) 64)")]
     public static sbyte* X509_CERTIFICATE_TEMPLATE => ((sbyte*)(64));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_LOGOTYPE_EXT"]/*' />
     [NativeTypeName("#define X509_LOGOTYPE_EXT ((LPCSTR) 70)")]
     public static sbyte* X509_LOGOTYPE_EXT => ((sbyte*)(70));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_BIOMETRIC_EXT"]/*' />
     [NativeTypeName("#define X509_BIOMETRIC_EXT ((LPCSTR) 71)")]
     public static sbyte* X509_BIOMETRIC_EXT => ((sbyte*)(71));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_OBJECT_IDENTIFIER"]/*' />
     [NativeTypeName("#define X509_OBJECT_IDENTIFIER ((LPCSTR) 73)")]
     public static sbyte* X509_OBJECT_IDENTIFIER => ((sbyte*)(73));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_ALGORITHM_IDENTIFIER"]/*' />
     [NativeTypeName("#define X509_ALGORITHM_IDENTIFIER ((LPCSTR) 74)")]
     public static sbyte* X509_ALGORITHM_IDENTIFIER => ((sbyte*)(74));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_CERT_BUNDLE"]/*' />
     [NativeTypeName("#define X509_CERT_BUNDLE ((LPCSTR) 81)")]
     public static sbyte* X509_CERT_BUNDLE => ((sbyte*)(81));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_ECC_PRIVATE_KEY"]/*' />
     [NativeTypeName("#define X509_ECC_PRIVATE_KEY ((LPCSTR) 82)")]
     public static sbyte* X509_ECC_PRIVATE_KEY => ((sbyte*)(82));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_SUBJECT_DIR_ATTRS"]/*' />
     [NativeTypeName("#define X509_SUBJECT_DIR_ATTRS ((LPCSTR) 84)")]
     public static sbyte* X509_SUBJECT_DIR_ATTRS => ((sbyte*)(84));
 
+    /// <include file='X509.xml' path='doc/member[@name="X509.X509_ECC_PARAMETERS"]/*' />
     [NativeTypeName("#define X509_ECC_PARAMETERS ((LPCSTR) 85)")]
     public static sbyte* X509_ECC_PARAMETERS => ((sbyte*)(85));
 }

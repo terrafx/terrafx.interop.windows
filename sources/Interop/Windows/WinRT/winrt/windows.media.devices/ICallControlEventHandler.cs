@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ICallControlEventHandler : ICallControlEventHandler.Interface, INativeGuid
 {
+    /// <include file='ICallControlEventHandler.xml' path='doc/member[@name="ICallControlEventHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICallControlEventHandler);
 
     public void** lpVtbl;

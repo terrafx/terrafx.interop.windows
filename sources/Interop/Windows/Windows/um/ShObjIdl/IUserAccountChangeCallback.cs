@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IUserAccountChangeCallback : IUserAccountChangeCallback.Interface, INativeGuid
 {
+    /// <include file='IUserAccountChangeCallback.xml' path='doc/member[@name="IUserAccountChangeCallback.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUserAccountChangeCallback);
 
     public void** lpVtbl;

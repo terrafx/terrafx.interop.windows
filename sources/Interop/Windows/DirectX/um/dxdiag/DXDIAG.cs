@@ -9,9 +9,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DXDIAG
 {
+    /// <include file='DXDIAG.xml' path='doc/member[@name="DXDIAG.DXDIAG_DX9_SDK_VERSION"]/*' />
     [NativeTypeName("#define DXDIAG_DX9_SDK_VERSION 111")]
     public const int DXDIAG_DX9_SDK_VERSION = 111;
 
+    /// <include file='DXDIAG.xml' path='doc/member[@name="DXDIAG.DXDIAG_E_INSUFFICIENT_BUFFER"]/*' />
     [NativeTypeName("#define DXDIAG_E_INSUFFICIENT_BUFFER ((HRESULT)0x8007007AL)")]
     public const int DXDIAG_E_INSUFFICIENT_BUFFER = unchecked((int)(0x8007007A));
 }

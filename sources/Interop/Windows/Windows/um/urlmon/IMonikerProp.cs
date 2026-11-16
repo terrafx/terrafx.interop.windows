@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMonikerProp : IMonikerProp.Interface, INativeGuid
 {
+    /// <include file='IMonikerProp.xml' path='doc/member[@name="IMonikerProp.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMonikerProp);
 
     public void** lpVtbl;

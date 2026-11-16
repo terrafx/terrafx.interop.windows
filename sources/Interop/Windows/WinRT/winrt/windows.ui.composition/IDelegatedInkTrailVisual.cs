@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IDelegatedInkTrailVisual : IDelegatedInkTrailVisual.Interface, INativeGuid
 {
+    /// <include file='IDelegatedInkTrailVisual.xml' path='doc/member[@name="IDelegatedInkTrailVisual.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDelegatedInkTrailVisual);
 
     public void** lpVtbl;

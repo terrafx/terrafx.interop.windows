@@ -12,18 +12,23 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IMsoDocument"]/*' />
     [NativeTypeName("#define IID_IMsoDocument IID_IOleDocument")]
     public static ref readonly Guid IID_IMsoDocument => ref IID_IOleDocument;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IMsoDocumentSite"]/*' />
     [NativeTypeName("#define IID_IMsoDocumentSite IID_IOleDocumentSite")]
     public static ref readonly Guid IID_IMsoDocumentSite => ref IID_IOleDocumentSite;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IMsoView"]/*' />
     [NativeTypeName("#define IID_IMsoView IID_IOleDocumentView")]
     public static ref readonly Guid IID_IMsoView => ref IID_IOleDocumentView;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IEnumMsoView"]/*' />
     [NativeTypeName("#define IID_IEnumMsoView IID_IEnumOleDocumentViews")]
     public static ref readonly Guid IID_IEnumMsoView => ref IID_IEnumOleDocumentViews;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IMsoCommandTarget"]/*' />
     [NativeTypeName("#define IID_IMsoCommandTarget IID_IOleCommandTarget")]
     public static ref readonly Guid IID_IMsoCommandTarget => ref IID_IOleCommandTarget;
 

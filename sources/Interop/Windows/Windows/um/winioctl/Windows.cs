@@ -79,7 +79,7 @@ public static unsafe partial class Windows
         uint Min = 0;
         byte Valid = 0;
 
-        if (Input->Size != unchecked(sizeof(DEVICE_MANAGE_DATA_SET_ATTRIBUTES)))
+        if (Input->Size != unchecked((uint)(sizeof(DEVICE_MANAGE_DATA_SET_ATTRIBUTES))))
         {
             goto Cleanup;
         }
@@ -288,525 +288,715 @@ public static unsafe partial class Windows
         return Valid;
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DiskClassGuid"]/*' />
     [NativeTypeName("#define DiskClassGuid GUID_DEVINTERFACE_DISK")]
     public static ref readonly Guid DiskClassGuid => ref GUID_DEVINTERFACE_DISK;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CdRomClassGuid"]/*' />
     [NativeTypeName("#define CdRomClassGuid GUID_DEVINTERFACE_CDROM")]
     public static ref readonly Guid CdRomClassGuid => ref GUID_DEVINTERFACE_CDROM;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PartitionClassGuid"]/*' />
     [NativeTypeName("#define PartitionClassGuid GUID_DEVINTERFACE_PARTITION")]
     public static ref readonly Guid PartitionClassGuid => ref GUID_DEVINTERFACE_PARTITION;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TapeClassGuid"]/*' />
     [NativeTypeName("#define TapeClassGuid GUID_DEVINTERFACE_TAPE")]
     public static ref readonly Guid TapeClassGuid => ref GUID_DEVINTERFACE_TAPE;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WriteOnceDiskClassGuid"]/*' />
     [NativeTypeName("#define WriteOnceDiskClassGuid GUID_DEVINTERFACE_WRITEONCEDISK")]
     public static ref readonly Guid WriteOnceDiskClassGuid => ref GUID_DEVINTERFACE_WRITEONCEDISK;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VolumeClassGuid"]/*' />
     [NativeTypeName("#define VolumeClassGuid GUID_DEVINTERFACE_VOLUME")]
     public static ref readonly Guid VolumeClassGuid => ref GUID_DEVINTERFACE_VOLUME;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MediumChangerClassGuid"]/*' />
     [NativeTypeName("#define MediumChangerClassGuid GUID_DEVINTERFACE_MEDIUMCHANGER")]
     public static ref readonly Guid MediumChangerClassGuid => ref GUID_DEVINTERFACE_MEDIUMCHANGER;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FloppyClassGuid"]/*' />
     [NativeTypeName("#define FloppyClassGuid GUID_DEVINTERFACE_FLOPPY")]
     public static ref readonly Guid FloppyClassGuid => ref GUID_DEVINTERFACE_FLOPPY;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CdChangerClassGuid"]/*' />
     [NativeTypeName("#define CdChangerClassGuid GUID_DEVINTERFACE_CDCHANGER")]
     public static ref readonly Guid CdChangerClassGuid => ref GUID_DEVINTERFACE_CDCHANGER;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StoragePortClassGuid"]/*' />
     [NativeTypeName("#define StoragePortClassGuid GUID_DEVINTERFACE_STORAGEPORT")]
     public static ref readonly Guid StoragePortClassGuid => ref GUID_DEVINTERFACE_STORAGEPORT;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HiddenVolumeClassGuid"]/*' />
     [NativeTypeName("#define HiddenVolumeClassGuid GUID_DEVINTERFACE_HIDDEN_VOLUME")]
     public static ref readonly Guid HiddenVolumeClassGuid => ref GUID_DEVINTERFACE_HIDDEN_VOLUME;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.METHOD_BUFFERED"]/*' />
     [NativeTypeName("#define METHOD_BUFFERED 0")]
     public const int METHOD_BUFFERED = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.METHOD_IN_DIRECT"]/*' />
     [NativeTypeName("#define METHOD_IN_DIRECT 1")]
     public const int METHOD_IN_DIRECT = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.METHOD_OUT_DIRECT"]/*' />
     [NativeTypeName("#define METHOD_OUT_DIRECT 2")]
     public const int METHOD_OUT_DIRECT = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.METHOD_NEITHER"]/*' />
     [NativeTypeName("#define METHOD_NEITHER 3")]
     public const int METHOD_NEITHER = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.METHOD_DIRECT_TO_HARDWARE"]/*' />
     [NativeTypeName("#define METHOD_DIRECT_TO_HARDWARE METHOD_IN_DIRECT")]
     public const int METHOD_DIRECT_TO_HARDWARE = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.METHOD_DIRECT_FROM_HARDWARE"]/*' />
     [NativeTypeName("#define METHOD_DIRECT_FROM_HARDWARE METHOD_OUT_DIRECT")]
     public const int METHOD_DIRECT_FROM_HARDWARE = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OBSOLETE_IOCTL_STORAGE_RESET_BUS"]/*' />
     [NativeTypeName("#define OBSOLETE_IOCTL_STORAGE_RESET_BUS CTL_CODE(IOCTL_STORAGE_BASE, 0x0400, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)")]
     public const int OBSOLETE_IOCTL_STORAGE_RESET_BUS = (((0x0000002d) << 16) | (((0x0001) | (0x0002)) << 14) | ((0x0400) << 2) | (0));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OBSOLETE_IOCTL_STORAGE_RESET_DEVICE"]/*' />
     [NativeTypeName("#define OBSOLETE_IOCTL_STORAGE_RESET_DEVICE CTL_CODE(IOCTL_STORAGE_BASE, 0x0401, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)")]
     public const int OBSOLETE_IOCTL_STORAGE_RESET_DEVICE = (((0x0000002d) << 16) | (((0x0001) | (0x0002)) << 14) | ((0x0401) << 2) | (0));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RECOVERED_WRITES_VALID"]/*' />
     [NativeTypeName("#define RECOVERED_WRITES_VALID 0x00000001")]
     public const int RECOVERED_WRITES_VALID = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UNRECOVERED_WRITES_VALID"]/*' />
     [NativeTypeName("#define UNRECOVERED_WRITES_VALID 0x00000002")]
     public const int UNRECOVERED_WRITES_VALID = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RECOVERED_READS_VALID"]/*' />
     [NativeTypeName("#define RECOVERED_READS_VALID 0x00000004")]
     public const int RECOVERED_READS_VALID = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UNRECOVERED_READS_VALID"]/*' />
     [NativeTypeName("#define UNRECOVERED_READS_VALID 0x00000008")]
     public const int UNRECOVERED_READS_VALID = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WRITE_COMPRESSION_INFO_VALID"]/*' />
     [NativeTypeName("#define WRITE_COMPRESSION_INFO_VALID 0x00000010")]
     public const int WRITE_COMPRESSION_INFO_VALID = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MEDIA_ERASEABLE"]/*' />
     [NativeTypeName("#define MEDIA_ERASEABLE 0x00000001")]
     public const int MEDIA_ERASEABLE = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MEDIA_WRITE_ONCE"]/*' />
     [NativeTypeName("#define MEDIA_WRITE_ONCE 0x00000002")]
     public const int MEDIA_WRITE_ONCE = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MEDIA_READ_ONLY"]/*' />
     [NativeTypeName("#define MEDIA_READ_ONLY 0x00000004")]
     public const int MEDIA_READ_ONLY = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MEDIA_READ_WRITE"]/*' />
     [NativeTypeName("#define MEDIA_READ_WRITE 0x00000008")]
     public const int MEDIA_READ_WRITE = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MEDIA_WRITE_PROTECTED"]/*' />
     [NativeTypeName("#define MEDIA_WRITE_PROTECTED 0x00000100")]
     public const int MEDIA_WRITE_PROTECTED = 0x00000100;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MEDIA_CURRENTLY_MOUNTED"]/*' />
     [NativeTypeName("#define MEDIA_CURRENTLY_MOUNTED 0x80000000")]
     public const uint MEDIA_CURRENTLY_MOUNTED = 0x80000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRB_TYPE_SCSI_REQUEST_BLOCK"]/*' />
     [NativeTypeName("#define SRB_TYPE_SCSI_REQUEST_BLOCK 0")]
     public const int SRB_TYPE_SCSI_REQUEST_BLOCK = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRB_TYPE_STORAGE_REQUEST_BLOCK"]/*' />
     [NativeTypeName("#define SRB_TYPE_STORAGE_REQUEST_BLOCK 1")]
     public const int SRB_TYPE_STORAGE_REQUEST_BLOCK = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StorageIdTypeNAA"]/*' />
     [NativeTypeName("#define StorageIdTypeNAA StorageIdTypeFCPHName")]
     public const STORAGE_IDENTIFIER_TYPE StorageIdTypeNAA = StorageIdTypeFCPHName;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeviceDsmActionFlag_NonDestructive"]/*' />
     [NativeTypeName("#define DeviceDsmActionFlag_NonDestructive (0x80000000)")]
     public const uint DeviceDsmActionFlag_NonDestructive = (0x80000000);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DEVICEDUMP_STRUCTURE_VERSION_V1"]/*' />
     [NativeTypeName("#define DEVICEDUMP_STRUCTURE_VERSION_V1 1")]
     public const int DEVICEDUMP_STRUCTURE_VERSION_V1 = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DEVICEDUMP_MAX_IDSTRING"]/*' />
     [NativeTypeName("#define DEVICEDUMP_MAX_IDSTRING 32")]
     public const int DEVICEDUMP_MAX_IDSTRING = 32;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DDUMP_FLAG_DATA_READ_FROM_DEVICE"]/*' />
     [NativeTypeName("#define DDUMP_FLAG_DATA_READ_FROM_DEVICE 0x0001")]
     public const int DDUMP_FLAG_DATA_READ_FROM_DEVICE = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CDB_SIZE"]/*' />
     [NativeTypeName("#define CDB_SIZE 16")]
     public const int CDB_SIZE = 16;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TELEMETRY_COMMAND_SIZE"]/*' />
     [NativeTypeName("#define TELEMETRY_COMMAND_SIZE 16")]
     public const int TELEMETRY_COMMAND_SIZE = 16;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STOR_MAX_PAGING_DEVICES"]/*' />
+    [NativeTypeName("#define STOR_MAX_PAGING_DEVICES 16")]
+    public const int STOR_MAX_PAGING_DEVICES = 16;
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STOR_PAGING_DEVICE_MINIPORT_NAME_LENGTH"]/*' />
+    [NativeTypeName("#define STOR_PAGING_DEVICE_MINIPORT_NAME_LENGTH 32")]
+    public const int STOR_PAGING_DEVICE_MINIPORT_NAME_LENGTH = 32;
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STOR_PAGING_DEVICE_MODEL_NAME_LENGTH"]/*' />
+    [NativeTypeName("#define STOR_PAGING_DEVICE_MODEL_NAME_LENGTH 64")]
+    public const int STOR_PAGING_DEVICE_MODEL_NAME_LENGTH = 64;
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STOR_PAGING_DEVICE_FW_REVISION_LENGTH"]/*' />
+    [NativeTypeName("#define STOR_PAGING_DEVICE_FW_REVISION_LENGTH 16")]
+    public const int STOR_PAGING_DEVICE_FW_REVISION_LENGTH = 16;
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DEVICEDUMP_CAP_PRIVATE_SECTION"]/*' />
     [NativeTypeName("#define DEVICEDUMP_CAP_PRIVATE_SECTION 0x00000001")]
     public const int DEVICEDUMP_CAP_PRIVATE_SECTION = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DEVICEDUMP_CAP_RESTRICTED_SECTION"]/*' />
     [NativeTypeName("#define DEVICEDUMP_CAP_RESTRICTED_SECTION 0x00000002")]
     public const int DEVICEDUMP_CAP_RESTRICTED_SECTION = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STORATTRIBUTE_NONE"]/*' />
     [NativeTypeName("#define STORATTRIBUTE_NONE 0")]
     public const int STORATTRIBUTE_NONE = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STORATTRIBUTE_MANAGEMENT_STATE"]/*' />
     [NativeTypeName("#define STORATTRIBUTE_MANAGEMENT_STATE 1")]
     public const int STORATTRIBUTE_MANAGEMENT_STATE = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SCM_MAX_SYMLINK_LEN_IN_CHARS"]/*' />
     [NativeTypeName("#define SCM_MAX_SYMLINK_LEN_IN_CHARS 256")]
     public const int SCM_MAX_SYMLINK_LEN_IN_CHARS = 256;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SCM_REGION_SPA_UNKNOWN"]/*' />
     [NativeTypeName("#define SCM_REGION_SPA_UNKNOWN MAXDWORD64")]
     public const ulong SCM_REGION_SPA_UNKNOWN = ((ulong)(~((ulong)(0))));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SCM_PD_FIRMWARE_REVISION_LENGTH_BYTES"]/*' />
     [NativeTypeName("#define SCM_PD_FIRMWARE_REVISION_LENGTH_BYTES 32")]
     public const int SCM_PD_FIRMWARE_REVISION_LENGTH_BYTES = 32;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SCM_PD_MEMORY_SIZE_UNKNOWN"]/*' />
     [NativeTypeName("#define SCM_PD_MEMORY_SIZE_UNKNOWN MAXDWORD64")]
     public const ulong SCM_PD_MEMORY_SIZE_UNKNOWN = ((ulong)(~((ulong)(0))));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SCM_PD_PROPERTY_NAME_LENGTH_IN_CHARS"]/*' />
     [NativeTypeName("#define SCM_PD_PROPERTY_NAME_LENGTH_IN_CHARS 128")]
     public const int SCM_PD_PROPERTY_NAME_LENGTH_IN_CHARS = 128;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SCM_PD_MAX_OPERATIONAL_STATUS"]/*' />
     [NativeTypeName("#define SCM_PD_MAX_OPERATIONAL_STATUS 16")]
     public const int SCM_PD_MAX_OPERATIONAL_STATUS = 16;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SCM_PD_FIRMWARE_LAST_DOWNLOAD"]/*' />
     [NativeTypeName("#define SCM_PD_FIRMWARE_LAST_DOWNLOAD 0x1")]
     public const int SCM_PD_FIRMWARE_LAST_DOWNLOAD = 0x1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OBSOLETE_DISK_GET_WRITE_CACHE_STATE"]/*' />
     [NativeTypeName("#define OBSOLETE_DISK_GET_WRITE_CACHE_STATE CTL_CODE(IOCTL_DISK_BASE, 0x0037, METHOD_BUFFERED, FILE_READ_ACCESS)")]
     public const int OBSOLETE_DISK_GET_WRITE_CACHE_STATE = (((0x00000007) << 16) | (((0x0001)) << 14) | ((0x0037) << 2) | (0));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PARTIITON_OS_DATA"]/*' />
     [NativeTypeName("#define PARTIITON_OS_DATA 0x29")]
     public const int PARTIITON_OS_DATA = 0x29;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VALID_NTFT"]/*' />
     [NativeTypeName("#define VALID_NTFT 0xC0")]
     public const int VALID_NTFT = 0xC0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HIST_NO_OF_BUCKETS"]/*' />
     [NativeTypeName("#define HIST_NO_OF_BUCKETS 24")]
     public const int HIST_NO_OF_BUCKETS = 24;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HISTOGRAM_BUCKET_SIZE"]/*' />
     [NativeTypeName("#define HISTOGRAM_BUCKET_SIZE sizeof(HISTOGRAM_BUCKET)")]
     public const uint HISTOGRAM_BUCKET_SIZE = 8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DISK_HISTOGRAM_SIZE"]/*' />
     [NativeTypeName("#define DISK_HISTOGRAM_SIZE sizeof(DISK_HISTOGRAM)")]
     public const uint DISK_HISTOGRAM_SIZE = 72;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DISK_LOGGING_START"]/*' />
     [NativeTypeName("#define DISK_LOGGING_START 0")]
     public const int DISK_LOGGING_START = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DISK_LOGGING_STOP"]/*' />
     [NativeTypeName("#define DISK_LOGGING_STOP 1")]
     public const int DISK_LOGGING_STOP = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DISK_LOGGING_DUMP"]/*' />
     [NativeTypeName("#define DISK_LOGGING_DUMP 2")]
     public const int DISK_LOGGING_DUMP = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DISK_BINNING"]/*' />
     [NativeTypeName("#define DISK_BINNING 3")]
     public const int DISK_BINNING = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CAP_ATA_ID_CMD"]/*' />
     [NativeTypeName("#define CAP_ATA_ID_CMD 1")]
     public const int CAP_ATA_ID_CMD = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CAP_ATAPI_ID_CMD"]/*' />
     [NativeTypeName("#define CAP_ATAPI_ID_CMD 2")]
     public const int CAP_ATAPI_ID_CMD = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CAP_SMART_CMD"]/*' />
     [NativeTypeName("#define CAP_SMART_CMD 4")]
     public const int CAP_SMART_CMD = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ATAPI_ID_CMD"]/*' />
     [NativeTypeName("#define ATAPI_ID_CMD 0xA1")]
     public const int ATAPI_ID_CMD = 0xA1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IDENTIFY_BUFFER_SIZE"]/*' />
     [NativeTypeName("#define IDENTIFY_BUFFER_SIZE 512")]
     public const int IDENTIFY_BUFFER_SIZE = 512;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SAVE_ATTRIBUTE_VALUES"]/*' />
     [NativeTypeName("#define SAVE_ATTRIBUTE_VALUES 0xD3")]
     public const int SAVE_ATTRIBUTE_VALUES = 0xD3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EXECUTE_OFFLINE_DIAGS"]/*' />
     [NativeTypeName("#define EXECUTE_OFFLINE_DIAGS 0xD4")]
     public const int EXECUTE_OFFLINE_DIAGS = 0xD4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DISABLE_SMART"]/*' />
     [NativeTypeName("#define DISABLE_SMART 0xD9")]
     public const int DISABLE_SMART = 0xD9;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RETURN_SMART_STATUS"]/*' />
     [NativeTypeName("#define RETURN_SMART_STATUS 0xDA")]
     public const int RETURN_SMART_STATUS = 0xDA;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DISK_ATTRIBUTE_OFFLINE"]/*' />
     [NativeTypeName("#define DISK_ATTRIBUTE_OFFLINE 0x0000000000000001")]
     public const int DISK_ATTRIBUTE_OFFLINE = 0x0000000000000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DISK_ATTRIBUTE_READ_ONLY"]/*' />
     [NativeTypeName("#define DISK_ATTRIBUTE_READ_ONLY 0x0000000000000002")]
     public const int DISK_ATTRIBUTE_READ_ONLY = 0x0000000000000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VENDOR_ID_LENGTH"]/*' />
     [NativeTypeName("#define VENDOR_ID_LENGTH 8")]
     public const int VENDOR_ID_LENGTH = 8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REVISION_LENGTH"]/*' />
     [NativeTypeName("#define REVISION_LENGTH 4")]
     public const int REVISION_LENGTH = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOCK_UNLOCK_IEPORT"]/*' />
     [NativeTypeName("#define LOCK_UNLOCK_IEPORT 0x01")]
     public const int LOCK_UNLOCK_IEPORT = 0x01;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOCK_UNLOCK_DOOR"]/*' />
     [NativeTypeName("#define LOCK_UNLOCK_DOOR 0x02")]
     public const int LOCK_UNLOCK_DOOR = 0x02;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOCK_UNLOCK_KEYPAD"]/*' />
     [NativeTypeName("#define LOCK_UNLOCK_KEYPAD 0x04")]
     public const int LOCK_UNLOCK_KEYPAD = 0x04;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOCK_ELEMENT"]/*' />
     [NativeTypeName("#define LOCK_ELEMENT 0")]
     public const int LOCK_ELEMENT = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UNLOCK_ELEMENT"]/*' />
     [NativeTypeName("#define UNLOCK_ELEMENT 1")]
     public const int UNLOCK_ELEMENT = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EXTEND_IEPORT"]/*' />
     [NativeTypeName("#define EXTEND_IEPORT 2")]
     public const int EXTEND_IEPORT = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RETRACT_IEPORT"]/*' />
     [NativeTypeName("#define RETRACT_IEPORT 3")]
     public const int RETRACT_IEPORT = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SEARCH_ALL"]/*' />
     [NativeTypeName("#define SEARCH_ALL 0x0")]
     public const int SEARCH_ALL = 0x0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SEARCH_PRIMARY"]/*' />
     [NativeTypeName("#define SEARCH_PRIMARY 0x1")]
     public const int SEARCH_PRIMARY = 0x1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SEARCH_ALTERNATE"]/*' />
     [NativeTypeName("#define SEARCH_ALTERNATE 0x2")]
     public const int SEARCH_ALTERNATE = 0x2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SEARCH_ALL_NO_SEQ"]/*' />
     [NativeTypeName("#define SEARCH_ALL_NO_SEQ 0x4")]
     public const int SEARCH_ALL_NO_SEQ = 0x4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SEARCH_PRI_NO_SEQ"]/*' />
     [NativeTypeName("#define SEARCH_PRI_NO_SEQ 0x5")]
     public const int SEARCH_PRI_NO_SEQ = 0x5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SEARCH_ALT_NO_SEQ"]/*' />
     [NativeTypeName("#define SEARCH_ALT_NO_SEQ 0x6")]
     public const int SEARCH_ALT_NO_SEQ = 0x6;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ASSERT_PRIMARY"]/*' />
     [NativeTypeName("#define ASSERT_PRIMARY 0x8")]
     public const int ASSERT_PRIMARY = 0x8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ASSERT_ALTERNATE"]/*' />
     [NativeTypeName("#define ASSERT_ALTERNATE 0x9")]
     public const int ASSERT_ALTERNATE = 0x9;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REPLACE_PRIMARY"]/*' />
     [NativeTypeName("#define REPLACE_PRIMARY 0xA")]
     public const int REPLACE_PRIMARY = 0xA;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REPLACE_ALTERNATE"]/*' />
     [NativeTypeName("#define REPLACE_ALTERNATE 0xB")]
     public const int REPLACE_ALTERNATE = 0xB;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UNDEFINE_PRIMARY"]/*' />
     [NativeTypeName("#define UNDEFINE_PRIMARY 0xC")]
     public const int UNDEFINE_PRIMARY = 0xC;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UNDEFINE_ALTERNATE"]/*' />
     [NativeTypeName("#define UNDEFINE_ALTERNATE 0xD")]
     public const int UNDEFINE_ALTERNATE = 0xD;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VOLUME_IS_DIRTY"]/*' />
     [NativeTypeName("#define VOLUME_IS_DIRTY (0x00000001)")]
     public const int VOLUME_IS_DIRTY = (0x00000001);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VOLUME_UPGRADE_SCHEDULED"]/*' />
     [NativeTypeName("#define VOLUME_UPGRADE_SCHEDULED (0x00000002)")]
     public const int VOLUME_UPGRADE_SCHEDULED = (0x00000002);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VOLUME_SESSION_OPEN"]/*' />
     [NativeTypeName("#define VOLUME_SESSION_OPEN (0x00000004)")]
     public const int VOLUME_SESSION_OPEN = (0x00000004);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FILESYSTEM_STATISTICS_TYPE_NTFS"]/*' />
     [NativeTypeName("#define FILESYSTEM_STATISTICS_TYPE_NTFS 1")]
     public const int FILESYSTEM_STATISTICS_TYPE_NTFS = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FILESYSTEM_STATISTICS_TYPE_FAT"]/*' />
     [NativeTypeName("#define FILESYSTEM_STATISTICS_TYPE_FAT 2")]
     public const int FILESYSTEM_STATISTICS_TYPE_FAT = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FILESYSTEM_STATISTICS_TYPE_EXFAT"]/*' />
     [NativeTypeName("#define FILESYSTEM_STATISTICS_TYPE_EXFAT 3")]
     public const int FILESYSTEM_STATISTICS_TYPE_EXFAT = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FILESYSTEM_STATISTICS_TYPE_REFS"]/*' />
     [NativeTypeName("#define FILESYSTEM_STATISTICS_TYPE_REFS 4")]
     public const int FILESYSTEM_STATISTICS_TYPE_REFS = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ENCRYPTION_FORMAT_DEFAULT"]/*' />
     [NativeTypeName("#define ENCRYPTION_FORMAT_DEFAULT (0x01)")]
     public const int ENCRYPTION_FORMAT_DEFAULT = (0x01);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ENCRYPTED_DATA_INFO_SPARSE_FILE"]/*' />
     [NativeTypeName("#define ENCRYPTED_DATA_INFO_SPARSE_FILE 0x00000001")]
     public const int ENCRYPTED_DATA_INFO_SPARSE_FILE = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ENCRYPTED_DATA_INFO_SPARSE_DATA"]/*' />
     [NativeTypeName("#define ENCRYPTED_DATA_INFO_SPARSE_DATA 0x00000002")]
     public const int ENCRYPTED_DATA_INFO_SPARSE_DATA = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ENCRYPTED_DATA_INFO_4K_SPARSE_UNIT"]/*' />
     [NativeTypeName("#define ENCRYPTED_DATA_INFO_4K_SPARSE_UNIT 0x00000004")]
     public const int ENCRYPTED_DATA_INFO_4K_SPARSE_UNIT = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COPYFILE_SIS_LINK"]/*' />
     [NativeTypeName("#define COPYFILE_SIS_LINK 0x0001")]
     public const int COPYFILE_SIS_LINK = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COPYFILE_SIS_REPLACE"]/*' />
     [NativeTypeName("#define COPYFILE_SIS_REPLACE 0x0002")]
     public const int COPYFILE_SIS_REPLACE = 0x0002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COPYFILE_SIS_FLAGS"]/*' />
     [NativeTypeName("#define COPYFILE_SIS_FLAGS 0x0003")]
     public const int COPYFILE_SIS_FLAGS = 0x0003;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OPLOCK_LEVEL_CACHE_READ"]/*' />
     [NativeTypeName("#define OPLOCK_LEVEL_CACHE_READ (0x00000001)")]
     public const int OPLOCK_LEVEL_CACHE_READ = (0x00000001);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OPLOCK_LEVEL_CACHE_HANDLE"]/*' />
     [NativeTypeName("#define OPLOCK_LEVEL_CACHE_HANDLE (0x00000002)")]
     public const int OPLOCK_LEVEL_CACHE_HANDLE = (0x00000002);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OPLOCK_LEVEL_CACHE_WRITE"]/*' />
     [NativeTypeName("#define OPLOCK_LEVEL_CACHE_WRITE (0x00000004)")]
     public const int OPLOCK_LEVEL_CACHE_WRITE = (0x00000004);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REQUEST_OPLOCK_INPUT_FLAG_REQUEST"]/*' />
     [NativeTypeName("#define REQUEST_OPLOCK_INPUT_FLAG_REQUEST (0x00000001)")]
     public const int REQUEST_OPLOCK_INPUT_FLAG_REQUEST = (0x00000001);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REQUEST_OPLOCK_INPUT_FLAG_ACK"]/*' />
     [NativeTypeName("#define REQUEST_OPLOCK_INPUT_FLAG_ACK (0x00000002)")]
     public const int REQUEST_OPLOCK_INPUT_FLAG_ACK = (0x00000002);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REQUEST_OPLOCK_INPUT_FLAG_COMPLETE_ACK_ON_CLOSE"]/*' />
     [NativeTypeName("#define REQUEST_OPLOCK_INPUT_FLAG_COMPLETE_ACK_ON_CLOSE (0x00000004)")]
     public const int REQUEST_OPLOCK_INPUT_FLAG_COMPLETE_ACK_ON_CLOSE = (0x00000004);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REQUEST_OPLOCK_INPUT_FLAG_RH_ALWAYS_BLOCK_UNTIL_ACK"]/*' />
     [NativeTypeName("#define REQUEST_OPLOCK_INPUT_FLAG_RH_ALWAYS_BLOCK_UNTIL_ACK (0x00000008)")]
     public const int REQUEST_OPLOCK_INPUT_FLAG_RH_ALWAYS_BLOCK_UNTIL_ACK = (0x00000008);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REQUEST_OPLOCK_INPUT_FLAG_RH_IGNORE_WRITES"]/*' />
     [NativeTypeName("#define REQUEST_OPLOCK_INPUT_FLAG_RH_IGNORE_WRITES (0x00000010)")]
     public const int REQUEST_OPLOCK_INPUT_FLAG_RH_IGNORE_WRITES = (0x00000010);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REQUEST_OPLOCK_INPUT_FLAG_RH_NO_NON_CACHED_IO"]/*' />
     [NativeTypeName("#define REQUEST_OPLOCK_INPUT_FLAG_RH_NO_NON_CACHED_IO (0x00000020)")]
     public const int REQUEST_OPLOCK_INPUT_FLAG_RH_NO_NON_CACHED_IO = (0x00000020);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REQUEST_OPLOCK_CURRENT_VERSION"]/*' />
     [NativeTypeName("#define REQUEST_OPLOCK_CURRENT_VERSION 1")]
     public const int REQUEST_OPLOCK_CURRENT_VERSION = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REQUEST_OPLOCK_OUTPUT_FLAG_ACK_REQUIRED"]/*' />
     [NativeTypeName("#define REQUEST_OPLOCK_OUTPUT_FLAG_ACK_REQUIRED (0x00000001)")]
     public const int REQUEST_OPLOCK_OUTPUT_FLAG_ACK_REQUIRED = (0x00000001);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REQUEST_OPLOCK_OUTPUT_FLAG_MODES_PROVIDED"]/*' />
     [NativeTypeName("#define REQUEST_OPLOCK_OUTPUT_FLAG_MODES_PROVIDED (0x00000002)")]
     public const int REQUEST_OPLOCK_OUTPUT_FLAG_MODES_PROVIDED = (0x00000002);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REQUEST_OPLOCK_OUTPUT_FLAG_WRITABLE_SECTION_PRESENT"]/*' />
     [NativeTypeName("#define REQUEST_OPLOCK_OUTPUT_FLAG_WRITABLE_SECTION_PRESENT (0x00000004)")]
     public const int REQUEST_OPLOCK_OUTPUT_FLAG_WRITABLE_SECTION_PRESENT = (0x00000004);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REQUEST_OPLOCK_OUTPUT_FLAG_NON_CACHED_IO_PRESENT"]/*' />
     [NativeTypeName("#define REQUEST_OPLOCK_OUTPUT_FLAG_NON_CACHED_IO_PRESENT (0x00000008)")]
     public const int REQUEST_OPLOCK_OUTPUT_FLAG_NON_CACHED_IO_PRESENT = (0x00000008);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SD_GLOBAL_CHANGE_TYPE_MACHINE_SID"]/*' />
     [NativeTypeName("#define SD_GLOBAL_CHANGE_TYPE_MACHINE_SID 1")]
     public const int SD_GLOBAL_CHANGE_TYPE_MACHINE_SID = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SD_GLOBAL_CHANGE_TYPE_QUERY_STATS"]/*' />
     [NativeTypeName("#define SD_GLOBAL_CHANGE_TYPE_QUERY_STATS (1 << 16)")]
     public const int SD_GLOBAL_CHANGE_TYPE_QUERY_STATS = (1 << 16);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SD_GLOBAL_CHANGE_TYPE_ENUM_SDS"]/*' />
     [NativeTypeName("#define SD_GLOBAL_CHANGE_TYPE_ENUM_SDS (2 << 16)")]
     public const int SD_GLOBAL_CHANGE_TYPE_ENUM_SDS = (2 << 16);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_PAGE_FILE"]/*' />
     [NativeTypeName("#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_PAGE_FILE 0x00000001")]
     public const int LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_PAGE_FILE = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_DENY_DEFRAG_SET"]/*' />
     [NativeTypeName("#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_DENY_DEFRAG_SET 0x00000002")]
     public const int LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_DENY_DEFRAG_SET = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_FS_SYSTEM_FILE"]/*' />
     [NativeTypeName("#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_FS_SYSTEM_FILE 0x00000004")]
     public const int LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_FS_SYSTEM_FILE = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_TXF_SYSTEM_FILE"]/*' />
     [NativeTypeName("#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_TXF_SYSTEM_FILE 0x00000008")]
     public const int LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_TXF_SYSTEM_FILE = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_MASK"]/*' />
     [NativeTypeName("#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_MASK 0xff000000")]
     public const uint LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_MASK = 0xff000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_DATA"]/*' />
     [NativeTypeName("#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_DATA 0x01000000")]
     public const int LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_DATA = 0x01000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_INDEX"]/*' />
     [NativeTypeName("#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_INDEX 0x02000000")]
     public const int LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_INDEX = 0x02000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_SYSTEM"]/*' />
     [NativeTypeName("#define LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_SYSTEM 0x03000000")]
     public const int LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_SYSTEM = 0x03000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CSV_MGMTLOCK_CHECK_VOLUME_REDIRECTED"]/*' />
     [NativeTypeName("#define CSV_MGMTLOCK_CHECK_VOLUME_REDIRECTED 0x00000001")]
     public const int CSV_MGMTLOCK_CHECK_VOLUME_REDIRECTED = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CSV_NAMESPACE_INFO_V1"]/*' />
     [NativeTypeName("#define CSV_NAMESPACE_INFO_V1 (sizeof(CSV_NAMESPACE_INFO))")]
     public const uint CSV_NAMESPACE_INFO_V1 = (24);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CSV_INVALID_DEVICE_NUMBER"]/*' />
     [NativeTypeName("#define CSV_INVALID_DEVICE_NUMBER 0xFFFFFFFF")]
     public const uint CSV_INVALID_DEVICE_NUMBER = 0xFFFFFFFF;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CSV_QUERY_MDS_PATH_V2_VERSION_1"]/*' />
     [NativeTypeName("#define CSV_QUERY_MDS_PATH_V2_VERSION_1 1")]
     public const int CSV_QUERY_MDS_PATH_V2_VERSION_1 = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CSV_QUERY_MDS_PATH_FLAG_STORAGE_ON_THIS_NODE_IS_CONNECTED"]/*' />
     [NativeTypeName("#define CSV_QUERY_MDS_PATH_FLAG_STORAGE_ON_THIS_NODE_IS_CONNECTED 0x1")]
     public const int CSV_QUERY_MDS_PATH_FLAG_STORAGE_ON_THIS_NODE_IS_CONNECTED = 0x1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CSV_QUERY_MDS_PATH_FLAG_CSV_DIRECT_IO_ENABLED"]/*' />
     [NativeTypeName("#define CSV_QUERY_MDS_PATH_FLAG_CSV_DIRECT_IO_ENABLED 0x2")]
     public const int CSV_QUERY_MDS_PATH_FLAG_CSV_DIRECT_IO_ENABLED = 0x2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CSV_QUERY_MDS_PATH_FLAG_SMB_BYPASS_CSV_ENABLED"]/*' />
     [NativeTypeName("#define CSV_QUERY_MDS_PATH_FLAG_SMB_BYPASS_CSV_ENABLED 0x4")]
     public const int CSV_QUERY_MDS_PATH_FLAG_SMB_BYPASS_CSV_ENABLED = 0x4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CHECKSUM_TYPE_UNCHANGED"]/*' />
     [NativeTypeName("#define CHECKSUM_TYPE_UNCHANGED (WORD  )0xFFFF")]
     public const ushort CHECKSUM_TYPE_UNCHANGED = (ushort)(0xFFFF);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CHECKSUM_TYPE_NONE"]/*' />
     [NativeTypeName("#define CHECKSUM_TYPE_NONE (0)")]
     public const int CHECKSUM_TYPE_NONE = (0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CHECKSUM_TYPE_CRC32"]/*' />
     [NativeTypeName("#define CHECKSUM_TYPE_CRC32 (1)")]
     public const int CHECKSUM_TYPE_CRC32 = (1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CHECKSUM_TYPE_CRC64"]/*' />
     [NativeTypeName("#define CHECKSUM_TYPE_CRC64 (2)")]
     public const int CHECKSUM_TYPE_CRC64 = (2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CHECKSUM_TYPE_ECC"]/*' />
     [NativeTypeName("#define CHECKSUM_TYPE_ECC (3)")]
     public const int CHECKSUM_TYPE_ECC = (3);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CHECKSUM_TYPE_SHA256"]/*' />
     [NativeTypeName("#define CHECKSUM_TYPE_SHA256 (4)")]
     public const int CHECKSUM_TYPE_SHA256 = (4);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CHECKSUM_TYPE_XXH64"]/*' />
     [NativeTypeName("#define CHECKSUM_TYPE_XXH64 (5)")]
     public const int CHECKSUM_TYPE_XXH64 = (5);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CHECKSUM_TYPE_FIRST_UNUSED_TYPE"]/*' />
     [NativeTypeName("#define CHECKSUM_TYPE_FIRST_UNUSED_TYPE (6)")]
     public const int CHECKSUM_TYPE_FIRST_UNUSED_TYPE = (6);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OFFLOAD_READ_FLAG_ALL_ZERO_BEYOND_CURRENT_RANGE"]/*' />
     [NativeTypeName("#define OFFLOAD_READ_FLAG_ALL_ZERO_BEYOND_CURRENT_RANGE (1)")]
     public const int OFFLOAD_READ_FLAG_ALL_ZERO_BEYOND_CURRENT_RANGE = (1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VALID_WRITE_USN_REASON_MASK"]/*' />
     [NativeTypeName("#define VALID_WRITE_USN_REASON_MASK (USN_REASON_DATA_OVERWRITE |        \\\r\n                                         USN_REASON_CLOSE)")]
     public const uint VALID_WRITE_USN_REASON_MASK = ((0x00000001) | (0x80000000));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DUPLICATE_EXTENTS_DATA_EX_SOURCE_ATOMIC"]/*' />
     [NativeTypeName("#define DUPLICATE_EXTENTS_DATA_EX_SOURCE_ATOMIC 0x00000001")]
     public const int DUPLICATE_EXTENTS_DATA_EX_SOURCE_ATOMIC = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DUPLICATE_EXTENTS_DATA_EX_ASYNC"]/*' />
     [NativeTypeName("#define DUPLICATE_EXTENTS_DATA_EX_ASYNC 0x00000002")]
     public const int DUPLICATE_EXTENTS_DATA_EX_ASYNC = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ASYNC_DUPLICATE_EXTENTS_STATUS_V1"]/*' />
     [NativeTypeName("#define ASYNC_DUPLICATE_EXTENTS_STATUS_V1 sizeof(ASYNC_DUPLICATE_EXTENTS_STATUS)")]
     public const uint ASYNC_DUPLICATE_EXTENTS_STATUS_V1 = 40;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REFS_SMR_VOLUME_INFO_OUTPUT_VERSION_V0"]/*' />
     [NativeTypeName("#define REFS_SMR_VOLUME_INFO_OUTPUT_VERSION_V0 0")]
     public const int REFS_SMR_VOLUME_INFO_OUTPUT_VERSION_V0 = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REFS_SMR_VOLUME_INFO_OUTPUT_VERSION_V1"]/*' />
     [NativeTypeName("#define REFS_SMR_VOLUME_INFO_OUTPUT_VERSION_V1 1")]
     public const int REFS_SMR_VOLUME_INFO_OUTPUT_VERSION_V1 = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REFS_SMR_VOLUME_GC_PARAMETERS_VERSION_V1"]/*' />
     [NativeTypeName("#define REFS_SMR_VOLUME_GC_PARAMETERS_VERSION_V1 1")]
     public const int REFS_SMR_VOLUME_GC_PARAMETERS_VERSION_V1 = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STREAMS_INVALID_ID"]/*' />
     [NativeTypeName("#define STREAMS_INVALID_ID (0)")]
     public const int STREAMS_INVALID_ID = (0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STREAMS_MAX_ID"]/*' />
     [NativeTypeName("#define STREAMS_MAX_ID (MAXWORD  )")]
     public const int STREAMS_MAX_ID = (0xffff);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STREAMS_ASSOCIATE_ID_CLEAR"]/*' />
     [NativeTypeName("#define STREAMS_ASSOCIATE_ID_CLEAR (0x1)")]
     public const int STREAMS_ASSOCIATE_ID_CLEAR = (0x1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STREAMS_ASSOCIATE_ID_SET"]/*' />
     [NativeTypeName("#define STREAMS_ASSOCIATE_ID_SET (0x2)")]
     public const int STREAMS_ASSOCIATE_ID_SET = (0x2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DAX_ALLOC_ALIGNMENT_FLAG_MANDATORY"]/*' />
     [NativeTypeName("#define DAX_ALLOC_ALIGNMENT_FLAG_MANDATORY (0x00000001)")]
     public const int DAX_ALLOC_ALIGNMENT_FLAG_MANDATORY = (0x00000001);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DAX_ALLOC_ALIGNMENT_FLAG_FALLBACK_SPECIFIED"]/*' />
     [NativeTypeName("#define DAX_ALLOC_ALIGNMENT_FLAG_FALLBACK_SPECIFIED (0x00000002)")]
     public const int DAX_ALLOC_ALIGNMENT_FLAG_FALLBACK_SPECIFIED = (0x00000002);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WOF_CURRENT_VERSION"]/*' />
     [NativeTypeName("#define WOF_CURRENT_VERSION (0x00000001)")]
     public const int WOF_CURRENT_VERSION = (0x00000001);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WOF_PROVIDER_WIM"]/*' />
     [NativeTypeName("#define WOF_PROVIDER_WIM (0x00000001)")]
     public const int WOF_PROVIDER_WIM = (0x00000001);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WOF_PROVIDER_FILE"]/*' />
     [NativeTypeName("#define WOF_PROVIDER_FILE (0x00000002)")]
     public const int WOF_PROVIDER_FILE = (0x00000002);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WOF_PROVIDER_CLOUD"]/*' />
     [NativeTypeName("#define WOF_PROVIDER_CLOUD (0x00000003)")]
     public const int WOF_PROVIDER_CLOUD = (0x00000003);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WIM_PROVIDER_HASH_SIZE"]/*' />
     [NativeTypeName("#define WIM_PROVIDER_HASH_SIZE 20")]
     public const int WIM_PROVIDER_HASH_SIZE = 20;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WIM_PROVIDER_CURRENT_VERSION"]/*' />
     [NativeTypeName("#define WIM_PROVIDER_CURRENT_VERSION (0x00000001)")]
     public const int WIM_PROVIDER_CURRENT_VERSION = (0x00000001);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WIM_PROVIDER_EXTERNAL_FLAG_NOT_ACTIVE"]/*' />
     [NativeTypeName("#define WIM_PROVIDER_EXTERNAL_FLAG_NOT_ACTIVE (0x00000001)")]
     public const int WIM_PROVIDER_EXTERNAL_FLAG_NOT_ACTIVE = (0x00000001);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WIM_PROVIDER_EXTERNAL_FLAG_SUSPENDED"]/*' />
     [NativeTypeName("#define WIM_PROVIDER_EXTERNAL_FLAG_SUSPENDED (0x00000002)")]
     public const int WIM_PROVIDER_EXTERNAL_FLAG_SUSPENDED = (0x00000002);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WIM_BOOT_OS_WIM"]/*' />
     [NativeTypeName("#define WIM_BOOT_OS_WIM (0x00000001)")]
     public const int WIM_BOOT_OS_WIM = (0x00000001);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WIM_BOOT_NOT_OS_WIM"]/*' />
     [NativeTypeName("#define WIM_BOOT_NOT_OS_WIM (0x00000000)")]
     public const int WIM_BOOT_NOT_OS_WIM = (0x00000000);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PROJFS_PROTOCOL_VERSION"]/*' />
     [NativeTypeName("#define PROJFS_PROTOCOL_VERSION 3")]
     public const int PROJFS_PROTOCOL_VERSION = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IRP_EXT_TRACK_OFFSET_HEADER_VALIDATION_VALUE"]/*' />
     [NativeTypeName("#define IRP_EXT_TRACK_OFFSET_HEADER_VALIDATION_VALUE 'TO'")]
     public const int IRP_EXT_TRACK_OFFSET_HEADER_VALIDATION_VALUE = 0x544F;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EFS_TRACKED_OFFSET_HEADER_FLAG"]/*' />
     [NativeTypeName("#define EFS_TRACKED_OFFSET_HEADER_FLAG 0x0001")]
     public const int EFS_TRACKED_OFFSET_HEADER_FLAG = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPACES_TRACKED_OFFSET_HEADER_FLAG"]/*' />
     [NativeTypeName("#define SPACES_TRACKED_OFFSET_HEADER_FLAG 0x0002")]
     public const int SPACES_TRACKED_OFFSET_HEADER_FLAG = 0x0002;
 }

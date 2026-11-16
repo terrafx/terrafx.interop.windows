@@ -202,10 +202,15 @@ public static unsafe partial class Windows
     [return: NativeTypeName("DWORD")]
     public static extern uint GetTimestampForLoadedLibrary(HMODULE Module);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.sevInfo"]/*' />
     public const int sevInfo = 0;
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.sevProblem"]/*' />
     public const int sevProblem = 1;
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.sevAttn"]/*' />
     public const int sevAttn = 2;
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.sevFatal"]/*' />
     public const int sevFatal = 3;
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.sevMax"]/*' />
     public const int sevMax = 4;
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSetParentWindow"]/*' />
@@ -1134,711 +1139,947 @@ public static unsafe partial class Windows
     [DllImport("DbgHelp", ExactSpelling = true)]
     public static extern BOOL RangeMapWrite([NativeTypeName("PVOID")] void* RmapHandle, [NativeTypeName("DWORD64")] ulong Offset, [NativeTypeName("PVOID")] void* Buffer, [NativeTypeName("DWORD")] uint RequestBytes, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PDWORD")] uint* DoneBytes);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UNDNAME_COMPLETE"]/*' />
     [NativeTypeName("#define UNDNAME_COMPLETE (0x0000)")]
     public const int UNDNAME_COMPLETE = (0x0000);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UNDNAME_NO_LEADING_UNDERSCORES"]/*' />
     [NativeTypeName("#define UNDNAME_NO_LEADING_UNDERSCORES (0x0001)")]
     public const int UNDNAME_NO_LEADING_UNDERSCORES = (0x0001);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UNDNAME_NO_MS_KEYWORDS"]/*' />
     [NativeTypeName("#define UNDNAME_NO_MS_KEYWORDS (0x0002)")]
     public const int UNDNAME_NO_MS_KEYWORDS = (0x0002);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UNDNAME_NO_FUNCTION_RETURNS"]/*' />
     [NativeTypeName("#define UNDNAME_NO_FUNCTION_RETURNS (0x0004)")]
     public const int UNDNAME_NO_FUNCTION_RETURNS = (0x0004);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UNDNAME_NO_ALLOCATION_MODEL"]/*' />
     [NativeTypeName("#define UNDNAME_NO_ALLOCATION_MODEL (0x0008)")]
     public const int UNDNAME_NO_ALLOCATION_MODEL = (0x0008);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UNDNAME_NO_ALLOCATION_LANGUAGE"]/*' />
     [NativeTypeName("#define UNDNAME_NO_ALLOCATION_LANGUAGE (0x0010)")]
     public const int UNDNAME_NO_ALLOCATION_LANGUAGE = (0x0010);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UNDNAME_NO_MS_THISTYPE"]/*' />
     [NativeTypeName("#define UNDNAME_NO_MS_THISTYPE (0x0020)")]
     public const int UNDNAME_NO_MS_THISTYPE = (0x0020);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UNDNAME_NO_CV_THISTYPE"]/*' />
     [NativeTypeName("#define UNDNAME_NO_CV_THISTYPE (0x0040)")]
     public const int UNDNAME_NO_CV_THISTYPE = (0x0040);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UNDNAME_NO_THISTYPE"]/*' />
     [NativeTypeName("#define UNDNAME_NO_THISTYPE (0x0060)")]
     public const int UNDNAME_NO_THISTYPE = (0x0060);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UNDNAME_NO_ACCESS_SPECIFIERS"]/*' />
     [NativeTypeName("#define UNDNAME_NO_ACCESS_SPECIFIERS (0x0080)")]
     public const int UNDNAME_NO_ACCESS_SPECIFIERS = (0x0080);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UNDNAME_NO_THROW_SIGNATURES"]/*' />
     [NativeTypeName("#define UNDNAME_NO_THROW_SIGNATURES (0x0100)")]
     public const int UNDNAME_NO_THROW_SIGNATURES = (0x0100);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UNDNAME_NO_MEMBER_TYPE"]/*' />
     [NativeTypeName("#define UNDNAME_NO_MEMBER_TYPE (0x0200)")]
     public const int UNDNAME_NO_MEMBER_TYPE = (0x0200);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UNDNAME_NO_RETURN_UDT_MODEL"]/*' />
     [NativeTypeName("#define UNDNAME_NO_RETURN_UDT_MODEL (0x0400)")]
     public const int UNDNAME_NO_RETURN_UDT_MODEL = (0x0400);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UNDNAME_32_BIT_DECODE"]/*' />
     [NativeTypeName("#define UNDNAME_32_BIT_DECODE (0x0800)")]
     public const int UNDNAME_32_BIT_DECODE = (0x0800);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UNDNAME_NAME_ONLY"]/*' />
     [NativeTypeName("#define UNDNAME_NAME_ONLY (0x1000)")]
     public const int UNDNAME_NAME_ONLY = (0x1000);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UNDNAME_NO_ARGUMENTS"]/*' />
     [NativeTypeName("#define UNDNAME_NO_ARGUMENTS (0x2000)")]
     public const int UNDNAME_NO_ARGUMENTS = (0x2000);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UNDNAME_NO_SPECIAL_SYMS"]/*' />
     [NativeTypeName("#define UNDNAME_NO_SPECIAL_SYMS (0x4000)")]
     public const int UNDNAME_NO_SPECIAL_SYMS = (0x4000);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DBHHEADER_DEBUGDIRS"]/*' />
     [NativeTypeName("#define DBHHEADER_DEBUGDIRS 0x1")]
     public const int DBHHEADER_DEBUGDIRS = 0x1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DBHHEADER_CVMISC"]/*' />
     [NativeTypeName("#define DBHHEADER_CVMISC 0x2")]
     public const int DBHHEADER_CVMISC = 0x2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DBHHEADER_PDBGUID"]/*' />
     [NativeTypeName("#define DBHHEADER_PDBGUID 0x3")]
     public const int DBHHEADER_PDBGUID = 0x3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INLINE_FRAME_CONTEXT_INIT"]/*' />
     [NativeTypeName("#define INLINE_FRAME_CONTEXT_INIT 0")]
     public const int INLINE_FRAME_CONTEXT_INIT = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INLINE_FRAME_CONTEXT_IGNORE"]/*' />
     [NativeTypeName("#define INLINE_FRAME_CONTEXT_IGNORE 0xFFFFFFFF")]
     public const uint INLINE_FRAME_CONTEXT_IGNORE = 0xFFFFFFFF;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TARGET_ATTRIBUTE_PACMASK"]/*' />
     [NativeTypeName("#define TARGET_ATTRIBUTE_PACMASK 0x00000001")]
     public const int TARGET_ATTRIBUTE_PACMASK = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TARGET_ATTRIBUTE_PACMASK_LIVETARGET"]/*' />
     [NativeTypeName("#define TARGET_ATTRIBUTE_PACMASK_LIVETARGET 0xFFFFFFFFFFFFFFFFull")]
     public const ulong TARGET_ATTRIBUTE_PACMASK_LIVETARGET = 0xFFFFFFFFFFFFFFFFUL;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYM_STKWALK_DEFAULT"]/*' />
     [NativeTypeName("#define SYM_STKWALK_DEFAULT 0x00000000")]
     public const int SYM_STKWALK_DEFAULT = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYM_STKWALK_FORCE_FRAMEPTR"]/*' />
     [NativeTypeName("#define SYM_STKWALK_FORCE_FRAMEPTR 0x00000001")]
     public const int SYM_STKWALK_FORCE_FRAMEPTR = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYM_STKWALK_ZEROEXTEND_PTRS"]/*' />
     [NativeTypeName("#define SYM_STKWALK_ZEROEXTEND_PTRS 0x00000002")]
     public const int SYM_STKWALK_ZEROEXTEND_PTRS = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.API_VERSION_NUMBER"]/*' />
     [NativeTypeName("#define API_VERSION_NUMBER 12")]
     public const int API_VERSION_NUMBER = 12;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_VALUEPRESENT"]/*' />
     [NativeTypeName("#define SYMFLAG_VALUEPRESENT 0x00000001")]
     public const int SYMFLAG_VALUEPRESENT = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_REGISTER"]/*' />
     [NativeTypeName("#define SYMFLAG_REGISTER 0x00000008")]
     public const int SYMFLAG_REGISTER = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_REGREL"]/*' />
     [NativeTypeName("#define SYMFLAG_REGREL 0x00000010")]
     public const int SYMFLAG_REGREL = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_FRAMEREL"]/*' />
     [NativeTypeName("#define SYMFLAG_FRAMEREL 0x00000020")]
     public const int SYMFLAG_FRAMEREL = 0x00000020;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_PARAMETER"]/*' />
     [NativeTypeName("#define SYMFLAG_PARAMETER 0x00000040")]
     public const int SYMFLAG_PARAMETER = 0x00000040;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_LOCAL"]/*' />
     [NativeTypeName("#define SYMFLAG_LOCAL 0x00000080")]
     public const int SYMFLAG_LOCAL = 0x00000080;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_CONSTANT"]/*' />
     [NativeTypeName("#define SYMFLAG_CONSTANT 0x00000100")]
     public const int SYMFLAG_CONSTANT = 0x00000100;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_EXPORT"]/*' />
     [NativeTypeName("#define SYMFLAG_EXPORT 0x00000200")]
     public const int SYMFLAG_EXPORT = 0x00000200;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_FORWARDER"]/*' />
     [NativeTypeName("#define SYMFLAG_FORWARDER 0x00000400")]
     public const int SYMFLAG_FORWARDER = 0x00000400;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_FUNCTION"]/*' />
     [NativeTypeName("#define SYMFLAG_FUNCTION 0x00000800")]
     public const int SYMFLAG_FUNCTION = 0x00000800;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_VIRTUAL"]/*' />
     [NativeTypeName("#define SYMFLAG_VIRTUAL 0x00001000")]
     public const int SYMFLAG_VIRTUAL = 0x00001000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_THUNK"]/*' />
     [NativeTypeName("#define SYMFLAG_THUNK 0x00002000")]
     public const int SYMFLAG_THUNK = 0x00002000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_TLSREL"]/*' />
     [NativeTypeName("#define SYMFLAG_TLSREL 0x00004000")]
     public const int SYMFLAG_TLSREL = 0x00004000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_SLOT"]/*' />
     [NativeTypeName("#define SYMFLAG_SLOT 0x00008000")]
     public const int SYMFLAG_SLOT = 0x00008000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_ILREL"]/*' />
     [NativeTypeName("#define SYMFLAG_ILREL 0x00010000")]
     public const int SYMFLAG_ILREL = 0x00010000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_METADATA"]/*' />
     [NativeTypeName("#define SYMFLAG_METADATA 0x00020000")]
     public const int SYMFLAG_METADATA = 0x00020000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_CLR_TOKEN"]/*' />
     [NativeTypeName("#define SYMFLAG_CLR_TOKEN 0x00040000")]
     public const int SYMFLAG_CLR_TOKEN = 0x00040000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_NULL"]/*' />
     [NativeTypeName("#define SYMFLAG_NULL 0x00080000")]
     public const int SYMFLAG_NULL = 0x00080000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_FUNC_NO_RETURN"]/*' />
     [NativeTypeName("#define SYMFLAG_FUNC_NO_RETURN 0x00100000")]
     public const int SYMFLAG_FUNC_NO_RETURN = 0x00100000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_SYNTHETIC_ZEROBASE"]/*' />
     [NativeTypeName("#define SYMFLAG_SYNTHETIC_ZEROBASE 0x00200000")]
     public const int SYMFLAG_SYNTHETIC_ZEROBASE = 0x00200000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_PUBLIC_CODE"]/*' />
     [NativeTypeName("#define SYMFLAG_PUBLIC_CODE 0x00400000")]
     public const int SYMFLAG_PUBLIC_CODE = 0x00400000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_REGREL_ALIASINDIR"]/*' />
     [NativeTypeName("#define SYMFLAG_REGREL_ALIASINDIR 0x00800000")]
     public const int SYMFLAG_REGREL_ALIASINDIR = 0x00800000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_FIXUP_ARM64X"]/*' />
     [NativeTypeName("#define SYMFLAG_FIXUP_ARM64X 0x01000000")]
     public const int SYMFLAG_FIXUP_ARM64X = 0x01000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_GLOBAL"]/*' />
     [NativeTypeName("#define SYMFLAG_GLOBAL 0x02000000")]
     public const int SYMFLAG_GLOBAL = 0x02000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_COMPLEX"]/*' />
     [NativeTypeName("#define SYMFLAG_COMPLEX 0x04000000")]
     public const int SYMFLAG_COMPLEX = 0x04000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMFLAG_RESET"]/*' />
     [NativeTypeName("#define SYMFLAG_RESET 0x80000000")]
     public const uint SYMFLAG_RESET = 0x80000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_MODULE_REGION_DLLBASE"]/*' />
     [NativeTypeName("#define IMAGEHLP_MODULE_REGION_DLLBASE 0x01")]
     public const int IMAGEHLP_MODULE_REGION_DLLBASE = 0x01;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_MODULE_REGION_DLLRANGE"]/*' />
     [NativeTypeName("#define IMAGEHLP_MODULE_REGION_DLLRANGE 0x02")]
     public const int IMAGEHLP_MODULE_REGION_DLLRANGE = 0x02;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_MODULE_REGION_ADDITIONAL"]/*' />
     [NativeTypeName("#define IMAGEHLP_MODULE_REGION_ADDITIONAL 0x04")]
     public const int IMAGEHLP_MODULE_REGION_ADDITIONAL = 0x04;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_MODULE_REGION_JIT"]/*' />
     [NativeTypeName("#define IMAGEHLP_MODULE_REGION_JIT 0x08")]
     public const int IMAGEHLP_MODULE_REGION_JIT = 0x08;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_MODULE_REGION_ALL"]/*' />
     [NativeTypeName("#define IMAGEHLP_MODULE_REGION_ALL 0xFF")]
     public const int IMAGEHLP_MODULE_REGION_ALL = 0xFF;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CBA_DEFERRED_SYMBOL_LOAD_START"]/*' />
     [NativeTypeName("#define CBA_DEFERRED_SYMBOL_LOAD_START 0x00000001")]
     public const int CBA_DEFERRED_SYMBOL_LOAD_START = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CBA_DEFERRED_SYMBOL_LOAD_COMPLETE"]/*' />
     [NativeTypeName("#define CBA_DEFERRED_SYMBOL_LOAD_COMPLETE 0x00000002")]
     public const int CBA_DEFERRED_SYMBOL_LOAD_COMPLETE = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CBA_DEFERRED_SYMBOL_LOAD_FAILURE"]/*' />
     [NativeTypeName("#define CBA_DEFERRED_SYMBOL_LOAD_FAILURE 0x00000003")]
     public const int CBA_DEFERRED_SYMBOL_LOAD_FAILURE = 0x00000003;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CBA_SYMBOLS_UNLOADED"]/*' />
     [NativeTypeName("#define CBA_SYMBOLS_UNLOADED 0x00000004")]
     public const int CBA_SYMBOLS_UNLOADED = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CBA_DUPLICATE_SYMBOL"]/*' />
     [NativeTypeName("#define CBA_DUPLICATE_SYMBOL 0x00000005")]
     public const int CBA_DUPLICATE_SYMBOL = 0x00000005;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CBA_READ_MEMORY"]/*' />
     [NativeTypeName("#define CBA_READ_MEMORY 0x00000006")]
     public const int CBA_READ_MEMORY = 0x00000006;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CBA_DEFERRED_SYMBOL_LOAD_CANCEL"]/*' />
     [NativeTypeName("#define CBA_DEFERRED_SYMBOL_LOAD_CANCEL 0x00000007")]
     public const int CBA_DEFERRED_SYMBOL_LOAD_CANCEL = 0x00000007;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CBA_SET_OPTIONS"]/*' />
     [NativeTypeName("#define CBA_SET_OPTIONS 0x00000008")]
     public const int CBA_SET_OPTIONS = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CBA_EVENT"]/*' />
     [NativeTypeName("#define CBA_EVENT 0x00000010")]
     public const int CBA_EVENT = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CBA_DEFERRED_SYMBOL_LOAD_PARTIAL"]/*' />
     [NativeTypeName("#define CBA_DEFERRED_SYMBOL_LOAD_PARTIAL 0x00000020")]
     public const int CBA_DEFERRED_SYMBOL_LOAD_PARTIAL = 0x00000020;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CBA_QUERY_IF_SYMBOL_DOWNLOAD_DISALLOWED"]/*' />
     [NativeTypeName("#define CBA_QUERY_IF_SYMBOL_DOWNLOAD_DISALLOWED 0x00000040")]
     public const int CBA_QUERY_IF_SYMBOL_DOWNLOAD_DISALLOWED = 0x00000040;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CBA_DEBUG_INFO"]/*' />
     [NativeTypeName("#define CBA_DEBUG_INFO 0x10000000")]
     public const int CBA_DEBUG_INFO = 0x10000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CBA_SRCSRV_INFO"]/*' />
     [NativeTypeName("#define CBA_SRCSRV_INFO 0x20000000")]
     public const int CBA_SRCSRV_INFO = 0x20000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CBA_SRCSRV_EVENT"]/*' />
     [NativeTypeName("#define CBA_SRCSRV_EVENT 0x40000000")]
     public const int CBA_SRCSRV_EVENT = 0x40000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CBA_UPDATE_STATUS_BAR"]/*' />
     [NativeTypeName("#define CBA_UPDATE_STATUS_BAR 0x50000000")]
     public const int CBA_UPDATE_STATUS_BAR = 0x50000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CBA_ENGINE_PRESENT"]/*' />
     [NativeTypeName("#define CBA_ENGINE_PRESENT 0x60000000")]
     public const int CBA_ENGINE_PRESENT = 0x60000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CBA_CHECK_ENGOPT_DISALLOW_NETWORK_PATHS"]/*' />
     [NativeTypeName("#define CBA_CHECK_ENGOPT_DISALLOW_NETWORK_PATHS 0x70000000")]
     public const int CBA_CHECK_ENGOPT_DISALLOW_NETWORK_PATHS = 0x70000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CBA_CHECK_ARM_MACHINE_THUMB_TYPE_OVERRIDE"]/*' />
     [NativeTypeName("#define CBA_CHECK_ARM_MACHINE_THUMB_TYPE_OVERRIDE 0x80000000")]
     public const uint CBA_CHECK_ARM_MACHINE_THUMB_TYPE_OVERRIDE = 0x80000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CBA_XML_LOG"]/*' />
     [NativeTypeName("#define CBA_XML_LOG 0x90000000")]
     public const uint CBA_XML_LOG = 0x90000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CBA_MAP_JIT_SYMBOL"]/*' />
     [NativeTypeName("#define CBA_MAP_JIT_SYMBOL 0xA0000000")]
     public const uint CBA_MAP_JIT_SYMBOL = 0xA0000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DSLFLAG_MISMATCHED_PDB"]/*' />
     [NativeTypeName("#define DSLFLAG_MISMATCHED_PDB 0x1")]
     public const int DSLFLAG_MISMATCHED_PDB = 0x1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DSLFLAG_MISMATCHED_DBG"]/*' />
     [NativeTypeName("#define DSLFLAG_MISMATCHED_DBG 0x2")]
     public const int DSLFLAG_MISMATCHED_DBG = 0x2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_CASE_INSENSITIVE"]/*' />
     [NativeTypeName("#define SYMOPT_CASE_INSENSITIVE 0x00000001")]
     public const int SYMOPT_CASE_INSENSITIVE = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_UNDNAME"]/*' />
     [NativeTypeName("#define SYMOPT_UNDNAME 0x00000002")]
     public const int SYMOPT_UNDNAME = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_DEFERRED_LOADS"]/*' />
     [NativeTypeName("#define SYMOPT_DEFERRED_LOADS 0x00000004")]
     public const int SYMOPT_DEFERRED_LOADS = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_NO_CPP"]/*' />
     [NativeTypeName("#define SYMOPT_NO_CPP 0x00000008")]
     public const int SYMOPT_NO_CPP = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_LOAD_LINES"]/*' />
     [NativeTypeName("#define SYMOPT_LOAD_LINES 0x00000010")]
     public const int SYMOPT_LOAD_LINES = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_OMAP_FIND_NEAREST"]/*' />
     [NativeTypeName("#define SYMOPT_OMAP_FIND_NEAREST 0x00000020")]
     public const int SYMOPT_OMAP_FIND_NEAREST = 0x00000020;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_LOAD_ANYTHING"]/*' />
     [NativeTypeName("#define SYMOPT_LOAD_ANYTHING 0x00000040")]
     public const int SYMOPT_LOAD_ANYTHING = 0x00000040;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_IGNORE_CVREC"]/*' />
     [NativeTypeName("#define SYMOPT_IGNORE_CVREC 0x00000080")]
     public const int SYMOPT_IGNORE_CVREC = 0x00000080;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_NO_UNQUALIFIED_LOADS"]/*' />
     [NativeTypeName("#define SYMOPT_NO_UNQUALIFIED_LOADS 0x00000100")]
     public const int SYMOPT_NO_UNQUALIFIED_LOADS = 0x00000100;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_FAIL_CRITICAL_ERRORS"]/*' />
     [NativeTypeName("#define SYMOPT_FAIL_CRITICAL_ERRORS 0x00000200")]
     public const int SYMOPT_FAIL_CRITICAL_ERRORS = 0x00000200;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_EXACT_SYMBOLS"]/*' />
     [NativeTypeName("#define SYMOPT_EXACT_SYMBOLS 0x00000400")]
     public const int SYMOPT_EXACT_SYMBOLS = 0x00000400;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_ALLOW_ABSOLUTE_SYMBOLS"]/*' />
     [NativeTypeName("#define SYMOPT_ALLOW_ABSOLUTE_SYMBOLS 0x00000800")]
     public const int SYMOPT_ALLOW_ABSOLUTE_SYMBOLS = 0x00000800;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_IGNORE_NT_SYMPATH"]/*' />
     [NativeTypeName("#define SYMOPT_IGNORE_NT_SYMPATH 0x00001000")]
     public const int SYMOPT_IGNORE_NT_SYMPATH = 0x00001000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_INCLUDE_32BIT_MODULES"]/*' />
     [NativeTypeName("#define SYMOPT_INCLUDE_32BIT_MODULES 0x00002000")]
     public const int SYMOPT_INCLUDE_32BIT_MODULES = 0x00002000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_PUBLICS_ONLY"]/*' />
     [NativeTypeName("#define SYMOPT_PUBLICS_ONLY 0x00004000")]
     public const int SYMOPT_PUBLICS_ONLY = 0x00004000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_NO_PUBLICS"]/*' />
     [NativeTypeName("#define SYMOPT_NO_PUBLICS 0x00008000")]
     public const int SYMOPT_NO_PUBLICS = 0x00008000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_AUTO_PUBLICS"]/*' />
     [NativeTypeName("#define SYMOPT_AUTO_PUBLICS 0x00010000")]
     public const int SYMOPT_AUTO_PUBLICS = 0x00010000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_NO_IMAGE_SEARCH"]/*' />
     [NativeTypeName("#define SYMOPT_NO_IMAGE_SEARCH 0x00020000")]
     public const int SYMOPT_NO_IMAGE_SEARCH = 0x00020000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_SECURE"]/*' />
     [NativeTypeName("#define SYMOPT_SECURE 0x00040000")]
     public const int SYMOPT_SECURE = 0x00040000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_NO_PROMPTS"]/*' />
     [NativeTypeName("#define SYMOPT_NO_PROMPTS 0x00080000")]
     public const int SYMOPT_NO_PROMPTS = 0x00080000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_OVERWRITE"]/*' />
     [NativeTypeName("#define SYMOPT_OVERWRITE 0x00100000")]
     public const int SYMOPT_OVERWRITE = 0x00100000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_IGNORE_IMAGEDIR"]/*' />
     [NativeTypeName("#define SYMOPT_IGNORE_IMAGEDIR 0x00200000")]
     public const int SYMOPT_IGNORE_IMAGEDIR = 0x00200000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_FLAT_DIRECTORY"]/*' />
     [NativeTypeName("#define SYMOPT_FLAT_DIRECTORY 0x00400000")]
     public const int SYMOPT_FLAT_DIRECTORY = 0x00400000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_FAVOR_COMPRESSED"]/*' />
     [NativeTypeName("#define SYMOPT_FAVOR_COMPRESSED 0x00800000")]
     public const int SYMOPT_FAVOR_COMPRESSED = 0x00800000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_ALLOW_ZERO_ADDRESS"]/*' />
     [NativeTypeName("#define SYMOPT_ALLOW_ZERO_ADDRESS 0x01000000")]
     public const int SYMOPT_ALLOW_ZERO_ADDRESS = 0x01000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_DISABLE_SYMSRV_AUTODETECT"]/*' />
     [NativeTypeName("#define SYMOPT_DISABLE_SYMSRV_AUTODETECT 0x02000000")]
     public const int SYMOPT_DISABLE_SYMSRV_AUTODETECT = 0x02000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_READONLY_CACHE"]/*' />
     [NativeTypeName("#define SYMOPT_READONLY_CACHE 0x04000000")]
     public const int SYMOPT_READONLY_CACHE = 0x04000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_SYMPATH_LAST"]/*' />
     [NativeTypeName("#define SYMOPT_SYMPATH_LAST 0x08000000")]
     public const int SYMOPT_SYMPATH_LAST = 0x08000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_DISABLE_FAST_SYMBOLS"]/*' />
     [NativeTypeName("#define SYMOPT_DISABLE_FAST_SYMBOLS 0x10000000")]
     public const int SYMOPT_DISABLE_FAST_SYMBOLS = 0x10000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_DISABLE_SYMSRV_TIMEOUT"]/*' />
     [NativeTypeName("#define SYMOPT_DISABLE_SYMSRV_TIMEOUT 0x20000000")]
     public const int SYMOPT_DISABLE_SYMSRV_TIMEOUT = 0x20000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_DISABLE_SRVSTAR_ON_STARTUP"]/*' />
     [NativeTypeName("#define SYMOPT_DISABLE_SRVSTAR_ON_STARTUP 0x40000000")]
     public const int SYMOPT_DISABLE_SRVSTAR_ON_STARTUP = 0x40000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMOPT_DEBUG"]/*' />
     [NativeTypeName("#define SYMOPT_DEBUG 0x80000000")]
     public const uint SYMOPT_DEBUG = 0x80000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYM_INLINE_COMP_ERROR"]/*' />
     [NativeTypeName("#define SYM_INLINE_COMP_ERROR 0")]
     public const int SYM_INLINE_COMP_ERROR = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYM_INLINE_COMP_IDENTICAL"]/*' />
     [NativeTypeName("#define SYM_INLINE_COMP_IDENTICAL 1")]
     public const int SYM_INLINE_COMP_IDENTICAL = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYM_INLINE_COMP_STEPIN"]/*' />
     [NativeTypeName("#define SYM_INLINE_COMP_STEPIN 2")]
     public const int SYM_INLINE_COMP_STEPIN = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYM_INLINE_COMP_STEPOUT"]/*' />
     [NativeTypeName("#define SYM_INLINE_COMP_STEPOUT 3")]
     public const int SYM_INLINE_COMP_STEPOUT = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYM_INLINE_COMP_STEPOVER"]/*' />
     [NativeTypeName("#define SYM_INLINE_COMP_STEPOVER 4")]
     public const int SYM_INLINE_COMP_STEPOVER = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYM_INLINE_COMP_DIFFERENT"]/*' />
     [NativeTypeName("#define SYM_INLINE_COMP_DIFFERENT 5")]
     public const int SYM_INLINE_COMP_DIFFERENT = 5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ESLFLAG_FULLPATH"]/*' />
     [NativeTypeName("#define ESLFLAG_FULLPATH 0x00000001")]
     public const int ESLFLAG_FULLPATH = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ESLFLAG_NEAREST"]/*' />
     [NativeTypeName("#define ESLFLAG_NEAREST 0x00000002")]
     public const int ESLFLAG_NEAREST = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ESLFLAG_PREV"]/*' />
     [NativeTypeName("#define ESLFLAG_PREV 0x00000004")]
     public const int ESLFLAG_PREV = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ESLFLAG_NEXT"]/*' />
     [NativeTypeName("#define ESLFLAG_NEXT 0x00000008")]
     public const int ESLFLAG_NEXT = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ESLFLAG_INLINE_SITE"]/*' />
     [NativeTypeName("#define ESLFLAG_INLINE_SITE 0x00000010")]
     public const int ESLFLAG_INLINE_SITE = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SLMFLAG_VIRTUAL"]/*' />
     [NativeTypeName("#define SLMFLAG_VIRTUAL 0x1")]
     public const int SLMFLAG_VIRTUAL = 0x1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SLMFLAG_ALT_INDEX"]/*' />
     [NativeTypeName("#define SLMFLAG_ALT_INDEX 0x2")]
     public const int SLMFLAG_ALT_INDEX = 0x2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SLMFLAG_NO_SYMBOLS"]/*' />
     [NativeTypeName("#define SLMFLAG_NO_SYMBOLS 0x4")]
     public const int SLMFLAG_NO_SYMBOLS = 0x4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMENUM_OPTIONS_DEFAULT"]/*' />
     [NativeTypeName("#define SYMENUM_OPTIONS_DEFAULT 0x00000001")]
     public const int SYMENUM_OPTIONS_DEFAULT = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMENUM_OPTIONS_INLINE"]/*' />
     [NativeTypeName("#define SYMENUM_OPTIONS_INLINE 0x00000002")]
     public const int SYMENUM_OPTIONS_INLINE = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMSEARCH_MASKOBJS"]/*' />
     [NativeTypeName("#define SYMSEARCH_MASKOBJS 0x01")]
     public const int SYMSEARCH_MASKOBJS = 0x01;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMSEARCH_RECURSE"]/*' />
     [NativeTypeName("#define SYMSEARCH_RECURSE 0X02")]
     public const int SYMSEARCH_RECURSE = 0X02;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMSEARCH_GLOBALSONLY"]/*' />
     [NativeTypeName("#define SYMSEARCH_GLOBALSONLY 0X04")]
     public const int SYMSEARCH_GLOBALSONLY = 0X04;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMSEARCH_ALLITEMS"]/*' />
     [NativeTypeName("#define SYMSEARCH_ALLITEMS 0X08")]
     public const int SYMSEARCH_ALLITEMS = 0X08;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_GET_TYPE_INFO_UNCACHED"]/*' />
     [NativeTypeName("#define IMAGEHLP_GET_TYPE_INFO_UNCACHED 0x00000001")]
     public const int IMAGEHLP_GET_TYPE_INFO_UNCACHED = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_GET_TYPE_INFO_CHILDREN"]/*' />
     [NativeTypeName("#define IMAGEHLP_GET_TYPE_INFO_CHILDREN 0x00000002")]
     public const int IMAGEHLP_GET_TYPE_INFO_CHILDREN = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EXT_OUTPUT_VER"]/*' />
     [NativeTypeName("#define EXT_OUTPUT_VER 1")]
     public const int EXT_OUTPUT_VER = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMSRV_VERSION"]/*' />
     [NativeTypeName("#define SYMSRV_VERSION 2")]
     public const int SYMSRV_VERSION = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_CALLBACK"]/*' />
     [NativeTypeName("#define SSRVOPT_CALLBACK 0x00000001")]
     public const int SSRVOPT_CALLBACK = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_DWORD"]/*' />
     [NativeTypeName("#define SSRVOPT_DWORD 0x00000002")]
     public const int SSRVOPT_DWORD = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_DWORDPTR"]/*' />
     [NativeTypeName("#define SSRVOPT_DWORDPTR 0x00000004")]
     public const int SSRVOPT_DWORDPTR = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_GUIDPTR"]/*' />
     [NativeTypeName("#define SSRVOPT_GUIDPTR 0x00000008")]
     public const int SSRVOPT_GUIDPTR = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_OLDGUIDPTR"]/*' />
     [NativeTypeName("#define SSRVOPT_OLDGUIDPTR 0x00000010")]
     public const int SSRVOPT_OLDGUIDPTR = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_UNATTENDED"]/*' />
     [NativeTypeName("#define SSRVOPT_UNATTENDED 0x00000020")]
     public const int SSRVOPT_UNATTENDED = 0x00000020;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_NOCOPY"]/*' />
     [NativeTypeName("#define SSRVOPT_NOCOPY 0x00000040")]
     public const int SSRVOPT_NOCOPY = 0x00000040;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_GETPATH"]/*' />
     [NativeTypeName("#define SSRVOPT_GETPATH 0x00000040")]
     public const int SSRVOPT_GETPATH = 0x00000040;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_PARENTWIN"]/*' />
     [NativeTypeName("#define SSRVOPT_PARENTWIN 0x00000080")]
     public const int SSRVOPT_PARENTWIN = 0x00000080;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_PARAMTYPE"]/*' />
     [NativeTypeName("#define SSRVOPT_PARAMTYPE 0x00000100")]
     public const int SSRVOPT_PARAMTYPE = 0x00000100;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_SECURE"]/*' />
     [NativeTypeName("#define SSRVOPT_SECURE 0x00000200")]
     public const int SSRVOPT_SECURE = 0x00000200;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_TRACE"]/*' />
     [NativeTypeName("#define SSRVOPT_TRACE 0x00000400")]
     public const int SSRVOPT_TRACE = 0x00000400;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_SETCONTEXT"]/*' />
     [NativeTypeName("#define SSRVOPT_SETCONTEXT 0x00000800")]
     public const int SSRVOPT_SETCONTEXT = 0x00000800;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_PROXY"]/*' />
     [NativeTypeName("#define SSRVOPT_PROXY 0x00001000")]
     public const int SSRVOPT_PROXY = 0x00001000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_DOWNSTREAM_STORE"]/*' />
     [NativeTypeName("#define SSRVOPT_DOWNSTREAM_STORE 0x00002000")]
     public const int SSRVOPT_DOWNSTREAM_STORE = 0x00002000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_OVERWRITE"]/*' />
     [NativeTypeName("#define SSRVOPT_OVERWRITE 0x00004000")]
     public const int SSRVOPT_OVERWRITE = 0x00004000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_RESETTOU"]/*' />
     [NativeTypeName("#define SSRVOPT_RESETTOU 0x00008000")]
     public const int SSRVOPT_RESETTOU = 0x00008000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_CALLBACKW"]/*' />
     [NativeTypeName("#define SSRVOPT_CALLBACKW 0x00010000")]
     public const int SSRVOPT_CALLBACKW = 0x00010000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_FLAT_DEFAULT_STORE"]/*' />
     [NativeTypeName("#define SSRVOPT_FLAT_DEFAULT_STORE 0x00020000")]
     public const int SSRVOPT_FLAT_DEFAULT_STORE = 0x00020000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_PROXYW"]/*' />
     [NativeTypeName("#define SSRVOPT_PROXYW 0x00040000")]
     public const int SSRVOPT_PROXYW = 0x00040000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_MESSAGE"]/*' />
     [NativeTypeName("#define SSRVOPT_MESSAGE 0x00080000")]
     public const int SSRVOPT_MESSAGE = 0x00080000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_SERVICE"]/*' />
     [NativeTypeName("#define SSRVOPT_SERVICE 0x00100000")]
     public const int SSRVOPT_SERVICE = 0x00100000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_FAVOR_COMPRESSED"]/*' />
     [NativeTypeName("#define SSRVOPT_FAVOR_COMPRESSED 0x00200000")]
     public const int SSRVOPT_FAVOR_COMPRESSED = 0x00200000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_STRING"]/*' />
     [NativeTypeName("#define SSRVOPT_STRING 0x00400000")]
     public const int SSRVOPT_STRING = 0x00400000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_WINHTTP"]/*' />
     [NativeTypeName("#define SSRVOPT_WINHTTP 0x00800000")]
     public const int SSRVOPT_WINHTTP = 0x00800000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_WININET"]/*' />
     [NativeTypeName("#define SSRVOPT_WININET 0x01000000")]
     public const int SSRVOPT_WININET = 0x01000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_DONT_UNCOMPRESS"]/*' />
     [NativeTypeName("#define SSRVOPT_DONT_UNCOMPRESS 0x02000000")]
     public const int SSRVOPT_DONT_UNCOMPRESS = 0x02000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_DISABLE_PING_HOST"]/*' />
     [NativeTypeName("#define SSRVOPT_DISABLE_PING_HOST 0x04000000")]
     public const int SSRVOPT_DISABLE_PING_HOST = 0x04000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_DISABLE_TIMEOUT"]/*' />
     [NativeTypeName("#define SSRVOPT_DISABLE_TIMEOUT 0x08000000")]
     public const int SSRVOPT_DISABLE_TIMEOUT = 0x08000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_ENABLE_COMM_MSG"]/*' />
     [NativeTypeName("#define SSRVOPT_ENABLE_COMM_MSG 0x10000000")]
     public const int SSRVOPT_ENABLE_COMM_MSG = 0x10000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_URI_FILTER"]/*' />
     [NativeTypeName("#define SSRVOPT_URI_FILTER 0x20000000")]
     public const int SSRVOPT_URI_FILTER = 0x20000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_URI_TIERS"]/*' />
     [NativeTypeName("#define SSRVOPT_URI_TIERS 0x40000000")]
     public const int SSRVOPT_URI_TIERS = 0x40000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_RETRY_APP_HANG"]/*' />
     [NativeTypeName("#define SSRVOPT_RETRY_APP_HANG 0x80000000")]
     public const uint SSRVOPT_RETRY_APP_HANG = 0x80000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_MAX"]/*' />
     [NativeTypeName("#define SSRVOPT_MAX 0x80000000")]
     public const uint SSRVOPT_MAX = 0x80000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVOPT_RESET"]/*' />
     [NativeTypeName("#define SSRVOPT_RESET ((ULONG_PTR)-1)")]
     public static nuint SSRVOPT_RESET => unchecked((nuint)(-1));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NUM_SSRVOPTS"]/*' />
     [NativeTypeName("#define NUM_SSRVOPTS 32")]
     public const int NUM_SSRVOPTS = 32;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVURI_HTTP_NORMAL"]/*' />
     [NativeTypeName("#define SSRVURI_HTTP_NORMAL 0x01")]
     public const int SSRVURI_HTTP_NORMAL = 0x01;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVURI_HTTP_COMPRESSED"]/*' />
     [NativeTypeName("#define SSRVURI_HTTP_COMPRESSED 0x02")]
     public const int SSRVURI_HTTP_COMPRESSED = 0x02;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVURI_HTTP_FILEPTR"]/*' />
     [NativeTypeName("#define SSRVURI_HTTP_FILEPTR 0x04")]
     public const int SSRVURI_HTTP_FILEPTR = 0x04;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVURI_HTTP_MSFZ0"]/*' />
     [NativeTypeName("#define SSRVURI_HTTP_MSFZ0 0x08")]
     public const int SSRVURI_HTTP_MSFZ0 = 0x08;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVURI_UNC_NORMAL"]/*' />
     [NativeTypeName("#define SSRVURI_UNC_NORMAL 0x10")]
     public const int SSRVURI_UNC_NORMAL = 0x10;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVURI_UNC_COMPRESSED"]/*' />
     [NativeTypeName("#define SSRVURI_UNC_COMPRESSED 0x20")]
     public const int SSRVURI_UNC_COMPRESSED = 0x20;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVURI_UNC_FILEPTR"]/*' />
     [NativeTypeName("#define SSRVURI_UNC_FILEPTR 0x40")]
     public const int SSRVURI_UNC_FILEPTR = 0x40;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVURI_UNC_MSFZ0"]/*' />
     [NativeTypeName("#define SSRVURI_UNC_MSFZ0 0x80")]
     public const int SSRVURI_UNC_MSFZ0 = 0x80;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVURI_HTTP_MASK"]/*' />
     [NativeTypeName("#define SSRVURI_HTTP_MASK 0x0F")]
     public const int SSRVURI_HTTP_MASK = 0x0F;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVURI_UNC_MASK"]/*' />
     [NativeTypeName("#define SSRVURI_UNC_MASK 0xF0")]
     public const int SSRVURI_UNC_MASK = 0xF0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVURI_ALL"]/*' />
     [NativeTypeName("#define SSRVURI_ALL 0xFF")]
     public const int SSRVURI_ALL = 0xFF;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVURI_NORMAL"]/*' />
     [NativeTypeName("#define SSRVURI_NORMAL SSRVURI_HTTP_NORMAL")]
     public const int SSRVURI_NORMAL = 0x01;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVURI_COMPRESSED"]/*' />
     [NativeTypeName("#define SSRVURI_COMPRESSED SSRVURI_HTTP_COMPRESSED")]
     public const int SSRVURI_COMPRESSED = 0x02;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVURI_FILEPTR"]/*' />
     [NativeTypeName("#define SSRVURI_FILEPTR SSRVURI_HTTP_FILEPTR")]
     public const int SSRVURI_FILEPTR = 0x04;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVACTION_TRACE"]/*' />
     [NativeTypeName("#define SSRVACTION_TRACE 1")]
     public const int SSRVACTION_TRACE = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVACTION_QUERYCANCEL"]/*' />
     [NativeTypeName("#define SSRVACTION_QUERYCANCEL 2")]
     public const int SSRVACTION_QUERYCANCEL = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVACTION_EVENT"]/*' />
     [NativeTypeName("#define SSRVACTION_EVENT 3")]
     public const int SSRVACTION_EVENT = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVACTION_EVENTW"]/*' />
     [NativeTypeName("#define SSRVACTION_EVENTW 4")]
     public const int SSRVACTION_EVENTW = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVACTION_SIZE"]/*' />
     [NativeTypeName("#define SSRVACTION_SIZE 5")]
     public const int SSRVACTION_SIZE = 5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVACTION_HTTPSTATUS"]/*' />
     [NativeTypeName("#define SSRVACTION_HTTPSTATUS 6")]
     public const int SSRVACTION_HTTPSTATUS = 6;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVACTION_XMLOUTPUT"]/*' />
     [NativeTypeName("#define SSRVACTION_XMLOUTPUT 7")]
     public const int SSRVACTION_XMLOUTPUT = 7;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVACTION_CHECKSUMSTATUS"]/*' />
     [NativeTypeName("#define SSRVACTION_CHECKSUMSTATUS 8")]
     public const int SSRVACTION_CHECKSUMSTATUS = 8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SSRVACTION_QUERY_IF_DOWNLOAD_DISALLOWED"]/*' />
     [NativeTypeName("#define SSRVACTION_QUERY_IF_DOWNLOAD_DISALLOWED 9")]
     public const int SSRVACTION_QUERY_IF_DOWNLOAD_DISALLOWED = 9;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMSTOREOPT_COMPRESS"]/*' />
     [NativeTypeName("#define SYMSTOREOPT_COMPRESS 0x01")]
     public const int SYMSTOREOPT_COMPRESS = 0x01;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMSTOREOPT_OVERWRITE"]/*' />
     [NativeTypeName("#define SYMSTOREOPT_OVERWRITE 0x02")]
     public const int SYMSTOREOPT_OVERWRITE = 0x02;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMSTOREOPT_RETURNINDEX"]/*' />
     [NativeTypeName("#define SYMSTOREOPT_RETURNINDEX 0x04")]
     public const int SYMSTOREOPT_RETURNINDEX = 0x04;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMSTOREOPT_POINTER"]/*' />
     [NativeTypeName("#define SYMSTOREOPT_POINTER 0x08")]
     public const int SYMSTOREOPT_POINTER = 0x08;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMSTOREOPT_ALT_INDEX"]/*' />
     [NativeTypeName("#define SYMSTOREOPT_ALT_INDEX 0x10")]
     public const int SYMSTOREOPT_ALT_INDEX = 0x10;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMSTOREOPT_UNICODE"]/*' />
     [NativeTypeName("#define SYMSTOREOPT_UNICODE 0x20")]
     public const int SYMSTOREOPT_UNICODE = 0x20;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMSTOREOPT_PASS_IF_EXISTS"]/*' />
     [NativeTypeName("#define SYMSTOREOPT_PASS_IF_EXISTS 0x40")]
     public const int SYMSTOREOPT_PASS_IF_EXISTS = 0x40;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMF_OMAP_GENERATED"]/*' />
     [NativeTypeName("#define SYMF_OMAP_GENERATED 0x00000001")]
     public const int SYMF_OMAP_GENERATED = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMF_OMAP_MODIFIED"]/*' />
     [NativeTypeName("#define SYMF_OMAP_MODIFIED 0x00000002")]
     public const int SYMF_OMAP_MODIFIED = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMF_REGISTER"]/*' />
     [NativeTypeName("#define SYMF_REGISTER 0x00000008")]
     public const int SYMF_REGISTER = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMF_REGREL"]/*' />
     [NativeTypeName("#define SYMF_REGREL 0x00000010")]
     public const int SYMF_REGREL = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMF_FRAMEREL"]/*' />
     [NativeTypeName("#define SYMF_FRAMEREL 0x00000020")]
     public const int SYMF_FRAMEREL = 0x00000020;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMF_PARAMETER"]/*' />
     [NativeTypeName("#define SYMF_PARAMETER 0x00000040")]
     public const int SYMF_PARAMETER = 0x00000040;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMF_LOCAL"]/*' />
     [NativeTypeName("#define SYMF_LOCAL 0x00000080")]
     public const int SYMF_LOCAL = 0x00000080;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMF_CONSTANT"]/*' />
     [NativeTypeName("#define SYMF_CONSTANT 0x00000100")]
     public const int SYMF_CONSTANT = 0x00000100;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMF_EXPORT"]/*' />
     [NativeTypeName("#define SYMF_EXPORT 0x00000200")]
     public const int SYMF_EXPORT = 0x00000200;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMF_FORWARDER"]/*' />
     [NativeTypeName("#define SYMF_FORWARDER 0x00000400")]
     public const int SYMF_FORWARDER = 0x00000400;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMF_FUNCTION"]/*' />
     [NativeTypeName("#define SYMF_FUNCTION 0x00000800")]
     public const int SYMF_FUNCTION = 0x00000800;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMF_VIRTUAL"]/*' />
     [NativeTypeName("#define SYMF_VIRTUAL 0x00001000")]
     public const int SYMF_VIRTUAL = 0x00001000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMF_THUNK"]/*' />
     [NativeTypeName("#define SYMF_THUNK 0x00002000")]
     public const int SYMF_THUNK = 0x00002000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMF_TLSREL"]/*' />
     [NativeTypeName("#define SYMF_TLSREL 0x00004000")]
     public const int SYMF_TLSREL = 0x00004000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_SYMBOL_INFO_VALUEPRESENT"]/*' />
     [NativeTypeName("#define IMAGEHLP_SYMBOL_INFO_VALUEPRESENT 1")]
     public const int IMAGEHLP_SYMBOL_INFO_VALUEPRESENT = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_SYMBOL_INFO_REGISTER"]/*' />
     [NativeTypeName("#define IMAGEHLP_SYMBOL_INFO_REGISTER SYMF_REGISTER")]
     public const int IMAGEHLP_SYMBOL_INFO_REGISTER = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_SYMBOL_INFO_REGRELATIVE"]/*' />
     [NativeTypeName("#define IMAGEHLP_SYMBOL_INFO_REGRELATIVE SYMF_REGREL")]
     public const int IMAGEHLP_SYMBOL_INFO_REGRELATIVE = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_SYMBOL_INFO_FRAMERELATIVE"]/*' />
     [NativeTypeName("#define IMAGEHLP_SYMBOL_INFO_FRAMERELATIVE SYMF_FRAMEREL")]
     public const int IMAGEHLP_SYMBOL_INFO_FRAMERELATIVE = 0x00000020;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_SYMBOL_INFO_PARAMETER"]/*' />
     [NativeTypeName("#define IMAGEHLP_SYMBOL_INFO_PARAMETER SYMF_PARAMETER")]
     public const int IMAGEHLP_SYMBOL_INFO_PARAMETER = 0x00000040;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_SYMBOL_INFO_LOCAL"]/*' />
     [NativeTypeName("#define IMAGEHLP_SYMBOL_INFO_LOCAL SYMF_LOCAL")]
     public const int IMAGEHLP_SYMBOL_INFO_LOCAL = 0x00000080;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_SYMBOL_INFO_CONSTANT"]/*' />
     [NativeTypeName("#define IMAGEHLP_SYMBOL_INFO_CONSTANT SYMF_CONSTANT")]
     public const int IMAGEHLP_SYMBOL_INFO_CONSTANT = 0x00000100;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_SYMBOL_FUNCTION"]/*' />
     [NativeTypeName("#define IMAGEHLP_SYMBOL_FUNCTION SYMF_FUNCTION")]
     public const int IMAGEHLP_SYMBOL_FUNCTION = 0x00000800;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_SYMBOL_VIRTUAL"]/*' />
     [NativeTypeName("#define IMAGEHLP_SYMBOL_VIRTUAL SYMF_VIRTUAL")]
     public const int IMAGEHLP_SYMBOL_VIRTUAL = 0x00001000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_SYMBOL_THUNK"]/*' />
     [NativeTypeName("#define IMAGEHLP_SYMBOL_THUNK SYMF_THUNK")]
     public const int IMAGEHLP_SYMBOL_THUNK = 0x00002000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_SYMBOL_INFO_TLSRELATIVE"]/*' />
     [NativeTypeName("#define IMAGEHLP_SYMBOL_INFO_TLSRELATIVE SYMF_TLSREL")]
     public const int IMAGEHLP_SYMBOL_INFO_TLSRELATIVE = 0x00004000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_RMAP_MAPPED_FLAT"]/*' />
     [NativeTypeName("#define IMAGEHLP_RMAP_MAPPED_FLAT 0x00000001")]
     public const int IMAGEHLP_RMAP_MAPPED_FLAT = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_RMAP_BIG_ENDIAN"]/*' />
     [NativeTypeName("#define IMAGEHLP_RMAP_BIG_ENDIAN 0x00000002")]
     public const int IMAGEHLP_RMAP_BIG_ENDIAN = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_RMAP_IGNORE_MISCOMPARE"]/*' />
     [NativeTypeName("#define IMAGEHLP_RMAP_IGNORE_MISCOMPARE 0x00000004")]
     public const int IMAGEHLP_RMAP_IGNORE_MISCOMPARE = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_RMAP_NOBASERELOCATIONS"]/*' />
     [NativeTypeName("#define IMAGEHLP_RMAP_NOBASERELOCATIONS 0x08000000")]
     public const int IMAGEHLP_RMAP_NOBASERELOCATIONS = 0x08000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_RMAP_FIXUP_ARM64X"]/*' />
     [NativeTypeName("#define IMAGEHLP_RMAP_FIXUP_ARM64X 0x10000000")]
     public const int IMAGEHLP_RMAP_FIXUP_ARM64X = 0x10000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_RMAP_LOAD_RW_DATA_SECTIONS"]/*' />
     [NativeTypeName("#define IMAGEHLP_RMAP_LOAD_RW_DATA_SECTIONS 0x20000000")]
     public const int IMAGEHLP_RMAP_LOAD_RW_DATA_SECTIONS = 0x20000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_RMAP_OMIT_SHARED_RW_DATA_SECTIONS"]/*' />
     [NativeTypeName("#define IMAGEHLP_RMAP_OMIT_SHARED_RW_DATA_SECTIONS 0x40000000")]
     public const int IMAGEHLP_RMAP_OMIT_SHARED_RW_DATA_SECTIONS = 0x40000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMAGEHLP_RMAP_FIXUP_IMAGEBASE"]/*' />
     [NativeTypeName("#define IMAGEHLP_RMAP_FIXUP_IMAGEBASE 0x80000000")]
     public const uint IMAGEHLP_RMAP_FIXUP_IMAGEBASE = 0x80000000;
 }

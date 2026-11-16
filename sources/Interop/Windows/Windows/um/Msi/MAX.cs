@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_GUID_CHARS"]/*' />
     [NativeTypeName("#define MAX_GUID_CHARS 38")]
     public const int MAX_GUID_CHARS = 38;
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_FEATURE_CHARS"]/*' />
     [NativeTypeName("#define MAX_FEATURE_CHARS 38")]
     public const int MAX_FEATURE_CHARS = 38;
 }

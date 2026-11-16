@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IUserDataAccountProviderResolveErrorsOperation : IUserDataAccountProviderResolveErrorsOperation.Interface, INativeGuid
 {
+    /// <include file='IUserDataAccountProviderResolveErrorsOperation.xml' path='doc/member[@name="IUserDataAccountProviderResolveErrorsOperation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUserDataAccountProviderResolveErrorsOperation);
 
     public void** lpVtbl;

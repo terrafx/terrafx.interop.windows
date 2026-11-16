@@ -31,4 +31,7 @@ public enum PackageOrigin
 
     /// <include file='PackageOrigin.xml' path='doc/member[@name="PackageOrigin.PackageOrigin_LineOfBusiness"]/*' />
     PackageOrigin_LineOfBusiness = 6,
+
+    /// <include file='PackageOrigin.xml' path='doc/member[@name="PackageOrigin.PackageOrigin_SignedSBOM"]/*' />
+    PackageOrigin_SignedSBOM = 7,
 }

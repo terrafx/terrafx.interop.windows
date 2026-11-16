@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IXmlEntityReference : IXmlEntityReference.Interface, INativeGuid
 {
+    /// <include file='IXmlEntityReference.xml' path='doc/member[@name="IXmlEntityReference.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IXmlEntityReference);
 
     public void** lpVtbl;

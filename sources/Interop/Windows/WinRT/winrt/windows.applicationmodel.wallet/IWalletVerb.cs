@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("IWalletVerb is deprecated and might not work on all platforms. For more info, see MSDN.")]
 public unsafe partial struct IWalletVerb : IWalletVerb.Interface, INativeGuid
 {
+    /// <include file='IWalletVerb.xml' path='doc/member[@name="IWalletVerb.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWalletVerb);
 
     public void** lpVtbl;

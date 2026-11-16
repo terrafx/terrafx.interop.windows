@@ -20,6 +20,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IVirtualSurfaceImageSourceNative : IVirtualSurfaceImageSourceNative.Interface, INativeGuid
 {
+    /// <include file='IVirtualSurfaceImageSourceNative.xml' path='doc/member[@name="IVirtualSurfaceImageSourceNative.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IVirtualSurfaceImageSourceNative);
 
     public void** lpVtbl;

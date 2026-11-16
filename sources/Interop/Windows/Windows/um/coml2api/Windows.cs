@@ -94,12 +94,15 @@ public static unsafe partial class Windows
     [DllImport("ole32", ExactSpelling = true)]
     public static extern HRESULT GetConvertStg([NativeTypeName("LPSTORAGE")] IStorage* pStg);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CWCSTORAGENAME"]/*' />
     [NativeTypeName("#define CWCSTORAGENAME 32")]
     public const int CWCSTORAGENAME = 32;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STGOPTIONS_VERSION"]/*' />
     [NativeTypeName("#define STGOPTIONS_VERSION 2")]
     public const int STGOPTIONS_VERSION = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CCH_MAX_PROPSTG_NAME"]/*' />
     [NativeTypeName("#define CCH_MAX_PROPSTG_NAME 31")]
     public const int CCH_MAX_PROPSTG_NAME = 31;
 }

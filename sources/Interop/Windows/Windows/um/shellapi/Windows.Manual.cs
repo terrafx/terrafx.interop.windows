@@ -9,6 +9,9 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static int EIRESID(int x) => unchecked(-x);
+
     [NativeTypeName("#define NOTIFYICONDATAA_V1_SIZE FIELD_OFFSET(NOTIFYICONDATAA, szTip[64])")]
     public static uint NOTIFYICONDATAA_V1_SIZE
     {
@@ -16,7 +19,7 @@ public static unsafe partial class Windows
         get
         {
             Unsafe.SkipInit(out NOTIFYICONDATAA tmp);
-            return (uint)(&tmp.szTip) - (uint)(&tmp);
+            return unchecked((uint)(&tmp.szTip) - (uint)(&tmp) + 64u);
         }
     }
 
@@ -26,7 +29,7 @@ public static unsafe partial class Windows
         get
         {
             Unsafe.SkipInit(out NOTIFYICONDATAW tmp);
-            return (uint)(&tmp.szTip) - (uint)(&tmp);
+            return unchecked((uint)(&tmp.szTip) - (uint)(&tmp) + (64u * (uint)sizeof(char)));
         }
     }
 
@@ -39,7 +42,7 @@ public static unsafe partial class Windows
         get
         {
             Unsafe.SkipInit(out NOTIFYICONDATAA tmp);
-            return (uint)(&tmp.guidItem) - (uint)(&tmp);
+            return unchecked((uint)(&tmp.guidItem) - (uint)(&tmp));
         }
     }
 
@@ -49,7 +52,7 @@ public static unsafe partial class Windows
         get
         {
             Unsafe.SkipInit(out NOTIFYICONDATAW tmp);
-            return (uint)(&tmp.guidItem) - (uint)(&tmp);
+            return unchecked((uint)(&tmp.guidItem) - (uint)(&tmp));
         }
     }
 
@@ -62,7 +65,7 @@ public static unsafe partial class Windows
         get
         {
             Unsafe.SkipInit(out NOTIFYICONDATAA tmp);
-            return (uint)(&tmp.hBalloonIcon) - (uint)(&tmp);
+            return unchecked((uint)(&tmp.hBalloonIcon) - (uint)(&tmp));
         }
     }
 
@@ -72,7 +75,7 @@ public static unsafe partial class Windows
         get
         {
             Unsafe.SkipInit(out NOTIFYICONDATAW tmp);
-            return (uint)(&tmp.hBalloonIcon) - (uint)(&tmp);
+            return unchecked((uint)(&tmp.hBalloonIcon) - (uint)(&tmp));
         }
     }
 

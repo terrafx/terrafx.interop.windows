@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IDirectManipulationDeferContactService : IDirectManipulationDeferContactService.Interface, INativeGuid
 {
+    /// <include file='IDirectManipulationDeferContactService.xml' path='doc/member[@name="IDirectManipulationDeferContactService.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDirectManipulationDeferContactService);
 
     public void** lpVtbl;

@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_JOYSTICKOEMVXDNAME"]/*' />
     [NativeTypeName("#define MAX_JOYSTICKOEMVXDNAME 260")]
     public const int MAX_JOYSTICKOEMVXDNAME = 260;
 }

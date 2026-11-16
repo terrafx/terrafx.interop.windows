@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("64AB4BB7-111E-11D1-8F79-00C04FC2FBE1")]
 public unsafe partial struct ShellUIHelper : INativeGuid
 {
+    /// <include file='ShellUIHelper.xml' path='doc/member[@name="ShellUIHelper.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_ShellUIHelper);
 }

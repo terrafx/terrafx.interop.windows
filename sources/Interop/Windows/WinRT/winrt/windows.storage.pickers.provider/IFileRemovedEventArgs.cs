@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("Since Windows 10, only apps can remove files, not end users so the FileRemoved event will not be raised.")]
 public unsafe partial struct IFileRemovedEventArgs : IFileRemovedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IFileRemovedEventArgs.xml' path='doc/member[@name="IFileRemovedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFileRemovedEventArgs);
 
     public void** lpVtbl;

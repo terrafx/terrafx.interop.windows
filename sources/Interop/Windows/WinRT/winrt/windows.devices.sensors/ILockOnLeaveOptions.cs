@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ILockOnLeaveOptions : ILockOnLeaveOptions.Interface, INativeGuid
 {
+    /// <include file='ILockOnLeaveOptions.xml' path='doc/member[@name="ILockOnLeaveOptions.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ILockOnLeaveOptions);
 
     public void** lpVtbl;

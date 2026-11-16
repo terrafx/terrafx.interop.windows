@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class PEER
 {
+    /// <include file='PEER.xml' path='doc/member[@name="PEER.PEER_TO_PEER_NODETYPE"]/*' />
     [NativeTypeName("#define PEER_TO_PEER_NODETYPE 2")]
     public const int PEER_TO_PEER_NODETYPE = 2;
 }

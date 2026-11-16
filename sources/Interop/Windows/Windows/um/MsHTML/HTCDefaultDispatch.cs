@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("3050F4FC-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct HTCDefaultDispatch : INativeGuid
 {
+    /// <include file='HTCDefaultDispatch.xml' path='doc/member[@name="HTCDefaultDispatch.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_HTCDefaultDispatch);
 }

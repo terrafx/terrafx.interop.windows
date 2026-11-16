@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CLSID
 {
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_InkD2DRenderer"]/*' />
     [NativeTypeName("const CLSID")]
     public static ref readonly Guid CLSID_InkD2DRenderer
     {

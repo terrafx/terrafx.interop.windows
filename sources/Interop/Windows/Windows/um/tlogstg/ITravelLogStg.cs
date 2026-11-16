@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface, INativeGuid
 {
+    /// <include file='ITravelLogStg.xml' path='doc/member[@name="ITravelLogStg.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITravelLogStg);
 
     public void** lpVtbl;

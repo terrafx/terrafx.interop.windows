@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ITransferTargetWatcher : ITransferTargetWatcher.Interface, INativeGuid
 {
+    /// <include file='ITransferTargetWatcher.xml' path='doc/member[@name="ITransferTargetWatcher.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITransferTargetWatcher);
 
     public void** lpVtbl;

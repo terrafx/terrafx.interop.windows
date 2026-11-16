@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("96749373-3391-11D2-9EE3-00C04F797396")]
 public unsafe partial struct SpResourceManager : INativeGuid
 {
+    /// <include file='SpResourceManager.xml' path='doc/member[@name="SpResourceManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SpResourceManager);
 }

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAppCaptureAlternateShortcutKeys : IAppCaptureAlternateShortcutKeys.Interface, INativeGuid
 {
+    /// <include file='IAppCaptureAlternateShortcutKeys.xml' path='doc/member[@name="IAppCaptureAlternateShortcutKeys.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppCaptureAlternateShortcutKeys);
 
     public void** lpVtbl;

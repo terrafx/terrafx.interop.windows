@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IBadgeNotification : IBadgeNotification.Interface, INativeGuid
 {
+    /// <include file='IBadgeNotification.xml' path='doc/member[@name="IBadgeNotification.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBadgeNotification);
 
     public void** lpVtbl;

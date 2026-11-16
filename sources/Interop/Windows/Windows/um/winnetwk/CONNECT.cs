@@ -7,60 +7,79 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CONNECT
 {
+    /// <include file='CONNECT.xml' path='doc/member[@name="CONNECT.CONNECT_UPDATE_PROFILE"]/*' />
     [NativeTypeName("#define CONNECT_UPDATE_PROFILE 0x00000001")]
     public const int CONNECT_UPDATE_PROFILE = 0x00000001;
 
+    /// <include file='CONNECT.xml' path='doc/member[@name="CONNECT.CONNECT_UPDATE_RECENT"]/*' />
     [NativeTypeName("#define CONNECT_UPDATE_RECENT 0x00000002")]
     public const int CONNECT_UPDATE_RECENT = 0x00000002;
 
+    /// <include file='CONNECT.xml' path='doc/member[@name="CONNECT.CONNECT_TEMPORARY"]/*' />
     [NativeTypeName("#define CONNECT_TEMPORARY 0x00000004")]
     public const int CONNECT_TEMPORARY = 0x00000004;
 
+    /// <include file='CONNECT.xml' path='doc/member[@name="CONNECT.CONNECT_INTERACTIVE"]/*' />
     [NativeTypeName("#define CONNECT_INTERACTIVE 0x00000008")]
     public const int CONNECT_INTERACTIVE = 0x00000008;
 
+    /// <include file='CONNECT.xml' path='doc/member[@name="CONNECT.CONNECT_PROMPT"]/*' />
     [NativeTypeName("#define CONNECT_PROMPT 0x00000010")]
     public const int CONNECT_PROMPT = 0x00000010;
 
+    /// <include file='CONNECT.xml' path='doc/member[@name="CONNECT.CONNECT_NEED_DRIVE"]/*' />
     [NativeTypeName("#define CONNECT_NEED_DRIVE 0x00000020")]
     public const int CONNECT_NEED_DRIVE = 0x00000020;
 
+    /// <include file='CONNECT.xml' path='doc/member[@name="CONNECT.CONNECT_REFCOUNT"]/*' />
     [NativeTypeName("#define CONNECT_REFCOUNT 0x00000040")]
     public const int CONNECT_REFCOUNT = 0x00000040;
 
+    /// <include file='CONNECT.xml' path='doc/member[@name="CONNECT.CONNECT_REDIRECT"]/*' />
     [NativeTypeName("#define CONNECT_REDIRECT 0x00000080")]
     public const int CONNECT_REDIRECT = 0x00000080;
 
+    /// <include file='CONNECT.xml' path='doc/member[@name="CONNECT.CONNECT_LOCALDRIVE"]/*' />
     [NativeTypeName("#define CONNECT_LOCALDRIVE 0x00000100")]
     public const int CONNECT_LOCALDRIVE = 0x00000100;
 
+    /// <include file='CONNECT.xml' path='doc/member[@name="CONNECT.CONNECT_CURRENT_MEDIA"]/*' />
     [NativeTypeName("#define CONNECT_CURRENT_MEDIA 0x00000200")]
     public const int CONNECT_CURRENT_MEDIA = 0x00000200;
 
+    /// <include file='CONNECT.xml' path='doc/member[@name="CONNECT.CONNECT_DEFERRED"]/*' />
     [NativeTypeName("#define CONNECT_DEFERRED 0x00000400")]
     public const int CONNECT_DEFERRED = 0x00000400;
 
+    /// <include file='CONNECT.xml' path='doc/member[@name="CONNECT.CONNECT_RESERVED"]/*' />
     [NativeTypeName("#define CONNECT_RESERVED 0xFF000000")]
     public const uint CONNECT_RESERVED = 0xFF000000;
 
+    /// <include file='CONNECT.xml' path='doc/member[@name="CONNECT.CONNECT_COMMANDLINE"]/*' />
     [NativeTypeName("#define CONNECT_COMMANDLINE 0x00000800")]
     public const int CONNECT_COMMANDLINE = 0x00000800;
 
+    /// <include file='CONNECT.xml' path='doc/member[@name="CONNECT.CONNECT_CMD_SAVECRED"]/*' />
     [NativeTypeName("#define CONNECT_CMD_SAVECRED 0x00001000")]
     public const int CONNECT_CMD_SAVECRED = 0x00001000;
 
+    /// <include file='CONNECT.xml' path='doc/member[@name="CONNECT.CONNECT_CRED_RESET"]/*' />
     [NativeTypeName("#define CONNECT_CRED_RESET 0x00002000")]
     public const int CONNECT_CRED_RESET = 0x00002000;
 
+    /// <include file='CONNECT.xml' path='doc/member[@name="CONNECT.CONNECT_REQUIRE_INTEGRITY"]/*' />
     [NativeTypeName("#define CONNECT_REQUIRE_INTEGRITY 0x00004000")]
     public const int CONNECT_REQUIRE_INTEGRITY = 0x00004000;
 
+    /// <include file='CONNECT.xml' path='doc/member[@name="CONNECT.CONNECT_REQUIRE_PRIVACY"]/*' />
     [NativeTypeName("#define CONNECT_REQUIRE_PRIVACY 0x00008000")]
     public const int CONNECT_REQUIRE_PRIVACY = 0x00008000;
 
+    /// <include file='CONNECT.xml' path='doc/member[@name="CONNECT.CONNECT_WRITE_THROUGH_SEMANTICS"]/*' />
     [NativeTypeName("#define CONNECT_WRITE_THROUGH_SEMANTICS 0x00010000")]
     public const int CONNECT_WRITE_THROUGH_SEMANTICS = 0x00010000;
 
+    /// <include file='CONNECT.xml' path='doc/member[@name="CONNECT.CONNECT_GLOBAL_MAPPING"]/*' />
     [NativeTypeName("#define CONNECT_GLOBAL_MAPPING 0x00040000")]
     public const int CONNECT_GLOBAL_MAPPING = 0x00040000;
 }

@@ -7,30 +7,39 @@ namespace TerraFX.Interop.WinRT;
 
 public static partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_ApplicationModel_Search_Core_IRequestingFocusOnKeyboardInputEventArgs"]/*' />
     [NativeTypeName("const WCHAR[78]")]
     public const string InterfaceName_Windows_ApplicationModel_Search_Core_IRequestingFocusOnKeyboardInputEventArgs = "Windows.ApplicationModel.Search.Core.IRequestingFocusOnKeyboardInputEventArgs";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_ApplicationModel_Search_Core_ISearchSuggestion"]/*' />
     [NativeTypeName("const WCHAR[55]")]
     public const string InterfaceName_Windows_ApplicationModel_Search_Core_ISearchSuggestion = "Windows.ApplicationModel.Search.Core.ISearchSuggestion";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_ApplicationModel_Search_Core_ISearchSuggestionManager"]/*' />
     [NativeTypeName("const WCHAR[62]")]
     public const string InterfaceName_Windows_ApplicationModel_Search_Core_ISearchSuggestionManager = "Windows.ApplicationModel.Search.Core.ISearchSuggestionManager";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_ApplicationModel_Search_Core_ISearchSuggestionsRequestedEventArgs"]/*' />
     [NativeTypeName("const WCHAR[74]")]
     public const string InterfaceName_Windows_ApplicationModel_Search_Core_ISearchSuggestionsRequestedEventArgs = "Windows.ApplicationModel.Search.Core.ISearchSuggestionsRequestedEventArgs";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_ApplicationModel_Search_Core_RequestingFocusOnKeyboardInputEventArgs"]/*' />
     [NativeTypeName("const WCHAR[77]")]
     public const string RuntimeClass_Windows_ApplicationModel_Search_Core_RequestingFocusOnKeyboardInputEventArgs = "Windows.ApplicationModel.Search.Core.RequestingFocusOnKeyboardInputEventArgs";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_ApplicationModel_Search_Core_SearchSuggestion"]/*' />
     [NativeTypeName("const WCHAR[54]")]
     public const string RuntimeClass_Windows_ApplicationModel_Search_Core_SearchSuggestion = "Windows.ApplicationModel.Search.Core.SearchSuggestion";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_ApplicationModel_Search_Core_SearchSuggestionManager"]/*' />
     [NativeTypeName("const WCHAR[61]")]
     public const string RuntimeClass_Windows_ApplicationModel_Search_Core_SearchSuggestionManager = "Windows.ApplicationModel.Search.Core.SearchSuggestionManager";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_ApplicationModel_Search_Core_SearchSuggestionsRequestedEventArgs"]/*' />
     [NativeTypeName("const WCHAR[73]")]
     public const string RuntimeClass_Windows_ApplicationModel_Search_Core_SearchSuggestionsRequestedEventArgs = "Windows.ApplicationModel.Search.Core.SearchSuggestionsRequestedEventArgs";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.WINDOWS_APPLICATIONMODEL_SEARCH_CORE_SEARCHCORECONTRACT_VERSION"]/*' />
     [NativeTypeName("#define WINDOWS_APPLICATIONMODEL_SEARCH_CORE_SEARCHCORECONTRACT_VERSION 0x10000")]
     public const int WINDOWS_APPLICATIONMODEL_SEARCH_CORE_SEARCHCORECONTRACT_VERSION = 0x10000;
 }

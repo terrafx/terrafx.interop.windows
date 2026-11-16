@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFByteStreamTimeSeek : IMFByteStreamTimeSeek.Interface, INativeGuid
 {
+    /// <include file='IMFByteStreamTimeSeek.xml' path='doc/member[@name="IMFByteStreamTimeSeek.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFByteStreamTimeSeek);
 
     public void** lpVtbl;

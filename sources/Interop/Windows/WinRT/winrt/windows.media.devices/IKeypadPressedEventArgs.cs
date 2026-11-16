@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IKeypadPressedEventArgs : IKeypadPressedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IKeypadPressedEventArgs.xml' path='doc/member[@name="IKeypadPressedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IKeypadPressedEventArgs);
 
     public void** lpVtbl;

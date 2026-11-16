@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IBluetoothLEPreferredConnectionParameters : IBluetoothLEPreferredConnectionParameters.Interface, INativeGuid
 {
+    /// <include file='IBluetoothLEPreferredConnectionParameters.xml' path='doc/member[@name="IBluetoothLEPreferredConnectionParameters.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBluetoothLEPreferredConnectionParameters);
 
     public void** lpVtbl;

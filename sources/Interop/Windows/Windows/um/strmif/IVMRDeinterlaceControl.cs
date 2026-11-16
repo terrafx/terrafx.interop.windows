@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IVMRDeinterlaceControl : IVMRDeinterlaceControl.Interface, INativeGuid
 {
+    /// <include file='IVMRDeinterlaceControl.xml' path='doc/member[@name="IVMRDeinterlaceControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IVMRDeinterlaceControl);
 
     public void** lpVtbl;

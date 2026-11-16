@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IExposurePriorityVideoControl : IExposurePriorityVideoControl.Interface, INativeGuid
 {
+    /// <include file='IExposurePriorityVideoControl.xml' path='doc/member[@name="IExposurePriorityVideoControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IExposurePriorityVideoControl);
 
     public void** lpVtbl;

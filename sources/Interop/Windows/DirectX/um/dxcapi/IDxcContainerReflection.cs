@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDxcContainerReflection : IDxcContainerReflection.Interface, INativeGuid
 {
+    /// <include file='IDxcContainerReflection.xml' path='doc/member[@name="IDxcContainerReflection.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDxcContainerReflection);
 
     public void** lpVtbl;

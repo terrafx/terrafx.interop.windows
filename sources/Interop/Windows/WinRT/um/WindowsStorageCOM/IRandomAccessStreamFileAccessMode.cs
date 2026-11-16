@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IRandomAccessStreamFileAccessMode : IRandomAccessStreamFileAccessMode.Interface, INativeGuid
 {
+    /// <include file='IRandomAccessStreamFileAccessMode.xml' path='doc/member[@name="IRandomAccessStreamFileAccessMode.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRandomAccessStreamFileAccessMode);
 
     public void** lpVtbl;

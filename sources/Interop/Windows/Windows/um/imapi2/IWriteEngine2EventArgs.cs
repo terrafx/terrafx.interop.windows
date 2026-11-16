@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IWriteEngine2EventArgs : IWriteEngine2EventArgs.Interface, INativeGuid
 {
+    /// <include file='IWriteEngine2EventArgs.xml' path='doc/member[@name="IWriteEngine2EventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWriteEngine2EventArgs);
 
     public void** lpVtbl;

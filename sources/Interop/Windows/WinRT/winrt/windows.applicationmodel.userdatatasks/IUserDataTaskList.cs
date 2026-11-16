@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IUserDataTaskList : IUserDataTaskList.Interface, INativeGuid
 {
+    /// <include file='IUserDataTaskList.xml' path='doc/member[@name="IUserDataTaskList.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUserDataTaskList);
 
     public void** lpVtbl;

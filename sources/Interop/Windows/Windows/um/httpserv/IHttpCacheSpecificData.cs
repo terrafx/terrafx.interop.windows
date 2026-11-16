@@ -14,6 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("37776AFF-852E-4EEC-93A5-B85A285A95B8")]
 public unsafe partial struct IHttpCacheSpecificData : IHttpCacheSpecificData.Interface, INativeGuid
 {
+    /// <include file='IHttpCacheSpecificData.xml' path='doc/member[@name="IHttpCacheSpecificData.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpCacheSpecificData);
 
     public void** lpVtbl;

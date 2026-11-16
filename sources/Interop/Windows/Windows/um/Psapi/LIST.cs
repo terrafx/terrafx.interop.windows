@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class LIST
 {
+    /// <include file='LIST.xml' path='doc/member[@name="LIST.LIST_MODULES_DEFAULT"]/*' />
     [NativeTypeName("#define LIST_MODULES_DEFAULT 0x0")]
     public const int LIST_MODULES_DEFAULT = 0x0;
 
+    /// <include file='LIST.xml' path='doc/member[@name="LIST.LIST_MODULES_32BIT"]/*' />
     [NativeTypeName("#define LIST_MODULES_32BIT 0x01")]
     public const int LIST_MODULES_32BIT = 0x01;
 
+    /// <include file='LIST.xml' path='doc/member[@name="LIST.LIST_MODULES_64BIT"]/*' />
     [NativeTypeName("#define LIST_MODULES_64BIT 0x02")]
     public const int LIST_MODULES_64BIT = 0x02;
 
+    /// <include file='LIST.xml' path='doc/member[@name="LIST.LIST_MODULES_ALL"]/*' />
     [NativeTypeName("#define LIST_MODULES_ALL (LIST_MODULES_32BIT | LIST_MODULES_64BIT)")]
     public const int LIST_MODULES_ALL = (0x01 | 0x02);
 }

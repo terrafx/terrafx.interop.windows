@@ -7,165 +7,219 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class TXFS
 {
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_RM_FLAG_LOGGING_MODE"]/*' />
     [NativeTypeName("#define TXFS_RM_FLAG_LOGGING_MODE 0x00000001")]
     public const int TXFS_RM_FLAG_LOGGING_MODE = 0x00000001;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_RM_FLAG_RENAME_RM"]/*' />
     [NativeTypeName("#define TXFS_RM_FLAG_RENAME_RM 0x00000002")]
     public const int TXFS_RM_FLAG_RENAME_RM = 0x00000002;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MAX"]/*' />
     [NativeTypeName("#define TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MAX 0x00000004")]
     public const int TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MAX = 0x00000004;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MIN"]/*' />
     [NativeTypeName("#define TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MIN 0x00000008")]
     public const int TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MIN = 0x00000008;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS"]/*' />
     [NativeTypeName("#define TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS 0x00000010")]
     public const int TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS = 0x00000010;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT"]/*' />
     [NativeTypeName("#define TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT 0x00000020")]
     public const int TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT = 0x00000020;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE"]/*' />
     [NativeTypeName("#define TXFS_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE 0x00000040")]
     public const int TXFS_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE = 0x00000040;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX"]/*' />
     [NativeTypeName("#define TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX 0x00000080")]
     public const int TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX = 0x00000080;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN"]/*' />
     [NativeTypeName("#define TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN 0x00000100")]
     public const int TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN = 0x00000100;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_RM_FLAG_GROW_LOG"]/*' />
     [NativeTypeName("#define TXFS_RM_FLAG_GROW_LOG 0x00000400")]
     public const int TXFS_RM_FLAG_GROW_LOG = 0x00000400;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_RM_FLAG_SHRINK_LOG"]/*' />
     [NativeTypeName("#define TXFS_RM_FLAG_SHRINK_LOG 0x00000800")]
     public const int TXFS_RM_FLAG_SHRINK_LOG = 0x00000800;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_RM_FLAG_ENFORCE_MINIMUM_SIZE"]/*' />
     [NativeTypeName("#define TXFS_RM_FLAG_ENFORCE_MINIMUM_SIZE 0x00001000")]
     public const int TXFS_RM_FLAG_ENFORCE_MINIMUM_SIZE = 0x00001000;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_RM_FLAG_PRESERVE_CHANGES"]/*' />
     [NativeTypeName("#define TXFS_RM_FLAG_PRESERVE_CHANGES 0x00002000")]
     public const int TXFS_RM_FLAG_PRESERVE_CHANGES = 0x00002000;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_RM_FLAG_RESET_RM_AT_NEXT_START"]/*' />
     [NativeTypeName("#define TXFS_RM_FLAG_RESET_RM_AT_NEXT_START 0x00004000")]
     public const int TXFS_RM_FLAG_RESET_RM_AT_NEXT_START = 0x00004000;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_RM_FLAG_DO_NOT_RESET_RM_AT_NEXT_START"]/*' />
     [NativeTypeName("#define TXFS_RM_FLAG_DO_NOT_RESET_RM_AT_NEXT_START 0x00008000")]
     public const int TXFS_RM_FLAG_DO_NOT_RESET_RM_AT_NEXT_START = 0x00008000;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_RM_FLAG_PREFER_CONSISTENCY"]/*' />
     [NativeTypeName("#define TXFS_RM_FLAG_PREFER_CONSISTENCY 0x00010000")]
     public const int TXFS_RM_FLAG_PREFER_CONSISTENCY = 0x00010000;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_RM_FLAG_PREFER_AVAILABILITY"]/*' />
     [NativeTypeName("#define TXFS_RM_FLAG_PREFER_AVAILABILITY 0x00020000")]
     public const int TXFS_RM_FLAG_PREFER_AVAILABILITY = 0x00020000;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_LOGGING_MODE_SIMPLE"]/*' />
     [NativeTypeName("#define TXFS_LOGGING_MODE_SIMPLE (0x0001)")]
     public const int TXFS_LOGGING_MODE_SIMPLE = (0x0001);
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_LOGGING_MODE_FULL"]/*' />
     [NativeTypeName("#define TXFS_LOGGING_MODE_FULL (0x0002)")]
     public const int TXFS_LOGGING_MODE_FULL = (0x0002);
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_TRANSACTION_STATE_NONE"]/*' />
     [NativeTypeName("#define TXFS_TRANSACTION_STATE_NONE 0x00")]
     public const int TXFS_TRANSACTION_STATE_NONE = 0x00;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_TRANSACTION_STATE_ACTIVE"]/*' />
     [NativeTypeName("#define TXFS_TRANSACTION_STATE_ACTIVE 0x01")]
     public const int TXFS_TRANSACTION_STATE_ACTIVE = 0x01;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_TRANSACTION_STATE_PREPARED"]/*' />
     [NativeTypeName("#define TXFS_TRANSACTION_STATE_PREPARED 0x02")]
     public const int TXFS_TRANSACTION_STATE_PREPARED = 0x02;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_TRANSACTION_STATE_NOTACTIVE"]/*' />
     [NativeTypeName("#define TXFS_TRANSACTION_STATE_NOTACTIVE 0x03")]
     public const int TXFS_TRANSACTION_STATE_NOTACTIVE = 0x03;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_MODIFY_RM_VALID_FLAGS"]/*' />
     [NativeTypeName("#define TXFS_MODIFY_RM_VALID_FLAGS (TXFS_RM_FLAG_LOGGING_MODE                          |   \\\r\n                 TXFS_RM_FLAG_RENAME_RM                             |   \\\r\n                 TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MAX               |   \\\r\n                 TXFS_RM_FLAG_LOG_CONTAINER_COUNT_MIN               |   \\\r\n                 TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS   |   \\\r\n                 TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT          |   \\\r\n                 TXFS_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE            |   \\\r\n                 TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX            |   \\\r\n                 TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN            |   \\\r\n                 TXFS_RM_FLAG_SHRINK_LOG                            |   \\\r\n                 TXFS_RM_FLAG_GROW_LOG                              |   \\\r\n                 TXFS_RM_FLAG_ENFORCE_MINIMUM_SIZE                  |   \\\r\n                 TXFS_RM_FLAG_PRESERVE_CHANGES                      |   \\\r\n                 TXFS_RM_FLAG_RESET_RM_AT_NEXT_START                |   \\\r\n                 TXFS_RM_FLAG_DO_NOT_RESET_RM_AT_NEXT_START         |   \\\r\n                 TXFS_RM_FLAG_PREFER_CONSISTENCY                    |   \\\r\n                 TXFS_RM_FLAG_PREFER_AVAILABILITY)")]
     public const int TXFS_MODIFY_RM_VALID_FLAGS = (0x00000001 | 0x00000002 | 0x00000004 | 0x00000008 | 0x00000010 | 0x00000020 | 0x00000040 | 0x00000080 | 0x00000100 | 0x00000800 | 0x00000400 | 0x00001000 | 0x00002000 | 0x00004000 | 0x00008000 | 0x00010000 | 0x00020000);
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_RM_STATE_NOT_STARTED"]/*' />
     [NativeTypeName("#define TXFS_RM_STATE_NOT_STARTED 0")]
     public const int TXFS_RM_STATE_NOT_STARTED = 0;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_RM_STATE_STARTING"]/*' />
     [NativeTypeName("#define TXFS_RM_STATE_STARTING 1")]
     public const int TXFS_RM_STATE_STARTING = 1;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_RM_STATE_ACTIVE"]/*' />
     [NativeTypeName("#define TXFS_RM_STATE_ACTIVE 2")]
     public const int TXFS_RM_STATE_ACTIVE = 2;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_RM_STATE_SHUTTING_DOWN"]/*' />
     [NativeTypeName("#define TXFS_RM_STATE_SHUTTING_DOWN 3")]
     public const int TXFS_RM_STATE_SHUTTING_DOWN = 3;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_QUERY_RM_INFORMATION_VALID_FLAGS"]/*' />
     [NativeTypeName("#define TXFS_QUERY_RM_INFORMATION_VALID_FLAGS (TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS   |   \\\r\n                 TXFS_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT          |   \\\r\n                 TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX            |   \\\r\n                 TXFS_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN            |   \\\r\n                 TXFS_RM_FLAG_RESET_RM_AT_NEXT_START                |   \\\r\n                 TXFS_RM_FLAG_DO_NOT_RESET_RM_AT_NEXT_START         |   \\\r\n                 TXFS_RM_FLAG_PREFER_CONSISTENCY                    |   \\\r\n                 TXFS_RM_FLAG_PREFER_AVAILABILITY)")]
     public const int TXFS_QUERY_RM_INFORMATION_VALID_FLAGS = (0x00000010 | 0x00000020 | 0x00000080 | 0x00000100 | 0x00004000 | 0x00008000 | 0x00010000 | 0x00020000);
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_REDO_LSN"]/*' />
     [NativeTypeName("#define TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_REDO_LSN 0x01")]
     public const int TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_REDO_LSN = 0x01;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_VIRTUAL_CLOCK"]/*' />
     [NativeTypeName("#define TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_VIRTUAL_CLOCK 0x02")]
     public const int TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_VIRTUAL_CLOCK = 0x02;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_ROLLFORWARD_REDO_VALID_FLAGS"]/*' />
     [NativeTypeName("#define TXFS_ROLLFORWARD_REDO_VALID_FLAGS (TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_REDO_LSN |         \\\r\n                 TXFS_ROLLFORWARD_REDO_FLAG_USE_LAST_VIRTUAL_CLOCK)")]
     public const int TXFS_ROLLFORWARD_REDO_VALID_FLAGS = (0x01 | 0x02);
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MAX"]/*' />
     [NativeTypeName("#define TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MAX 0x00000001")]
     public const int TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MAX = 0x00000001;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MIN"]/*' />
     [NativeTypeName("#define TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MIN 0x00000002")]
     public const int TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MIN = 0x00000002;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_START_RM_FLAG_LOG_CONTAINER_SIZE"]/*' />
     [NativeTypeName("#define TXFS_START_RM_FLAG_LOG_CONTAINER_SIZE 0x00000004")]
     public const int TXFS_START_RM_FLAG_LOG_CONTAINER_SIZE = 0x00000004;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS"]/*' />
     [NativeTypeName("#define TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS 0x00000008")]
     public const int TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS = 0x00000008;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT"]/*' />
     [NativeTypeName("#define TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT 0x00000010")]
     public const int TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT = 0x00000010;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_START_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE"]/*' />
     [NativeTypeName("#define TXFS_START_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE 0x00000020")]
     public const int TXFS_START_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE = 0x00000020;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_START_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX"]/*' />
     [NativeTypeName("#define TXFS_START_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX 0x00000040")]
     public const int TXFS_START_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX = 0x00000040;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_START_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN"]/*' />
     [NativeTypeName("#define TXFS_START_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN 0x00000080")]
     public const int TXFS_START_RM_FLAG_LOG_NO_CONTAINER_COUNT_MIN = 0x00000080;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_START_RM_FLAG_RECOVER_BEST_EFFORT"]/*' />
     [NativeTypeName("#define TXFS_START_RM_FLAG_RECOVER_BEST_EFFORT 0x00000200")]
     public const int TXFS_START_RM_FLAG_RECOVER_BEST_EFFORT = 0x00000200;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_START_RM_FLAG_LOGGING_MODE"]/*' />
     [NativeTypeName("#define TXFS_START_RM_FLAG_LOGGING_MODE 0x00000400")]
     public const int TXFS_START_RM_FLAG_LOGGING_MODE = 0x00000400;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_START_RM_FLAG_PRESERVE_CHANGES"]/*' />
     [NativeTypeName("#define TXFS_START_RM_FLAG_PRESERVE_CHANGES 0x00000800")]
     public const int TXFS_START_RM_FLAG_PRESERVE_CHANGES = 0x00000800;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_START_RM_FLAG_PREFER_CONSISTENCY"]/*' />
     [NativeTypeName("#define TXFS_START_RM_FLAG_PREFER_CONSISTENCY 0x00001000")]
     public const int TXFS_START_RM_FLAG_PREFER_CONSISTENCY = 0x00001000;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_START_RM_FLAG_PREFER_AVAILABILITY"]/*' />
     [NativeTypeName("#define TXFS_START_RM_FLAG_PREFER_AVAILABILITY 0x00002000")]
     public const int TXFS_START_RM_FLAG_PREFER_AVAILABILITY = 0x00002000;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_START_RM_VALID_FLAGS"]/*' />
     [NativeTypeName("#define TXFS_START_RM_VALID_FLAGS (TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MAX             |   \\\r\n                 TXFS_START_RM_FLAG_LOG_CONTAINER_COUNT_MIN             |   \\\r\n                 TXFS_START_RM_FLAG_LOG_CONTAINER_SIZE                  |   \\\r\n                 TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_NUM_CONTAINERS |   \\\r\n                 TXFS_START_RM_FLAG_LOG_GROWTH_INCREMENT_PERCENT        |   \\\r\n                 TXFS_START_RM_FLAG_LOG_AUTO_SHRINK_PERCENTAGE          |   \\\r\n                 TXFS_START_RM_FLAG_RECOVER_BEST_EFFORT                 |   \\\r\n                 TXFS_START_RM_FLAG_LOG_NO_CONTAINER_COUNT_MAX          |   \\\r\n                 TXFS_START_RM_FLAG_LOGGING_MODE                        |   \\\r\n                 TXFS_START_RM_FLAG_PRESERVE_CHANGES                    |   \\\r\n                 TXFS_START_RM_FLAG_PREFER_CONSISTENCY                  |   \\\r\n                 TXFS_START_RM_FLAG_PREFER_AVAILABILITY)")]
     public const int TXFS_START_RM_VALID_FLAGS = (0x00000001 | 0x00000002 | 0x00000004 | 0x00000008 | 0x00000010 | 0x00000020 | 0x00000200 | 0x00000040 | 0x00000400 | 0x00000800 | 0x00001000 | 0x00002000);
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_LIST_TRANSACTION_LOCKED_FILES_ENTRY_FLAG_CREATED"]/*' />
     [NativeTypeName("#define TXFS_LIST_TRANSACTION_LOCKED_FILES_ENTRY_FLAG_CREATED 0x00000001")]
     public const int TXFS_LIST_TRANSACTION_LOCKED_FILES_ENTRY_FLAG_CREATED = 0x00000001;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_LIST_TRANSACTION_LOCKED_FILES_ENTRY_FLAG_DELETED"]/*' />
     [NativeTypeName("#define TXFS_LIST_TRANSACTION_LOCKED_FILES_ENTRY_FLAG_DELETED 0x00000002")]
     public const int TXFS_LIST_TRANSACTION_LOCKED_FILES_ENTRY_FLAG_DELETED = 0x00000002;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_TRANSACTED_VERSION_NONTRANSACTED"]/*' />
     [NativeTypeName("#define TXFS_TRANSACTED_VERSION_NONTRANSACTED 0xFFFFFFFE")]
     public const uint TXFS_TRANSACTED_VERSION_NONTRANSACTED = 0xFFFFFFFE;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_TRANSACTED_VERSION_UNCOMMITTED"]/*' />
     [NativeTypeName("#define TXFS_TRANSACTED_VERSION_UNCOMMITTED 0xFFFFFFFF")]
     public const uint TXFS_TRANSACTED_VERSION_UNCOMMITTED = 0xFFFFFFFF;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_SAVEPOINT_SET"]/*' />
     [NativeTypeName("#define TXFS_SAVEPOINT_SET 0x00000001")]
     public const int TXFS_SAVEPOINT_SET = 0x00000001;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_SAVEPOINT_ROLLBACK"]/*' />
     [NativeTypeName("#define TXFS_SAVEPOINT_ROLLBACK 0x00000002")]
     public const int TXFS_SAVEPOINT_ROLLBACK = 0x00000002;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_SAVEPOINT_CLEAR"]/*' />
     [NativeTypeName("#define TXFS_SAVEPOINT_CLEAR 0x00000004")]
     public const int TXFS_SAVEPOINT_CLEAR = 0x00000004;
 
+    /// <include file='TXFS.xml' path='doc/member[@name="TXFS.TXFS_SAVEPOINT_CLEAR_ALL"]/*' />
     [NativeTypeName("#define TXFS_SAVEPOINT_CLEAR_ALL 0x00000010")]
     public const int TXFS_SAVEPOINT_CLEAR_ALL = 0x00000010;
 }

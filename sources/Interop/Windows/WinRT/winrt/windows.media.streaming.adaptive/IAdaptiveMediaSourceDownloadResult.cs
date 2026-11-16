@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAdaptiveMediaSourceDownloadResult : IAdaptiveMediaSourceDownloadResult.Interface, INativeGuid
 {
+    /// <include file='IAdaptiveMediaSourceDownloadResult.xml' path='doc/member[@name="IAdaptiveMediaSourceDownloadResult.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAdaptiveMediaSourceDownloadResult);
 
     public void** lpVtbl;

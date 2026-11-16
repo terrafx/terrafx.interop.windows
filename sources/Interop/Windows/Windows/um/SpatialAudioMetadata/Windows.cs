@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPATIAL_AUDIO_STANDARD_COMMANDS_START"]/*' />
     [NativeTypeName("#define SPATIAL_AUDIO_STANDARD_COMMANDS_START 200")]
     public const int SPATIAL_AUDIO_STANDARD_COMMANDS_START = 200;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPATIAL_AUDIO_POSITION"]/*' />
     [NativeTypeName("#define SPATIAL_AUDIO_POSITION (SPATIAL_AUDIO_STANDARD_COMMANDS_START)")]
     public const int SPATIAL_AUDIO_POSITION = (200);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPATIAL_AUDIO_POSITION_BYTE_COUNT"]/*' />
     [NativeTypeName("#define SPATIAL_AUDIO_POSITION_BYTE_COUNT (sizeof(float) * 3)")]
     public const uint SPATIAL_AUDIO_POSITION_BYTE_COUNT = (4 * 3);
 }

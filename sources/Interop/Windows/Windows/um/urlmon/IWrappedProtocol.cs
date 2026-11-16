@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IWrappedProtocol : IWrappedProtocol.Interface, INativeGuid
 {
+    /// <include file='IWrappedProtocol.xml' path='doc/member[@name="IWrappedProtocol.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWrappedProtocol);
 
     public void** lpVtbl;

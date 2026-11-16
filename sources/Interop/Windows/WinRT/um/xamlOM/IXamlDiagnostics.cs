@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IXamlDiagnostics : IXamlDiagnostics.Interface, INativeGuid
 {
+    /// <include file='IXamlDiagnostics.xml' path='doc/member[@name="IXamlDiagnostics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IXamlDiagnostics);
 
     public void** lpVtbl;

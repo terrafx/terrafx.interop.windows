@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IHttpLanguageRangeWithQualityHeaderValue : IHttpLanguageRangeWithQualityHeaderValue.Interface, INativeGuid
 {
+    /// <include file='IHttpLanguageRangeWithQualityHeaderValue.xml' path='doc/member[@name="IHttpLanguageRangeWithQualityHeaderValue.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpLanguageRangeWithQualityHeaderValue);
 
     public void** lpVtbl;

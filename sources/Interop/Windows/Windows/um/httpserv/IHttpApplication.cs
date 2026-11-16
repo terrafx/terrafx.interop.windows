@@ -14,6 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("3F75D9E6-1075-422C-AD89-93A85F2D7BDC")]
 public unsafe partial struct IHttpApplication : IHttpApplication.Interface, INativeGuid
 {
+    /// <include file='IHttpApplication.xml' path='doc/member[@name="IHttpApplication.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpApplication);
 
     public void** lpVtbl;

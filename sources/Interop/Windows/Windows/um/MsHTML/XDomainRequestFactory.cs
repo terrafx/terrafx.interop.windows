@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("30510457-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct XDomainRequestFactory : INativeGuid
 {
+    /// <include file='XDomainRequestFactory.xml' path='doc/member[@name="XDomainRequestFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_XDomainRequestFactory);
 }

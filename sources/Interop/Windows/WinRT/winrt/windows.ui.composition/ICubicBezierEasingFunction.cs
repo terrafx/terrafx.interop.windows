@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICubicBezierEasingFunction : ICubicBezierEasingFunction.Interface, INativeGuid
 {
+    /// <include file='ICubicBezierEasingFunction.xml' path='doc/member[@name="ICubicBezierEasingFunction.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICubicBezierEasingFunction);
 
     public void** lpVtbl;

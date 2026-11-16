@@ -7,42 +7,55 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class BCM
 {
+    /// <include file='BCM.xml' path='doc/member[@name="BCM.BCM_FIRST"]/*' />
     [NativeTypeName("#define BCM_FIRST 0x1600")]
     public const int BCM_FIRST = 0x1600;
 
+    /// <include file='BCM.xml' path='doc/member[@name="BCM.BCM_GETIDEALSIZE"]/*' />
     [NativeTypeName("#define BCM_GETIDEALSIZE (BCM_FIRST + 0x0001)")]
     public const int BCM_GETIDEALSIZE = (0x1600 + 0x0001);
 
+    /// <include file='BCM.xml' path='doc/member[@name="BCM.BCM_SETIMAGELIST"]/*' />
     [NativeTypeName("#define BCM_SETIMAGELIST (BCM_FIRST + 0x0002)")]
     public const int BCM_SETIMAGELIST = (0x1600 + 0x0002);
 
+    /// <include file='BCM.xml' path='doc/member[@name="BCM.BCM_GETIMAGELIST"]/*' />
     [NativeTypeName("#define BCM_GETIMAGELIST (BCM_FIRST + 0x0003)")]
     public const int BCM_GETIMAGELIST = (0x1600 + 0x0003);
 
+    /// <include file='BCM.xml' path='doc/member[@name="BCM.BCM_SETTEXTMARGIN"]/*' />
     [NativeTypeName("#define BCM_SETTEXTMARGIN (BCM_FIRST + 0x0004)")]
     public const int BCM_SETTEXTMARGIN = (0x1600 + 0x0004);
 
+    /// <include file='BCM.xml' path='doc/member[@name="BCM.BCM_GETTEXTMARGIN"]/*' />
     [NativeTypeName("#define BCM_GETTEXTMARGIN (BCM_FIRST + 0x0005)")]
     public const int BCM_GETTEXTMARGIN = (0x1600 + 0x0005);
 
+    /// <include file='BCM.xml' path='doc/member[@name="BCM.BCM_SETDROPDOWNSTATE"]/*' />
     [NativeTypeName("#define BCM_SETDROPDOWNSTATE (BCM_FIRST + 0x0006)")]
     public const int BCM_SETDROPDOWNSTATE = (0x1600 + 0x0006);
 
+    /// <include file='BCM.xml' path='doc/member[@name="BCM.BCM_SETSPLITINFO"]/*' />
     [NativeTypeName("#define BCM_SETSPLITINFO (BCM_FIRST + 0x0007)")]
     public const int BCM_SETSPLITINFO = (0x1600 + 0x0007);
 
+    /// <include file='BCM.xml' path='doc/member[@name="BCM.BCM_GETSPLITINFO"]/*' />
     [NativeTypeName("#define BCM_GETSPLITINFO (BCM_FIRST + 0x0008)")]
     public const int BCM_GETSPLITINFO = (0x1600 + 0x0008);
 
+    /// <include file='BCM.xml' path='doc/member[@name="BCM.BCM_SETNOTE"]/*' />
     [NativeTypeName("#define BCM_SETNOTE (BCM_FIRST + 0x0009)")]
     public const int BCM_SETNOTE = (0x1600 + 0x0009);
 
+    /// <include file='BCM.xml' path='doc/member[@name="BCM.BCM_GETNOTE"]/*' />
     [NativeTypeName("#define BCM_GETNOTE (BCM_FIRST + 0x000A)")]
     public const int BCM_GETNOTE = (0x1600 + 0x000A);
 
+    /// <include file='BCM.xml' path='doc/member[@name="BCM.BCM_GETNOTELENGTH"]/*' />
     [NativeTypeName("#define BCM_GETNOTELENGTH (BCM_FIRST + 0x000B)")]
     public const int BCM_GETNOTELENGTH = (0x1600 + 0x000B);
 
+    /// <include file='BCM.xml' path='doc/member[@name="BCM.BCM_SETSHIELD"]/*' />
     [NativeTypeName("#define BCM_SETSHIELD (BCM_FIRST + 0x000C)")]
     public const int BCM_SETSHIELD = (0x1600 + 0x000C);
 }

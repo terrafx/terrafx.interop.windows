@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("87F441D8-0997-4BEB-A08E-8573D409CF75")]
 public unsafe partial struct CODECAPI_AVEncMPVQuantMatrixNonIntra : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncMPVQuantMatrixNonIntra.xml' path='doc/member[@name="CODECAPI_AVEncMPVQuantMatrixNonIntra.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncMPVQuantMatrixNonIntra);
 }

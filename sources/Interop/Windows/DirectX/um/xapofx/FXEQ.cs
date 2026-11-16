@@ -13,47 +13,62 @@ namespace TerraFX.Interop.DirectX;
 [Guid("F5E01117-D6C4-485A-A3F5-695196F3DBFA")]
 public unsafe partial struct FXEQ : INativeGuid
 {
+    /// <include file='FXEQ.xml' path='doc/member[@name="FXEQ.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_FXEQ);
 
+    /// <include file='FXEQ.xml' path='doc/member[@name="FXEQ.FXEQ_MIN_FRAMERATE"]/*' />
     [NativeTypeName("#define FXEQ_MIN_FRAMERATE 22000")]
     public const int FXEQ_MIN_FRAMERATE = 22000;
 
+    /// <include file='FXEQ.xml' path='doc/member[@name="FXEQ.FXEQ_MAX_FRAMERATE"]/*' />
     [NativeTypeName("#define FXEQ_MAX_FRAMERATE 48000")]
     public const int FXEQ_MAX_FRAMERATE = 48000;
 
+    /// <include file='FXEQ.xml' path='doc/member[@name="FXEQ.FXEQ_MIN_FREQUENCY_CENTER"]/*' />
     [NativeTypeName("#define FXEQ_MIN_FREQUENCY_CENTER 20.0f")]
     public const float FXEQ_MIN_FREQUENCY_CENTER = 20.0f;
 
+    /// <include file='FXEQ.xml' path='doc/member[@name="FXEQ.FXEQ_MAX_FREQUENCY_CENTER"]/*' />
     [NativeTypeName("#define FXEQ_MAX_FREQUENCY_CENTER 20000.0f")]
     public const float FXEQ_MAX_FREQUENCY_CENTER = 20000.0f;
 
+    /// <include file='FXEQ.xml' path='doc/member[@name="FXEQ.FXEQ_DEFAULT_FREQUENCY_CENTER_0"]/*' />
     [NativeTypeName("#define FXEQ_DEFAULT_FREQUENCY_CENTER_0 100.0f")]
     public const float FXEQ_DEFAULT_FREQUENCY_CENTER_0 = 100.0f;
 
+    /// <include file='FXEQ.xml' path='doc/member[@name="FXEQ.FXEQ_DEFAULT_FREQUENCY_CENTER_1"]/*' />
     [NativeTypeName("#define FXEQ_DEFAULT_FREQUENCY_CENTER_1 800.0f")]
     public const float FXEQ_DEFAULT_FREQUENCY_CENTER_1 = 800.0f;
 
+    /// <include file='FXEQ.xml' path='doc/member[@name="FXEQ.FXEQ_DEFAULT_FREQUENCY_CENTER_2"]/*' />
     [NativeTypeName("#define FXEQ_DEFAULT_FREQUENCY_CENTER_2 2000.0f")]
     public const float FXEQ_DEFAULT_FREQUENCY_CENTER_2 = 2000.0f;
 
+    /// <include file='FXEQ.xml' path='doc/member[@name="FXEQ.FXEQ_DEFAULT_FREQUENCY_CENTER_3"]/*' />
     [NativeTypeName("#define FXEQ_DEFAULT_FREQUENCY_CENTER_3 10000.0f")]
     public const float FXEQ_DEFAULT_FREQUENCY_CENTER_3 = 10000.0f;
 
+    /// <include file='FXEQ.xml' path='doc/member[@name="FXEQ.FXEQ_MIN_GAIN"]/*' />
     [NativeTypeName("#define FXEQ_MIN_GAIN 0.126f")]
     public const float FXEQ_MIN_GAIN = 0.126f;
 
+    /// <include file='FXEQ.xml' path='doc/member[@name="FXEQ.FXEQ_MAX_GAIN"]/*' />
     [NativeTypeName("#define FXEQ_MAX_GAIN 7.94f")]
     public const float FXEQ_MAX_GAIN = 7.94f;
 
+    /// <include file='FXEQ.xml' path='doc/member[@name="FXEQ.FXEQ_DEFAULT_GAIN"]/*' />
     [NativeTypeName("#define FXEQ_DEFAULT_GAIN 1.0f")]
     public const float FXEQ_DEFAULT_GAIN = 1.0f;
 
+    /// <include file='FXEQ.xml' path='doc/member[@name="FXEQ.FXEQ_MIN_BANDWIDTH"]/*' />
     [NativeTypeName("#define FXEQ_MIN_BANDWIDTH 0.1f")]
     public const float FXEQ_MIN_BANDWIDTH = 0.1f;
 
+    /// <include file='FXEQ.xml' path='doc/member[@name="FXEQ.FXEQ_MAX_BANDWIDTH"]/*' />
     [NativeTypeName("#define FXEQ_MAX_BANDWIDTH 2.0f")]
     public const float FXEQ_MAX_BANDWIDTH = 2.0f;
 
+    /// <include file='FXEQ.xml' path='doc/member[@name="FXEQ.FXEQ_DEFAULT_BANDWIDTH"]/*' />
     [NativeTypeName("#define FXEQ_DEFAULT_BANDWIDTH 1.0f")]
     public const float FXEQ_DEFAULT_BANDWIDTH = 1.0f;
 }

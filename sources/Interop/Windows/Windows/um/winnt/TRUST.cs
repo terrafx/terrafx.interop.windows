@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class TRUST
 {
+    /// <include file='TRUST.xml' path='doc/member[@name="TRUST.TRUST_PROTECTED_FILTER_ACE_FLAG"]/*' />
     [NativeTypeName("#define TRUST_PROTECTED_FILTER_ACE_FLAG (0x40)")]
     public const int TRUST_PROTECTED_FILTER_ACE_FLAG = (0x40);
 }

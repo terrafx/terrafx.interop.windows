@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ILeavingBackgroundEventArgs : ILeavingBackgroundEventArgs.Interface, INativeGuid
 {
+    /// <include file='ILeavingBackgroundEventArgs.xml' path='doc/member[@name="ILeavingBackgroundEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ILeavingBackgroundEventArgs);
 
     public void** lpVtbl;

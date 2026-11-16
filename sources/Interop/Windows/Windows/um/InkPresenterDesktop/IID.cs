@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IInkCommitRequestHandler"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid IID_IInkCommitRequestHandler
     {
@@ -37,6 +38,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IInkPresenterDesktop"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid IID_IInkPresenterDesktop
     {
@@ -62,6 +64,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IInkHostWorkItem"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid IID_IInkHostWorkItem
     {
@@ -87,6 +90,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IInkDesktopHost"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid IID_IInkDesktopHost
     {

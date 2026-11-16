@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IInkPresenterDesktop : IInkPresenterDesktop.Interface, INativeGuid
 {
+    /// <include file='IInkPresenterDesktop.xml' path='doc/member[@name="IInkPresenterDesktop.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IInkPresenterDesktop);
 
     public void** lpVtbl;

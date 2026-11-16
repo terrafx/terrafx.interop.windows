@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("305105B1-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct SVGAnimatedTransformList : INativeGuid
 {
+    /// <include file='SVGAnimatedTransformList.xml' path='doc/member[@name="SVGAnimatedTransformList.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SVGAnimatedTransformList);
 }

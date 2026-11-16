@@ -9,12 +9,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class HTTP
 {
+    /// <include file='HTTP.xml' path='doc/member[@name="HTTP.HTTP_USER_VARIABLE_SID"]/*' />
     [NativeTypeName("#define HTTP_USER_VARIABLE_SID \"SID\"")]
     public static ReadOnlySpan<byte> HTTP_USER_VARIABLE_SID => "SID"u8;
 
+    /// <include file='HTTP.xml' path='doc/member[@name="HTTP.HTTP_USER_VARIABLE_CTXT_HANDLE"]/*' />
     [NativeTypeName("#define HTTP_USER_VARIABLE_CTXT_HANDLE \"CtxtHandle\"")]
     public static ReadOnlySpan<byte> HTTP_USER_VARIABLE_CTXT_HANDLE => "CtxtHandle"u8;
 
+    /// <include file='HTTP.xml' path='doc/member[@name="HTTP.HTTP_USER_VARIABLE_CRED_HANDLE"]/*' />
     [NativeTypeName("#define HTTP_USER_VARIABLE_CRED_HANDLE \"CredHandle\"")]
     public static ReadOnlySpan<byte> HTTP_USER_VARIABLE_CRED_HANDLE => "CredHandle"u8;
 }

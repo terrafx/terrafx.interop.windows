@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct ISpeechPhraseRule : ISpeechPhraseRule.Interface, INativeGuid
 {
+    /// <include file='ISpeechPhraseRule.xml' path='doc/member[@name="ISpeechPhraseRule.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpeechPhraseRule);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ID2D1TessellationSink : ID2D1TessellationSink.Interface, INativeGuid
 {
+    /// <include file='ID2D1TessellationSink.xml' path='doc/member[@name="ID2D1TessellationSink.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1TessellationSink);
 
     public void** lpVtbl;

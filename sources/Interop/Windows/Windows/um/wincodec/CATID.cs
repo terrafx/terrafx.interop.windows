@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CATID
 {
+    /// <include file='CATID.xml' path='doc/member[@name="CATID.CATID_WICBitmapDecoders"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CATID_WICBitmapDecoders
     {
@@ -37,6 +38,7 @@ public static partial class CATID
         }
     }
 
+    /// <include file='CATID.xml' path='doc/member[@name="CATID.CATID_WICBitmapEncoders"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CATID_WICBitmapEncoders
     {
@@ -62,6 +64,7 @@ public static partial class CATID
         }
     }
 
+    /// <include file='CATID.xml' path='doc/member[@name="CATID.CATID_WICPixelFormats"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CATID_WICPixelFormats
     {
@@ -87,6 +90,7 @@ public static partial class CATID
         }
     }
 
+    /// <include file='CATID.xml' path='doc/member[@name="CATID.CATID_WICFormatConverters"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CATID_WICFormatConverters
     {
@@ -112,6 +116,7 @@ public static partial class CATID
         }
     }
 
+    /// <include file='CATID.xml' path='doc/member[@name="CATID.CATID_WICMetadataReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CATID_WICMetadataReader
     {
@@ -137,6 +142,7 @@ public static partial class CATID
         }
     }
 
+    /// <include file='CATID.xml' path='doc/member[@name="CATID.CATID_WICMetadataWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CATID_WICMetadataWriter
     {

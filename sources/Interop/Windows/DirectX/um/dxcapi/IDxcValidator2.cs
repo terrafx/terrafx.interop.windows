@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IDxcValidator")]
 public unsafe partial struct IDxcValidator2 : IDxcValidator2.Interface, INativeGuid
 {
+    /// <include file='IDxcValidator2.xml' path='doc/member[@name="IDxcValidator2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDxcValidator2);
 
     public void** lpVtbl;

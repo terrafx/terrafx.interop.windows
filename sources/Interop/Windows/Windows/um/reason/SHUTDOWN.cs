@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SHUTDOWN
 {
+    /// <include file='SHUTDOWN.xml' path='doc/member[@name="SHUTDOWN.SHUTDOWN_TYPE_LEN"]/*' />
     [NativeTypeName("#define SHUTDOWN_TYPE_LEN 32")]
     public const int SHUTDOWN_TYPE_LEN = 32;
 }

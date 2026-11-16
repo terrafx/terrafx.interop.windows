@@ -7,6 +7,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DI8DEVTYPEREMOTE
 {
+    /// <include file='DI8DEVTYPEREMOTE.xml' path='doc/member[@name="DI8DEVTYPEREMOTE.DI8DEVTYPEREMOTE_UNKNOWN"]/*' />
     [NativeTypeName("#define DI8DEVTYPEREMOTE_UNKNOWN 2")]
     public const int DI8DEVTYPEREMOTE_UNKNOWN = 2;
 }

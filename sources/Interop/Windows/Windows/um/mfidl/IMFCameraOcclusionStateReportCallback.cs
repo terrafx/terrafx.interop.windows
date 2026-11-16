@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0.22000.0")]
 public unsafe partial struct IMFCameraOcclusionStateReportCallback : IMFCameraOcclusionStateReportCallback.Interface, INativeGuid
 {
+    /// <include file='IMFCameraOcclusionStateReportCallback.xml' path='doc/member[@name="IMFCameraOcclusionStateReportCallback.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFCameraOcclusionStateReportCallback);
 
     public void** lpVtbl;

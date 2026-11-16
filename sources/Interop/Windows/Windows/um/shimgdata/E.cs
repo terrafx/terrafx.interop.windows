@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class E
 {
+    /// <include file='E.xml' path='doc/member[@name="E.E_NOTVALIDFORANIMATEDIMAGE"]/*' />
     [NativeTypeName("#define E_NOTVALIDFORANIMATEDIMAGE MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x01)")]
     public const int E_NOTVALIDFORANIMATEDIMAGE = unchecked((int)(((uint)(1) << 31) | ((uint)(4) << 16) | ((uint)(0x01))));
 }

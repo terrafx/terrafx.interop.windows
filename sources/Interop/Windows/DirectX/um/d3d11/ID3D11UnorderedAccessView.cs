@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID3D11View")]
 public unsafe partial struct ID3D11UnorderedAccessView : ID3D11UnorderedAccessView.Interface, INativeGuid
 {
+    /// <include file='ID3D11UnorderedAccessView.xml' path='doc/member[@name="ID3D11UnorderedAccessView.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3D11UnorderedAccessView);
 
     public void** lpVtbl;

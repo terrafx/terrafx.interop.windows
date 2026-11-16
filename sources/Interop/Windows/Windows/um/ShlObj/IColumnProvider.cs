@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IColumnProvider : IColumnProvider.Interface, INativeGuid
 {
+    /// <include file='IColumnProvider.xml' path='doc/member[@name="IColumnProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IColumnProvider);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISpDisplayAlternates : ISpDisplayAlternates.Interface, INativeGuid
 {
+    /// <include file='ISpDisplayAlternates.xml' path='doc/member[@name="ISpDisplayAlternates.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpDisplayAlternates);
 
     public void** lpVtbl;

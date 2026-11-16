@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFQualityManager : IMFQualityManager.Interface, INativeGuid
 {
+    /// <include file='IMFQualityManager.xml' path='doc/member[@name="IMFQualityManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFQualityManager);
 
     public void** lpVtbl;

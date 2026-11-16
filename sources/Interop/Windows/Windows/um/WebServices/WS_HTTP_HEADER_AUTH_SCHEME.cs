@@ -7,10 +7,16 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class WS_HTTP_HEADER_AUTH_SCHEME
 {
+    /// <include file='WS_HTTP_HEADER_AUTH_SCHEME.xml' path='doc/member[@name="WS_HTTP_HEADER_AUTH_SCHEME.WS_HTTP_HEADER_AUTH_SCHEME_NONE"]/*' />
     public const int WS_HTTP_HEADER_AUTH_SCHEME_NONE = 0x1;
+    /// <include file='WS_HTTP_HEADER_AUTH_SCHEME.xml' path='doc/member[@name="WS_HTTP_HEADER_AUTH_SCHEME.WS_HTTP_HEADER_AUTH_SCHEME_BASIC"]/*' />
     public const int WS_HTTP_HEADER_AUTH_SCHEME_BASIC = 0x2;
+    /// <include file='WS_HTTP_HEADER_AUTH_SCHEME.xml' path='doc/member[@name="WS_HTTP_HEADER_AUTH_SCHEME.WS_HTTP_HEADER_AUTH_SCHEME_DIGEST"]/*' />
     public const int WS_HTTP_HEADER_AUTH_SCHEME_DIGEST = 0x4;
+    /// <include file='WS_HTTP_HEADER_AUTH_SCHEME.xml' path='doc/member[@name="WS_HTTP_HEADER_AUTH_SCHEME.WS_HTTP_HEADER_AUTH_SCHEME_NTLM"]/*' />
     public const int WS_HTTP_HEADER_AUTH_SCHEME_NTLM = 0x8;
+    /// <include file='WS_HTTP_HEADER_AUTH_SCHEME.xml' path='doc/member[@name="WS_HTTP_HEADER_AUTH_SCHEME.WS_HTTP_HEADER_AUTH_SCHEME_NEGOTIATE"]/*' />
     public const int WS_HTTP_HEADER_AUTH_SCHEME_NEGOTIATE = 0x10;
+    /// <include file='WS_HTTP_HEADER_AUTH_SCHEME.xml' path='doc/member[@name="WS_HTTP_HEADER_AUTH_SCHEME.WS_HTTP_HEADER_AUTH_SCHEME_PASSPORT"]/*' />
     public const int WS_HTTP_HEADER_AUTH_SCHEME_PASSPORT = 0x20;
 }

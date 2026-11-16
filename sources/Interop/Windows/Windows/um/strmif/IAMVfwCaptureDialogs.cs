@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAMVfwCaptureDialogs : IAMVfwCaptureDialogs.Interface, INativeGuid
 {
+    /// <include file='IAMVfwCaptureDialogs.xml' path='doc/member[@name="IAMVfwCaptureDialogs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAMVfwCaptureDialogs);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IWICPalette : IWICPalette.Interface, INativeGuid
 {
+    /// <include file='IWICPalette.xml' path='doc/member[@name="IWICPalette.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWICPalette);
 
     public void** lpVtbl;

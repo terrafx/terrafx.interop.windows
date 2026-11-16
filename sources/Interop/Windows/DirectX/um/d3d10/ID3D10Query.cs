@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID3D10Asynchronous")]
 public unsafe partial struct ID3D10Query : ID3D10Query.Interface, INativeGuid
 {
+    /// <include file='ID3D10Query.xml' path='doc/member[@name="ID3D10Query.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3D10Query);
 
     public void** lpVtbl;

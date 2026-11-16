@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IPackagedComSyntaxSupport : IPackagedComSyntaxSupport.Interface, INativeGuid
 {
+    /// <include file='IPackagedComSyntaxSupport.xml' path='doc/member[@name="IPackagedComSyntaxSupport.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPackagedComSyntaxSupport);
 
     public void** lpVtbl;

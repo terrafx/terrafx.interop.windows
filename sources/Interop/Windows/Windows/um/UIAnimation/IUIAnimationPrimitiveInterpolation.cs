@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IUIAnimationPrimitiveInterpolation : IUIAnimationPrimitiveInterpolation.Interface, INativeGuid
 {
+    /// <include file='IUIAnimationPrimitiveInterpolation.xml' path='doc/member[@name="IUIAnimationPrimitiveInterpolation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUIAnimationPrimitiveInterpolation);
 
     public void** lpVtbl;

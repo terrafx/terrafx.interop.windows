@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IHeadPosition : IHeadPosition.Interface, INativeGuid
 {
+    /// <include file='IHeadPosition.xml' path='doc/member[@name="IHeadPosition.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHeadPosition);
 
     public void** lpVtbl;

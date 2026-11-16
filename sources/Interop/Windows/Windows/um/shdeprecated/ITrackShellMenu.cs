@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IShellMenu")]
 public unsafe partial struct ITrackShellMenu : ITrackShellMenu.Interface, INativeGuid
 {
+    /// <include file='ITrackShellMenu.xml' path='doc/member[@name="ITrackShellMenu.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITrackShellMenu);
 
     public void** lpVtbl;

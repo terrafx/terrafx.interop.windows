@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
 public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGuid
 {
+    /// <include file='IMediaControl.xml' path='doc/member[@name="IMediaControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_WinRT_IMediaControl);
 
     public void** lpVtbl;

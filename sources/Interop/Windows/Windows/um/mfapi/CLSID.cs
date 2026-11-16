@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CLSID
 {
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MFSourceResolver"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_MFSourceResolver
     {

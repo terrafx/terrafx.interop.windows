@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IContactPanelLaunchFullAppRequestedEventArgs : IContactPanelLaunchFullAppRequestedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IContactPanelLaunchFullAppRequestedEventArgs.xml' path='doc/member[@name="IContactPanelLaunchFullAppRequestedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IContactPanelLaunchFullAppRequestedEventArgs);
 
     public void** lpVtbl;

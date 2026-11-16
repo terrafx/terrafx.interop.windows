@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IVMRAspectRatioControl : IVMRAspectRatioControl.Interface, INativeGuid
 {
+    /// <include file='IVMRAspectRatioControl.xml' path='doc/member[@name="IVMRAspectRatioControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IVMRAspectRatioControl);
 
     public void** lpVtbl;

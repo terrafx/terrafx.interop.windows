@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IFontDisp : IFontDisp.Interface, INativeGuid
 {
+    /// <include file='IFontDisp.xml' path='doc/member[@name="IFontDisp.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFontDisp);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IControlChangeNotify : IControlChangeNotify.Interface, INativeGuid
 {
+    /// <include file='IControlChangeNotify.xml' path='doc/member[@name="IControlChangeNotify.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IControlChangeNotify);
 
     public void** lpVtbl;

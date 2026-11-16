@@ -7,18 +7,23 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DDENUMSURFACES
 {
+    /// <include file='DDENUMSURFACES.xml' path='doc/member[@name="DDENUMSURFACES.DDENUMSURFACES_ALL"]/*' />
     [NativeTypeName("#define DDENUMSURFACES_ALL 0x00000001l")]
     public const int DDENUMSURFACES_ALL = 0x00000001;
 
+    /// <include file='DDENUMSURFACES.xml' path='doc/member[@name="DDENUMSURFACES.DDENUMSURFACES_MATCH"]/*' />
     [NativeTypeName("#define DDENUMSURFACES_MATCH 0x00000002l")]
     public const int DDENUMSURFACES_MATCH = 0x00000002;
 
+    /// <include file='DDENUMSURFACES.xml' path='doc/member[@name="DDENUMSURFACES.DDENUMSURFACES_NOMATCH"]/*' />
     [NativeTypeName("#define DDENUMSURFACES_NOMATCH 0x00000004l")]
     public const int DDENUMSURFACES_NOMATCH = 0x00000004;
 
+    /// <include file='DDENUMSURFACES.xml' path='doc/member[@name="DDENUMSURFACES.DDENUMSURFACES_CANBECREATED"]/*' />
     [NativeTypeName("#define DDENUMSURFACES_CANBECREATED 0x00000008l")]
     public const int DDENUMSURFACES_CANBECREATED = 0x00000008;
 
+    /// <include file='DDENUMSURFACES.xml' path='doc/member[@name="DDENUMSURFACES.DDENUMSURFACES_DOESEXIST"]/*' />
     [NativeTypeName("#define DDENUMSURFACES_DOESEXIST 0x00000010l")]
     public const int DDENUMSURFACES_DOESEXIST = 0x00000010;
 }

@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("50196C21-1F33-4AF5-B296-11426D6C8789")]
 public unsafe partial struct CODECAPI_AVDecDDDynamicRangeScaleHigh : INativeGuid
 {
+    /// <include file='CODECAPI_AVDecDDDynamicRangeScaleHigh.xml' path='doc/member[@name="CODECAPI_AVDecDDDynamicRangeScaleHigh.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVDecDDDynamicRangeScaleHigh);
 }

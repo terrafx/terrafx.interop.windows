@@ -114,39 +114,51 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     public static extern HRESULT ReleasePseudoConsole(HPCON hPC);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ATTACH_PARENT_PROCESS"]/*' />
     [NativeTypeName("#define ATTACH_PARENT_PROCESS ((DWORD)-1)")]
     public const uint ATTACH_PARENT_PROCESS = unchecked((uint)(-1));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DISABLE_NEWLINE_AUTO_RETURN"]/*' />
     [NativeTypeName("#define DISABLE_NEWLINE_AUTO_RETURN 0x0008")]
     public const int DISABLE_NEWLINE_AUTO_RETURN = 0x0008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ReadConsoleInput"]/*' />
     [NativeTypeName("#define ReadConsoleInput ReadConsoleInputW")]
     public static delegate*<HANDLE, INPUT_RECORD*, uint, uint*, BOOL> ReadConsoleInput => &ReadConsoleInputW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PeekConsoleInput"]/*' />
     [NativeTypeName("#define PeekConsoleInput PeekConsoleInputW")]
     public static delegate*<HANDLE, INPUT_RECORD*, uint, uint*, BOOL> PeekConsoleInput => &PeekConsoleInputW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ReadConsole"]/*' />
     [NativeTypeName("#define ReadConsole ReadConsoleW")]
     public static delegate*<HANDLE, void*, uint, uint*, CONSOLE_READCONSOLE_CONTROL*, BOOL> ReadConsole => &ReadConsoleW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WriteConsole"]/*' />
     [NativeTypeName("#define WriteConsole WriteConsoleW")]
     public static delegate*<HANDLE, void*, uint, uint*, void*, BOOL> WriteConsole => &WriteConsoleW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CTRL_C_EVENT"]/*' />
     [NativeTypeName("#define CTRL_C_EVENT 0")]
     public const int CTRL_C_EVENT = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CTRL_BREAK_EVENT"]/*' />
     [NativeTypeName("#define CTRL_BREAK_EVENT 1")]
     public const int CTRL_BREAK_EVENT = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CTRL_CLOSE_EVENT"]/*' />
     [NativeTypeName("#define CTRL_CLOSE_EVENT 2")]
     public const int CTRL_CLOSE_EVENT = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CTRL_LOGOFF_EVENT"]/*' />
     [NativeTypeName("#define CTRL_LOGOFF_EVENT 5")]
     public const int CTRL_LOGOFF_EVENT = 5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CTRL_SHUTDOWN_EVENT"]/*' />
     [NativeTypeName("#define CTRL_SHUTDOWN_EVENT 6")]
     public const int CTRL_SHUTDOWN_EVENT = 6;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PSEUDOCONSOLE_INHERIT_CURSOR"]/*' />
     [NativeTypeName("#define PSEUDOCONSOLE_INHERIT_CURSOR (0x1)")]
     public const int PSEUDOCONSOLE_INHERIT_CURSOR = (0x1);
 }

@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_IF_TYPE"]/*' />
     [NativeTypeName("#define MAX_IF_TYPE 281")]
     public const int MAX_IF_TYPE = 281;
 }

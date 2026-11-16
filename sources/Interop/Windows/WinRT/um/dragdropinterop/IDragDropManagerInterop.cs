@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows10.0.22000.0")]
 public unsafe partial struct IDragDropManagerInterop : IDragDropManagerInterop.Interface, INativeGuid
 {
+    /// <include file='IDragDropManagerInterop.xml' path='doc/member[@name="IDragDropManagerInterop.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDragDropManagerInterop);
 
     public void** lpVtbl;

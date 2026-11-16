@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IMediaBreakSkippedEventArgs : IMediaBreakSkippedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IMediaBreakSkippedEventArgs.xml' path='doc/member[@name="IMediaBreakSkippedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMediaBreakSkippedEventArgs);
 
     public void** lpVtbl;

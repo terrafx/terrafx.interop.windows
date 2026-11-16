@@ -14,5 +14,6 @@ namespace TerraFX.Interop.DirectX;
 [Guid("79DEA627-A08A-43AC-8EF5-6900B9299126")]
 public unsafe partial struct DCompManipulationCompositor : INativeGuid
 {
+    /// <include file='DCompManipulationCompositor.xml' path='doc/member[@name="DCompManipulationCompositor.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_DCompManipulationCompositor);
 }

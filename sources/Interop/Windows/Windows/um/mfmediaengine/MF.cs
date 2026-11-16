@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MF
 {
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MSE_CALLBACK"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MSE_CALLBACK
     {
@@ -37,6 +38,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MSE_ACTIVELIST_CALLBACK"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MSE_ACTIVELIST_CALLBACK
     {
@@ -62,6 +64,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MSE_BUFFERLIST_CALLBACK"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MSE_BUFFERLIST_CALLBACK
     {
@@ -87,6 +90,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MSE_VP9_SUPPORT"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MSE_VP9_SUPPORT
     {
@@ -112,6 +116,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MSE_OPUS_SUPPORT"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MSE_OPUS_SUPPORT
     {
@@ -137,6 +142,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_NEEDKEY_CALLBACK"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_NEEDKEY_CALLBACK
     {
@@ -162,6 +168,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_CALLBACK"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_CALLBACK
     {
@@ -187,6 +194,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_DXGI_MANAGER"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_DXGI_MANAGER
     {
@@ -212,6 +220,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_EXTENSION"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_EXTENSION
     {
@@ -237,6 +246,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_PLAYBACK_HWND"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_PLAYBACK_HWND
     {
@@ -262,6 +272,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_OPM_HWND"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_OPM_HWND
     {
@@ -287,6 +298,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_PLAYBACK_VISUAL"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_PLAYBACK_VISUAL
     {
@@ -312,6 +324,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_COREWINDOW"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_COREWINDOW
     {
@@ -337,6 +350,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_VIDEO_OUTPUT_FORMAT"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_VIDEO_OUTPUT_FORMAT
     {
@@ -362,6 +376,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_CONTENT_PROTECTION_FLAGS"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_CONTENT_PROTECTION_FLAGS
     {
@@ -387,6 +402,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_CONTENT_PROTECTION_MANAGER"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_CONTENT_PROTECTION_MANAGER
     {
@@ -412,6 +428,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_AUDIO_ENDPOINT_ROLE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_AUDIO_ENDPOINT_ROLE
     {
@@ -437,6 +454,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_AUDIO_CATEGORY"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_AUDIO_CATEGORY
     {
@@ -462,6 +480,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_STREAM_CONTAINS_ALPHA_CHANNEL"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_STREAM_CONTAINS_ALPHA_CHANNEL
     {
@@ -487,6 +506,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_BROWSER_COMPATIBILITY_MODE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_BROWSER_COMPATIBILITY_MODE
     {
@@ -512,6 +532,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_BROWSER_COMPATIBILITY_MODE_IE9"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_BROWSER_COMPATIBILITY_MODE_IE9
     {
@@ -537,6 +558,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_BROWSER_COMPATIBILITY_MODE_IE10"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_BROWSER_COMPATIBILITY_MODE_IE10
     {
@@ -562,6 +584,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_BROWSER_COMPATIBILITY_MODE_IE11"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_BROWSER_COMPATIBILITY_MODE_IE11
     {
@@ -587,6 +610,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_BROWSER_COMPATIBILITY_MODE_IE_EDGE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_BROWSER_COMPATIBILITY_MODE_IE_EDGE
     {
@@ -612,6 +636,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_COMPATIBILITY_MODE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_COMPATIBILITY_MODE
     {
@@ -637,6 +662,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_COMPATIBILITY_MODE_WWA_EDGE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_COMPATIBILITY_MODE_WWA_EDGE
     {
@@ -662,6 +688,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_COMPATIBILITY_MODE_WIN10"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_COMPATIBILITY_MODE_WIN10
     {
@@ -687,6 +714,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_SOURCE_RESOLVER_CONFIG_STORE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_SOURCE_RESOLVER_CONFIG_STORE
     {
@@ -712,6 +740,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_TRACK_ID"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_TRACK_ID
     {
@@ -737,6 +766,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_TELEMETRY_APPLICATION_ID"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_TELEMETRY_APPLICATION_ID
     {
@@ -762,6 +792,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_SYNCHRONOUS_CLOSE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_SYNCHRONOUS_CLOSE
     {
@@ -787,6 +818,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_MEDIA_PLAYER_MODE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_MEDIA_PLAYER_MODE
     {
@@ -812,6 +844,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_TIMEDTEXT"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_TIMEDTEXT
     {
@@ -837,6 +870,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_CONTINUE_ON_CODEC_ERROR"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_CONTINUE_ON_CODEC_ERROR
     {
@@ -862,6 +896,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_ENGINE_EME_CALLBACK"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_ENGINE_EME_CALLBACK
     {
@@ -887,6 +922,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EME_INITDATATYPES"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MF_EME_INITDATATYPES
     {
@@ -913,6 +949,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EME_DISTINCTIVEID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MF_EME_DISTINCTIVEID
     {
@@ -939,6 +976,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EME_PERSISTEDSTATE"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MF_EME_PERSISTEDSTATE
     {
@@ -965,6 +1003,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EME_AUDIOCAPABILITIES"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MF_EME_AUDIOCAPABILITIES
     {
@@ -991,6 +1030,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EME_VIDEOCAPABILITIES"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MF_EME_VIDEOCAPABILITIES
     {
@@ -1017,6 +1057,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EME_LABEL"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MF_EME_LABEL
     {
@@ -1043,6 +1084,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EME_SESSIONTYPES"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MF_EME_SESSIONTYPES
     {
@@ -1069,6 +1111,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EME_ROBUSTNESS"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MF_EME_ROBUSTNESS
     {
@@ -1095,6 +1138,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EME_CONTENTTYPE"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MF_EME_CONTENTTYPE
     {
@@ -1121,6 +1165,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EME_CDM_INPRIVATESTOREPATH"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MF_EME_CDM_INPRIVATESTOREPATH
     {
@@ -1147,6 +1192,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EME_CDM_STOREPATH"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MF_EME_CDM_STOREPATH
     {
@@ -1173,6 +1219,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_INVALID_PRESENTATION_TIME"]/*' />
     [NativeTypeName("#define MF_INVALID_PRESENTATION_TIME 0x8000000000000000")]
     public const ulong MF_INVALID_PRESENTATION_TIME = 0x8000000000000000;
 }

@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SYSTEM
 {
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_STATUS_FLAG_POWER_SAVING_ON"]/*' />
     [NativeTypeName("#define SYSTEM_STATUS_FLAG_POWER_SAVING_ON 0x01")]
     public const int SYSTEM_STATUS_FLAG_POWER_SAVING_ON = 0x01;
 }

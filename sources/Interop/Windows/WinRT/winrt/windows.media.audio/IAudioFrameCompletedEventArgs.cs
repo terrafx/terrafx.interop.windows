@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAudioFrameCompletedEventArgs : IAudioFrameCompletedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IAudioFrameCompletedEventArgs.xml' path='doc/member[@name="IAudioFrameCompletedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAudioFrameCompletedEventArgs);
 
     public void** lpVtbl;

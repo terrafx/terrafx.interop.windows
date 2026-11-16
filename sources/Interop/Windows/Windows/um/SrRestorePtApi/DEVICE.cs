@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class DEVICE
 {
+    /// <include file='DEVICE.xml' path='doc/member[@name="DEVICE.DEVICE_DRIVER_INSTALL"]/*' />
     [NativeTypeName("#define DEVICE_DRIVER_INSTALL 10")]
     public const int DEVICE_DRIVER_INSTALL = 10;
 }

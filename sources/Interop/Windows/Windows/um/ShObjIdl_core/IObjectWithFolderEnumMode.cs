@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IObjectWithFolderEnumMode : IObjectWithFolderEnumMode.Interface, INativeGuid
 {
+    /// <include file='IObjectWithFolderEnumMode.xml' path='doc/member[@name="IObjectWithFolderEnumMode.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IObjectWithFolderEnumMode);
 
     public void** lpVtbl;

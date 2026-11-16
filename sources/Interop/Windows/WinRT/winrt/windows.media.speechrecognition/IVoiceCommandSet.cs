@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition instead of Windows.Media.SpeechRecognition.VoiceComandSet. For more info, see MSDN.")]
 public unsafe partial struct IVoiceCommandSet : IVoiceCommandSet.Interface, INativeGuid
 {
+    /// <include file='IVoiceCommandSet.xml' path='doc/member[@name="IVoiceCommandSet.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IVoiceCommandSet);
 
     public void** lpVtbl;

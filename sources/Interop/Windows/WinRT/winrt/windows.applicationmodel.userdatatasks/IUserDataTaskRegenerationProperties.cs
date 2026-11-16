@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IUserDataTaskRegenerationProperties : IUserDataTaskRegenerationProperties.Interface, INativeGuid
 {
+    /// <include file='IUserDataTaskRegenerationProperties.xml' path='doc/member[@name="IUserDataTaskRegenerationProperties.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUserDataTaskRegenerationProperties);
 
     public void** lpVtbl;

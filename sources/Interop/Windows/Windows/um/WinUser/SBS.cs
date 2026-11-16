@@ -7,33 +7,43 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SBS
 {
+    /// <include file='SBS.xml' path='doc/member[@name="SBS.SBS_HORZ"]/*' />
     [NativeTypeName("#define SBS_HORZ 0x0000L")]
     public const int SBS_HORZ = 0x0000;
 
+    /// <include file='SBS.xml' path='doc/member[@name="SBS.SBS_VERT"]/*' />
     [NativeTypeName("#define SBS_VERT 0x0001L")]
     public const int SBS_VERT = 0x0001;
 
+    /// <include file='SBS.xml' path='doc/member[@name="SBS.SBS_TOPALIGN"]/*' />
     [NativeTypeName("#define SBS_TOPALIGN 0x0002L")]
     public const int SBS_TOPALIGN = 0x0002;
 
+    /// <include file='SBS.xml' path='doc/member[@name="SBS.SBS_LEFTALIGN"]/*' />
     [NativeTypeName("#define SBS_LEFTALIGN 0x0002L")]
     public const int SBS_LEFTALIGN = 0x0002;
 
+    /// <include file='SBS.xml' path='doc/member[@name="SBS.SBS_BOTTOMALIGN"]/*' />
     [NativeTypeName("#define SBS_BOTTOMALIGN 0x0004L")]
     public const int SBS_BOTTOMALIGN = 0x0004;
 
+    /// <include file='SBS.xml' path='doc/member[@name="SBS.SBS_RIGHTALIGN"]/*' />
     [NativeTypeName("#define SBS_RIGHTALIGN 0x0004L")]
     public const int SBS_RIGHTALIGN = 0x0004;
 
+    /// <include file='SBS.xml' path='doc/member[@name="SBS.SBS_SIZEBOXTOPLEFTALIGN"]/*' />
     [NativeTypeName("#define SBS_SIZEBOXTOPLEFTALIGN 0x0002L")]
     public const int SBS_SIZEBOXTOPLEFTALIGN = 0x0002;
 
+    /// <include file='SBS.xml' path='doc/member[@name="SBS.SBS_SIZEBOXBOTTOMRIGHTALIGN"]/*' />
     [NativeTypeName("#define SBS_SIZEBOXBOTTOMRIGHTALIGN 0x0004L")]
     public const int SBS_SIZEBOXBOTTOMRIGHTALIGN = 0x0004;
 
+    /// <include file='SBS.xml' path='doc/member[@name="SBS.SBS_SIZEBOX"]/*' />
     [NativeTypeName("#define SBS_SIZEBOX 0x0008L")]
     public const int SBS_SIZEBOX = 0x0008;
 
+    /// <include file='SBS.xml' path='doc/member[@name="SBS.SBS_SIZEGRIP"]/*' />
     [NativeTypeName("#define SBS_SIZEGRIP 0x0010L")]
     public const int SBS_SIZEGRIP = 0x0010;
 }

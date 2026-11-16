@@ -7,24 +7,31 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class READ
 {
+    /// <include file='READ.xml' path='doc/member[@name="READ.READ_COMPRESSION_INFO_VALID"]/*' />
     [NativeTypeName("#define READ_COMPRESSION_INFO_VALID 0x00000020")]
     public const int READ_COMPRESSION_INFO_VALID = 0x00000020;
 
+    /// <include file='READ.xml' path='doc/member[@name="READ.READ_COPY_NUMBER_KEY"]/*' />
     [NativeTypeName("#define READ_COPY_NUMBER_KEY 0x52434e00")]
     public const int READ_COPY_NUMBER_KEY = 0x52434e00;
 
+    /// <include file='READ.xml' path='doc/member[@name="READ.READ_COPY_NUMBER_BYPASS_CACHE_FLAG"]/*' />
     [NativeTypeName("#define READ_COPY_NUMBER_BYPASS_CACHE_FLAG 0x00000100")]
     public const int READ_COPY_NUMBER_BYPASS_CACHE_FLAG = 0x00000100;
 
+    /// <include file='READ.xml' path='doc/member[@name="READ.READ_ATTRIBUTE_BUFFER_SIZE"]/*' />
     [NativeTypeName("#define READ_ATTRIBUTE_BUFFER_SIZE 512")]
     public const int READ_ATTRIBUTE_BUFFER_SIZE = 512;
 
+    /// <include file='READ.xml' path='doc/member[@name="READ.READ_THRESHOLD_BUFFER_SIZE"]/*' />
     [NativeTypeName("#define READ_THRESHOLD_BUFFER_SIZE 512")]
     public const int READ_THRESHOLD_BUFFER_SIZE = 512;
 
+    /// <include file='READ.xml' path='doc/member[@name="READ.READ_ATTRIBUTES"]/*' />
     [NativeTypeName("#define READ_ATTRIBUTES 0xD0")]
     public const int READ_ATTRIBUTES = 0xD0;
 
+    /// <include file='READ.xml' path='doc/member[@name="READ.READ_THRESHOLDS"]/*' />
     [NativeTypeName("#define READ_THRESHOLDS 0xD1")]
     public const int READ_THRESHOLDS = 0xD1;
 }

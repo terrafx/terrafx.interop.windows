@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpCachePolicy")]
 public unsafe partial struct IHttpCachePolicy2 : IHttpCachePolicy2.Interface, INativeGuid
 {
+    /// <include file='IHttpCachePolicy2.xml' path='doc/member[@name="IHttpCachePolicy2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpCachePolicy2);
 
     public void** lpVtbl;

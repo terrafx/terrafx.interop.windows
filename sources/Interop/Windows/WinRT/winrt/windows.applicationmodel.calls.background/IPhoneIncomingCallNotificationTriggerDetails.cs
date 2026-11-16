@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPhoneIncomingCallNotificationTriggerDetails : IPhoneIncomingCallNotificationTriggerDetails.Interface, INativeGuid
 {
+    /// <include file='IPhoneIncomingCallNotificationTriggerDetails.xml' path='doc/member[@name="IPhoneIncomingCallNotificationTriggerDetails.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPhoneIncomingCallNotificationTriggerDetails);
 
     public void** lpVtbl;

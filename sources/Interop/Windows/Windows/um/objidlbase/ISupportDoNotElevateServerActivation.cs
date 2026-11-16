@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISupportDoNotElevateServerActivation : ISupportDoNotElevateServerActivation.Interface, INativeGuid
 {
+    /// <include file='ISupportDoNotElevateServerActivation.xml' path='doc/member[@name="ISupportDoNotElevateServerActivation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISupportDoNotElevateServerActivation);
 
     public void** lpVtbl;

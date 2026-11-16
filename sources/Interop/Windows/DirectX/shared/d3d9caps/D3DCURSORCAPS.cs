@@ -7,9 +7,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3DCURSORCAPS
 {
+    /// <include file='D3DCURSORCAPS.xml' path='doc/member[@name="D3DCURSORCAPS.D3DCURSORCAPS_COLOR"]/*' />
     [NativeTypeName("#define D3DCURSORCAPS_COLOR 0x00000001L")]
     public const int D3DCURSORCAPS_COLOR = 0x00000001;
 
+    /// <include file='D3DCURSORCAPS.xml' path='doc/member[@name="D3DCURSORCAPS.D3DCURSORCAPS_LOWRES"]/*' />
     [NativeTypeName("#define D3DCURSORCAPS_LOWRES 0x00000002L")]
     public const int D3DCURSORCAPS_LOWRES = 0x00000002;
 }

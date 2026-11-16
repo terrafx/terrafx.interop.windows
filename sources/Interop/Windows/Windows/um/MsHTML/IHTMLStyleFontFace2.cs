@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IHTMLStyleFontFace2 : IHTMLStyleFontFace2.Interface, INativeGuid
 {
+    /// <include file='IHTMLStyleFontFace2.xml' path='doc/member[@name="IHTMLStyleFontFace2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHTMLStyleFontFace2);
 
     public void** lpVtbl;

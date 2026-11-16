@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IAMFilterGraphCallback"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid IID_IAMFilterGraphCallback
     {

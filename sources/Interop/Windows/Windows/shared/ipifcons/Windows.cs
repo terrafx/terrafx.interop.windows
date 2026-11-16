@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIN_IF_TYPE"]/*' />
     [NativeTypeName("#define MIN_IF_TYPE 1")]
     public const int MIN_IF_TYPE = 1;
 }

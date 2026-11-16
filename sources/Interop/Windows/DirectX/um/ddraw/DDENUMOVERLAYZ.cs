@@ -7,9 +7,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DDENUMOVERLAYZ
 {
+    /// <include file='DDENUMOVERLAYZ.xml' path='doc/member[@name="DDENUMOVERLAYZ.DDENUMOVERLAYZ_BACKTOFRONT"]/*' />
     [NativeTypeName("#define DDENUMOVERLAYZ_BACKTOFRONT 0x00000000l")]
     public const int DDENUMOVERLAYZ_BACKTOFRONT = 0x00000000;
 
+    /// <include file='DDENUMOVERLAYZ.xml' path='doc/member[@name="DDENUMOVERLAYZ.DDENUMOVERLAYZ_FRONTTOBACK"]/*' />
     [NativeTypeName("#define DDENUMOVERLAYZ_FRONTTOBACK 0x00000001l")]
     public const int DDENUMOVERLAYZ_FRONTTOBACK = 0x00000001;
 }

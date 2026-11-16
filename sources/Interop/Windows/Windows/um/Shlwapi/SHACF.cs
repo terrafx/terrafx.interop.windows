@@ -7,42 +7,55 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SHACF
 {
+    /// <include file='SHACF.xml' path='doc/member[@name="SHACF.SHACF_DEFAULT"]/*' />
     [NativeTypeName("#define SHACF_DEFAULT 0x00000000")]
     public const int SHACF_DEFAULT = 0x00000000;
 
+    /// <include file='SHACF.xml' path='doc/member[@name="SHACF.SHACF_FILESYSTEM"]/*' />
     [NativeTypeName("#define SHACF_FILESYSTEM 0x00000001")]
     public const int SHACF_FILESYSTEM = 0x00000001;
 
+    /// <include file='SHACF.xml' path='doc/member[@name="SHACF.SHACF_URLALL"]/*' />
     [NativeTypeName("#define SHACF_URLALL (SHACF_URLHISTORY | SHACF_URLMRU)")]
     public const int SHACF_URLALL = (0x00000002 | 0x00000004);
 
+    /// <include file='SHACF.xml' path='doc/member[@name="SHACF.SHACF_URLHISTORY"]/*' />
     [NativeTypeName("#define SHACF_URLHISTORY 0x00000002")]
     public const int SHACF_URLHISTORY = 0x00000002;
 
+    /// <include file='SHACF.xml' path='doc/member[@name="SHACF.SHACF_URLMRU"]/*' />
     [NativeTypeName("#define SHACF_URLMRU 0x00000004")]
     public const int SHACF_URLMRU = 0x00000004;
 
+    /// <include file='SHACF.xml' path='doc/member[@name="SHACF.SHACF_USETAB"]/*' />
     [NativeTypeName("#define SHACF_USETAB 0x00000008")]
     public const int SHACF_USETAB = 0x00000008;
 
+    /// <include file='SHACF.xml' path='doc/member[@name="SHACF.SHACF_FILESYS_ONLY"]/*' />
     [NativeTypeName("#define SHACF_FILESYS_ONLY 0x00000010")]
     public const int SHACF_FILESYS_ONLY = 0x00000010;
 
+    /// <include file='SHACF.xml' path='doc/member[@name="SHACF.SHACF_FILESYS_DIRS"]/*' />
     [NativeTypeName("#define SHACF_FILESYS_DIRS 0x00000020")]
     public const int SHACF_FILESYS_DIRS = 0x00000020;
 
+    /// <include file='SHACF.xml' path='doc/member[@name="SHACF.SHACF_VIRTUAL_NAMESPACE"]/*' />
     [NativeTypeName("#define SHACF_VIRTUAL_NAMESPACE 0x00000040")]
     public const int SHACF_VIRTUAL_NAMESPACE = 0x00000040;
 
+    /// <include file='SHACF.xml' path='doc/member[@name="SHACF.SHACF_AUTOSUGGEST_FORCE_ON"]/*' />
     [NativeTypeName("#define SHACF_AUTOSUGGEST_FORCE_ON 0x10000000")]
     public const int SHACF_AUTOSUGGEST_FORCE_ON = 0x10000000;
 
+    /// <include file='SHACF.xml' path='doc/member[@name="SHACF.SHACF_AUTOSUGGEST_FORCE_OFF"]/*' />
     [NativeTypeName("#define SHACF_AUTOSUGGEST_FORCE_OFF 0x20000000")]
     public const int SHACF_AUTOSUGGEST_FORCE_OFF = 0x20000000;
 
+    /// <include file='SHACF.xml' path='doc/member[@name="SHACF.SHACF_AUTOAPPEND_FORCE_ON"]/*' />
     [NativeTypeName("#define SHACF_AUTOAPPEND_FORCE_ON 0x40000000")]
     public const int SHACF_AUTOAPPEND_FORCE_ON = 0x40000000;
 
+    /// <include file='SHACF.xml' path='doc/member[@name="SHACF.SHACF_AUTOAPPEND_FORCE_OFF"]/*' />
     [NativeTypeName("#define SHACF_AUTOAPPEND_FORCE_OFF 0x80000000")]
     public const uint SHACF_AUTOAPPEND_FORCE_OFF = 0x80000000;
 }

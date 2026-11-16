@@ -326,171 +326,227 @@ public static unsafe partial class Windows
     [DllImport("urlmon", ExactSpelling = true)]
     public static extern BOOL WriteHitLogging([NativeTypeName("LPHIT_LOGGING_INFO")] HIT_LOGGING_INFO* lpLogginginfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BINDF_DONTUSECACHE"]/*' />
     [NativeTypeName("#define BINDF_DONTUSECACHE BINDF_GETNEWESTVERSION")]
     public const BINDF BINDF_DONTUSECACHE = BINDF_GETNEWESTVERSION;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BINDF_DONTPUTINCACHE"]/*' />
     [NativeTypeName("#define BINDF_DONTPUTINCACHE BINDF_NOWRITECACHE")]
     public const BINDF BINDF_DONTPUTINCACHE = BINDF_NOWRITECACHE;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BINDF_NOCOPYDATA"]/*' />
     [NativeTypeName("#define BINDF_NOCOPYDATA BINDF_PULLDATA")]
     public const BINDF BINDF_NOCOPYDATA = BINDF_PULLDATA;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INVALID_P_ROOT_SECURITY_ID"]/*' />
     [NativeTypeName("#define INVALID_P_ROOT_SECURITY_ID ((BYTE*)-1)")]
     public static byte* INVALID_P_ROOT_SECURITY_ID => unchecked((byte*)(-1));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PI_DOCFILECLSIDLOOKUP"]/*' />
     [NativeTypeName("#define PI_DOCFILECLSIDLOOKUP PI_CLSIDLOOKUP")]
     public const PI_FLAGS PI_DOCFILECLSIDLOOKUP = PI_CLSIDLOOKUP;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MKSYS_URLMONIKER"]/*' />
     [NativeTypeName("#define MKSYS_URLMONIKER 6")]
     public const int MKSYS_URLMONIKER = 6;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FIEF_FLAG_FORCE_JITUI"]/*' />
     [NativeTypeName("#define FIEF_FLAG_FORCE_JITUI 0x1")]
     public const int FIEF_FLAG_FORCE_JITUI = 0x1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FIEF_FLAG_PEEK"]/*' />
     [NativeTypeName("#define FIEF_FLAG_PEEK 0x2")]
     public const int FIEF_FLAG_PEEK = 0x2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FIEF_FLAG_SKIP_INSTALLED_VERSION_CHECK"]/*' />
     [NativeTypeName("#define FIEF_FLAG_SKIP_INSTALLED_VERSION_CHECK 0x4")]
     public const int FIEF_FLAG_SKIP_INSTALLED_VERSION_CHECK = 0x4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FIEF_FLAG_RESERVED_0"]/*' />
     [NativeTypeName("#define FIEF_FLAG_RESERVED_0 0x8")]
     public const int FIEF_FLAG_RESERVED_0 = 0x8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FMFD_DEFAULT"]/*' />
     [NativeTypeName("#define FMFD_DEFAULT 0x00000000")]
     public const int FMFD_DEFAULT = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FMFD_URLASFILENAME"]/*' />
     [NativeTypeName("#define FMFD_URLASFILENAME 0x00000001")]
     public const int FMFD_URLASFILENAME = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FMFD_ENABLEMIMESNIFFING"]/*' />
     [NativeTypeName("#define FMFD_ENABLEMIMESNIFFING 0x00000002")]
     public const int FMFD_ENABLEMIMESNIFFING = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FMFD_IGNOREMIMETEXTPLAIN"]/*' />
     [NativeTypeName("#define FMFD_IGNOREMIMETEXTPLAIN 0x00000004")]
     public const int FMFD_IGNOREMIMETEXTPLAIN = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FMFD_SERVERMIME"]/*' />
     [NativeTypeName("#define FMFD_SERVERMIME 0x00000008")]
     public const int FMFD_SERVERMIME = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FMFD_RESPECTTEXTPLAIN"]/*' />
     [NativeTypeName("#define FMFD_RESPECTTEXTPLAIN 0x00000010")]
     public const int FMFD_RESPECTTEXTPLAIN = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FMFD_RETURNUPDATEDIMGMIMES"]/*' />
     [NativeTypeName("#define FMFD_RETURNUPDATEDIMGMIMES 0x00000020")]
     public const int FMFD_RETURNUPDATEDIMGMIMES = 0x00000020;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FMFD_RESERVED_1"]/*' />
     [NativeTypeName("#define FMFD_RESERVED_1 0x00000040")]
     public const int FMFD_RESERVED_1 = 0x00000040;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FMFD_RESERVED_2"]/*' />
     [NativeTypeName("#define FMFD_RESERVED_2 0x00000080")]
     public const int FMFD_RESERVED_2 = 0x00000080;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UAS_EXACTLEGACY"]/*' />
     [NativeTypeName("#define UAS_EXACTLEGACY 0x00001000")]
     public const int UAS_EXACTLEGACY = 0x00001000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.URLMON_OPTION_USERAGENT"]/*' />
     [NativeTypeName("#define URLMON_OPTION_USERAGENT 0x10000001")]
     public const int URLMON_OPTION_USERAGENT = 0x10000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.URLMON_OPTION_USERAGENT_REFRESH"]/*' />
     [NativeTypeName("#define URLMON_OPTION_USERAGENT_REFRESH 0x10000002")]
     public const int URLMON_OPTION_USERAGENT_REFRESH = 0x10000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.URLMON_OPTION_URL_ENCODING"]/*' />
     [NativeTypeName("#define URLMON_OPTION_URL_ENCODING 0x10000004")]
     public const int URLMON_OPTION_URL_ENCODING = 0x10000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.URLMON_OPTION_USE_BINDSTRINGCREDS"]/*' />
     [NativeTypeName("#define URLMON_OPTION_USE_BINDSTRINGCREDS 0x10000008")]
     public const int URLMON_OPTION_USE_BINDSTRINGCREDS = 0x10000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.URLMON_OPTION_USE_BROWSERAPPSDOCUMENTS"]/*' />
     [NativeTypeName("#define URLMON_OPTION_USE_BROWSERAPPSDOCUMENTS 0x10000010")]
     public const int URLMON_OPTION_USE_BROWSERAPPSDOCUMENTS = 0x10000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UriBuilder_USE_ORIGINAL_FLAGS"]/*' />
     [NativeTypeName("#define UriBuilder_USE_ORIGINAL_FLAGS 0x00000001")]
     public const int UriBuilder_USE_ORIGINAL_FLAGS = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WININETINFO_OPTION_LOCK_HANDLE"]/*' />
     [NativeTypeName("#define WININETINFO_OPTION_LOCK_HANDLE 65534")]
     public const int WININETINFO_OPTION_LOCK_HANDLE = 65534;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.URLOSTRM_USECACHEDCOPY_ONLY"]/*' />
     [NativeTypeName("#define URLOSTRM_USECACHEDCOPY_ONLY 0x1")]
     public const int URLOSTRM_USECACHEDCOPY_ONLY = 0x1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.URLOSTRM_USECACHEDCOPY"]/*' />
     [NativeTypeName("#define URLOSTRM_USECACHEDCOPY 0x2")]
     public const int URLOSTRM_USECACHEDCOPY = 0x2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.URLOSTRM_GETNEWESTVERSION"]/*' />
     [NativeTypeName("#define URLOSTRM_GETNEWESTVERSION 0x3")]
     public const int URLOSTRM_GETNEWESTVERSION = 0x3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.URLOpenStream"]/*' />
     [NativeTypeName("#define URLOpenStream URLOpenStreamW")]
     public static delegate*<IUnknown*, char*, uint, IBindStatusCallback*, HRESULT> URLOpenStream => &URLOpenStreamW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.URLOpenPullStream"]/*' />
     [NativeTypeName("#define URLOpenPullStream URLOpenPullStreamW")]
     public static delegate*<IUnknown*, char*, uint, IBindStatusCallback*, HRESULT> URLOpenPullStream => &URLOpenPullStreamW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.URLDownloadToFile"]/*' />
     [NativeTypeName("#define URLDownloadToFile URLDownloadToFileW")]
     public static delegate*<IUnknown*, char*, char*, uint, IBindStatusCallback*, HRESULT> URLDownloadToFile => &URLDownloadToFileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.URLDownloadToCacheFile"]/*' />
     [NativeTypeName("#define URLDownloadToCacheFile URLDownloadToCacheFileW")]
     public static delegate*<IUnknown*, char*, char*, uint, uint, IBindStatusCallback*, HRESULT> URLDownloadToCacheFile => &URLDownloadToCacheFileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.URLOpenBlockingStream"]/*' />
     [NativeTypeName("#define URLOpenBlockingStream URLOpenBlockingStreamW")]
     public static delegate*<IUnknown*, char*, IStream**, uint, IBindStatusCallback*, HRESULT> URLOpenBlockingStream => &URLOpenBlockingStreamW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PARSE_ENCODE"]/*' />
     [NativeTypeName("#define PARSE_ENCODE PARSE_ENCODE_IS_UNESCAPE")]
     public const PARSEACTION PARSE_ENCODE = PARSE_ENCODE_IS_UNESCAPE;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PARSE_DECODE"]/*' />
     [NativeTypeName("#define PARSE_DECODE PARSE_DECODE_IS_ESCAPE")]
     public const PARSEACTION PARSE_DECODE = PARSE_DECODE_IS_ESCAPE;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OInetParseUrl"]/*' />
     [NativeTypeName("#define OInetParseUrl CoInternetParseUrl")]
     public static delegate*<char*, PARSEACTION, uint, char*, uint, uint*, uint, HRESULT> OInetParseUrl => &CoInternetParseUrl;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OInetCombineUrl"]/*' />
     [NativeTypeName("#define OInetCombineUrl CoInternetCombineUrl")]
     public static delegate*<char*, char*, uint, char*, uint, uint*, uint, HRESULT> OInetCombineUrl => &CoInternetCombineUrl;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OInetCombineUrlEx"]/*' />
     [NativeTypeName("#define OInetCombineUrlEx CoInternetCombineUrlEx")]
     public static delegate*<IUri*, char*, uint, IUri**, nuint, HRESULT> OInetCombineUrlEx => &CoInternetCombineUrlEx;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OInetCombineIUri"]/*' />
     [NativeTypeName("#define OInetCombineIUri CoInternetCombineIUri")]
     public static delegate*<IUri*, IUri*, uint, IUri**, nuint, HRESULT> OInetCombineIUri => &CoInternetCombineIUri;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OInetCompareUrl"]/*' />
     [NativeTypeName("#define OInetCompareUrl CoInternetCompareUrl")]
     public static delegate*<char*, char*, uint, HRESULT> OInetCompareUrl => &CoInternetCompareUrl;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OInetQueryInfo"]/*' />
     [NativeTypeName("#define OInetQueryInfo CoInternetQueryInfo")]
     public static delegate*<char*, QUERYOPTION, uint, void*, uint, uint*, uint, HRESULT> OInetQueryInfo => &CoInternetQueryInfo;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OInetGetSession"]/*' />
     [NativeTypeName("#define OInetGetSession CoInternetGetSession")]
     public static delegate*<uint, IInternetSession**, uint, HRESULT> OInetGetSession => &CoInternetGetSession;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PROTOCOLFLAG_NO_PICS_CHECK"]/*' />
     [NativeTypeName("#define PROTOCOLFLAG_NO_PICS_CHECK 0x00000001")]
     public const int PROTOCOLFLAG_NO_PICS_CHECK = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.URLZONE_ESC_FLAG"]/*' />
     [NativeTypeName("#define URLZONE_ESC_FLAG 0x100")]
     public const int URLZONE_ESC_FLAG = 0x100;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SOFTDIST_FLAG_USAGE_EMAIL"]/*' />
     [NativeTypeName("#define SOFTDIST_FLAG_USAGE_EMAIL 0x00000001")]
     public const int SOFTDIST_FLAG_USAGE_EMAIL = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SOFTDIST_FLAG_USAGE_PRECACHE"]/*' />
     [NativeTypeName("#define SOFTDIST_FLAG_USAGE_PRECACHE 0x00000002")]
     public const int SOFTDIST_FLAG_USAGE_PRECACHE = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SOFTDIST_FLAG_USAGE_AUTOINSTALL"]/*' />
     [NativeTypeName("#define SOFTDIST_FLAG_USAGE_AUTOINSTALL 0x00000004")]
     public const int SOFTDIST_FLAG_USAGE_AUTOINSTALL = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SOFTDIST_FLAG_DELETE_SUBSCRIPTION"]/*' />
     [NativeTypeName("#define SOFTDIST_FLAG_DELETE_SUBSCRIPTION 0x00000008")]
     public const int SOFTDIST_FLAG_DELETE_SUBSCRIPTION = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SOFTDIST_ADSTATE_NONE"]/*' />
     [NativeTypeName("#define SOFTDIST_ADSTATE_NONE 0x00000000")]
     public const int SOFTDIST_ADSTATE_NONE = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SOFTDIST_ADSTATE_AVAILABLE"]/*' />
     [NativeTypeName("#define SOFTDIST_ADSTATE_AVAILABLE 0x00000001")]
     public const int SOFTDIST_ADSTATE_AVAILABLE = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SOFTDIST_ADSTATE_DOWNLOADED"]/*' />
     [NativeTypeName("#define SOFTDIST_ADSTATE_DOWNLOADED 0x00000002")]
     public const int SOFTDIST_ADSTATE_DOWNLOADED = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SOFTDIST_ADSTATE_INSTALLED"]/*' />
     [NativeTypeName("#define SOFTDIST_ADSTATE_INSTALLED 0x00000003")]
     public const int SOFTDIST_ADSTATE_INSTALLED = 0x00000003;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsLoggingEnabled"]/*' />
     [NativeTypeName("#define IsLoggingEnabled IsLoggingEnabledW")]
     public static delegate*<char*, BOOL> IsLoggingEnabled => &IsLoggingEnabledW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CONFIRMSAFETYACTION_LOADOBJECT"]/*' />
     [NativeTypeName("#define CONFIRMSAFETYACTION_LOADOBJECT 0x00000001")]
     public const int CONFIRMSAFETYACTION_LOADOBJECT = 0x00000001;
 }

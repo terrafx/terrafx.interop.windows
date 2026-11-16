@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IEmailManagerStatics : IEmailManagerStatics.Interface, INativeGuid
 {
+    /// <include file='IEmailManagerStatics.xml' path='doc/member[@name="IEmailManagerStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IEmailManagerStatics);
 
     public void** lpVtbl;

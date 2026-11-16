@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IToastNotificationManagerStatics5 : IToastNotificationManagerStatics5.Interface, INativeGuid
 {
+    /// <include file='IToastNotificationManagerStatics5.xml' path='doc/member[@name="IToastNotificationManagerStatics5.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IToastNotificationManagerStatics5);
 
     public void** lpVtbl;
