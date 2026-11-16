@@ -22,7 +22,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
     public CPU_SET_INFORMATION_TYPE Type;
 
     /// <include file='SYSTEM_CPU_SET_INFORMATION.xml' path='doc/member[@name="SYSTEM_CPU_SET_INFORMATION.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L14459_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L15285_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.CpuSet"]/*' />
@@ -42,7 +42,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.CpuSet"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L14460_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L15286_C9")]
         public _CpuSet_e__Struct CpuSet;
 
         /// <include file='_CpuSet_e__Struct.xml' path='doc/member[@name="_CpuSet_e__Struct"]/*' />
@@ -72,11 +72,11 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
             public byte EfficiencyClass;
 
             /// <include file='_CpuSet_e__Struct.xml' path='doc/member[@name="_CpuSet_e__Struct.Anonymous1"]/*' />
-            [NativeTypeName("__AnonymousRecord_winnt_L14468_C13")]
+            [NativeTypeName("__AnonymousRecord_winnt_L15294_C13")]
             public _Anonymous1_e__Union Anonymous1;
 
             /// <include file='_CpuSet_e__Struct.xml' path='doc/member[@name="_CpuSet_e__Struct.Anonymous2"]/*' />
-            [NativeTypeName("__AnonymousRecord_winnt_L14485_C13")]
+            [NativeTypeName("__AnonymousRecord_winnt_L15311_C13")]
             public _Anonymous2_e__Union Anonymous2;
 
             /// <include file='_CpuSet_e__Struct.xml' path='doc/member[@name="_CpuSet_e__Struct.AllocationTag"]/*' />
@@ -206,7 +206,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
 
                 /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Anonymous"]/*' />
                 [FieldOffset(0)]
-                [NativeTypeName("__AnonymousRecord_winnt_L14476_C17")]
+                [NativeTypeName("__AnonymousRecord_winnt_L15302_C17")]
                 public _Anonymous_e__Struct Anonymous;
 
                 /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

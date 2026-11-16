@@ -21,7 +21,7 @@ public partial struct DRIVER_RUNTIME_REPORT
     public ushort NumberOfDrivers;
 
     /// <include file='DRIVER_RUNTIME_REPORT.xml' path='doc/member[@name="DRIVER_RUNTIME_REPORT.Flags"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L15267_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L16100_C5")]
     public _Flags_e__Union Flags;
 
     /// <include file='DRIVER_RUNTIME_REPORT.xml' path='doc/member[@name="DRIVER_RUNTIME_REPORT.DriverEntries"]/*' />
@@ -34,7 +34,7 @@ public partial struct DRIVER_RUNTIME_REPORT
     {
         /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L15268_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L16101_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union.AsUInt16"]/*' />
