@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("D197380A-0A79-4DC8-A033-ED882C2FA14B")]
 public unsafe partial struct FSCopyHandler : INativeGuid
 {
+    /// <include file='FSCopyHandler.xml' path='doc/member[@name="FSCopyHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_FSCopyHandler);
 }

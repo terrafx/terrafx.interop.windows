@@ -7,6 +7,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DirectX
 {
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX._FACDXGI"]/*' />
     [NativeTypeName("#define _FACDXGI 0x87a")]
     public const int _FACDXGI = 0x87a;
 }

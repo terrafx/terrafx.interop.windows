@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("BFE29EC2-056C-4D68-A38D-AE5944C8582E")]
 public unsafe partial struct CODECAPI_AVEncH264PPSID : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncH264PPSID.xml' path='doc/member[@name="CODECAPI_AVEncH264PPSID.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncH264PPSID);
 }

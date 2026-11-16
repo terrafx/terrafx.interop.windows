@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface, INativeGuid
 {
+    /// <include file='IRunningObjectTable.xml' path='doc/member[@name="IRunningObjectTable.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRunningObjectTable);
 
     public void** lpVtbl;

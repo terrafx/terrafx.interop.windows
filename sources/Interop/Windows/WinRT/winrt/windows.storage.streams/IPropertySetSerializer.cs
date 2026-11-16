@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPropertySetSerializer : IPropertySetSerializer.Interface, INativeGuid
 {
+    /// <include file='IPropertySetSerializer.xml' path='doc/member[@name="IPropertySetSerializer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPropertySetSerializer);
 
     public void** lpVtbl;

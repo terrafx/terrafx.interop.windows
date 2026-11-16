@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct ISpeechTextSelectionInformation : ISpeechTextSelectionInformation.Interface, INativeGuid
 {
+    /// <include file='ISpeechTextSelectionInformation.xml' path='doc/member[@name="ISpeechTextSelectionInformation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpeechTextSelectionInformation);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IHighlightRenderingServices : IHighlightRenderingServices.Interface, INativeGuid
 {
+    /// <include file='IHighlightRenderingServices.xml' path='doc/member[@name="IHighlightRenderingServices.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHighlightRenderingServices);
 
     public void** lpVtbl;

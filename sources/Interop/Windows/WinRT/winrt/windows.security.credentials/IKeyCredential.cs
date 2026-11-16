@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IKeyCredential : IKeyCredential.Interface, INativeGuid
 {
+    /// <include file='IKeyCredential.xml' path='doc/member[@name="IKeyCredential.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IKeyCredential);
 
     public void** lpVtbl;

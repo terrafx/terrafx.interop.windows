@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDirect3DVolume9 : IDirect3DVolume9.Interface, INativeGuid
 {
+    /// <include file='IDirect3DVolume9.xml' path='doc/member[@name="IDirect3DVolume9.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDirect3DVolume9);
 
     public void** lpVtbl;

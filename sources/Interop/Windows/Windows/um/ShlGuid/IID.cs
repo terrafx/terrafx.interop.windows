@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_INewShortcutHookA"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_INewShortcutHookA
     {
@@ -37,6 +38,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IShellBrowser"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IShellBrowser
     {
@@ -62,6 +64,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IShellView"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IShellView
     {
@@ -87,6 +90,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IContextMenu"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IContextMenu
     {
@@ -112,6 +116,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IShellIcon"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IShellIcon
     {
@@ -137,6 +142,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IShellFolder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IShellFolder
     {
@@ -162,6 +168,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IShellExtInit"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IShellExtInit
     {
@@ -187,6 +194,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IShellPropSheetExt"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IShellPropSheetExt
     {
@@ -212,6 +220,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IPersistFolder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IPersistFolder
     {
@@ -237,6 +246,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IExtractIconA"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IExtractIconA
     {
@@ -262,6 +272,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IShellDetails"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IShellDetails
     {
@@ -287,6 +298,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IShellLinkA"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IShellLinkA
     {
@@ -312,6 +324,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ICopyHookA"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ICopyHookA
     {
@@ -337,6 +350,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IFileViewerA"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IFileViewerA
     {
@@ -362,6 +376,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ICommDlgBrowser"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ICommDlgBrowser
     {
@@ -387,6 +402,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IEnumIDList"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IEnumIDList
     {
@@ -412,6 +428,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IFileViewerSite"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IFileViewerSite
     {
@@ -437,6 +454,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IContextMenu2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IContextMenu2
     {
@@ -462,6 +480,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IShellExecuteHookA"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IShellExecuteHookA
     {
@@ -487,6 +506,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IPropSheetPage"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IPropSheetPage
     {
@@ -512,6 +532,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_INewShortcutHookW"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_INewShortcutHookW
     {
@@ -537,6 +558,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IFileViewerW"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IFileViewerW
     {
@@ -562,6 +584,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IShellLinkW"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IShellLinkW
     {
@@ -587,6 +610,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IExtractIconW"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IExtractIconW
     {
@@ -612,6 +636,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IShellExecuteHookW"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IShellExecuteHookW
     {
@@ -637,6 +662,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ICopyHookW"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ICopyHookW
     {
@@ -662,6 +688,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IRemoteComputer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IRemoteComputer
     {
@@ -687,6 +714,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IQueryInfo"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IQueryInfo
     {
@@ -712,6 +740,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IBriefcaseStg"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IBriefcaseStg
     {
@@ -737,6 +766,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IShellView2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IShellView2
     {
@@ -762,6 +792,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IURLSearchHook"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IURLSearchHook
     {
@@ -787,6 +818,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ISearchContext"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ISearchContext
     {
@@ -812,6 +844,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IURLSearchHook2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IURLSearchHook2
     {
@@ -837,6 +870,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDefViewID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDefViewID
     {
@@ -862,6 +896,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDockingWindowSite"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDockingWindowSite
     {
@@ -887,6 +922,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDockingWindowFrame"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDockingWindowFrame
     {
@@ -912,6 +948,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IShellIconOverlay"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IShellIconOverlay
     {
@@ -937,6 +974,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IShellIconOverlayIdentifier"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IShellIconOverlayIdentifier
     {
@@ -962,6 +1000,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ICommDlgBrowser2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ICommDlgBrowser2
     {
@@ -987,6 +1026,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IShellFolderViewCB"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IShellFolderViewCB
     {
@@ -1012,6 +1052,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IShellIconOverlayManager"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IShellIconOverlayManager
     {
@@ -1037,6 +1078,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IThumbnailCapture"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IThumbnailCapture
     {
@@ -1062,6 +1104,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IShellImageStore"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IShellImageStore
     {
@@ -1087,6 +1130,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IContextMenu3"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IContextMenu3
     {
@@ -1112,6 +1156,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IShellFolderBand"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IShellFolderBand
     {
@@ -1137,6 +1182,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDefViewFrame"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDefViewFrame
     {
@@ -1162,6 +1208,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDiscardableBrowserProperty"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDiscardableBrowserProperty
     {
@@ -1187,6 +1234,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IShellChangeNotify"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IShellChangeNotify
     {
@@ -1212,6 +1260,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IObjMgr"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IObjMgr
     {
@@ -1237,6 +1286,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IACList"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IACList
     {
@@ -1262,6 +1312,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IACList2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IACList2
     {
@@ -1287,6 +1338,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ICurrentWorkingDirectory"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ICurrentWorkingDirectory
     {
@@ -1312,6 +1364,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IProgressDialog"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IProgressDialog
     {
@@ -1337,6 +1390,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IActiveDesktop"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IActiveDesktop
     {
@@ -1362,6 +1416,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IActiveDesktopP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IActiveDesktopP
     {
@@ -1387,6 +1442,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IADesktopP2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IADesktopP2
     {
@@ -1412,6 +1468,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ISynchronizedCallBack"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ISynchronizedCallBack
     {
@@ -1437,6 +1494,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IQueryAssociations"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IQueryAssociations
     {
@@ -1462,6 +1520,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IColumnProvider"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IColumnProvider
     {
@@ -1487,6 +1546,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_INamedPropertyBag"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_INamedPropertyBag
     {
@@ -1512,6 +1572,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IShellFolder2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IShellFolder2
     {
@@ -1537,6 +1598,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IEnumExtraSearch"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IEnumExtraSearch
     {
@@ -1562,6 +1624,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IFileSystemBindData"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IFileSystemBindData
     {
@@ -1587,6 +1650,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDocViewSite"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDocViewSite
     {
@@ -1612,6 +1676,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_CDefView"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_CDefView
     {
@@ -1637,6 +1702,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IBanneredBar"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IBanneredBar
     {
@@ -1662,27 +1728,35 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IShellCopyHookA"]/*' />
     [NativeTypeName("#define IID_IShellCopyHookA IID_ICopyHookA")]
     public static ref readonly Guid IID_IShellCopyHookA => ref IID_ICopyHookA;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IShellCopyHookW"]/*' />
     [NativeTypeName("#define IID_IShellCopyHookW IID_ICopyHookW")]
     public static ref readonly Guid IID_IShellCopyHookW => ref IID_ICopyHookW;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IFileViewer"]/*' />
     [NativeTypeName("#define IID_IFileViewer IID_IFileViewerW")]
     public static ref readonly Guid IID_IFileViewer => ref IID_IFileViewerW;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IShellLink"]/*' />
     [NativeTypeName("#define IID_IShellLink IID_IShellLinkW")]
     public static ref readonly Guid IID_IShellLink => ref IID_IShellLinkW;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IExtractIcon"]/*' />
     [NativeTypeName("#define IID_IExtractIcon IID_IExtractIconW")]
     public static ref readonly Guid IID_IExtractIcon => ref IID_IExtractIconW;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IShellCopyHook"]/*' />
     [NativeTypeName("#define IID_IShellCopyHook IID_IShellCopyHookW")]
     public static ref readonly Guid IID_IShellCopyHook => ref IID_ICopyHookW;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IShellExecuteHook"]/*' />
     [NativeTypeName("#define IID_IShellExecuteHook IID_IShellExecuteHookW")]
     public static ref readonly Guid IID_IShellExecuteHook => ref IID_IShellExecuteHookW;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_INewShortcutHook"]/*' />
     [NativeTypeName("#define IID_INewShortcutHook IID_INewShortcutHookW")]
     public static ref readonly Guid IID_INewShortcutHook => ref IID_INewShortcutHookW;
 }

@@ -7,9 +7,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DICD
 {
+    /// <include file='DICD.xml' path='doc/member[@name="DICD.DICD_DEFAULT"]/*' />
     [NativeTypeName("#define DICD_DEFAULT 0x00000000")]
     public const int DICD_DEFAULT = 0x00000000;
 
+    /// <include file='DICD.xml' path='doc/member[@name="DICD.DICD_EDIT"]/*' />
     [NativeTypeName("#define DICD_EDIT 0x00000001")]
     public const int DICD_EDIT = 0x00000001;
 }

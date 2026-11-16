@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISpeechRecognitionQualityDegradingEventArgs : ISpeechRecognitionQualityDegradingEventArgs.Interface, INativeGuid
 {
+    /// <include file='ISpeechRecognitionQualityDegradingEventArgs.xml' path='doc/member[@name="ISpeechRecognitionQualityDegradingEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpeechRecognitionQualityDegradingEventArgs);
 
     public void** lpVtbl;

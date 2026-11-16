@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IRecordInfo : IRecordInfo.Interface, INativeGuid
 {
+    /// <include file='IRecordInfo.xml' path='doc/member[@name="IRecordInfo.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRecordInfo);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IWICBitmapSource")]
 public unsafe partial struct IWICBitmapFlipRotator : IWICBitmapFlipRotator.Interface, INativeGuid
 {
+    /// <include file='IWICBitmapFlipRotator.xml' path='doc/member[@name="IWICBitmapFlipRotator.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWICBitmapFlipRotator);
 
     public void** lpVtbl;

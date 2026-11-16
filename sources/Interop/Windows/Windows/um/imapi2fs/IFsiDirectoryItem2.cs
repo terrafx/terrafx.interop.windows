@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IFsiDirectoryItem")]
 public unsafe partial struct IFsiDirectoryItem2 : IFsiDirectoryItem2.Interface, INativeGuid
 {
+    /// <include file='IFsiDirectoryItem2.xml' path='doc/member[@name="IFsiDirectoryItem2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFsiDirectoryItem2);
 
     public void** lpVtbl;

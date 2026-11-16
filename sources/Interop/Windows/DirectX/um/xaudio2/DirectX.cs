@@ -14,99 +14,131 @@ public static unsafe partial class DirectX
     [DllImport("xaudio2_9", ExactSpelling = true)]
     public static extern HRESULT XAudio2CreateWithVersionInfo(IXAudio2** ppXAudio2, [NativeTypeName("UINT32")] uint Flags = 0, [NativeTypeName("XAUDIO2_PROCESSOR")] uint XAudio2Processor = 0x00000001, [NativeTypeName("DWORD")] uint ntddiVersion = 0x0A000012);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor1"]/*' />
     [NativeTypeName("#define Processor1 0x00000001")]
     public const int Processor1 = 0x00000001;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor2"]/*' />
     [NativeTypeName("#define Processor2 0x00000002")]
     public const int Processor2 = 0x00000002;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor3"]/*' />
     [NativeTypeName("#define Processor3 0x00000004")]
     public const int Processor3 = 0x00000004;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor4"]/*' />
     [NativeTypeName("#define Processor4 0x00000008")]
     public const int Processor4 = 0x00000008;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor5"]/*' />
     [NativeTypeName("#define Processor5 0x00000010")]
     public const int Processor5 = 0x00000010;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor6"]/*' />
     [NativeTypeName("#define Processor6 0x00000020")]
     public const int Processor6 = 0x00000020;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor7"]/*' />
     [NativeTypeName("#define Processor7 0x00000040")]
     public const int Processor7 = 0x00000040;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor8"]/*' />
     [NativeTypeName("#define Processor8 0x00000080")]
     public const int Processor8 = 0x00000080;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor9"]/*' />
     [NativeTypeName("#define Processor9 0x00000100")]
     public const int Processor9 = 0x00000100;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor10"]/*' />
     [NativeTypeName("#define Processor10 0x00000200")]
     public const int Processor10 = 0x00000200;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor11"]/*' />
     [NativeTypeName("#define Processor11 0x00000400")]
     public const int Processor11 = 0x00000400;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor12"]/*' />
     [NativeTypeName("#define Processor12 0x00000800")]
     public const int Processor12 = 0x00000800;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor13"]/*' />
     [NativeTypeName("#define Processor13 0x00001000")]
     public const int Processor13 = 0x00001000;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor14"]/*' />
     [NativeTypeName("#define Processor14 0x00002000")]
     public const int Processor14 = 0x00002000;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor15"]/*' />
     [NativeTypeName("#define Processor15 0x00004000")]
     public const int Processor15 = 0x00004000;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor16"]/*' />
     [NativeTypeName("#define Processor16 0x00008000")]
     public const int Processor16 = 0x00008000;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor17"]/*' />
     [NativeTypeName("#define Processor17 0x00010000")]
     public const int Processor17 = 0x00010000;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor18"]/*' />
     [NativeTypeName("#define Processor18 0x00020000")]
     public const int Processor18 = 0x00020000;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor19"]/*' />
     [NativeTypeName("#define Processor19 0x00040000")]
     public const int Processor19 = 0x00040000;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor20"]/*' />
     [NativeTypeName("#define Processor20 0x00080000")]
     public const int Processor20 = 0x00080000;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor21"]/*' />
     [NativeTypeName("#define Processor21 0x00100000")]
     public const int Processor21 = 0x00100000;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor22"]/*' />
     [NativeTypeName("#define Processor22 0x00200000")]
     public const int Processor22 = 0x00200000;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor23"]/*' />
     [NativeTypeName("#define Processor23 0x00400000")]
     public const int Processor23 = 0x00400000;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor24"]/*' />
     [NativeTypeName("#define Processor24 0x00800000")]
     public const int Processor24 = 0x00800000;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor25"]/*' />
     [NativeTypeName("#define Processor25 0x01000000")]
     public const int Processor25 = 0x01000000;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor26"]/*' />
     [NativeTypeName("#define Processor26 0x02000000")]
     public const int Processor26 = 0x02000000;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor27"]/*' />
     [NativeTypeName("#define Processor27 0x04000000")]
     public const int Processor27 = 0x04000000;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor28"]/*' />
     [NativeTypeName("#define Processor28 0x08000000")]
     public const int Processor28 = 0x08000000;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor29"]/*' />
     [NativeTypeName("#define Processor29 0x10000000")]
     public const int Processor29 = 0x10000000;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor30"]/*' />
     [NativeTypeName("#define Processor30 0x20000000")]
     public const int Processor30 = 0x20000000;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor31"]/*' />
     [NativeTypeName("#define Processor31 0x40000000")]
     public const int Processor31 = 0x40000000;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.Processor32"]/*' />
     [NativeTypeName("#define Processor32 0x80000000")]
     public const uint Processor32 = 0x80000000;
 }

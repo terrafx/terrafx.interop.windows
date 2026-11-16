@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("IUnconstrainedTransferRequestResult is deprecated and may not work on all platforms. For more info, see MSDN.")]
 public unsafe partial struct IUnconstrainedTransferRequestResult : IUnconstrainedTransferRequestResult.Interface, INativeGuid
 {
+    /// <include file='IUnconstrainedTransferRequestResult.xml' path='doc/member[@name="IUnconstrainedTransferRequestResult.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUnconstrainedTransferRequestResult);
 
     public void** lpVtbl;

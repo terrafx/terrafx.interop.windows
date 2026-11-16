@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct ID3D11TracingDevice : ID3D11TracingDevice.Interface, INativeGuid
 {
+    /// <include file='ID3D11TracingDevice.xml' path='doc/member[@name="ID3D11TracingDevice.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3D11TracingDevice);
 
     public void** lpVtbl;

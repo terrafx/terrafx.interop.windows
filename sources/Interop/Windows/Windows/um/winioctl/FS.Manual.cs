@@ -16,7 +16,7 @@ public static unsafe partial class FS
         get
         {
             Unsafe.SkipInit(out FS_BPIO_OUTPUT tmp);
-            return ((uint)(&tmp.Anonymous.Enable) - (uint)(&tmp)) + (uint)(sizeof(FS_BPIO_RESULTS));
+            return unchecked(((uint)(&tmp.Anonymous.Enable) - (uint)(&tmp)) + (uint)sizeof(FS_BPIO_RESULTS));
         }
     }
 
@@ -27,7 +27,7 @@ public static unsafe partial class FS
         get
         {
             Unsafe.SkipInit(out FS_BPIO_OUTPUT tmp);
-            return ((uint)(&tmp.Anonymous.Query) - (uint)(&tmp)) + (uint)(sizeof(FS_BPIO_RESULTS));
+            return unchecked(((uint)(&tmp.Anonymous.Query) - (uint)(&tmp)) + (uint)sizeof(FS_BPIO_RESULTS));
         }
     }
 
@@ -38,7 +38,7 @@ public static unsafe partial class FS
         get
         {
             Unsafe.SkipInit(out FS_BPIO_OUTPUT tmp);
-            return ((uint)(&tmp.Anonymous.Enable) - (uint)(&tmp)) + (uint)(sizeof(FS_BPIO_RESULTS));
+            return unchecked(((uint)(&tmp.Anonymous.Enable) - (uint)(&tmp)) + (uint)sizeof(FS_BPIO_RESULTS));
         }
     }
 
@@ -49,7 +49,7 @@ public static unsafe partial class FS
         get
         {
             Unsafe.SkipInit(out FS_BPIO_OUTPUT tmp);
-            return ((uint)(&tmp.Anonymous.Enable) - (uint)(&tmp)) + (uint)(sizeof(FS_BPIO_RESULTS));
+            return unchecked(((uint)(&tmp.Anonymous.Enable) - (uint)(&tmp)) + (uint)sizeof(FS_BPIO_RESULTS));
         }
     }
 
@@ -60,7 +60,7 @@ public static unsafe partial class FS
         get
         {
             Unsafe.SkipInit(out FS_BPIO_OUTPUT tmp);
-            return ((uint)(&tmp.Anonymous.VolumeStackResume) - (uint)(&tmp)) + (uint)(sizeof(FS_BPIO_RESULTS));
+            return unchecked(((uint)(&tmp.Anonymous.VolumeStackResume) - (uint)(&tmp)) + (uint)sizeof(FS_BPIO_RESULTS));
         }
     }
 
@@ -71,7 +71,7 @@ public static unsafe partial class FS
         get
         {
             Unsafe.SkipInit(out FS_BPIO_OUTPUT tmp);
-            return ((uint)(&tmp.Anonymous.Enable) - (uint)(&tmp)) + (uint)(sizeof(FS_BPIO_RESULTS));
+            return unchecked(((uint)(&tmp.Anonymous.Enable) - (uint)(&tmp)) + (uint)sizeof(FS_BPIO_RESULTS));
         }
     }
 
@@ -82,7 +82,7 @@ public static unsafe partial class FS
         get
         {
             Unsafe.SkipInit(out FS_BPIO_OUTPUT tmp);
-            return ((uint)(&tmp.Anonymous.StreamResume) - (uint)(&tmp)) + (uint)(sizeof(FS_BPIO_RESULTS));
+            return unchecked(((uint)(&tmp.Anonymous.StreamResume) - (uint)(&tmp)) + (uint)sizeof(FS_BPIO_RESULTS));
         }
     }
 
@@ -93,7 +93,7 @@ public static unsafe partial class FS
         get
         {
             Unsafe.SkipInit(out FS_BPIO_OUTPUT tmp);
-            return ((uint)(&tmp.Anonymous.GetInfo) - (uint)(&tmp)) + (uint)(sizeof(FS_BPIO_INFO));
+            return unchecked(((uint)(&tmp.Anonymous.GetInfo) - (uint)(&tmp)) + (uint)sizeof(FS_BPIO_INFO));
         }
     }
 }

@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("30510719-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct CanvasTextMetrics : INativeGuid
 {
+    /// <include file='CanvasTextMetrics.xml' path='doc/member[@name="CanvasTextMetrics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_CanvasTextMetrics);
 }

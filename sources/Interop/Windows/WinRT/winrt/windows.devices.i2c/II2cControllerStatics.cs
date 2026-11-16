@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct II2cControllerStatics : II2cControllerStatics.Interface, INativeGuid
 {
+    /// <include file='II2cControllerStatics.xml' path='doc/member[@name="II2cControllerStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_II2cControllerStatics);
 
     public void** lpVtbl;

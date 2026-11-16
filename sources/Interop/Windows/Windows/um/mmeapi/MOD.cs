@@ -7,24 +7,31 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MOD
 {
+    /// <include file='MOD.xml' path='doc/member[@name="MOD.MOD_MIDIPORT"]/*' />
     [NativeTypeName("#define MOD_MIDIPORT 1")]
     public const int MOD_MIDIPORT = 1;
 
+    /// <include file='MOD.xml' path='doc/member[@name="MOD.MOD_SYNTH"]/*' />
     [NativeTypeName("#define MOD_SYNTH 2")]
     public const int MOD_SYNTH = 2;
 
+    /// <include file='MOD.xml' path='doc/member[@name="MOD.MOD_SQSYNTH"]/*' />
     [NativeTypeName("#define MOD_SQSYNTH 3")]
     public const int MOD_SQSYNTH = 3;
 
+    /// <include file='MOD.xml' path='doc/member[@name="MOD.MOD_FMSYNTH"]/*' />
     [NativeTypeName("#define MOD_FMSYNTH 4")]
     public const int MOD_FMSYNTH = 4;
 
+    /// <include file='MOD.xml' path='doc/member[@name="MOD.MOD_MAPPER"]/*' />
     [NativeTypeName("#define MOD_MAPPER 5")]
     public const int MOD_MAPPER = 5;
 
+    /// <include file='MOD.xml' path='doc/member[@name="MOD.MOD_WAVETABLE"]/*' />
     [NativeTypeName("#define MOD_WAVETABLE 6")]
     public const int MOD_WAVETABLE = 6;
 
+    /// <include file='MOD.xml' path='doc/member[@name="MOD.MOD_SWSYNTH"]/*' />
     [NativeTypeName("#define MOD_SWSYNTH 7")]
     public const int MOD_SWSYNTH = 7;
 }

@@ -19,4 +19,7 @@ public enum eTlsSignatureAlgorithm
 
     /// <include file='eTlsSignatureAlgorithm.xml' path='doc/member[@name="eTlsSignatureAlgorithm.TlsSignatureAlgorithm_Ecdsa"]/*' />
     TlsSignatureAlgorithm_Ecdsa = 3,
+
+    /// <include file='eTlsSignatureAlgorithm.xml' path='doc/member[@name="eTlsSignatureAlgorithm.TlsSignatureAlgorithm_Mldsa"]/*' />
+    TlsSignatureAlgorithm_Mldsa = 9,
 }

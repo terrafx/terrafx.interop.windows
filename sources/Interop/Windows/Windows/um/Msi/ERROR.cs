@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class ERROR
 {
+    /// <include file='ERROR.xml' path='doc/member[@name="ERROR.ERROR_ROLLBACK_DISABLED"]/*' />
     [NativeTypeName("#define ERROR_ROLLBACK_DISABLED 1653L")]
     public const int ERROR_ROLLBACK_DISABLED = 1653;
 }

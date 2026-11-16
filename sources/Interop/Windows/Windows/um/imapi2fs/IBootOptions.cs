@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IBootOptions : IBootOptions.Interface, INativeGuid
 {
+    /// <include file='IBootOptions.xml' path='doc/member[@name="IBootOptions.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBootOptions);
 
     public void** lpVtbl;

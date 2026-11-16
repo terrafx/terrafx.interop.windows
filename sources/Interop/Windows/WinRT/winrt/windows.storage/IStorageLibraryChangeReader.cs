@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IStorageLibraryChangeReader : IStorageLibraryChangeReader.Interface, INativeGuid
 {
+    /// <include file='IStorageLibraryChangeReader.xml' path='doc/member[@name="IStorageLibraryChangeReader.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IStorageLibraryChangeReader);
 
     public void** lpVtbl;

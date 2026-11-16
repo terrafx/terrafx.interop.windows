@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IDropShadow : IDropShadow.Interface, INativeGuid
 {
+    /// <include file='IDropShadow.xml' path='doc/member[@name="IDropShadow.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDropShadow);
 
     public void** lpVtbl;

@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("7A0F6AB7-ED84-46B6-B47E-02AA159A152B")]
 public unsafe partial struct SimpleConflictPresenter : INativeGuid
 {
+    /// <include file='SimpleConflictPresenter.xml' path='doc/member[@name="SimpleConflictPresenter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SimpleConflictPresenter);
 }

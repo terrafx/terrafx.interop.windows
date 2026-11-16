@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IPin : IPin.Interface, INativeGuid
 {
+    /// <include file='IPin.xml' path='doc/member[@name="IPin.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPin);
 
     public void** lpVtbl;

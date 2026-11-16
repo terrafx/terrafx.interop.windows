@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IDXGIOutput4 : IDXGIOutput4.Interface, INativeGuid
 {
+    /// <include file='IDXGIOutput4.xml' path='doc/member[@name="IDXGIOutput4.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDXGIOutput4);
 
     public void** lpVtbl;

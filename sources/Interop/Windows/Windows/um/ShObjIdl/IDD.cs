@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IDD
 {
+    /// <include file='IDD.xml' path='doc/member[@name="IDD.IDD_WIZEXTN_FIRST"]/*' />
     [NativeTypeName("#define IDD_WIZEXTN_FIRST 0x5000")]
     public const int IDD_WIZEXTN_FIRST = 0x5000;
 
+    /// <include file='IDD.xml' path='doc/member[@name="IDD.IDD_WIZEXTN_LAST"]/*' />
     [NativeTypeName("#define IDD_WIZEXTN_LAST 0x5100")]
     public const int IDD_WIZEXTN_LAST = 0x5100;
 }

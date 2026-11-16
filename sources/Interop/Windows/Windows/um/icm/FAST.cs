@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class FAST
 {
+    /// <include file='FAST.xml' path='doc/member[@name="FAST.FAST_TRANSLATE"]/*' />
     [NativeTypeName("#define FAST_TRANSLATE 0x00040000")]
     public const int FAST_TRANSLATE = 0x00040000;
 }

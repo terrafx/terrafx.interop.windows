@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SYNCMGR
 {
+    /// <include file='SYNCMGR.xml' path='doc/member[@name="SYNCMGR.SYNCMGR_OBJECTID_Icon"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SYNCMGR_OBJECTID_Icon
     {
@@ -37,6 +38,7 @@ public static partial class SYNCMGR
         }
     }
 
+    /// <include file='SYNCMGR.xml' path='doc/member[@name="SYNCMGR.SYNCMGR_OBJECTID_EventStore"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SYNCMGR_OBJECTID_EventStore
     {
@@ -62,6 +64,7 @@ public static partial class SYNCMGR
         }
     }
 
+    /// <include file='SYNCMGR.xml' path='doc/member[@name="SYNCMGR.SYNCMGR_OBJECTID_ConflictStore"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SYNCMGR_OBJECTID_ConflictStore
     {
@@ -87,6 +90,7 @@ public static partial class SYNCMGR
         }
     }
 
+    /// <include file='SYNCMGR.xml' path='doc/member[@name="SYNCMGR.SYNCMGR_OBJECTID_BrowseContent"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SYNCMGR_OBJECTID_BrowseContent
     {
@@ -112,6 +116,7 @@ public static partial class SYNCMGR
         }
     }
 
+    /// <include file='SYNCMGR.xml' path='doc/member[@name="SYNCMGR.SYNCMGR_OBJECTID_ShowSchedule"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SYNCMGR_OBJECTID_ShowSchedule
     {
@@ -137,6 +142,7 @@ public static partial class SYNCMGR
         }
     }
 
+    /// <include file='SYNCMGR.xml' path='doc/member[@name="SYNCMGR.SYNCMGR_OBJECTID_QueryBeforeActivate"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SYNCMGR_OBJECTID_QueryBeforeActivate
     {
@@ -162,6 +168,7 @@ public static partial class SYNCMGR
         }
     }
 
+    /// <include file='SYNCMGR.xml' path='doc/member[@name="SYNCMGR.SYNCMGR_OBJECTID_QueryBeforeDeactivate"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SYNCMGR_OBJECTID_QueryBeforeDeactivate
     {
@@ -187,6 +194,7 @@ public static partial class SYNCMGR
         }
     }
 
+    /// <include file='SYNCMGR.xml' path='doc/member[@name="SYNCMGR.SYNCMGR_OBJECTID_QueryBeforeEnable"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SYNCMGR_OBJECTID_QueryBeforeEnable
     {
@@ -212,6 +220,7 @@ public static partial class SYNCMGR
         }
     }
 
+    /// <include file='SYNCMGR.xml' path='doc/member[@name="SYNCMGR.SYNCMGR_OBJECTID_QueryBeforeDisable"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SYNCMGR_OBJECTID_QueryBeforeDisable
     {
@@ -237,6 +246,7 @@ public static partial class SYNCMGR
         }
     }
 
+    /// <include file='SYNCMGR.xml' path='doc/member[@name="SYNCMGR.SYNCMGR_OBJECTID_QueryBeforeDelete"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SYNCMGR_OBJECTID_QueryBeforeDelete
     {
@@ -262,6 +272,7 @@ public static partial class SYNCMGR
         }
     }
 
+    /// <include file='SYNCMGR.xml' path='doc/member[@name="SYNCMGR.SYNCMGR_OBJECTID_EventLinkClick"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SYNCMGR_OBJECTID_EventLinkClick
     {

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IReverbEffectDefinitionFactory : IReverbEffectDefinitionFactory.Interface, INativeGuid
 {
+    /// <include file='IReverbEffectDefinitionFactory.xml' path='doc/member[@name="IReverbEffectDefinitionFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IReverbEffectDefinitionFactory);
 
     public void** lpVtbl;

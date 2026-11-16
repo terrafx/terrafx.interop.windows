@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IFolderPicker2 : IFolderPicker2.Interface, INativeGuid
 {
+    /// <include file='IFolderPicker2.xml' path='doc/member[@name="IFolderPicker2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFolderPicker2);
 
     public void** lpVtbl;

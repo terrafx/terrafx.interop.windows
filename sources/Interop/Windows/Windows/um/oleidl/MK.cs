@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MK
 {
+    /// <include file='MK.xml' path='doc/member[@name="MK.MK_ALT"]/*' />
     [NativeTypeName("#define MK_ALT ( 0x20 )")]
     public const int MK_ALT = (0x20);
 }

@@ -9,12 +9,15 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3DCOMPILER
 {
+    /// <include file='D3DCOMPILER.xml' path='doc/member[@name="D3DCOMPILER.D3DCOMPILER_DLL_W"]/*' />
     [NativeTypeName("#define D3DCOMPILER_DLL_W L\"d3dcompiler_47.dll\"")]
     public const string D3DCOMPILER_DLL_W = "d3dcompiler_47.dll";
 
+    /// <include file='D3DCOMPILER.xml' path='doc/member[@name="D3DCOMPILER.D3DCOMPILER_DLL_A"]/*' />
     [NativeTypeName("#define D3DCOMPILER_DLL_A \"d3dcompiler_47.dll\"")]
     public static ReadOnlySpan<byte> D3DCOMPILER_DLL_A => "d3dcompiler_47.dll"u8;
 
+    /// <include file='D3DCOMPILER.xml' path='doc/member[@name="D3DCOMPILER.D3DCOMPILER_DLL"]/*' />
     [NativeTypeName("#define D3DCOMPILER_DLL D3DCOMPILER_DLL_W")]
     public const string D3DCOMPILER_DLL = "d3dcompiler_47.dll";
 }

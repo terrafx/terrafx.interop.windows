@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MF
 {
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MP2DLNA_USE_MMCSS"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MP2DLNA_USE_MMCSS
     {
@@ -37,6 +38,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MP2DLNA_VIDEO_BIT_RATE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MP2DLNA_VIDEO_BIT_RATE
     {
@@ -62,6 +64,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MP2DLNA_AUDIO_BIT_RATE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MP2DLNA_AUDIO_BIT_RATE
     {
@@ -87,6 +90,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MP2DLNA_ENCODE_QUALITY"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MP2DLNA_ENCODE_QUALITY
     {
@@ -112,6 +116,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MP2DLNA_STATISTICS"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MP2DLNA_STATISTICS
     {

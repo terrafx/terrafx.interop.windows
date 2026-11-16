@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IMFAttributes")]
 public unsafe partial struct IMFOutputPolicy : IMFOutputPolicy.Interface, INativeGuid
 {
+    /// <include file='IMFOutputPolicy.xml' path='doc/member[@name="IMFOutputPolicy.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFOutputPolicy);
 
     public void** lpVtbl;

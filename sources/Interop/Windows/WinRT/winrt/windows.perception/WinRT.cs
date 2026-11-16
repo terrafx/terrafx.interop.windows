@@ -7,21 +7,27 @@ namespace TerraFX.Interop.WinRT;
 
 public static partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Perception_IPerceptionTimestamp"]/*' />
     [NativeTypeName("const WCHAR[40]")]
     public const string InterfaceName_Windows_Perception_IPerceptionTimestamp = "Windows.Perception.IPerceptionTimestamp";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Perception_IPerceptionTimestamp2"]/*' />
     [NativeTypeName("const WCHAR[41]")]
     public const string InterfaceName_Windows_Perception_IPerceptionTimestamp2 = "Windows.Perception.IPerceptionTimestamp2";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Perception_IPerceptionTimestampHelperStatics"]/*' />
     [NativeTypeName("const WCHAR[53]")]
     public const string InterfaceName_Windows_Perception_IPerceptionTimestampHelperStatics = "Windows.Perception.IPerceptionTimestampHelperStatics";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Perception_IPerceptionTimestampHelperStatics2"]/*' />
     [NativeTypeName("const WCHAR[54]")]
     public const string InterfaceName_Windows_Perception_IPerceptionTimestampHelperStatics2 = "Windows.Perception.IPerceptionTimestampHelperStatics2";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Perception_PerceptionTimestamp"]/*' />
     [NativeTypeName("const WCHAR[39]")]
     public const string RuntimeClass_Windows_Perception_PerceptionTimestamp = "Windows.Perception.PerceptionTimestamp";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Perception_PerceptionTimestampHelper"]/*' />
     [NativeTypeName("const WCHAR[45]")]
     public const string RuntimeClass_Windows_Perception_PerceptionTimestampHelper = "Windows.Perception.PerceptionTimestampHelper";
 }

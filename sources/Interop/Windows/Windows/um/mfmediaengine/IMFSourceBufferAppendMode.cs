@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFSourceBufferAppendMode : IMFSourceBufferAppendMode.Interface, INativeGuid
 {
+    /// <include file='IMFSourceBufferAppendMode.xml' path='doc/member[@name="IMFSourceBufferAppendMode.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFSourceBufferAppendMode);
 
     public void** lpVtbl;

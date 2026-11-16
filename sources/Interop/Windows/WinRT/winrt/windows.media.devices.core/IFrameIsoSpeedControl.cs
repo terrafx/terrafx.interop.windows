@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IFrameIsoSpeedControl : IFrameIsoSpeedControl.Interface, INativeGuid
 {
+    /// <include file='IFrameIsoSpeedControl.xml' path='doc/member[@name="IFrameIsoSpeedControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFrameIsoSpeedControl);
 
     public void** lpVtbl;

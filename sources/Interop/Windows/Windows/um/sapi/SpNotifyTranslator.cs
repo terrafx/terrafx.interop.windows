@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("E2AE5372-5D40-11D2-960E-00C04F8EE628")]
 public unsafe partial struct SpNotifyTranslator : INativeGuid
 {
+    /// <include file='SpNotifyTranslator.xml' path='doc/member[@name="SpNotifyTranslator.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SpNotifyTranslator);
 }

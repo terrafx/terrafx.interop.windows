@@ -7,6 +7,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DIDEVTYPE
 {
+    /// <include file='DIDEVTYPE.xml' path='doc/member[@name="DIDEVTYPE.DIDEVTYPE_HID"]/*' />
     [NativeTypeName("#define DIDEVTYPE_HID 0x00010000")]
     public const int DIDEVTYPE_HID = 0x00010000;
 }

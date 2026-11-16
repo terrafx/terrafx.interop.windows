@@ -139,4 +139,7 @@ public enum ActivationKind
 
     /// <include file='ActivationKind.xml' path='doc/member[@name="ActivationKind.ActivationKind_VpnForeground"]/*' />
     ActivationKind_VpnForeground = 1026,
+
+    /// <include file='ActivationKind.xml' path='doc/member[@name="ActivationKind.ActivationKind_PrintSupportEnterpriseManagementUI"]/*' />
+    ActivationKind_PrintSupportEnterpriseManagementUI = 1027,
 }

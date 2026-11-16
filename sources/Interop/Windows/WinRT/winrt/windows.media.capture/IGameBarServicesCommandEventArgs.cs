@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IGameBarServicesCommandEventArgs : IGameBarServicesCommandEventArgs.Interface, INativeGuid
 {
+    /// <include file='IGameBarServicesCommandEventArgs.xml' path='doc/member[@name="IGameBarServicesCommandEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGameBarServicesCommandEventArgs);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IBufferProtectUnprotectResult : IBufferProtectUnprotectResult.Interface, INativeGuid
 {
+    /// <include file='IBufferProtectUnprotectResult.xml' path='doc/member[@name="IBufferProtectUnprotectResult.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBufferProtectUnprotectResult);
 
     public void** lpVtbl;

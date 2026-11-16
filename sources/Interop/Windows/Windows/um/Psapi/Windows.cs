@@ -154,108 +154,143 @@ public static unsafe partial class Windows
     [return: NativeTypeName("DWORD")]
     public static extern uint K32GetProcessImageFileNameW(HANDLE hProcess, [NativeTypeName("LPWSTR")] char* lpImageFileName, [NativeTypeName("DWORD")] uint nSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PSAPI_VERSION"]/*' />
     [NativeTypeName("#define PSAPI_VERSION 2")]
     public const int PSAPI_VERSION = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumProcessModules"]/*' />
     [NativeTypeName("#define EnumProcessModules K32EnumProcessModules")]
     public static delegate*<HANDLE, HMODULE*, uint, uint*, BOOL> EnumProcessModules => &K32EnumProcessModules;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumProcessModulesEx"]/*' />
     [NativeTypeName("#define EnumProcessModulesEx K32EnumProcessModulesEx")]
     public static delegate*<HANDLE, HMODULE*, uint, uint*, uint, BOOL> EnumProcessModulesEx => &K32EnumProcessModulesEx;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InitializeProcessForWsWatch"]/*' />
     [NativeTypeName("#define InitializeProcessForWsWatch K32InitializeProcessForWsWatch")]
     public static delegate*<HANDLE, BOOL> InitializeProcessForWsWatch => &K32InitializeProcessForWsWatch;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWsChanges"]/*' />
     [NativeTypeName("#define GetWsChanges K32GetWsChanges")]
     public static delegate*<HANDLE, PSAPI_WS_WATCH_INFORMATION*, uint, BOOL> GetWsChanges => &K32GetWsChanges;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWsChangesEx"]/*' />
     [NativeTypeName("#define GetWsChangesEx K32GetWsChangesEx")]
     public static delegate*<HANDLE, PSAPI_WS_WATCH_INFORMATION_EX*, uint*, BOOL> GetWsChangesEx => &K32GetWsChangesEx;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMappedFileNameW"]/*' />
     [NativeTypeName("#define GetMappedFileNameW K32GetMappedFileNameW")]
     public static delegate*<HANDLE, void*, char*, uint, uint> GetMappedFileNameW => &K32GetMappedFileNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMappedFileNameA"]/*' />
     [NativeTypeName("#define GetMappedFileNameA K32GetMappedFileNameA")]
     public static delegate*<HANDLE, void*, sbyte*, uint, uint> GetMappedFileNameA => &K32GetMappedFileNameA;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumDeviceDrivers"]/*' />
     [NativeTypeName("#define EnumDeviceDrivers K32EnumDeviceDrivers")]
     public static delegate*<void**, uint, uint*, BOOL> EnumDeviceDrivers => &K32EnumDeviceDrivers;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDeviceDriverBaseNameA"]/*' />
     [NativeTypeName("#define GetDeviceDriverBaseNameA K32GetDeviceDriverBaseNameA")]
     public static delegate*<void*, sbyte*, uint, uint> GetDeviceDriverBaseNameA => &K32GetDeviceDriverBaseNameA;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDeviceDriverBaseNameW"]/*' />
     [NativeTypeName("#define GetDeviceDriverBaseNameW K32GetDeviceDriverBaseNameW")]
     public static delegate*<void*, char*, uint, uint> GetDeviceDriverBaseNameW => &K32GetDeviceDriverBaseNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDeviceDriverFileNameA"]/*' />
     [NativeTypeName("#define GetDeviceDriverFileNameA K32GetDeviceDriverFileNameA")]
     public static delegate*<void*, sbyte*, uint, uint> GetDeviceDriverFileNameA => &K32GetDeviceDriverFileNameA;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDeviceDriverFileNameW"]/*' />
     [NativeTypeName("#define GetDeviceDriverFileNameW K32GetDeviceDriverFileNameW")]
     public static delegate*<void*, char*, uint, uint> GetDeviceDriverFileNameW => &K32GetDeviceDriverFileNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPerformanceInfo"]/*' />
     [NativeTypeName("#define GetPerformanceInfo K32GetPerformanceInfo")]
     public static delegate*<PERFORMANCE_INFORMATION*, uint, BOOL> GetPerformanceInfo => &K32GetPerformanceInfo;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetProcessImageFileNameA"]/*' />
     [NativeTypeName("#define GetProcessImageFileNameA K32GetProcessImageFileNameA")]
     public static delegate*<HANDLE, sbyte*, uint, uint> GetProcessImageFileNameA => &K32GetProcessImageFileNameA;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetProcessImageFileNameW"]/*' />
     [NativeTypeName("#define GetProcessImageFileNameW K32GetProcessImageFileNameW")]
     public static delegate*<HANDLE, char*, uint, uint> GetProcessImageFileNameW => &K32GetProcessImageFileNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetModuleBaseNameA"]/*' />
     [NativeTypeName("#define GetModuleBaseNameA K32GetModuleBaseNameA")]
     public static delegate*<HANDLE, HMODULE, sbyte*, uint, uint> GetModuleBaseNameA => &K32GetModuleBaseNameA;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetModuleBaseNameW"]/*' />
     [NativeTypeName("#define GetModuleBaseNameW K32GetModuleBaseNameW")]
     public static delegate*<HANDLE, HMODULE, char*, uint, uint> GetModuleBaseNameW => &K32GetModuleBaseNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetModuleFileNameExA"]/*' />
     [NativeTypeName("#define GetModuleFileNameExA K32GetModuleFileNameExA")]
     public static delegate*<HANDLE, HMODULE, sbyte*, uint, uint> GetModuleFileNameExA => &K32GetModuleFileNameExA;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetModuleFileNameExW"]/*' />
     [NativeTypeName("#define GetModuleFileNameExW K32GetModuleFileNameExW")]
     public static delegate*<HANDLE, HMODULE, char*, uint, uint> GetModuleFileNameExW => &K32GetModuleFileNameExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EmptyWorkingSet"]/*' />
     [NativeTypeName("#define EmptyWorkingSet K32EmptyWorkingSet")]
     public static delegate*<HANDLE, BOOL> EmptyWorkingSet => &K32EmptyWorkingSet;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumPageFilesW"]/*' />
     [NativeTypeName("#define EnumPageFilesW K32EnumPageFilesW")]
     public static delegate*<delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, char*, BOOL>, void*, BOOL> EnumPageFilesW => &K32EnumPageFilesW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumPageFilesA"]/*' />
     [NativeTypeName("#define EnumPageFilesA K32EnumPageFilesA")]
     public static delegate*<delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, sbyte*, BOOL>, void*, BOOL> EnumPageFilesA => &K32EnumPageFilesA;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumProcesses"]/*' />
     [NativeTypeName("#define EnumProcesses K32EnumProcesses")]
     public static delegate*<uint*, uint, uint*, BOOL> EnumProcesses => &K32EnumProcesses;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetProcessMemoryInfo"]/*' />
     [NativeTypeName("#define GetProcessMemoryInfo K32GetProcessMemoryInfo")]
     public static delegate*<HANDLE, PROCESS_MEMORY_COUNTERS*, uint, BOOL> GetProcessMemoryInfo => &K32GetProcessMemoryInfo;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetModuleInformation"]/*' />
     [NativeTypeName("#define GetModuleInformation K32GetModuleInformation")]
     public static delegate*<HANDLE, HMODULE, MODULEINFO*, uint, BOOL> GetModuleInformation => &K32GetModuleInformation;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QueryWorkingSet"]/*' />
     [NativeTypeName("#define QueryWorkingSet K32QueryWorkingSet")]
     public static delegate*<HANDLE, void*, uint, BOOL> QueryWorkingSet => &K32QueryWorkingSet;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QueryWorkingSetEx"]/*' />
     [NativeTypeName("#define QueryWorkingSetEx K32QueryWorkingSetEx")]
     public static delegate*<HANDLE, void*, uint, BOOL> QueryWorkingSetEx => &K32QueryWorkingSetEx;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetModuleBaseName"]/*' />
     [NativeTypeName("#define GetModuleBaseName GetModuleBaseNameW")]
     public static delegate*<HANDLE, HMODULE, char*, uint, uint> GetModuleBaseName => &K32GetModuleBaseNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetModuleFileNameEx"]/*' />
     [NativeTypeName("#define GetModuleFileNameEx GetModuleFileNameExW")]
     public static delegate*<HANDLE, HMODULE, char*, uint, uint> GetModuleFileNameEx => &K32GetModuleFileNameExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMappedFileName"]/*' />
     [NativeTypeName("#define GetMappedFileName GetMappedFileNameW")]
     public static delegate*<HANDLE, void*, char*, uint, uint> GetMappedFileName => &K32GetMappedFileNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDeviceDriverBaseName"]/*' />
     [NativeTypeName("#define GetDeviceDriverBaseName GetDeviceDriverBaseNameW")]
     public static delegate*<void*, char*, uint, uint> GetDeviceDriverBaseName => &K32GetDeviceDriverBaseNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDeviceDriverFileName"]/*' />
     [NativeTypeName("#define GetDeviceDriverFileName GetDeviceDriverFileNameW")]
     public static delegate*<void*, char*, uint, uint> GetDeviceDriverFileName => &K32GetDeviceDriverFileNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumPageFiles"]/*' />
     [NativeTypeName("#define EnumPageFiles EnumPageFilesW")]
     public static delegate*<delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, char*, BOOL>, void*, BOOL> EnumPageFiles => &K32EnumPageFilesW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetProcessImageFileName"]/*' />
     [NativeTypeName("#define GetProcessImageFileName GetProcessImageFileNameW")]
     public static delegate*<HANDLE, char*, uint, uint> GetProcessImageFileName => &K32GetProcessImageFileNameW;
 }

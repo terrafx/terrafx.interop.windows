@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IMultisession")]
 public unsafe partial struct IMultisessionSequential : IMultisessionSequential.Interface, INativeGuid
 {
+    /// <include file='IMultisessionSequential.xml' path='doc/member[@name="IMultisessionSequential.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMultisessionSequential);
 
     public void** lpVtbl;

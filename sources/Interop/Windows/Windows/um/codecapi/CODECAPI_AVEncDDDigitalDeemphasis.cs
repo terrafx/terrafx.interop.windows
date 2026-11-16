@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("E024A2C2-947C-45AC-87D8-F1030C5C0082")]
 public unsafe partial struct CODECAPI_AVEncDDDigitalDeemphasis : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncDDDigitalDeemphasis.xml' path='doc/member[@name="CODECAPI_AVEncDDDigitalDeemphasis.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncDDDigitalDeemphasis);
 }

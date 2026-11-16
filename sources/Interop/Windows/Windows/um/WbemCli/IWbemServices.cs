@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IWbemServices : IWbemServices.Interface, INativeGuid
 {
+    /// <include file='IWbemServices.xml' path='doc/member[@name="IWbemServices.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWbemServices);
 
     public void** lpVtbl;

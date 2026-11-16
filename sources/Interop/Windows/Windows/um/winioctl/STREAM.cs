@@ -7,30 +7,39 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class STREAM
 {
+    /// <include file='STREAM.xml' path='doc/member[@name="STREAM.STREAM_SET_ENCRYPTION"]/*' />
     [NativeTypeName("#define STREAM_SET_ENCRYPTION 0x00000003")]
     public const int STREAM_SET_ENCRYPTION = 0x00000003;
 
+    /// <include file='STREAM.xml' path='doc/member[@name="STREAM.STREAM_CLEAR_ENCRYPTION"]/*' />
     [NativeTypeName("#define STREAM_CLEAR_ENCRYPTION 0x00000004")]
     public const int STREAM_CLEAR_ENCRYPTION = 0x00000004;
 
+    /// <include file='STREAM.xml' path='doc/member[@name="STREAM.STREAM_LAYOUT_ENTRY_IMMOVABLE"]/*' />
     [NativeTypeName("#define STREAM_LAYOUT_ENTRY_IMMOVABLE (0x00000001)")]
     public const int STREAM_LAYOUT_ENTRY_IMMOVABLE = (0x00000001);
 
+    /// <include file='STREAM.xml' path='doc/member[@name="STREAM.STREAM_LAYOUT_ENTRY_PINNED"]/*' />
     [NativeTypeName("#define STREAM_LAYOUT_ENTRY_PINNED (0x00000002)")]
     public const int STREAM_LAYOUT_ENTRY_PINNED = (0x00000002);
 
+    /// <include file='STREAM.xml' path='doc/member[@name="STREAM.STREAM_LAYOUT_ENTRY_RESIDENT"]/*' />
     [NativeTypeName("#define STREAM_LAYOUT_ENTRY_RESIDENT (0x00000004)")]
     public const int STREAM_LAYOUT_ENTRY_RESIDENT = (0x00000004);
 
+    /// <include file='STREAM.xml' path='doc/member[@name="STREAM.STREAM_LAYOUT_ENTRY_NO_CLUSTERS_ALLOCATED"]/*' />
     [NativeTypeName("#define STREAM_LAYOUT_ENTRY_NO_CLUSTERS_ALLOCATED (0x00000008)")]
     public const int STREAM_LAYOUT_ENTRY_NO_CLUSTERS_ALLOCATED = (0x00000008);
 
+    /// <include file='STREAM.xml' path='doc/member[@name="STREAM.STREAM_LAYOUT_ENTRY_HAS_INFORMATION"]/*' />
     [NativeTypeName("#define STREAM_LAYOUT_ENTRY_HAS_INFORMATION (0x00000010)")]
     public const int STREAM_LAYOUT_ENTRY_HAS_INFORMATION = (0x00000010);
 
+    /// <include file='STREAM.xml' path='doc/member[@name="STREAM.STREAM_EXTENT_ENTRY_AS_RETRIEVAL_POINTERS"]/*' />
     [NativeTypeName("#define STREAM_EXTENT_ENTRY_AS_RETRIEVAL_POINTERS (0x00000001)")]
     public const int STREAM_EXTENT_ENTRY_AS_RETRIEVAL_POINTERS = (0x00000001);
 
+    /// <include file='STREAM.xml' path='doc/member[@name="STREAM.STREAM_EXTENT_ENTRY_ALL_EXTENTS"]/*' />
     [NativeTypeName("#define STREAM_EXTENT_ENTRY_ALL_EXTENTS (0x00000002)")]
     public const int STREAM_EXTENT_ENTRY_ALL_EXTENTS = (0x00000002);
 }

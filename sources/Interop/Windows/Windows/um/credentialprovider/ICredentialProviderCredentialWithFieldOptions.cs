@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct ICredentialProviderCredentialWithFieldOptions : ICredentialProviderCredentialWithFieldOptions.Interface, INativeGuid
 {
+    /// <include file='ICredentialProviderCredentialWithFieldOptions.xml' path='doc/member[@name="ICredentialProviderCredentialWithFieldOptions.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICredentialProviderCredentialWithFieldOptions);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IGattServiceProviderAdvertisingParameters3 : IGattServiceProviderAdvertisingParameters3.Interface, INativeGuid
 {
+    /// <include file='IGattServiceProviderAdvertisingParameters3.xml' path='doc/member[@name="IGattServiceProviderAdvertisingParameters3.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGattServiceProviderAdvertisingParameters3);
 
     public void** lpVtbl;

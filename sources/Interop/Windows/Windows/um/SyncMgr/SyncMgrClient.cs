@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("1202DB60-1DAC-42C5-AED5-1ABDD432248E")]
 public unsafe partial struct SyncMgrClient : INativeGuid
 {
+    /// <include file='SyncMgrClient.xml' path='doc/member[@name="SyncMgrClient.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SyncMgrClient);
 }

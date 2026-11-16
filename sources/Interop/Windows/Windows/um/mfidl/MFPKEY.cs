@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MFPKEY
 {
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_SourceOpenMonitor"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_SourceOpenMonitor
     {
@@ -38,6 +39,7 @@ public static partial class MFPKEY
         }
     }
 
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_ASFMediaSource_ApproxSeek"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_ASFMediaSource_ApproxSeek
     {
@@ -64,6 +66,7 @@ public static partial class MFPKEY
         }
     }
 
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_ASFMediaSource_IterativeSeekIfNoIndex"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_ASFMediaSource_IterativeSeekIfNoIndex
     {
@@ -90,6 +93,7 @@ public static partial class MFPKEY
         }
     }
 
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_ASFMediaSource_IterativeSeek_Max_Count"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_ASFMediaSource_IterativeSeek_Max_Count
     {
@@ -116,6 +120,7 @@ public static partial class MFPKEY
         }
     }
 
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_ASFMediaSource_IterativeSeek_Tolerance_In_MilliSecond"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_ASFMediaSource_IterativeSeek_Tolerance_In_MilliSecond
     {
@@ -142,6 +147,7 @@ public static partial class MFPKEY
         }
     }
 
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_Content_DLNA_Profile_ID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_Content_DLNA_Profile_ID
     {
@@ -168,6 +174,7 @@ public static partial class MFPKEY
         }
     }
 
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_MediaSource_DisableReadAhead"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_MediaSource_DisableReadAhead
     {
@@ -194,6 +201,7 @@ public static partial class MFPKEY
         }
     }
 
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_SBESourceMode"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_SBESourceMode
     {
@@ -220,6 +228,7 @@ public static partial class MFPKEY
         }
     }
 
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_PMP_Creation_Callback"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_PMP_Creation_Callback
     {
@@ -246,6 +255,7 @@ public static partial class MFPKEY
         }
     }
 
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_HTTP_ByteStream_Enable_Urlmon"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_HTTP_ByteStream_Enable_Urlmon
     {
@@ -272,6 +282,7 @@ public static partial class MFPKEY
         }
     }
 
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_HTTP_ByteStream_Urlmon_Bind_Flags"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_HTTP_ByteStream_Urlmon_Bind_Flags
     {
@@ -298,6 +309,7 @@ public static partial class MFPKEY
         }
     }
 
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_HTTP_ByteStream_Urlmon_Security_Id"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_HTTP_ByteStream_Urlmon_Security_Id
     {
@@ -324,6 +336,7 @@ public static partial class MFPKEY
         }
     }
 
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_HTTP_ByteStream_Urlmon_Window"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_HTTP_ByteStream_Urlmon_Window
     {
@@ -350,6 +363,7 @@ public static partial class MFPKEY
         }
     }
 
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_HTTP_ByteStream_Urlmon_Callback_QueryService"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_HTTP_ByteStream_Urlmon_Callback_QueryService
     {
@@ -376,6 +390,7 @@ public static partial class MFPKEY
         }
     }
 
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_MediaProtectionSystemId"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_MediaProtectionSystemId
     {
@@ -402,6 +417,7 @@ public static partial class MFPKEY
         }
     }
 
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_MediaProtectionSystemContext"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_MediaProtectionSystemContext
     {
@@ -428,6 +444,7 @@ public static partial class MFPKEY
         }
     }
 
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_MediaProtectionSystemIdMapping"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_MediaProtectionSystemIdMapping
     {
@@ -454,6 +471,7 @@ public static partial class MFPKEY
         }
     }
 
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_MediaProtectionContainerGuid"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_MediaProtectionContainerGuid
     {
@@ -480,6 +498,7 @@ public static partial class MFPKEY
         }
     }
 
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_MediaProtectionSystemContextsPerTrack"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_MediaProtectionSystemContextsPerTrack
     {
@@ -506,6 +525,7 @@ public static partial class MFPKEY
         }
     }
 
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_HTTP_ByteStream_Download_Mode"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_HTTP_ByteStream_Download_Mode
     {
@@ -532,6 +552,7 @@ public static partial class MFPKEY
         }
     }
 
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_HTTP_ByteStream_Caching_Mode"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_HTTP_ByteStream_Caching_Mode
     {
@@ -558,6 +579,7 @@ public static partial class MFPKEY
         }
     }
 
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_HTTP_ByteStream_Cache_Limit"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_HTTP_ByteStream_Cache_Limit
     {

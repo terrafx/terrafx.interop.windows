@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFCaptureRecordSink : IMFCaptureRecordSink.Interface, INativeGuid
 {
+    /// <include file='IMFCaptureRecordSink.xml' path='doc/member[@name="IMFCaptureRecordSink.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFCaptureRecordSink);
 
     public void** lpVtbl;

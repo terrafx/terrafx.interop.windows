@@ -49,15 +49,19 @@ public static unsafe partial class Windows
     [return: NativeTypeName("LONG")]
     public static extern int ComDBResizeDatabase(HCOMDB HComDB, [NativeTypeName("DWORD")] uint NewSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COMDB_MIN_PORTS_ARBITRATED"]/*' />
     [NativeTypeName("#define COMDB_MIN_PORTS_ARBITRATED 256")]
     public const int COMDB_MIN_PORTS_ARBITRATED = 256;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COMDB_MAX_PORTS_ARBITRATED"]/*' />
     [NativeTypeName("#define COMDB_MAX_PORTS_ARBITRATED 4096")]
     public const int COMDB_MAX_PORTS_ARBITRATED = 4096;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CDB_REPORT_BITS"]/*' />
     [NativeTypeName("#define CDB_REPORT_BITS 0x0")]
     public const int CDB_REPORT_BITS = 0x0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CDB_REPORT_BYTES"]/*' />
     [NativeTypeName("#define CDB_REPORT_BYTES 0x1")]
     public const int CDB_REPORT_BYTES = 0x1;
 }

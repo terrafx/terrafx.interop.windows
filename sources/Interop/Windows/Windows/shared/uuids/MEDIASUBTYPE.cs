@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MEDIASUBTYPE
 {
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_None"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_None
     {
@@ -37,6 +38,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_DVB_SUBTITLES"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_DVB_SUBTITLES
     {
@@ -62,6 +64,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_ISDB_CAPTIONS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_ISDB_CAPTIONS
     {
@@ -87,6 +90,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_ISDB_SUPERIMPOSE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_ISDB_SUPERIMPOSE
     {
@@ -112,6 +116,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_CLPL"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_CLPL
     {
@@ -137,6 +142,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_YUYV"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_YUYV
     {
@@ -162,6 +168,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_IYUV"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_IYUV
     {
@@ -187,6 +194,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_YVU9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_YVU9
     {
@@ -212,6 +220,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_Y411"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_Y411
     {
@@ -237,6 +246,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_Y41P"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_Y41P
     {
@@ -262,6 +272,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_YUY2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_YUY2
     {
@@ -287,6 +298,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_YVYU"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_YVYU
     {
@@ -312,6 +324,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_UYVY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_UYVY
     {
@@ -337,6 +350,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_Y211"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_Y211
     {
@@ -362,6 +376,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_CLJR"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_CLJR
     {
@@ -387,6 +402,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_IF09"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_IF09
     {
@@ -412,6 +428,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_CPLA"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_CPLA
     {
@@ -437,6 +454,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_MJPG"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_MJPG
     {
@@ -462,6 +480,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_TVMJ"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_TVMJ
     {
@@ -487,6 +506,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_WAKE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_WAKE
     {
@@ -512,6 +532,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_CFCC"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_CFCC
     {
@@ -537,6 +558,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_IJPG"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_IJPG
     {
@@ -562,6 +584,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_Plum"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_Plum
     {
@@ -587,6 +610,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_DVCS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_DVCS
     {
@@ -612,6 +636,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_H264"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_H264
     {
@@ -637,6 +662,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_DVSD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_DVSD
     {
@@ -662,6 +688,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_MDVF"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_MDVF
     {
@@ -687,6 +714,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_RGB1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_RGB1
     {
@@ -712,6 +740,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_RGB4"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_RGB4
     {
@@ -737,6 +766,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_RGB8"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_RGB8
     {
@@ -762,6 +792,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_RGB565"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_RGB565
     {
@@ -787,6 +818,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_RGB555"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_RGB555
     {
@@ -812,6 +844,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_RGB24"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_RGB24
     {
@@ -837,6 +870,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_RGB32"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_RGB32
     {
@@ -862,6 +896,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_ARGB1555"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_ARGB1555
     {
@@ -887,6 +922,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_ARGB4444"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_ARGB4444
     {
@@ -912,6 +948,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_ARGB32"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_ARGB32
     {
@@ -937,6 +974,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_A2R10G10B10"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_A2R10G10B10
     {
@@ -962,6 +1000,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_A2B10G10R10"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_A2B10G10R10
     {
@@ -987,6 +1026,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_AYUV"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_AYUV
     {
@@ -1012,6 +1052,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_AI44"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_AI44
     {
@@ -1037,6 +1078,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_IA44"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_IA44
     {
@@ -1062,6 +1104,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_RGB32_D3D_DX7_RT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_RGB32_D3D_DX7_RT
     {
@@ -1087,6 +1130,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_RGB16_D3D_DX7_RT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_RGB16_D3D_DX7_RT
     {
@@ -1112,6 +1156,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_ARGB32_D3D_DX7_RT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_ARGB32_D3D_DX7_RT
     {
@@ -1137,6 +1182,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_ARGB4444_D3D_DX7_RT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_ARGB4444_D3D_DX7_RT
     {
@@ -1162,6 +1208,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_ARGB1555_D3D_DX7_RT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_ARGB1555_D3D_DX7_RT
     {
@@ -1187,6 +1234,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_RGB32_D3D_DX9_RT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_RGB32_D3D_DX9_RT
     {
@@ -1212,6 +1260,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_RGB16_D3D_DX9_RT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_RGB16_D3D_DX9_RT
     {
@@ -1237,6 +1286,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_ARGB32_D3D_DX9_RT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_ARGB32_D3D_DX9_RT
     {
@@ -1262,6 +1312,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_ARGB4444_D3D_DX9_RT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_ARGB4444_D3D_DX9_RT
     {
@@ -1287,6 +1338,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_ARGB1555_D3D_DX9_RT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_ARGB1555_D3D_DX9_RT
     {
@@ -1312,6 +1364,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_YV12"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_YV12
     {
@@ -1337,6 +1390,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_NV12"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_NV12
     {
@@ -1362,6 +1416,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_NV11"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_NV11
     {
@@ -1387,6 +1442,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_P208"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_P208
     {
@@ -1412,6 +1468,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_P210"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_P210
     {
@@ -1437,6 +1494,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_P216"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_P216
     {
@@ -1462,6 +1520,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_P010"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_P010
     {
@@ -1487,6 +1546,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_P016"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_P016
     {
@@ -1512,6 +1572,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_Y210"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_Y210
     {
@@ -1537,6 +1598,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_Y216"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_Y216
     {
@@ -1562,6 +1624,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_P408"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_P408
     {
@@ -1587,6 +1650,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_NV24"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_NV24
     {
@@ -1612,6 +1676,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_420O"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_420O
     {
@@ -1637,6 +1702,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_IMC1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_IMC1
     {
@@ -1662,6 +1728,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_IMC2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_IMC2
     {
@@ -1687,6 +1754,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_IMC3"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_IMC3
     {
@@ -1712,6 +1780,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_IMC4"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_IMC4
     {
@@ -1737,6 +1806,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_S340"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_S340
     {
@@ -1762,6 +1832,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_S342"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_S342
     {
@@ -1787,6 +1858,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_Overlay"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_Overlay
     {
@@ -1812,6 +1884,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_MPEG1Packet"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_MPEG1Packet
     {
@@ -1837,6 +1910,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_MPEG1Payload"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_MPEG1Payload
     {
@@ -1862,6 +1936,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_MPEG1AudioPayload"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_MPEG1AudioPayload
     {
@@ -1887,6 +1962,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_MPEG1System"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_MPEG1System
     {
@@ -1912,6 +1988,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_MPEG1VideoCD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_MPEG1VideoCD
     {
@@ -1937,6 +2014,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_MPEG1Video"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_MPEG1Video
     {
@@ -1962,6 +2040,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_MPEG1Audio"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_MPEG1Audio
     {
@@ -1987,6 +2066,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_Avi"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_Avi
     {
@@ -2012,6 +2092,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_Asf"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_Asf
     {
@@ -2037,6 +2118,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_QTMovie"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_QTMovie
     {
@@ -2062,6 +2144,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_QTRpza"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_QTRpza
     {
@@ -2087,6 +2170,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_QTSmc"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_QTSmc
     {
@@ -2112,6 +2196,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_QTRle"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_QTRle
     {
@@ -2137,6 +2222,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_QTJpeg"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_QTJpeg
     {
@@ -2162,6 +2248,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_PCMAudio_Obsolete"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_PCMAudio_Obsolete
     {
@@ -2187,6 +2274,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_PCM"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_PCM
     {
@@ -2212,6 +2300,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_WAVE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_WAVE
     {
@@ -2237,6 +2326,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_AU"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_AU
     {
@@ -2262,6 +2352,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_AIFF"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_AIFF
     {
@@ -2287,6 +2378,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_dvsd"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_dvsd
     {
@@ -2312,6 +2404,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_dvhd"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_dvhd
     {
@@ -2337,6 +2430,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_dvsl"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_dvsl
     {
@@ -2362,6 +2456,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_dv25"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_dv25
     {
@@ -2387,6 +2482,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_dv50"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_dv50
     {
@@ -2412,6 +2508,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_dvh1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_dvh1
     {
@@ -2437,6 +2534,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_Line21_BytePair"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_Line21_BytePair
     {
@@ -2462,6 +2560,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_Line21_GOPPacket"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_Line21_GOPPacket
     {
@@ -2487,6 +2586,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_Line21_VBIRawData"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_Line21_VBIRawData
     {
@@ -2512,6 +2612,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_708_608Data"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_708_608Data
     {
@@ -2537,6 +2638,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_DtvCcData"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_DtvCcData
     {
@@ -2562,6 +2664,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_CC_CONTAINER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_CC_CONTAINER
     {
@@ -2587,6 +2690,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_TELETEXT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_TELETEXT
     {
@@ -2612,6 +2716,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_VBI"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_VBI
     {
@@ -2637,6 +2742,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_WSS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_WSS
     {
@@ -2662,6 +2768,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_XDS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_XDS
     {
@@ -2687,6 +2794,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_VPS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_VPS
     {
@@ -2712,6 +2820,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_DRM_Audio"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_DRM_Audio
     {
@@ -2737,6 +2846,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_IEEE_FLOAT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_IEEE_FLOAT
     {
@@ -2762,6 +2872,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_DOLBY_AC3_SPDIF"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_DOLBY_AC3_SPDIF
     {
@@ -2787,6 +2898,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_RAW_SPORT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_RAW_SPORT
     {
@@ -2812,6 +2924,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_SPDIF_TAG_241h"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_SPDIF_TAG_241h
     {
@@ -2837,6 +2950,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_DssVideo"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_DssVideo
     {
@@ -2862,6 +2976,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_DssAudio"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_DssAudio
     {
@@ -2887,6 +3002,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_VPVideo"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_VPVideo
     {
@@ -2912,6 +3028,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_VPVBI"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_VPVBI
     {
@@ -2937,6 +3054,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_AnalogVideo_NTSC_M"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_AnalogVideo_NTSC_M
     {
@@ -2962,6 +3080,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_AnalogVideo_PAL_B"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_AnalogVideo_PAL_B
     {
@@ -2987,6 +3106,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_AnalogVideo_PAL_D"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_AnalogVideo_PAL_D
     {
@@ -3012,6 +3132,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_AnalogVideo_PAL_G"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_AnalogVideo_PAL_G
     {
@@ -3037,6 +3158,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_AnalogVideo_PAL_H"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_AnalogVideo_PAL_H
     {
@@ -3062,6 +3184,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_AnalogVideo_PAL_I"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_AnalogVideo_PAL_I
     {
@@ -3087,6 +3210,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_AnalogVideo_PAL_M"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_AnalogVideo_PAL_M
     {
@@ -3112,6 +3236,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_AnalogVideo_PAL_N"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_AnalogVideo_PAL_N
     {
@@ -3137,6 +3262,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_AnalogVideo_PAL_N_COMBO"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_AnalogVideo_PAL_N_COMBO
     {
@@ -3162,6 +3288,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_AnalogVideo_SECAM_B"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_AnalogVideo_SECAM_B
     {
@@ -3187,6 +3314,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_AnalogVideo_SECAM_D"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_AnalogVideo_SECAM_D
     {
@@ -3212,6 +3340,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_AnalogVideo_SECAM_G"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_AnalogVideo_SECAM_G
     {
@@ -3237,6 +3366,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_AnalogVideo_SECAM_H"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_AnalogVideo_SECAM_H
     {
@@ -3262,6 +3392,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_AnalogVideo_SECAM_K"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_AnalogVideo_SECAM_K
     {
@@ -3287,6 +3418,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_AnalogVideo_SECAM_K1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_AnalogVideo_SECAM_K1
     {
@@ -3312,6 +3444,7 @@ public static partial class MEDIASUBTYPE
         }
     }
 
+    /// <include file='MEDIASUBTYPE.xml' path='doc/member[@name="MEDIASUBTYPE.MEDIASUBTYPE_AnalogVideo_SECAM_L"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIASUBTYPE_AnalogVideo_SECAM_L
     {

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct ISVGPoint : ISVGPoint.Interface, INativeGuid
 {
+    /// <include file='ISVGPoint.xml' path='doc/member[@name="ISVGPoint.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISVGPoint);
 
     public void** lpVtbl;

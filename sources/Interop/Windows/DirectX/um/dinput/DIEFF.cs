@@ -7,18 +7,23 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DIEFF
 {
+    /// <include file='DIEFF.xml' path='doc/member[@name="DIEFF.DIEFF_OBJECTIDS"]/*' />
     [NativeTypeName("#define DIEFF_OBJECTIDS 0x00000001")]
     public const int DIEFF_OBJECTIDS = 0x00000001;
 
+    /// <include file='DIEFF.xml' path='doc/member[@name="DIEFF.DIEFF_OBJECTOFFSETS"]/*' />
     [NativeTypeName("#define DIEFF_OBJECTOFFSETS 0x00000002")]
     public const int DIEFF_OBJECTOFFSETS = 0x00000002;
 
+    /// <include file='DIEFF.xml' path='doc/member[@name="DIEFF.DIEFF_CARTESIAN"]/*' />
     [NativeTypeName("#define DIEFF_CARTESIAN 0x00000010")]
     public const int DIEFF_CARTESIAN = 0x00000010;
 
+    /// <include file='DIEFF.xml' path='doc/member[@name="DIEFF.DIEFF_POLAR"]/*' />
     [NativeTypeName("#define DIEFF_POLAR 0x00000020")]
     public const int DIEFF_POLAR = 0x00000020;
 
+    /// <include file='DIEFF.xml' path='doc/member[@name="DIEFF.DIEFF_SPHERICAL"]/*' />
     [NativeTypeName("#define DIEFF_SPHERICAL 0x00000040")]
     public const int DIEFF_SPHERICAL = 0x00000040;
 }

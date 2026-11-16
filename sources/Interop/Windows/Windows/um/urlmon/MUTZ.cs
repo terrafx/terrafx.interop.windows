@@ -7,33 +7,43 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MUTZ
 {
+    /// <include file='MUTZ.xml' path='doc/member[@name="MUTZ.MUTZ_NOSAVEDFILECHECK"]/*' />
     [NativeTypeName("#define MUTZ_NOSAVEDFILECHECK 0x00000001")]
     public const int MUTZ_NOSAVEDFILECHECK = 0x00000001;
 
+    /// <include file='MUTZ.xml' path='doc/member[@name="MUTZ.MUTZ_ISFILE"]/*' />
     [NativeTypeName("#define MUTZ_ISFILE 0x00000002")]
     public const int MUTZ_ISFILE = 0x00000002;
 
+    /// <include file='MUTZ.xml' path='doc/member[@name="MUTZ.MUTZ_ACCEPT_WILDCARD_SCHEME"]/*' />
     [NativeTypeName("#define MUTZ_ACCEPT_WILDCARD_SCHEME 0x00000080")]
     public const int MUTZ_ACCEPT_WILDCARD_SCHEME = 0x00000080;
 
+    /// <include file='MUTZ.xml' path='doc/member[@name="MUTZ.MUTZ_ENFORCERESTRICTED"]/*' />
     [NativeTypeName("#define MUTZ_ENFORCERESTRICTED 0x00000100")]
     public const int MUTZ_ENFORCERESTRICTED = 0x00000100;
 
+    /// <include file='MUTZ.xml' path='doc/member[@name="MUTZ.MUTZ_RESERVED"]/*' />
     [NativeTypeName("#define MUTZ_RESERVED 0x00000200")]
     public const int MUTZ_RESERVED = 0x00000200;
 
+    /// <include file='MUTZ.xml' path='doc/member[@name="MUTZ.MUTZ_REQUIRESAVEDFILECHECK"]/*' />
     [NativeTypeName("#define MUTZ_REQUIRESAVEDFILECHECK 0x00000400")]
     public const int MUTZ_REQUIRESAVEDFILECHECK = 0x00000400;
 
+    /// <include file='MUTZ.xml' path='doc/member[@name="MUTZ.MUTZ_DONT_UNESCAPE"]/*' />
     [NativeTypeName("#define MUTZ_DONT_UNESCAPE 0x00000800")]
     public const int MUTZ_DONT_UNESCAPE = 0x00000800;
 
+    /// <include file='MUTZ.xml' path='doc/member[@name="MUTZ.MUTZ_DONT_USE_CACHE"]/*' />
     [NativeTypeName("#define MUTZ_DONT_USE_CACHE 0x00001000")]
     public const int MUTZ_DONT_USE_CACHE = 0x00001000;
 
+    /// <include file='MUTZ.xml' path='doc/member[@name="MUTZ.MUTZ_FORCE_INTRANET_FLAGS"]/*' />
     [NativeTypeName("#define MUTZ_FORCE_INTRANET_FLAGS 0x00002000")]
     public const int MUTZ_FORCE_INTRANET_FLAGS = 0x00002000;
 
+    /// <include file='MUTZ.xml' path='doc/member[@name="MUTZ.MUTZ_IGNORE_ZONE_MAPPINGS"]/*' />
     [NativeTypeName("#define MUTZ_IGNORE_ZONE_MAPPINGS 0x00004000")]
     public const int MUTZ_IGNORE_ZONE_MAPPINGS = 0x00004000;
 }

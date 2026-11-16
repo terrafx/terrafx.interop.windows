@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFRealTimeClient : IMFRealTimeClient.Interface, INativeGuid
 {
+    /// <include file='IMFRealTimeClient.xml' path='doc/member[@name="IMFRealTimeClient.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFRealTimeClient);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IEnumExtraSearch : IEnumExtraSearch.Interface, INativeGuid
 {
+    /// <include file='IEnumExtraSearch.xml' path='doc/member[@name="IEnumExtraSearch.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IEnumExtraSearch);
 
     public void** lpVtbl;

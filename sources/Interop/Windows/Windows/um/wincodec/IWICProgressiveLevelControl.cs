@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IWICProgressiveLevelControl : IWICProgressiveLevelControl.Interface, INativeGuid
 {
+    /// <include file='IWICProgressiveLevelControl.xml' path='doc/member[@name="IWICProgressiveLevelControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWICProgressiveLevelControl);
 
     public void** lpVtbl;

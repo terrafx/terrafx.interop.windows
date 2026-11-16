@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IUIAnimationTimerEventHandler : IUIAnimationTimerEventHandler.Interface, INativeGuid
 {
+    /// <include file='IUIAnimationTimerEventHandler.xml' path='doc/member[@name="IUIAnimationTimerEventHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUIAnimationTimerEventHandler);
 
     public void** lpVtbl;

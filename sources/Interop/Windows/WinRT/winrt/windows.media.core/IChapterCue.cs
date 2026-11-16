@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IChapterCue : IChapterCue.Interface, INativeGuid
 {
+    /// <include file='IChapterCue.xml' path='doc/member[@name="IChapterCue.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IChapterCue);
 
     public void** lpVtbl;

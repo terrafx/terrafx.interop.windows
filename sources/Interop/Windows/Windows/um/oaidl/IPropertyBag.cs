@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0.19043.0")]
 public unsafe partial struct IPropertyBag : IPropertyBag.Interface, INativeGuid
 {
+    /// <include file='IPropertyBag.xml' path='doc/member[@name="IPropertyBag.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPropertyBag);
 
     public void** lpVtbl;

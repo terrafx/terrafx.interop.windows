@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("EB87E1BD-3233-11D2-AEC9-00C04FB68820")]
 public unsafe partial struct WbemStatusCodeText : INativeGuid
 {
+    /// <include file='WbemStatusCodeText.xml' path='doc/member[@name="WbemStatusCodeText.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_WbemStatusCodeText);
 }

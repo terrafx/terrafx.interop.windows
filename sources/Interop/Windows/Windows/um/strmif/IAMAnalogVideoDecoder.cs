@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAMAnalogVideoDecoder : IAMAnalogVideoDecoder.Interface, INativeGuid
 {
+    /// <include file='IAMAnalogVideoDecoder.xml' path='doc/member[@name="IAMAnalogVideoDecoder.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAMAnalogVideoDecoder);
 
     public void** lpVtbl;

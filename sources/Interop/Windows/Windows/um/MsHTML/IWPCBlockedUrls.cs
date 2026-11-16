@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IWPCBlockedUrls : IWPCBlockedUrls.Interface, INativeGuid
 {
+    /// <include file='IWPCBlockedUrls.xml' path='doc/member[@name="IWPCBlockedUrls.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWPCBlockedUrls);
 
     public void** lpVtbl;

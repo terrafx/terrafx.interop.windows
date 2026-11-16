@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SZ
 {
+    /// <include file='SZ.xml' path='doc/member[@name="SZ.SZ_ALG_MAX_SIZE"]/*' />
     [NativeTypeName("#define SZ_ALG_MAX_SIZE 64")]
     public const int SZ_ALG_MAX_SIZE = 64;
 }

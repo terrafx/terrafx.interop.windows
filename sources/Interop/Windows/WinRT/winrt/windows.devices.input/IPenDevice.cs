@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPenDevice : IPenDevice.Interface, INativeGuid
 {
+    /// <include file='IPenDevice.xml' path='doc/member[@name="IPenDevice.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPenDevice);
 
     public void** lpVtbl;

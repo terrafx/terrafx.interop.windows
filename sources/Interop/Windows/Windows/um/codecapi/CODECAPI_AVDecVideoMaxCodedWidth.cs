@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("5AE557B8-77AF-41F5-9FA6-4DB2FE1D4BCA")]
 public unsafe partial struct CODECAPI_AVDecVideoMaxCodedWidth : INativeGuid
 {
+    /// <include file='CODECAPI_AVDecVideoMaxCodedWidth.xml' path='doc/member[@name="CODECAPI_AVDecVideoMaxCodedWidth.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVDecVideoMaxCodedWidth);
 }

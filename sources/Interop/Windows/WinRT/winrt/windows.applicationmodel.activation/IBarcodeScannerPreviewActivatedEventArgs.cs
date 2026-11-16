@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IBarcodeScannerPreviewActivatedEventArgs : IBarcodeScannerPreviewActivatedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IBarcodeScannerPreviewActivatedEventArgs.xml' path='doc/member[@name="IBarcodeScannerPreviewActivatedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBarcodeScannerPreviewActivatedEventArgs);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IBrightnessOverrideSettingsStatics : IBrightnessOverrideSettingsStatics.Interface, INativeGuid
 {
+    /// <include file='IBrightnessOverrideSettingsStatics.xml' path='doc/member[@name="IBrightnessOverrideSettingsStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBrightnessOverrideSettingsStatics);
 
     public void** lpVtbl;

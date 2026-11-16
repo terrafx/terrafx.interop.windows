@@ -10,6 +10,15 @@ namespace TerraFX.Interop.Gdiplus;
 
 public static partial class Gdiplus
 {
+    public static EmfPlusRecordType GDIP_WMF_RECORD_TO_EMFPLUS(int n)
+        => (EmfPlusRecordType)(n | GDIP_WMF_RECORD_BASE);
+
+    public static int GDIP_EMFPLUS_RECORD_TO_WMF(EmfPlusRecordType n)
+        => ((int)n) & ~GDIP_WMF_RECORD_BASE;
+
+    public static BOOL GDIP_IS_WMF_RECORDTYPE(EmfPlusRecordType n)
+        => (((int)n & GDIP_WMF_RECORD_BASE) != 0);
+
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.ObjectTypeIsValid"]/*' />
     public static BOOL ObjectTypeIsValid([NativeTypeName("Gdiplus::ObjectType")] ObjectType type)
     {

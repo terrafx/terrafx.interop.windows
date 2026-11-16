@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("IBackgroundDownloaderUserConsent is deprecated and may not work on all platforms. For more info, see MSDN.")]
 public unsafe partial struct IBackgroundDownloaderUserConsent : IBackgroundDownloaderUserConsent.Interface, INativeGuid
 {
+    /// <include file='IBackgroundDownloaderUserConsent.xml' path='doc/member[@name="IBackgroundDownloaderUserConsent.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBackgroundDownloaderUserConsent);
 
     public void** lpVtbl;

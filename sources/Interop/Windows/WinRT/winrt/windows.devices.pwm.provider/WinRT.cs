@@ -7,9 +7,11 @@ namespace TerraFX.Interop.WinRT;
 
 public static partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Pwm_Provider_IPwmControllerProvider"]/*' />
     [NativeTypeName("const WCHAR[52]")]
     public const string InterfaceName_Windows_Devices_Pwm_Provider_IPwmControllerProvider = "Windows.Devices.Pwm.Provider.IPwmControllerProvider";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Pwm_Provider_IPwmProvider"]/*' />
     [NativeTypeName("const WCHAR[42]")]
     public const string InterfaceName_Windows_Devices_Pwm_Provider_IPwmProvider = "Windows.Devices.Pwm.Provider.IPwmProvider";
 }

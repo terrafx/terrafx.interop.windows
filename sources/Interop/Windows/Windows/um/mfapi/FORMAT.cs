@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class FORMAT
 {
+    /// <include file='FORMAT.xml' path='doc/member[@name="FORMAT.FORMAT_MFVideoFormat"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FORMAT_MFVideoFormat
     {

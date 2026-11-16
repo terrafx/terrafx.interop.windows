@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("8FD7E19C-3BF7-489B-A72C-846AB3678C96")]
 public unsafe partial struct SmartcardCredentialProvider : INativeGuid
 {
+    /// <include file='SmartcardCredentialProvider.xml' path='doc/member[@name="SmartcardCredentialProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SmartcardCredentialProvider);
 }

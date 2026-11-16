@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAutoComplete : IAutoComplete.Interface, INativeGuid
 {
+    /// <include file='IAutoComplete.xml' path='doc/member[@name="IAutoComplete.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAutoComplete);
 
     public void** lpVtbl;

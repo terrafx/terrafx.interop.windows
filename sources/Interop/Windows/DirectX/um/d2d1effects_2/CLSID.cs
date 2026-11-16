@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CLSID
 {
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Contrast"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Contrast
     {
@@ -38,6 +39,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1RgbToHue"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1RgbToHue
     {
@@ -63,6 +65,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1HueToRgb"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1HueToRgb
     {
@@ -88,6 +91,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1ChromaKey"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1ChromaKey
     {
@@ -113,6 +117,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Emboss"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Emboss
     {
@@ -138,6 +143,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Exposure"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Exposure
     {
@@ -163,6 +169,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Grayscale"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Grayscale
     {
@@ -188,6 +195,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Invert"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Invert
     {
@@ -213,6 +221,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Posterize"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Posterize
     {
@@ -238,6 +247,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Sepia"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Sepia
     {
@@ -263,6 +273,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Sharpen"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Sharpen
     {
@@ -288,6 +299,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Straighten"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Straighten
     {
@@ -313,6 +325,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1TemperatureTint"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1TemperatureTint
     {
@@ -338,6 +351,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Vignette"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Vignette
     {
@@ -363,6 +377,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1EdgeDetection"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1EdgeDetection
     {
@@ -388,6 +403,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1HighlightsShadows"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1HighlightsShadows
     {
@@ -413,6 +429,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1LookupTable3D"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1LookupTable3D
     {
@@ -438,6 +455,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Opacity"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Opacity
     {
@@ -463,6 +481,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1AlphaMask"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1AlphaMask
     {
@@ -488,6 +507,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1CrossFade"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1CrossFade
     {
@@ -513,6 +533,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Tint"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Tint
     {
@@ -538,6 +559,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1WhiteLevelAdjustment"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1WhiteLevelAdjustment
     {
@@ -563,6 +585,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1HdrToneMap"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1HdrToneMap
     {

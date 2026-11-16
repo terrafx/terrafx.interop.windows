@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IMarkupPointer")]
 public unsafe partial struct IMarkupPointer2 : IMarkupPointer2.Interface, INativeGuid
 {
+    /// <include file='IMarkupPointer2.xml' path='doc/member[@name="IMarkupPointer2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMarkupPointer2);
 
     public void** lpVtbl;

@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("35CEB711-F461-4B92-A4EF-17B6841ED254")]
 public unsafe partial struct CODECAPI_AVEncMP12MuxLargestPacketSize : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncMP12MuxLargestPacketSize.xml' path='doc/member[@name="CODECAPI_AVEncMP12MuxLargestPacketSize.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncMP12MuxLargestPacketSize);
 }

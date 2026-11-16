@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct HTMLImgEvents : HTMLImgEvents.Interface, INativeGuid
 {
+    /// <include file='HTMLImgEvents.xml' path='doc/member[@name="HTMLImgEvents.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_HTMLImgEvents);
 
     public void** lpVtbl;

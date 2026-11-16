@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpEventProvider")]
 public unsafe partial struct ISendResponseProvider : ISendResponseProvider.Interface, INativeGuid
 {
+    /// <include file='ISendResponseProvider.xml' path='doc/member[@name="ISendResponseProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISendResponseProvider);
 
     public void** lpVtbl;

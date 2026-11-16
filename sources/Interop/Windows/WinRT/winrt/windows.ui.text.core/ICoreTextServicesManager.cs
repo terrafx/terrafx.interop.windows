@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICoreTextServicesManager : ICoreTextServicesManager.Interface, INativeGuid
 {
+    /// <include file='ICoreTextServicesManager.xml' path='doc/member[@name="ICoreTextServicesManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICoreTextServicesManager);
 
     public void** lpVtbl;

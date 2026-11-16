@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAsyncActionCompletedHandler : IAsyncActionCompletedHandler.Interface, INativeGuid
 {
+    /// <include file='IAsyncActionCompletedHandler.xml' path='doc/member[@name="IAsyncActionCompletedHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAsyncActionCompletedHandler);
 
     public void** lpVtbl;

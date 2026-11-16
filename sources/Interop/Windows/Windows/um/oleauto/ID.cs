@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class ID
 {
+    /// <include file='ID.xml' path='doc/member[@name="ID.ID_DEFAULTINST"]/*' />
     [NativeTypeName("#define ID_DEFAULTINST -2")]
     public const int ID_DEFAULTINST = -2;
 }

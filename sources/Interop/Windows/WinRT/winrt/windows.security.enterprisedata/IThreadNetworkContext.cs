@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IThreadNetworkContext : IThreadNetworkContext.Interface, INativeGuid
 {
+    /// <include file='IThreadNetworkContext.xml' path='doc/member[@name="IThreadNetworkContext.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IThreadNetworkContext);
 
     public void** lpVtbl;

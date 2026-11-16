@@ -44,42 +44,55 @@ public static unsafe partial class Windows
     [return: NativeTypeName("DWORD")]
     public static extern uint GetManagedApplicationCategories([NativeTypeName("DWORD")] uint dwReserved, APPCATEGORYINFOLIST* pAppCategory);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOCALSTATE_ASSIGNED"]/*' />
     [NativeTypeName("#define LOCALSTATE_ASSIGNED 0x1")]
     public const int LOCALSTATE_ASSIGNED = 0x1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOCALSTATE_PUBLISHED"]/*' />
     [NativeTypeName("#define LOCALSTATE_PUBLISHED 0x2")]
     public const int LOCALSTATE_PUBLISHED = 0x2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOCALSTATE_UNINSTALL_UNMANAGED"]/*' />
     [NativeTypeName("#define LOCALSTATE_UNINSTALL_UNMANAGED 0x4")]
     public const int LOCALSTATE_UNINSTALL_UNMANAGED = 0x4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOCALSTATE_POLICYREMOVE_ORPHAN"]/*' />
     [NativeTypeName("#define LOCALSTATE_POLICYREMOVE_ORPHAN 0x8")]
     public const int LOCALSTATE_POLICYREMOVE_ORPHAN = 0x8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOCALSTATE_POLICYREMOVE_UNINSTALL"]/*' />
     [NativeTypeName("#define LOCALSTATE_POLICYREMOVE_UNINSTALL 0x10")]
     public const int LOCALSTATE_POLICYREMOVE_UNINSTALL = 0x10;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOCALSTATE_ORPHANED"]/*' />
     [NativeTypeName("#define LOCALSTATE_ORPHANED 0x20")]
     public const int LOCALSTATE_ORPHANED = 0x20;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOCALSTATE_UNINSTALLED"]/*' />
     [NativeTypeName("#define LOCALSTATE_UNINSTALLED 0x40")]
     public const int LOCALSTATE_UNINSTALLED = 0x40;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MANAGED_APPS_USERAPPLICATIONS"]/*' />
     [NativeTypeName("#define MANAGED_APPS_USERAPPLICATIONS 0x1")]
     public const int MANAGED_APPS_USERAPPLICATIONS = 0x1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MANAGED_APPS_FROMCATEGORY"]/*' />
     [NativeTypeName("#define MANAGED_APPS_FROMCATEGORY 0x2")]
     public const int MANAGED_APPS_FROMCATEGORY = 0x2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MANAGED_APPS_INFOLEVEL_DEFAULT"]/*' />
     [NativeTypeName("#define MANAGED_APPS_INFOLEVEL_DEFAULT 0x10000")]
     public const int MANAGED_APPS_INFOLEVEL_DEFAULT = 0x10000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MANAGED_APPTYPE_WINDOWSINSTALLER"]/*' />
     [NativeTypeName("#define MANAGED_APPTYPE_WINDOWSINSTALLER 0x1")]
     public const int MANAGED_APPTYPE_WINDOWSINSTALLER = 0x1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MANAGED_APPTYPE_SETUPEXE"]/*' />
     [NativeTypeName("#define MANAGED_APPTYPE_SETUPEXE 0x2")]
     public const int MANAGED_APPTYPE_SETUPEXE = 0x2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MANAGED_APPTYPE_UNSUPPORTED"]/*' />
     [NativeTypeName("#define MANAGED_APPTYPE_UNSUPPORTED 0x3")]
     public const int MANAGED_APPTYPE_UNSUPPORTED = 0x3;
 }

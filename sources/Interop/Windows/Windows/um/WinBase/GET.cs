@@ -9,36 +9,47 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class GET
 {
+    /// <include file='GET.xml' path='doc/member[@name="GET.GET_TAPE_MEDIA_INFORMATION"]/*' />
     [NativeTypeName("#define GET_TAPE_MEDIA_INFORMATION 0")]
     public const int GET_TAPE_MEDIA_INFORMATION = 0;
 
+    /// <include file='GET.xml' path='doc/member[@name="GET.GET_TAPE_DRIVE_INFORMATION"]/*' />
     [NativeTypeName("#define GET_TAPE_DRIVE_INFORMATION 1")]
     public const int GET_TAPE_DRIVE_INFORMATION = 1;
 
+    /// <include file='GET.xml' path='doc/member[@name="GET.GET_SYSTEM_WOW64_DIRECTORY_NAME_A_A"]/*' />
     [NativeTypeName("#define GET_SYSTEM_WOW64_DIRECTORY_NAME_A_A \"GetSystemWow64DirectoryA\"")]
     public static ReadOnlySpan<byte> GET_SYSTEM_WOW64_DIRECTORY_NAME_A_A => "GetSystemWow64DirectoryA"u8;
 
+    /// <include file='GET.xml' path='doc/member[@name="GET.GET_SYSTEM_WOW64_DIRECTORY_NAME_A_W"]/*' />
     [NativeTypeName("#define GET_SYSTEM_WOW64_DIRECTORY_NAME_A_W L\"GetSystemWow64DirectoryA\"")]
     public const string GET_SYSTEM_WOW64_DIRECTORY_NAME_A_W = "GetSystemWow64DirectoryA";
 
+    /// <include file='GET.xml' path='doc/member[@name="GET.GET_SYSTEM_WOW64_DIRECTORY_NAME_A_T"]/*' />
     [NativeTypeName("#define GET_SYSTEM_WOW64_DIRECTORY_NAME_A_T TEXT(\"GetSystemWow64DirectoryA\")")]
     public const string GET_SYSTEM_WOW64_DIRECTORY_NAME_A_T = "GetSystemWow64DirectoryA";
 
+    /// <include file='GET.xml' path='doc/member[@name="GET.GET_SYSTEM_WOW64_DIRECTORY_NAME_W_A"]/*' />
     [NativeTypeName("#define GET_SYSTEM_WOW64_DIRECTORY_NAME_W_A \"GetSystemWow64DirectoryW\"")]
     public static ReadOnlySpan<byte> GET_SYSTEM_WOW64_DIRECTORY_NAME_W_A => "GetSystemWow64DirectoryW"u8;
 
+    /// <include file='GET.xml' path='doc/member[@name="GET.GET_SYSTEM_WOW64_DIRECTORY_NAME_W_W"]/*' />
     [NativeTypeName("#define GET_SYSTEM_WOW64_DIRECTORY_NAME_W_W L\"GetSystemWow64DirectoryW\"")]
     public const string GET_SYSTEM_WOW64_DIRECTORY_NAME_W_W = "GetSystemWow64DirectoryW";
 
+    /// <include file='GET.xml' path='doc/member[@name="GET.GET_SYSTEM_WOW64_DIRECTORY_NAME_W_T"]/*' />
     [NativeTypeName("#define GET_SYSTEM_WOW64_DIRECTORY_NAME_W_T TEXT(\"GetSystemWow64DirectoryW\")")]
     public const string GET_SYSTEM_WOW64_DIRECTORY_NAME_W_T = "GetSystemWow64DirectoryW";
 
+    /// <include file='GET.xml' path='doc/member[@name="GET.GET_SYSTEM_WOW64_DIRECTORY_NAME_T_A"]/*' />
     [NativeTypeName("#define GET_SYSTEM_WOW64_DIRECTORY_NAME_T_A GET_SYSTEM_WOW64_DIRECTORY_NAME_W_A")]
     public static ReadOnlySpan<byte> GET_SYSTEM_WOW64_DIRECTORY_NAME_T_A => "GetSystemWow64DirectoryW"u8;
 
+    /// <include file='GET.xml' path='doc/member[@name="GET.GET_SYSTEM_WOW64_DIRECTORY_NAME_T_W"]/*' />
     [NativeTypeName("#define GET_SYSTEM_WOW64_DIRECTORY_NAME_T_W GET_SYSTEM_WOW64_DIRECTORY_NAME_W_W")]
     public const string GET_SYSTEM_WOW64_DIRECTORY_NAME_T_W = "GetSystemWow64DirectoryW";
 
+    /// <include file='GET.xml' path='doc/member[@name="GET.GET_SYSTEM_WOW64_DIRECTORY_NAME_T_T"]/*' />
     [NativeTypeName("#define GET_SYSTEM_WOW64_DIRECTORY_NAME_T_T GET_SYSTEM_WOW64_DIRECTORY_NAME_W_T")]
     public const string GET_SYSTEM_WOW64_DIRECTORY_NAME_T_T = "GetSystemWow64DirectoryW";
 }

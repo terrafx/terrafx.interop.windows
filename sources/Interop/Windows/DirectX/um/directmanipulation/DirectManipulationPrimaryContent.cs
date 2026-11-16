@@ -14,5 +14,6 @@ namespace TerraFX.Interop.DirectX;
 [Guid("CAA02661-D59E-41C7-8393-3BA3BACB6B57")]
 public unsafe partial struct DirectManipulationPrimaryContent : INativeGuid
 {
+    /// <include file='DirectManipulationPrimaryContent.xml' path='doc/member[@name="DirectManipulationPrimaryContent.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_DirectManipulationPrimaryContent);
 }

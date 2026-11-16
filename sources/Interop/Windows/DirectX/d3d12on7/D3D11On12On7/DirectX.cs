@@ -10,6 +10,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static unsafe partial class DirectX
 {
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.GetD3D11On12On7Interface"]/*' />
     [DllImport("d3d11on12", ExactSpelling = true)]
     public static extern HRESULT GetD3D11On12On7Interface(ID3D11On12On7** ppIface);
 }

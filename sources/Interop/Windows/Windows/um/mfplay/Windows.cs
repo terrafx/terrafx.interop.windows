@@ -16,6 +16,7 @@ public static unsafe partial class Windows
     [DllImport("mfplay", ExactSpelling = true)]
     public static extern HRESULT MFPCreateMediaPlayer([NativeTypeName("LPCWSTR")] char* pwszURL, BOOL fStartPlayback, [NativeTypeName("MFP_CREATION_OPTIONS")] uint creationOptions, IMFPMediaPlayerCallback* pCallback, HWND hWnd, IMFPMediaPlayer** ppMediaPlayer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFP_POSITIONTYPE_100NS"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFP_POSITIONTYPE_100NS
     {
@@ -41,6 +42,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFP_PKEY_StreamIndex"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFP_PKEY_StreamIndex
     {
@@ -67,6 +69,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFP_PKEY_StreamRenderingResults"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFP_PKEY_StreamRenderingResults
     {

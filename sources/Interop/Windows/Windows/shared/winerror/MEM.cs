@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MEM
 {
+    /// <include file='MEM.xml' path='doc/member[@name="MEM.MEM_E_INVALID_ROOT"]/*' />
     [NativeTypeName("#define MEM_E_INVALID_ROOT _HRESULT_TYPEDEF_(0x80080009L)")]
     public const int MEM_E_INVALID_ROOT = unchecked((int)(0x80080009));
 
+    /// <include file='MEM.xml' path='doc/member[@name="MEM.MEM_E_INVALID_LINK"]/*' />
     [NativeTypeName("#define MEM_E_INVALID_LINK _HRESULT_TYPEDEF_(0x80080010L)")]
     public const int MEM_E_INVALID_LINK = unchecked((int)(0x80080010));
 
+    /// <include file='MEM.xml' path='doc/member[@name="MEM.MEM_E_INVALID_SIZE"]/*' />
     [NativeTypeName("#define MEM_E_INVALID_SIZE _HRESULT_TYPEDEF_(0x80080011L)")]
     public const int MEM_E_INVALID_SIZE = unchecked((int)(0x80080011));
 }

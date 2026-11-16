@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IWBScriptControl : IWBScriptControl.Interface, INativeGuid
 {
+    /// <include file='IWBScriptControl.xml' path='doc/member[@name="IWBScriptControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWBScriptControl);
 
     public void** lpVtbl;

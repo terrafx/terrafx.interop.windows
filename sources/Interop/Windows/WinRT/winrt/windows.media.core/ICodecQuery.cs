@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICodecQuery : ICodecQuery.Interface, INativeGuid
 {
+    /// <include file='ICodecQuery.xml' path='doc/member[@name="ICodecQuery.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICodecQuery);
 
     public void** lpVtbl;

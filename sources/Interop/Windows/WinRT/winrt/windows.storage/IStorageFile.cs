@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IStorageFile : IStorageFile.Interface, INativeGuid
 {
+    /// <include file='IStorageFile.xml' path='doc/member[@name="IStorageFile.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IStorageFile);
 
     public void** lpVtbl;

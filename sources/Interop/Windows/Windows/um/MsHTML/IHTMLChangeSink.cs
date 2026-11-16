@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IHTMLChangeSink : IHTMLChangeSink.Interface, INativeGuid
 {
+    /// <include file='IHTMLChangeSink.xml' path='doc/member[@name="IHTMLChangeSink.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHTMLChangeSink);
 
     public void** lpVtbl;

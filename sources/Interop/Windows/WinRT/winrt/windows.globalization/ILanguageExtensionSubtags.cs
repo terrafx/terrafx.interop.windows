@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ILanguageExtensionSubtags : ILanguageExtensionSubtags.Interface, INativeGuid
 {
+    /// <include file='ILanguageExtensionSubtags.xml' path='doc/member[@name="ILanguageExtensionSubtags.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ILanguageExtensionSubtags);
 
     public void** lpVtbl;

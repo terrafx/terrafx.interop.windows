@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFReadWriteClassFactory : IMFReadWriteClassFactory.Interface, INativeGuid
 {
+    /// <include file='IMFReadWriteClassFactory.xml' path='doc/member[@name="IMFReadWriteClassFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFReadWriteClassFactory);
 
     public void** lpVtbl;

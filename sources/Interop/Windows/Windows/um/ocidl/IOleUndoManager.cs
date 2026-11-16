@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IOleUndoManager : IOleUndoManager.Interface, INativeGuid
 {
+    /// <include file='IOleUndoManager.xml' path='doc/member[@name="IOleUndoManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IOleUndoManager);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFFaceDetectionTransform : IMFFaceDetectionTransform.Interface, INativeGuid
 {
+    /// <include file='IMFFaceDetectionTransform.xml' path='doc/member[@name="IMFFaceDetectionTransform.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFFaceDetectionTransform);
 
     public void** lpVtbl;

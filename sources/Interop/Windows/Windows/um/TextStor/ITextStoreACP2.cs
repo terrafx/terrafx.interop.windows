@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct ITextStoreACP2 : ITextStoreACP2.Interface, INativeGuid
 {
+    /// <include file='ITextStoreACP2.xml' path='doc/member[@name="ITextStoreACP2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITextStoreACP2);
 
     public void** lpVtbl;

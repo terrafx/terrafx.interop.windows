@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDirectInputDeviceW : IDirectInputDeviceW.Interface, INativeGuid
 {
+    /// <include file='IDirectInputDeviceW.xml' path='doc/member[@name="IDirectInputDeviceW.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDirectInputDeviceW);
 
     public void** lpVtbl;

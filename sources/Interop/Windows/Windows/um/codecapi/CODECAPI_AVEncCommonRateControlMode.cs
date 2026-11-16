@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("1C0608E9-370C-4710-8A58-CB6181C42423")]
 public unsafe partial struct CODECAPI_AVEncCommonRateControlMode : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncCommonRateControlMode.xml' path='doc/member[@name="CODECAPI_AVEncCommonRateControlMode.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncCommonRateControlMode);
 }

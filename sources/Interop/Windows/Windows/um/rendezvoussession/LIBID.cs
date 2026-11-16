@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class LIBID
 {
+    /// <include file='LIBID.xml' path='doc/member[@name="LIBID.LIBID_RendezvousSessionLib"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid LIBID_RendezvousSessionLib
     {

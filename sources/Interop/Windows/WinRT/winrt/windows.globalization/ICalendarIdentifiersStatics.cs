@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICalendarIdentifiersStatics : ICalendarIdentifiersStatics.Interface, INativeGuid
 {
+    /// <include file='ICalendarIdentifiersStatics.xml' path='doc/member[@name="ICalendarIdentifiersStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICalendarIdentifiersStatics);
 
     public void** lpVtbl;

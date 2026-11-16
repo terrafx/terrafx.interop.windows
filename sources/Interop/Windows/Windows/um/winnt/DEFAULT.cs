@@ -9,6 +9,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class DEFAULT
 {
+    /// <include file='DEFAULT.xml' path='doc/member[@name="DEFAULT.DEFAULT_IMPERSONATION_LEVEL"]/*' />
     [NativeTypeName("#define DEFAULT_IMPERSONATION_LEVEL SecurityImpersonation")]
     public const SECURITY_IMPERSONATION_LEVEL DEFAULT_IMPERSONATION_LEVEL = SecurityImpersonation;
 }

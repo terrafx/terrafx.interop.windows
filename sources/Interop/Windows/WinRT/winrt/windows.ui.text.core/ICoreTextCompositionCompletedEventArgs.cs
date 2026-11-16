@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICoreTextCompositionCompletedEventArgs : ICoreTextCompositionCompletedEventArgs.Interface, INativeGuid
 {
+    /// <include file='ICoreTextCompositionCompletedEventArgs.xml' path='doc/member[@name="ICoreTextCompositionCompletedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICoreTextCompositionCompletedEventArgs);
 
     public void** lpVtbl;

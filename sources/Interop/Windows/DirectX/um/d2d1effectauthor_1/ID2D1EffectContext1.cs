@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1EffectContext")]
 public unsafe partial struct ID2D1EffectContext1 : ID2D1EffectContext1.Interface, INativeGuid
 {
+    /// <include file='ID2D1EffectContext1.xml' path='doc/member[@name="ID2D1EffectContext1.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1EffectContext1);
 
     public void** lpVtbl;

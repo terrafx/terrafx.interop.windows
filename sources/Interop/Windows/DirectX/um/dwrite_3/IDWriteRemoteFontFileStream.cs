@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IDWriteFontFileStream")]
 public unsafe partial struct IDWriteRemoteFontFileStream : IDWriteRemoteFontFileStream.Interface, INativeGuid
 {
+    /// <include file='IDWriteRemoteFontFileStream.xml' path='doc/member[@name="IDWriteRemoteFontFileStream.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDWriteRemoteFontFileStream);
 
     public void** lpVtbl;

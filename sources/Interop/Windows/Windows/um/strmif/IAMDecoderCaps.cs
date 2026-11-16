@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAMDecoderCaps : IAMDecoderCaps.Interface, INativeGuid
 {
+    /// <include file='IAMDecoderCaps.xml' path='doc/member[@name="IAMDecoderCaps.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAMDecoderCaps);
 
     public void** lpVtbl;

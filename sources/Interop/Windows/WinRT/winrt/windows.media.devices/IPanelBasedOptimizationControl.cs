@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPanelBasedOptimizationControl : IPanelBasedOptimizationControl.Interface, INativeGuid
 {
+    /// <include file='IPanelBasedOptimizationControl.xml' path='doc/member[@name="IPanelBasedOptimizationControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPanelBasedOptimizationControl);
 
     public void** lpVtbl;

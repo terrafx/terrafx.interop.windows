@@ -7,18 +7,23 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DDOSDCAPS
 {
+    /// <include file='DDOSDCAPS.xml' path='doc/member[@name="DDOSDCAPS.DDOSDCAPS_OPTCOMPRESSED"]/*' />
     [NativeTypeName("#define DDOSDCAPS_OPTCOMPRESSED 0x00000001l")]
     public const int DDOSDCAPS_OPTCOMPRESSED = 0x00000001;
 
+    /// <include file='DDOSDCAPS.xml' path='doc/member[@name="DDOSDCAPS.DDOSDCAPS_OPTREORDERED"]/*' />
     [NativeTypeName("#define DDOSDCAPS_OPTREORDERED 0x00000002l")]
     public const int DDOSDCAPS_OPTREORDERED = 0x00000002;
 
+    /// <include file='DDOSDCAPS.xml' path='doc/member[@name="DDOSDCAPS.DDOSDCAPS_MONOLITHICMIPMAP"]/*' />
     [NativeTypeName("#define DDOSDCAPS_MONOLITHICMIPMAP 0x00000004l")]
     public const int DDOSDCAPS_MONOLITHICMIPMAP = 0x00000004;
 
+    /// <include file='DDOSDCAPS.xml' path='doc/member[@name="DDOSDCAPS.DDOSDCAPS_VALIDSCAPS"]/*' />
     [NativeTypeName("#define DDOSDCAPS_VALIDSCAPS 0x30004800l")]
     public const int DDOSDCAPS_VALIDSCAPS = 0x30004800;
 
+    /// <include file='DDOSDCAPS.xml' path='doc/member[@name="DDOSDCAPS.DDOSDCAPS_VALIDOSCAPS"]/*' />
     [NativeTypeName("#define DDOSDCAPS_VALIDOSCAPS 0x00000007l")]
     public const int DDOSDCAPS_VALIDOSCAPS = 0x00000007;
 }

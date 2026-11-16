@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("E5C0C10F-81A4-422D-8C3F-B474A4581336")]
 public unsafe partial struct CODECAPI_AVEncVideoMeanAbsoluteDifference : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncVideoMeanAbsoluteDifference.xml' path='doc/member[@name="CODECAPI_AVEncVideoMeanAbsoluteDifference.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncVideoMeanAbsoluteDifference);
 }

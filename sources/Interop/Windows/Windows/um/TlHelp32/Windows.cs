@@ -88,51 +88,67 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     public static extern BOOL Module32NextA(HANDLE hSnapshot, [NativeTypeName("LPMODULEENTRY32")] MODULEENTRY32* lpme);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TH32CS_SNAPHEAPLIST"]/*' />
     [NativeTypeName("#define TH32CS_SNAPHEAPLIST 0x00000001")]
     public const int TH32CS_SNAPHEAPLIST = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TH32CS_SNAPPROCESS"]/*' />
     [NativeTypeName("#define TH32CS_SNAPPROCESS 0x00000002")]
     public const int TH32CS_SNAPPROCESS = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TH32CS_SNAPTHREAD"]/*' />
     [NativeTypeName("#define TH32CS_SNAPTHREAD 0x00000004")]
     public const int TH32CS_SNAPTHREAD = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TH32CS_SNAPMODULE"]/*' />
     [NativeTypeName("#define TH32CS_SNAPMODULE 0x00000008")]
     public const int TH32CS_SNAPMODULE = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TH32CS_SNAPMODULE32"]/*' />
     [NativeTypeName("#define TH32CS_SNAPMODULE32 0x00000010")]
     public const int TH32CS_SNAPMODULE32 = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TH32CS_SNAPALL"]/*' />
     [NativeTypeName("#define TH32CS_SNAPALL (TH32CS_SNAPHEAPLIST | TH32CS_SNAPPROCESS | TH32CS_SNAPTHREAD | TH32CS_SNAPMODULE)")]
     public const int TH32CS_SNAPALL = (0x00000001 | 0x00000002 | 0x00000004 | 0x00000008);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TH32CS_INHERIT"]/*' />
     [NativeTypeName("#define TH32CS_INHERIT 0x80000000")]
     public const uint TH32CS_INHERIT = 0x80000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HF32_DEFAULT"]/*' />
     [NativeTypeName("#define HF32_DEFAULT 1")]
     public const int HF32_DEFAULT = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HF32_SHARED"]/*' />
     [NativeTypeName("#define HF32_SHARED 2")]
     public const int HF32_SHARED = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LF32_FIXED"]/*' />
     [NativeTypeName("#define LF32_FIXED 0x00000001")]
     public const int LF32_FIXED = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LF32_FREE"]/*' />
     [NativeTypeName("#define LF32_FREE 0x00000002")]
     public const int LF32_FREE = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LF32_MOVEABLE"]/*' />
     [NativeTypeName("#define LF32_MOVEABLE 0x00000004")]
     public const int LF32_MOVEABLE = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Process32First"]/*' />
     [NativeTypeName("#define Process32First Process32FirstW")]
     public static delegate*<HANDLE, PROCESSENTRY32W*, BOOL> Process32First => &Process32FirstW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Process32Next"]/*' />
     [NativeTypeName("#define Process32Next Process32NextW")]
     public static delegate*<HANDLE, PROCESSENTRY32W*, BOOL> Process32Next => &Process32NextW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Module32First"]/*' />
     [NativeTypeName("#define Module32First Module32FirstW")]
     public static delegate*<HANDLE, MODULEENTRY32W*, BOOL> Module32First => &Module32FirstW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Module32Next"]/*' />
     [NativeTypeName("#define Module32Next Module32NextW")]
     public static delegate*<HANDLE, MODULEENTRY32W*, BOOL> Module32Next => &Module32NextW;
 }

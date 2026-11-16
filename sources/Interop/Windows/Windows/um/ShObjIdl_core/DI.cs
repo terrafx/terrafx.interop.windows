@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class DI
 {
+    /// <include file='DI.xml' path='doc/member[@name="DI.DI_GETDRAGIMAGE"]/*' />
     [NativeTypeName("#define DI_GETDRAGIMAGE TEXT(\"ShellGetDragImage\")")]
     public const string DI_GETDRAGIMAGE = "ShellGetDragImage";
 }

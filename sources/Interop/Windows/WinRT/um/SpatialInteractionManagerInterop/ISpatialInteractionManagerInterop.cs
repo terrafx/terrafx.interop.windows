@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows10.0.15063.0")]
 public unsafe partial struct ISpatialInteractionManagerInterop : ISpatialInteractionManagerInterop.Interface, INativeGuid
 {
+    /// <include file='ISpatialInteractionManagerInterop.xml' path='doc/member[@name="ISpatialInteractionManagerInterop.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpatialInteractionManagerInterop);
 
     public void** lpVtbl;

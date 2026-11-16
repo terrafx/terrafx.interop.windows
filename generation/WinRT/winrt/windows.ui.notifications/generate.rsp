@@ -1,5 +1,6 @@
 @../../../settings.rsp
 @../../../remap.rsp
+@../../../remap-guids-winrt.rsp
 --exclude
 ABI::Windows::UI::Notifications::IID_IAdaptiveNotificationContent
 ABI::Windows::UI::Notifications::IID_IAdaptiveNotificationText
@@ -82,8 +83,6 @@ WinRT
 TerraFX.Interop.WinRT
 --output
 ../../../../sources/Interop/Windows/WinRT/winrt/windows.ui.notifications
---remap
-IID_IUserNotification=@IID_WinRT_IUserNotification
 --test-output
 ../../../../tests/Interop/Windows/WinRT/winrt/windows.ui.notifications
 --traverse

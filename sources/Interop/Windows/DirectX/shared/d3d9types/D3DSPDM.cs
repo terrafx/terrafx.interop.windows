@@ -7,15 +7,19 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3DSPDM
 {
+    /// <include file='D3DSPDM.xml' path='doc/member[@name="D3DSPDM.D3DSPDM_NONE"]/*' />
     [NativeTypeName("#define D3DSPDM_NONE (0<<D3DSP_DSTMOD_SHIFT)")]
     public const int D3DSPDM_NONE = (0 << 20);
 
+    /// <include file='D3DSPDM.xml' path='doc/member[@name="D3DSPDM.D3DSPDM_SATURATE"]/*' />
     [NativeTypeName("#define D3DSPDM_SATURATE (1<<D3DSP_DSTMOD_SHIFT)")]
     public const int D3DSPDM_SATURATE = (1 << 20);
 
+    /// <include file='D3DSPDM.xml' path='doc/member[@name="D3DSPDM.D3DSPDM_PARTIALPRECISION"]/*' />
     [NativeTypeName("#define D3DSPDM_PARTIALPRECISION (2<<D3DSP_DSTMOD_SHIFT)")]
     public const int D3DSPDM_PARTIALPRECISION = (2 << 20);
 
+    /// <include file='D3DSPDM.xml' path='doc/member[@name="D3DSPDM.D3DSPDM_MSAMPCENTROID"]/*' />
     [NativeTypeName("#define D3DSPDM_MSAMPCENTROID (4<<D3DSP_DSTMOD_SHIFT)")]
     public const int D3DSPDM_MSAMPCENTROID = (4 << 20);
 }

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IMediaEncodingProfile3 : IMediaEncodingProfile3.Interface, INativeGuid
 {
+    /// <include file='IMediaEncodingProfile3.xml' path='doc/member[@name="IMediaEncodingProfile3.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMediaEncodingProfile3);
 
     public void** lpVtbl;

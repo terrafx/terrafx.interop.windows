@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ITfMSAAControl"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ITfMSAAControl
     {
@@ -37,6 +38,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IInternalDocWrap"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IInternalDocWrap
     {
@@ -62,6 +64,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ITextStoreACPEx"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ITextStoreACPEx
     {
@@ -87,6 +90,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ITextStoreAnchorEx"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ITextStoreAnchorEx
     {
@@ -112,6 +116,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ITextStoreACPSinkEx"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ITextStoreACPSinkEx
     {
@@ -137,6 +142,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ITextStoreSinkAnchorEx"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ITextStoreSinkAnchorEx
     {
@@ -162,6 +168,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IAccDictionary"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IAccDictionary
     {
@@ -187,6 +194,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IVersionInfo"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IVersionInfo
     {
@@ -212,6 +220,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ICoCreateLocally"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ICoCreateLocally
     {
@@ -237,6 +246,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ICoCreatedLocally"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ICoCreatedLocally
     {
@@ -262,6 +272,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IAccStore"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IAccStore
     {
@@ -287,6 +298,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IAccServerDocMgr"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IAccServerDocMgr
     {
@@ -312,6 +324,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IAccClientDocMgr"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IAccClientDocMgr
     {
@@ -337,6 +350,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDocWrap"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDocWrap
     {
@@ -362,6 +376,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IClonableWrapper"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IClonableWrapper
     {

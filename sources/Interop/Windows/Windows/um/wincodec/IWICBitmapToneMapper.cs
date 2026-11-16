@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IWICBitmapSource")]
 public unsafe partial struct IWICBitmapToneMapper : IWICBitmapToneMapper.Interface, INativeGuid
 {
+    /// <include file='IWICBitmapToneMapper.xml' path='doc/member[@name="IWICBitmapToneMapper.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWICBitmapToneMapper);
 
     public void** lpVtbl;

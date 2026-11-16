@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IGpioChangeReaderFactory : IGpioChangeReaderFactory.Interface, INativeGuid
 {
+    /// <include file='IGpioChangeReaderFactory.xml' path='doc/member[@name="IGpioChangeReaderFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGpioChangeReaderFactory);
 
     public void** lpVtbl;

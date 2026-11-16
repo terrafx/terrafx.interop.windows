@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class DISPID
 {
+    /// <include file='DISPID.xml' path='doc/member[@name="DISPID.DISPID_DFILESYSTEMIMAGEEVENTS_UPDATE"]/*' />
     [NativeTypeName("#define DISPID_DFILESYSTEMIMAGEEVENTS_UPDATE 0x100")]
     public const int DISPID_DFILESYSTEMIMAGEEVENTS_UPDATE = 0x100;
 
+    /// <include file='DISPID.xml' path='doc/member[@name="DISPID.DISPID_DFILESYSTEMIMAGEIMPORTEVENTS_UPDATEIMPORT"]/*' />
     [NativeTypeName("#define DISPID_DFILESYSTEMIMAGEIMPORTEVENTS_UPDATEIMPORT 0x101")]
     public const int DISPID_DFILESYSTEMIMAGEIMPORTEVENTS_UPDATEIMPORT = 0x101;
 }

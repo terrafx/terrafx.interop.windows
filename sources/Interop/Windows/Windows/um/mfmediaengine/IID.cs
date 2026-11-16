@@ -180,6 +180,30 @@ public static partial class IID
         }
     }
 
+    public static ref readonly Guid IID_IMFMediaEngineVideoRendererEffect
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x88, 0x11, 0xDF, 0x6B,
+                0xC8, 0x6E,
+                0xFF, 0x44,
+                0x8C,
+                0xCC,
+                0xBF,
+                0xCA,
+                0x0D,
+                0x12,
+                0xAF,
+                0xA3
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IMFMediaEngineExtension
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

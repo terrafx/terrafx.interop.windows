@@ -7,45 +7,59 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IMN
 {
+    /// <include file='IMN.xml' path='doc/member[@name="IMN.IMN_CLOSESTATUSWINDOW"]/*' />
     [NativeTypeName("#define IMN_CLOSESTATUSWINDOW 0x0001")]
     public const int IMN_CLOSESTATUSWINDOW = 0x0001;
 
+    /// <include file='IMN.xml' path='doc/member[@name="IMN.IMN_OPENSTATUSWINDOW"]/*' />
     [NativeTypeName("#define IMN_OPENSTATUSWINDOW 0x0002")]
     public const int IMN_OPENSTATUSWINDOW = 0x0002;
 
+    /// <include file='IMN.xml' path='doc/member[@name="IMN.IMN_CHANGECANDIDATE"]/*' />
     [NativeTypeName("#define IMN_CHANGECANDIDATE 0x0003")]
     public const int IMN_CHANGECANDIDATE = 0x0003;
 
+    /// <include file='IMN.xml' path='doc/member[@name="IMN.IMN_CLOSECANDIDATE"]/*' />
     [NativeTypeName("#define IMN_CLOSECANDIDATE 0x0004")]
     public const int IMN_CLOSECANDIDATE = 0x0004;
 
+    /// <include file='IMN.xml' path='doc/member[@name="IMN.IMN_OPENCANDIDATE"]/*' />
     [NativeTypeName("#define IMN_OPENCANDIDATE 0x0005")]
     public const int IMN_OPENCANDIDATE = 0x0005;
 
+    /// <include file='IMN.xml' path='doc/member[@name="IMN.IMN_SETCONVERSIONMODE"]/*' />
     [NativeTypeName("#define IMN_SETCONVERSIONMODE 0x0006")]
     public const int IMN_SETCONVERSIONMODE = 0x0006;
 
+    /// <include file='IMN.xml' path='doc/member[@name="IMN.IMN_SETSENTENCEMODE"]/*' />
     [NativeTypeName("#define IMN_SETSENTENCEMODE 0x0007")]
     public const int IMN_SETSENTENCEMODE = 0x0007;
 
+    /// <include file='IMN.xml' path='doc/member[@name="IMN.IMN_SETOPENSTATUS"]/*' />
     [NativeTypeName("#define IMN_SETOPENSTATUS 0x0008")]
     public const int IMN_SETOPENSTATUS = 0x0008;
 
+    /// <include file='IMN.xml' path='doc/member[@name="IMN.IMN_SETCANDIDATEPOS"]/*' />
     [NativeTypeName("#define IMN_SETCANDIDATEPOS 0x0009")]
     public const int IMN_SETCANDIDATEPOS = 0x0009;
 
+    /// <include file='IMN.xml' path='doc/member[@name="IMN.IMN_SETCOMPOSITIONFONT"]/*' />
     [NativeTypeName("#define IMN_SETCOMPOSITIONFONT 0x000A")]
     public const int IMN_SETCOMPOSITIONFONT = 0x000A;
 
+    /// <include file='IMN.xml' path='doc/member[@name="IMN.IMN_SETCOMPOSITIONWINDOW"]/*' />
     [NativeTypeName("#define IMN_SETCOMPOSITIONWINDOW 0x000B")]
     public const int IMN_SETCOMPOSITIONWINDOW = 0x000B;
 
+    /// <include file='IMN.xml' path='doc/member[@name="IMN.IMN_SETSTATUSWINDOWPOS"]/*' />
     [NativeTypeName("#define IMN_SETSTATUSWINDOWPOS 0x000C")]
     public const int IMN_SETSTATUSWINDOWPOS = 0x000C;
 
+    /// <include file='IMN.xml' path='doc/member[@name="IMN.IMN_GUIDELINE"]/*' />
     [NativeTypeName("#define IMN_GUIDELINE 0x000D")]
     public const int IMN_GUIDELINE = 0x000D;
 
+    /// <include file='IMN.xml' path='doc/member[@name="IMN.IMN_PRIVATE"]/*' />
     [NativeTypeName("#define IMN_PRIVATE 0x000E")]
     public const int IMN_PRIVATE = 0x000E;
 }

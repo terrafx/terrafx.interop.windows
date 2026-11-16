@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("ACB5DE96-7B93-4C2F-8825-B0295FA93BF4")]
 public unsafe partial struct CODECAPI_AVEncMPVFrameFieldMode : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncMPVFrameFieldMode.xml' path='doc/member[@name="CODECAPI_AVEncMPVFrameFieldMode.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncMPVFrameFieldMode);
 }

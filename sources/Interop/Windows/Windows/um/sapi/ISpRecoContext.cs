@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("ISpEventSource")]
 public unsafe partial struct ISpRecoContext : ISpRecoContext.Interface, INativeGuid
 {
+    /// <include file='ISpRecoContext.xml' path='doc/member[@name="ISpRecoContext.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpRecoContext);
 
     public void** lpVtbl;

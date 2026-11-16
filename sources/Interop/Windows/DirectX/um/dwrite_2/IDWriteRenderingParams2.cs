@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IDWriteRenderingParams2 : IDWriteRenderingParams2.Interface, INativeGuid
 {
+    /// <include file='IDWriteRenderingParams2.xml' path='doc/member[@name="IDWriteRenderingParams2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDWriteRenderingParams2);
 
     public void** lpVtbl;

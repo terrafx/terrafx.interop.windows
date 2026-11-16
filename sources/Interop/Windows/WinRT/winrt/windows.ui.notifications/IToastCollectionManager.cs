@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IToastCollectionManager : IToastCollectionManager.Interface, INativeGuid
 {
+    /// <include file='IToastCollectionManager.xml' path='doc/member[@name="IToastCollectionManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IToastCollectionManager);
 
     public void** lpVtbl;

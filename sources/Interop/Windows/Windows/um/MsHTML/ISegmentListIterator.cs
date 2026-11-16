@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISegmentListIterator : ISegmentListIterator.Interface, INativeGuid
 {
+    /// <include file='ISegmentListIterator.xml' path='doc/member[@name="ISegmentListIterator.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISegmentListIterator);
 
     public void** lpVtbl;

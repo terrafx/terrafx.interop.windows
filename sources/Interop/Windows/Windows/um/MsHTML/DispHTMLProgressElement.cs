@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct DispHTMLProgressElement : DispHTMLProgressElement.Interface, INativeGuid
 {
+    /// <include file='DispHTMLProgressElement.xml' path='doc/member[@name="DispHTMLProgressElement.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_DispHTMLProgressElement);
 
     public void** lpVtbl;

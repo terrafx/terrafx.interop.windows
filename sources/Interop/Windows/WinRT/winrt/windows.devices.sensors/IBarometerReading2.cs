@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IBarometerReading2 : IBarometerReading2.Interface, INativeGuid
 {
+    /// <include file='IBarometerReading2.xml' path='doc/member[@name="IBarometerReading2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBarometerReading2);
 
     public void** lpVtbl;

@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class E
 {
+    /// <include file='E.xml' path='doc/member[@name="E.E_NOTFOUND"]/*' />
     [NativeTypeName("#define E_NOTFOUND HRESULT_FROM_WIN32(ERROR_NOT_FOUND)")]
     public const int E_NOTFOUND = -2147023728;
 
+    /// <include file='E.xml' path='doc/member[@name="E.E_UNSUPPORTED_TYPE"]/*' />
     [NativeTypeName("#define E_UNSUPPORTED_TYPE HRESULT_FROM_WIN32(ERROR_UNSUPPORTED_TYPE)")]
     public const int E_UNSUPPORTED_TYPE = -2147023266;
 }

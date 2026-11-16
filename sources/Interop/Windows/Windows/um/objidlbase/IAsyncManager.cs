@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAsyncManager : IAsyncManager.Interface, INativeGuid
 {
+    /// <include file='IAsyncManager.xml' path='doc/member[@name="IAsyncManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAsyncManager);
 
     public void** lpVtbl;

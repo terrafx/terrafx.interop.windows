@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0.22000.0")]
 public unsafe partial struct IServiceProvider : IServiceProvider.Interface, INativeGuid
 {
+    /// <include file='IServiceProvider.xml' path='doc/member[@name="IServiceProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IServiceProvider);
 
     public void** lpVtbl;

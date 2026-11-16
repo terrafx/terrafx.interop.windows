@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class DESKTOP
 {
+    /// <include file='DESKTOP.xml' path='doc/member[@name="DESKTOP.DESKTOP_SETTING"]/*' />
     [NativeTypeName("#define DESKTOP_SETTING 2")]
     public const int DESKTOP_SETTING = 2;
 }

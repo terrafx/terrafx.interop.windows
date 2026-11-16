@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IPinConnection : IPinConnection.Interface, INativeGuid
 {
+    /// <include file='IPinConnection.xml' path='doc/member[@name="IPinConnection.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPinConnection);
 
     public void** lpVtbl;

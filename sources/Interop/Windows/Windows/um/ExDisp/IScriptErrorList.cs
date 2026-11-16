@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IScriptErrorList : IScriptErrorList.Interface, INativeGuid
 {
+    /// <include file='IScriptErrorList.xml' path='doc/member[@name="IScriptErrorList.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IScriptErrorList);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IWbemConfigureRefresher : IWbemConfigureRefresher.Interface, INativeGuid
 {
+    /// <include file='IWbemConfigureRefresher.xml' path='doc/member[@name="IWbemConfigureRefresher.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWbemConfigureRefresher);
 
     public void** lpVtbl;

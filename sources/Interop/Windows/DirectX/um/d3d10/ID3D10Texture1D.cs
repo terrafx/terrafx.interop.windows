@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID3D10Resource")]
 public unsafe partial struct ID3D10Texture1D : ID3D10Texture1D.Interface, INativeGuid
 {
+    /// <include file='ID3D10Texture1D.xml' path='doc/member[@name="ID3D10Texture1D.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3D10Texture1D);
 
     public void** lpVtbl;

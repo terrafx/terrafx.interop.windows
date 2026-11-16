@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IControlChannelTriggerFactory : IControlChannelTriggerFactory.Interface, INativeGuid
 {
+    /// <include file='IControlChannelTriggerFactory.xml' path='doc/member[@name="IControlChannelTriggerFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IControlChannelTriggerFactory);
 
     public void** lpVtbl;

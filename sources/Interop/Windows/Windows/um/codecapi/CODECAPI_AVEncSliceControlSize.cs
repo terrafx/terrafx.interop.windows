@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("92F51DF3-07A5-4172-AEFE-C69CA3B60E35")]
 public unsafe partial struct CODECAPI_AVEncSliceControlSize : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncSliceControlSize.xml' path='doc/member[@name="CODECAPI_AVEncSliceControlSize.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncSliceControlSize);
 }

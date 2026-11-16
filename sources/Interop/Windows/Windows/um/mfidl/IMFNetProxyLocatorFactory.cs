@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFNetProxyLocatorFactory : IMFNetProxyLocatorFactory.Interface, INativeGuid
 {
+    /// <include file='IMFNetProxyLocatorFactory.xml' path='doc/member[@name="IMFNetProxyLocatorFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFNetProxyLocatorFactory);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IDxcBlob")]
 public unsafe partial struct IDxcBlobEncoding : IDxcBlobEncoding.Interface, INativeGuid
 {
+    /// <include file='IDxcBlobEncoding.xml' path='doc/member[@name="IDxcBlobEncoding.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDxcBlobEncoding);
 
     public void** lpVtbl;

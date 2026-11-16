@@ -7,87 +7,115 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class PAGE
 {
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_NOACCESS"]/*' />
     [NativeTypeName("#define PAGE_NOACCESS 0x01")]
     public const int PAGE_NOACCESS = 0x01;
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_READONLY"]/*' />
     [NativeTypeName("#define PAGE_READONLY 0x02")]
     public const int PAGE_READONLY = 0x02;
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_READWRITE"]/*' />
     [NativeTypeName("#define PAGE_READWRITE 0x04")]
     public const int PAGE_READWRITE = 0x04;
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_WRITECOPY"]/*' />
     [NativeTypeName("#define PAGE_WRITECOPY 0x08")]
     public const int PAGE_WRITECOPY = 0x08;
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_EXECUTE"]/*' />
     [NativeTypeName("#define PAGE_EXECUTE 0x10")]
     public const int PAGE_EXECUTE = 0x10;
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_EXECUTE_READ"]/*' />
     [NativeTypeName("#define PAGE_EXECUTE_READ 0x20")]
     public const int PAGE_EXECUTE_READ = 0x20;
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_EXECUTE_READWRITE"]/*' />
     [NativeTypeName("#define PAGE_EXECUTE_READWRITE 0x40")]
     public const int PAGE_EXECUTE_READWRITE = 0x40;
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_EXECUTE_WRITECOPY"]/*' />
     [NativeTypeName("#define PAGE_EXECUTE_WRITECOPY 0x80")]
     public const int PAGE_EXECUTE_WRITECOPY = 0x80;
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_GUARD"]/*' />
     [NativeTypeName("#define PAGE_GUARD 0x100")]
     public const int PAGE_GUARD = 0x100;
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_NOCACHE"]/*' />
     [NativeTypeName("#define PAGE_NOCACHE 0x200")]
     public const int PAGE_NOCACHE = 0x200;
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_WRITECOMBINE"]/*' />
     [NativeTypeName("#define PAGE_WRITECOMBINE 0x400")]
     public const int PAGE_WRITECOMBINE = 0x400;
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_GRAPHICS_NOACCESS"]/*' />
     [NativeTypeName("#define PAGE_GRAPHICS_NOACCESS 0x0800")]
     public const int PAGE_GRAPHICS_NOACCESS = 0x0800;
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_GRAPHICS_READONLY"]/*' />
     [NativeTypeName("#define PAGE_GRAPHICS_READONLY 0x1000")]
     public const int PAGE_GRAPHICS_READONLY = 0x1000;
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_GRAPHICS_READWRITE"]/*' />
     [NativeTypeName("#define PAGE_GRAPHICS_READWRITE 0x2000")]
     public const int PAGE_GRAPHICS_READWRITE = 0x2000;
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_GRAPHICS_EXECUTE"]/*' />
     [NativeTypeName("#define PAGE_GRAPHICS_EXECUTE 0x4000")]
     public const int PAGE_GRAPHICS_EXECUTE = 0x4000;
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_GRAPHICS_EXECUTE_READ"]/*' />
     [NativeTypeName("#define PAGE_GRAPHICS_EXECUTE_READ 0x8000")]
     public const int PAGE_GRAPHICS_EXECUTE_READ = 0x8000;
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_GRAPHICS_EXECUTE_READWRITE"]/*' />
     [NativeTypeName("#define PAGE_GRAPHICS_EXECUTE_READWRITE 0x10000")]
     public const int PAGE_GRAPHICS_EXECUTE_READWRITE = 0x10000;
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_GRAPHICS_COHERENT"]/*' />
     [NativeTypeName("#define PAGE_GRAPHICS_COHERENT 0x20000")]
     public const int PAGE_GRAPHICS_COHERENT = 0x20000;
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_GRAPHICS_NOCACHE"]/*' />
     [NativeTypeName("#define PAGE_GRAPHICS_NOCACHE 0x40000")]
     public const int PAGE_GRAPHICS_NOCACHE = 0x40000;
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_ENCLAVE_THREAD_CONTROL"]/*' />
     [NativeTypeName("#define PAGE_ENCLAVE_THREAD_CONTROL 0x80000000")]
     public const uint PAGE_ENCLAVE_THREAD_CONTROL = 0x80000000;
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_REVERT_TO_FILE_MAP"]/*' />
     [NativeTypeName("#define PAGE_REVERT_TO_FILE_MAP 0x80000000")]
     public const uint PAGE_REVERT_TO_FILE_MAP = 0x80000000;
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_TARGETS_NO_UPDATE"]/*' />
     [NativeTypeName("#define PAGE_TARGETS_NO_UPDATE 0x40000000")]
     public const int PAGE_TARGETS_NO_UPDATE = 0x40000000;
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_TARGETS_INVALID"]/*' />
     [NativeTypeName("#define PAGE_TARGETS_INVALID 0x40000000")]
     public const int PAGE_TARGETS_INVALID = 0x40000000;
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_ENCLAVE_UNVALIDATED"]/*' />
     [NativeTypeName("#define PAGE_ENCLAVE_UNVALIDATED 0x20000000")]
     public const int PAGE_ENCLAVE_UNVALIDATED = 0x20000000;
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_ENCLAVE_MASK"]/*' />
     [NativeTypeName("#define PAGE_ENCLAVE_MASK 0x10000000")]
     public const int PAGE_ENCLAVE_MASK = 0x10000000;
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_ENCLAVE_DECOMMIT"]/*' />
     [NativeTypeName("#define PAGE_ENCLAVE_DECOMMIT (PAGE_ENCLAVE_MASK | 0)")]
     public const int PAGE_ENCLAVE_DECOMMIT = (0x10000000 | 0);
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_ENCLAVE_SS_FIRST"]/*' />
     [NativeTypeName("#define PAGE_ENCLAVE_SS_FIRST (PAGE_ENCLAVE_MASK | 1)")]
     public const int PAGE_ENCLAVE_SS_FIRST = (0x10000000 | 1);
 
+    /// <include file='PAGE.xml' path='doc/member[@name="PAGE.PAGE_ENCLAVE_SS_REST"]/*' />
     [NativeTypeName("#define PAGE_ENCLAVE_SS_REST (PAGE_ENCLAVE_MASK | 2)")]
     public const int PAGE_ENCLAVE_SS_REST = (0x10000000 | 2);
 }

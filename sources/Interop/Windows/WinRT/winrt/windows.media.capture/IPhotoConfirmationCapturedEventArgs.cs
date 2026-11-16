@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPhotoConfirmationCapturedEventArgs : IPhotoConfirmationCapturedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IPhotoConfirmationCapturedEventArgs.xml' path='doc/member[@name="IPhotoConfirmationCapturedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPhotoConfirmationCapturedEventArgs);
 
     public void** lpVtbl;

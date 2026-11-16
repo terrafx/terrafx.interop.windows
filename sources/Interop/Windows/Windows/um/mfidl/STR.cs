@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class STR
 {
+    /// <include file='STR.xml' path='doc/member[@name="STR.STR_HASH_LEN"]/*' />
     [NativeTypeName("#define STR_HASH_LEN (SHA_HASH_LEN*2 + 3)")]
     public const int STR_HASH_LEN = (20 * 2 + 3);
 }

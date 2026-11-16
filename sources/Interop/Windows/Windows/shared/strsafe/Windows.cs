@@ -128,7 +128,7 @@ public static unsafe partial class Windows
                     {
                         nuint cbRemaining;
 
-                        cbRemaining = cchRemaining * sizeof(sbyte);
+                        cbRemaining = cchRemaining * (uint)(sizeof(sbyte));
                         _ = StringExHandleFillBehindNullA(pszDestEnd, cbRemaining, dwFlags);
                     }
                 }
@@ -145,7 +145,7 @@ public static unsafe partial class Windows
             {
                 nuint cbDest;
 
-                cbDest = cchDest * sizeof(sbyte);
+                cbDest = cchDest * (uint)(sizeof(sbyte));
                 _ = StringExHandleOtherFlagsA(pszDest, cbDest, 0, &pszDestEnd, &cchRemaining, dwFlags);
             }
 
@@ -217,7 +217,7 @@ public static unsafe partial class Windows
                     {
                         nuint cbRemaining;
 
-                        cbRemaining = cchRemaining * sizeof(char);
+                        cbRemaining = cchRemaining * (uint)(sizeof(char));
                         _ = StringExHandleFillBehindNullW(pszDestEnd, cbRemaining, dwFlags);
                     }
                 }
@@ -234,7 +234,7 @@ public static unsafe partial class Windows
             {
                 nuint cbDest;
 
-                cbDest = cchDest * sizeof(char);
+                cbDest = cchDest * (uint)(sizeof(char));
                 _ = StringExHandleOtherFlagsW(pszDest, cbDest, 0, &pszDestEnd, &cchRemaining, dwFlags);
             }
 
@@ -408,7 +408,7 @@ public static unsafe partial class Windows
                     {
                         nuint cbRemaining;
 
-                        cbRemaining = cchRemaining * sizeof(sbyte);
+                        cbRemaining = cchRemaining * (uint)(sizeof(sbyte));
                         _ = StringExHandleFillBehindNullA(pszDestEnd, cbRemaining, dwFlags);
                     }
                 }
@@ -425,7 +425,7 @@ public static unsafe partial class Windows
             {
                 nuint cbDest;
 
-                cbDest = cchDest * sizeof(sbyte);
+                cbDest = cchDest * (uint)(sizeof(sbyte));
                 _ = StringExHandleOtherFlagsA(pszDest, cbDest, 0, &pszDestEnd, &cchRemaining, dwFlags);
             }
 
@@ -497,7 +497,7 @@ public static unsafe partial class Windows
                     {
                         nuint cbRemaining;
 
-                        cbRemaining = cchRemaining * sizeof(char);
+                        cbRemaining = cchRemaining * (uint)(sizeof(char));
                         _ = StringExHandleFillBehindNullW(pszDestEnd, cbRemaining, dwFlags);
                     }
                 }
@@ -514,7 +514,7 @@ public static unsafe partial class Windows
             {
                 nuint cbDest;
 
-                cbDest = cchDest * sizeof(char);
+                cbDest = cchDest * (uint)(sizeof(char));
                 _ = StringExHandleOtherFlagsW(pszDest, cbDest, 0, &pszDestEnd, &cchRemaining, dwFlags);
             }
 
@@ -645,7 +645,7 @@ public static unsafe partial class Windows
                     {
                         nuint cbRemaining;
 
-                        cbRemaining = cchRemaining * sizeof(sbyte);
+                        cbRemaining = cchRemaining * (uint)(sizeof(sbyte));
                         _ = StringExHandleFillBehindNullA(pszDestEnd, cbRemaining, dwFlags);
                     }
                 }
@@ -655,7 +655,7 @@ public static unsafe partial class Windows
             {
                 nuint cbDest;
 
-                cbDest = cchDest * sizeof(sbyte);
+                cbDest = cchDest * (uint)(sizeof(sbyte));
                 _ = StringExHandleOtherFlagsA(pszDest, cbDest, cchDestLength, &pszDestEnd, &cchRemaining, dwFlags);
             }
 
@@ -720,7 +720,7 @@ public static unsafe partial class Windows
                     {
                         nuint cbRemaining;
 
-                        cbRemaining = cchRemaining * sizeof(char);
+                        cbRemaining = cchRemaining * (uint)(sizeof(char));
                         _ = StringExHandleFillBehindNullW(pszDestEnd, cbRemaining, dwFlags);
                     }
                 }
@@ -730,7 +730,7 @@ public static unsafe partial class Windows
             {
                 nuint cbDest;
 
-                cbDest = cchDest * sizeof(char);
+                cbDest = cchDest * (uint)(sizeof(char));
                 _ = StringExHandleOtherFlagsW(pszDest, cbDest, cchDestLength, &pszDestEnd, &cchRemaining, dwFlags);
             }
 
@@ -796,7 +796,7 @@ public static unsafe partial class Windows
                     {
                         nuint cbRemaining;
 
-                        cbRemaining = (cchRemaining * sizeof(sbyte)) + (cbDest % sizeof(sbyte));
+                        cbRemaining = (cchRemaining * (uint)(sizeof(sbyte))) + (cbDest % (uint)(sizeof(sbyte)));
                         _ = StringExHandleFillBehindNullA(pszDestEnd, cbRemaining, dwFlags);
                     }
                 }
@@ -816,7 +816,7 @@ public static unsafe partial class Windows
 
                 if ((pcbRemaining) != null)
                 {
-                    *pcbRemaining = (cchRemaining * sizeof(sbyte)) + (cbDest % sizeof(sbyte));
+                    *pcbRemaining = (cchRemaining * (uint)(sizeof(sbyte))) + (cbDest % (uint)(sizeof(sbyte)));
                 }
             }
         }
@@ -869,7 +869,7 @@ public static unsafe partial class Windows
                     {
                         nuint cbRemaining;
 
-                        cbRemaining = (cchRemaining * sizeof(char)) + (cbDest % sizeof(char));
+                        cbRemaining = (cchRemaining * (uint)(sizeof(char))) + (cbDest % (uint)(sizeof(char)));
                         _ = StringExHandleFillBehindNullW(pszDestEnd, cbRemaining, dwFlags);
                     }
                 }
@@ -889,7 +889,7 @@ public static unsafe partial class Windows
 
                 if ((pcbRemaining) != null)
                 {
-                    *pcbRemaining = (cchRemaining * sizeof(char)) + (cbDest % sizeof(char));
+                    *pcbRemaining = (cchRemaining * (uint)(sizeof(char))) + (cbDest % (uint)(sizeof(char)));
                 }
             }
         }
@@ -1035,7 +1035,7 @@ public static unsafe partial class Windows
                     {
                         nuint cbRemaining;
 
-                        cbRemaining = cchRemaining * sizeof(sbyte);
+                        cbRemaining = cchRemaining * (uint)(sizeof(sbyte));
                         _ = StringExHandleFillBehindNullA(pszDestEnd, cbRemaining, dwFlags);
                     }
                 }
@@ -1045,7 +1045,7 @@ public static unsafe partial class Windows
             {
                 nuint cbDest;
 
-                cbDest = cchDest * sizeof(sbyte);
+                cbDest = cchDest * (uint)(sizeof(sbyte));
                 _ = StringExHandleOtherFlagsA(pszDest, cbDest, cchDestLength, &pszDestEnd, &cchRemaining, dwFlags);
             }
 
@@ -1110,7 +1110,7 @@ public static unsafe partial class Windows
                     {
                         nuint cbRemaining;
 
-                        cbRemaining = cchRemaining * sizeof(char);
+                        cbRemaining = cchRemaining * (uint)(sizeof(char));
                         _ = StringExHandleFillBehindNullW(pszDestEnd, cbRemaining, dwFlags);
                     }
                 }
@@ -1120,7 +1120,7 @@ public static unsafe partial class Windows
             {
                 nuint cbDest;
 
-                cbDest = cchDest * sizeof(char);
+                cbDest = cchDest * (uint)(sizeof(char));
                 _ = StringExHandleOtherFlagsW(pszDest, cbDest, cchDestLength, &pszDestEnd, &cchRemaining, dwFlags);
             }
 
@@ -1187,7 +1187,7 @@ public static unsafe partial class Windows
                     {
                         nuint cbRemaining;
 
-                        cbRemaining = (cchRemaining * sizeof(sbyte)) + (cbDest % sizeof(sbyte));
+                        cbRemaining = (cchRemaining * (uint)(sizeof(sbyte))) + (cbDest % (uint)(sizeof(sbyte)));
                         _ = StringExHandleFillBehindNullA(pszDestEnd, cbRemaining, dwFlags);
                     }
                 }
@@ -1207,7 +1207,7 @@ public static unsafe partial class Windows
 
                 if ((pcbRemaining) != null)
                 {
-                    *pcbRemaining = (cchRemaining * sizeof(sbyte)) + (cbDest % sizeof(sbyte));
+                    *pcbRemaining = (cchRemaining * (uint)(sizeof(sbyte))) + (cbDest % (uint)(sizeof(sbyte)));
                 }
             }
         }
@@ -1261,7 +1261,7 @@ public static unsafe partial class Windows
                     {
                         nuint cbRemaining;
 
-                        cbRemaining = (cchRemaining * sizeof(char)) + (cbDest % sizeof(char));
+                        cbRemaining = (cchRemaining * (uint)(sizeof(char))) + (cbDest % (uint)(sizeof(char)));
                         _ = StringExHandleFillBehindNullW(pszDestEnd, cbRemaining, dwFlags);
                     }
                 }
@@ -1281,7 +1281,7 @@ public static unsafe partial class Windows
 
                 if ((pcbRemaining) != null)
                 {
-                    *pcbRemaining = (cchRemaining * sizeof(char)) + (cbDest % sizeof(char));
+                    *pcbRemaining = (cchRemaining * (uint)(sizeof(char))) + (cbDest % (uint)(sizeof(char)));
                 }
             }
         }
@@ -1404,7 +1404,7 @@ public static unsafe partial class Windows
                 {
                     nuint cbRemaining;
 
-                    cbRemaining = cchRemaining * sizeof(sbyte);
+                    cbRemaining = cchRemaining * (uint)(sizeof(sbyte));
                     _ = StringExHandleFillBehindNullA(pszDestEnd, cbRemaining, dwFlags);
                 }
             }
@@ -1413,7 +1413,7 @@ public static unsafe partial class Windows
             {
                 nuint cbDest;
 
-                cbDest = cchDest * sizeof(sbyte);
+                cbDest = cchDest * (uint)(sizeof(sbyte));
                 _ = StringExHandleOtherFlagsA(pszDest, cbDest, 0, &pszDestEnd, &cchRemaining, dwFlags);
             }
 
@@ -1479,7 +1479,7 @@ public static unsafe partial class Windows
                 {
                     nuint cbRemaining;
 
-                    cbRemaining = cchRemaining * sizeof(char);
+                    cbRemaining = cchRemaining * (uint)(sizeof(char));
                     _ = StringExHandleFillBehindNullW(pszDestEnd, cbRemaining, dwFlags);
                 }
             }
@@ -1488,7 +1488,7 @@ public static unsafe partial class Windows
             {
                 nuint cbDest;
 
-                cbDest = cchDest * sizeof(char);
+                cbDest = cchDest * (uint)(sizeof(char));
                 _ = StringExHandleOtherFlagsW(pszDest, cbDest, 0, &pszDestEnd, &cchRemaining, dwFlags);
             }
 
@@ -1555,7 +1555,7 @@ public static unsafe partial class Windows
                 {
                     nuint cbRemaining;
 
-                    cbRemaining = (cchRemaining * sizeof(sbyte)) + (cbDest % sizeof(sbyte));
+                    cbRemaining = (cchRemaining * (uint)(sizeof(sbyte))) + (cbDest % (uint)(sizeof(sbyte)));
                     _ = StringExHandleFillBehindNullA(pszDestEnd, cbRemaining, dwFlags);
                 }
             }
@@ -1574,7 +1574,7 @@ public static unsafe partial class Windows
 
                 if ((pcbRemaining) != null)
                 {
-                    *pcbRemaining = (cchRemaining * sizeof(sbyte)) + (cbDest % sizeof(sbyte));
+                    *pcbRemaining = (cchRemaining * (uint)(sizeof(sbyte))) + (cbDest % (uint)(sizeof(sbyte)));
                 }
             }
         }
@@ -1628,7 +1628,7 @@ public static unsafe partial class Windows
                 {
                     nuint cbRemaining;
 
-                    cbRemaining = (cchRemaining * sizeof(char)) + (cbDest % sizeof(char));
+                    cbRemaining = (cchRemaining * (uint)(sizeof(char))) + (cbDest % (uint)(sizeof(char)));
                     _ = StringExHandleFillBehindNullW(pszDestEnd, cbRemaining, dwFlags);
                 }
             }
@@ -1647,7 +1647,7 @@ public static unsafe partial class Windows
 
                 if ((pcbRemaining) != null)
                 {
-                    *pcbRemaining = (cchRemaining * sizeof(char)) + (cbDest % sizeof(char));
+                    *pcbRemaining = (cchRemaining * (uint)(sizeof(char))) + (cbDest % (uint)(sizeof(char)));
                 }
             }
         }
@@ -1723,7 +1723,7 @@ public static unsafe partial class Windows
         {
             if ((((HRESULT)(hr)) >= 0))
             {
-                *pcbLength = cchLength * sizeof(sbyte);
+                *pcbLength = cchLength * (uint)(sizeof(sbyte));
             }
             else
             {
@@ -1754,7 +1754,7 @@ public static unsafe partial class Windows
         {
             if ((((HRESULT)(hr)) >= 0))
             {
-                *pcbLength = cchLength * sizeof(char);
+                *pcbLength = cchLength * (uint)(sizeof(char));
             }
             else
             {
@@ -1807,7 +1807,7 @@ public static unsafe partial class Windows
         {
             if ((((HRESULT)(hr)) >= 0))
             {
-                *pcbLength = cchLength * sizeof(char);
+                *pcbLength = cchLength * (uint)(sizeof(char));
             }
             else
             {
@@ -1818,168 +1818,223 @@ public static unsafe partial class Windows
         return hr;
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STRSAFE_USE_SECURE_CRT"]/*' />
     [NativeTypeName("#define STRSAFE_USE_SECURE_CRT 0")]
     public const int STRSAFE_USE_SECURE_CRT = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STRSAFE_MAX_CCH"]/*' />
     [NativeTypeName("#define STRSAFE_MAX_CCH 2147483647")]
     public const int STRSAFE_MAX_CCH = 2147483647;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STRSAFE_MAX_LENGTH"]/*' />
     [NativeTypeName("#define STRSAFE_MAX_LENGTH (STRSAFE_MAX_CCH - 1)")]
     public const int STRSAFE_MAX_LENGTH = (2147483647 - 1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STRSAFE_IGNORE_NULLS"]/*' />
     [NativeTypeName("#define STRSAFE_IGNORE_NULLS 0x00000100")]
     public const int STRSAFE_IGNORE_NULLS = 0x00000100;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STRSAFE_FILL_BEHIND_NULL"]/*' />
     [NativeTypeName("#define STRSAFE_FILL_BEHIND_NULL 0x00000200")]
     public const int STRSAFE_FILL_BEHIND_NULL = 0x00000200;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STRSAFE_FILL_ON_FAILURE"]/*' />
     [NativeTypeName("#define STRSAFE_FILL_ON_FAILURE 0x00000400")]
     public const int STRSAFE_FILL_ON_FAILURE = 0x00000400;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STRSAFE_NULL_ON_FAILURE"]/*' />
     [NativeTypeName("#define STRSAFE_NULL_ON_FAILURE 0x00000800")]
     public const int STRSAFE_NULL_ON_FAILURE = 0x00000800;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STRSAFE_NO_TRUNCATION"]/*' />
     [NativeTypeName("#define STRSAFE_NO_TRUNCATION 0x00001000")]
     public const int STRSAFE_NO_TRUNCATION = 0x00001000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STRSAFE_VALID_FLAGS"]/*' />
     [NativeTypeName("#define STRSAFE_VALID_FLAGS (0x000000FF | STRSAFE_IGNORE_NULLS | STRSAFE_FILL_BEHIND_NULL | STRSAFE_FILL_ON_FAILURE | STRSAFE_NULL_ON_FAILURE | STRSAFE_NO_TRUNCATION)")]
     public const int STRSAFE_VALID_FLAGS = (0x000000FF | 0x00000100 | 0x00000200 | 0x00000400 | 0x00000800 | 0x00001000);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STRSAFE_E_INSUFFICIENT_BUFFER"]/*' />
     [NativeTypeName("#define STRSAFE_E_INSUFFICIENT_BUFFER ((HRESULT)0x8007007AL)")]
     public const int STRSAFE_E_INSUFFICIENT_BUFFER = unchecked((int)(0x8007007A));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STRSAFE_E_INVALID_PARAMETER"]/*' />
     [NativeTypeName("#define STRSAFE_E_INVALID_PARAMETER ((HRESULT)0x80070057L)")]
     public const int STRSAFE_E_INVALID_PARAMETER = unchecked((int)(0x80070057));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STRSAFE_E_END_OF_FILE"]/*' />
     [NativeTypeName("#define STRSAFE_E_END_OF_FILE ((HRESULT)0x80070026L)")]
     public const int STRSAFE_E_END_OF_FILE = unchecked((int)(0x80070026));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.__WARNING_CYCLOMATIC_COMPLEXITY"]/*' />
     [NativeTypeName("#define __WARNING_CYCLOMATIC_COMPLEXITY 28734")]
     public const int __WARNING_CYCLOMATIC_COMPLEXITY = 28734;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.__WARNING_USING_UNINIT_VAR"]/*' />
     [NativeTypeName("#define __WARNING_USING_UNINIT_VAR 6001")]
     public const int __WARNING_USING_UNINIT_VAR = 6001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.__WARNING_RETURN_UNINIT_VAR"]/*' />
     [NativeTypeName("#define __WARNING_RETURN_UNINIT_VAR 6101")]
     public const int __WARNING_RETURN_UNINIT_VAR = 6101;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.__WARNING_DEREF_NULL_PTR"]/*' />
     [NativeTypeName("#define __WARNING_DEREF_NULL_PTR 6011")]
     public const int __WARNING_DEREF_NULL_PTR = 6011;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.__WARNING_MISSING_ZERO_TERMINATION2"]/*' />
     [NativeTypeName("#define __WARNING_MISSING_ZERO_TERMINATION2 6054")]
     public const int __WARNING_MISSING_ZERO_TERMINATION2 = 6054;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.__WARNING_WRITE_OVERRUN"]/*' />
     [NativeTypeName("#define __WARNING_WRITE_OVERRUN 6386")]
     public const int __WARNING_WRITE_OVERRUN = 6386;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.__WARNING_INVALID_PARAM_VALUE_1"]/*' />
     [NativeTypeName("#define __WARNING_INVALID_PARAM_VALUE_1 6387")]
     public const int __WARNING_INVALID_PARAM_VALUE_1 = 6387;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.__WARNING_UNSAFE_STRING_FUNCTION"]/*' />
     [NativeTypeName("#define __WARNING_UNSAFE_STRING_FUNCTION 25025")]
     public const int __WARNING_UNSAFE_STRING_FUNCTION = 25025;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.__WARNING_INCORRECT_ANNOTATION"]/*' />
     [NativeTypeName("#define __WARNING_INCORRECT_ANNOTATION 26007")]
     public const int __WARNING_INCORRECT_ANNOTATION = 26007;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.__WARNING_POTENTIAL_BUFFER_OVERFLOW_HIGH_PRIORITY"]/*' />
     [NativeTypeName("#define __WARNING_POTENTIAL_BUFFER_OVERFLOW_HIGH_PRIORITY 26015")]
     public const int __WARNING_POTENTIAL_BUFFER_OVERFLOW_HIGH_PRIORITY = 26015;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.__WARNING_PRECONDITION_NULLTERMINATION_VIOLATION"]/*' />
     [NativeTypeName("#define __WARNING_PRECONDITION_NULLTERMINATION_VIOLATION 26035")]
     public const int __WARNING_PRECONDITION_NULLTERMINATION_VIOLATION = 26035;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.__WARNING_POSTCONDITION_NULLTERMINATION_VIOLATION"]/*' />
     [NativeTypeName("#define __WARNING_POSTCONDITION_NULLTERMINATION_VIOLATION 26036")]
     public const int __WARNING_POSTCONDITION_NULLTERMINATION_VIOLATION = 26036;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.__WARNING_HIGH_PRIORITY_OVERFLOW_POSTCONDITION"]/*' />
     [NativeTypeName("#define __WARNING_HIGH_PRIORITY_OVERFLOW_POSTCONDITION 26045")]
     public const int __WARNING_HIGH_PRIORITY_OVERFLOW_POSTCONDITION = 26045;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.__WARNING_RANGE_POSTCONDITION_VIOLATION"]/*' />
     [NativeTypeName("#define __WARNING_RANGE_POSTCONDITION_VIOLATION 26061")]
     public const int __WARNING_RANGE_POSTCONDITION_VIOLATION = 26061;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.__WARNING_POTENTIAL_RANGE_POSTCONDITION_VIOLATION"]/*' />
     [NativeTypeName("#define __WARNING_POTENTIAL_RANGE_POSTCONDITION_VIOLATION 26071")]
     public const int __WARNING_POTENTIAL_RANGE_POSTCONDITION_VIOLATION = 26071;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.__WARNING_INVALID_PARAM_VALUE_3"]/*' />
     [NativeTypeName("#define __WARNING_INVALID_PARAM_VALUE_3 28183")]
     public const int __WARNING_INVALID_PARAM_VALUE_3 = 28183;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.__WARNING_RETURNING_BAD_RESULT"]/*' />
     [NativeTypeName("#define __WARNING_RETURNING_BAD_RESULT 28196")]
     public const int __WARNING_RETURNING_BAD_RESULT = 28196;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.__WARNING_BANNED_API_USAGE"]/*' />
     [NativeTypeName("#define __WARNING_BANNED_API_USAGE 28719")]
     public const int __WARNING_BANNED_API_USAGE = 28719;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.__WARNING_POST_EXPECTED"]/*' />
     [NativeTypeName("#define __WARNING_POST_EXPECTED 28210")]
     public const int __WARNING_POST_EXPECTED = 28210;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCchCopy"]/*' />
     [NativeTypeName("#define StringCchCopy StringCchCopyW")]
     public static delegate*<char*, nuint, char*, HRESULT> StringCchCopy => &StringCchCopyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCbCopy"]/*' />
     [NativeTypeName("#define StringCbCopy StringCbCopyW")]
     public static delegate*<char*, nuint, char*, HRESULT> StringCbCopy => &StringCbCopyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCchCopyEx"]/*' />
     [NativeTypeName("#define StringCchCopyEx StringCchCopyExW")]
     public static delegate*<char*, nuint, char*, char**, nuint*, uint, HRESULT> StringCchCopyEx => &StringCchCopyExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCbCopyEx"]/*' />
     [NativeTypeName("#define StringCbCopyEx StringCbCopyExW")]
     public static delegate*<char*, nuint, char*, char**, nuint*, uint, HRESULT> StringCbCopyEx => &StringCbCopyExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCchCopyN"]/*' />
     [NativeTypeName("#define StringCchCopyN StringCchCopyNW")]
     public static delegate*<char*, nuint, char*, nuint, HRESULT> StringCchCopyN => &StringCchCopyNW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCbCopyN"]/*' />
     [NativeTypeName("#define StringCbCopyN StringCbCopyNW")]
     public static delegate*<char*, nuint, char*, nuint, HRESULT> StringCbCopyN => &StringCbCopyNW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCchCopyNEx"]/*' />
     [NativeTypeName("#define StringCchCopyNEx StringCchCopyNExW")]
     public static delegate*<char*, nuint, char*, nuint, char**, nuint*, uint, HRESULT> StringCchCopyNEx => &StringCchCopyNExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCbCopyNEx"]/*' />
     [NativeTypeName("#define StringCbCopyNEx StringCbCopyNExW")]
     public static delegate*<char*, nuint, char*, nuint, char**, nuint*, uint, HRESULT> StringCbCopyNEx => &StringCbCopyNExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCchCat"]/*' />
     [NativeTypeName("#define StringCchCat StringCchCatW")]
     public static delegate*<char*, nuint, char*, HRESULT> StringCchCat => &StringCchCatW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCbCat"]/*' />
     [NativeTypeName("#define StringCbCat StringCbCatW")]
     public static delegate*<char*, nuint, char*, HRESULT> StringCbCat => &StringCbCatW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCchCatEx"]/*' />
     [NativeTypeName("#define StringCchCatEx StringCchCatExW")]
     public static delegate*<char*, nuint, char*, char**, nuint*, uint, HRESULT> StringCchCatEx => &StringCchCatExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCbCatEx"]/*' />
     [NativeTypeName("#define StringCbCatEx StringCbCatExW")]
     public static delegate*<char*, nuint, char*, char**, nuint*, uint, HRESULT> StringCbCatEx => &StringCbCatExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCchCatN"]/*' />
     [NativeTypeName("#define StringCchCatN StringCchCatNW")]
     public static delegate*<char*, nuint, char*, nuint, HRESULT> StringCchCatN => &StringCchCatNW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCbCatN"]/*' />
     [NativeTypeName("#define StringCbCatN StringCbCatNW")]
     public static delegate*<char*, nuint, char*, nuint, HRESULT> StringCbCatN => &StringCbCatNW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCchCatNEx"]/*' />
     [NativeTypeName("#define StringCchCatNEx StringCchCatNExW")]
     public static delegate*<char*, nuint, char*, nuint, char**, nuint*, uint, HRESULT> StringCchCatNEx => &StringCchCatNExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCbCatNEx"]/*' />
     [NativeTypeName("#define StringCbCatNEx StringCbCatNExW")]
     public static delegate*<char*, nuint, char*, nuint, char**, nuint*, uint, HRESULT> StringCbCatNEx => &StringCbCatNExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCchGets"]/*' />
     [NativeTypeName("#define StringCchGets StringCchGetsW")]
     public static delegate*<char*, nuint, HRESULT> StringCchGets => &StringCchGetsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCbGets"]/*' />
     [NativeTypeName("#define StringCbGets StringCbGetsW")]
     public static delegate*<char*, nuint, HRESULT> StringCbGets => &StringCbGetsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCchGetsEx"]/*' />
     [NativeTypeName("#define StringCchGetsEx StringCchGetsExW")]
     public static delegate*<char*, nuint, char**, nuint*, uint, HRESULT> StringCchGetsEx => &StringCchGetsExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCbGetsEx"]/*' />
     [NativeTypeName("#define StringCbGetsEx StringCbGetsExW")]
     public static delegate*<char*, nuint, char**, nuint*, uint, HRESULT> StringCbGetsEx => &StringCbGetsExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCchLength"]/*' />
     [NativeTypeName("#define StringCchLength StringCchLengthW")]
     public static delegate*<char*, nuint, nuint*, HRESULT> StringCchLength => &StringCchLengthW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StringCbLength"]/*' />
     [NativeTypeName("#define StringCbLength StringCbLengthW")]
     public static delegate*<char*, nuint, nuint*, HRESULT> StringCbLength => &StringCbLengthW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnalignedStringCchLength"]/*' />
     [NativeTypeName("#define UnalignedStringCchLength UnalignedStringCchLengthW")]
     public static delegate*<char*, nuint, nuint*, HRESULT> UnalignedStringCchLength => &UnalignedStringCchLengthW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnalignedStringCbLength"]/*' />
     [NativeTypeName("#define UnalignedStringCbLength UnalignedStringCbLengthW")]
     public static delegate*<char*, nuint, nuint*, HRESULT> UnalignedStringCbLength => &UnalignedStringCbLengthW;
 }

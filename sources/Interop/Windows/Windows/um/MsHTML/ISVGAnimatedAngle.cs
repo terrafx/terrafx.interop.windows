@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct ISVGAnimatedAngle : ISVGAnimatedAngle.Interface, INativeGuid
 {
+    /// <include file='ISVGAnimatedAngle.xml' path='doc/member[@name="ISVGAnimatedAngle.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISVGAnimatedAngle);
 
     public void** lpVtbl;

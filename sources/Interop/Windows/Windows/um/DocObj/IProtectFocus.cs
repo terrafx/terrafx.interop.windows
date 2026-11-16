@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IProtectFocus : IProtectFocus.Interface, INativeGuid
 {
+    /// <include file='IProtectFocus.xml' path='doc/member[@name="IProtectFocus.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IProtectFocus);
 
     public void** lpVtbl;

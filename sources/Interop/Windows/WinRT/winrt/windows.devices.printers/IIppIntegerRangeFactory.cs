@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IIppIntegerRangeFactory : IIppIntegerRangeFactory.Interface, INativeGuid
 {
+    /// <include file='IIppIntegerRangeFactory.xml' path='doc/member[@name="IIppIntegerRangeFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IIppIntegerRangeFactory);
 
     public void** lpVtbl;

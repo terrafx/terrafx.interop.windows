@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IMFVideoProcessorControl2")]
 public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorControl3.Interface, INativeGuid
 {
+    /// <include file='IMFVideoProcessorControl3.xml' path='doc/member[@name="IMFVideoProcessorControl3.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFVideoProcessorControl3);
 
     public void** lpVtbl;

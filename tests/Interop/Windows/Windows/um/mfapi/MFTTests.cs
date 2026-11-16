@@ -130,4 +130,11 @@ public static partial class MFTTests
     {
         Assert.That(MFT_SUPPORT_DYNAMIC_FORMAT_CHANGE, Is.EqualTo(new Guid(0x53476a11, 0x3f13, 0x49fb, 0xac, 0x42, 0xee, 0x27, 0x33, 0xc9, 0x67, 0x41)));
     }
+
+    /// <summary>Validates that the value of the <see cref="MFT_DECODER_AUTO_POSTPROCESS" /> property is correct.</summary>
+    [Test]
+    public static void MFT_DECODER_AUTO_POSTPROCESSTest()
+    {
+        Assert.That(MFT_DECODER_AUTO_POSTPROCESS, Is.EqualTo(new Guid(0xae133dbc, 0xf92a, 0x46ef, 0xa9, 0x0, 0x2f, 0xbe, 0x11, 0x17, 0x24, 0x88)));
+    }
 }

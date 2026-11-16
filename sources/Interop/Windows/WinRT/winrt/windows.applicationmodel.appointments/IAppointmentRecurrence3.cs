@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAppointmentRecurrence3 : IAppointmentRecurrence3.Interface, INativeGuid
 {
+    /// <include file='IAppointmentRecurrence3.xml' path='doc/member[@name="IAppointmentRecurrence3.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppointmentRecurrence3);
 
     public void** lpVtbl;

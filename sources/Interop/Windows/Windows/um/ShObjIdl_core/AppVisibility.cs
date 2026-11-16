@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("7E5FE3D9-985F-4908-91F9-EE19F9FD1514")]
 public unsafe partial struct AppVisibility : INativeGuid
 {
+    /// <include file='AppVisibility.xml' path='doc/member[@name="AppVisibility.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_AppVisibility);
 }

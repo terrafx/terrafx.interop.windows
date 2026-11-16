@@ -7,9 +7,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DIDIFT
 {
+    /// <include file='DIDIFT.xml' path='doc/member[@name="DIDIFT.DIDIFT_CONFIGURATION"]/*' />
     [NativeTypeName("#define DIDIFT_CONFIGURATION 0x00000001")]
     public const int DIDIFT_CONFIGURATION = 0x00000001;
 
+    /// <include file='DIDIFT.xml' path='doc/member[@name="DIDIFT.DIDIFT_OVERLAY"]/*' />
     [NativeTypeName("#define DIDIFT_OVERLAY 0x00000002")]
     public const int DIDIFT_OVERLAY = 0x00000002;
 }

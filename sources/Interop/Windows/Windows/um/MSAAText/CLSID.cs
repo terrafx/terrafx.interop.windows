@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CLSID
 {
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MSAAControl"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_MSAAControl
     {
@@ -37,6 +38,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AccStore"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AccStore
     {
@@ -62,6 +64,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AccDictionary"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AccDictionary
     {
@@ -87,6 +90,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AccServerDocMgr"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AccServerDocMgr
     {
@@ -112,6 +116,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AccClientDocMgr"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AccClientDocMgr
     {
@@ -137,6 +142,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DocWrap"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DocWrap
     {

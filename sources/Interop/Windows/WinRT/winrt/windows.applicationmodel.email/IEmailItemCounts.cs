@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IEmailItemCounts : IEmailItemCounts.Interface, INativeGuid
 {
+    /// <include file='IEmailItemCounts.xml' path='doc/member[@name="IEmailItemCounts.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IEmailItemCounts);
 
     public void** lpVtbl;

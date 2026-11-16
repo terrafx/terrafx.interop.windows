@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICertificateKeyUsages : ICertificateKeyUsages.Interface, INativeGuid
 {
+    /// <include file='ICertificateKeyUsages.xml' path='doc/member[@name="ICertificateKeyUsages.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICertificateKeyUsages);
 
     public void** lpVtbl;

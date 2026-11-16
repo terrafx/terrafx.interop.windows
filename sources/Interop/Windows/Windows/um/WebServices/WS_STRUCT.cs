@@ -7,7 +7,10 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class WS_STRUCT
 {
+    /// <include file='WS_STRUCT.xml' path='doc/member[@name="WS_STRUCT.WS_STRUCT_ABSTRACT"]/*' />
     public const int WS_STRUCT_ABSTRACT = 0x1;
+    /// <include file='WS_STRUCT.xml' path='doc/member[@name="WS_STRUCT.WS_STRUCT_IGNORE_TRAILING_ELEMENT_CONTENT"]/*' />
     public const int WS_STRUCT_IGNORE_TRAILING_ELEMENT_CONTENT = 0x2;
+    /// <include file='WS_STRUCT.xml' path='doc/member[@name="WS_STRUCT.WS_STRUCT_IGNORE_UNHANDLED_ATTRIBUTES"]/*' />
     public const int WS_STRUCT_IGNORE_UNHANDLED_ATTRIBUTES = 0x4;
 }

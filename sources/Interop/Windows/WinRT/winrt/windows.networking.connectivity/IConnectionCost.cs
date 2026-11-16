@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IConnectionCost : IConnectionCost.Interface, INativeGuid
 {
+    /// <include file='IConnectionCost.xml' path='doc/member[@name="IConnectionCost.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IConnectionCost);
 
     public void** lpVtbl;

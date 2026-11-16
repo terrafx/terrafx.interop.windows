@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IOpenSearchSource : IOpenSearchSource.Interface, INativeGuid
 {
+    /// <include file='IOpenSearchSource.xml' path='doc/member[@name="IOpenSearchSource.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IOpenSearchSource);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPrepareTranscodeResult : IPrepareTranscodeResult.Interface, INativeGuid
 {
+    /// <include file='IPrepareTranscodeResult.xml' path='doc/member[@name="IPrepareTranscodeResult.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPrepareTranscodeResult);
 
     public void** lpVtbl;

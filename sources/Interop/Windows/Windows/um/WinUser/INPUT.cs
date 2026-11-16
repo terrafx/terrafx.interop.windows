@@ -16,7 +16,7 @@ public partial struct INPUT
     public uint type;
 
     /// <include file='INPUT.xml' path='doc/member[@name="INPUT.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winuser_L6160_C5")]
+    [NativeTypeName("__AnonymousRecord_winuser_L6164_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.mi"]/*' />
@@ -69,12 +69,15 @@ public partial struct INPUT
         public HARDWAREINPUT hi;
     }
 
+    /// <include file='INPUT.xml' path='doc/member[@name="INPUT.INPUT_MOUSE"]/*' />
     [NativeTypeName("#define INPUT_MOUSE 0")]
     public const int INPUT_MOUSE = 0;
 
+    /// <include file='INPUT.xml' path='doc/member[@name="INPUT.INPUT_KEYBOARD"]/*' />
     [NativeTypeName("#define INPUT_KEYBOARD 1")]
     public const int INPUT_KEYBOARD = 1;
 
+    /// <include file='INPUT.xml' path='doc/member[@name="INPUT.INPUT_HARDWARE"]/*' />
     [NativeTypeName("#define INPUT_HARDWARE 2")]
     public const int INPUT_HARDWARE = 2;
 }

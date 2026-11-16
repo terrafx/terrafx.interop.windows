@@ -7,57 +7,75 @@ namespace TerraFX.Interop.WinRT;
 
 public static partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_UI_Text_IContentLinkInfo"]/*' />
     [NativeTypeName("const WCHAR[33]")]
     public const string InterfaceName_Windows_UI_Text_IContentLinkInfo = "Windows.UI.Text.IContentLinkInfo";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_UI_Text_IFontWeights"]/*' />
     [NativeTypeName("const WCHAR[29]")]
     public const string InterfaceName_Windows_UI_Text_IFontWeights = "Windows.UI.Text.IFontWeights";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_UI_Text_IFontWeightsStatics"]/*' />
     [NativeTypeName("const WCHAR[36]")]
     public const string InterfaceName_Windows_UI_Text_IFontWeightsStatics = "Windows.UI.Text.IFontWeightsStatics";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_UI_Text_IRichEditTextRange"]/*' />
     [NativeTypeName("const WCHAR[35]")]
     public const string InterfaceName_Windows_UI_Text_IRichEditTextRange = "Windows.UI.Text.IRichEditTextRange";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_UI_Text_ITextCharacterFormat"]/*' />
     [NativeTypeName("const WCHAR[37]")]
     public const string InterfaceName_Windows_UI_Text_ITextCharacterFormat = "Windows.UI.Text.ITextCharacterFormat";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_UI_Text_ITextConstantsStatics"]/*' />
     [NativeTypeName("const WCHAR[38]")]
     public const string InterfaceName_Windows_UI_Text_ITextConstantsStatics = "Windows.UI.Text.ITextConstantsStatics";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_UI_Text_ITextDocument"]/*' />
     [NativeTypeName("const WCHAR[30]")]
     public const string InterfaceName_Windows_UI_Text_ITextDocument = "Windows.UI.Text.ITextDocument";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_UI_Text_ITextDocument2"]/*' />
     [NativeTypeName("const WCHAR[31]")]
     public const string InterfaceName_Windows_UI_Text_ITextDocument2 = "Windows.UI.Text.ITextDocument2";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_UI_Text_ITextDocument3"]/*' />
     [NativeTypeName("const WCHAR[31]")]
     public const string InterfaceName_Windows_UI_Text_ITextDocument3 = "Windows.UI.Text.ITextDocument3";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_UI_Text_ITextDocument4"]/*' />
     [NativeTypeName("const WCHAR[31]")]
     public const string InterfaceName_Windows_UI_Text_ITextDocument4 = "Windows.UI.Text.ITextDocument4";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_UI_Text_ITextParagraphFormat"]/*' />
     [NativeTypeName("const WCHAR[37]")]
     public const string InterfaceName_Windows_UI_Text_ITextParagraphFormat = "Windows.UI.Text.ITextParagraphFormat";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_UI_Text_ITextRange"]/*' />
     [NativeTypeName("const WCHAR[27]")]
     public const string InterfaceName_Windows_UI_Text_ITextRange = "Windows.UI.Text.ITextRange";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_UI_Text_ITextSelection"]/*' />
     [NativeTypeName("const WCHAR[31]")]
     public const string InterfaceName_Windows_UI_Text_ITextSelection = "Windows.UI.Text.ITextSelection";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_UI_Text_ContentLinkInfo"]/*' />
     [NativeTypeName("const WCHAR[32]")]
     public const string RuntimeClass_Windows_UI_Text_ContentLinkInfo = "Windows.UI.Text.ContentLinkInfo";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_UI_Text_FontWeights"]/*' />
     [NativeTypeName("const WCHAR[28]")]
     public const string RuntimeClass_Windows_UI_Text_FontWeights = "Windows.UI.Text.FontWeights";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_UI_Text_RichEditTextDocument"]/*' />
     [NativeTypeName("const WCHAR[37]")]
     public const string RuntimeClass_Windows_UI_Text_RichEditTextDocument = "Windows.UI.Text.RichEditTextDocument";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_UI_Text_RichEditTextRange"]/*' />
     [NativeTypeName("const WCHAR[34]")]
     public const string RuntimeClass_Windows_UI_Text_RichEditTextRange = "Windows.UI.Text.RichEditTextRange";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_UI_Text_TextConstants"]/*' />
     [NativeTypeName("const WCHAR[30]")]
     public const string RuntimeClass_Windows_UI_Text_TextConstants = "Windows.UI.Text.TextConstants";
 }

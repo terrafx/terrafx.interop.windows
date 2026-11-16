@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("C4EE31F3-4768-11D2-BE5C-00A0C9A83DA1")]
 public unsafe partial struct FileSearchBand : INativeGuid
 {
+    /// <include file='FileSearchBand.xml' path='doc/member[@name="FileSearchBand.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_FileSearchBand);
 }

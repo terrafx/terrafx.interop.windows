@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IDisplayEnhancementOverrideStatics : IDisplayEnhancementOverrideStatics.Interface, INativeGuid
 {
+    /// <include file='IDisplayEnhancementOverrideStatics.xml' path='doc/member[@name="IDisplayEnhancementOverrideStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDisplayEnhancementOverrideStatics);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IOleWindow")]
 public unsafe partial struct IShellBrowser : IShellBrowser.Interface, INativeGuid
 {
+    /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IShellBrowser);
 
     public void** lpVtbl;

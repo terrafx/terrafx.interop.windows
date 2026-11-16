@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPdlPassthroughTarget : IPdlPassthroughTarget.Interface, INativeGuid
 {
+    /// <include file='IPdlPassthroughTarget.xml' path='doc/member[@name="IPdlPassthroughTarget.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPdlPassthroughTarget);
 
     public void** lpVtbl;

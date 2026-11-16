@@ -9,23 +9,33 @@ namespace TerraFX.Interop.WinRT;
 
 public static partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_System_Power_IBackgroundEnergyManagerStatics"]/*' />
     [NativeTypeName("const WCHAR[53]")]
     public const string InterfaceName_Windows_System_Power_IBackgroundEnergyManagerStatics = "Windows.System.Power.IBackgroundEnergyManagerStatics";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_System_Power_IForegroundEnergyManagerStatics"]/*' />
     [NativeTypeName("const WCHAR[53]")]
     public const string InterfaceName_Windows_System_Power_IForegroundEnergyManagerStatics = "Windows.System.Power.IForegroundEnergyManagerStatics";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_System_Power_IPowerManagerStatics"]/*' />
     [NativeTypeName("const WCHAR[42]")]
     public const string InterfaceName_Windows_System_Power_IPowerManagerStatics = "Windows.System.Power.IPowerManagerStatics";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_System_Power_IPowerManagerStatics2"]/*' />
+    [NativeTypeName("const WCHAR[43]")]
+    public const string InterfaceName_Windows_System_Power_IPowerManagerStatics2 = "Windows.System.Power.IPowerManagerStatics2";
+
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_System_Power_BackgroundEnergyManager"]/*' />
     [NativeTypeName("const WCHAR[45]")]
     [Obsolete("Background Energy Manager has been deprecated. For more info, see MSDN.")]
     public const string RuntimeClass_Windows_System_Power_BackgroundEnergyManager = "Windows.System.Power.BackgroundEnergyManager";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_System_Power_ForegroundEnergyManager"]/*' />
     [NativeTypeName("const WCHAR[45]")]
     [Obsolete("Foreground Energy Manager has been deprecated. For more info, see MSDN.")]
     public const string RuntimeClass_Windows_System_Power_ForegroundEnergyManager = "Windows.System.Power.ForegroundEnergyManager";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_System_Power_PowerManager"]/*' />
     [NativeTypeName("const WCHAR[34]")]
     public const string RuntimeClass_Windows_System_Power_PowerManager = "Windows.System.Power.PowerManager";
 }

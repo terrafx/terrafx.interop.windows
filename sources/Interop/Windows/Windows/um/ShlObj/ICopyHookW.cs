@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ICopyHookW : ICopyHookW.Interface, INativeGuid
 {
+    /// <include file='ICopyHookW.xml' path='doc/member[@name="ICopyHookW.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICopyHookW);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPickerClosingOperation : IPickerClosingOperation.Interface, INativeGuid
 {
+    /// <include file='IPickerClosingOperation.xml' path='doc/member[@name="IPickerClosingOperation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPickerClosingOperation);
 
     public void** lpVtbl;

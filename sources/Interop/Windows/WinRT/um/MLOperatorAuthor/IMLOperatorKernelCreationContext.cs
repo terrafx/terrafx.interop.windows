@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IMLOperatorAttributes")]
 public unsafe partial struct IMLOperatorKernelCreationContext : IMLOperatorKernelCreationContext.Interface, INativeGuid
 {
+    /// <include file='IMLOperatorKernelCreationContext.xml' path='doc/member[@name="IMLOperatorKernelCreationContext.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMLOperatorKernelCreationContext);
 
     public void** lpVtbl;

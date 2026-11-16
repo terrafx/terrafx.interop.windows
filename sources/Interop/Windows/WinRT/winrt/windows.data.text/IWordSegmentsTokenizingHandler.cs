@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IWordSegmentsTokenizingHandler : IWordSegmentsTokenizingHandler.Interface, INativeGuid
 {
+    /// <include file='IWordSegmentsTokenizingHandler.xml' path='doc/member[@name="IWordSegmentsTokenizingHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWordSegmentsTokenizingHandler);
 
     public void** lpVtbl;

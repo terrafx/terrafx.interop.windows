@@ -120,12 +120,15 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT PathAllocCanonicalize([NativeTypeName("PCWSTR")] char* pszPathIn, [NativeTypeName("ULONG")] uint dwFlags, [NativeTypeName("PWSTR *")] char** ppszPathOut);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VOLUME_PREFIX"]/*' />
     [NativeTypeName("#define VOLUME_PREFIX L\"\\\\?\\Volume\"")]
     public const string VOLUME_PREFIX = "\\\\?\\Volume";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VOLUME_PREFIX_LEN"]/*' />
     [NativeTypeName("#define VOLUME_PREFIX_LEN (ARRAYSIZE(VOLUME_PREFIX) - 1)")]
     public const uint VOLUME_PREFIX_LEN = ((11) - 1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PATHCCH_MAX_CCH"]/*' />
     [NativeTypeName("#define PATHCCH_MAX_CCH 0x8000")]
     public const int PATHCCH_MAX_CCH = 0x8000;
 }

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IUIAnimationLoopIterationChangeHandler2 : IUIAnimationLoopIterationChangeHandler2.Interface, INativeGuid
 {
+    /// <include file='IUIAnimationLoopIterationChangeHandler2.xml' path='doc/member[@name="IUIAnimationLoopIterationChangeHandler2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUIAnimationLoopIterationChangeHandler2);
 
     public void** lpVtbl;

@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CF
 {
+    /// <include file='CF.xml' path='doc/member[@name="CF.CF_NULL"]/*' />
     [NativeTypeName("#define CF_NULL 0")]
     public const int CF_NULL = 0;
 }

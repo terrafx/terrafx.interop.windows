@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class AM
 {
+    /// <include file='AM.xml' path='doc/member[@name="AM.AM_MEDIA_TYPE_REPRESENTATION"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid AM_MEDIA_TYPE_REPRESENTATION
     {

@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MF
 {
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SA_D3D_AWARE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_SA_D3D_AWARE
     {
@@ -37,6 +38,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SA_REQUIRED_SAMPLE_COUNT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_SA_REQUIRED_SAMPLE_COUNT
     {
@@ -62,6 +64,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SA_AUDIO_ENDPOINT_AWARE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_SA_AUDIO_ENDPOINT_AWARE
     {
@@ -87,6 +90,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_DMFT_FRAME_BUFFER_INFO"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_DMFT_FRAME_BUFFER_INFO
     {
@@ -112,6 +116,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SA_REQUIRED_SAMPLE_COUNT_PROGRESSIVE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_SA_REQUIRED_SAMPLE_COUNT_PROGRESSIVE
     {
@@ -137,6 +142,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SA_MINIMUM_OUTPUT_SAMPLE_COUNT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_SA_MINIMUM_OUTPUT_SAMPLE_COUNT
     {
@@ -162,6 +168,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SA_MINIMUM_OUTPUT_SAMPLE_COUNT_PROGRESSIVE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_SA_MINIMUM_OUTPUT_SAMPLE_COUNT_PROGRESSIVE
     {
@@ -187,6 +194,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_ENABLE_3DVIDEO_OUTPUT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_ENABLE_3DVIDEO_OUTPUT
     {
@@ -212,6 +220,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SA_D3D11_BINDFLAGS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_SA_D3D11_BINDFLAGS
     {
@@ -237,6 +246,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SA_D3D11_USAGE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_SA_D3D11_USAGE
     {
@@ -262,6 +272,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SA_D3D11_AWARE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_SA_D3D11_AWARE
     {
@@ -287,6 +298,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SA_D3D11_SHARED"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_SA_D3D11_SHARED
     {
@@ -312,6 +324,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SA_D3D11_SHARED_WITHOUT_MUTEX"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_SA_D3D11_SHARED_WITHOUT_MUTEX
     {
@@ -337,6 +350,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SA_D3D11_ALLOW_DYNAMIC_YUV_TEXTURE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_SA_D3D11_ALLOW_DYNAMIC_YUV_TEXTURE
     {
@@ -362,6 +376,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SA_D3D11_HW_PROTECTED"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_SA_D3D11_HW_PROTECTED
     {
@@ -387,6 +402,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SA_BUFFERS_PER_SAMPLE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_SA_BUFFERS_PER_SAMPLE
     {
@@ -412,6 +428,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SA_D3D11_ALLOCATE_DISPLAYABLE_RESOURCES"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_SA_D3D11_ALLOCATE_DISPLAYABLE_RESOURCES
     {
@@ -437,6 +454,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_TRANSFORM_ASYNC"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_TRANSFORM_ASYNC
     {
@@ -462,6 +480,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_TRANSFORM_ASYNC_UNLOCK"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_TRANSFORM_ASYNC_UNLOCK
     {
@@ -487,6 +506,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_TRANSFORM_FLAGS_Attribute"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_TRANSFORM_FLAGS_Attribute
     {
@@ -512,6 +532,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_TRANSFORM_CATEGORY_Attribute"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_TRANSFORM_CATEGORY_Attribute
     {

@@ -1649,846 +1649,1127 @@ public static unsafe partial class Windows
     [DllImport("setupapi", ExactSpelling = true)]
     public static extern BOOL SetupConfigureWmiFromInfSectionW(HINF InfHandle, [NativeTypeName("PCWSTR")] char* SectionName, [NativeTypeName("DWORD")] uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows._SETUPAPI_VER"]/*' />
     [NativeTypeName("#define _SETUPAPI_VER _WIN32_WINNT")]
     public const int _SETUPAPI_VER = 0x0A00;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LINE_LEN"]/*' />
     [NativeTypeName("#define LINE_LEN 256")]
     public const int LINE_LEN = 256;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INF_STYLE_NONE"]/*' />
     [NativeTypeName("#define INF_STYLE_NONE 0x00000000")]
     public const int INF_STYLE_NONE = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INF_STYLE_OLDNT"]/*' />
     [NativeTypeName("#define INF_STYLE_OLDNT 0x00000001")]
     public const int INF_STYLE_OLDNT = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INF_STYLE_WIN4"]/*' />
     [NativeTypeName("#define INF_STYLE_WIN4 0x00000002")]
     public const int INF_STYLE_WIN4 = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INF_STYLE_CACHE_ENABLE"]/*' />
     [NativeTypeName("#define INF_STYLE_CACHE_ENABLE 0x00000010")]
     public const int INF_STYLE_CACHE_ENABLE = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INF_STYLE_CACHE_DISABLE"]/*' />
     [NativeTypeName("#define INF_STYLE_CACHE_DISABLE 0x00000020")]
     public const int INF_STYLE_CACHE_DISABLE = 0x00000020;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INF_STYLE_CACHE_IGNORE"]/*' />
     [NativeTypeName("#define INF_STYLE_CACHE_IGNORE 0x00000040")]
     public const int INF_STYLE_CACHE_IGNORE = 0x00000040;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FILEOP_COPY"]/*' />
     [NativeTypeName("#define FILEOP_COPY 0")]
     public const int FILEOP_COPY = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FILEOP_RENAME"]/*' />
     [NativeTypeName("#define FILEOP_RENAME 1")]
     public const int FILEOP_RENAME = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FILEOP_DELETE"]/*' />
     [NativeTypeName("#define FILEOP_DELETE 2")]
     public const int FILEOP_DELETE = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FILEOP_BACKUP"]/*' />
     [NativeTypeName("#define FILEOP_BACKUP 3")]
     public const int FILEOP_BACKUP = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FILEOP_ABORT"]/*' />
     [NativeTypeName("#define FILEOP_ABORT 0")]
     public const int FILEOP_ABORT = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FILEOP_DOIT"]/*' />
     [NativeTypeName("#define FILEOP_DOIT 1")]
     public const int FILEOP_DOIT = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FILEOP_SKIP"]/*' />
     [NativeTypeName("#define FILEOP_SKIP 2")]
     public const int FILEOP_SKIP = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FILEOP_RETRY"]/*' />
     [NativeTypeName("#define FILEOP_RETRY FILEOP_DOIT")]
     public const int FILEOP_RETRY = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FILEOP_NEWPATH"]/*' />
     [NativeTypeName("#define FILEOP_NEWPATH 4")]
     public const int FILEOP_NEWPATH = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DELFLG_IN_USE"]/*' />
     [NativeTypeName("#define DELFLG_IN_USE 0x00000001")]
     public const int DELFLG_IN_USE = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DELFLG_IN_USE1"]/*' />
     [NativeTypeName("#define DELFLG_IN_USE1 0x00010000")]
     public const int DELFLG_IN_USE1 = 0x00010000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPINT_ACTIVE"]/*' />
     [NativeTypeName("#define SPINT_ACTIVE 0x00000001")]
     public const int SPINT_ACTIVE = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPINT_DEFAULT"]/*' />
     [NativeTypeName("#define SPINT_DEFAULT 0x00000002")]
     public const int SPINT_DEFAULT = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPINT_REMOVED"]/*' />
     [NativeTypeName("#define SPINT_REMOVED 0x00000004")]
     public const int SPINT_REMOVED = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPID_ACTIVE"]/*' />
     [NativeTypeName("#define SPID_ACTIVE SPINT_ACTIVE")]
     public const int SPID_ACTIVE = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPID_DEFAULT"]/*' />
     [NativeTypeName("#define SPID_DEFAULT SPINT_DEFAULT")]
     public const int SPID_DEFAULT = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPID_REMOVED"]/*' />
     [NativeTypeName("#define SPID_REMOVED SPINT_REMOVED")]
     public const int SPID_REMOVED = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ENABLECLASS_QUERY"]/*' />
     [NativeTypeName("#define ENABLECLASS_QUERY 0")]
     public const int ENABLECLASS_QUERY = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ENABLECLASS_SUCCESS"]/*' />
     [NativeTypeName("#define ENABLECLASS_SUCCESS 1")]
     public const int ENABLECLASS_SUCCESS = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ENABLECLASS_FAILURE"]/*' />
     [NativeTypeName("#define ENABLECLASS_FAILURE 2")]
     public const int ENABLECLASS_FAILURE = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DICS_ENABLE"]/*' />
     [NativeTypeName("#define DICS_ENABLE 0x00000001")]
     public const int DICS_ENABLE = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DICS_DISABLE"]/*' />
     [NativeTypeName("#define DICS_DISABLE 0x00000002")]
     public const int DICS_DISABLE = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DICS_PROPCHANGE"]/*' />
     [NativeTypeName("#define DICS_PROPCHANGE 0x00000003")]
     public const int DICS_PROPCHANGE = 0x00000003;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DICS_START"]/*' />
     [NativeTypeName("#define DICS_START 0x00000004")]
     public const int DICS_START = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DICS_STOP"]/*' />
     [NativeTypeName("#define DICS_STOP 0x00000005")]
     public const int DICS_STOP = 0x00000005;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DICS_FLAG_GLOBAL"]/*' />
     [NativeTypeName("#define DICS_FLAG_GLOBAL 0x00000001")]
     public const int DICS_FLAG_GLOBAL = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DICS_FLAG_CONFIGSPECIFIC"]/*' />
     [NativeTypeName("#define DICS_FLAG_CONFIGSPECIFIC 0x00000002")]
     public const int DICS_FLAG_CONFIGSPECIFIC = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DICS_FLAG_CONFIGGENERAL"]/*' />
     [NativeTypeName("#define DICS_FLAG_CONFIGGENERAL 0x00000004")]
     public const int DICS_FLAG_CONFIGGENERAL = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DYNAWIZ_FLAG_PAGESADDED"]/*' />
     [NativeTypeName("#define DYNAWIZ_FLAG_PAGESADDED 0x00000001")]
     public const int DYNAWIZ_FLAG_PAGESADDED = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DYNAWIZ_FLAG_ANALYZE_HANDLECONFLICT"]/*' />
     [NativeTypeName("#define DYNAWIZ_FLAG_ANALYZE_HANDLECONFLICT 0x00000008")]
     public const int DYNAWIZ_FLAG_ANALYZE_HANDLECONFLICT = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DYNAWIZ_FLAG_INSTALLDET_NEXT"]/*' />
     [NativeTypeName("#define DYNAWIZ_FLAG_INSTALLDET_NEXT 0x00000002")]
     public const int DYNAWIZ_FLAG_INSTALLDET_NEXT = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DYNAWIZ_FLAG_INSTALLDET_PREV"]/*' />
     [NativeTypeName("#define DYNAWIZ_FLAG_INSTALLDET_PREV 0x00000004")]
     public const int DYNAWIZ_FLAG_INSTALLDET_PREV = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIN_IDD_DYNAWIZ_RESOURCE_ID"]/*' />
     [NativeTypeName("#define MIN_IDD_DYNAWIZ_RESOURCE_ID 10000")]
     public const int MIN_IDD_DYNAWIZ_RESOURCE_ID = 10000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DRIVER_HARDWAREID_RANK"]/*' />
     [NativeTypeName("#define DRIVER_HARDWAREID_RANK 0x00000FFF")]
     public const int DRIVER_HARDWAREID_RANK = 0x00000FFF;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DRIVER_HARDWAREID_MASK"]/*' />
     [NativeTypeName("#define DRIVER_HARDWAREID_MASK 0x80000FFF")]
     public const uint DRIVER_HARDWAREID_MASK = 0x80000FFF;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DRIVER_UNTRUSTED_RANK"]/*' />
     [NativeTypeName("#define DRIVER_UNTRUSTED_RANK 0x80000000")]
     public const uint DRIVER_UNTRUSTED_RANK = 0x80000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DRIVER_W9X_SUSPECT_RANK"]/*' />
     [NativeTypeName("#define DRIVER_W9X_SUSPECT_RANK 0xC0000000")]
     public const uint DRIVER_W9X_SUSPECT_RANK = 0xC0000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPPSR_SELECT_DEVICE_RESOURCES"]/*' />
     [NativeTypeName("#define SPPSR_SELECT_DEVICE_RESOURCES 1")]
     public const int SPPSR_SELECT_DEVICE_RESOURCES = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPPSR_ENUM_BASIC_DEVICE_PROPERTIES"]/*' />
     [NativeTypeName("#define SPPSR_ENUM_BASIC_DEVICE_PROPERTIES 2")]
     public const int SPPSR_ENUM_BASIC_DEVICE_PROPERTIES = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPPSR_ENUM_ADV_DEVICE_PROPERTIES"]/*' />
     [NativeTypeName("#define SPPSR_ENUM_ADV_DEVICE_PROPERTIES 3")]
     public const int SPPSR_ENUM_ADV_DEVICE_PROPERTIES = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INFINFO_INF_SPEC_IS_HINF"]/*' />
     [NativeTypeName("#define INFINFO_INF_SPEC_IS_HINF 1")]
     public const int INFINFO_INF_SPEC_IS_HINF = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INFINFO_INF_NAME_IS_ABSOLUTE"]/*' />
     [NativeTypeName("#define INFINFO_INF_NAME_IS_ABSOLUTE 2")]
     public const int INFINFO_INF_NAME_IS_ABSOLUTE = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INFINFO_DEFAULT_SEARCH"]/*' />
     [NativeTypeName("#define INFINFO_DEFAULT_SEARCH 3")]
     public const int INFINFO_DEFAULT_SEARCH = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INFINFO_REVERSE_DEFAULT_SEARCH"]/*' />
     [NativeTypeName("#define INFINFO_REVERSE_DEFAULT_SEARCH 4")]
     public const int INFINFO_REVERSE_DEFAULT_SEARCH = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INFINFO_INF_PATH_LIST_SEARCH"]/*' />
     [NativeTypeName("#define INFINFO_INF_PATH_LIST_SEARCH 5")]
     public const int INFINFO_INF_PATH_LIST_SEARCH = 5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupGetInfInformation"]/*' />
     [NativeTypeName("#define SetupGetInfInformation SetupGetInfInformationW")]
     public static delegate*<void*, uint, SP_INF_INFORMATION*, uint, uint*, BOOL> SetupGetInfInformation => &SetupGetInfInformationW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupQueryInfFileInformation"]/*' />
     [NativeTypeName("#define SetupQueryInfFileInformation SetupQueryInfFileInformationW")]
     public static delegate*<SP_INF_INFORMATION*, uint, char*, uint, uint*, BOOL> SetupQueryInfFileInformation => &SetupQueryInfFileInformationW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupQueryInfOriginalFileInformation"]/*' />
     [NativeTypeName("#define SetupQueryInfOriginalFileInformation SetupQueryInfOriginalFileInformationW")]
     public static delegate*<SP_INF_INFORMATION*, uint, SP_ALTPLATFORM_INFO_V2*, SP_ORIGINAL_FILE_INFO_W*, BOOL> SetupQueryInfOriginalFileInformation => &SetupQueryInfOriginalFileInformationW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupQueryInfVersionInformation"]/*' />
     [NativeTypeName("#define SetupQueryInfVersionInformation SetupQueryInfVersionInformationW")]
     public static delegate*<SP_INF_INFORMATION*, uint, char*, char*, uint, uint*, BOOL> SetupQueryInfVersionInformation => &SetupQueryInfVersionInformationW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupGetInfDriverStoreLocation"]/*' />
     [NativeTypeName("#define SetupGetInfDriverStoreLocation SetupGetInfDriverStoreLocationW")]
     public static delegate*<char*, SP_ALTPLATFORM_INFO_V2*, char*, char*, uint, uint*, BOOL> SetupGetInfDriverStoreLocation => &SetupGetInfDriverStoreLocationW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupGetInfPublishedName"]/*' />
     [NativeTypeName("#define SetupGetInfPublishedName SetupGetInfPublishedNameW")]
     public static delegate*<char*, char*, uint, uint*, BOOL> SetupGetInfPublishedName => &SetupGetInfPublishedNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupGetInfFileList"]/*' />
     [NativeTypeName("#define SetupGetInfFileList SetupGetInfFileListW")]
     public static delegate*<char*, uint, char*, uint, uint*, BOOL> SetupGetInfFileList => &SetupGetInfFileListW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupOpenInfFile"]/*' />
     [NativeTypeName("#define SetupOpenInfFile SetupOpenInfFileW")]
     public static delegate*<char*, char*, uint, uint*, HINF> SetupOpenInfFile => &SetupOpenInfFileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupOpenAppendInfFile"]/*' />
     [NativeTypeName("#define SetupOpenAppendInfFile SetupOpenAppendInfFileW")]
     public static delegate*<char*, HINF, uint*, BOOL> SetupOpenAppendInfFile => &SetupOpenAppendInfFileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupFindFirstLine"]/*' />
     [NativeTypeName("#define SetupFindFirstLine SetupFindFirstLineW")]
     public static delegate*<HINF, char*, char*, INFCONTEXT*, BOOL> SetupFindFirstLine => &SetupFindFirstLineW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupFindNextMatchLine"]/*' />
     [NativeTypeName("#define SetupFindNextMatchLine SetupFindNextMatchLineW")]
     public static delegate*<INFCONTEXT*, char*, INFCONTEXT*, BOOL> SetupFindNextMatchLine => &SetupFindNextMatchLineW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupGetLineByIndex"]/*' />
     [NativeTypeName("#define SetupGetLineByIndex SetupGetLineByIndexW")]
     public static delegate*<HINF, char*, uint, INFCONTEXT*, BOOL> SetupGetLineByIndex => &SetupGetLineByIndexW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupGetLineCount"]/*' />
     [NativeTypeName("#define SetupGetLineCount SetupGetLineCountW")]
     public static delegate*<HINF, char*, int> SetupGetLineCount => &SetupGetLineCountW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupGetLineText"]/*' />
     [NativeTypeName("#define SetupGetLineText SetupGetLineTextW")]
     public static delegate*<INFCONTEXT*, HINF, char*, char*, char*, uint, uint*, BOOL> SetupGetLineText => &SetupGetLineTextW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupGetStringField"]/*' />
     [NativeTypeName("#define SetupGetStringField SetupGetStringFieldW")]
     public static delegate*<INFCONTEXT*, uint, char*, uint, uint*, BOOL> SetupGetStringField => &SetupGetStringFieldW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupGetMultiSzField"]/*' />
     [NativeTypeName("#define SetupGetMultiSzField SetupGetMultiSzFieldW")]
     public static delegate*<INFCONTEXT*, uint, char*, uint, uint*, BOOL> SetupGetMultiSzField => &SetupGetMultiSzFieldW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupGetFileCompressionInfo"]/*' />
     [NativeTypeName("#define SetupGetFileCompressionInfo SetupGetFileCompressionInfoW")]
     public static delegate*<char*, char**, uint*, uint*, uint*, uint> SetupGetFileCompressionInfo => &SetupGetFileCompressionInfoW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupGetFileCompressionInfoEx"]/*' />
     [NativeTypeName("#define SetupGetFileCompressionInfoEx SetupGetFileCompressionInfoExW")]
     public static delegate*<char*, char*, uint, uint*, uint*, uint*, uint*, BOOL> SetupGetFileCompressionInfoEx => &SetupGetFileCompressionInfoExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDecompressOrCopyFile"]/*' />
     [NativeTypeName("#define SetupDecompressOrCopyFile SetupDecompressOrCopyFileW")]
     public static delegate*<char*, char*, uint*, uint> SetupDecompressOrCopyFile => &SetupDecompressOrCopyFileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupGetSourceFileLocation"]/*' />
     [NativeTypeName("#define SetupGetSourceFileLocation SetupGetSourceFileLocationW")]
     public static delegate*<HINF, INFCONTEXT*, char*, uint*, char*, uint, uint*, BOOL> SetupGetSourceFileLocation => &SetupGetSourceFileLocationW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupGetSourceFileSize"]/*' />
     [NativeTypeName("#define SetupGetSourceFileSize SetupGetSourceFileSizeW")]
     public static delegate*<HINF, INFCONTEXT*, char*, char*, uint*, uint, BOOL> SetupGetSourceFileSize => &SetupGetSourceFileSizeW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupGetTargetPath"]/*' />
     [NativeTypeName("#define SetupGetTargetPath SetupGetTargetPathW")]
     public static delegate*<HINF, INFCONTEXT*, char*, char*, uint, uint*, BOOL> SetupGetTargetPath => &SetupGetTargetPathW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRCLIST_TEMPORARY"]/*' />
     [NativeTypeName("#define SRCLIST_TEMPORARY 0x00000001")]
     public const int SRCLIST_TEMPORARY = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRCLIST_NOBROWSE"]/*' />
     [NativeTypeName("#define SRCLIST_NOBROWSE 0x00000002")]
     public const int SRCLIST_NOBROWSE = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRCLIST_SYSTEM"]/*' />
     [NativeTypeName("#define SRCLIST_SYSTEM 0x00000010")]
     public const int SRCLIST_SYSTEM = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRCLIST_USER"]/*' />
     [NativeTypeName("#define SRCLIST_USER 0x00000020")]
     public const int SRCLIST_USER = 0x00000020;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRCLIST_SYSIFADMIN"]/*' />
     [NativeTypeName("#define SRCLIST_SYSIFADMIN 0x00000040")]
     public const int SRCLIST_SYSIFADMIN = 0x00000040;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRCLIST_SUBDIRS"]/*' />
     [NativeTypeName("#define SRCLIST_SUBDIRS 0x00000100")]
     public const int SRCLIST_SUBDIRS = 0x00000100;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRCLIST_APPEND"]/*' />
     [NativeTypeName("#define SRCLIST_APPEND 0x00000200")]
     public const int SRCLIST_APPEND = 0x00000200;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRCLIST_NOSTRIPPLATFORM"]/*' />
     [NativeTypeName("#define SRCLIST_NOSTRIPPLATFORM 0x00000400")]
     public const int SRCLIST_NOSTRIPPLATFORM = 0x00000400;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupSetSourceList"]/*' />
     [NativeTypeName("#define SetupSetSourceList SetupSetSourceListW")]
     public static delegate*<uint, char**, uint, BOOL> SetupSetSourceList => &SetupSetSourceListW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupAddToSourceList"]/*' />
     [NativeTypeName("#define SetupAddToSourceList SetupAddToSourceListW")]
     public static delegate*<uint, char*, BOOL> SetupAddToSourceList => &SetupAddToSourceListW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupRemoveFromSourceList"]/*' />
     [NativeTypeName("#define SetupRemoveFromSourceList SetupRemoveFromSourceListW")]
     public static delegate*<uint, char*, BOOL> SetupRemoveFromSourceList => &SetupRemoveFromSourceListW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupQuerySourceList"]/*' />
     [NativeTypeName("#define SetupQuerySourceList SetupQuerySourceListW")]
     public static delegate*<uint, char***, uint*, BOOL> SetupQuerySourceList => &SetupQuerySourceListW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupFreeSourceList"]/*' />
     [NativeTypeName("#define SetupFreeSourceList SetupFreeSourceListW")]
     public static delegate*<char***, uint, BOOL> SetupFreeSourceList => &SetupFreeSourceListW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupPromptForDisk"]/*' />
     [NativeTypeName("#define SetupPromptForDisk SetupPromptForDiskW")]
     public static delegate*<HWND, char*, char*, char*, char*, char*, uint, char*, uint, uint*, uint> SetupPromptForDisk => &SetupPromptForDiskW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupCopyError"]/*' />
     [NativeTypeName("#define SetupCopyError SetupCopyErrorW")]
     public static delegate*<HWND, char*, char*, char*, char*, char*, uint, uint, char*, uint, uint*, uint> SetupCopyError => &SetupCopyErrorW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupRenameError"]/*' />
     [NativeTypeName("#define SetupRenameError SetupRenameErrorW")]
     public static delegate*<HWND, char*, char*, char*, uint, uint, uint> SetupRenameError => &SetupRenameErrorW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDeleteError"]/*' />
     [NativeTypeName("#define SetupDeleteError SetupDeleteErrorW")]
     public static delegate*<HWND, char*, char*, uint, uint, uint> SetupDeleteError => &SetupDeleteErrorW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupBackupError"]/*' />
     [NativeTypeName("#define SetupBackupError SetupBackupErrorW")]
     public static delegate*<HWND, char*, char*, char*, uint, uint, uint> SetupBackupError => &SetupBackupErrorW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DPROMPT_SUCCESS"]/*' />
     [NativeTypeName("#define DPROMPT_SUCCESS 0")]
     public const int DPROMPT_SUCCESS = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DPROMPT_CANCEL"]/*' />
     [NativeTypeName("#define DPROMPT_CANCEL 1")]
     public const int DPROMPT_CANCEL = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DPROMPT_SKIPFILE"]/*' />
     [NativeTypeName("#define DPROMPT_SKIPFILE 2")]
     public const int DPROMPT_SKIPFILE = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DPROMPT_BUFFERTOOSMALL"]/*' />
     [NativeTypeName("#define DPROMPT_BUFFERTOOSMALL 3")]
     public const int DPROMPT_BUFFERTOOSMALL = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DPROMPT_OUTOFMEMORY"]/*' />
     [NativeTypeName("#define DPROMPT_OUTOFMEMORY 4")]
     public const int DPROMPT_OUTOFMEMORY = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupSetDirectoryId"]/*' />
     [NativeTypeName("#define SetupSetDirectoryId SetupSetDirectoryIdW")]
     public static delegate*<HINF, uint, char*, BOOL> SetupSetDirectoryId => &SetupSetDirectoryIdW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupSetDirectoryIdEx"]/*' />
     [NativeTypeName("#define SetupSetDirectoryIdEx SetupSetDirectoryIdExW")]
     public static delegate*<HINF, uint, char*, uint, uint, void*, BOOL> SetupSetDirectoryIdEx => &SetupSetDirectoryIdExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SETDIRID_NOT_FULL_PATH"]/*' />
     [NativeTypeName("#define SETDIRID_NOT_FULL_PATH 0x00000001")]
     public const int SETDIRID_NOT_FULL_PATH = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupGetSourceInfo"]/*' />
     [NativeTypeName("#define SetupGetSourceInfo SetupGetSourceInfoW")]
     public static delegate*<HINF, uint, uint, char*, uint, uint*, BOOL> SetupGetSourceInfo => &SetupGetSourceInfoW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRCINFO_PATH"]/*' />
     [NativeTypeName("#define SRCINFO_PATH 1")]
     public const int SRCINFO_PATH = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRCINFO_TAGFILE"]/*' />
     [NativeTypeName("#define SRCINFO_TAGFILE 2")]
     public const int SRCINFO_TAGFILE = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRCINFO_DESCRIPTION"]/*' />
     [NativeTypeName("#define SRCINFO_DESCRIPTION 3")]
     public const int SRCINFO_DESCRIPTION = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRCINFO_FLAGS"]/*' />
     [NativeTypeName("#define SRCINFO_FLAGS 4")]
     public const int SRCINFO_FLAGS = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRCINFO_TAGFILE2"]/*' />
     [NativeTypeName("#define SRCINFO_TAGFILE2 5")]
     public const int SRCINFO_TAGFILE2 = 5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRC_FLAGS_CABFILE"]/*' />
     [NativeTypeName("#define SRC_FLAGS_CABFILE (0x0010)")]
     public const int SRC_FLAGS_CABFILE = (0x0010);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupInstallFile"]/*' />
     [NativeTypeName("#define SetupInstallFile SetupInstallFileW")]
     public static delegate*<HINF, INFCONTEXT*, char*, char*, char*, uint, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, BOOL> SetupInstallFile => &SetupInstallFileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupInstallFileEx"]/*' />
     [NativeTypeName("#define SetupInstallFileEx SetupInstallFileExW")]
     public static delegate*<HINF, INFCONTEXT*, char*, char*, char*, uint, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, BOOL*, BOOL> SetupInstallFileEx => &SetupInstallFileExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupSetFileQueueAlternatePlatform"]/*' />
     [NativeTypeName("#define SetupSetFileQueueAlternatePlatform SetupSetFileQueueAlternatePlatformW")]
     public static delegate*<HSPFILEQ, SP_ALTPLATFORM_INFO_V2*, char*, BOOL> SetupSetFileQueueAlternatePlatform => &SetupSetFileQueueAlternatePlatformW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupSetPlatformPathOverride"]/*' />
     [NativeTypeName("#define SetupSetPlatformPathOverride SetupSetPlatformPathOverrideW")]
     public static delegate*<char*, BOOL> SetupSetPlatformPathOverride => &SetupSetPlatformPathOverrideW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupQueueCopy"]/*' />
     [NativeTypeName("#define SetupQueueCopy SetupQueueCopyW")]
     public static delegate*<HSPFILEQ, char*, char*, char*, char*, char*, char*, char*, uint, BOOL> SetupQueueCopy => &SetupQueueCopyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupQueueCopyIndirect"]/*' />
     [NativeTypeName("#define SetupQueueCopyIndirect SetupQueueCopyIndirectW")]
     public static delegate*<SP_FILE_COPY_PARAMS_W*, BOOL> SetupQueueCopyIndirect => &SetupQueueCopyIndirectW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupQueueDefaultCopy"]/*' />
     [NativeTypeName("#define SetupQueueDefaultCopy SetupQueueDefaultCopyW")]
     public static delegate*<HSPFILEQ, HINF, char*, char*, char*, uint, BOOL> SetupQueueDefaultCopy => &SetupQueueDefaultCopyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupQueueCopySection"]/*' />
     [NativeTypeName("#define SetupQueueCopySection SetupQueueCopySectionW")]
     public static delegate*<HSPFILEQ, char*, HINF, HINF, char*, uint, BOOL> SetupQueueCopySection => &SetupQueueCopySectionW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupQueueDelete"]/*' />
     [NativeTypeName("#define SetupQueueDelete SetupQueueDeleteW")]
     public static delegate*<HSPFILEQ, char*, char*, BOOL> SetupQueueDelete => &SetupQueueDeleteW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupQueueDeleteSection"]/*' />
     [NativeTypeName("#define SetupQueueDeleteSection SetupQueueDeleteSectionW")]
     public static delegate*<HSPFILEQ, HINF, HINF, char*, BOOL> SetupQueueDeleteSection => &SetupQueueDeleteSectionW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupQueueRename"]/*' />
     [NativeTypeName("#define SetupQueueRename SetupQueueRenameW")]
     public static delegate*<HSPFILEQ, char*, char*, char*, char*, BOOL> SetupQueueRename => &SetupQueueRenameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupQueueRenameSection"]/*' />
     [NativeTypeName("#define SetupQueueRenameSection SetupQueueRenameSectionW")]
     public static delegate*<HSPFILEQ, HINF, HINF, char*, BOOL> SetupQueueRenameSection => &SetupQueueRenameSectionW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupCommitFileQueue"]/*' />
     [NativeTypeName("#define SetupCommitFileQueue SetupCommitFileQueueW")]
     public static delegate*<HWND, HSPFILEQ, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, BOOL> SetupCommitFileQueue => &SetupCommitFileQueueW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupScanFileQueue"]/*' />
     [NativeTypeName("#define SetupScanFileQueue SetupScanFileQueueW")]
     public static delegate*<HSPFILEQ, uint, HWND, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, uint*, BOOL> SetupScanFileQueue => &SetupScanFileQueueW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPOST_NONE"]/*' />
     [NativeTypeName("#define SPOST_NONE 0")]
     public const int SPOST_NONE = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPOST_PATH"]/*' />
     [NativeTypeName("#define SPOST_PATH 1")]
     public const int SPOST_PATH = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPOST_URL"]/*' />
     [NativeTypeName("#define SPOST_URL 2")]
     public const int SPOST_URL = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPOST_MAX"]/*' />
     [NativeTypeName("#define SPOST_MAX 3")]
     public const int SPOST_MAX = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupCopyOEMInf"]/*' />
     [NativeTypeName("#define SetupCopyOEMInf SetupCopyOEMInfW")]
     public static delegate*<char*, char*, uint, uint, char*, uint, uint*, char**, BOOL> SetupCopyOEMInf => &SetupCopyOEMInfW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SUOI_FORCEDELETE"]/*' />
     [NativeTypeName("#define SUOI_FORCEDELETE 0x00000001")]
     public const int SUOI_FORCEDELETE = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SUOI_INTERNAL1"]/*' />
     [NativeTypeName("#define SUOI_INTERNAL1 0x00000002")]
     public const int SUOI_INTERNAL1 = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupUninstallOEMInf"]/*' />
     [NativeTypeName("#define SetupUninstallOEMInf SetupUninstallOEMInfW")]
     public static delegate*<char*, uint, void*, BOOL> SetupUninstallOEMInf => &SetupUninstallOEMInfW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupCreateDiskSpaceList"]/*' />
     [NativeTypeName("#define SetupCreateDiskSpaceList SetupCreateDiskSpaceListW")]
     public static delegate*<void*, uint, uint, HDSKSPC> SetupCreateDiskSpaceList => &SetupCreateDiskSpaceListW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPDSL_IGNORE_DISK"]/*' />
     [NativeTypeName("#define SPDSL_IGNORE_DISK 0x00000001")]
     public const int SPDSL_IGNORE_DISK = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPDSL_DISALLOW_NEGATIVE_ADJUST"]/*' />
     [NativeTypeName("#define SPDSL_DISALLOW_NEGATIVE_ADJUST 0x00000002")]
     public const int SPDSL_DISALLOW_NEGATIVE_ADJUST = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDuplicateDiskSpaceList"]/*' />
     [NativeTypeName("#define SetupDuplicateDiskSpaceList SetupDuplicateDiskSpaceListW")]
     public static delegate*<HDSKSPC, void*, uint, uint, HDSKSPC> SetupDuplicateDiskSpaceList => &SetupDuplicateDiskSpaceListW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupQueryDrivesInDiskSpaceList"]/*' />
     [NativeTypeName("#define SetupQueryDrivesInDiskSpaceList SetupQueryDrivesInDiskSpaceListW")]
     public static delegate*<HDSKSPC, char*, uint, uint*, BOOL> SetupQueryDrivesInDiskSpaceList => &SetupQueryDrivesInDiskSpaceListW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupQuerySpaceRequiredOnDrive"]/*' />
     [NativeTypeName("#define SetupQuerySpaceRequiredOnDrive SetupQuerySpaceRequiredOnDriveW")]
     public static delegate*<HDSKSPC, char*, long*, void*, uint, BOOL> SetupQuerySpaceRequiredOnDrive => &SetupQuerySpaceRequiredOnDriveW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupAdjustDiskSpaceList"]/*' />
     [NativeTypeName("#define SetupAdjustDiskSpaceList SetupAdjustDiskSpaceListW")]
     public static delegate*<HDSKSPC, char*, long, void*, uint, BOOL> SetupAdjustDiskSpaceList => &SetupAdjustDiskSpaceListW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupAddToDiskSpaceList"]/*' />
     [NativeTypeName("#define SetupAddToDiskSpaceList SetupAddToDiskSpaceListW")]
     public static delegate*<HDSKSPC, char*, long, uint, void*, uint, BOOL> SetupAddToDiskSpaceList => &SetupAddToDiskSpaceListW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupAddSectionToDiskSpaceList"]/*' />
     [NativeTypeName("#define SetupAddSectionToDiskSpaceList SetupAddSectionToDiskSpaceListW")]
     public static delegate*<HDSKSPC, HINF, HINF, char*, uint, void*, uint, BOOL> SetupAddSectionToDiskSpaceList => &SetupAddSectionToDiskSpaceListW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupAddInstallSectionToDiskSpaceList"]/*' />
     [NativeTypeName("#define SetupAddInstallSectionToDiskSpaceList SetupAddInstallSectionToDiskSpaceListW")]
     public static delegate*<HDSKSPC, HINF, HINF, char*, void*, uint, BOOL> SetupAddInstallSectionToDiskSpaceList => &SetupAddInstallSectionToDiskSpaceListW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupRemoveFromDiskSpaceList"]/*' />
     [NativeTypeName("#define SetupRemoveFromDiskSpaceList SetupRemoveFromDiskSpaceListW")]
     public static delegate*<HDSKSPC, char*, uint, void*, uint, BOOL> SetupRemoveFromDiskSpaceList => &SetupRemoveFromDiskSpaceListW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupRemoveSectionFromDiskSpaceList"]/*' />
     [NativeTypeName("#define SetupRemoveSectionFromDiskSpaceList SetupRemoveSectionFromDiskSpaceListW")]
     public static delegate*<HDSKSPC, HINF, HINF, char*, uint, void*, uint, BOOL> SetupRemoveSectionFromDiskSpaceList => &SetupRemoveSectionFromDiskSpaceListW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupRemoveInstallSectionFromDiskSpaceList"]/*' />
     [NativeTypeName("#define SetupRemoveInstallSectionFromDiskSpaceList SetupRemoveInstallSectionFromDiskSpaceListW")]
     public static delegate*<HDSKSPC, HINF, HINF, char*, void*, uint, BOOL> SetupRemoveInstallSectionFromDiskSpaceList => &SetupRemoveInstallSectionFromDiskSpaceListW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupIterateCabinet"]/*' />
     [NativeTypeName("#define SetupIterateCabinet SetupIterateCabinetW")]
     public static delegate*<char*, uint, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, BOOL> SetupIterateCabinet => &SetupIterateCabinetW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPFILEQ_FILE_IN_USE"]/*' />
     [NativeTypeName("#define SPFILEQ_FILE_IN_USE 0x00000001")]
     public const int SPFILEQ_FILE_IN_USE = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPFILEQ_REBOOT_RECOMMENDED"]/*' />
     [NativeTypeName("#define SPFILEQ_REBOOT_RECOMMENDED 0x00000002")]
     public const int SPFILEQ_REBOOT_RECOMMENDED = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPFILEQ_REBOOT_IN_PROGRESS"]/*' />
     [NativeTypeName("#define SPFILEQ_REBOOT_IN_PROGRESS 0x00000004")]
     public const int SPFILEQ_REBOOT_IN_PROGRESS = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDefaultQueueCallback"]/*' />
     [NativeTypeName("#define SetupDefaultQueueCallback SetupDefaultQueueCallbackW")]
     public static delegate*<void*, uint, nuint, nuint, uint> SetupDefaultQueueCallback => &SetupDefaultQueueCallbackW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupInstallFromInfSection"]/*' />
     [NativeTypeName("#define SetupInstallFromInfSection SetupInstallFromInfSectionW")]
     public static delegate*<HWND, HINF, char*, uint, HKEY, char*, uint, delegate* unmanaged<void*, uint, nuint, nuint, uint>, void*, HDEVINFO, SP_DEVINFO_DATA*, BOOL> SetupInstallFromInfSection => &SetupInstallFromInfSectionW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupInstallFilesFromInfSection"]/*' />
     [NativeTypeName("#define SetupInstallFilesFromInfSection SetupInstallFilesFromInfSectionW")]
     public static delegate*<HINF, HINF, HSPFILEQ, char*, char*, uint, BOOL> SetupInstallFilesFromInfSection => &SetupInstallFilesFromInfSectionW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupInstallServicesFromInfSection"]/*' />
     [NativeTypeName("#define SetupInstallServicesFromInfSection SetupInstallServicesFromInfSectionW")]
     public static delegate*<HINF, char*, uint, BOOL> SetupInstallServicesFromInfSection => &SetupInstallServicesFromInfSectionW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupInstallServicesFromInfSectionEx"]/*' />
     [NativeTypeName("#define SetupInstallServicesFromInfSectionEx SetupInstallServicesFromInfSectionExW")]
     public static delegate*<HINF, char*, uint, HDEVINFO, SP_DEVINFO_DATA*, void*, void*, BOOL> SetupInstallServicesFromInfSectionEx => &SetupInstallServicesFromInfSectionExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InstallHinfSection"]/*' />
     [NativeTypeName("#define InstallHinfSection InstallHinfSectionW")]
     public static delegate*<HWND, HINSTANCE, char*, int, void> InstallHinfSection => &InstallHinfSectionW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupInitializeFileLog"]/*' />
     [NativeTypeName("#define SetupInitializeFileLog SetupInitializeFileLogW")]
     public static delegate*<char*, uint, HSPFILELOG> SetupInitializeFileLog => &SetupInitializeFileLogW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPFILELOG_SYSTEMLOG"]/*' />
     [NativeTypeName("#define SPFILELOG_SYSTEMLOG 0x00000001")]
     public const int SPFILELOG_SYSTEMLOG = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPFILELOG_FORCENEW"]/*' />
     [NativeTypeName("#define SPFILELOG_FORCENEW 0x00000002")]
     public const int SPFILELOG_FORCENEW = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPFILELOG_QUERYONLY"]/*' />
     [NativeTypeName("#define SPFILELOG_QUERYONLY 0x00000004")]
     public const int SPFILELOG_QUERYONLY = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupLogFile"]/*' />
     [NativeTypeName("#define SetupLogFile SetupLogFileW")]
     public static delegate*<HSPFILELOG, char*, char*, char*, uint, char*, char*, char*, uint, BOOL> SetupLogFile => &SetupLogFileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPFILELOG_OEMFILE"]/*' />
     [NativeTypeName("#define SPFILELOG_OEMFILE 0x00000001")]
     public const int SPFILELOG_OEMFILE = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupRemoveFileLogEntry"]/*' />
     [NativeTypeName("#define SetupRemoveFileLogEntry SetupRemoveFileLogEntryW")]
     public static delegate*<HSPFILELOG, char*, char*, BOOL> SetupRemoveFileLogEntry => &SetupRemoveFileLogEntryW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupQueryFileLog"]/*' />
     [NativeTypeName("#define SetupQueryFileLog SetupQueryFileLogW")]
     public static delegate*<HSPFILELOG, char*, char*, SetupFileLogInfo, char*, uint, uint*, BOOL> SetupQueryFileLog => &SetupQueryFileLogW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LogSevInformation"]/*' />
     [NativeTypeName("#define LogSevInformation 0x00000000")]
     public const int LogSevInformation = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LogSevWarning"]/*' />
     [NativeTypeName("#define LogSevWarning 0x00000001")]
     public const int LogSevWarning = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LogSevError"]/*' />
     [NativeTypeName("#define LogSevError 0x00000002")]
     public const int LogSevError = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LogSevFatalError"]/*' />
     [NativeTypeName("#define LogSevFatalError 0x00000003")]
     public const int LogSevFatalError = 0x00000003;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LogSevMaximum"]/*' />
     [NativeTypeName("#define LogSevMaximum 0x00000004")]
     public const int LogSevMaximum = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupLogError"]/*' />
     [NativeTypeName("#define SetupLogError SetupLogErrorW")]
     public static delegate*<char*, uint, BOOL> SetupLogError => &SetupLogErrorW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupGetBackupInformation"]/*' />
     [NativeTypeName("#define SetupGetBackupInformation SetupGetBackupInformationW")]
     public static delegate*<HSPFILEQ, SP_BACKUP_QUEUE_PARAMS_V2_W*, BOOL> SetupGetBackupInformation => &SetupGetBackupInformationW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupPrepareQueueForRestore"]/*' />
     [NativeTypeName("#define SetupPrepareQueueForRestore SetupPrepareQueueForRestoreW")]
     public static delegate*<HSPFILEQ, char*, uint, BOOL> SetupPrepareQueueForRestore => &SetupPrepareQueueForRestoreW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiCreateDeviceInfoListEx"]/*' />
     [NativeTypeName("#define SetupDiCreateDeviceInfoListEx SetupDiCreateDeviceInfoListExW")]
     public static delegate*<Guid*, HWND, char*, void*, HDEVINFO> SetupDiCreateDeviceInfoListEx => &SetupDiCreateDeviceInfoListExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDeviceInfoListDetail"]/*' />
     [NativeTypeName("#define SetupDiGetDeviceInfoListDetail SetupDiGetDeviceInfoListDetailW")]
     public static delegate*<HDEVINFO, SP_DEVINFO_LIST_DETAIL_DATA_W*, BOOL> SetupDiGetDeviceInfoListDetail => &SetupDiGetDeviceInfoListDetailW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiCreateDeviceInfo"]/*' />
     [NativeTypeName("#define SetupDiCreateDeviceInfo SetupDiCreateDeviceInfoW")]
     public static delegate*<HDEVINFO, char*, Guid*, char*, HWND, uint, SP_DEVINFO_DATA*, BOOL> SetupDiCreateDeviceInfo => &SetupDiCreateDeviceInfoW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DIOD_INHERIT_CLASSDRVS"]/*' />
     [NativeTypeName("#define DIOD_INHERIT_CLASSDRVS 0x00000002")]
     public const int DIOD_INHERIT_CLASSDRVS = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DIOD_CANCEL_REMOVE"]/*' />
     [NativeTypeName("#define DIOD_CANCEL_REMOVE 0x00000004")]
     public const int DIOD_CANCEL_REMOVE = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiOpenDeviceInfo"]/*' />
     [NativeTypeName("#define SetupDiOpenDeviceInfo SetupDiOpenDeviceInfoW")]
     public static delegate*<HDEVINFO, char*, HWND, uint, SP_DEVINFO_DATA*, BOOL> SetupDiOpenDeviceInfo => &SetupDiOpenDeviceInfoW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDeviceInstanceId"]/*' />
     [NativeTypeName("#define SetupDiGetDeviceInstanceId SetupDiGetDeviceInstanceIdW")]
     public static delegate*<HDEVINFO, SP_DEVINFO_DATA*, char*, uint, uint*, BOOL> SetupDiGetDeviceInstanceId => &SetupDiGetDeviceInstanceIdW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiEnumInterfaceDevice"]/*' />
     [NativeTypeName("#define SetupDiEnumInterfaceDevice SetupDiEnumDeviceInterfaces")]
     public static delegate*<HDEVINFO, SP_DEVINFO_DATA*, Guid*, uint, SP_DEVICE_INTERFACE_DATA*, BOOL> SetupDiEnumInterfaceDevice => &SetupDiEnumDeviceInterfaces;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiCreateDeviceInterface"]/*' />
     [NativeTypeName("#define SetupDiCreateDeviceInterface SetupDiCreateDeviceInterfaceW")]
     public static delegate*<HDEVINFO, SP_DEVINFO_DATA*, Guid*, char*, uint, SP_DEVICE_INTERFACE_DATA*, BOOL> SetupDiCreateDeviceInterface => &SetupDiCreateDeviceInterfaceW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiCreateInterfaceDeviceW"]/*' />
     [NativeTypeName("#define SetupDiCreateInterfaceDeviceW SetupDiCreateDeviceInterfaceW")]
     public static delegate*<HDEVINFO, SP_DEVINFO_DATA*, Guid*, char*, uint, SP_DEVICE_INTERFACE_DATA*, BOOL> SetupDiCreateInterfaceDeviceW => &SetupDiCreateDeviceInterfaceW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiCreateInterfaceDeviceA"]/*' />
     [NativeTypeName("#define SetupDiCreateInterfaceDeviceA SetupDiCreateDeviceInterfaceA")]
     public static delegate*<HDEVINFO, SP_DEVINFO_DATA*, Guid*, sbyte*, uint, SP_DEVICE_INTERFACE_DATA*, BOOL> SetupDiCreateInterfaceDeviceA => &SetupDiCreateDeviceInterfaceA;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiCreateInterfaceDevice"]/*' />
     [NativeTypeName("#define SetupDiCreateInterfaceDevice SetupDiCreateDeviceInterfaceW")]
     public static delegate*<HDEVINFO, SP_DEVINFO_DATA*, Guid*, char*, uint, SP_DEVICE_INTERFACE_DATA*, BOOL> SetupDiCreateInterfaceDevice => &SetupDiCreateDeviceInterfaceW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DIODI_NO_ADD"]/*' />
     [NativeTypeName("#define DIODI_NO_ADD 0x00000001")]
     public const int DIODI_NO_ADD = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiOpenDeviceInterface"]/*' />
     [NativeTypeName("#define SetupDiOpenDeviceInterface SetupDiOpenDeviceInterfaceW")]
     public static delegate*<HDEVINFO, char*, uint, SP_DEVICE_INTERFACE_DATA*, BOOL> SetupDiOpenDeviceInterface => &SetupDiOpenDeviceInterfaceW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiOpenInterfaceDeviceW"]/*' />
     [NativeTypeName("#define SetupDiOpenInterfaceDeviceW SetupDiOpenDeviceInterfaceW")]
     public static delegate*<HDEVINFO, char*, uint, SP_DEVICE_INTERFACE_DATA*, BOOL> SetupDiOpenInterfaceDeviceW => &SetupDiOpenDeviceInterfaceW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiOpenInterfaceDeviceA"]/*' />
     [NativeTypeName("#define SetupDiOpenInterfaceDeviceA SetupDiOpenDeviceInterfaceA")]
     public static delegate*<HDEVINFO, sbyte*, uint, SP_DEVICE_INTERFACE_DATA*, BOOL> SetupDiOpenInterfaceDeviceA => &SetupDiOpenDeviceInterfaceA;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiOpenInterfaceDevice"]/*' />
     [NativeTypeName("#define SetupDiOpenInterfaceDevice SetupDiOpenDeviceInterfaceW")]
     public static delegate*<HDEVINFO, char*, uint, SP_DEVICE_INTERFACE_DATA*, BOOL> SetupDiOpenInterfaceDevice => &SetupDiOpenDeviceInterfaceW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetInterfaceDeviceAlias"]/*' />
     [NativeTypeName("#define SetupDiGetInterfaceDeviceAlias SetupDiGetDeviceInterfaceAlias")]
     public static delegate*<HDEVINFO, SP_DEVICE_INTERFACE_DATA*, Guid*, SP_DEVICE_INTERFACE_DATA*, BOOL> SetupDiGetInterfaceDeviceAlias => &SetupDiGetDeviceInterfaceAlias;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiDeleteInterfaceDeviceData"]/*' />
     [NativeTypeName("#define SetupDiDeleteInterfaceDeviceData SetupDiDeleteDeviceInterfaceData")]
     public static delegate*<HDEVINFO, SP_DEVICE_INTERFACE_DATA*, BOOL> SetupDiDeleteInterfaceDeviceData => &SetupDiDeleteDeviceInterfaceData;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiRemoveInterfaceDevice"]/*' />
     [NativeTypeName("#define SetupDiRemoveInterfaceDevice SetupDiRemoveDeviceInterface")]
     public static delegate*<HDEVINFO, SP_DEVICE_INTERFACE_DATA*, BOOL> SetupDiRemoveInterfaceDevice => &SetupDiRemoveDeviceInterface;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDeviceInterfaceDetail"]/*' />
     [NativeTypeName("#define SetupDiGetDeviceInterfaceDetail SetupDiGetDeviceInterfaceDetailW")]
     public static delegate*<HDEVINFO, SP_DEVICE_INTERFACE_DATA*, SP_DEVICE_INTERFACE_DETAIL_DATA_W*, uint, uint*, SP_DEVINFO_DATA*, BOOL> SetupDiGetDeviceInterfaceDetail => &SetupDiGetDeviceInterfaceDetailW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetInterfaceDeviceDetailW"]/*' />
     [NativeTypeName("#define SetupDiGetInterfaceDeviceDetailW SetupDiGetDeviceInterfaceDetailW")]
     public static delegate*<HDEVINFO, SP_DEVICE_INTERFACE_DATA*, SP_DEVICE_INTERFACE_DETAIL_DATA_W*, uint, uint*, SP_DEVINFO_DATA*, BOOL> SetupDiGetInterfaceDeviceDetailW => &SetupDiGetDeviceInterfaceDetailW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetInterfaceDeviceDetailA"]/*' />
     [NativeTypeName("#define SetupDiGetInterfaceDeviceDetailA SetupDiGetDeviceInterfaceDetailA")]
     public static delegate*<HDEVINFO, SP_DEVICE_INTERFACE_DATA*, SP_DEVICE_INTERFACE_DETAIL_DATA_A*, uint, uint*, SP_DEVINFO_DATA*, BOOL> SetupDiGetInterfaceDeviceDetailA => &SetupDiGetDeviceInterfaceDetailA;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetInterfaceDeviceDetail"]/*' />
     [NativeTypeName("#define SetupDiGetInterfaceDeviceDetail SetupDiGetDeviceInterfaceDetailW")]
     public static delegate*<HDEVINFO, SP_DEVICE_INTERFACE_DATA*, SP_DEVICE_INTERFACE_DETAIL_DATA_W*, uint, uint*, SP_DEVINFO_DATA*, BOOL> SetupDiGetInterfaceDeviceDetail => &SetupDiGetDeviceInterfaceDetailW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiInstallInterfaceDevices"]/*' />
     [NativeTypeName("#define SetupDiInstallInterfaceDevices SetupDiInstallDeviceInterfaces")]
     public static delegate*<HDEVINFO, SP_DEVINFO_DATA*, BOOL> SetupDiInstallInterfaceDevices => &SetupDiInstallDeviceInterfaces;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPRDI_FIND_DUPS"]/*' />
     [NativeTypeName("#define SPRDI_FIND_DUPS 0x00000001")]
     public const int SPRDI_FIND_DUPS = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPDIT_NODRIVER"]/*' />
     [NativeTypeName("#define SPDIT_NODRIVER 0x00000000")]
     public const int SPDIT_NODRIVER = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPDIT_CLASSDRIVER"]/*' />
     [NativeTypeName("#define SPDIT_CLASSDRIVER 0x00000001")]
     public const int SPDIT_CLASSDRIVER = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPDIT_COMPATDRIVER"]/*' />
     [NativeTypeName("#define SPDIT_COMPATDRIVER 0x00000002")]
     public const int SPDIT_COMPATDRIVER = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiEnumDriverInfo"]/*' />
     [NativeTypeName("#define SetupDiEnumDriverInfo SetupDiEnumDriverInfoW")]
     public static delegate*<HDEVINFO, SP_DEVINFO_DATA*, uint, uint, SP_DRVINFO_DATA_V2_W*, BOOL> SetupDiEnumDriverInfo => &SetupDiEnumDriverInfoW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetSelectedDriver"]/*' />
     [NativeTypeName("#define SetupDiGetSelectedDriver SetupDiGetSelectedDriverW")]
     public static delegate*<HDEVINFO, SP_DEVINFO_DATA*, SP_DRVINFO_DATA_V2_W*, BOOL> SetupDiGetSelectedDriver => &SetupDiGetSelectedDriverW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiSetSelectedDriver"]/*' />
     [NativeTypeName("#define SetupDiSetSelectedDriver SetupDiSetSelectedDriverW")]
     public static delegate*<HDEVINFO, SP_DEVINFO_DATA*, SP_DRVINFO_DATA_V2_W*, BOOL> SetupDiSetSelectedDriver => &SetupDiSetSelectedDriverW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDriverInfoDetail"]/*' />
     [NativeTypeName("#define SetupDiGetDriverInfoDetail SetupDiGetDriverInfoDetailW")]
     public static delegate*<HDEVINFO, SP_DEVINFO_DATA*, SP_DRVINFO_DATA_V2_W*, SP_DRVINFO_DETAIL_DATA_W*, uint, uint*, BOOL> SetupDiGetDriverInfoDetail => &SetupDiGetDriverInfoDetailW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassDevs"]/*' />
     [NativeTypeName("#define SetupDiGetClassDevs SetupDiGetClassDevsW")]
     public static delegate*<Guid*, char*, HWND, uint, HDEVINFO> SetupDiGetClassDevs => &SetupDiGetClassDevsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassDevsEx"]/*' />
     [NativeTypeName("#define SetupDiGetClassDevsEx SetupDiGetClassDevsExW")]
     public static delegate*<Guid*, char*, HWND, uint, HDEVINFO, char*, void*, HDEVINFO> SetupDiGetClassDevsEx => &SetupDiGetClassDevsExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetINFClass"]/*' />
     [NativeTypeName("#define SetupDiGetINFClass SetupDiGetINFClassW")]
     public static delegate*<char*, Guid*, char*, uint, uint*, BOOL> SetupDiGetINFClass => &SetupDiGetINFClassW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DIBCI_NOINSTALLCLASS"]/*' />
     [NativeTypeName("#define DIBCI_NOINSTALLCLASS 0x00000001")]
     public const int DIBCI_NOINSTALLCLASS = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DIBCI_NODISPLAYCLASS"]/*' />
     [NativeTypeName("#define DIBCI_NODISPLAYCLASS 0x00000002")]
     public const int DIBCI_NODISPLAYCLASS = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiBuildClassInfoListEx"]/*' />
     [NativeTypeName("#define SetupDiBuildClassInfoListEx SetupDiBuildClassInfoListExW")]
     public static delegate*<uint, Guid*, uint, uint*, char*, void*, BOOL> SetupDiBuildClassInfoListEx => &SetupDiBuildClassInfoListExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassDescription"]/*' />
     [NativeTypeName("#define SetupDiGetClassDescription SetupDiGetClassDescriptionW")]
     public static delegate*<Guid*, char*, uint, uint*, BOOL> SetupDiGetClassDescription => &SetupDiGetClassDescriptionW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassDescriptionEx"]/*' />
     [NativeTypeName("#define SetupDiGetClassDescriptionEx SetupDiGetClassDescriptionExW")]
     public static delegate*<Guid*, char*, uint, uint*, char*, void*, BOOL> SetupDiGetClassDescriptionEx => &SetupDiGetClassDescriptionExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiInstallClass"]/*' />
     [NativeTypeName("#define SetupDiInstallClass SetupDiInstallClassW")]
     public static delegate*<HWND, char*, uint, HSPFILEQ, BOOL> SetupDiInstallClass => &SetupDiInstallClassW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiInstallClassEx"]/*' />
     [NativeTypeName("#define SetupDiInstallClassEx SetupDiInstallClassExW")]
     public static delegate*<HWND, char*, uint, HSPFILEQ, Guid*, void*, void*, BOOL> SetupDiInstallClassEx => &SetupDiInstallClassExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DIOCR_INSTALLER"]/*' />
     [NativeTypeName("#define DIOCR_INSTALLER 0x00000001")]
     public const int DIOCR_INSTALLER = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DIOCR_INTERFACE"]/*' />
     [NativeTypeName("#define DIOCR_INTERFACE 0x00000002")]
     public const int DIOCR_INTERFACE = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiOpenClassRegKeyEx"]/*' />
     [NativeTypeName("#define SetupDiOpenClassRegKeyEx SetupDiOpenClassRegKeyExW")]
     public static delegate*<Guid*, uint, uint, char*, void*, HKEY> SetupDiOpenClassRegKeyEx => &SetupDiOpenClassRegKeyExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiCreateDeviceInterfaceRegKey"]/*' />
     [NativeTypeName("#define SetupDiCreateDeviceInterfaceRegKey SetupDiCreateDeviceInterfaceRegKeyW")]
     public static delegate*<HDEVINFO, SP_DEVICE_INTERFACE_DATA*, uint, uint, HINF, char*, HKEY> SetupDiCreateDeviceInterfaceRegKey => &SetupDiCreateDeviceInterfaceRegKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiCreateInterfaceDeviceRegKeyW"]/*' />
     [NativeTypeName("#define SetupDiCreateInterfaceDeviceRegKeyW SetupDiCreateDeviceInterfaceRegKeyW")]
     public static delegate*<HDEVINFO, SP_DEVICE_INTERFACE_DATA*, uint, uint, HINF, char*, HKEY> SetupDiCreateInterfaceDeviceRegKeyW => &SetupDiCreateDeviceInterfaceRegKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiCreateInterfaceDeviceRegKeyA"]/*' />
     [NativeTypeName("#define SetupDiCreateInterfaceDeviceRegKeyA SetupDiCreateDeviceInterfaceRegKeyA")]
     public static delegate*<HDEVINFO, SP_DEVICE_INTERFACE_DATA*, uint, uint, HINF, sbyte*, HKEY> SetupDiCreateInterfaceDeviceRegKeyA => &SetupDiCreateDeviceInterfaceRegKeyA;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiCreateInterfaceDeviceRegKey"]/*' />
     [NativeTypeName("#define SetupDiCreateInterfaceDeviceRegKey SetupDiCreateDeviceInterfaceRegKeyW")]
     public static delegate*<HDEVINFO, SP_DEVICE_INTERFACE_DATA*, uint, uint, HINF, char*, HKEY> SetupDiCreateInterfaceDeviceRegKey => &SetupDiCreateDeviceInterfaceRegKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiOpenInterfaceDeviceRegKey"]/*' />
     [NativeTypeName("#define SetupDiOpenInterfaceDeviceRegKey SetupDiOpenDeviceInterfaceRegKey")]
     public static delegate*<HDEVINFO, SP_DEVICE_INTERFACE_DATA*, uint, uint, HKEY> SetupDiOpenInterfaceDeviceRegKey => &SetupDiOpenDeviceInterfaceRegKey;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiDeleteInterfaceDeviceRegKey"]/*' />
     [NativeTypeName("#define SetupDiDeleteInterfaceDeviceRegKey SetupDiDeleteDeviceInterfaceRegKey")]
     public static delegate*<HDEVINFO, SP_DEVICE_INTERFACE_DATA*, uint, BOOL> SetupDiDeleteInterfaceDeviceRegKey => &SetupDiDeleteDeviceInterfaceRegKey;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DIREG_DEV"]/*' />
     [NativeTypeName("#define DIREG_DEV 0x00000001")]
     public const int DIREG_DEV = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DIREG_DRV"]/*' />
     [NativeTypeName("#define DIREG_DRV 0x00000002")]
     public const int DIREG_DRV = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DIREG_BOTH"]/*' />
     [NativeTypeName("#define DIREG_BOTH 0x00000004")]
     public const int DIREG_BOTH = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiCreateDevRegKey"]/*' />
     [NativeTypeName("#define SetupDiCreateDevRegKey SetupDiCreateDevRegKeyW")]
     public static delegate*<HDEVINFO, SP_DEVINFO_DATA*, uint, uint, uint, HINF, char*, HKEY> SetupDiCreateDevRegKey => &SetupDiCreateDevRegKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetHwProfileListEx"]/*' />
     [NativeTypeName("#define SetupDiGetHwProfileListEx SetupDiGetHwProfileListExW")]
     public static delegate*<uint*, uint, uint*, uint*, char*, void*, BOOL> SetupDiGetHwProfileListEx => &SetupDiGetHwProfileListExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDeviceProperty"]/*' />
     [NativeTypeName("#define SetupDiGetDeviceProperty SetupDiGetDevicePropertyW")]
     public static delegate*<HDEVINFO, SP_DEVINFO_DATA*, DEVPROPKEY*, uint*, byte*, uint, uint*, uint, BOOL> SetupDiGetDeviceProperty => &SetupDiGetDevicePropertyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiSetDeviceProperty"]/*' />
     [NativeTypeName("#define SetupDiSetDeviceProperty SetupDiSetDevicePropertyW")]
     public static delegate*<HDEVINFO, SP_DEVINFO_DATA*, DEVPROPKEY*, uint, byte*, uint, uint, BOOL> SetupDiSetDeviceProperty => &SetupDiSetDevicePropertyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDeviceInterfaceProperty"]/*' />
     [NativeTypeName("#define SetupDiGetDeviceInterfaceProperty SetupDiGetDeviceInterfacePropertyW")]
     public static delegate*<HDEVINFO, SP_DEVICE_INTERFACE_DATA*, DEVPROPKEY*, uint*, byte*, uint, uint*, uint, BOOL> SetupDiGetDeviceInterfaceProperty => &SetupDiGetDeviceInterfacePropertyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiSetDeviceInterfaceProperty"]/*' />
     [NativeTypeName("#define SetupDiSetDeviceInterfaceProperty SetupDiSetDeviceInterfacePropertyW")]
     public static delegate*<HDEVINFO, SP_DEVICE_INTERFACE_DATA*, DEVPROPKEY*, uint, byte*, uint, uint, BOOL> SetupDiSetDeviceInterfaceProperty => &SetupDiSetDeviceInterfacePropertyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DICLASSPROP_INSTALLER"]/*' />
     [NativeTypeName("#define DICLASSPROP_INSTALLER 0x00000001")]
     public const int DICLASSPROP_INSTALLER = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DICLASSPROP_INTERFACE"]/*' />
     [NativeTypeName("#define DICLASSPROP_INTERFACE 0x00000002")]
     public const int DICLASSPROP_INTERFACE = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassPropertyKeysEx"]/*' />
     [NativeTypeName("#define SetupDiGetClassPropertyKeysEx SetupDiGetClassPropertyKeysExW")]
     public static delegate*<Guid*, DEVPROPKEY*, uint, uint*, uint, char*, void*, BOOL> SetupDiGetClassPropertyKeysEx => &SetupDiGetClassPropertyKeysExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassProperty"]/*' />
     [NativeTypeName("#define SetupDiGetClassProperty SetupDiGetClassPropertyW")]
     public static delegate*<Guid*, DEVPROPKEY*, uint*, byte*, uint, uint*, uint, BOOL> SetupDiGetClassProperty => &SetupDiGetClassPropertyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassPropertyEx"]/*' />
     [NativeTypeName("#define SetupDiGetClassPropertyEx SetupDiGetClassPropertyExW")]
     public static delegate*<Guid*, DEVPROPKEY*, uint*, byte*, uint, uint*, uint, char*, void*, BOOL> SetupDiGetClassPropertyEx => &SetupDiGetClassPropertyExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiSetClassProperty"]/*' />
     [NativeTypeName("#define SetupDiSetClassProperty SetupDiSetClassPropertyW")]
     public static delegate*<Guid*, DEVPROPKEY*, uint, byte*, uint, uint, BOOL> SetupDiSetClassProperty => &SetupDiSetClassPropertyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiSetClassPropertyEx"]/*' />
     [NativeTypeName("#define SetupDiSetClassPropertyEx SetupDiSetClassPropertyExW")]
     public static delegate*<Guid*, DEVPROPKEY*, uint, byte*, uint, uint, char*, void*, BOOL> SetupDiSetClassPropertyEx => &SetupDiSetClassPropertyExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPCRP_UPPERFILTERS"]/*' />
     [NativeTypeName("#define SPCRP_UPPERFILTERS (0x00000011)")]
     public const int SPCRP_UPPERFILTERS = (0x00000011);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPCRP_LOWERFILTERS"]/*' />
     [NativeTypeName("#define SPCRP_LOWERFILTERS (0x00000012)")]
     public const int SPCRP_LOWERFILTERS = (0x00000012);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPCRP_SECURITY"]/*' />
     [NativeTypeName("#define SPCRP_SECURITY (0x00000017)")]
     public const int SPCRP_SECURITY = (0x00000017);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPCRP_SECURITY_SDS"]/*' />
     [NativeTypeName("#define SPCRP_SECURITY_SDS (0x00000018)")]
     public const int SPCRP_SECURITY_SDS = (0x00000018);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPCRP_DEVTYPE"]/*' />
     [NativeTypeName("#define SPCRP_DEVTYPE (0x00000019)")]
     public const int SPCRP_DEVTYPE = (0x00000019);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPCRP_EXCLUSIVE"]/*' />
     [NativeTypeName("#define SPCRP_EXCLUSIVE (0x0000001A)")]
     public const int SPCRP_EXCLUSIVE = (0x0000001A);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPCRP_CHARACTERISTICS"]/*' />
     [NativeTypeName("#define SPCRP_CHARACTERISTICS (0x0000001B)")]
     public const int SPCRP_CHARACTERISTICS = (0x0000001B);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPCRP_MAXIMUM_PROPERTY"]/*' />
     [NativeTypeName("#define SPCRP_MAXIMUM_PROPERTY (0x0000001C)")]
     public const int SPCRP_MAXIMUM_PROPERTY = (0x0000001C);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDeviceRegistryProperty"]/*' />
     [NativeTypeName("#define SetupDiGetDeviceRegistryProperty SetupDiGetDeviceRegistryPropertyW")]
     public static delegate*<HDEVINFO, SP_DEVINFO_DATA*, uint, uint*, byte*, uint, uint*, BOOL> SetupDiGetDeviceRegistryProperty => &SetupDiGetDeviceRegistryPropertyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassRegistryProperty"]/*' />
     [NativeTypeName("#define SetupDiGetClassRegistryProperty SetupDiGetClassRegistryPropertyW")]
     public static delegate*<Guid*, uint, uint*, byte*, uint, uint*, char*, void*, BOOL> SetupDiGetClassRegistryProperty => &SetupDiGetClassRegistryPropertyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiSetDeviceRegistryProperty"]/*' />
     [NativeTypeName("#define SetupDiSetDeviceRegistryProperty SetupDiSetDeviceRegistryPropertyW")]
     public static delegate*<HDEVINFO, SP_DEVINFO_DATA*, uint, byte*, uint, BOOL> SetupDiSetDeviceRegistryProperty => &SetupDiSetDeviceRegistryPropertyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiSetClassRegistryProperty"]/*' />
     [NativeTypeName("#define SetupDiSetClassRegistryProperty SetupDiSetClassRegistryPropertyW")]
     public static delegate*<Guid*, uint, byte*, uint, char*, void*, BOOL> SetupDiSetClassRegistryProperty => &SetupDiSetClassRegistryPropertyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDeviceInstallParams"]/*' />
     [NativeTypeName("#define SetupDiGetDeviceInstallParams SetupDiGetDeviceInstallParamsW")]
     public static delegate*<HDEVINFO, SP_DEVINFO_DATA*, SP_DEVINSTALL_PARAMS_W*, BOOL> SetupDiGetDeviceInstallParams => &SetupDiGetDeviceInstallParamsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassInstallParams"]/*' />
     [NativeTypeName("#define SetupDiGetClassInstallParams SetupDiGetClassInstallParamsW")]
     public static delegate*<HDEVINFO, SP_DEVINFO_DATA*, SP_CLASSINSTALL_HEADER*, uint, uint*, BOOL> SetupDiGetClassInstallParams => &SetupDiGetClassInstallParamsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiSetDeviceInstallParams"]/*' />
     [NativeTypeName("#define SetupDiSetDeviceInstallParams SetupDiSetDeviceInstallParamsW")]
     public static delegate*<HDEVINFO, SP_DEVINFO_DATA*, SP_DEVINSTALL_PARAMS_W*, BOOL> SetupDiSetDeviceInstallParams => &SetupDiSetDeviceInstallParamsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiSetClassInstallParams"]/*' />
     [NativeTypeName("#define SetupDiSetClassInstallParams SetupDiSetClassInstallParamsW")]
     public static delegate*<HDEVINFO, SP_DEVINFO_DATA*, SP_CLASSINSTALL_HEADER*, uint, BOOL> SetupDiSetClassInstallParams => &SetupDiSetClassInstallParamsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDriverInstallParams"]/*' />
     [NativeTypeName("#define SetupDiGetDriverInstallParams SetupDiGetDriverInstallParamsW")]
     public static delegate*<HDEVINFO, SP_DEVINFO_DATA*, SP_DRVINFO_DATA_V2_W*, SP_DRVINSTALL_PARAMS*, BOOL> SetupDiGetDriverInstallParams => &SetupDiGetDriverInstallParamsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiSetDriverInstallParams"]/*' />
     [NativeTypeName("#define SetupDiSetDriverInstallParams SetupDiSetDriverInstallParamsW")]
     public static delegate*<HDEVINFO, SP_DEVINFO_DATA*, SP_DRVINFO_DATA_V2_W*, SP_DRVINSTALL_PARAMS*, BOOL> SetupDiSetDriverInstallParams => &SetupDiSetDriverInstallParamsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMI_MASK"]/*' />
     [NativeTypeName("#define DMI_MASK 0x00000001")]
     public const int DMI_MASK = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMI_BKCOLOR"]/*' />
     [NativeTypeName("#define DMI_BKCOLOR 0x00000002")]
     public const int DMI_BKCOLOR = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DMI_USERECT"]/*' />
     [NativeTypeName("#define DMI_USERECT 0x00000004")]
     public const int DMI_USERECT = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassImageListEx"]/*' />
     [NativeTypeName("#define SetupDiGetClassImageListEx SetupDiGetClassImageListExW")]
     public static delegate*<SP_CLASSIMAGELIST_DATA*, char*, void*, BOOL> SetupDiGetClassImageListEx => &SetupDiGetClassImageListExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DIGCDP_FLAG_BASIC"]/*' />
     [NativeTypeName("#define DIGCDP_FLAG_BASIC 0x00000001")]
     public const int DIGCDP_FLAG_BASIC = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DIGCDP_FLAG_ADVANCED"]/*' />
     [NativeTypeName("#define DIGCDP_FLAG_ADVANCED 0x00000002")]
     public const int DIGCDP_FLAG_ADVANCED = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DIGCDP_FLAG_REMOTE_BASIC"]/*' />
     [NativeTypeName("#define DIGCDP_FLAG_REMOTE_BASIC 0x00000003")]
     public const int DIGCDP_FLAG_REMOTE_BASIC = 0x00000003;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DIGCDP_FLAG_REMOTE_ADVANCED"]/*' />
     [NativeTypeName("#define DIGCDP_FLAG_REMOTE_ADVANCED 0x00000004")]
     public const int DIGCDP_FLAG_REMOTE_ADVANCED = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassDevPropertySheets"]/*' />
     [NativeTypeName("#define SetupDiGetClassDevPropertySheets SetupDiGetClassDevPropertySheetsW")]
     public static delegate*<HDEVINFO, SP_DEVINFO_DATA*, PROPSHEETHEADERW_V2*, uint, uint*, uint, BOOL> SetupDiGetClassDevPropertySheets => &SetupDiGetClassDevPropertySheetsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiClassNameFromGuid"]/*' />
     [NativeTypeName("#define SetupDiClassNameFromGuid SetupDiClassNameFromGuidW")]
     public static delegate*<Guid*, char*, uint, uint*, BOOL> SetupDiClassNameFromGuid => &SetupDiClassNameFromGuidW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiClassNameFromGuidEx"]/*' />
     [NativeTypeName("#define SetupDiClassNameFromGuidEx SetupDiClassNameFromGuidExW")]
     public static delegate*<Guid*, char*, uint, uint*, char*, void*, BOOL> SetupDiClassNameFromGuidEx => &SetupDiClassNameFromGuidExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiClassGuidsFromName"]/*' />
     [NativeTypeName("#define SetupDiClassGuidsFromName SetupDiClassGuidsFromNameW")]
     public static delegate*<char*, Guid*, uint, uint*, BOOL> SetupDiClassGuidsFromName => &SetupDiClassGuidsFromNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiClassGuidsFromNameEx"]/*' />
     [NativeTypeName("#define SetupDiClassGuidsFromNameEx SetupDiClassGuidsFromNameExW")]
     public static delegate*<char*, Guid*, uint, uint*, char*, void*, BOOL> SetupDiClassGuidsFromNameEx => &SetupDiClassGuidsFromNameExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetHwProfileFriendlyName"]/*' />
     [NativeTypeName("#define SetupDiGetHwProfileFriendlyName SetupDiGetHwProfileFriendlyNameW")]
     public static delegate*<uint, char*, uint, uint*, BOOL> SetupDiGetHwProfileFriendlyName => &SetupDiGetHwProfileFriendlyNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetHwProfileFriendlyNameEx"]/*' />
     [NativeTypeName("#define SetupDiGetHwProfileFriendlyNameEx SetupDiGetHwProfileFriendlyNameExW")]
     public static delegate*<uint, char*, uint, uint*, char*, void*, BOOL> SetupDiGetHwProfileFriendlyNameEx => &SetupDiGetHwProfileFriendlyNameExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPWPT_SELECTDEVICE"]/*' />
     [NativeTypeName("#define SPWPT_SELECTDEVICE 0x00000001")]
     public const int SPWPT_SELECTDEVICE = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPWP_USE_DEVINFO_DATA"]/*' />
     [NativeTypeName("#define SPWP_USE_DEVINFO_DATA 0x00000001")]
     public const int SPWP_USE_DEVINFO_DATA = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetActualModelsSection"]/*' />
     [NativeTypeName("#define SetupDiGetActualModelsSection SetupDiGetActualModelsSectionW")]
     public static delegate*<INFCONTEXT*, SP_ALTPLATFORM_INFO_V2*, char*, uint, uint*, void*, BOOL> SetupDiGetActualModelsSection => &SetupDiGetActualModelsSectionW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetActualSectionToInstall"]/*' />
     [NativeTypeName("#define SetupDiGetActualSectionToInstall SetupDiGetActualSectionToInstallW")]
     public static delegate*<HINF, char*, char*, uint, uint*, char**, BOOL> SetupDiGetActualSectionToInstall => &SetupDiGetActualSectionToInstallW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetActualSectionToInstallEx"]/*' />
     [NativeTypeName("#define SetupDiGetActualSectionToInstallEx SetupDiGetActualSectionToInstallExW")]
     public static delegate*<HINF, char*, SP_ALTPLATFORM_INFO_V2*, char*, uint, uint*, char**, void*, BOOL> SetupDiGetActualSectionToInstallEx => &SetupDiGetActualSectionToInstallExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupEnumInfSections"]/*' />
     [NativeTypeName("#define SetupEnumInfSections SetupEnumInfSectionsW")]
     public static delegate*<HINF, uint, char*, uint, uint*, BOOL> SetupEnumInfSections => &SetupEnumInfSectionsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupVerifyInfFile"]/*' />
     [NativeTypeName("#define SetupVerifyInfFile SetupVerifyInfFileW")]
     public static delegate*<char*, SP_ALTPLATFORM_INFO_V2*, SP_INF_SIGNER_INFO_V2_W*, BOOL> SetupVerifyInfFile => &SetupVerifyInfFileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DICUSTOMDEVPROP_MERGE_MULTISZ"]/*' />
     [NativeTypeName("#define DICUSTOMDEVPROP_MERGE_MULTISZ 0x00000001")]
     public const int DICUSTOMDEVPROP_MERGE_MULTISZ = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetCustomDeviceProperty"]/*' />
     [NativeTypeName("#define SetupDiGetCustomDeviceProperty SetupDiGetCustomDevicePropertyW")]
     public static delegate*<HDEVINFO, SP_DEVINFO_DATA*, char*, uint, uint*, byte*, uint, uint*, BOOL> SetupDiGetCustomDeviceProperty => &SetupDiGetCustomDevicePropertyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SCWMI_CLOBBER_SECURITY"]/*' />
     [NativeTypeName("#define SCWMI_CLOBBER_SECURITY 0x00000001")]
     public const int SCWMI_CLOBBER_SECURITY = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupConfigureWmiFromInfSection"]/*' />
     [NativeTypeName("#define SetupConfigureWmiFromInfSection SetupConfigureWmiFromInfSectionW")]
     public static delegate*<HINF, char*, uint, BOOL> SetupConfigureWmiFromInfSection => &SetupConfigureWmiFromInfSectionW;
 }

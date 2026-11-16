@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISpShortcut : ISpShortcut.Interface, INativeGuid
 {
+    /// <include file='ISpShortcut.xml' path='doc/member[@name="ISpShortcut.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpShortcut);
 
     public void** lpVtbl;

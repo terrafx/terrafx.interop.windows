@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class FRM
 {
+    /// <include file='FRM.xml' path='doc/member[@name="FRM.FRM_FIRST"]/*' />
     [NativeTypeName("#define FRM_FIRST (WM_USER + 100)")]
     public const int FRM_FIRST = (0x0400 + 100);
 
+    /// <include file='FRM.xml' path='doc/member[@name="FRM.FRM_LAST"]/*' />
     [NativeTypeName("#define FRM_LAST (WM_USER + 200)")]
     public const int FRM_LAST = (0x0400 + 200);
 
+    /// <include file='FRM.xml' path='doc/member[@name="FRM.FRM_SETOPERATIONRESULT"]/*' />
     [NativeTypeName("#define FRM_SETOPERATIONRESULT (FRM_FIRST + 0x0000)")]
     public const int FRM_SETOPERATIONRESULT = ((0x0400 + 100) + 0x0000);
 
+    /// <include file='FRM.xml' path='doc/member[@name="FRM.FRM_SETOPERATIONRESULTTEXT"]/*' />
     [NativeTypeName("#define FRM_SETOPERATIONRESULTTEXT (FRM_FIRST + 0x0001)")]
     public const int FRM_SETOPERATIONRESULTTEXT = ((0x0400 + 100) + 0x0001);
 }

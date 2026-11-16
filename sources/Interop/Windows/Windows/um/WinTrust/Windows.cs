@@ -87,30 +87,39 @@ public static unsafe partial class Windows
     [DllImport("wintrust", ExactSpelling = true)]
     public static extern void WintrustSetDefaultIncludePEPageHashes(BOOL fIncludePEPageHashes);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WTCI_DONT_OPEN_STORES"]/*' />
     [NativeTypeName("#define WTCI_DONT_OPEN_STORES 0x00000001")]
     public const int WTCI_DONT_OPEN_STORES = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WTCI_OPEN_ONLY_ROOT"]/*' />
     [NativeTypeName("#define WTCI_OPEN_ONLY_ROOT 0x00000002")]
     public const int WTCI_OPEN_ONLY_ROOT = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WTCI_USE_LOCAL_MACHINE"]/*' />
     [NativeTypeName("#define WTCI_USE_LOCAL_MACHINE 0x00000004")]
     public const int WTCI_USE_LOCAL_MACHINE = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SGNR_TYPE_TIMESTAMP"]/*' />
     [NativeTypeName("#define SGNR_TYPE_TIMESTAMP 0x00000010")]
     public const int SGNR_TYPE_TIMESTAMP = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DWACTION_ALLOCANDFILL"]/*' />
     [NativeTypeName("#define DWACTION_ALLOCANDFILL 1")]
     public const int DWACTION_ALLOCANDFILL = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DWACTION_FREE"]/*' />
     [NativeTypeName("#define DWACTION_FREE 2")]
     public const int DWACTION_FREE = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INTENT_TO_SEAL_ATTRIBUTE_STRUCT"]/*' />
     [NativeTypeName("#define INTENT_TO_SEAL_ATTRIBUTE_STRUCT ((LPCSTR) 2010)")]
     public static sbyte* INTENT_TO_SEAL_ATTRIBUTE_STRUCT => ((sbyte*)(2010));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SEALING_SIGNATURE_ATTRIBUTE_STRUCT"]/*' />
     [NativeTypeName("#define SEALING_SIGNATURE_ATTRIBUTE_STRUCT ((LPCSTR) 2011)")]
     public static sbyte* SEALING_SIGNATURE_ATTRIBUTE_STRUCT => ((sbyte*)(2011));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SEALING_TIMESTAMP_ATTRIBUTE_STRUCT"]/*' />
     [NativeTypeName("#define SEALING_TIMESTAMP_ATTRIBUTE_STRUCT ((LPCSTR) 2012)")]
     public static sbyte* SEALING_TIMESTAMP_ATTRIBUTE_STRUCT => ((sbyte*)(2012));
 }

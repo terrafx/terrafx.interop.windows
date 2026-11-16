@@ -7,18 +7,23 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DDSVCAPS
 {
+    /// <include file='DDSVCAPS.xml' path='doc/member[@name="DDSVCAPS.DDSVCAPS_RESERVED1"]/*' />
     [NativeTypeName("#define DDSVCAPS_RESERVED1 0x00000001l")]
     public const int DDSVCAPS_RESERVED1 = 0x00000001;
 
+    /// <include file='DDSVCAPS.xml' path='doc/member[@name="DDSVCAPS.DDSVCAPS_RESERVED2"]/*' />
     [NativeTypeName("#define DDSVCAPS_RESERVED2 0x00000002l")]
     public const int DDSVCAPS_RESERVED2 = 0x00000002;
 
+    /// <include file='DDSVCAPS.xml' path='doc/member[@name="DDSVCAPS.DDSVCAPS_RESERVED3"]/*' />
     [NativeTypeName("#define DDSVCAPS_RESERVED3 0x00000004l")]
     public const int DDSVCAPS_RESERVED3 = 0x00000004;
 
+    /// <include file='DDSVCAPS.xml' path='doc/member[@name="DDSVCAPS.DDSVCAPS_RESERVED4"]/*' />
     [NativeTypeName("#define DDSVCAPS_RESERVED4 0x00000008l")]
     public const int DDSVCAPS_RESERVED4 = 0x00000008;
 
+    /// <include file='DDSVCAPS.xml' path='doc/member[@name="DDSVCAPS.DDSVCAPS_STEREOSEQUENTIAL"]/*' />
     [NativeTypeName("#define DDSVCAPS_STEREOSEQUENTIAL 0x00000010L")]
     public const int DDSVCAPS_STEREOSEQUENTIAL = 0x00000010;
 }

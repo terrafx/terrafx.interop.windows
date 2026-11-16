@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IPresentationBuffer : IPresentationBuffer.Interface, INativeGuid
 {
+    /// <include file='IPresentationBuffer.xml' path='doc/member[@name="IPresentationBuffer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPresentationBuffer);
 
     public void** lpVtbl;

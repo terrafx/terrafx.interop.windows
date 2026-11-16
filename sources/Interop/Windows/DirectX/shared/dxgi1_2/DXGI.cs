@@ -7,15 +7,19 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DXGI
 {
+    /// <include file='DXGI.xml' path='doc/member[@name="DXGI.DXGI_ENUM_MODES_STEREO"]/*' />
     [NativeTypeName("#define DXGI_ENUM_MODES_STEREO ( 4UL )")]
     public const uint DXGI_ENUM_MODES_STEREO = (4U);
 
+    /// <include file='DXGI.xml' path='doc/member[@name="DXGI.DXGI_ENUM_MODES_DISABLED_STEREO"]/*' />
     [NativeTypeName("#define DXGI_ENUM_MODES_DISABLED_STEREO ( 8UL )")]
     public const uint DXGI_ENUM_MODES_DISABLED_STEREO = (8U);
 
+    /// <include file='DXGI.xml' path='doc/member[@name="DXGI.DXGI_SHARED_RESOURCE_READ"]/*' />
     [NativeTypeName("#define DXGI_SHARED_RESOURCE_READ ( 0x80000000L )")]
     public const uint DXGI_SHARED_RESOURCE_READ = (0x80000000);
 
+    /// <include file='DXGI.xml' path='doc/member[@name="DXGI.DXGI_SHARED_RESOURCE_WRITE"]/*' />
     [NativeTypeName("#define DXGI_SHARED_RESOURCE_WRITE ( 1 )")]
     public const int DXGI_SHARED_RESOURCE_WRITE = (1);
 }

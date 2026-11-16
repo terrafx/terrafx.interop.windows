@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISmsWapMessage : ISmsWapMessage.Interface, INativeGuid
 {
+    /// <include file='ISmsWapMessage.xml' path='doc/member[@name="ISmsWapMessage.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISmsWapMessage);
 
     public void** lpVtbl;

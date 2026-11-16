@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISensorDataThresholdTrigger : ISensorDataThresholdTrigger.Interface, INativeGuid
 {
+    /// <include file='ISensorDataThresholdTrigger.xml' path='doc/member[@name="ISensorDataThresholdTrigger.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISensorDataThresholdTrigger);
 
     public void** lpVtbl;

@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows10.0.18362.0")]
 public unsafe partial struct IDesktopWindowXamlSourceNative2 : IDesktopWindowXamlSourceNative2.Interface, INativeGuid
 {
+    /// <include file='IDesktopWindowXamlSourceNative2.xml' path='doc/member[@name="IDesktopWindowXamlSourceNative2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDesktopWindowXamlSourceNative2);
 
     public void** lpVtbl;

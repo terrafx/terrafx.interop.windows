@@ -7,129 +7,171 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class VER
 {
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_SERVER_NT"]/*' />
     [NativeTypeName("#define VER_SERVER_NT 0x80000000")]
     public const uint VER_SERVER_NT = 0x80000000;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_WORKSTATION_NT"]/*' />
     [NativeTypeName("#define VER_WORKSTATION_NT 0x40000000")]
     public const int VER_WORKSTATION_NT = 0x40000000;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_SUITE_SMALLBUSINESS"]/*' />
     [NativeTypeName("#define VER_SUITE_SMALLBUSINESS 0x00000001")]
     public const int VER_SUITE_SMALLBUSINESS = 0x00000001;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_SUITE_ENTERPRISE"]/*' />
     [NativeTypeName("#define VER_SUITE_ENTERPRISE 0x00000002")]
     public const int VER_SUITE_ENTERPRISE = 0x00000002;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_SUITE_BACKOFFICE"]/*' />
     [NativeTypeName("#define VER_SUITE_BACKOFFICE 0x00000004")]
     public const int VER_SUITE_BACKOFFICE = 0x00000004;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_SUITE_COMMUNICATIONS"]/*' />
     [NativeTypeName("#define VER_SUITE_COMMUNICATIONS 0x00000008")]
     public const int VER_SUITE_COMMUNICATIONS = 0x00000008;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_SUITE_TERMINAL"]/*' />
     [NativeTypeName("#define VER_SUITE_TERMINAL 0x00000010")]
     public const int VER_SUITE_TERMINAL = 0x00000010;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_SUITE_SMALLBUSINESS_RESTRICTED"]/*' />
     [NativeTypeName("#define VER_SUITE_SMALLBUSINESS_RESTRICTED 0x00000020")]
     public const int VER_SUITE_SMALLBUSINESS_RESTRICTED = 0x00000020;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_SUITE_EMBEDDEDNT"]/*' />
     [NativeTypeName("#define VER_SUITE_EMBEDDEDNT 0x00000040")]
     public const int VER_SUITE_EMBEDDEDNT = 0x00000040;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_SUITE_DATACENTER"]/*' />
     [NativeTypeName("#define VER_SUITE_DATACENTER 0x00000080")]
     public const int VER_SUITE_DATACENTER = 0x00000080;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_SUITE_SINGLEUSERTS"]/*' />
     [NativeTypeName("#define VER_SUITE_SINGLEUSERTS 0x00000100")]
     public const int VER_SUITE_SINGLEUSERTS = 0x00000100;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_SUITE_PERSONAL"]/*' />
     [NativeTypeName("#define VER_SUITE_PERSONAL 0x00000200")]
     public const int VER_SUITE_PERSONAL = 0x00000200;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_SUITE_BLADE"]/*' />
     [NativeTypeName("#define VER_SUITE_BLADE 0x00000400")]
     public const int VER_SUITE_BLADE = 0x00000400;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_SUITE_EMBEDDED_RESTRICTED"]/*' />
     [NativeTypeName("#define VER_SUITE_EMBEDDED_RESTRICTED 0x00000800")]
     public const int VER_SUITE_EMBEDDED_RESTRICTED = 0x00000800;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_SUITE_SECURITY_APPLIANCE"]/*' />
     [NativeTypeName("#define VER_SUITE_SECURITY_APPLIANCE 0x00001000")]
     public const int VER_SUITE_SECURITY_APPLIANCE = 0x00001000;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_SUITE_STORAGE_SERVER"]/*' />
     [NativeTypeName("#define VER_SUITE_STORAGE_SERVER 0x00002000")]
     public const int VER_SUITE_STORAGE_SERVER = 0x00002000;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_SUITE_COMPUTE_SERVER"]/*' />
     [NativeTypeName("#define VER_SUITE_COMPUTE_SERVER 0x00004000")]
     public const int VER_SUITE_COMPUTE_SERVER = 0x00004000;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_SUITE_WH_SERVER"]/*' />
     [NativeTypeName("#define VER_SUITE_WH_SERVER 0x00008000")]
     public const int VER_SUITE_WH_SERVER = 0x00008000;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_SUITE_MULTIUSERTS"]/*' />
     [NativeTypeName("#define VER_SUITE_MULTIUSERTS 0x00020000")]
     public const int VER_SUITE_MULTIUSERTS = 0x00020000;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_EQUAL"]/*' />
     [NativeTypeName("#define VER_EQUAL 1")]
     public const int VER_EQUAL = 1;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_GREATER"]/*' />
     [NativeTypeName("#define VER_GREATER 2")]
     public const int VER_GREATER = 2;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_GREATER_EQUAL"]/*' />
     [NativeTypeName("#define VER_GREATER_EQUAL 3")]
     public const int VER_GREATER_EQUAL = 3;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_LESS"]/*' />
     [NativeTypeName("#define VER_LESS 4")]
     public const int VER_LESS = 4;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_LESS_EQUAL"]/*' />
     [NativeTypeName("#define VER_LESS_EQUAL 5")]
     public const int VER_LESS_EQUAL = 5;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_AND"]/*' />
     [NativeTypeName("#define VER_AND 6")]
     public const int VER_AND = 6;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_OR"]/*' />
     [NativeTypeName("#define VER_OR 7")]
     public const int VER_OR = 7;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_CONDITION_MASK"]/*' />
     [NativeTypeName("#define VER_CONDITION_MASK 7")]
     public const int VER_CONDITION_MASK = 7;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_NUM_BITS_PER_CONDITION_MASK"]/*' />
     [NativeTypeName("#define VER_NUM_BITS_PER_CONDITION_MASK 3")]
     public const int VER_NUM_BITS_PER_CONDITION_MASK = 3;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_MINORVERSION"]/*' />
     [NativeTypeName("#define VER_MINORVERSION 0x0000001")]
     public const int VER_MINORVERSION = 0x0000001;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_MAJORVERSION"]/*' />
     [NativeTypeName("#define VER_MAJORVERSION 0x0000002")]
     public const int VER_MAJORVERSION = 0x0000002;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_BUILDNUMBER"]/*' />
     [NativeTypeName("#define VER_BUILDNUMBER 0x0000004")]
     public const int VER_BUILDNUMBER = 0x0000004;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_PLATFORMID"]/*' />
     [NativeTypeName("#define VER_PLATFORMID 0x0000008")]
     public const int VER_PLATFORMID = 0x0000008;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_SERVICEPACKMINOR"]/*' />
     [NativeTypeName("#define VER_SERVICEPACKMINOR 0x0000010")]
     public const int VER_SERVICEPACKMINOR = 0x0000010;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_SERVICEPACKMAJOR"]/*' />
     [NativeTypeName("#define VER_SERVICEPACKMAJOR 0x0000020")]
     public const int VER_SERVICEPACKMAJOR = 0x0000020;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_SUITENAME"]/*' />
     [NativeTypeName("#define VER_SUITENAME 0x0000040")]
     public const int VER_SUITENAME = 0x0000040;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_PRODUCT_TYPE"]/*' />
     [NativeTypeName("#define VER_PRODUCT_TYPE 0x0000080")]
     public const int VER_PRODUCT_TYPE = 0x0000080;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_NT_WORKSTATION"]/*' />
     [NativeTypeName("#define VER_NT_WORKSTATION 0x0000001")]
     public const int VER_NT_WORKSTATION = 0x0000001;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_NT_DOMAIN_CONTROLLER"]/*' />
     [NativeTypeName("#define VER_NT_DOMAIN_CONTROLLER 0x0000002")]
     public const int VER_NT_DOMAIN_CONTROLLER = 0x0000002;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_NT_SERVER"]/*' />
     [NativeTypeName("#define VER_NT_SERVER 0x0000003")]
     public const int VER_NT_SERVER = 0x0000003;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_PLATFORM_WIN32s"]/*' />
     [NativeTypeName("#define VER_PLATFORM_WIN32s 0")]
     public const int VER_PLATFORM_WIN32s = 0;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_PLATFORM_WIN32_WINDOWS"]/*' />
     [NativeTypeName("#define VER_PLATFORM_WIN32_WINDOWS 1")]
     public const int VER_PLATFORM_WIN32_WINDOWS = 1;
 
+    /// <include file='VER.xml' path='doc/member[@name="VER.VER_PLATFORM_WIN32_NT"]/*' />
     [NativeTypeName("#define VER_PLATFORM_WIN32_NT 2")]
     public const int VER_PLATFORM_WIN32_NT = 2;
 }

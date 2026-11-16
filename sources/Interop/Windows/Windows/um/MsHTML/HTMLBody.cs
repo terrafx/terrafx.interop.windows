@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("3050F24A-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct HTMLBody : INativeGuid
 {
+    /// <include file='HTMLBody.xml' path='doc/member[@name="HTMLBody.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_HTMLBody);
 }

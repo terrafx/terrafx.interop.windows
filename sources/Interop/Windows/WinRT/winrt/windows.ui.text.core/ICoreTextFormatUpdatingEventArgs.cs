@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICoreTextFormatUpdatingEventArgs : ICoreTextFormatUpdatingEventArgs.Interface, INativeGuid
 {
+    /// <include file='ICoreTextFormatUpdatingEventArgs.xml' path='doc/member[@name="ICoreTextFormatUpdatingEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICoreTextFormatUpdatingEventArgs);
 
     public void** lpVtbl;

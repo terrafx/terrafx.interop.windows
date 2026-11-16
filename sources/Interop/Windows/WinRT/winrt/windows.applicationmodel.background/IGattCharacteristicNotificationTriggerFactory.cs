@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IGattCharacteristicNotificationTriggerFactory : IGattCharacteristicNotificationTriggerFactory.Interface, INativeGuid
 {
+    /// <include file='IGattCharacteristicNotificationTriggerFactory.xml' path='doc/member[@name="IGattCharacteristicNotificationTriggerFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGattCharacteristicNotificationTriggerFactory);
 
     public void** lpVtbl;

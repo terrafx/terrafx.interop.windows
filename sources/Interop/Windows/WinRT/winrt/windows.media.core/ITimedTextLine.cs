@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ITimedTextLine : ITimedTextLine.Interface, INativeGuid
 {
+    /// <include file='ITimedTextLine.xml' path='doc/member[@name="ITimedTextLine.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITimedTextLine);
 
     public void** lpVtbl;

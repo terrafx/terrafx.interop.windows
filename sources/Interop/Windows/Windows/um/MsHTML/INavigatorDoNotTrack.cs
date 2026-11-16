@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct INavigatorDoNotTrack : INavigatorDoNotTrack.Interface, INativeGuid
 {
+    /// <include file='INavigatorDoNotTrack.xml' path='doc/member[@name="INavigatorDoNotTrack.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_INavigatorDoNotTrack);
 
     public void** lpVtbl;

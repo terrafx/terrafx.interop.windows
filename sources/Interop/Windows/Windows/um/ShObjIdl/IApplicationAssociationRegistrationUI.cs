@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IApplicationAssociationRegistrationUI : IApplicationAssociationRegistrationUI.Interface, INativeGuid
 {
+    /// <include file='IApplicationAssociationRegistrationUI.xml' path='doc/member[@name="IApplicationAssociationRegistrationUI.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IApplicationAssociationRegistrationUI);
 
     public void** lpVtbl;

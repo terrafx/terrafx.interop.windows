@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IRemoteSystemConnectionRequestStatics : IRemoteSystemConnectionRequestStatics.Interface, INativeGuid
 {
+    /// <include file='IRemoteSystemConnectionRequestStatics.xml' path='doc/member[@name="IRemoteSystemConnectionRequestStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRemoteSystemConnectionRequestStatics);
 
     public void** lpVtbl;

@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CLSID
 {
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CreateMediaExtensionObject"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_CreateMediaExtensionObject
     {
@@ -37,6 +38,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_HttpSchemePlugin"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_HttpSchemePlugin
     {
@@ -62,6 +64,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_UrlmonSchemePlugin"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_UrlmonSchemePlugin
     {
@@ -87,6 +90,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_NetSchemePlugin"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_NetSchemePlugin
     {
@@ -112,6 +116,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_FrameServerNetworkCameraSource"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_FrameServerNetworkCameraSource
     {
@@ -137,6 +142,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MPEG2ByteStreamPlugin"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_MPEG2ByteStreamPlugin
     {
@@ -162,6 +168,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MSH264DecoderMFT"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_MSH264DecoderMFT
     {
@@ -187,6 +194,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MSH264EncoderMFT"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_MSH264EncoderMFT
     {
@@ -212,6 +220,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MSDDPlusDecMFT"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_MSDDPlusDecMFT
     {
@@ -237,6 +246,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MP3DecMediaObject"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_MP3DecMediaObject
     {
@@ -262,6 +272,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MSAACDecMFT"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_MSAACDecMFT
     {
@@ -287,6 +298,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MSH265DecoderMFT"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_MSH265DecoderMFT
     {
@@ -312,6 +324,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WMVDecoderMFT"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_WMVDecoderMFT
     {
@@ -337,6 +350,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WMADecMediaObject"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_WMADecMediaObject
     {
@@ -362,6 +376,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MSMPEGAudDecMFT"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_MSMPEGAudDecMFT
     {
@@ -387,6 +402,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MSMPEGDecoderMFT"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_MSMPEGDecoderMFT
     {
@@ -412,6 +428,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AudioResamplerMediaObject"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_AudioResamplerMediaObject
     {
@@ -437,6 +454,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MSVPxDecoder"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_MSVPxDecoder
     {
@@ -462,6 +480,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MSOpusDecoder"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_MSOpusDecoder
     {
@@ -487,6 +506,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_VideoProcessorMFT"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_VideoProcessorMFT
     {
@@ -512,6 +532,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CameraConfigurationManager"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_CameraConfigurationManager
     {
@@ -537,6 +558,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_FaceDetectionMFT"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_FaceDetectionMFT
     {
@@ -562,6 +584,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_FrameServerClassFactory"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_FrameServerClassFactory
     {

@@ -7,9 +7,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DDEDM
 {
+    /// <include file='DDEDM.xml' path='doc/member[@name="DDEDM.DDEDM_REFRESHRATES"]/*' />
     [NativeTypeName("#define DDEDM_REFRESHRATES 0x00000001l")]
     public const int DDEDM_REFRESHRATES = 0x00000001;
 
+    /// <include file='DDEDM.xml' path='doc/member[@name="DDEDM.DDEDM_STANDARDVGAMODES"]/*' />
     [NativeTypeName("#define DDEDM_STANDARDVGAMODES 0x00000002L")]
     public const int DDEDM_STANDARDVGAMODES = 0x00000002;
 }

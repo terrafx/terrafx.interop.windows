@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ITouchCapabilities : ITouchCapabilities.Interface, INativeGuid
 {
+    /// <include file='ITouchCapabilities.xml' path='doc/member[@name="ITouchCapabilities.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITouchCapabilities);
 
     public void** lpVtbl;

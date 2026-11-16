@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAXIMUM
 {
+    /// <include file='MAXIMUM.xml' path='doc/member[@name="MAXIMUM.MAXIMUM_ENCRYPTION_VALUE"]/*' />
     [NativeTypeName("#define MAXIMUM_ENCRYPTION_VALUE 0x00000004")]
     public const int MAXIMUM_ENCRYPTION_VALUE = 0x00000004;
 }

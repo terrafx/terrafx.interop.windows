@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IXAPOParameters : IXAPOParameters.Interface, INativeGuid
 {
+    /// <include file='IXAPOParameters.xml' path='doc/member[@name="IXAPOParameters.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IXAPOParameters);
 
     public void** lpVtbl;

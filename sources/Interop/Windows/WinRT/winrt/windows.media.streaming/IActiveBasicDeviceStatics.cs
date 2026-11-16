@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IActiveBasicDeviceStatics : IActiveBasicDeviceStatics.Interface, INativeGuid
 {
+    /// <include file='IActiveBasicDeviceStatics.xml' path='doc/member[@name="IActiveBasicDeviceStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IActiveBasicDeviceStatics);
 
     public void** lpVtbl;

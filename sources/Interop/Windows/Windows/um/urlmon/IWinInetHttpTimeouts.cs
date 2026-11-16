@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IWinInetHttpTimeouts : IWinInetHttpTimeouts.Interface, INativeGuid
 {
+    /// <include file='IWinInetHttpTimeouts.xml' path='doc/member[@name="IWinInetHttpTimeouts.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWinInetHttpTimeouts);
 
     public void** lpVtbl;

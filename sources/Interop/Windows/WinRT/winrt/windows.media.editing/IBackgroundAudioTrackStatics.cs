@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IBackgroundAudioTrackStatics : IBackgroundAudioTrackStatics.Interface, INativeGuid
 {
+    /// <include file='IBackgroundAudioTrackStatics.xml' path='doc/member[@name="IBackgroundAudioTrackStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBackgroundAudioTrackStatics);
 
     public void** lpVtbl;

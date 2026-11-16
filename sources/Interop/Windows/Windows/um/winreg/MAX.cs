@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_SHUTDOWN_TIMEOUT"]/*' />
     [NativeTypeName("#define MAX_SHUTDOWN_TIMEOUT (10*365*24*60*60)")]
     public const int MAX_SHUTDOWN_TIMEOUT = (10 * 365 * 24 * 60 * 60);
 }

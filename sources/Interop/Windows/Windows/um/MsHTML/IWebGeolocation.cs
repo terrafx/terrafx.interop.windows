@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IWebGeolocation : IWebGeolocation.Interface, INativeGuid
 {
+    /// <include file='IWebGeolocation.xml' path='doc/member[@name="IWebGeolocation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWebGeolocation);
 
     public void** lpVtbl;

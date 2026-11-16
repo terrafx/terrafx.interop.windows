@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IInclinometerDataThreshold : IInclinometerDataThreshold.Interface, INativeGuid
 {
+    /// <include file='IInclinometerDataThreshold.xml' path='doc/member[@name="IInclinometerDataThreshold.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IInclinometerDataThreshold);
 
     public void** lpVtbl;

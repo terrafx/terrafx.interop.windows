@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IFullScreenPresentationConfiguration : IFullScreenPresentationConfiguration.Interface, INativeGuid
 {
+    /// <include file='IFullScreenPresentationConfiguration.xml' path='doc/member[@name="IFullScreenPresentationConfiguration.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFullScreenPresentationConfiguration);
 
     public void** lpVtbl;

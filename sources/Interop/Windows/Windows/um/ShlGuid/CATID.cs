@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CATID
 {
+    /// <include file='CATID.xml' path='doc/member[@name="CATID.CATID_BrowsableShellExt"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CATID_BrowsableShellExt
     {
@@ -37,6 +38,7 @@ public static partial class CATID
         }
     }
 
+    /// <include file='CATID.xml' path='doc/member[@name="CATID.CATID_BrowseInPlace"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CATID_BrowseInPlace
     {
@@ -62,6 +64,7 @@ public static partial class CATID
         }
     }
 
+    /// <include file='CATID.xml' path='doc/member[@name="CATID.CATID_DeskBand"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CATID_DeskBand
     {
@@ -87,6 +90,7 @@ public static partial class CATID
         }
     }
 
+    /// <include file='CATID.xml' path='doc/member[@name="CATID.CATID_InfoBand"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CATID_InfoBand
     {
@@ -112,6 +116,7 @@ public static partial class CATID
         }
     }
 
+    /// <include file='CATID.xml' path='doc/member[@name="CATID.CATID_CommBand"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CATID_CommBand
     {
@@ -137,6 +142,7 @@ public static partial class CATID
         }
     }
 
+    /// <include file='CATID.xml' path='doc/member[@name="CATID.CATID_FilePlaceholderMergeHandler"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CATID_FilePlaceholderMergeHandler
     {
@@ -162,6 +168,7 @@ public static partial class CATID
         }
     }
 
+    /// <include file='CATID.xml' path='doc/member[@name="CATID.CATID_LocationFactory"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CATID_LocationFactory
     {
@@ -187,6 +194,7 @@ public static partial class CATID
         }
     }
 
+    /// <include file='CATID.xml' path='doc/member[@name="CATID.CATID_LocationProvider"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CATID_LocationProvider
     {
@@ -212,6 +220,7 @@ public static partial class CATID
         }
     }
 
+    /// <include file='CATID.xml' path='doc/member[@name="CATID.CATID_SearchableApplication"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CATID_SearchableApplication
     {

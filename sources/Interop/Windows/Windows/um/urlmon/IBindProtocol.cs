@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IBindProtocol : IBindProtocol.Interface, INativeGuid
 {
+    /// <include file='IBindProtocol.xml' path='doc/member[@name="IBindProtocol.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBindProtocol);
 
     public void** lpVtbl;

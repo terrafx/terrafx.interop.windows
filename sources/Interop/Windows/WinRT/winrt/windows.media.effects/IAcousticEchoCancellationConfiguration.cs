@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAcousticEchoCancellationConfiguration : IAcousticEchoCancellationConfiguration.Interface, INativeGuid
 {
+    /// <include file='IAcousticEchoCancellationConfiguration.xml' path='doc/member[@name="IAcousticEchoCancellationConfiguration.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAcousticEchoCancellationConfiguration);
 
     public void** lpVtbl;

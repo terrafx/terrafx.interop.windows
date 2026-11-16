@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDockingWindow")]
 public unsafe partial struct IDeskBand : IDeskBand.Interface, INativeGuid
 {
+    /// <include file='IDeskBand.xml' path='doc/member[@name="IDeskBand.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDeskBand);
 
     public void** lpVtbl;

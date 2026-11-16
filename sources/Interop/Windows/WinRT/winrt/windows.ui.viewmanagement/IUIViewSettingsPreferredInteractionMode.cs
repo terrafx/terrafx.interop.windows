@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IUIViewSettingsPreferredInteractionMode : IUIViewSettingsPreferredInteractionMode.Interface, INativeGuid
 {
+    /// <include file='IUIViewSettingsPreferredInteractionMode.xml' path='doc/member[@name="IUIViewSettingsPreferredInteractionMode.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUIViewSettingsPreferredInteractionMode);
 
     public void** lpVtbl;

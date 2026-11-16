@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IRemoteSystemSessionValueSetReceivedEventArgs : IRemoteSystemSessionValueSetReceivedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IRemoteSystemSessionValueSetReceivedEventArgs.xml' path='doc/member[@name="IRemoteSystemSessionValueSetReceivedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRemoteSystemSessionValueSetReceivedEventArgs);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IUriBuilderFactory : IUriBuilderFactory.Interface, INativeGuid
 {
+    /// <include file='IUriBuilderFactory.xml' path='doc/member[@name="IUriBuilderFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUriBuilderFactory);
 
     public void** lpVtbl;

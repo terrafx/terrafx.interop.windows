@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("ADD36AA8-751A-4579-A266-D66F5202CCBB")]
 public unsafe partial struct InternetPrintOrdering : INativeGuid
 {
+    /// <include file='InternetPrintOrdering.xml' path='doc/member[@name="InternetPrintOrdering.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_InternetPrintOrdering);
 }

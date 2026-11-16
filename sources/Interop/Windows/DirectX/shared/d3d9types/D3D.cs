@@ -7,9 +7,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3D
 {
+    /// <include file='D3D.xml' path='doc/member[@name="D3D.D3D_MAX_SIMULTANEOUS_RENDERTARGETS"]/*' />
     [NativeTypeName("#define D3D_MAX_SIMULTANEOUS_RENDERTARGETS 4")]
     public const int D3D_MAX_SIMULTANEOUS_RENDERTARGETS = 4;
 
+    /// <include file='D3D.xml' path='doc/member[@name="D3D.D3D_OMAC_SIZE"]/*' />
     [NativeTypeName("#define D3D_OMAC_SIZE 16")]
     public const int D3D_OMAC_SIZE = 16;
 }

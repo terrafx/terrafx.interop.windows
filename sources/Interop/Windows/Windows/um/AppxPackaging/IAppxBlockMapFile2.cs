@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IAppxBlockMapFile")]
 public unsafe partial struct IAppxBlockMapFile2 : IAppxBlockMapFile2.Interface, INativeGuid
 {
+    /// <include file='IAppxBlockMapFile2.xml' path='doc/member[@name="IAppxBlockMapFile2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppxBlockMapFile2);
 
     public void** lpVtbl;

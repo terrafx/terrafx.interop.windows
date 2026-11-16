@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class ERROR
 {
+    /// <include file='ERROR.xml' path='doc/member[@name="ERROR.ERROR_IMAGE_NOT_STRIPPED"]/*' />
     [NativeTypeName("#define ERROR_IMAGE_NOT_STRIPPED 0x8800")]
     public const int ERROR_IMAGE_NOT_STRIPPED = 0x8800;
 
+    /// <include file='ERROR.xml' path='doc/member[@name="ERROR.ERROR_NO_DBG_POINTER"]/*' />
     [NativeTypeName("#define ERROR_NO_DBG_POINTER 0x8801")]
     public const int ERROR_NO_DBG_POINTER = 0x8801;
 
+    /// <include file='ERROR.xml' path='doc/member[@name="ERROR.ERROR_NO_PDB_POINTER"]/*' />
     [NativeTypeName("#define ERROR_NO_PDB_POINTER 0x8802")]
     public const int ERROR_NO_PDB_POINTER = 0x8802;
 }

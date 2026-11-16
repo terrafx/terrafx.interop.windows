@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFPluginControl2 : IMFPluginControl2.Interface, INativeGuid
 {
+    /// <include file='IMFPluginControl2.xml' path='doc/member[@name="IMFPluginControl2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFPluginControl2);
 
     public void** lpVtbl;

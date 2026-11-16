@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CREATE
 {
+    /// <include file='CREATE.xml' path='doc/member[@name="CREATE.CREATE_BOUNDARY_DESCRIPTOR_ADD_APPCONTAINER_SID"]/*' />
     [NativeTypeName("#define CREATE_BOUNDARY_DESCRIPTOR_ADD_APPCONTAINER_SID 0x1")]
     public const int CREATE_BOUNDARY_DESCRIPTOR_ADD_APPCONTAINER_SID = 0x1;
 }

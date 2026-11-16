@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class ENUM
 {
+    /// <include file='ENUM.xml' path='doc/member[@name="ENUM.ENUM_CURRENT_SETTINGS"]/*' />
     [NativeTypeName("#define ENUM_CURRENT_SETTINGS ((DWORD)-1)")]
     public const uint ENUM_CURRENT_SETTINGS = unchecked((uint)(-1));
 
+    /// <include file='ENUM.xml' path='doc/member[@name="ENUM.ENUM_REGISTRY_SETTINGS"]/*' />
     [NativeTypeName("#define ENUM_REGISTRY_SETTINGS ((DWORD)-2)")]
     public const uint ENUM_REGISTRY_SETTINGS = unchecked((uint)(-2));
 }

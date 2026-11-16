@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct ID3D11VideoDecoderOutputView : ID3D11VideoDecoderOutputView.Interface, INativeGuid
 {
+    /// <include file='ID3D11VideoDecoderOutputView.xml' path='doc/member[@name="ID3D11VideoDecoderOutputView.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3D11VideoDecoderOutputView);
 
     public void** lpVtbl;

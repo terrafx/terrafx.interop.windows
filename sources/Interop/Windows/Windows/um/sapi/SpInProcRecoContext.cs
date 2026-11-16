@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("73AD6842-ACE0-45E8-A4DD-8795881A2C2A")]
 public unsafe partial struct SpInProcRecoContext : INativeGuid
 {
+    /// <include file='SpInProcRecoContext.xml' path='doc/member[@name="SpInProcRecoContext.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SpInProcRecoContext);
 }

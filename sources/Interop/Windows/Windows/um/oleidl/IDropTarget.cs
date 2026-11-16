@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDropTarget : IDropTarget.Interface, INativeGuid
 {
+    /// <include file='IDropTarget.xml' path='doc/member[@name="IDropTarget.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDropTarget);
 
     public void** lpVtbl;

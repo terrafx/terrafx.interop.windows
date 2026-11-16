@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IDirectManipulationDragDropEventHandler : IDirectManipulationDragDropEventHandler.Interface, INativeGuid
 {
+    /// <include file='IDirectManipulationDragDropEventHandler.xml' path='doc/member[@name="IDirectManipulationDragDropEventHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDirectManipulationDragDropEventHandler);
 
     public void** lpVtbl;

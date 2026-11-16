@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IBarometerDataThreshold : IBarometerDataThreshold.Interface, INativeGuid
 {
+    /// <include file='IBarometerDataThreshold.xml' path='doc/member[@name="IBarometerDataThreshold.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBarometerDataThreshold);
 
     public void** lpVtbl;

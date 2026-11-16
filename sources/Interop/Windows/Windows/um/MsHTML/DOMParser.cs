@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("30510782-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct DOMParser : INativeGuid
 {
+    /// <include file='DOMParser.xml' path='doc/member[@name="DOMParser.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_DOMParser);
 }

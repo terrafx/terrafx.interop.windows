@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAMDroppedFrames : IAMDroppedFrames.Interface, INativeGuid
 {
+    /// <include file='IAMDroppedFrames.xml' path='doc/member[@name="IAMDroppedFrames.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAMDroppedFrames);
 
     public void** lpVtbl;

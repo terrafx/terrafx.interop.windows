@@ -17,6 +17,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IVMRSurfaceAllocatorNotify : IVMRSurfaceAllocatorNotify.Interface, INativeGuid
 {
+    /// <include file='IVMRSurfaceAllocatorNotify.xml' path='doc/member[@name="IVMRSurfaceAllocatorNotify.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IVMRSurfaceAllocatorNotify);
 
     public void** lpVtbl;

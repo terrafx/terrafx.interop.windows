@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("AE054212-3535-4430-83ED-D501AA6680E6")]
 public unsafe partial struct NamespaceTreeControl : INativeGuid
 {
+    /// <include file='NamespaceTreeControl.xml' path='doc/member[@name="NamespaceTreeControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_NamespaceTreeControl);
 }

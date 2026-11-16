@@ -9,6 +9,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class E
 {
+    /// <include file='E.xml' path='doc/member[@name="E.E_SURFACE_CONTENTS_LOST"]/*' />
     [NativeTypeName("#define E_SURFACE_CONTENTS_LOST 0x802b0020")]
     public const uint E_SURFACE_CONTENTS_LOST = 0x802b0020;
 }

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDisplayServices : IDisplayServices.Interface, INativeGuid
 {
+    /// <include file='IDisplayServices.xml' path='doc/member[@name="IDisplayServices.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDisplayServices);
 
     public void** lpVtbl;

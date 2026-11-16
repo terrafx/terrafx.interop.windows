@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IQueryInfo : IQueryInfo.Interface, INativeGuid
 {
+    /// <include file='IQueryInfo.xml' path='doc/member[@name="IQueryInfo.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IQueryInfo);
 
     public void** lpVtbl;

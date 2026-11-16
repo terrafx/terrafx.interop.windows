@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IGattLocalDescriptorParameters : IGattLocalDescriptorParameters.Interface, INativeGuid
 {
+    /// <include file='IGattLocalDescriptorParameters.xml' path='doc/member[@name="IGattLocalDescriptorParameters.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGattLocalDescriptorParameters);
 
     public void** lpVtbl;

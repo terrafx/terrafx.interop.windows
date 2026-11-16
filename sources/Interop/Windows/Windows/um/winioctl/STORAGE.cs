@@ -7,261 +7,347 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class STORAGE
 {
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_FEATURE_SUPPORT_V1"]/*' />
     [NativeTypeName("#define STORAGE_FEATURE_SUPPORT_V1 0x1")]
     public const int STORAGE_FEATURE_SUPPORT_V1 = 0x1;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_DEVICE_FLAGS_RANDOM_DEVICEGUID_REASON_CONFLICT"]/*' />
     [NativeTypeName("#define STORAGE_DEVICE_FLAGS_RANDOM_DEVICEGUID_REASON_CONFLICT 0x1")]
     public const int STORAGE_DEVICE_FLAGS_RANDOM_DEVICEGUID_REASON_CONFLICT = 0x1;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_DEVICE_FLAGS_RANDOM_DEVICEGUID_REASON_NOHWID"]/*' />
     [NativeTypeName("#define STORAGE_DEVICE_FLAGS_RANDOM_DEVICEGUID_REASON_NOHWID 0x2")]
     public const int STORAGE_DEVICE_FLAGS_RANDOM_DEVICEGUID_REASON_NOHWID = 0x2;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_DEVICE_FLAGS_PAGE_83_DEVICEGUID"]/*' />
     [NativeTypeName("#define STORAGE_DEVICE_FLAGS_PAGE_83_DEVICEGUID 0x4")]
     public const int STORAGE_DEVICE_FLAGS_PAGE_83_DEVICEGUID = 0x4;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_FAILURE_PREDICTION_CONFIG_V1"]/*' />
     [NativeTypeName("#define STORAGE_FAILURE_PREDICTION_CONFIG_V1 1")]
     public const int STORAGE_FAILURE_PREDICTION_CONFIG_V1 = 1;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_ADDRESS_TYPE_BTL8"]/*' />
     [NativeTypeName("#define STORAGE_ADDRESS_TYPE_BTL8 0")]
     public const int STORAGE_ADDRESS_TYPE_BTL8 = 0;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_RPMB_DESCRIPTOR_VERSION_1"]/*' />
     [NativeTypeName("#define STORAGE_RPMB_DESCRIPTOR_VERSION_1 1")]
     public const int STORAGE_RPMB_DESCRIPTOR_VERSION_1 = 1;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_RPMB_MINIMUM_RELIABLE_WRITE_SIZE"]/*' />
     [NativeTypeName("#define STORAGE_RPMB_MINIMUM_RELIABLE_WRITE_SIZE 512")]
     public const int STORAGE_RPMB_MINIMUM_RELIABLE_WRITE_SIZE = 512;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_CRYPTO_CAPABILITY_VERSION_1"]/*' />
     [NativeTypeName("#define STORAGE_CRYPTO_CAPABILITY_VERSION_1 1")]
     public const int STORAGE_CRYPTO_CAPABILITY_VERSION_1 = 1;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_CRYPTO_CAPABILITY_VERSION_2"]/*' />
     [NativeTypeName("#define STORAGE_CRYPTO_CAPABILITY_VERSION_2 2")]
     public const int STORAGE_CRYPTO_CAPABILITY_VERSION_2 = 2;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_CRYPTO_DESCRIPTOR_VERSION_1"]/*' />
     [NativeTypeName("#define STORAGE_CRYPTO_DESCRIPTOR_VERSION_1 1")]
     public const int STORAGE_CRYPTO_DESCRIPTOR_VERSION_1 = 1;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_CRYPTO_DESCRIPTOR_VERSION_2"]/*' />
     [NativeTypeName("#define STORAGE_CRYPTO_DESCRIPTOR_VERSION_2 2")]
     public const int STORAGE_CRYPTO_DESCRIPTOR_VERSION_2 = 2;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_HW_CRYPTO_CAPABILITY_VERSION_1"]/*' />
     [NativeTypeName("#define STORAGE_HW_CRYPTO_CAPABILITY_VERSION_1 1")]
     public const int STORAGE_HW_CRYPTO_CAPABILITY_VERSION_1 = 1;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_HW_CRYPTO_DESCRIPTOR_VERSION_1"]/*' />
     [NativeTypeName("#define STORAGE_HW_CRYPTO_DESCRIPTOR_VERSION_1 1")]
     public const int STORAGE_HW_CRYPTO_DESCRIPTOR_VERSION_1 = 1;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_TIER_NAME_LENGTH"]/*' />
     [NativeTypeName("#define STORAGE_TIER_NAME_LENGTH (256)")]
     public const int STORAGE_TIER_NAME_LENGTH = (256);
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_TIER_DESCRIPTION_LENGTH"]/*' />
     [NativeTypeName("#define STORAGE_TIER_DESCRIPTION_LENGTH (512)")]
     public const int STORAGE_TIER_DESCRIPTION_LENGTH = (512);
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_TIER_FLAG_NO_SEEK_PENALTY"]/*' />
     [NativeTypeName("#define STORAGE_TIER_FLAG_NO_SEEK_PENALTY (0x00020000)")]
     public const int STORAGE_TIER_FLAG_NO_SEEK_PENALTY = (0x00020000);
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_TIER_FLAG_WRITE_BACK_CACHE"]/*' />
     [NativeTypeName("#define STORAGE_TIER_FLAG_WRITE_BACK_CACHE (0x00200000)")]
     public const int STORAGE_TIER_FLAG_WRITE_BACK_CACHE = (0x00200000);
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_TIER_FLAG_READ_CACHE"]/*' />
     [NativeTypeName("#define STORAGE_TIER_FLAG_READ_CACHE (0x00400000)")]
     public const int STORAGE_TIER_FLAG_READ_CACHE = (0x00400000);
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_TIER_FLAG_PARITY"]/*' />
     [NativeTypeName("#define STORAGE_TIER_FLAG_PARITY (0x00800000)")]
     public const int STORAGE_TIER_FLAG_PARITY = (0x00800000);
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_TIER_FLAG_SMR"]/*' />
     [NativeTypeName("#define STORAGE_TIER_FLAG_SMR (0x01000000)")]
     public const int STORAGE_TIER_FLAG_SMR = (0x01000000);
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_PROTOCOL_DATA_DESCRIPTOR_EXT_VERSION"]/*' />
     [NativeTypeName("#define STORAGE_PROTOCOL_DATA_DESCRIPTOR_EXT_VERSION 1")]
     public const int STORAGE_PROTOCOL_DATA_DESCRIPTOR_EXT_VERSION = 1;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_TEMPERATURE_VALUE_NOT_REPORTED"]/*' />
     [NativeTypeName("#define STORAGE_TEMPERATURE_VALUE_NOT_REPORTED 0x8000")]
     public const int STORAGE_TEMPERATURE_VALUE_NOT_REPORTED = 0x8000;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_TEMPERATURE_THRESHOLD_FLAG_ADAPTER_REQUEST"]/*' />
     [NativeTypeName("#define STORAGE_TEMPERATURE_THRESHOLD_FLAG_ADAPTER_REQUEST 0x0001")]
     public const int STORAGE_TEMPERATURE_THRESHOLD_FLAG_ADAPTER_REQUEST = 0x0001;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_COMPONENT_ROLE_CACHE"]/*' />
     [NativeTypeName("#define STORAGE_COMPONENT_ROLE_CACHE 0x00000001")]
     public const int STORAGE_COMPONENT_ROLE_CACHE = 0x00000001;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_COMPONENT_ROLE_TIERING"]/*' />
     [NativeTypeName("#define STORAGE_COMPONENT_ROLE_TIERING 0x00000002")]
     public const int STORAGE_COMPONENT_ROLE_TIERING = 0x00000002;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_COMPONENT_ROLE_DATA"]/*' />
     [NativeTypeName("#define STORAGE_COMPONENT_ROLE_DATA 0x00000004")]
     public const int STORAGE_COMPONENT_ROLE_DATA = 0x00000004;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_ATTRIBUTE_BYTE_ADDRESSABLE_IO"]/*' />
     [NativeTypeName("#define STORAGE_ATTRIBUTE_BYTE_ADDRESSABLE_IO 0x01")]
     public const int STORAGE_ATTRIBUTE_BYTE_ADDRESSABLE_IO = 0x01;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_ATTRIBUTE_BLOCK_IO"]/*' />
     [NativeTypeName("#define STORAGE_ATTRIBUTE_BLOCK_IO 0x02")]
     public const int STORAGE_ATTRIBUTE_BLOCK_IO = 0x02;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_ATTRIBUTE_DYNAMIC_PERSISTENCE"]/*' />
     [NativeTypeName("#define STORAGE_ATTRIBUTE_DYNAMIC_PERSISTENCE 0x04")]
     public const int STORAGE_ATTRIBUTE_DYNAMIC_PERSISTENCE = 0x04;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_ATTRIBUTE_VOLATILE"]/*' />
     [NativeTypeName("#define STORAGE_ATTRIBUTE_VOLATILE 0x08")]
     public const int STORAGE_ATTRIBUTE_VOLATILE = 0x08;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_ATTRIBUTE_ASYNC_EVENT_NOTIFICATION"]/*' />
     [NativeTypeName("#define STORAGE_ATTRIBUTE_ASYNC_EVENT_NOTIFICATION 0x10")]
     public const int STORAGE_ATTRIBUTE_ASYNC_EVENT_NOTIFICATION = 0x10;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_ATTRIBUTE_PERF_SIZE_INDEPENDENT"]/*' />
     [NativeTypeName("#define STORAGE_ATTRIBUTE_PERF_SIZE_INDEPENDENT 0x20")]
     public const int STORAGE_ATTRIBUTE_PERF_SIZE_INDEPENDENT = 0x20;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_DEVICE_MAX_OPERATIONAL_STATUS"]/*' />
     [NativeTypeName("#define STORAGE_DEVICE_MAX_OPERATIONAL_STATUS 16")]
     public const int STORAGE_DEVICE_MAX_OPERATIONAL_STATUS = 16;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_ADAPTER_SERIAL_NUMBER_V1_MAX_LENGTH"]/*' />
     [NativeTypeName("#define STORAGE_ADAPTER_SERIAL_NUMBER_V1_MAX_LENGTH (128)")]
     public const int STORAGE_ADAPTER_SERIAL_NUMBER_V1_MAX_LENGTH = (128);
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_ADAPTER_SERIAL_NUMBER_V1_VERSION"]/*' />
     [NativeTypeName("#define STORAGE_ADAPTER_SERIAL_NUMBER_V1_VERSION (sizeof(STORAGE_ADAPTER_SERIAL_NUMBER))")]
     public const uint STORAGE_ADAPTER_SERIAL_NUMBER_V1_VERSION = (264);
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_ADAPTER_SERIAL_NUMBER_V1_SIZE"]/*' />
     [NativeTypeName("#define STORAGE_ADAPTER_SERIAL_NUMBER_V1_SIZE (sizeof(STORAGE_ADAPTER_SERIAL_NUMBER))")]
     public const uint STORAGE_ADAPTER_SERIAL_NUMBER_V1_SIZE = (264);
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_DEVICE_NUMA_NODE_UNKNOWN"]/*' />
     [NativeTypeName("#define STORAGE_DEVICE_NUMA_NODE_UNKNOWN MAXDWORD")]
     public const uint STORAGE_DEVICE_NUMA_NODE_UNKNOWN = 0xffffffff;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_OFFLOAD_MAX_TOKEN_LENGTH"]/*' />
     [NativeTypeName("#define STORAGE_OFFLOAD_MAX_TOKEN_LENGTH 512")]
     public const int STORAGE_OFFLOAD_MAX_TOKEN_LENGTH = 512;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_OFFLOAD_TOKEN_ID_LENGTH"]/*' />
     [NativeTypeName("#define STORAGE_OFFLOAD_TOKEN_ID_LENGTH 0x1F8")]
     public const int STORAGE_OFFLOAD_TOKEN_ID_LENGTH = 0x1F8;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_OFFLOAD_TOKEN_TYPE_ZERO_DATA"]/*' />
     [NativeTypeName("#define STORAGE_OFFLOAD_TOKEN_TYPE_ZERO_DATA 0xFFFF0001")]
     public const uint STORAGE_OFFLOAD_TOKEN_TYPE_ZERO_DATA = 0xFFFF0001;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_OFFLOAD_READ_RANGE_TRUNCATED"]/*' />
     [NativeTypeName("#define STORAGE_OFFLOAD_READ_RANGE_TRUNCATED 0x00000001")]
     public const int STORAGE_OFFLOAD_READ_RANGE_TRUNCATED = 0x00000001;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_OFFLOAD_WRITE_RANGE_TRUNCATED"]/*' />
     [NativeTypeName("#define STORAGE_OFFLOAD_WRITE_RANGE_TRUNCATED 0x0001")]
     public const int STORAGE_OFFLOAD_WRITE_RANGE_TRUNCATED = 0x0001;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_OFFLOAD_TOKEN_INVALID"]/*' />
     [NativeTypeName("#define STORAGE_OFFLOAD_TOKEN_INVALID 0x0002")]
     public const int STORAGE_OFFLOAD_TOKEN_INVALID = 0x0002;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_PRIORITY_HINT_SUPPORTED"]/*' />
     [NativeTypeName("#define STORAGE_PRIORITY_HINT_SUPPORTED 0x0001")]
     public const int STORAGE_PRIORITY_HINT_SUPPORTED = 0x0001;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_DIAGNOSTIC_FLAG_ADAPTER_REQUEST"]/*' />
     [NativeTypeName("#define STORAGE_DIAGNOSTIC_FLAG_ADAPTER_REQUEST 0x00000001")]
     public const int STORAGE_DIAGNOSTIC_FLAG_ADAPTER_REQUEST = 0x00000001;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_CRASH_TELEMETRY_REGKEY"]/*' />
     [NativeTypeName("#define STORAGE_CRASH_TELEMETRY_REGKEY L\"\\Registry\\Machine\\System\\CurrentControlSet\\Control\\CrashControl\\StorageTelemetry\"")]
     public const string STORAGE_CRASH_TELEMETRY_REGKEY = "\\Registry\\Machine\\System\\CurrentControlSet\\Control\\CrashControl\\StorageTelemetry";
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_DEVICE_TELEMETRY_REGKEY"]/*' />
     [NativeTypeName("#define STORAGE_DEVICE_TELEMETRY_REGKEY L\"\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Storage\\StorageTelemetry\"")]
     public const string STORAGE_DEVICE_TELEMETRY_REGKEY = "\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Storage\\StorageTelemetry";
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_IDLE_POWERUP_REASON_VERSION_V1"]/*' />
     [NativeTypeName("#define STORAGE_IDLE_POWERUP_REASON_VERSION_V1 1")]
     public const int STORAGE_IDLE_POWERUP_REASON_VERSION_V1 = 1;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_DEVICE_POWER_CAP_VERSION_V1"]/*' />
     [NativeTypeName("#define STORAGE_DEVICE_POWER_CAP_VERSION_V1 1")]
     public const int STORAGE_DEVICE_POWER_CAP_VERSION_V1 = 1;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_EVENT_NOTIFICATION_VERSION_V1"]/*' />
     [NativeTypeName("#define STORAGE_EVENT_NOTIFICATION_VERSION_V1 1")]
     public const int STORAGE_EVENT_NOTIFICATION_VERSION_V1 = 1;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_EVENT_MEDIA_STATUS"]/*' />
     [NativeTypeName("#define STORAGE_EVENT_MEDIA_STATUS 0x0000000000000001")]
     public const int STORAGE_EVENT_MEDIA_STATUS = 0x0000000000000001;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_EVENT_DEVICE_STATUS"]/*' />
     [NativeTypeName("#define STORAGE_EVENT_DEVICE_STATUS 0x0000000000000002")]
     public const int STORAGE_EVENT_DEVICE_STATUS = 0x0000000000000002;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_EVENT_DEVICE_OPERATION"]/*' />
     [NativeTypeName("#define STORAGE_EVENT_DEVICE_OPERATION 0x0000000000000004")]
     public const int STORAGE_EVENT_DEVICE_OPERATION = 0x0000000000000004;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_EVENT_ALL"]/*' />
     [NativeTypeName("#define STORAGE_EVENT_ALL (STORAGE_EVENT_MEDIA_STATUS | STORAGE_EVENT_DEVICE_STATUS | STORAGE_EVENT_DEVICE_OPERATION)")]
     public const int STORAGE_EVENT_ALL = (0x0000000000000001 | 0x0000000000000002 | 0x0000000000000004);
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_COUNTERS_VERSION_V1"]/*' />
     [NativeTypeName("#define STORAGE_COUNTERS_VERSION_V1 sizeof(STORAGE_COUNTERS)")]
     public const uint STORAGE_COUNTERS_VERSION_V1 = 32;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_HW_FIRMWARE_REQUEST_FLAG_CONTROLLER"]/*' />
     [NativeTypeName("#define STORAGE_HW_FIRMWARE_REQUEST_FLAG_CONTROLLER 0x00000001")]
     public const int STORAGE_HW_FIRMWARE_REQUEST_FLAG_CONTROLLER = 0x00000001;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_HW_FIRMWARE_REQUEST_FLAG_LAST_SEGMENT"]/*' />
     [NativeTypeName("#define STORAGE_HW_FIRMWARE_REQUEST_FLAG_LAST_SEGMENT 0x00000002")]
     public const int STORAGE_HW_FIRMWARE_REQUEST_FLAG_LAST_SEGMENT = 0x00000002;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_HW_FIRMWARE_REQUEST_FLAG_FIRST_SEGMENT"]/*' />
     [NativeTypeName("#define STORAGE_HW_FIRMWARE_REQUEST_FLAG_FIRST_SEGMENT 0x00000004")]
     public const int STORAGE_HW_FIRMWARE_REQUEST_FLAG_FIRST_SEGMENT = 0x00000004;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_HW_FIRMWARE_REQUEST_FLAG_SWITCH_TO_FIRMWARE_WITHOUT_RESET"]/*' />
     [NativeTypeName("#define STORAGE_HW_FIRMWARE_REQUEST_FLAG_SWITCH_TO_FIRMWARE_WITHOUT_RESET 0x10000000")]
     public const int STORAGE_HW_FIRMWARE_REQUEST_FLAG_SWITCH_TO_FIRMWARE_WITHOUT_RESET = 0x10000000;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_HW_FIRMWARE_REQUEST_FLAG_REPLACE_AND_SWITCH_UPON_RESET"]/*' />
     [NativeTypeName("#define STORAGE_HW_FIRMWARE_REQUEST_FLAG_REPLACE_AND_SWITCH_UPON_RESET 0x20000000")]
     public const int STORAGE_HW_FIRMWARE_REQUEST_FLAG_REPLACE_AND_SWITCH_UPON_RESET = 0x20000000;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_HW_FIRMWARE_REQUEST_FLAG_REPLACE_EXISTING_IMAGE"]/*' />
     [NativeTypeName("#define STORAGE_HW_FIRMWARE_REQUEST_FLAG_REPLACE_EXISTING_IMAGE 0x40000000")]
     public const int STORAGE_HW_FIRMWARE_REQUEST_FLAG_REPLACE_EXISTING_IMAGE = 0x40000000;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_HW_FIRMWARE_REQUEST_FLAG_SWITCH_TO_EXISTING_FIRMWARE"]/*' />
     [NativeTypeName("#define STORAGE_HW_FIRMWARE_REQUEST_FLAG_SWITCH_TO_EXISTING_FIRMWARE 0x80000000")]
     public const uint STORAGE_HW_FIRMWARE_REQUEST_FLAG_SWITCH_TO_EXISTING_FIRMWARE = 0x80000000;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_HW_FIRMWARE_INVALID_SLOT"]/*' />
     [NativeTypeName("#define STORAGE_HW_FIRMWARE_INVALID_SLOT 0xFF")]
     public const int STORAGE_HW_FIRMWARE_INVALID_SLOT = 0xFF;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_HW_FIRMWARE_REVISION_LENGTH"]/*' />
     [NativeTypeName("#define STORAGE_HW_FIRMWARE_REVISION_LENGTH 16")]
     public const int STORAGE_HW_FIRMWARE_REVISION_LENGTH = 16;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_HW_BOOT_PARTITION_REQUEST_FLAG_CONTROLLER"]/*' />
     [NativeTypeName("#define STORAGE_HW_BOOT_PARTITION_REQUEST_FLAG_CONTROLLER 0x00000001")]
     public const int STORAGE_HW_BOOT_PARTITION_REQUEST_FLAG_CONTROLLER = 0x00000001;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_HW_BOOT_PARTITION_REQUEST_REPLACE_EXISTING_BOOT_PARTITION"]/*' />
     [NativeTypeName("#define STORAGE_HW_BOOT_PARTITION_REQUEST_REPLACE_EXISTING_BOOT_PARTITION 0x40000000")]
     public const int STORAGE_HW_BOOT_PARTITION_REQUEST_REPLACE_EXISTING_BOOT_PARTITION = 0x40000000;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_HW_BOOT_PARTITION_REQUEST_ACTIVATE_EXISTING_BOOT_PARTITION"]/*' />
     [NativeTypeName("#define STORAGE_HW_BOOT_PARTITION_REQUEST_ACTIVATE_EXISTING_BOOT_PARTITION 0x80000000")]
     public const uint STORAGE_HW_BOOT_PARTITION_REQUEST_ACTIVATE_EXISTING_BOOT_PARTITION = 0x80000000;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_HW_BOOT_PARTITION_ACTIVATE_STRUCTURE_VERSION"]/*' />
     [NativeTypeName("#define STORAGE_HW_BOOT_PARTITION_ACTIVATE_STRUCTURE_VERSION 0x01")]
     public const int STORAGE_HW_BOOT_PARTITION_ACTIVATE_STRUCTURE_VERSION = 0x01;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_HW_BOOT_PARTITION_DOWNLOAD_STRUCTURE_VERSION"]/*' />
     [NativeTypeName("#define STORAGE_HW_BOOT_PARTITION_DOWNLOAD_STRUCTURE_VERSION 0x01")]
     public const int STORAGE_HW_BOOT_PARTITION_DOWNLOAD_STRUCTURE_VERSION = 0x01;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_HW_BOOT_PARTITION_INFO_STRUCTURE_VERSION_V1"]/*' />
     [NativeTypeName("#define STORAGE_HW_BOOT_PARTITION_INFO_STRUCTURE_VERSION_V1 0x01")]
     public const int STORAGE_HW_BOOT_PARTITION_INFO_STRUCTURE_VERSION_V1 = 0x01;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_PROTOCOL_STRUCTURE_VERSION"]/*' />
     [NativeTypeName("#define STORAGE_PROTOCOL_STRUCTURE_VERSION 0x1")]
     public const int STORAGE_PROTOCOL_STRUCTURE_VERSION = 0x1;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_PROTOCOL_COMMAND_FLAG_ADAPTER_REQUEST"]/*' />
     [NativeTypeName("#define STORAGE_PROTOCOL_COMMAND_FLAG_ADAPTER_REQUEST 0x80000000")]
     public const uint STORAGE_PROTOCOL_COMMAND_FLAG_ADAPTER_REQUEST = 0x80000000;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_PROTOCOL_STATUS_PENDING"]/*' />
     [NativeTypeName("#define STORAGE_PROTOCOL_STATUS_PENDING 0x0")]
     public const int STORAGE_PROTOCOL_STATUS_PENDING = 0x0;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_PROTOCOL_STATUS_SUCCESS"]/*' />
     [NativeTypeName("#define STORAGE_PROTOCOL_STATUS_SUCCESS 0x1")]
     public const int STORAGE_PROTOCOL_STATUS_SUCCESS = 0x1;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_PROTOCOL_STATUS_ERROR"]/*' />
     [NativeTypeName("#define STORAGE_PROTOCOL_STATUS_ERROR 0x2")]
     public const int STORAGE_PROTOCOL_STATUS_ERROR = 0x2;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_PROTOCOL_STATUS_INVALID_REQUEST"]/*' />
     [NativeTypeName("#define STORAGE_PROTOCOL_STATUS_INVALID_REQUEST 0x3")]
     public const int STORAGE_PROTOCOL_STATUS_INVALID_REQUEST = 0x3;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_PROTOCOL_STATUS_NO_DEVICE"]/*' />
     [NativeTypeName("#define STORAGE_PROTOCOL_STATUS_NO_DEVICE 0x4")]
     public const int STORAGE_PROTOCOL_STATUS_NO_DEVICE = 0x4;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_PROTOCOL_STATUS_BUSY"]/*' />
     [NativeTypeName("#define STORAGE_PROTOCOL_STATUS_BUSY 0x5")]
     public const int STORAGE_PROTOCOL_STATUS_BUSY = 0x5;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_PROTOCOL_STATUS_DATA_OVERRUN"]/*' />
     [NativeTypeName("#define STORAGE_PROTOCOL_STATUS_DATA_OVERRUN 0x6")]
     public const int STORAGE_PROTOCOL_STATUS_DATA_OVERRUN = 0x6;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_PROTOCOL_STATUS_INSUFFICIENT_RESOURCES"]/*' />
     [NativeTypeName("#define STORAGE_PROTOCOL_STATUS_INSUFFICIENT_RESOURCES 0x7")]
     public const int STORAGE_PROTOCOL_STATUS_INSUFFICIENT_RESOURCES = 0x7;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_PROTOCOL_STATUS_THROTTLED_REQUEST"]/*' />
     [NativeTypeName("#define STORAGE_PROTOCOL_STATUS_THROTTLED_REQUEST 0x8")]
     public const int STORAGE_PROTOCOL_STATUS_THROTTLED_REQUEST = 0x8;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_PROTOCOL_STATUS_NOT_SUPPORTED"]/*' />
     [NativeTypeName("#define STORAGE_PROTOCOL_STATUS_NOT_SUPPORTED 0xFF")]
     public const int STORAGE_PROTOCOL_STATUS_NOT_SUPPORTED = 0xFF;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_PROTOCOL_COMMAND_LENGTH_NVME"]/*' />
     [NativeTypeName("#define STORAGE_PROTOCOL_COMMAND_LENGTH_NVME 0x40")]
     public const int STORAGE_PROTOCOL_COMMAND_LENGTH_NVME = 0x40;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_PROTOCOL_SPECIFIC_NVME_ADMIN_COMMAND"]/*' />
     [NativeTypeName("#define STORAGE_PROTOCOL_SPECIFIC_NVME_ADMIN_COMMAND 0x01")]
     public const int STORAGE_PROTOCOL_SPECIFIC_NVME_ADMIN_COMMAND = 0x01;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_PROTOCOL_SPECIFIC_NVME_NVM_COMMAND"]/*' />
     [NativeTypeName("#define STORAGE_PROTOCOL_SPECIFIC_NVME_NVM_COMMAND 0x02")]
     public const int STORAGE_PROTOCOL_SPECIFIC_NVME_NVM_COMMAND = 0x02;
 }

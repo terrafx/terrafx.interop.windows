@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFCapturePhotoConfirmation : IMFCapturePhotoConfirmation.Interface, INativeGuid
 {
+    /// <include file='IMFCapturePhotoConfirmation.xml' path='doc/member[@name="IMFCapturePhotoConfirmation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFCapturePhotoConfirmation);
 
     public void** lpVtbl;

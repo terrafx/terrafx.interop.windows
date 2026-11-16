@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class WM
 {
+    /// <include file='WM.xml' path='doc/member[@name="WM.WM_CTLCOLOR"]/*' />
     [NativeTypeName("#define WM_CTLCOLOR 0x0019")]
     public const int WM_CTLCOLOR = 0x0019;
 }

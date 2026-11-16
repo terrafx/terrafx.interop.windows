@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D10ShaderReflectionType"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D10ShaderReflectionType
     {
@@ -38,6 +39,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D10ShaderReflectionVariable"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D10ShaderReflectionVariable
     {
@@ -63,6 +65,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D10ShaderReflectionConstantBuffer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D10ShaderReflectionConstantBuffer
     {
@@ -88,6 +91,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D10ShaderReflection"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D10ShaderReflection
     {

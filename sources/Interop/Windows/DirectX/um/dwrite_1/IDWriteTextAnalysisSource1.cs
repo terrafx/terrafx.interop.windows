@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IDWriteTextAnalysisSource")]
 public unsafe partial struct IDWriteTextAnalysisSource1 : IDWriteTextAnalysisSource1.Interface, INativeGuid
 {
+    /// <include file='IDWriteTextAnalysisSource1.xml' path='doc/member[@name="IDWriteTextAnalysisSource1.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDWriteTextAnalysisSource1);
 
     public void** lpVtbl;

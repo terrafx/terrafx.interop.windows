@@ -7,24 +7,31 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MSGF
 {
+    /// <include file='MSGF.xml' path='doc/member[@name="MSGF.MSGF_DIALOGBOX"]/*' />
     [NativeTypeName("#define MSGF_DIALOGBOX 0")]
     public const int MSGF_DIALOGBOX = 0;
 
+    /// <include file='MSGF.xml' path='doc/member[@name="MSGF.MSGF_MESSAGEBOX"]/*' />
     [NativeTypeName("#define MSGF_MESSAGEBOX 1")]
     public const int MSGF_MESSAGEBOX = 1;
 
+    /// <include file='MSGF.xml' path='doc/member[@name="MSGF.MSGF_MENU"]/*' />
     [NativeTypeName("#define MSGF_MENU 2")]
     public const int MSGF_MENU = 2;
 
+    /// <include file='MSGF.xml' path='doc/member[@name="MSGF.MSGF_SCROLLBAR"]/*' />
     [NativeTypeName("#define MSGF_SCROLLBAR 5")]
     public const int MSGF_SCROLLBAR = 5;
 
+    /// <include file='MSGF.xml' path='doc/member[@name="MSGF.MSGF_NEXTWINDOW"]/*' />
     [NativeTypeName("#define MSGF_NEXTWINDOW 6")]
     public const int MSGF_NEXTWINDOW = 6;
 
+    /// <include file='MSGF.xml' path='doc/member[@name="MSGF.MSGF_MAX"]/*' />
     [NativeTypeName("#define MSGF_MAX 8")]
     public const int MSGF_MAX = 8;
 
+    /// <include file='MSGF.xml' path='doc/member[@name="MSGF.MSGF_USER"]/*' />
     [NativeTypeName("#define MSGF_USER 4096")]
     public const int MSGF_USER = 4096;
 }

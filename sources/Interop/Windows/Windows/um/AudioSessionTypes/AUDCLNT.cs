@@ -7,33 +7,43 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class AUDCLNT
 {
+    /// <include file='AUDCLNT.xml' path='doc/member[@name="AUDCLNT.AUDCLNT_STREAMFLAGS_CROSSPROCESS"]/*' />
     [NativeTypeName("#define AUDCLNT_STREAMFLAGS_CROSSPROCESS 0x00010000")]
     public const int AUDCLNT_STREAMFLAGS_CROSSPROCESS = 0x00010000;
 
+    /// <include file='AUDCLNT.xml' path='doc/member[@name="AUDCLNT.AUDCLNT_STREAMFLAGS_LOOPBACK"]/*' />
     [NativeTypeName("#define AUDCLNT_STREAMFLAGS_LOOPBACK 0x00020000")]
     public const int AUDCLNT_STREAMFLAGS_LOOPBACK = 0x00020000;
 
+    /// <include file='AUDCLNT.xml' path='doc/member[@name="AUDCLNT.AUDCLNT_STREAMFLAGS_EVENTCALLBACK"]/*' />
     [NativeTypeName("#define AUDCLNT_STREAMFLAGS_EVENTCALLBACK 0x00040000")]
     public const int AUDCLNT_STREAMFLAGS_EVENTCALLBACK = 0x00040000;
 
+    /// <include file='AUDCLNT.xml' path='doc/member[@name="AUDCLNT.AUDCLNT_STREAMFLAGS_NOPERSIST"]/*' />
     [NativeTypeName("#define AUDCLNT_STREAMFLAGS_NOPERSIST 0x00080000")]
     public const int AUDCLNT_STREAMFLAGS_NOPERSIST = 0x00080000;
 
+    /// <include file='AUDCLNT.xml' path='doc/member[@name="AUDCLNT.AUDCLNT_STREAMFLAGS_RATEADJUST"]/*' />
     [NativeTypeName("#define AUDCLNT_STREAMFLAGS_RATEADJUST 0x00100000")]
     public const int AUDCLNT_STREAMFLAGS_RATEADJUST = 0x00100000;
 
+    /// <include file='AUDCLNT.xml' path='doc/member[@name="AUDCLNT.AUDCLNT_STREAMFLAGS_SRC_DEFAULT_QUALITY"]/*' />
     [NativeTypeName("#define AUDCLNT_STREAMFLAGS_SRC_DEFAULT_QUALITY 0x08000000")]
     public const int AUDCLNT_STREAMFLAGS_SRC_DEFAULT_QUALITY = 0x08000000;
 
+    /// <include file='AUDCLNT.xml' path='doc/member[@name="AUDCLNT.AUDCLNT_STREAMFLAGS_AUTOCONVERTPCM"]/*' />
     [NativeTypeName("#define AUDCLNT_STREAMFLAGS_AUTOCONVERTPCM 0x80000000")]
     public const uint AUDCLNT_STREAMFLAGS_AUTOCONVERTPCM = 0x80000000;
 
+    /// <include file='AUDCLNT.xml' path='doc/member[@name="AUDCLNT.AUDCLNT_SESSIONFLAGS_EXPIREWHENUNOWNED"]/*' />
     [NativeTypeName("#define AUDCLNT_SESSIONFLAGS_EXPIREWHENUNOWNED 0x10000000")]
     public const int AUDCLNT_SESSIONFLAGS_EXPIREWHENUNOWNED = 0x10000000;
 
+    /// <include file='AUDCLNT.xml' path='doc/member[@name="AUDCLNT.AUDCLNT_SESSIONFLAGS_DISPLAY_HIDE"]/*' />
     [NativeTypeName("#define AUDCLNT_SESSIONFLAGS_DISPLAY_HIDE 0x20000000")]
     public const int AUDCLNT_SESSIONFLAGS_DISPLAY_HIDE = 0x20000000;
 
+    /// <include file='AUDCLNT.xml' path='doc/member[@name="AUDCLNT.AUDCLNT_SESSIONFLAGS_DISPLAY_HIDEWHENEXPIRED"]/*' />
     [NativeTypeName("#define AUDCLNT_SESSIONFLAGS_DISPLAY_HIDEWHENEXPIRED 0x40000000")]
     public const int AUDCLNT_SESSIONFLAGS_DISPLAY_HIDEWHENEXPIRED = 0x40000000;
 }

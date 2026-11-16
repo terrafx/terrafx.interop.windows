@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IWebAccountProviderSignOutAccountOperation : IWebAccountProviderSignOutAccountOperation.Interface, INativeGuid
 {
+    /// <include file='IWebAccountProviderSignOutAccountOperation.xml' path='doc/member[@name="IWebAccountProviderSignOutAccountOperation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWebAccountProviderSignOutAccountOperation);
 
     public void** lpVtbl;

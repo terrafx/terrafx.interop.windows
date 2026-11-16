@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IUserWatcher : IUserWatcher.Interface, INativeGuid
 {
+    /// <include file='IUserWatcher.xml' path='doc/member[@name="IUserWatcher.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUserWatcher);
 
     public void** lpVtbl;

@@ -7,6 +7,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D2D1
 {
+    /// <include file='D2D1.xml' path='doc/member[@name="D2D1.D2D1_DEFAULT_FLATTENING_TOLERANCE"]/*' />
     [NativeTypeName("#define D2D1_DEFAULT_FLATTENING_TOLERANCE (0.25f)")]
     public const float D2D1_DEFAULT_FLATTENING_TOLERANCE = (0.25f);
 }

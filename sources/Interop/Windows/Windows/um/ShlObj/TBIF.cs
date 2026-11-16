@@ -7,24 +7,31 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class TBIF
 {
+    /// <include file='TBIF.xml' path='doc/member[@name="TBIF.TBIF_APPEND"]/*' />
     [NativeTypeName("#define TBIF_APPEND 0")]
     public const int TBIF_APPEND = 0;
 
+    /// <include file='TBIF.xml' path='doc/member[@name="TBIF.TBIF_PREPEND"]/*' />
     [NativeTypeName("#define TBIF_PREPEND 1")]
     public const int TBIF_PREPEND = 1;
 
+    /// <include file='TBIF.xml' path='doc/member[@name="TBIF.TBIF_REPLACE"]/*' />
     [NativeTypeName("#define TBIF_REPLACE 2")]
     public const int TBIF_REPLACE = 2;
 
+    /// <include file='TBIF.xml' path='doc/member[@name="TBIF.TBIF_DEFAULT"]/*' />
     [NativeTypeName("#define TBIF_DEFAULT 0x00000000")]
     public const int TBIF_DEFAULT = 0x00000000;
 
+    /// <include file='TBIF.xml' path='doc/member[@name="TBIF.TBIF_INTERNETBAR"]/*' />
     [NativeTypeName("#define TBIF_INTERNETBAR 0x00010000")]
     public const int TBIF_INTERNETBAR = 0x00010000;
 
+    /// <include file='TBIF.xml' path='doc/member[@name="TBIF.TBIF_STANDARDTOOLBAR"]/*' />
     [NativeTypeName("#define TBIF_STANDARDTOOLBAR 0x00020000")]
     public const int TBIF_STANDARDTOOLBAR = 0x00020000;
 
+    /// <include file='TBIF.xml' path='doc/member[@name="TBIF.TBIF_NOTOOLBAR"]/*' />
     [NativeTypeName("#define TBIF_NOTOOLBAR 0x00030000")]
     public const int TBIF_NOTOOLBAR = 0x00030000;
 }

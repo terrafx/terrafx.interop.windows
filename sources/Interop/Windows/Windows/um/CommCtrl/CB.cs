@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CB
 {
+    /// <include file='CB.xml' path='doc/member[@name="CB.CB_SETMINVISIBLE"]/*' />
     [NativeTypeName("#define CB_SETMINVISIBLE (CBM_FIRST + 1)")]
     public const int CB_SETMINVISIBLE = (0x1700 + 1);
 
+    /// <include file='CB.xml' path='doc/member[@name="CB.CB_GETMINVISIBLE"]/*' />
     [NativeTypeName("#define CB_GETMINVISIBLE (CBM_FIRST + 2)")]
     public const int CB_GETMINVISIBLE = (0x1700 + 2);
 
+    /// <include file='CB.xml' path='doc/member[@name="CB.CB_SETCUEBANNER"]/*' />
     [NativeTypeName("#define CB_SETCUEBANNER (CBM_FIRST + 3)")]
     public const int CB_SETCUEBANNER = (0x1700 + 3);
 
+    /// <include file='CB.xml' path='doc/member[@name="CB.CB_GETCUEBANNER"]/*' />
     [NativeTypeName("#define CB_GETCUEBANNER (CBM_FIRST + 4)")]
     public const int CB_GETCUEBANNER = (0x1700 + 4);
 }

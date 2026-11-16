@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class EN
 {
+    /// <include file='EN.xml' path='doc/member[@name="EN.EN_FIRST"]/*' />
     [NativeTypeName("#define EN_FIRST (0U-1520U)")]
     public const uint EN_FIRST = unchecked(0U - 1520U);
 
+    /// <include file='EN.xml' path='doc/member[@name="EN.EN_LAST"]/*' />
     [NativeTypeName("#define EN_LAST (0U-1540U)")]
     public const uint EN_LAST = unchecked(0U - 1540U);
 
+    /// <include file='EN.xml' path='doc/member[@name="EN.EN_SEARCHWEB"]/*' />
     [NativeTypeName("#define EN_SEARCHWEB (EN_FIRST - 0)")]
     public const uint EN_SEARCHWEB = unchecked((0U - 1520U) - 0);
 }

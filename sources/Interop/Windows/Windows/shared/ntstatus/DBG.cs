@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class DBG
 {
+    /// <include file='DBG.xml' path='doc/member[@name="DBG.DBG_UNABLE_TO_PROVIDE_HANDLE"]/*' />
     [NativeTypeName("#define DBG_UNABLE_TO_PROVIDE_HANDLE ((NTSTATUS)0x40010002L)")]
     public const int DBG_UNABLE_TO_PROVIDE_HANDLE = ((int)(0x40010002));
 
+    /// <include file='DBG.xml' path='doc/member[@name="DBG.DBG_NO_STATE_CHANGE"]/*' />
     [NativeTypeName("#define DBG_NO_STATE_CHANGE ((NTSTATUS)0xC0010001L)")]
     public const int DBG_NO_STATE_CHANGE = unchecked((int)(0xC0010001));
 
+    /// <include file='DBG.xml' path='doc/member[@name="DBG.DBG_APP_NOT_IDLE"]/*' />
     [NativeTypeName("#define DBG_APP_NOT_IDLE ((NTSTATUS)0xC0010002L)")]
     public const int DBG_APP_NOT_IDLE = unchecked((int)(0xC0010002));
 }

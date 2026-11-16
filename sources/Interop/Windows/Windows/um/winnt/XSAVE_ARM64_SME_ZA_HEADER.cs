@@ -17,7 +17,7 @@ public partial struct XSAVE_ARM64_SME_ZA_HEADER
     public uint VectorLength;
 
     /// <include file='XSAVE_ARM64_SME_ZA_HEADER.xml' path='doc/member[@name="XSAVE_ARM64_SME_ZA_HEADER.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L2799_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L2823_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='XSAVE_ARM64_SME_ZA_HEADER.xml' path='doc/member[@name="XSAVE_ARM64_SME_ZA_HEADER.Reserved"]/*' />
@@ -78,7 +78,7 @@ public partial struct XSAVE_ARM64_SME_ZA_HEADER
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L2801_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L2825_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

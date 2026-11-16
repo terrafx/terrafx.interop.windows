@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ILearningModelDeviceFactoryNative : ILearningModelDeviceFactoryNative.Interface, INativeGuid
 {
+    /// <include file='ILearningModelDeviceFactoryNative.xml' path='doc/member[@name="ILearningModelDeviceFactoryNative.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ILearningModelDeviceFactoryNative);
 
     public void** lpVtbl;

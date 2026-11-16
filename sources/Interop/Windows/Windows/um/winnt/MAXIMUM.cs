@@ -7,18 +7,23 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAXIMUM
 {
+    /// <include file='MAXIMUM.xml' path='doc/member[@name="MAXIMUM.MAXIMUM_WAIT_OBJECTS"]/*' />
     [NativeTypeName("#define MAXIMUM_WAIT_OBJECTS 64")]
     public const int MAXIMUM_WAIT_OBJECTS = 64;
 
+    /// <include file='MAXIMUM.xml' path='doc/member[@name="MAXIMUM.MAXIMUM_SUSPEND_COUNT"]/*' />
     [NativeTypeName("#define MAXIMUM_SUSPEND_COUNT MAXCHAR")]
     public const int MAXIMUM_SUSPEND_COUNT = 0x7f;
 
+    /// <include file='MAXIMUM.xml' path='doc/member[@name="MAXIMUM.MAXIMUM_ALLOWED"]/*' />
     [NativeTypeName("#define MAXIMUM_ALLOWED (0x02000000L)")]
     public const int MAXIMUM_ALLOWED = (0x02000000);
 
+    /// <include file='MAXIMUM.xml' path='doc/member[@name="MAXIMUM.MAXIMUM_XSTATE_FEATURES"]/*' />
     [NativeTypeName("#define MAXIMUM_XSTATE_FEATURES (64)")]
     public const int MAXIMUM_XSTATE_FEATURES = (64);
 
+    /// <include file='MAXIMUM.xml' path='doc/member[@name="MAXIMUM.MAXIMUM_REPARSE_DATA_BUFFER_SIZE"]/*' />
     [NativeTypeName("#define MAXIMUM_REPARSE_DATA_BUFFER_SIZE ( 16 * 1024 )")]
     public const int MAXIMUM_REPARSE_DATA_BUFFER_SIZE = (16 * 1024);
 }

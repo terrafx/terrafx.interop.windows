@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAppDiagnosticInfo3 : IAppDiagnosticInfo3.Interface, INativeGuid
 {
+    /// <include file='IAppDiagnosticInfo3.xml' path='doc/member[@name="IAppDiagnosticInfo3.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppDiagnosticInfo3);
 
     public void** lpVtbl;

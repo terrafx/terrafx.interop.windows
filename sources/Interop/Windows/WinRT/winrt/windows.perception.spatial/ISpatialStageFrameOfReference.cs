@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISpatialStageFrameOfReference : ISpatialStageFrameOfReference.Interface, INativeGuid
 {
+    /// <include file='ISpatialStageFrameOfReference.xml' path='doc/member[@name="ISpatialStageFrameOfReference.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpatialStageFrameOfReference);
 
     public void** lpVtbl;

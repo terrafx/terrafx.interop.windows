@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EVENTCONTEXT_VOLUMESLIDER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid EVENTCONTEXT_VOLUMESLIDER
     {
@@ -37,6 +38,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DEVTOPO_HARDWARE_INITIATED_EVENTCONTEXT"]/*' />
     [NativeTypeName("#define DEVTOPO_HARDWARE_INITIATED_EVENTCONTEXT 'draH'")]
     public const int DEVTOPO_HARDWARE_INITIATED_EVENTCONTEXT = 0x64726148;
 }

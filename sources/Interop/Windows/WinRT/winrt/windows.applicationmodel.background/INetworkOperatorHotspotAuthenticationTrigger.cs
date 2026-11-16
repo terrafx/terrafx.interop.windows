@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct INetworkOperatorHotspotAuthenticationTrigger : INetworkOperatorHotspotAuthenticationTrigger.Interface, INativeGuid
 {
+    /// <include file='INetworkOperatorHotspotAuthenticationTrigger.xml' path='doc/member[@name="INetworkOperatorHotspotAuthenticationTrigger.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_INetworkOperatorHotspotAuthenticationTrigger);
 
     public void** lpVtbl;

@@ -13,7 +13,7 @@ public readonly unsafe partial struct HANDLE : IComparable, IComparable<HANDLE>,
         Value = value;
     }
 
-    public static HANDLE INVALID_VALUE => new HANDLE((void*)(-1));
+    public static HANDLE INVALID_VALUE => new HANDLE(unchecked((void*)(-1)));
 
     public static HANDLE NULL => new HANDLE(null);
 

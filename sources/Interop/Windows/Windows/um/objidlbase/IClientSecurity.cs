@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IClientSecurity : IClientSecurity.Interface, INativeGuid
 {
+    /// <include file='IClientSecurity.xml' path='doc/member[@name="IClientSecurity.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IClientSecurity);
 
     public void** lpVtbl;

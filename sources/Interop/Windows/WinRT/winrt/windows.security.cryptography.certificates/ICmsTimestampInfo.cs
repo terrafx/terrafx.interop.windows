@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICmsTimestampInfo : ICmsTimestampInfo.Interface, INativeGuid
 {
+    /// <include file='ICmsTimestampInfo.xml' path='doc/member[@name="ICmsTimestampInfo.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICmsTimestampInfo);
 
     public void** lpVtbl;

@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("0F92030A-CBFD-4AB8-A164-FF5985547FF6")]
 public unsafe partial struct SpTextSelectionInformation : INativeGuid
 {
+    /// <include file='SpTextSelectionInformation.xml' path='doc/member[@name="SpTextSelectionInformation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SpTextSelectionInformation);
 }

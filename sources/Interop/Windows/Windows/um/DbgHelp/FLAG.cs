@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class FLAG
 {
+    /// <include file='FLAG.xml' path='doc/member[@name="FLAG.FLAG_ENGINE_PRESENT"]/*' />
     [NativeTypeName("#define FLAG_ENGINE_PRESENT 0x4")]
     public const int FLAG_ENGINE_PRESENT = 0x4;
 
+    /// <include file='FLAG.xml' path='doc/member[@name="FLAG.FLAG_ENGOPT_DISALLOW_NETWORK_PATHS"]/*' />
     [NativeTypeName("#define FLAG_ENGOPT_DISALLOW_NETWORK_PATHS 0x8")]
     public const int FLAG_ENGOPT_DISALLOW_NETWORK_PATHS = 0x8;
 
+    /// <include file='FLAG.xml' path='doc/member[@name="FLAG.FLAG_OVERRIDE_ARM_MACHINE_TYPE"]/*' />
     [NativeTypeName("#define FLAG_OVERRIDE_ARM_MACHINE_TYPE 0x10")]
     public const int FLAG_OVERRIDE_ARM_MACHINE_TYPE = 0x10;
 }

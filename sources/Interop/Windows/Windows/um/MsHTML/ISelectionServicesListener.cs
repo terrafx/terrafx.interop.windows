@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISelectionServicesListener : ISelectionServicesListener.Interface, INativeGuid
 {
+    /// <include file='ISelectionServicesListener.xml' path='doc/member[@name="ISelectionServicesListener.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISelectionServicesListener);
 
     public void** lpVtbl;

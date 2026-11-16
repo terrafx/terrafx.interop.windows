@@ -1,5 +1,6 @@
 @../../../settings.rsp
 @../../../remap.rsp
+@../../../remap-guids-winrt.rsp
 --exclude
 ABI::Windows::Media::IID_IAudioBuffer
 ABI::Windows::Media::IID_IAudioFrame
@@ -50,8 +51,6 @@ WinRT
 TerraFX.Interop.WinRT
 --output
 ../../../../sources/Interop/Windows/WinRT/winrt/windows.media
---remap
-IID_IMediaControl=@IID_WinRT_IMediaControl
 --test-output
 ../../../../tests/Interop/Windows/WinRT/winrt/windows.media
 --traverse

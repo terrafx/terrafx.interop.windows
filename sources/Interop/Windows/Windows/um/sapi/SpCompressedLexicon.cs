@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("90903716-2F42-11D3-9C26-00C04F8EF87C")]
 public unsafe partial struct SpCompressedLexicon : INativeGuid
 {
+    /// <include file='SpCompressedLexicon.xml' path='doc/member[@name="SpCompressedLexicon.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SpCompressedLexicon);
 }

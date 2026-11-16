@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("38477E1F-0EA7-42CD-8CD1-130CED57C580")]
 public unsafe partial struct CODECAPI_AVDecVideoInputScanType : INativeGuid
 {
+    /// <include file='CODECAPI_AVDecVideoInputScanType.xml' path='doc/member[@name="CODECAPI_AVDecVideoInputScanType.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVDecVideoInputScanType);
 }

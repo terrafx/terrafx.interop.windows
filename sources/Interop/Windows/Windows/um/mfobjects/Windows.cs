@@ -18,9 +18,11 @@ public static unsafe partial class Windows
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFDeserializeAttributesFromStream(IMFAttributes* pAttr, [NativeTypeName("DWORD")] uint dwOptions, IStream* pStm);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFVideoInterlace_FieldSingleUpperFirst"]/*' />
     [NativeTypeName("#define MFVideoInterlace_FieldSingleUpperFirst MFVideoInterlace_FieldSingleUpper")]
     public const MFVideoInterlaceMode MFVideoInterlace_FieldSingleUpperFirst = MFVideoInterlace_FieldSingleUpper;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFVideoInterlace_FieldSingleLowerFirst"]/*' />
     [NativeTypeName("#define MFVideoInterlace_FieldSingleLowerFirst MFVideoInterlace_FieldSingleLower")]
     public const MFVideoInterlaceMode MFVideoInterlace_FieldSingleLowerFirst = MFVideoInterlace_FieldSingleLower;
 }

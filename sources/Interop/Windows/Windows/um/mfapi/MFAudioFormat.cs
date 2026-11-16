@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MFAudioFormat
 {
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_Base"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_Base
     {
@@ -37,6 +38,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_PCM"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_PCM
     {
@@ -62,6 +64,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_Float"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_Float
     {
@@ -87,6 +90,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_DTS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_DTS
     {
@@ -112,6 +116,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_Dolby_AC3_SPDIF"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_Dolby_AC3_SPDIF
     {
@@ -137,6 +142,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_DRM"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_DRM
     {
@@ -162,6 +168,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_WMAudioV8"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_WMAudioV8
     {
@@ -187,6 +194,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_WMAudioV9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_WMAudioV9
     {
@@ -212,6 +220,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_WMAudio_Lossless"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_WMAudio_Lossless
     {
@@ -237,6 +246,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_WMASPDIF"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_WMASPDIF
     {
@@ -262,6 +272,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_MSP1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_MSP1
     {
@@ -287,6 +298,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_MP3"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_MP3
     {
@@ -312,6 +324,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_MPEG"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_MPEG
     {
@@ -337,6 +350,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_AAC"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_AAC
     {
@@ -362,6 +376,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_ADTS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_ADTS
     {
@@ -387,6 +402,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_AMR_NB"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_AMR_NB
     {
@@ -412,6 +428,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_AMR_WB"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_AMR_WB
     {
@@ -437,6 +454,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_AMR_WP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_AMR_WP
     {
@@ -462,6 +480,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_FLAC"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_FLAC
     {
@@ -487,6 +506,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_ALAC"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_ALAC
     {
@@ -512,6 +532,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_Opus"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_Opus
     {
@@ -537,6 +558,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_Dolby_AC4"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_Dolby_AC4
     {
@@ -562,6 +584,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_Dolby_AC3"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_Dolby_AC3
     {
@@ -587,6 +610,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_Dolby_DDPlus"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_Dolby_DDPlus
     {
@@ -612,6 +636,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_Dolby_AC4_V1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_Dolby_AC4_V1
     {
@@ -637,6 +662,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_Dolby_AC4_V2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_Dolby_AC4_V2
     {
@@ -662,6 +688,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_Dolby_AC4_V1_ES"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_Dolby_AC4_V1_ES
     {
@@ -687,6 +714,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_Dolby_AC4_V2_ES"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_Dolby_AC4_V2_ES
     {
@@ -712,6 +740,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_MPEGH"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_MPEGH
     {
@@ -737,6 +766,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_MPEGH_ES"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_MPEGH_ES
     {
@@ -762,6 +792,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_Vorbis"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_Vorbis
     {
@@ -787,6 +818,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_DTS_RAW"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_DTS_RAW
     {
@@ -812,6 +844,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_DTS_HD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_DTS_HD
     {
@@ -837,6 +870,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_DTS_XLL"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_DTS_XLL
     {
@@ -862,6 +896,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_DTS_LBR"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_DTS_LBR
     {
@@ -887,6 +922,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_DTS_UHD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_DTS_UHD
     {
@@ -912,6 +948,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_DTS_UHDY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_DTS_UHDY
     {
@@ -937,6 +974,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_IAMF"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_IAMF
     {
@@ -962,6 +1000,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_Float_SpatialObjects"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_Float_SpatialObjects
     {
@@ -987,6 +1026,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_LPCM"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_LPCM
     {
@@ -1012,6 +1052,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_PCM_HDCP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_PCM_HDCP
     {
@@ -1037,6 +1078,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_Dolby_AC3_HDCP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_Dolby_AC3_HDCP
     {
@@ -1062,6 +1104,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_AAC_HDCP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_AAC_HDCP
     {
@@ -1087,6 +1130,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_ADTS_HDCP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_ADTS_HDCP
     {
@@ -1112,6 +1156,7 @@ public static partial class MFAudioFormat
         }
     }
 
+    /// <include file='MFAudioFormat.xml' path='doc/member[@name="MFAudioFormat.MFAudioFormat_Base_HDCP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFAudioFormat_Base_HDCP
     {

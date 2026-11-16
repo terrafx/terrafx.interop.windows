@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IJolietDiscMaster : IJolietDiscMaster.Interface, INativeGuid
 {
+    /// <include file='IJolietDiscMaster.xml' path='doc/member[@name="IJolietDiscMaster.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IJolietDiscMaster);
 
     public void** lpVtbl;

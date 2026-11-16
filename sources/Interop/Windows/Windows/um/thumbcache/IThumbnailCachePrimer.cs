@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IThumbnailCachePrimer : IThumbnailCachePrimer.Interface, INativeGuid
 {
+    /// <include file='IThumbnailCachePrimer.xml' path='doc/member[@name="IThumbnailCachePrimer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IThumbnailCachePrimer);
 
     public void** lpVtbl;

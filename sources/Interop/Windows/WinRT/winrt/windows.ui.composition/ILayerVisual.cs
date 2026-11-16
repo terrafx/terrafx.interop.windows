@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ILayerVisual : ILayerVisual.Interface, INativeGuid
 {
+    /// <include file='ILayerVisual.xml' path='doc/member[@name="ILayerVisual.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ILayerVisual);
 
     public void** lpVtbl;

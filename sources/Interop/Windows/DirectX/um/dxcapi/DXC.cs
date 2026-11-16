@@ -7,114 +7,151 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DXC
 {
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_CP_UTF8"]/*' />
     [NativeTypeName("#define DXC_CP_UTF8 65001")]
     public const int DXC_CP_UTF8 = 65001;
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_CP_UTF16"]/*' />
     [NativeTypeName("#define DXC_CP_UTF16 1200")]
     public const int DXC_CP_UTF16 = 1200;
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_CP_UTF32"]/*' />
     [NativeTypeName("#define DXC_CP_UTF32 12000")]
     public const int DXC_CP_UTF32 = 12000;
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_CP_ACP"]/*' />
     [NativeTypeName("#define DXC_CP_ACP 0")]
     public const int DXC_CP_ACP = 0;
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_CP_WIDE"]/*' />
     [NativeTypeName("#define DXC_CP_WIDE DXC_CP_UTF16")]
     public const int DXC_CP_WIDE = 1200;
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_HASHFLAG_INCLUDES_SOURCE"]/*' />
     [NativeTypeName("#define DXC_HASHFLAG_INCLUDES_SOURCE 1")]
     public const int DXC_HASHFLAG_INCLUDES_SOURCE = 1;
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_PART_PDB"]/*' />
     [NativeTypeName("#define DXC_PART_PDB DXC_FOURCC('I', 'L', 'D', 'B')")]
     public const uint DXC_PART_PDB = ((uint)((byte)('I')) | (uint)((byte)('L')) << 8 | (uint)((byte)('D')) << 16 | (uint)((byte)('B')) << 24);
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_PART_PDB_NAME"]/*' />
     [NativeTypeName("#define DXC_PART_PDB_NAME DXC_FOURCC('I', 'L', 'D', 'N')")]
     public const uint DXC_PART_PDB_NAME = ((uint)((byte)('I')) | (uint)((byte)('L')) << 8 | (uint)((byte)('D')) << 16 | (uint)((byte)('N')) << 24);
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_PART_PRIVATE_DATA"]/*' />
     [NativeTypeName("#define DXC_PART_PRIVATE_DATA DXC_FOURCC('P', 'R', 'I', 'V')")]
     public const uint DXC_PART_PRIVATE_DATA = ((uint)((byte)('P')) | (uint)((byte)('R')) << 8 | (uint)((byte)('I')) << 16 | (uint)((byte)('V')) << 24);
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_PART_ROOT_SIGNATURE"]/*' />
     [NativeTypeName("#define DXC_PART_ROOT_SIGNATURE DXC_FOURCC('R', 'T', 'S', '0')")]
     public const uint DXC_PART_ROOT_SIGNATURE = ((uint)((byte)('R')) | (uint)((byte)('T')) << 8 | (uint)((byte)('S')) << 16 | (uint)((byte)('0')) << 24);
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_PART_DXIL"]/*' />
     [NativeTypeName("#define DXC_PART_DXIL DXC_FOURCC('D', 'X', 'I', 'L')")]
     public const uint DXC_PART_DXIL = ((uint)((byte)('D')) | (uint)((byte)('X')) << 8 | (uint)((byte)('I')) << 16 | (uint)((byte)('L')) << 24);
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_PART_REFLECTION_DATA"]/*' />
     [NativeTypeName("#define DXC_PART_REFLECTION_DATA DXC_FOURCC('S', 'T', 'A', 'T')")]
     public const uint DXC_PART_REFLECTION_DATA = ((uint)((byte)('S')) | (uint)((byte)('T')) << 8 | (uint)((byte)('A')) << 16 | (uint)((byte)('T')) << 24);
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_PART_SHADER_HASH"]/*' />
     [NativeTypeName("#define DXC_PART_SHADER_HASH DXC_FOURCC('H', 'A', 'S', 'H')")]
     public const uint DXC_PART_SHADER_HASH = ((uint)((byte)('H')) | (uint)((byte)('A')) << 8 | (uint)((byte)('S')) << 16 | (uint)((byte)('H')) << 24);
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_PART_INPUT_SIGNATURE"]/*' />
     [NativeTypeName("#define DXC_PART_INPUT_SIGNATURE DXC_FOURCC('I', 'S', 'G', '1')")]
     public const uint DXC_PART_INPUT_SIGNATURE = ((uint)((byte)('I')) | (uint)((byte)('S')) << 8 | (uint)((byte)('G')) << 16 | (uint)((byte)('1')) << 24);
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_PART_OUTPUT_SIGNATURE"]/*' />
     [NativeTypeName("#define DXC_PART_OUTPUT_SIGNATURE DXC_FOURCC('O', 'S', 'G', '1')")]
     public const uint DXC_PART_OUTPUT_SIGNATURE = ((uint)((byte)('O')) | (uint)((byte)('S')) << 8 | (uint)((byte)('G')) << 16 | (uint)((byte)('1')) << 24);
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_PART_PATCH_CONSTANT_SIGNATURE"]/*' />
     [NativeTypeName("#define DXC_PART_PATCH_CONSTANT_SIGNATURE DXC_FOURCC('P', 'S', 'G', '1')")]
     public const uint DXC_PART_PATCH_CONSTANT_SIGNATURE = ((uint)((byte)('P')) | (uint)((byte)('S')) << 8 | (uint)((byte)('G')) << 16 | (uint)((byte)('1')) << 24);
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_ARG_DEBUG"]/*' />
     [NativeTypeName("#define DXC_ARG_DEBUG L\"-Zi\"")]
     public const string DXC_ARG_DEBUG = "-Zi";
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_ARG_SKIP_VALIDATION"]/*' />
     [NativeTypeName("#define DXC_ARG_SKIP_VALIDATION L\"-Vd\"")]
     public const string DXC_ARG_SKIP_VALIDATION = "-Vd";
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_ARG_SKIP_OPTIMIZATIONS"]/*' />
     [NativeTypeName("#define DXC_ARG_SKIP_OPTIMIZATIONS L\"-Od\"")]
     public const string DXC_ARG_SKIP_OPTIMIZATIONS = "-Od";
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_ARG_PACK_MATRIX_ROW_MAJOR"]/*' />
     [NativeTypeName("#define DXC_ARG_PACK_MATRIX_ROW_MAJOR L\"-Zpr\"")]
     public const string DXC_ARG_PACK_MATRIX_ROW_MAJOR = "-Zpr";
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_ARG_PACK_MATRIX_COLUMN_MAJOR"]/*' />
     [NativeTypeName("#define DXC_ARG_PACK_MATRIX_COLUMN_MAJOR L\"-Zpc\"")]
     public const string DXC_ARG_PACK_MATRIX_COLUMN_MAJOR = "-Zpc";
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_ARG_AVOID_FLOW_CONTROL"]/*' />
     [NativeTypeName("#define DXC_ARG_AVOID_FLOW_CONTROL L\"-Gfa\"")]
     public const string DXC_ARG_AVOID_FLOW_CONTROL = "-Gfa";
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_ARG_PREFER_FLOW_CONTROL"]/*' />
     [NativeTypeName("#define DXC_ARG_PREFER_FLOW_CONTROL L\"-Gfp\"")]
     public const string DXC_ARG_PREFER_FLOW_CONTROL = "-Gfp";
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_ARG_ENABLE_STRICTNESS"]/*' />
     [NativeTypeName("#define DXC_ARG_ENABLE_STRICTNESS L\"-Ges\"")]
     public const string DXC_ARG_ENABLE_STRICTNESS = "-Ges";
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_ARG_ENABLE_BACKWARDS_COMPATIBILITY"]/*' />
     [NativeTypeName("#define DXC_ARG_ENABLE_BACKWARDS_COMPATIBILITY L\"-Gec\"")]
     public const string DXC_ARG_ENABLE_BACKWARDS_COMPATIBILITY = "-Gec";
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_ARG_IEEE_STRICTNESS"]/*' />
     [NativeTypeName("#define DXC_ARG_IEEE_STRICTNESS L\"-Gis\"")]
     public const string DXC_ARG_IEEE_STRICTNESS = "-Gis";
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_ARG_OPTIMIZATION_LEVEL0"]/*' />
     [NativeTypeName("#define DXC_ARG_OPTIMIZATION_LEVEL0 L\"-O0\"")]
     public const string DXC_ARG_OPTIMIZATION_LEVEL0 = "-O0";
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_ARG_OPTIMIZATION_LEVEL1"]/*' />
     [NativeTypeName("#define DXC_ARG_OPTIMIZATION_LEVEL1 L\"-O1\"")]
     public const string DXC_ARG_OPTIMIZATION_LEVEL1 = "-O1";
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_ARG_OPTIMIZATION_LEVEL2"]/*' />
     [NativeTypeName("#define DXC_ARG_OPTIMIZATION_LEVEL2 L\"-O2\"")]
     public const string DXC_ARG_OPTIMIZATION_LEVEL2 = "-O2";
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_ARG_OPTIMIZATION_LEVEL3"]/*' />
     [NativeTypeName("#define DXC_ARG_OPTIMIZATION_LEVEL3 L\"-O3\"")]
     public const string DXC_ARG_OPTIMIZATION_LEVEL3 = "-O3";
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_ARG_WARNINGS_ARE_ERRORS"]/*' />
     [NativeTypeName("#define DXC_ARG_WARNINGS_ARE_ERRORS L\"-WX\"")]
     public const string DXC_ARG_WARNINGS_ARE_ERRORS = "-WX";
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_ARG_RESOURCES_MAY_ALIAS"]/*' />
     [NativeTypeName("#define DXC_ARG_RESOURCES_MAY_ALIAS L\"-res_may_alias\"")]
     public const string DXC_ARG_RESOURCES_MAY_ALIAS = "-res_may_alias";
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_ARG_ALL_RESOURCES_BOUND"]/*' />
     [NativeTypeName("#define DXC_ARG_ALL_RESOURCES_BOUND L\"-all_resources_bound\"")]
     public const string DXC_ARG_ALL_RESOURCES_BOUND = "-all_resources_bound";
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_ARG_DEBUG_NAME_FOR_SOURCE"]/*' />
     [NativeTypeName("#define DXC_ARG_DEBUG_NAME_FOR_SOURCE L\"-Zss\"")]
     public const string DXC_ARG_DEBUG_NAME_FOR_SOURCE = "-Zss";
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_ARG_DEBUG_NAME_FOR_BINARY"]/*' />
     [NativeTypeName("#define DXC_ARG_DEBUG_NAME_FOR_BINARY L\"-Zsb\"")]
     public const string DXC_ARG_DEBUG_NAME_FOR_BINARY = "-Zsb";
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_EXTRA_OUTPUT_NAME_STDOUT"]/*' />
     [NativeTypeName("#define DXC_EXTRA_OUTPUT_NAME_STDOUT L\"*stdout*\"")]
     public const string DXC_EXTRA_OUTPUT_NAME_STDOUT = "*stdout*";
 
+    /// <include file='DXC.xml' path='doc/member[@name="DXC.DXC_EXTRA_OUTPUT_NAME_STDERR"]/*' />
     [NativeTypeName("#define DXC_EXTRA_OUTPUT_NAME_STDERR L\"*stderr*\"")]
     public const string DXC_EXTRA_OUTPUT_NAME_STDERR = "*stderr*";
 }

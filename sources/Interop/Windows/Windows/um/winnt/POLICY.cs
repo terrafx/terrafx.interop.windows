@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class POLICY
 {
+    /// <include file='POLICY.xml' path='doc/member[@name="POLICY.POLICY_AUDIT_SUBCATEGORY_COUNT"]/*' />
     [NativeTypeName("#define POLICY_AUDIT_SUBCATEGORY_COUNT (60)")]
     public const int POLICY_AUDIT_SUBCATEGORY_COUNT = (60);
 }

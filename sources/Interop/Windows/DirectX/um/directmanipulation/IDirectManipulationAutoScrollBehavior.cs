@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IDirectManipulationAutoScrollBehavior : IDirectManipulationAutoScrollBehavior.Interface, INativeGuid
 {
+    /// <include file='IDirectManipulationAutoScrollBehavior.xml' path='doc/member[@name="IDirectManipulationAutoScrollBehavior.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDirectManipulationAutoScrollBehavior);
 
     public void** lpVtbl;

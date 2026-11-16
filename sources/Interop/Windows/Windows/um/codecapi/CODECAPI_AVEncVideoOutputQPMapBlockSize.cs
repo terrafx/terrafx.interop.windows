@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("97038743-4AE3-44C3-A0F2-5BD58A4634EF")]
 public unsafe partial struct CODECAPI_AVEncVideoOutputQPMapBlockSize : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncVideoOutputQPMapBlockSize.xml' path='doc/member[@name="CODECAPI_AVEncVideoOutputQPMapBlockSize.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncVideoOutputQPMapBlockSize);
 }

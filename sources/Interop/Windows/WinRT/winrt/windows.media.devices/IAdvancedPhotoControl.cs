@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAdvancedPhotoControl : IAdvancedPhotoControl.Interface, INativeGuid
 {
+    /// <include file='IAdvancedPhotoControl.xml' path='doc/member[@name="IAdvancedPhotoControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAdvancedPhotoControl);
 
     public void** lpVtbl;

@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows10.0.19043.0")]
 public unsafe partial struct IDisplayDeviceInterop : IDisplayDeviceInterop.Interface, INativeGuid
 {
+    /// <include file='IDisplayDeviceInterop.xml' path='doc/member[@name="IDisplayDeviceInterop.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDisplayDeviceInterop);
 
     public void** lpVtbl;

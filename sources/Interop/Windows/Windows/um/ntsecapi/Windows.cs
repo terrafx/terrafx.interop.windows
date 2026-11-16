@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_System_SecurityStateChange"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_System_SecurityStateChange
     {
@@ -38,6 +39,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_System_SecuritySubsystemExtension"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_System_SecuritySubsystemExtension
     {
@@ -63,6 +65,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_System_Integrity"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_System_Integrity
     {
@@ -88,6 +91,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_System_IPSecDriverEvents"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_System_IPSecDriverEvents
     {
@@ -113,6 +117,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_System_Others"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_System_Others
     {
@@ -138,6 +143,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_Logon_Logon"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_Logon_Logon
     {
@@ -163,6 +169,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_Logon_Logoff"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_Logon_Logoff
     {
@@ -188,6 +195,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_Logon_AccountLockout"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_Logon_AccountLockout
     {
@@ -213,6 +221,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_Logon_IPSecMainMode"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_Logon_IPSecMainMode
     {
@@ -238,6 +247,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_Logon_IPSecQuickMode"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_Logon_IPSecQuickMode
     {
@@ -263,6 +273,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_Logon_IPSecUserMode"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_Logon_IPSecUserMode
     {
@@ -288,6 +299,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_Logon_SpecialLogon"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_Logon_SpecialLogon
     {
@@ -313,6 +325,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_Logon_Others"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_Logon_Others
     {
@@ -338,6 +351,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_ObjectAccess_FileSystem"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_ObjectAccess_FileSystem
     {
@@ -363,6 +377,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_ObjectAccess_Registry"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_ObjectAccess_Registry
     {
@@ -388,6 +403,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_ObjectAccess_Kernel"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_ObjectAccess_Kernel
     {
@@ -413,6 +429,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_ObjectAccess_Sam"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_ObjectAccess_Sam
     {
@@ -438,6 +455,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_ObjectAccess_CertificationServices"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_ObjectAccess_CertificationServices
     {
@@ -463,6 +481,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_ObjectAccess_ApplicationGenerated"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_ObjectAccess_ApplicationGenerated
     {
@@ -488,6 +507,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_ObjectAccess_Handle"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_ObjectAccess_Handle
     {
@@ -513,6 +533,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_ObjectAccess_Share"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_ObjectAccess_Share
     {
@@ -538,6 +559,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_ObjectAccess_FirewallPacketDrops"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_ObjectAccess_FirewallPacketDrops
     {
@@ -563,6 +585,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_ObjectAccess_FirewallConnection"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_ObjectAccess_FirewallConnection
     {
@@ -588,6 +611,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_ObjectAccess_Other"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_ObjectAccess_Other
     {
@@ -613,6 +637,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_PrivilegeUse_Sensitive"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_PrivilegeUse_Sensitive
     {
@@ -638,6 +663,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_PrivilegeUse_NonSensitive"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_PrivilegeUse_NonSensitive
     {
@@ -663,6 +689,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_PrivilegeUse_Others"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_PrivilegeUse_Others
     {
@@ -688,6 +715,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_DetailedTracking_ProcessCreation"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_DetailedTracking_ProcessCreation
     {
@@ -713,6 +741,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_DetailedTracking_ProcessTermination"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_DetailedTracking_ProcessTermination
     {
@@ -738,6 +767,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_DetailedTracking_DpapiActivity"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_DetailedTracking_DpapiActivity
     {
@@ -763,6 +793,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_DetailedTracking_RpcCall"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_DetailedTracking_RpcCall
     {
@@ -788,6 +819,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_PolicyChange_AuditPolicy"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_PolicyChange_AuditPolicy
     {
@@ -813,6 +845,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_PolicyChange_AuthenticationPolicy"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_PolicyChange_AuthenticationPolicy
     {
@@ -838,6 +871,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_PolicyChange_AuthorizationPolicy"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_PolicyChange_AuthorizationPolicy
     {
@@ -863,6 +897,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_PolicyChange_MpsscvRulePolicy"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_PolicyChange_MpsscvRulePolicy
     {
@@ -888,6 +923,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_PolicyChange_WfpIPSecPolicy"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_PolicyChange_WfpIPSecPolicy
     {
@@ -913,6 +949,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_PolicyChange_Others"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_PolicyChange_Others
     {
@@ -938,6 +975,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_AccountManagement_UserAccount"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_AccountManagement_UserAccount
     {
@@ -963,6 +1001,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_AccountManagement_ComputerAccount"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_AccountManagement_ComputerAccount
     {
@@ -988,6 +1027,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_AccountManagement_SecurityGroup"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_AccountManagement_SecurityGroup
     {
@@ -1013,6 +1053,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_AccountManagement_DistributionGroup"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_AccountManagement_DistributionGroup
     {
@@ -1038,6 +1079,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_AccountManagement_ApplicationGroup"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_AccountManagement_ApplicationGroup
     {
@@ -1063,6 +1105,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_AccountManagement_Others"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_AccountManagement_Others
     {
@@ -1088,6 +1131,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_DSAccess_DSAccess"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_DSAccess_DSAccess
     {
@@ -1113,6 +1157,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_DsAccess_AdAuditChanges"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_DsAccess_AdAuditChanges
     {
@@ -1138,6 +1183,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_Ds_Replication"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_Ds_Replication
     {
@@ -1163,6 +1209,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_Ds_DetailedReplication"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_Ds_DetailedReplication
     {
@@ -1188,6 +1235,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_AccountLogon_CredentialValidation"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_AccountLogon_CredentialValidation
     {
@@ -1213,6 +1261,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_AccountLogon_Kerberos"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_AccountLogon_Kerberos
     {
@@ -1238,6 +1287,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_AccountLogon_Others"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_AccountLogon_Others
     {
@@ -1263,6 +1313,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_AccountLogon_KerbCredentialValidation"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_AccountLogon_KerbCredentialValidation
     {
@@ -1288,6 +1339,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_Logon_NPS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_Logon_NPS
     {
@@ -1313,6 +1365,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_ObjectAccess_DetailedFileShare"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_ObjectAccess_DetailedFileShare
     {
@@ -1338,6 +1391,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_ObjectAccess_RemovableStorage"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_ObjectAccess_RemovableStorage
     {
@@ -1363,6 +1417,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_ObjectAccess_CbacStaging"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_ObjectAccess_CbacStaging
     {
@@ -1388,6 +1443,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_Logon_Claims"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_Logon_Claims
     {
@@ -1413,6 +1469,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_DetailedTracking_PnpActivity"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_DetailedTracking_PnpActivity
     {
@@ -1438,6 +1495,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_Logon_Groups"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_Logon_Groups
     {
@@ -1463,6 +1521,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_DetailedTracking_TokenRightAdjusted"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_DetailedTracking_TokenRightAdjusted
     {
@@ -1488,6 +1547,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_Logon_AccessRights"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_Logon_AccessRights
     {
@@ -1513,6 +1573,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_System"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_System
     {
@@ -1538,6 +1599,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_Logon"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_Logon
     {
@@ -1563,6 +1625,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_ObjectAccess"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_ObjectAccess
     {
@@ -1588,6 +1651,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_PrivilegeUse"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_PrivilegeUse
     {
@@ -1613,6 +1677,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_DetailedTracking"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_DetailedTracking
     {
@@ -1638,6 +1703,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_PolicyChange"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_PolicyChange
     {
@@ -1663,6 +1729,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_AccountManagement"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_AccountManagement
     {
@@ -1688,6 +1755,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_DirectoryServiceAccess"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_DirectoryServiceAccess
     {
@@ -1713,6 +1781,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Audit_AccountLogon"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_AccountLogon
     {
@@ -2110,162 +2179,215 @@ public static unsafe partial class Windows
     [DllImport("advapi32", ExactSpelling = true)]
     public static extern void AuditFree([NativeTypeName("PVOID")] void* Buffer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LSA_MODE_PASSWORD_PROTECTED"]/*' />
     [NativeTypeName("#define LSA_MODE_PASSWORD_PROTECTED (0x00000001L)")]
     public const int LSA_MODE_PASSWORD_PROTECTED = (0x00000001);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LSA_MODE_INDIVIDUAL_ACCOUNTS"]/*' />
     [NativeTypeName("#define LSA_MODE_INDIVIDUAL_ACCOUNTS (0x00000002L)")]
     public const int LSA_MODE_INDIVIDUAL_ACCOUNTS = (0x00000002);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LSA_MODE_MANDATORY_ACCESS"]/*' />
     [NativeTypeName("#define LSA_MODE_MANDATORY_ACCESS (0x00000004L)")]
     public const int LSA_MODE_MANDATORY_ACCESS = (0x00000004);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LSA_MODE_LOG_FULL"]/*' />
     [NativeTypeName("#define LSA_MODE_LOG_FULL (0x00000008L)")]
     public const int LSA_MODE_LOG_FULL = (0x00000008);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VALID_PER_USER_AUDIT_POLICY_FLAG"]/*' />
     [NativeTypeName("#define VALID_PER_USER_AUDIT_POLICY_FLAG (PER_USER_AUDIT_SUCCESS_INCLUDE | \\\r\n                                          PER_USER_AUDIT_SUCCESS_EXCLUDE | \\\r\n                                          PER_USER_AUDIT_FAILURE_INCLUDE | \\\r\n                                          PER_USER_AUDIT_FAILURE_EXCLUDE | \\\r\n                                          PER_USER_AUDIT_NONE)")]
     public const int VALID_PER_USER_AUDIT_POLICY_FLAG = ((0x01) | (0x02) | (0x04) | (0x08) | (0x10));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LSAD_AES_CRYPT_SHA512_HASH_SIZE"]/*' />
     [NativeTypeName("#define LSAD_AES_CRYPT_SHA512_HASH_SIZE 64")]
     public const int LSAD_AES_CRYPT_SHA512_HASH_SIZE = 64;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LSAD_AES_KEY_SIZE"]/*' />
     [NativeTypeName("#define LSAD_AES_KEY_SIZE 16")]
     public const int LSAD_AES_KEY_SIZE = 16;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LSAD_AES_SALT_SIZE"]/*' />
     [NativeTypeName("#define LSAD_AES_SALT_SIZE 16")]
     public const int LSAD_AES_SALT_SIZE = 16;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LSAD_AES_BLOCK_SIZE"]/*' />
     [NativeTypeName("#define LSAD_AES_BLOCK_SIZE 16")]
     public const int LSAD_AES_BLOCK_SIZE = 16;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LSA_FTRECORD_DISABLED_REASONS"]/*' />
     [NativeTypeName("#define LSA_FTRECORD_DISABLED_REASONS ( 0x0000FFFFL )")]
     public const int LSA_FTRECORD_DISABLED_REASONS = (0x0000FFFF);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LSA_SID_DISABLED_ADMIN"]/*' />
     [NativeTypeName("#define LSA_SID_DISABLED_ADMIN ( 0x00000001L )")]
     public const int LSA_SID_DISABLED_ADMIN = (0x00000001);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LSA_SID_DISABLED_CONFLICT"]/*' />
     [NativeTypeName("#define LSA_SID_DISABLED_CONFLICT ( 0x00000002L )")]
     public const int LSA_SID_DISABLED_CONFLICT = (0x00000002);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LSA_NB_DISABLED_ADMIN"]/*' />
     [NativeTypeName("#define LSA_NB_DISABLED_ADMIN ( 0x00000004L )")]
     public const int LSA_NB_DISABLED_ADMIN = (0x00000004);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LSA_NB_DISABLED_CONFLICT"]/*' />
     [NativeTypeName("#define LSA_NB_DISABLED_CONFLICT ( 0x00000008L )")]
     public const int LSA_NB_DISABLED_CONFLICT = (0x00000008);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LSA_SCANNER_INFO_DISABLE_AUTH_TARGET_VALIDATION"]/*' />
     [NativeTypeName("#define LSA_SCANNER_INFO_DISABLE_AUTH_TARGET_VALIDATION ( 0x00000001L )")]
     public const int LSA_SCANNER_INFO_DISABLE_AUTH_TARGET_VALIDATION = (0x00000001);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LSA_SCANNER_INFO_ADMIN_ALL_FLAGS"]/*' />
     [NativeTypeName("#define LSA_SCANNER_INFO_ADMIN_ALL_FLAGS (LSA_SCANNER_INFO_DISABLE_AUTH_TARGET_VALIDATION)")]
     public const int LSA_SCANNER_INFO_ADMIN_ALL_FLAGS = ((0x00000001));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LSASETCAPS_RELOAD_FLAG"]/*' />
     [NativeTypeName("#define LSASETCAPS_RELOAD_FLAG 0x00000001")]
     public const int LSASETCAPS_RELOAD_FLAG = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LSASETCAPS_VALID_FLAG_MASK"]/*' />
     [NativeTypeName("#define LSASETCAPS_VALID_FLAG_MASK (                                                   \\\r\n            LSASETCAPS_RELOAD_FLAG                         \\\r\n        )")]
     public const int LSASETCAPS_VALID_FLAG_MASK = (0x00000001);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NEGOTIATE_MAX_PREFIX"]/*' />
     [NativeTypeName("#define NEGOTIATE_MAX_PREFIX 32")]
     public const int NEGOTIATE_MAX_PREFIX = 32;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SAM_PASSWORD_CHANGE_NOTIFY_ROUTINE"]/*' />
     [NativeTypeName("#define SAM_PASSWORD_CHANGE_NOTIFY_ROUTINE \"PasswordChangeNotify\"")]
     public static ReadOnlySpan<byte> SAM_PASSWORD_CHANGE_NOTIFY_ROUTINE => "PasswordChangeNotify"u8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SAM_INIT_NOTIFICATION_ROUTINE"]/*' />
     [NativeTypeName("#define SAM_INIT_NOTIFICATION_ROUTINE \"InitializeChangeNotify\"")]
     public static ReadOnlySpan<byte> SAM_INIT_NOTIFICATION_ROUTINE => "InitializeChangeNotify"u8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SAM_PASSWORD_FILTER_ROUTINE"]/*' />
     [NativeTypeName("#define SAM_PASSWORD_FILTER_ROUTINE \"PasswordFilter\"")]
     public static ReadOnlySpan<byte> SAM_PASSWORD_FILTER_ROUTINE => "PasswordFilter"u8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RtlGenRandom"]/*' />
     [NativeTypeName("#define RtlGenRandom SystemFunction036")]
     public static delegate*<void*, uint, byte> RtlGenRandom => &SystemFunction036;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RtlEncryptMemory"]/*' />
     [NativeTypeName("#define RtlEncryptMemory SystemFunction040")]
     public static delegate*<void*, uint, uint, int> RtlEncryptMemory => &SystemFunction040;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RtlDecryptMemory"]/*' />
     [NativeTypeName("#define RtlDecryptMemory SystemFunction041")]
     public static delegate*<void*, uint, uint, int> RtlDecryptMemory => &SystemFunction041;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RTL_ENCRYPT_MEMORY_SIZE"]/*' />
     [NativeTypeName("#define RTL_ENCRYPT_MEMORY_SIZE 8")]
     public const int RTL_ENCRYPT_MEMORY_SIZE = 8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RTL_ENCRYPT_OPTION_CROSS_PROCESS"]/*' />
     [NativeTypeName("#define RTL_ENCRYPT_OPTION_CROSS_PROCESS 0x01")]
     public const int RTL_ENCRYPT_OPTION_CROSS_PROCESS = 0x01;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RTL_ENCRYPT_OPTION_SAME_LOGON"]/*' />
     [NativeTypeName("#define RTL_ENCRYPT_OPTION_SAME_LOGON 0x02")]
     public const int RTL_ENCRYPT_OPTION_SAME_LOGON = 0x02;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RTL_ENCRYPT_OPTION_FOR_SYSTEM"]/*' />
     [NativeTypeName("#define RTL_ENCRYPT_OPTION_FOR_SYSTEM 0x04")]
     public const int RTL_ENCRYPT_OPTION_FOR_SYSTEM = 0x04;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.KERBEROS_VERSION"]/*' />
     [NativeTypeName("#define KERBEROS_VERSION 5")]
     public const int KERBEROS_VERSION = 5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.KERBEROS_REVISION"]/*' />
     [NativeTypeName("#define KERBEROS_REVISION 6")]
     public const int KERBEROS_REVISION = 6;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MICROSOFT_KERBEROS_NAME_A"]/*' />
     [NativeTypeName("#define MICROSOFT_KERBEROS_NAME_A \"Kerberos\"")]
     public static ReadOnlySpan<byte> MICROSOFT_KERBEROS_NAME_A => "Kerberos"u8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MICROSOFT_KERBEROS_NAME_W"]/*' />
     [NativeTypeName("#define MICROSOFT_KERBEROS_NAME_W L\"Kerberos\"")]
     public const string MICROSOFT_KERBEROS_NAME_W = "Kerberos";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MICROSOFT_KERBEROS_NAME"]/*' />
     [NativeTypeName("#define MICROSOFT_KERBEROS_NAME MICROSOFT_KERBEROS_NAME_W")]
     public const string MICROSOFT_KERBEROS_NAME = "Kerberos";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AUDIT_SET_SYSTEM_POLICY"]/*' />
     [NativeTypeName("#define AUDIT_SET_SYSTEM_POLICY (0x0001)")]
     public const int AUDIT_SET_SYSTEM_POLICY = (0x0001);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AUDIT_QUERY_SYSTEM_POLICY"]/*' />
     [NativeTypeName("#define AUDIT_QUERY_SYSTEM_POLICY (0x0002)")]
     public const int AUDIT_QUERY_SYSTEM_POLICY = (0x0002);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AUDIT_SET_USER_POLICY"]/*' />
     [NativeTypeName("#define AUDIT_SET_USER_POLICY (0x0004)")]
     public const int AUDIT_SET_USER_POLICY = (0x0004);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AUDIT_QUERY_USER_POLICY"]/*' />
     [NativeTypeName("#define AUDIT_QUERY_USER_POLICY (0x0008)")]
     public const int AUDIT_QUERY_USER_POLICY = (0x0008);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AUDIT_ENUMERATE_USERS"]/*' />
     [NativeTypeName("#define AUDIT_ENUMERATE_USERS (0x0010)")]
     public const int AUDIT_ENUMERATE_USERS = (0x0010);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AUDIT_SET_MISC_POLICY"]/*' />
     [NativeTypeName("#define AUDIT_SET_MISC_POLICY (0x0020)")]
     public const int AUDIT_SET_MISC_POLICY = (0x0020);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AUDIT_QUERY_MISC_POLICY"]/*' />
     [NativeTypeName("#define AUDIT_QUERY_MISC_POLICY (0x0040)")]
     public const int AUDIT_QUERY_MISC_POLICY = (0x0040);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AUDIT_GENERIC_ALL"]/*' />
     [NativeTypeName("#define AUDIT_GENERIC_ALL (STANDARD_RIGHTS_REQUIRED  |\\\r\n                                      AUDIT_SET_SYSTEM_POLICY   |\\\r\n                                      AUDIT_QUERY_SYSTEM_POLICY |\\\r\n                                      AUDIT_SET_USER_POLICY     |\\\r\n                                      AUDIT_QUERY_USER_POLICY   |\\\r\n                                      AUDIT_ENUMERATE_USERS     |\\\r\n                                      AUDIT_SET_MISC_POLICY     |\\\r\n                                      AUDIT_QUERY_MISC_POLICY)")]
     public const int AUDIT_GENERIC_ALL = ((0x000F0000) | (0x0001) | (0x0002) | (0x0004) | (0x0008) | (0x0010) | (0x0020) | (0x0040));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AUDIT_GENERIC_READ"]/*' />
     [NativeTypeName("#define AUDIT_GENERIC_READ (STANDARD_RIGHTS_READ      |\\\r\n                                      AUDIT_QUERY_SYSTEM_POLICY |\\\r\n                                      AUDIT_QUERY_USER_POLICY   |\\\r\n                                      AUDIT_ENUMERATE_USERS     |\\\r\n                                      AUDIT_QUERY_MISC_POLICY)")]
     public const int AUDIT_GENERIC_READ = (((0x00020000)) | (0x0002) | (0x0008) | (0x0010) | (0x0040));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AUDIT_GENERIC_WRITE"]/*' />
     [NativeTypeName("#define AUDIT_GENERIC_WRITE (STANDARD_RIGHTS_WRITE     |\\\r\n                                      AUDIT_SET_USER_POLICY     |\\\r\n                                      AUDIT_SET_MISC_POLICY     |\\\r\n                                      AUDIT_SET_SYSTEM_POLICY)")]
     public const int AUDIT_GENERIC_WRITE = (((0x00020000)) | (0x0004) | (0x0020) | (0x0001));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AUDIT_GENERIC_EXECUTE"]/*' />
     [NativeTypeName("#define AUDIT_GENERIC_EXECUTE (STANDARD_RIGHTS_EXECUTE)")]
     public const int AUDIT_GENERIC_EXECUTE = (((0x00020000)));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AuditLookupCategoryName"]/*' />
     [NativeTypeName("#define AuditLookupCategoryName AuditLookupCategoryNameW")]
     public static delegate*<Guid*, char**, byte> AuditLookupCategoryName => &AuditLookupCategoryNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AuditLookupSubCategoryName"]/*' />
     [NativeTypeName("#define AuditLookupSubCategoryName AuditLookupSubCategoryNameW")]
     public static delegate*<Guid*, char**, byte> AuditLookupSubCategoryName => &AuditLookupSubCategoryNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AuditSetGlobalSacl"]/*' />
     [NativeTypeName("#define AuditSetGlobalSacl AuditSetGlobalSaclW")]
     public static delegate*<char*, ACL*, byte> AuditSetGlobalSacl => &AuditSetGlobalSaclW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AuditQueryGlobalSacl"]/*' />
     [NativeTypeName("#define AuditQueryGlobalSacl AuditQueryGlobalSaclW")]
     public static delegate*<char*, ACL**, byte> AuditQueryGlobalSacl => &AuditQueryGlobalSaclW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PKU2U_PACKAGE_NAME_A"]/*' />
     [NativeTypeName("#define PKU2U_PACKAGE_NAME_A \"pku2u\"")]
     public static ReadOnlySpan<byte> PKU2U_PACKAGE_NAME_A => "pku2u"u8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PKU2U_PACKAGE_NAME"]/*' />
     [NativeTypeName("#define PKU2U_PACKAGE_NAME L\"pku2u\"")]
     public const string PKU2U_PACKAGE_NAME = "pku2u";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PKU2U_PACKAGE_NAME_W"]/*' />
     [NativeTypeName("#define PKU2U_PACKAGE_NAME_W PKU2U_PACKAGE_NAME")]
     public const string PKU2U_PACKAGE_NAME_W = "pku2u";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PKU2U_CREDUI_CONTEXT_VERSION"]/*' />
     [NativeTypeName("#define PKU2U_CREDUI_CONTEXT_VERSION 0x4154414454524543i64")]
     public const long PKU2U_CREDUI_CONTEXT_VERSION = 0x4154414454524543L;
 }

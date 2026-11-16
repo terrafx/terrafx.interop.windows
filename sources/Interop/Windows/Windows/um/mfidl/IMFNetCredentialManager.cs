@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFNetCredentialManager : IMFNetCredentialManager.Interface, INativeGuid
 {
+    /// <include file='IMFNetCredentialManager.xml' path='doc/member[@name="IMFNetCredentialManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFNetCredentialManager);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IApplicationViewTitleBar : IApplicationViewTitleBar.Interface, INativeGuid
 {
+    /// <include file='IApplicationViewTitleBar.xml' path='doc/member[@name="IApplicationViewTitleBar.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IApplicationViewTitleBar);
 
     public void** lpVtbl;

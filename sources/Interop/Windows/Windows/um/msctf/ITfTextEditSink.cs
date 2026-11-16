@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ITfTextEditSink : ITfTextEditSink.Interface, INativeGuid
 {
+    /// <include file='ITfTextEditSink.xml' path='doc/member[@name="ITfTextEditSink.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfTextEditSink);
 
     public void** lpVtbl;

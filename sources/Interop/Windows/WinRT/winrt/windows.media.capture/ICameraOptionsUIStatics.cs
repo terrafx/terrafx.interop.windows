@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICameraOptionsUIStatics : ICameraOptionsUIStatics.Interface, INativeGuid
 {
+    /// <include file='ICameraOptionsUIStatics.xml' path='doc/member[@name="ICameraOptionsUIStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICameraOptionsUIStatics);
 
     public void** lpVtbl;

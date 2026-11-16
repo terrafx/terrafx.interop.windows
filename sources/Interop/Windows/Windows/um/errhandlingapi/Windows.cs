@@ -89,6 +89,7 @@ public static unsafe partial class Windows
     [DllImport("kernelbase", ExactSpelling = true)]
     public static extern void TerminateProcessOnMemoryExhaustion([NativeTypeName("SIZE_T")] nuint FailedAllocationSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FatalAppExit"]/*' />
     [NativeTypeName("#define FatalAppExit FatalAppExitW")]
     public static delegate*<uint, char*, void> FatalAppExit => &FatalAppExitW;
 }

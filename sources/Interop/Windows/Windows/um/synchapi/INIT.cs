@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class INIT
 {
+    /// <include file='INIT.xml' path='doc/member[@name="INIT.INIT_ONCE_CHECK_ONLY"]/*' />
     [NativeTypeName("#define INIT_ONCE_CHECK_ONLY RTL_RUN_ONCE_CHECK_ONLY")]
     public const uint INIT_ONCE_CHECK_ONLY = 0x00000001U;
 
+    /// <include file='INIT.xml' path='doc/member[@name="INIT.INIT_ONCE_ASYNC"]/*' />
     [NativeTypeName("#define INIT_ONCE_ASYNC RTL_RUN_ONCE_ASYNC")]
     public const uint INIT_ONCE_ASYNC = 0x00000002U;
 
+    /// <include file='INIT.xml' path='doc/member[@name="INIT.INIT_ONCE_INIT_FAILED"]/*' />
     [NativeTypeName("#define INIT_ONCE_INIT_FAILED RTL_RUN_ONCE_INIT_FAILED")]
     public const uint INIT_ONCE_INIT_FAILED = 0x00000004U;
 
+    /// <include file='INIT.xml' path='doc/member[@name="INIT.INIT_ONCE_CTX_RESERVED_BITS"]/*' />
     [NativeTypeName("#define INIT_ONCE_CTX_RESERVED_BITS RTL_RUN_ONCE_CTX_RESERVED_BITS")]
     public const int INIT_ONCE_CTX_RESERVED_BITS = 2;
 }

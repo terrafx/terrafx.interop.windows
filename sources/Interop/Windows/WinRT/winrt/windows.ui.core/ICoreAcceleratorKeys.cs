@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICoreAcceleratorKeys : ICoreAcceleratorKeys.Interface, INativeGuid
 {
+    /// <include file='ICoreAcceleratorKeys.xml' path='doc/member[@name="ICoreAcceleratorKeys.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICoreAcceleratorKeys);
 
     public void** lpVtbl;

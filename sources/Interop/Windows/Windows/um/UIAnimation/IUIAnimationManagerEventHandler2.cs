@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IUIAnimationManagerEventHandler2 : IUIAnimationManagerEventHandler2.Interface, INativeGuid
 {
+    /// <include file='IUIAnimationManagerEventHandler2.xml' path='doc/member[@name="IUIAnimationManagerEventHandler2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUIAnimationManagerEventHandler2);
 
     public void** lpVtbl;

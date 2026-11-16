@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IRadialControllerIndependentInputSource : IRadialControllerIndependentInputSource.Interface, INativeGuid
 {
+    /// <include file='IRadialControllerIndependentInputSource.xml' path='doc/member[@name="IRadialControllerIndependentInputSource.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRadialControllerIndependentInputSource);
 
     public void** lpVtbl;

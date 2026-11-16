@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFRateSupport : IMFRateSupport.Interface, INativeGuid
 {
+    /// <include file='IMFRateSupport.xml' path='doc/member[@name="IMFRateSupport.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFRateSupport);
 
     public void** lpVtbl;

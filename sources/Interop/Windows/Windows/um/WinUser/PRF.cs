@@ -7,21 +7,27 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class PRF
 {
+    /// <include file='PRF.xml' path='doc/member[@name="PRF.PRF_CHECKVISIBLE"]/*' />
     [NativeTypeName("#define PRF_CHECKVISIBLE 0x00000001L")]
     public const int PRF_CHECKVISIBLE = 0x00000001;
 
+    /// <include file='PRF.xml' path='doc/member[@name="PRF.PRF_NONCLIENT"]/*' />
     [NativeTypeName("#define PRF_NONCLIENT 0x00000002L")]
     public const int PRF_NONCLIENT = 0x00000002;
 
+    /// <include file='PRF.xml' path='doc/member[@name="PRF.PRF_CLIENT"]/*' />
     [NativeTypeName("#define PRF_CLIENT 0x00000004L")]
     public const int PRF_CLIENT = 0x00000004;
 
+    /// <include file='PRF.xml' path='doc/member[@name="PRF.PRF_ERASEBKGND"]/*' />
     [NativeTypeName("#define PRF_ERASEBKGND 0x00000008L")]
     public const int PRF_ERASEBKGND = 0x00000008;
 
+    /// <include file='PRF.xml' path='doc/member[@name="PRF.PRF_CHILDREN"]/*' />
     [NativeTypeName("#define PRF_CHILDREN 0x00000010L")]
     public const int PRF_CHILDREN = 0x00000010;
 
+    /// <include file='PRF.xml' path='doc/member[@name="PRF.PRF_OWNED"]/*' />
     [NativeTypeName("#define PRF_OWNED 0x00000020L")]
     public const int PRF_OWNED = 0x00000020;
 }

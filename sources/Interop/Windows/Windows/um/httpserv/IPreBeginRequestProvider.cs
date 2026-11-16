@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpEventProvider")]
 public unsafe partial struct IPreBeginRequestProvider : IPreBeginRequestProvider.Interface, INativeGuid
 {
+    /// <include file='IPreBeginRequestProvider.xml' path='doc/member[@name="IPreBeginRequestProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPreBeginRequestProvider);
 
     public void** lpVtbl;

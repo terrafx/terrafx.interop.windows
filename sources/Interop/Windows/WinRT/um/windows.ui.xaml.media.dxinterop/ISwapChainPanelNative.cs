@@ -20,6 +20,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct ISwapChainPanelNative : ISwapChainPanelNative.Interface, INativeGuid
 {
+    /// <include file='ISwapChainPanelNative.xml' path='doc/member[@name="ISwapChainPanelNative.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISwapChainPanelNative);
 
     public void** lpVtbl;

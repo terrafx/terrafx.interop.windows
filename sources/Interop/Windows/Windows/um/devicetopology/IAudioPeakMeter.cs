@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAudioPeakMeter : IAudioPeakMeter.Interface, INativeGuid
 {
+    /// <include file='IAudioPeakMeter.xml' path='doc/member[@name="IAudioPeakMeter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAudioPeakMeter);
 
     public void** lpVtbl;

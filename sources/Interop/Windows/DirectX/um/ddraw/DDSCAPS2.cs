@@ -64,96 +64,127 @@ public partial struct DDSCAPS2
         public uint dwVolumeDepth;
     }
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_RESERVED4"]/*' />
     [NativeTypeName("#define DDSCAPS2_RESERVED4 0x00000002L")]
     public const int DDSCAPS2_RESERVED4 = 0x00000002;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_HARDWAREDEINTERLACE"]/*' />
     [NativeTypeName("#define DDSCAPS2_HARDWAREDEINTERLACE 0x00000000L")]
     public const int DDSCAPS2_HARDWAREDEINTERLACE = 0x00000000;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_HINTDYNAMIC"]/*' />
     [NativeTypeName("#define DDSCAPS2_HINTDYNAMIC 0x00000004L")]
     public const int DDSCAPS2_HINTDYNAMIC = 0x00000004;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_HINTSTATIC"]/*' />
     [NativeTypeName("#define DDSCAPS2_HINTSTATIC 0x00000008L")]
     public const int DDSCAPS2_HINTSTATIC = 0x00000008;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_TEXTUREMANAGE"]/*' />
     [NativeTypeName("#define DDSCAPS2_TEXTUREMANAGE 0x00000010L")]
     public const int DDSCAPS2_TEXTUREMANAGE = 0x00000010;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_RESERVED1"]/*' />
     [NativeTypeName("#define DDSCAPS2_RESERVED1 0x00000020L")]
     public const int DDSCAPS2_RESERVED1 = 0x00000020;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_RESERVED2"]/*' />
     [NativeTypeName("#define DDSCAPS2_RESERVED2 0x00000040L")]
     public const int DDSCAPS2_RESERVED2 = 0x00000040;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_OPAQUE"]/*' />
     [NativeTypeName("#define DDSCAPS2_OPAQUE 0x00000080L")]
     public const int DDSCAPS2_OPAQUE = 0x00000080;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_HINTANTIALIASING"]/*' />
     [NativeTypeName("#define DDSCAPS2_HINTANTIALIASING 0x00000100L")]
     public const int DDSCAPS2_HINTANTIALIASING = 0x00000100;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_CUBEMAP"]/*' />
     [NativeTypeName("#define DDSCAPS2_CUBEMAP 0x00000200L")]
     public const int DDSCAPS2_CUBEMAP = 0x00000200;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_CUBEMAP_POSITIVEX"]/*' />
     [NativeTypeName("#define DDSCAPS2_CUBEMAP_POSITIVEX 0x00000400L")]
     public const int DDSCAPS2_CUBEMAP_POSITIVEX = 0x00000400;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_CUBEMAP_NEGATIVEX"]/*' />
     [NativeTypeName("#define DDSCAPS2_CUBEMAP_NEGATIVEX 0x00000800L")]
     public const int DDSCAPS2_CUBEMAP_NEGATIVEX = 0x00000800;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_CUBEMAP_POSITIVEY"]/*' />
     [NativeTypeName("#define DDSCAPS2_CUBEMAP_POSITIVEY 0x00001000L")]
     public const int DDSCAPS2_CUBEMAP_POSITIVEY = 0x00001000;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_CUBEMAP_NEGATIVEY"]/*' />
     [NativeTypeName("#define DDSCAPS2_CUBEMAP_NEGATIVEY 0x00002000L")]
     public const int DDSCAPS2_CUBEMAP_NEGATIVEY = 0x00002000;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_CUBEMAP_POSITIVEZ"]/*' />
     [NativeTypeName("#define DDSCAPS2_CUBEMAP_POSITIVEZ 0x00004000L")]
     public const int DDSCAPS2_CUBEMAP_POSITIVEZ = 0x00004000;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_CUBEMAP_NEGATIVEZ"]/*' />
     [NativeTypeName("#define DDSCAPS2_CUBEMAP_NEGATIVEZ 0x00008000L")]
     public const int DDSCAPS2_CUBEMAP_NEGATIVEZ = 0x00008000;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_CUBEMAP_ALLFACES"]/*' />
     [NativeTypeName("#define DDSCAPS2_CUBEMAP_ALLFACES ( DDSCAPS2_CUBEMAP_POSITIVEX |\\\r\n                                    DDSCAPS2_CUBEMAP_NEGATIVEX |\\\r\n                                    DDSCAPS2_CUBEMAP_POSITIVEY |\\\r\n                                    DDSCAPS2_CUBEMAP_NEGATIVEY |\\\r\n                                    DDSCAPS2_CUBEMAP_POSITIVEZ |\\\r\n                                    DDSCAPS2_CUBEMAP_NEGATIVEZ )")]
     public const int DDSCAPS2_CUBEMAP_ALLFACES = (0x00000400 | 0x00000800 | 0x00001000 | 0x00002000 | 0x00004000 | 0x00008000);
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_MIPMAPSUBLEVEL"]/*' />
     [NativeTypeName("#define DDSCAPS2_MIPMAPSUBLEVEL 0x00010000L")]
     public const int DDSCAPS2_MIPMAPSUBLEVEL = 0x00010000;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_D3DTEXTUREMANAGE"]/*' />
     [NativeTypeName("#define DDSCAPS2_D3DTEXTUREMANAGE 0x00020000L")]
     public const int DDSCAPS2_D3DTEXTUREMANAGE = 0x00020000;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_DONOTPERSIST"]/*' />
     [NativeTypeName("#define DDSCAPS2_DONOTPERSIST 0x00040000L")]
     public const int DDSCAPS2_DONOTPERSIST = 0x00040000;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_STEREOSURFACELEFT"]/*' />
     [NativeTypeName("#define DDSCAPS2_STEREOSURFACELEFT 0x00080000L")]
     public const int DDSCAPS2_STEREOSURFACELEFT = 0x00080000;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_VOLUME"]/*' />
     [NativeTypeName("#define DDSCAPS2_VOLUME 0x00200000L")]
     public const int DDSCAPS2_VOLUME = 0x00200000;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_NOTUSERLOCKABLE"]/*' />
     [NativeTypeName("#define DDSCAPS2_NOTUSERLOCKABLE 0x00400000L")]
     public const int DDSCAPS2_NOTUSERLOCKABLE = 0x00400000;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_POINTS"]/*' />
     [NativeTypeName("#define DDSCAPS2_POINTS 0x00800000L")]
     public const int DDSCAPS2_POINTS = 0x00800000;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_RTPATCHES"]/*' />
     [NativeTypeName("#define DDSCAPS2_RTPATCHES 0x01000000L")]
     public const int DDSCAPS2_RTPATCHES = 0x01000000;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_NPATCHES"]/*' />
     [NativeTypeName("#define DDSCAPS2_NPATCHES 0x02000000L")]
     public const int DDSCAPS2_NPATCHES = 0x02000000;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_RESERVED3"]/*' />
     [NativeTypeName("#define DDSCAPS2_RESERVED3 0x04000000L")]
     public const int DDSCAPS2_RESERVED3 = 0x04000000;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_DISCARDBACKBUFFER"]/*' />
     [NativeTypeName("#define DDSCAPS2_DISCARDBACKBUFFER 0x10000000L")]
     public const int DDSCAPS2_DISCARDBACKBUFFER = 0x10000000;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_ENABLEALPHACHANNEL"]/*' />
     [NativeTypeName("#define DDSCAPS2_ENABLEALPHACHANNEL 0x20000000L")]
     public const int DDSCAPS2_ENABLEALPHACHANNEL = 0x20000000;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_EXTENDEDFORMATPRIMARY"]/*' />
     [NativeTypeName("#define DDSCAPS2_EXTENDEDFORMATPRIMARY 0x40000000L")]
     public const int DDSCAPS2_EXTENDEDFORMATPRIMARY = 0x40000000;
 
+    /// <include file='DDSCAPS2.xml' path='doc/member[@name="DDSCAPS2.DDSCAPS2_ADDITIONALPRIMARY"]/*' />
     [NativeTypeName("#define DDSCAPS2_ADDITIONALPRIMARY 0x80000000L")]
     public const uint DDSCAPS2_ADDITIONALPRIMARY = 0x80000000;
 }

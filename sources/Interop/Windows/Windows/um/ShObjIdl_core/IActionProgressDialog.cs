@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IActionProgressDialog : IActionProgressDialog.Interface, INativeGuid
 {
+    /// <include file='IActionProgressDialog.xml' path='doc/member[@name="IActionProgressDialog.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IActionProgressDialog);
 
     public void** lpVtbl;

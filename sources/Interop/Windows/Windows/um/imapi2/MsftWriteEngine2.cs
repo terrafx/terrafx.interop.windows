@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("2735412C-7F64-5B0F-8F00-5D77AFBE261E")]
 public unsafe partial struct MsftWriteEngine2 : INativeGuid
 {
+    /// <include file='MsftWriteEngine2.xml' path='doc/member[@name="MsftWriteEngine2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_MsftWriteEngine2);
 }

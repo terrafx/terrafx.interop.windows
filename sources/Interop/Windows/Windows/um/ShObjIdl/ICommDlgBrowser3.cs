@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("ICommDlgBrowser2")]
 public unsafe partial struct ICommDlgBrowser3 : ICommDlgBrowser3.Interface, INativeGuid
 {
+    /// <include file='ICommDlgBrowser3.xml' path='doc/member[@name="ICommDlgBrowser3.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICommDlgBrowser3);
 
     public void** lpVtbl;

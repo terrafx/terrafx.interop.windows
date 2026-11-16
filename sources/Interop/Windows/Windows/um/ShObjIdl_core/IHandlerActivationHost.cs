@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IHandlerActivationHost : IHandlerActivationHost.Interface, INativeGuid
 {
+    /// <include file='IHandlerActivationHost.xml' path='doc/member[@name="IHandlerActivationHost.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHandlerActivationHost);
 
     public void** lpVtbl;

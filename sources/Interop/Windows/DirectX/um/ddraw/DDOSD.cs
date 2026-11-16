@@ -7,18 +7,23 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DDOSD
 {
+    /// <include file='DDOSD.xml' path='doc/member[@name="DDOSD.DDOSD_GUID"]/*' />
     [NativeTypeName("#define DDOSD_GUID 0x00000001l")]
     public const int DDOSD_GUID = 0x00000001;
 
+    /// <include file='DDOSD.xml' path='doc/member[@name="DDOSD.DDOSD_COMPRESSION_RATIO"]/*' />
     [NativeTypeName("#define DDOSD_COMPRESSION_RATIO 0x00000002l")]
     public const int DDOSD_COMPRESSION_RATIO = 0x00000002;
 
+    /// <include file='DDOSD.xml' path='doc/member[@name="DDOSD.DDOSD_SCAPS"]/*' />
     [NativeTypeName("#define DDOSD_SCAPS 0x00000004l")]
     public const int DDOSD_SCAPS = 0x00000004;
 
+    /// <include file='DDOSD.xml' path='doc/member[@name="DDOSD.DDOSD_OSCAPS"]/*' />
     [NativeTypeName("#define DDOSD_OSCAPS 0x00000008l")]
     public const int DDOSD_OSCAPS = 0x00000008;
 
+    /// <include file='DDOSD.xml' path='doc/member[@name="DDOSD.DDOSD_ALL"]/*' />
     [NativeTypeName("#define DDOSD_ALL 0x0000000fl")]
     public const int DDOSD_ALL = 0x0000000f;
 }

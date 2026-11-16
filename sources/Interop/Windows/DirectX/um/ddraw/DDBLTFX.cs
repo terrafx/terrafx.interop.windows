@@ -318,30 +318,39 @@ public unsafe partial struct DDBLTFX
         public IDirectDrawSurface* lpDDSPattern;
     }
 
+    /// <include file='DDBLTFX.xml' path='doc/member[@name="DDBLTFX.DDBLTFX_ARITHSTRETCHY"]/*' />
     [NativeTypeName("#define DDBLTFX_ARITHSTRETCHY 0x00000001l")]
     public const int DDBLTFX_ARITHSTRETCHY = 0x00000001;
 
+    /// <include file='DDBLTFX.xml' path='doc/member[@name="DDBLTFX.DDBLTFX_MIRRORLEFTRIGHT"]/*' />
     [NativeTypeName("#define DDBLTFX_MIRRORLEFTRIGHT 0x00000002l")]
     public const int DDBLTFX_MIRRORLEFTRIGHT = 0x00000002;
 
+    /// <include file='DDBLTFX.xml' path='doc/member[@name="DDBLTFX.DDBLTFX_MIRRORUPDOWN"]/*' />
     [NativeTypeName("#define DDBLTFX_MIRRORUPDOWN 0x00000004l")]
     public const int DDBLTFX_MIRRORUPDOWN = 0x00000004;
 
+    /// <include file='DDBLTFX.xml' path='doc/member[@name="DDBLTFX.DDBLTFX_NOTEARING"]/*' />
     [NativeTypeName("#define DDBLTFX_NOTEARING 0x00000008l")]
     public const int DDBLTFX_NOTEARING = 0x00000008;
 
+    /// <include file='DDBLTFX.xml' path='doc/member[@name="DDBLTFX.DDBLTFX_ROTATE180"]/*' />
     [NativeTypeName("#define DDBLTFX_ROTATE180 0x00000010l")]
     public const int DDBLTFX_ROTATE180 = 0x00000010;
 
+    /// <include file='DDBLTFX.xml' path='doc/member[@name="DDBLTFX.DDBLTFX_ROTATE270"]/*' />
     [NativeTypeName("#define DDBLTFX_ROTATE270 0x00000020l")]
     public const int DDBLTFX_ROTATE270 = 0x00000020;
 
+    /// <include file='DDBLTFX.xml' path='doc/member[@name="DDBLTFX.DDBLTFX_ROTATE90"]/*' />
     [NativeTypeName("#define DDBLTFX_ROTATE90 0x00000040l")]
     public const int DDBLTFX_ROTATE90 = 0x00000040;
 
+    /// <include file='DDBLTFX.xml' path='doc/member[@name="DDBLTFX.DDBLTFX_ZBUFFERRANGE"]/*' />
     [NativeTypeName("#define DDBLTFX_ZBUFFERRANGE 0x00000080l")]
     public const int DDBLTFX_ZBUFFERRANGE = 0x00000080;
 
+    /// <include file='DDBLTFX.xml' path='doc/member[@name="DDBLTFX.DDBLTFX_ZBUFFERBASEDEST"]/*' />
     [NativeTypeName("#define DDBLTFX_ZBUFFERBASEDEST 0x00000100l")]
     public const int DDBLTFX_ZBUFFERBASEDEST = 0x00000100;
 }

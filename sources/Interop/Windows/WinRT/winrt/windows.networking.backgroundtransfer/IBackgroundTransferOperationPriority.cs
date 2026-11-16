@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IBackgroundTransferOperationPriority : IBackgroundTransferOperationPriority.Interface, INativeGuid
 {
+    /// <include file='IBackgroundTransferOperationPriority.xml' path='doc/member[@name="IBackgroundTransferOperationPriority.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBackgroundTransferOperationPriority);
 
     public void** lpVtbl;

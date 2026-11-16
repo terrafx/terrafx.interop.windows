@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IPresentStatistics")]
 public unsafe partial struct ICompositionFramePresentStatistics : ICompositionFramePresentStatistics.Interface, INativeGuid
 {
+    /// <include file='ICompositionFramePresentStatistics.xml' path='doc/member[@name="ICompositionFramePresentStatistics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICompositionFramePresentStatistics);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IThumbnailProperties : IThumbnailProperties.Interface, INativeGuid
 {
+    /// <include file='IThumbnailProperties.xml' path='doc/member[@name="IThumbnailProperties.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IThumbnailProperties);
 
     public void** lpVtbl;

@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MF
 {
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_SHARING_ENGINE_DEVICE_NAME"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_SHARING_ENGINE_DEVICE_NAME
     {
@@ -37,6 +38,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_SHARING_ENGINE_DEVICE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_MEDIA_SHARING_ENGINE_DEVICE
     {
@@ -62,6 +64,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIA_SHARING_ENGINE_INITIAL_SEEK_TIME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MEDIA_SHARING_ENGINE_INITIAL_SEEK_TIME
     {
@@ -87,6 +90,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SHUTDOWN_RENDERER_ON_ENGINE_SHUTDOWN"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_SHUTDOWN_RENDERER_ON_ENGINE_SHUTDOWN
     {
@@ -112,6 +116,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_PREFERRED_SOURCE_URI"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_PREFERRED_SOURCE_URI
     {
@@ -137,6 +142,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SHARING_ENGINE_SHAREDRENDERER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_SHARING_ENGINE_SHAREDRENDERER
     {
@@ -162,6 +168,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SHARING_ENGINE_CALLBACK"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_SHARING_ENGINE_CALLBACK
     {

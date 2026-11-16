@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFVideoProcessorControl : IMFVideoProcessorControl.Interface, INativeGuid
 {
+    /// <include file='IMFVideoProcessorControl.xml' path='doc/member[@name="IMFVideoProcessorControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFVideoProcessorControl);
 
     public void** lpVtbl;

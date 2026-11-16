@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDOMEventRegistrationCallback : IDOMEventRegistrationCallback.Interface, INativeGuid
 {
+    /// <include file='IDOMEventRegistrationCallback.xml' path='doc/member[@name="IDOMEventRegistrationCallback.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDOMEventRegistrationCallback);
 
     public void** lpVtbl;

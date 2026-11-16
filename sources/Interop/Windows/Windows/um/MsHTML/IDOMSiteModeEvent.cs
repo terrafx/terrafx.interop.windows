@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IDOMSiteModeEvent : IDOMSiteModeEvent.Interface, INativeGuid
 {
+    /// <include file='IDOMSiteModeEvent.xml' path='doc/member[@name="IDOMSiteModeEvent.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDOMSiteModeEvent);
 
     public void** lpVtbl;

@@ -12,6 +12,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3DAUTHENTICATEDQUERY
 {
+    /// <include file='D3DAUTHENTICATEDQUERY.xml' path='doc/member[@name="D3DAUTHENTICATEDQUERY.D3DAUTHENTICATEDQUERY_PROTECTION"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3DAUTHENTICATEDQUERY_PROTECTION
     {
@@ -37,6 +38,7 @@ public static partial class D3DAUTHENTICATEDQUERY
         }
     }
 
+    /// <include file='D3DAUTHENTICATEDQUERY.xml' path='doc/member[@name="D3DAUTHENTICATEDQUERY.D3DAUTHENTICATEDQUERY_CHANNELTYPE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3DAUTHENTICATEDQUERY_CHANNELTYPE
     {
@@ -62,6 +64,7 @@ public static partial class D3DAUTHENTICATEDQUERY
         }
     }
 
+    /// <include file='D3DAUTHENTICATEDQUERY.xml' path='doc/member[@name="D3DAUTHENTICATEDQUERY.D3DAUTHENTICATEDQUERY_DEVICEHANDLE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3DAUTHENTICATEDQUERY_DEVICEHANDLE
     {
@@ -87,6 +90,7 @@ public static partial class D3DAUTHENTICATEDQUERY
         }
     }
 
+    /// <include file='D3DAUTHENTICATEDQUERY.xml' path='doc/member[@name="D3DAUTHENTICATEDQUERY.D3DAUTHENTICATEDQUERY_CRYPTOSESSION"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3DAUTHENTICATEDQUERY_CRYPTOSESSION
     {
@@ -112,6 +116,7 @@ public static partial class D3DAUTHENTICATEDQUERY
         }
     }
 
+    /// <include file='D3DAUTHENTICATEDQUERY.xml' path='doc/member[@name="D3DAUTHENTICATEDQUERY.D3DAUTHENTICATEDQUERY_RESTRICTEDSHAREDRESOURCEPROCESSCOUNT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3DAUTHENTICATEDQUERY_RESTRICTEDSHAREDRESOURCEPROCESSCOUNT
     {
@@ -137,6 +142,7 @@ public static partial class D3DAUTHENTICATEDQUERY
         }
     }
 
+    /// <include file='D3DAUTHENTICATEDQUERY.xml' path='doc/member[@name="D3DAUTHENTICATEDQUERY.D3DAUTHENTICATEDQUERY_RESTRICTEDSHAREDRESOURCEPROCESS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3DAUTHENTICATEDQUERY_RESTRICTEDSHAREDRESOURCEPROCESS
     {
@@ -162,6 +168,7 @@ public static partial class D3DAUTHENTICATEDQUERY
         }
     }
 
+    /// <include file='D3DAUTHENTICATEDQUERY.xml' path='doc/member[@name="D3DAUTHENTICATEDQUERY.D3DAUTHENTICATEDQUERY_UNRESTRICTEDPROTECTEDSHAREDRESOURCECOUNT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3DAUTHENTICATEDQUERY_UNRESTRICTEDPROTECTEDSHAREDRESOURCECOUNT
     {
@@ -187,6 +194,7 @@ public static partial class D3DAUTHENTICATEDQUERY
         }
     }
 
+    /// <include file='D3DAUTHENTICATEDQUERY.xml' path='doc/member[@name="D3DAUTHENTICATEDQUERY.D3DAUTHENTICATEDQUERY_OUTPUTIDCOUNT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3DAUTHENTICATEDQUERY_OUTPUTIDCOUNT
     {
@@ -212,6 +220,7 @@ public static partial class D3DAUTHENTICATEDQUERY
         }
     }
 
+    /// <include file='D3DAUTHENTICATEDQUERY.xml' path='doc/member[@name="D3DAUTHENTICATEDQUERY.D3DAUTHENTICATEDQUERY_OUTPUTID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3DAUTHENTICATEDQUERY_OUTPUTID
     {
@@ -237,6 +246,7 @@ public static partial class D3DAUTHENTICATEDQUERY
         }
     }
 
+    /// <include file='D3DAUTHENTICATEDQUERY.xml' path='doc/member[@name="D3DAUTHENTICATEDQUERY.D3DAUTHENTICATEDQUERY_ACCESSIBILITYATTRIBUTES"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3DAUTHENTICATEDQUERY_ACCESSIBILITYATTRIBUTES
     {
@@ -262,6 +272,7 @@ public static partial class D3DAUTHENTICATEDQUERY
         }
     }
 
+    /// <include file='D3DAUTHENTICATEDQUERY.xml' path='doc/member[@name="D3DAUTHENTICATEDQUERY.D3DAUTHENTICATEDQUERY_ENCRYPTIONWHENACCESSIBLEGUIDCOUNT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3DAUTHENTICATEDQUERY_ENCRYPTIONWHENACCESSIBLEGUIDCOUNT
     {
@@ -287,6 +298,7 @@ public static partial class D3DAUTHENTICATEDQUERY
         }
     }
 
+    /// <include file='D3DAUTHENTICATEDQUERY.xml' path='doc/member[@name="D3DAUTHENTICATEDQUERY.D3DAUTHENTICATEDQUERY_ENCRYPTIONWHENACCESSIBLEGUID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3DAUTHENTICATEDQUERY_ENCRYPTIONWHENACCESSIBLEGUID
     {
@@ -312,6 +324,7 @@ public static partial class D3DAUTHENTICATEDQUERY
         }
     }
 
+    /// <include file='D3DAUTHENTICATEDQUERY.xml' path='doc/member[@name="D3DAUTHENTICATEDQUERY.D3DAUTHENTICATEDQUERY_CURRENTENCRYPTIONWHENACCESSIBLE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3DAUTHENTICATEDQUERY_CURRENTENCRYPTIONWHENACCESSIBLE
     {

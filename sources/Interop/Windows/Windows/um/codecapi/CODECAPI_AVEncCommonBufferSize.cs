@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("0DB96574-B6A4-4C8B-8106-3773DE0310CD")]
 public unsafe partial struct CODECAPI_AVEncCommonBufferSize : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncCommonBufferSize.xml' path='doc/member[@name="CODECAPI_AVEncCommonBufferSize.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncCommonBufferSize);
 }

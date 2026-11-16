@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class GUID
 {
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_XAxis"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_XAxis
     {
@@ -38,6 +39,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_YAxis"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_YAxis
     {
@@ -63,6 +65,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ZAxis"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ZAxis
     {
@@ -88,6 +91,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_RxAxis"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_RxAxis
     {
@@ -113,6 +117,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_RyAxis"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_RyAxis
     {
@@ -138,6 +143,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_RzAxis"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_RzAxis
     {
@@ -163,6 +169,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_Slider"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_Slider
     {
@@ -188,6 +195,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_Button"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_Button
     {
@@ -213,6 +221,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_Key"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_Key
     {
@@ -238,6 +247,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_POV"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_POV
     {
@@ -263,6 +273,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_Unknown"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_Unknown
     {
@@ -288,6 +299,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_SysMouse"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_SysMouse
     {
@@ -313,6 +325,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_SysKeyboard"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_SysKeyboard
     {
@@ -338,6 +351,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_Joystick"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_Joystick
     {
@@ -363,6 +377,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_SysMouseEm"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_SysMouseEm
     {
@@ -388,6 +403,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_SysMouseEm2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_SysMouseEm2
     {
@@ -413,6 +429,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_SysKeyboardEm"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_SysKeyboardEm
     {
@@ -438,6 +455,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_SysKeyboardEm2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_SysKeyboardEm2
     {
@@ -463,6 +481,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ConstantForce"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ConstantForce
     {
@@ -488,6 +507,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_RampForce"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_RampForce
     {
@@ -513,6 +533,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_Square"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_Square
     {
@@ -538,6 +559,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_Sine"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_Sine
     {
@@ -563,6 +585,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_Triangle"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_Triangle
     {
@@ -588,6 +611,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_SawtoothUp"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_SawtoothUp
     {
@@ -613,6 +637,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_SawtoothDown"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_SawtoothDown
     {
@@ -638,6 +663,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_Spring"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_Spring
     {
@@ -663,6 +689,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_Damper"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_Damper
     {
@@ -688,6 +715,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_Inertia"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_Inertia
     {
@@ -713,6 +741,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_Friction"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_Friction
     {
@@ -738,6 +767,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_CustomForce"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_CustomForce
     {

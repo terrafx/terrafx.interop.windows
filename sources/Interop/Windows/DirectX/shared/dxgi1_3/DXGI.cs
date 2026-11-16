@@ -7,6 +7,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DXGI
 {
+    /// <include file='DXGI.xml' path='doc/member[@name="DXGI.DXGI_CREATE_FACTORY_DEBUG"]/*' />
     [NativeTypeName("#define DXGI_CREATE_FACTORY_DEBUG 0x1")]
     public const int DXGI_CREATE_FACTORY_DEBUG = 0x1;
 }

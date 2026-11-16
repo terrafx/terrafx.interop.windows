@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpEventProvider")]
 public unsafe partial struct IGlobalApplicationPreloadProvider : IGlobalApplicationPreloadProvider.Interface, INativeGuid
 {
+    /// <include file='IGlobalApplicationPreloadProvider.xml' path='doc/member[@name="IGlobalApplicationPreloadProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGlobalApplicationPreloadProvider);
 
     public void** lpVtbl;

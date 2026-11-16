@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IInternetProtocolRoot")]
 public unsafe partial struct IInternetProtocol : IInternetProtocol.Interface, INativeGuid
 {
+    /// <include file='IInternetProtocol.xml' path='doc/member[@name="IInternetProtocol.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IInternetProtocol);
 
     public void** lpVtbl;

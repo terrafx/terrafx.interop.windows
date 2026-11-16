@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IProcessMemoryReport : IProcessMemoryReport.Interface, INativeGuid
 {
+    /// <include file='IProcessMemoryReport.xml' path='doc/member[@name="IProcessMemoryReport.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IProcessMemoryReport);
 
     public void** lpVtbl;

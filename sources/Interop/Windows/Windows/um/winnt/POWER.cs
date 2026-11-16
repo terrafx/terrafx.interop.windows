@@ -9,120 +9,159 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class POWER
 {
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_DEVICE_IDLE_POLICY_PERFORMANCE"]/*' />
     [NativeTypeName("#define POWER_DEVICE_IDLE_POLICY_PERFORMANCE 0")]
     public const int POWER_DEVICE_IDLE_POLICY_PERFORMANCE = 0;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_DEVICE_IDLE_POLICY_CONSERVATIVE"]/*' />
     [NativeTypeName("#define POWER_DEVICE_IDLE_POLICY_CONSERVATIVE 1")]
     public const int POWER_DEVICE_IDLE_POLICY_CONSERVATIVE = 1;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_CONNECTIVITY_IN_STANDBY_DISABLED"]/*' />
     [NativeTypeName("#define POWER_CONNECTIVITY_IN_STANDBY_DISABLED 0")]
     public const int POWER_CONNECTIVITY_IN_STANDBY_DISABLED = 0;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_CONNECTIVITY_IN_STANDBY_ENABLED"]/*' />
     [NativeTypeName("#define POWER_CONNECTIVITY_IN_STANDBY_ENABLED 1")]
     public const int POWER_CONNECTIVITY_IN_STANDBY_ENABLED = 1;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_CONNECTIVITY_IN_STANDBY_SYSTEM_MANAGED"]/*' />
     [NativeTypeName("#define POWER_CONNECTIVITY_IN_STANDBY_SYSTEM_MANAGED 2")]
     public const int POWER_CONNECTIVITY_IN_STANDBY_SYSTEM_MANAGED = 2;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_DISCONNECTED_STANDBY_MODE_NORMAL"]/*' />
     [NativeTypeName("#define POWER_DISCONNECTED_STANDBY_MODE_NORMAL 0")]
     public const int POWER_DISCONNECTED_STANDBY_MODE_NORMAL = 0;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_DISCONNECTED_STANDBY_MODE_AGGRESSIVE"]/*' />
     [NativeTypeName("#define POWER_DISCONNECTED_STANDBY_MODE_AGGRESSIVE 1")]
     public const int POWER_DISCONNECTED_STANDBY_MODE_AGGRESSIVE = 1;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_SYSTEM_MAXIMUM"]/*' />
     [NativeTypeName("#define POWER_SYSTEM_MAXIMUM 7")]
     public const int POWER_SYSTEM_MAXIMUM = 7;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_REQUEST_CONTEXT_VERSION"]/*' />
     [NativeTypeName("#define POWER_REQUEST_CONTEXT_VERSION DIAGNOSTIC_REASON_VERSION")]
     public const int POWER_REQUEST_CONTEXT_VERSION = 0;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_REQUEST_CONTEXT_SIMPLE_STRING"]/*' />
     [NativeTypeName("#define POWER_REQUEST_CONTEXT_SIMPLE_STRING DIAGNOSTIC_REASON_SIMPLE_STRING")]
     public const int POWER_REQUEST_CONTEXT_SIMPLE_STRING = 0x00000001;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_REQUEST_CONTEXT_DETAILED_STRING"]/*' />
     [NativeTypeName("#define POWER_REQUEST_CONTEXT_DETAILED_STRING DIAGNOSTIC_REASON_DETAILED_STRING")]
     public const int POWER_REQUEST_CONTEXT_DETAILED_STRING = 0x00000002;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_SETTING_VALUE_VERSION"]/*' />
     [NativeTypeName("#define POWER_SETTING_VALUE_VERSION (0x1)")]
     public const int POWER_SETTING_VALUE_VERSION = (0x1);
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_PLATFORM_ROLE_V1"]/*' />
     [NativeTypeName("#define POWER_PLATFORM_ROLE_V1 (0x00000001)")]
     public const int POWER_PLATFORM_ROLE_V1 = (0x00000001);
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_PLATFORM_ROLE_V1_MAX"]/*' />
     [NativeTypeName("#define POWER_PLATFORM_ROLE_V1_MAX (PlatformRolePerformanceServer + 1)")]
     public const int POWER_PLATFORM_ROLE_V1_MAX = ((int)(PlatformRolePerformanceServer) + 1);
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_PLATFORM_ROLE_V2"]/*' />
     [NativeTypeName("#define POWER_PLATFORM_ROLE_V2 (0x00000002)")]
     public const int POWER_PLATFORM_ROLE_V2 = (0x00000002);
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_PLATFORM_ROLE_V2_MAX"]/*' />
     [NativeTypeName("#define POWER_PLATFORM_ROLE_V2_MAX (PlatformRoleSlate + 1)")]
     public const int POWER_PLATFORM_ROLE_V2_MAX = ((int)(PlatformRoleSlate) + 1);
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_PLATFORM_ROLE_VERSION"]/*' />
     [NativeTypeName("#define POWER_PLATFORM_ROLE_VERSION POWER_PLATFORM_ROLE_V2")]
     public const int POWER_PLATFORM_ROLE_VERSION = (0x00000002);
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_PLATFORM_ROLE_VERSION_MAX"]/*' />
     [NativeTypeName("#define POWER_PLATFORM_ROLE_VERSION_MAX POWER_PLATFORM_ROLE_V2_MAX")]
     public const int POWER_PLATFORM_ROLE_VERSION_MAX = ((int)(PlatformRoleSlate) + 1);
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_ACTION_QUERY_ALLOWED"]/*' />
     [NativeTypeName("#define POWER_ACTION_QUERY_ALLOWED 0x00000001")]
     public const int POWER_ACTION_QUERY_ALLOWED = 0x00000001;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_ACTION_UI_ALLOWED"]/*' />
     [NativeTypeName("#define POWER_ACTION_UI_ALLOWED 0x00000002")]
     public const int POWER_ACTION_UI_ALLOWED = 0x00000002;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_ACTION_OVERRIDE_APPS"]/*' />
     [NativeTypeName("#define POWER_ACTION_OVERRIDE_APPS 0x00000004")]
     public const int POWER_ACTION_OVERRIDE_APPS = 0x00000004;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_ACTION_HIBERBOOT"]/*' />
     [NativeTypeName("#define POWER_ACTION_HIBERBOOT 0x00000008")]
     public const int POWER_ACTION_HIBERBOOT = 0x00000008;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_ACTION_USER_NOTIFY"]/*' />
     [NativeTypeName("#define POWER_ACTION_USER_NOTIFY 0x00000010")]
     public const int POWER_ACTION_USER_NOTIFY = 0x00000010;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_ACTION_DOZE_TO_HIBERNATE"]/*' />
     [NativeTypeName("#define POWER_ACTION_DOZE_TO_HIBERNATE 0x00000020")]
     public const int POWER_ACTION_DOZE_TO_HIBERNATE = 0x00000020;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_ACTION_ACPI_CRITICAL"]/*' />
     [NativeTypeName("#define POWER_ACTION_ACPI_CRITICAL 0x01000000")]
     public const int POWER_ACTION_ACPI_CRITICAL = 0x01000000;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_ACTION_ACPI_USER_NOTIFY"]/*' />
     [NativeTypeName("#define POWER_ACTION_ACPI_USER_NOTIFY 0x02000000")]
     public const int POWER_ACTION_ACPI_USER_NOTIFY = 0x02000000;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_ACTION_DIRECTED_DRIPS"]/*' />
     [NativeTypeName("#define POWER_ACTION_DIRECTED_DRIPS 0x04000000")]
     public const int POWER_ACTION_DIRECTED_DRIPS = 0x04000000;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_ACTION_PSEUDO_TRANSITION"]/*' />
     [NativeTypeName("#define POWER_ACTION_PSEUDO_TRANSITION 0x08000000")]
     public const int POWER_ACTION_PSEUDO_TRANSITION = 0x08000000;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_ACTION_LIGHTEST_FIRST"]/*' />
     [NativeTypeName("#define POWER_ACTION_LIGHTEST_FIRST 0x10000000")]
     public const int POWER_ACTION_LIGHTEST_FIRST = 0x10000000;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_ACTION_LOCK_CONSOLE"]/*' />
     [NativeTypeName("#define POWER_ACTION_LOCK_CONSOLE 0x20000000")]
     public const int POWER_ACTION_LOCK_CONSOLE = 0x20000000;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_ACTION_DISABLE_WAKES"]/*' />
     [NativeTypeName("#define POWER_ACTION_DISABLE_WAKES 0x40000000")]
     public const int POWER_ACTION_DISABLE_WAKES = 0x40000000;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_ACTION_CRITICAL"]/*' />
     [NativeTypeName("#define POWER_ACTION_CRITICAL 0x80000000")]
     public const uint POWER_ACTION_CRITICAL = 0x80000000;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_LEVEL_USER_NOTIFY_TEXT"]/*' />
     [NativeTypeName("#define POWER_LEVEL_USER_NOTIFY_TEXT 0x00000001")]
     public const int POWER_LEVEL_USER_NOTIFY_TEXT = 0x00000001;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_LEVEL_USER_NOTIFY_SOUND"]/*' />
     [NativeTypeName("#define POWER_LEVEL_USER_NOTIFY_SOUND 0x00000002")]
     public const int POWER_LEVEL_USER_NOTIFY_SOUND = 0x00000002;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_LEVEL_USER_NOTIFY_EXEC"]/*' />
     [NativeTypeName("#define POWER_LEVEL_USER_NOTIFY_EXEC 0x00000004")]
     public const int POWER_LEVEL_USER_NOTIFY_EXEC = 0x00000004;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_USER_NOTIFY_BUTTON"]/*' />
     [NativeTypeName("#define POWER_USER_NOTIFY_BUTTON 0x00000008")]
     public const int POWER_USER_NOTIFY_BUTTON = 0x00000008;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_USER_NOTIFY_SHUTDOWN"]/*' />
     [NativeTypeName("#define POWER_USER_NOTIFY_SHUTDOWN 0x00000010")]
     public const int POWER_USER_NOTIFY_SHUTDOWN = 0x00000010;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_USER_NOTIFY_FORCED_SHUTDOWN"]/*' />
     [NativeTypeName("#define POWER_USER_NOTIFY_FORCED_SHUTDOWN 0x00000020")]
     public const int POWER_USER_NOTIFY_FORCED_SHUTDOWN = 0x00000020;
 
+    /// <include file='POWER.xml' path='doc/member[@name="POWER.POWER_FORCE_TRIGGER_RESET"]/*' />
     [NativeTypeName("#define POWER_FORCE_TRIGGER_RESET 0x80000000")]
     public const uint POWER_FORCE_TRIGGER_RESET = 0x80000000;
 }

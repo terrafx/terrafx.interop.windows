@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("A8C680EB-3D32-11D2-9EE7-00C04F797396")]
 public unsafe partial struct SpMMAudioOut : INativeGuid
 {
+    /// <include file='SpMMAudioOut.xml' path='doc/member[@name="SpMMAudioOut.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SpMMAudioOut);
 }

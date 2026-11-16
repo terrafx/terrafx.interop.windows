@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IScriptEventHandler : IScriptEventHandler.Interface, INativeGuid
 {
+    /// <include file='IScriptEventHandler.xml' path='doc/member[@name="IScriptEventHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IScriptEventHandler);
 
     public void** lpVtbl;

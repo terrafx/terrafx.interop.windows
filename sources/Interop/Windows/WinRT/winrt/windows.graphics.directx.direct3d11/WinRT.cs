@@ -7,9 +7,11 @@ namespace TerraFX.Interop.WinRT;
 
 public static partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Graphics_DirectX_Direct3D11_IDirect3DDevice"]/*' />
     [NativeTypeName("const WCHAR[52]")]
     public const string InterfaceName_Windows_Graphics_DirectX_Direct3D11_IDirect3DDevice = "Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface"]/*' />
     [NativeTypeName("const WCHAR[53]")]
     public const string InterfaceName_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface = "Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface";
 }

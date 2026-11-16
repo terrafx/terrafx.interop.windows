@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class GUID
 {
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROP_INPUTSCOPE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROP_INPUTSCOPE
     {

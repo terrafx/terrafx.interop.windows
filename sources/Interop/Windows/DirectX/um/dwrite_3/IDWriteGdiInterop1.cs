@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IDWriteGdiInterop")]
 public unsafe partial struct IDWriteGdiInterop1 : IDWriteGdiInterop1.Interface, INativeGuid
 {
+    /// <include file='IDWriteGdiInterop1.xml' path='doc/member[@name="IDWriteGdiInterop1.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDWriteGdiInterop1);
 
     public void** lpVtbl;

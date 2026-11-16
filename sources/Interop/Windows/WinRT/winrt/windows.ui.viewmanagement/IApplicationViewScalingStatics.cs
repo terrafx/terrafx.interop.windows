@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IApplicationViewScalingStatics : IApplicationViewScalingStatics.Interface, INativeGuid
 {
+    /// <include file='IApplicationViewScalingStatics.xml' path='doc/member[@name="IApplicationViewScalingStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IApplicationViewScalingStatics);
 
     public void** lpVtbl;

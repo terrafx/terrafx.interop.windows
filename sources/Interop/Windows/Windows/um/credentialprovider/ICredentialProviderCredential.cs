@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ICredentialProviderCredential : ICredentialProviderCredential.Interface, INativeGuid
 {
+    /// <include file='ICredentialProviderCredential.xml' path='doc/member[@name="ICredentialProviderCredential.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICredentialProviderCredential);
 
     public void** lpVtbl;

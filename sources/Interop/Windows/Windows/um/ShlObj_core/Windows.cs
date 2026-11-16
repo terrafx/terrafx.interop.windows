@@ -606,426 +606,567 @@ public static unsafe partial class Windows
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT StgMakeUniqueName(IStorage* pstgParent, [NativeTypeName("PCWSTR")] char* pszFileSpec, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SIOM_OVERLAYINDEX"]/*' />
     [NativeTypeName("#define SIOM_OVERLAYINDEX 0x1")]
     public const int SIOM_OVERLAYINDEX = 0x1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SIOM_ICONINDEX"]/*' />
     [NativeTypeName("#define SIOM_ICONINDEX 0x2")]
     public const int SIOM_ICONINDEX = 0x2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SIOM_RESERVED_SHARED"]/*' />
     [NativeTypeName("#define SIOM_RESERVED_SHARED 0")]
     public const int SIOM_RESERVED_SHARED = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SIOM_RESERVED_LINK"]/*' />
     [NativeTypeName("#define SIOM_RESERVED_LINK 1")]
     public const int SIOM_RESERVED_LINK = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SIOM_RESERVED_SLOWFILE"]/*' />
     [NativeTypeName("#define SIOM_RESERVED_SLOWFILE 2")]
     public const int SIOM_RESERVED_SLOWFILE = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SIOM_RESERVED_DEFAULT"]/*' />
     [NativeTypeName("#define SIOM_RESERVED_DEFAULT 3")]
     public const int SIOM_RESERVED_DEFAULT = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OI_DEFAULT"]/*' />
     [NativeTypeName("#define OI_DEFAULT 0x00000000")]
     public const int OI_DEFAULT = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OI_ASYNC"]/*' />
     [NativeTypeName("#define OI_ASYNC 0xFFFFEEEE")]
     public const uint OI_ASYNC = 0xFFFFEEEE;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IDO_SHGIOI_SHARE"]/*' />
     [NativeTypeName("#define IDO_SHGIOI_SHARE 0x0FFFFFFF")]
     public const int IDO_SHGIOI_SHARE = 0x0FFFFFFF;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IDO_SHGIOI_LINK"]/*' />
     [NativeTypeName("#define IDO_SHGIOI_LINK 0x0FFFFFFE")]
     public const int IDO_SHGIOI_LINK = 0x0FFFFFFE;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IDO_SHGIOI_SLOWFILE"]/*' />
     [NativeTypeName("#define IDO_SHGIOI_SLOWFILE 0x0FFFFFFFD")]
     public const uint IDO_SHGIOI_SLOWFILE = 0x0FFFFFFFD;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IDO_SHGIOI_DEFAULT"]/*' />
     [NativeTypeName("#define IDO_SHGIOI_DEFAULT 0x0FFFFFFFC")]
     public const uint IDO_SHGIOI_DEFAULT = 0x0FFFFFFFC;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetIconOverlayIndex"]/*' />
     [NativeTypeName("#define SHGetIconOverlayIndex SHGetIconOverlayIndexW")]
     public static delegate*<char*, int, int> SHGetIconOverlayIndex => &SHGetIconOverlayIndexW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NT_CONSOLE_PROPS_SIG"]/*' />
     [NativeTypeName("#define NT_CONSOLE_PROPS_SIG 0xA0000002")]
     public const uint NT_CONSOLE_PROPS_SIG = 0xA0000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NT_FE_CONSOLE_PROPS_SIG"]/*' />
     [NativeTypeName("#define NT_FE_CONSOLE_PROPS_SIG 0xA0000004")]
     public const uint NT_FE_CONSOLE_PROPS_SIG = 0xA0000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EXP_DARWIN_ID_SIG"]/*' />
     [NativeTypeName("#define EXP_DARWIN_ID_SIG 0xA0000006")]
     public const uint EXP_DARWIN_ID_SIG = 0xA0000006;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EXP_SPECIAL_FOLDER_SIG"]/*' />
     [NativeTypeName("#define EXP_SPECIAL_FOLDER_SIG 0xA0000005")]
     public const uint EXP_SPECIAL_FOLDER_SIG = 0xA0000005;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EXP_SZ_LINK_SIG"]/*' />
     [NativeTypeName("#define EXP_SZ_LINK_SIG 0xA0000001")]
     public const uint EXP_SZ_LINK_SIG = 0xA0000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EXP_SZ_ICON_SIG"]/*' />
     [NativeTypeName("#define EXP_SZ_ICON_SIG 0xA0000007")]
     public const uint EXP_SZ_ICON_SIG = 0xA0000007;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EXP_PROPERTYSTORAGE_SIG"]/*' />
     [NativeTypeName("#define EXP_PROPERTYSTORAGE_SIG 0xA0000009")]
     public const uint EXP_PROPERTYSTORAGE_SIG = 0xA0000009;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ILCreateFromPath"]/*' />
     [NativeTypeName("#define ILCreateFromPath ILCreateFromPathW")]
     public static delegate*<char*, ITEMIDLIST*> ILCreateFromPath => &ILCreateFromPathW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ILCloneFull"]/*' />
     [NativeTypeName("#define ILCloneFull ILClone")]
     public static delegate*<ITEMIDLIST*, ITEMIDLIST*> ILCloneFull => &ILClone;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ILCloneChild"]/*' />
     [NativeTypeName("#define ILCloneChild ILCloneFirst")]
     public static delegate*<ITEMIDLIST*, ITEMIDLIST*> ILCloneChild => &ILCloneFirst;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetPathFromIDList"]/*' />
     [NativeTypeName("#define SHGetPathFromIDList SHGetPathFromIDListW")]
     public static delegate*<ITEMIDLIST*, char*, BOOL> SHGetPathFromIDList => &SHGetPathFromIDListW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCreateDirectoryEx"]/*' />
     [NativeTypeName("#define SHCreateDirectoryEx SHCreateDirectoryExW")]
     public static delegate*<HWND, char*, SECURITY_ATTRIBUTES*, int> SHCreateDirectoryEx => &SHCreateDirectoryExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OFASI_EDIT"]/*' />
     [NativeTypeName("#define OFASI_EDIT 0x0001")]
     public const int OFASI_EDIT = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OFASI_OPENDESKTOP"]/*' />
     [NativeTypeName("#define OFASI_OPENDESKTOP 0x0002")]
     public const int OFASI_OPENDESKTOP = 0x0002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetSpecialFolderPath"]/*' />
     [NativeTypeName("#define SHGetSpecialFolderPath SHGetSpecialFolderPathW")]
     public static delegate*<HWND, char*, int, BOOL, BOOL> SHGetSpecialFolderPath => &SHGetSpecialFolderPathW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetFolderPath"]/*' />
     [NativeTypeName("#define SHGetFolderPath SHGetFolderPathW")]
     public static delegate*<HWND, int, HANDLE, uint, char*, HRESULT> SHGetFolderPath => &SHGetFolderPathW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHSetFolderPath"]/*' />
     [NativeTypeName("#define SHSetFolderPath SHSetFolderPathW")]
     public static delegate*<int, HANDLE, uint, char*, HRESULT> SHSetFolderPath => &SHSetFolderPathW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetFolderPathAndSubDir"]/*' />
     [NativeTypeName("#define SHGetFolderPathAndSubDir SHGetFolderPathAndSubDirW")]
     public static delegate*<HWND, int, HANDLE, uint, char*, char*, HRESULT> SHGetFolderPathAndSubDir => &SHGetFolderPathAndSubDirW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FCS_READ"]/*' />
     [NativeTypeName("#define FCS_READ 0x00000001")]
     public const int FCS_READ = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FCS_FORCEWRITE"]/*' />
     [NativeTypeName("#define FCS_FORCEWRITE 0x00000002")]
     public const int FCS_FORCEWRITE = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FCS_WRITE"]/*' />
     [NativeTypeName("#define FCS_WRITE (FCS_READ | FCS_FORCEWRITE)")]
     public const int FCS_WRITE = (0x00000001 | 0x00000002);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FCS_FLAG_DRAGDROP"]/*' />
     [NativeTypeName("#define FCS_FLAG_DRAGDROP 2")]
     public const int FCS_FLAG_DRAGDROP = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FCSM_VIEWID"]/*' />
     [NativeTypeName("#define FCSM_VIEWID 0x00000001")]
     public const int FCSM_VIEWID = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FCSM_WEBVIEWTEMPLATE"]/*' />
     [NativeTypeName("#define FCSM_WEBVIEWTEMPLATE 0x00000002")]
     public const int FCSM_WEBVIEWTEMPLATE = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FCSM_INFOTIP"]/*' />
     [NativeTypeName("#define FCSM_INFOTIP 0x00000004")]
     public const int FCSM_INFOTIP = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FCSM_CLSID"]/*' />
     [NativeTypeName("#define FCSM_CLSID 0x00000008")]
     public const int FCSM_CLSID = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FCSM_ICONFILE"]/*' />
     [NativeTypeName("#define FCSM_ICONFILE 0x00000010")]
     public const int FCSM_ICONFILE = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FCSM_LOGO"]/*' />
     [NativeTypeName("#define FCSM_LOGO 0x00000020")]
     public const int FCSM_LOGO = 0x00000020;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FCSM_FLAGS"]/*' />
     [NativeTypeName("#define FCSM_FLAGS 0x00000040")]
     public const int FCSM_FLAGS = 0x00000040;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHBrowseForFolder"]/*' />
     [NativeTypeName("#define SHBrowseForFolder SHBrowseForFolderW")]
     public static delegate*<BROWSEINFOW*, ITEMIDLIST*> SHBrowseForFolder => &SHBrowseForFolderW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMDID_INTSHORTCUTCREATE"]/*' />
     [NativeTypeName("#define CMDID_INTSHORTCUTCREATE ISHCUTCMDID_INTSHORTCUTCREATE")]
     public const int CMDID_INTSHORTCUTCREATE = ISHCUTCMDID_INTSHORTCUTCREATE;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PROGDLG_NORMAL"]/*' />
     [NativeTypeName("#define PROGDLG_NORMAL 0x00000000")]
     public const int PROGDLG_NORMAL = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PROGDLG_MODAL"]/*' />
     [NativeTypeName("#define PROGDLG_MODAL 0x00000001")]
     public const int PROGDLG_MODAL = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PROGDLG_AUTOTIME"]/*' />
     [NativeTypeName("#define PROGDLG_AUTOTIME 0x00000002")]
     public const int PROGDLG_AUTOTIME = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PROGDLG_NOTIME"]/*' />
     [NativeTypeName("#define PROGDLG_NOTIME 0x00000004")]
     public const int PROGDLG_NOTIME = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PROGDLG_NOMINIMIZE"]/*' />
     [NativeTypeName("#define PROGDLG_NOMINIMIZE 0x00000008")]
     public const int PROGDLG_NOMINIMIZE = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PROGDLG_NOPROGRESSBAR"]/*' />
     [NativeTypeName("#define PROGDLG_NOPROGRESSBAR 0x00000010")]
     public const int PROGDLG_NOPROGRESSBAR = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PROGDLG_MARQUEEPROGRESS"]/*' />
     [NativeTypeName("#define PROGDLG_MARQUEEPROGRESS 0x00000020")]
     public const int PROGDLG_MARQUEEPROGRESS = 0x00000020;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PROGDLG_NOCANCEL"]/*' />
     [NativeTypeName("#define PROGDLG_NOCANCEL 0x00000040")]
     public const int PROGDLG_NOCANCEL = 0x00000040;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PDTIMER_RESET"]/*' />
     [NativeTypeName("#define PDTIMER_RESET 0x00000001")]
     public const int PDTIMER_RESET = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PDTIMER_PAUSE"]/*' />
     [NativeTypeName("#define PDTIMER_PAUSE 0x00000002")]
     public const int PDTIMER_PAUSE = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PDTIMER_RESUME"]/*' />
     [NativeTypeName("#define PDTIMER_RESUME 0x00000003")]
     public const int PDTIMER_RESUME = 0x00000003;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DVASPECT_SHORTNAME"]/*' />
     [NativeTypeName("#define DVASPECT_SHORTNAME 2")]
     public const int DVASPECT_SHORTNAME = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DVASPECT_COPY"]/*' />
     [NativeTypeName("#define DVASPECT_COPY 3")]
     public const int DVASPECT_COPY = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DVASPECT_LINK"]/*' />
     [NativeTypeName("#define DVASPECT_LINK 4")]
     public const int DVASPECT_LINK = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCNRF_InterruptLevel"]/*' />
     [NativeTypeName("#define SHCNRF_InterruptLevel 0x0001")]
     public const int SHCNRF_InterruptLevel = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCNRF_ShellLevel"]/*' />
     [NativeTypeName("#define SHCNRF_ShellLevel 0x0002")]
     public const int SHCNRF_ShellLevel = 0x0002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCNRF_RecursiveInterrupt"]/*' />
     [NativeTypeName("#define SHCNRF_RecursiveInterrupt 0x1000")]
     public const int SHCNRF_RecursiveInterrupt = 0x1000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCNRF_NewDelivery"]/*' />
     [NativeTypeName("#define SHCNRF_NewDelivery 0x8000")]
     public const int SHCNRF_NewDelivery = 0x8000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCNEE_ORDERCHANGED"]/*' />
     [NativeTypeName("#define SHCNEE_ORDERCHANGED 2L")]
     public const int SHCNEE_ORDERCHANGED = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCNEE_MSI_CHANGE"]/*' />
     [NativeTypeName("#define SHCNEE_MSI_CHANGE 4L")]
     public const int SHCNEE_MSI_CHANGE = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCNEE_MSI_UNINSTALL"]/*' />
     [NativeTypeName("#define SHCNEE_MSI_UNINSTALL 5L")]
     public const int SHCNEE_MSI_UNINSTALL = 5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QITIPF_DEFAULT"]/*' />
     [NativeTypeName("#define QITIPF_DEFAULT 0x00000000")]
     public const int QITIPF_DEFAULT = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QITIPF_USENAME"]/*' />
     [NativeTypeName("#define QITIPF_USENAME 0x00000001")]
     public const int QITIPF_USENAME = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QITIPF_LINKNOTARGET"]/*' />
     [NativeTypeName("#define QITIPF_LINKNOTARGET 0x00000002")]
     public const int QITIPF_LINKNOTARGET = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QITIPF_LINKUSETARGET"]/*' />
     [NativeTypeName("#define QITIPF_LINKUSETARGET 0x00000004")]
     public const int QITIPF_LINKUSETARGET = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QITIPF_USESLOWTIP"]/*' />
     [NativeTypeName("#define QITIPF_USESLOWTIP 0x00000008")]
     public const int QITIPF_USESLOWTIP = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QITIPF_SINGLELINE"]/*' />
     [NativeTypeName("#define QITIPF_SINGLELINE 0x00000010")]
     public const int QITIPF_SINGLELINE = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QIF_CACHED"]/*' />
     [NativeTypeName("#define QIF_CACHED 0x00000001")]
     public const int QIF_CACHED = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QIF_DONTEXPANDFOLDER"]/*' />
     [NativeTypeName("#define QIF_DONTEXPANDFOLDER 0x00000002")]
     public const int QIF_DONTEXPANDFOLDER = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHARD_PATH"]/*' />
     [NativeTypeName("#define SHARD_PATH SHARD_PATHW")]
     public const SHARD SHARD_PATH = SHARD_PATHW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHUpdateImage"]/*' />
     [NativeTypeName("#define SHUpdateImage SHUpdateImageW")]
     public static delegate*<char*, int, uint, int, void> SHUpdateImage => &SHUpdateImageW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGDFIL_FINDDATA"]/*' />
     [NativeTypeName("#define SHGDFIL_FINDDATA 1")]
     public const int SHGDFIL_FINDDATA = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGDFIL_NETRESOURCE"]/*' />
     [NativeTypeName("#define SHGDFIL_NETRESOURCE 2")]
     public const int SHGDFIL_NETRESOURCE = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGDFIL_DESCRIPTIONID"]/*' />
     [NativeTypeName("#define SHGDFIL_DESCRIPTIONID 3")]
     public const int SHGDFIL_DESCRIPTIONID = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetDataFromIDList"]/*' />
     [NativeTypeName("#define SHGetDataFromIDList SHGetDataFromIDListW")]
     public static delegate*<IShellFolder*, ITEMIDLIST*, int, void*, int, HRESULT> SHGetDataFromIDList => &SHGetDataFromIDListW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NUM_POINTS"]/*' />
     [NativeTypeName("#define NUM_POINTS 3")]
     public const int NUM_POINTS = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CABINETSTATE_VERSION"]/*' />
     [NativeTypeName("#define CABINETSTATE_VERSION 2")]
     public const int CABINETSTATE_VERSION = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PCS_FATAL"]/*' />
     [NativeTypeName("#define PCS_FATAL 0x80000000")]
     public const uint PCS_FATAL = 0x80000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PCS_REPLACEDCHAR"]/*' />
     [NativeTypeName("#define PCS_REPLACEDCHAR 0x00000001")]
     public const int PCS_REPLACEDCHAR = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PCS_REMOVEDCHAR"]/*' />
     [NativeTypeName("#define PCS_REMOVEDCHAR 0x00000002")]
     public const int PCS_REMOVEDCHAR = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PCS_TRUNCATED"]/*' />
     [NativeTypeName("#define PCS_TRUNCATED 0x00000004")]
     public const int PCS_TRUNCATED = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PCS_PATHTOOLONG"]/*' />
     [NativeTypeName("#define PCS_PATHTOOLONG 0x00000008")]
     public const int PCS_PATHTOOLONG = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHOP_PRINTERNAME"]/*' />
     [NativeTypeName("#define SHOP_PRINTERNAME 0x00000001")]
     public const int SHOP_PRINTERNAME = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHOP_FILEPATH"]/*' />
     [NativeTypeName("#define SHOP_FILEPATH 0x00000002")]
     public const int SHOP_FILEPATH = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHOP_VOLUMEGUID"]/*' />
     [NativeTypeName("#define SHOP_VOLUMEGUID 0x00000004")]
     public const int SHOP_VOLUMEGUID = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHFMT_ID_DEFAULT"]/*' />
     [NativeTypeName("#define SHFMT_ID_DEFAULT 0xFFFF")]
     public const int SHFMT_ID_DEFAULT = 0xFFFF;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHFMT_OPT_FULL"]/*' />
     [NativeTypeName("#define SHFMT_OPT_FULL 0x0001")]
     public const int SHFMT_OPT_FULL = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHFMT_OPT_SYSONLY"]/*' />
     [NativeTypeName("#define SHFMT_OPT_SYSONLY 0x0002")]
     public const int SHFMT_OPT_SYSONLY = 0x0002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHFMT_ERROR"]/*' />
     [NativeTypeName("#define SHFMT_ERROR 0xFFFFFFFFL")]
     public const uint SHFMT_ERROR = 0xFFFFFFFF;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHFMT_CANCEL"]/*' />
     [NativeTypeName("#define SHFMT_CANCEL 0xFFFFFFFEL")]
     public const uint SHFMT_CANCEL = 0xFFFFFFFE;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHFMT_NOFORMAT"]/*' />
     [NativeTypeName("#define SHFMT_NOFORMAT 0xFFFFFFFDL")]
     public const uint SHFMT_NOFORMAT = 0xFFFFFFFD;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHStartNetConnectionDialog"]/*' />
     [NativeTypeName("#define SHStartNetConnectionDialog SHStartNetConnectionDialogW")]
     public static delegate*<HWND, char*, uint, HRESULT> SHStartNetConnectionDialog => &SHStartNetConnectionDialogW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHDefExtractIcon"]/*' />
     [NativeTypeName("#define SHDefExtractIcon SHDefExtractIconW")]
     public static delegate*<char*, int, uint, HICON*, HICON*, uint, HRESULT> SHDefExtractIcon => &SHDefExtractIconW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Shell_GetCachedImageIndex"]/*' />
     [NativeTypeName("#define Shell_GetCachedImageIndex Shell_GetCachedImageIndexW")]
     public static delegate*<char*, int, uint, int> Shell_GetCachedImageIndex => &Shell_GetCachedImageIndexW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VALIDATEUNC_CONNECT"]/*' />
     [NativeTypeName("#define VALIDATEUNC_CONNECT 0x0001")]
     public const int VALIDATEUNC_CONNECT = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VALIDATEUNC_NOUI"]/*' />
     [NativeTypeName("#define VALIDATEUNC_NOUI 0x0002")]
     public const int VALIDATEUNC_NOUI = 0x0002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VALIDATEUNC_PRINT"]/*' />
     [NativeTypeName("#define VALIDATEUNC_PRINT 0x0004")]
     public const int VALIDATEUNC_PRINT = 0x0004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VALIDATEUNC_PERSIST"]/*' />
     [NativeTypeName("#define VALIDATEUNC_PERSIST 0x0008")]
     public const int VALIDATEUNC_PERSIST = 0x0008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VALIDATEUNC_VALID"]/*' />
     [NativeTypeName("#define VALIDATEUNC_VALID 0x000F")]
     public const int VALIDATEUNC_VALID = 0x000F;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIFNAMESIZE"]/*' />
     [NativeTypeName("#define PIFNAMESIZE 30")]
     public const int PIFNAMESIZE = 30;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIFSTARTLOCSIZE"]/*' />
     [NativeTypeName("#define PIFSTARTLOCSIZE 63")]
     public const int PIFSTARTLOCSIZE = 63;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIFDEFPATHSIZE"]/*' />
     [NativeTypeName("#define PIFDEFPATHSIZE 64")]
     public const int PIFDEFPATHSIZE = 64;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIFPARAMSSIZE"]/*' />
     [NativeTypeName("#define PIFPARAMSSIZE 64")]
     public const int PIFPARAMSSIZE = 64;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIFSHPROGSIZE"]/*' />
     [NativeTypeName("#define PIFSHPROGSIZE 64")]
     public const int PIFSHPROGSIZE = 64;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIFSHDATASIZE"]/*' />
     [NativeTypeName("#define PIFSHDATASIZE 64")]
     public const int PIFSHDATASIZE = 64;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIFDEFFILESIZE"]/*' />
     [NativeTypeName("#define PIFDEFFILESIZE 80")]
     public const int PIFDEFFILESIZE = 80;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIFMAXFILEPATH"]/*' />
     [NativeTypeName("#define PIFMAXFILEPATH 260")]
     public const int PIFMAXFILEPATH = 260;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QCMINFO_PLACE_BEFORE"]/*' />
     [NativeTypeName("#define QCMINFO_PLACE_BEFORE 0")]
     public const int QCMINFO_PLACE_BEFORE = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QCMINFO_PLACE_AFTER"]/*' />
     [NativeTypeName("#define QCMINFO_PLACE_AFTER 1")]
     public const int QCMINFO_PLACE_AFTER = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SFVSOC_INVALIDATE_ALL"]/*' />
     [NativeTypeName("#define SFVSOC_INVALIDATE_ALL 0x00000001")]
     public const int SFVSOC_INVALIDATE_ALL = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SFVSOC_NOSCROLL"]/*' />
     [NativeTypeName("#define SFVSOC_NOSCROLL LVSICF_NOSCROLL")]
     public const int SFVSOC_NOSCROLL = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SFVS_SELECT_NONE"]/*' />
     [NativeTypeName("#define SFVS_SELECT_NONE 0x0")]
     public const int SFVS_SELECT_NONE = 0x0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SFVS_SELECT_ALLITEMS"]/*' />
     [NativeTypeName("#define SFVS_SELECT_ALLITEMS 0x1")]
     public const int SFVS_SELECT_ALLITEMS = 0x1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SFVS_SELECT_INVERT"]/*' />
     [NativeTypeName("#define SFVS_SELECT_INVERT 0x2")]
     public const int SFVS_SELECT_INVERT = 0x2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDISF_RECENTLYCHANGED"]/*' />
     [NativeTypeName("#define PIDISF_RECENTLYCHANGED 0x00000001")]
     public const int PIDISF_RECENTLYCHANGED = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDISF_CACHEDSTICKY"]/*' />
     [NativeTypeName("#define PIDISF_CACHEDSTICKY 0x00000002")]
     public const int PIDISF_CACHEDSTICKY = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDISF_CACHEIMAGES"]/*' />
     [NativeTypeName("#define PIDISF_CACHEIMAGES 0x00000010")]
     public const int PIDISF_CACHEIMAGES = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDISF_FOLLOWALLLINKS"]/*' />
     [NativeTypeName("#define PIDISF_FOLLOWALLLINKS 0x00000020")]
     public const int PIDISF_FOLLOWALLLINKS = 0x00000020;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDISM_GLOBAL"]/*' />
     [NativeTypeName("#define PIDISM_GLOBAL 0")]
     public const int PIDISM_GLOBAL = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDISM_WATCH"]/*' />
     [NativeTypeName("#define PIDISM_WATCH 1")]
     public const int PIDISM_WATCH = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDISM_DONTWATCH"]/*' />
     [NativeTypeName("#define PIDISM_DONTWATCH 2")]
     public const int PIDISM_DONTWATCH = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDISR_UP_TO_DATE"]/*' />
     [NativeTypeName("#define PIDISR_UP_TO_DATE 0")]
     public const int PIDISR_UP_TO_DATE = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDISR_NEEDS_ADD"]/*' />
     [NativeTypeName("#define PIDISR_NEEDS_ADD 1")]
     public const int PIDISR_NEEDS_ADD = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDISR_NEEDS_UPDATE"]/*' />
     [NativeTypeName("#define PIDISR_NEEDS_UPDATE 2")]
     public const int PIDISR_NEEDS_UPDATE = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PIDISR_NEEDS_DELETE"]/*' />
     [NativeTypeName("#define PIDISR_NEEDS_DELETE 3")]
     public const int PIDISR_NEEDS_DELETE = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHELLSTATEVERSION_IE4"]/*' />
     [NativeTypeName("#define SHELLSTATEVERSION_IE4 9")]
     public const int SHELLSTATEVERSION_IE4 = 9;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHELLSTATEVERSION_WIN2K"]/*' />
     [NativeTypeName("#define SHELLSTATEVERSION_WIN2K 10")]
     public const int SHELLSTATEVERSION_WIN2K = 10;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHELLSTATE_SIZE_WIN2K"]/*' />
     [NativeTypeName("#define SHELLSTATE_SIZE_WIN2K sizeof(SHELLSTATE)")]
     public const uint SHELLSTATE_SIZE_WIN2K = 32;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHPPFW_NONE"]/*' />
     [NativeTypeName("#define SHPPFW_NONE 0x00000000")]
     public const int SHPPFW_NONE = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHPPFW_DEFAULT"]/*' />
     [NativeTypeName("#define SHPPFW_DEFAULT SHPPFW_DIRCREATE")]
     public const int SHPPFW_DEFAULT = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHPPFW_DIRCREATE"]/*' />
     [NativeTypeName("#define SHPPFW_DIRCREATE 0x00000001")]
     public const int SHPPFW_DIRCREATE = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHPPFW_ASKDIRCREATE"]/*' />
     [NativeTypeName("#define SHPPFW_ASKDIRCREATE 0x00000002")]
     public const int SHPPFW_ASKDIRCREATE = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHPPFW_IGNOREFILENAME"]/*' />
     [NativeTypeName("#define SHPPFW_IGNOREFILENAME 0x00000004")]
     public const int SHPPFW_IGNOREFILENAME = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHPPFW_NOWRITECHECK"]/*' />
     [NativeTypeName("#define SHPPFW_NOWRITECHECK 0x00000008")]
     public const int SHPPFW_NOWRITECHECK = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHPPFW_MEDIACHECKONLY"]/*' />
     [NativeTypeName("#define SHPPFW_MEDIACHECKONLY 0x00000010")]
     public const int SHPPFW_MEDIACHECKONLY = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHPathPrepareForWrite"]/*' />
     [NativeTypeName("#define SHPathPrepareForWrite SHPathPrepareForWriteW")]
     public static delegate*<HWND, IUnknown*, char*, uint, HRESULT> SHPathPrepareForWrite => &SHPathPrepareForWriteW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCreateFileExtractIcon"]/*' />
     [NativeTypeName("#define SHCreateFileExtractIcon SHCreateFileExtractIconW")]
     public static delegate*<char*, uint, Guid*, void**, HRESULT> SHCreateFileExtractIcon => &SHCreateFileExtractIconW;
 }

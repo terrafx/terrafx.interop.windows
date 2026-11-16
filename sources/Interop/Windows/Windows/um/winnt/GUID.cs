@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class GUID
 {
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MAX_POWER_SAVINGS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MAX_POWER_SAVINGS
     {
@@ -37,6 +38,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MIN_POWER_SAVINGS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MIN_POWER_SAVINGS
     {
@@ -62,6 +64,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_TYPICAL_POWER_SAVINGS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_TYPICAL_POWER_SAVINGS
     {
@@ -87,6 +90,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_POWERSCHEME_PERSONALITY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_POWERSCHEME_PERSONALITY
     {
@@ -112,6 +116,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ACTIVE_POWERSCHEME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ACTIVE_POWERSCHEME
     {
@@ -137,6 +142,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_POWER_MODE_BEST_EFFICIENCY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_POWER_MODE_BEST_EFFICIENCY
     {
@@ -162,6 +168,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_POWER_MODE_NONE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_POWER_MODE_NONE
     {
@@ -187,6 +194,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_POWER_MODE_PERFORMANCE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_POWER_MODE_PERFORMANCE
     {
@@ -212,6 +220,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_POWER_MODE_BEST_PERFORMANCE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_POWER_MODE_BEST_PERFORMANCE
     {
@@ -237,6 +246,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_IDLE_RESILIENCY_SUBGROUP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_IDLE_RESILIENCY_SUBGROUP
     {
@@ -262,6 +272,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_IDLE_RESILIENCY_PERIOD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_IDLE_RESILIENCY_PERIOD
     {
@@ -287,6 +298,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_DEEP_SLEEP_ENABLED"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_DEEP_SLEEP_ENABLED
     {
@@ -312,6 +324,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_DEEP_SLEEP_PLATFORM_STATE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_DEEP_SLEEP_PLATFORM_STATE
     {
@@ -337,6 +350,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_DISK_COALESCING_POWERDOWN_TIMEOUT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_DISK_COALESCING_POWERDOWN_TIMEOUT
     {
@@ -362,6 +376,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_EXECUTION_REQUIRED_REQUEST_TIMEOUT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_EXECUTION_REQUIRED_REQUEST_TIMEOUT
     {
@@ -387,6 +402,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_VIDEO_SUBGROUP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_VIDEO_SUBGROUP
     {
@@ -412,6 +428,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_VIDEO_POWERDOWN_TIMEOUT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_VIDEO_POWERDOWN_TIMEOUT
     {
@@ -437,6 +454,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_VIDEO_ANNOYANCE_TIMEOUT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_VIDEO_ANNOYANCE_TIMEOUT
     {
@@ -462,6 +480,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_VIDEO_ADAPTIVE_PERCENT_INCREASE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_VIDEO_ADAPTIVE_PERCENT_INCREASE
     {
@@ -487,6 +506,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_VIDEO_DIM_TIMEOUT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_VIDEO_DIM_TIMEOUT
     {
@@ -512,6 +532,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_VIDEO_ADAPTIVE_POWERDOWN"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_VIDEO_ADAPTIVE_POWERDOWN
     {
@@ -537,6 +558,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MONITOR_POWER_ON"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MONITOR_POWER_ON
     {
@@ -562,6 +584,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_DEVICE_POWER_POLICY_VIDEO_BRIGHTNESS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_DEVICE_POWER_POLICY_VIDEO_BRIGHTNESS
     {
@@ -587,6 +610,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_DEVICE_POWER_POLICY_VIDEO_DIM_BRIGHTNESS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_DEVICE_POWER_POLICY_VIDEO_DIM_BRIGHTNESS
     {
@@ -612,6 +636,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_VIDEO_CURRENT_MONITOR_BRIGHTNESS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_VIDEO_CURRENT_MONITOR_BRIGHTNESS
     {
@@ -637,6 +662,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_VIDEO_ADAPTIVE_DISPLAY_BRIGHTNESS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_VIDEO_ADAPTIVE_DISPLAY_BRIGHTNESS
     {
@@ -662,6 +688,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_CONSOLE_DISPLAY_STATE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_CONSOLE_DISPLAY_STATE
     {
@@ -687,6 +714,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ALLOW_DISPLAY_REQUIRED"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ALLOW_DISPLAY_REQUIRED
     {
@@ -712,6 +740,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_VIDEO_CONSOLE_LOCK_TIMEOUT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_VIDEO_CONSOLE_LOCK_TIMEOUT
     {
@@ -737,6 +766,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ADVANCED_COLOR_QUALITY_BIAS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ADVANCED_COLOR_QUALITY_BIAS
     {
@@ -762,6 +792,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ADAPTIVE_POWER_BEHAVIOR_SUBGROUP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ADAPTIVE_POWER_BEHAVIOR_SUBGROUP
     {
@@ -787,6 +818,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_NON_ADAPTIVE_INPUT_TIMEOUT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_NON_ADAPTIVE_INPUT_TIMEOUT
     {
@@ -812,6 +844,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ADAPTIVE_INPUT_CONTROLLER_STATE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ADAPTIVE_INPUT_CONTROLLER_STATE
     {
@@ -837,6 +870,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_DISK_SUBGROUP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_DISK_SUBGROUP
     {
@@ -862,6 +896,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_DISK_MAX_POWER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_DISK_MAX_POWER
     {
@@ -887,6 +922,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_DISK_POWERDOWN_TIMEOUT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_DISK_POWERDOWN_TIMEOUT
     {
@@ -912,6 +948,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_DISK_IDLE_TIMEOUT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_DISK_IDLE_TIMEOUT
     {
@@ -937,6 +974,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_DISK_BURST_IGNORE_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_DISK_BURST_IGNORE_THRESHOLD
     {
@@ -962,6 +1000,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_DISK_ADAPTIVE_POWERDOWN"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_DISK_ADAPTIVE_POWERDOWN
     {
@@ -987,6 +1026,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_DISK_NVME_NOPPME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_DISK_NVME_NOPPME
     {
@@ -1012,6 +1052,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_SLEEP_SUBGROUP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_SLEEP_SUBGROUP
     {
@@ -1037,6 +1078,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_SLEEP_IDLE_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_SLEEP_IDLE_THRESHOLD
     {
@@ -1062,6 +1104,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_STANDBY_TIMEOUT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_STANDBY_TIMEOUT
     {
@@ -1087,6 +1130,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_UNATTEND_SLEEP_TIMEOUT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_UNATTEND_SLEEP_TIMEOUT
     {
@@ -1112,6 +1156,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_HIBERNATE_TIMEOUT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_HIBERNATE_TIMEOUT
     {
@@ -1137,6 +1182,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_HIBERNATE_FASTS4_POLICY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_HIBERNATE_FASTS4_POLICY
     {
@@ -1162,6 +1208,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_CRITICAL_POWER_TRANSITION"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_CRITICAL_POWER_TRANSITION
     {
@@ -1187,6 +1234,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_SYSTEM_AWAYMODE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_SYSTEM_AWAYMODE
     {
@@ -1212,6 +1260,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ALLOW_AWAYMODE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ALLOW_AWAYMODE
     {
@@ -1237,6 +1286,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_USER_PRESENCE_PREDICTION"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_USER_PRESENCE_PREDICTION
     {
@@ -1262,6 +1312,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_STANDBY_BUDGET_GRACE_PERIOD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_STANDBY_BUDGET_GRACE_PERIOD
     {
@@ -1287,6 +1338,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_STANDBY_BUDGET_PERCENT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_STANDBY_BUDGET_PERCENT
     {
@@ -1312,6 +1364,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_STANDBY_BUDGET_REFRESH_COUNT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_STANDBY_BUDGET_REFRESH_COUNT
     {
@@ -1337,6 +1390,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_STANDBY_BUDGET_REFRESH_INTERVAL"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_STANDBY_BUDGET_REFRESH_INTERVAL
     {
@@ -1362,6 +1416,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_STANDBY_RESERVE_GRACE_PERIOD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_STANDBY_RESERVE_GRACE_PERIOD
     {
@@ -1387,6 +1442,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_STANDBY_RESERVE_TIME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_STANDBY_RESERVE_TIME
     {
@@ -1412,6 +1468,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_STANDBY_RESET_PERCENT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_STANDBY_RESET_PERCENT
     {
@@ -1437,6 +1494,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_HUPR_ADAPTIVE_AWAY_DISPLAY_TIMEOUT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_HUPR_ADAPTIVE_AWAY_DISPLAY_TIMEOUT
     {
@@ -1462,6 +1520,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_HUPR_ADAPTIVE_INATTENTIVE_DIM_TIMEOUT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_HUPR_ADAPTIVE_INATTENTIVE_DIM_TIMEOUT
     {
@@ -1487,6 +1546,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_HUPR_ADAPTIVE_INATTENTIVE_DISPLAY_TIMEOUT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_HUPR_ADAPTIVE_INATTENTIVE_DISPLAY_TIMEOUT
     {
@@ -1512,6 +1572,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_HUPR_ADAPTIVE_AWAY_DIM_TIMEOUT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_HUPR_ADAPTIVE_AWAY_DIM_TIMEOUT
     {
@@ -1537,6 +1598,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ALLOW_STANDBY_STATES"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ALLOW_STANDBY_STATES
     {
@@ -1562,6 +1624,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ALLOW_RTC_WAKE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ALLOW_RTC_WAKE
     {
@@ -1587,6 +1650,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_LEGACY_RTC_MITIGATION"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_LEGACY_RTC_MITIGATION
     {
@@ -1612,6 +1676,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ALLOW_SYSTEM_REQUIRED"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ALLOW_SYSTEM_REQUIRED
     {
@@ -1637,6 +1702,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_POWER_SAVING_STATUS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_POWER_SAVING_STATUS
     {
@@ -1662,6 +1728,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ENERGY_SAVER_STATUS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ENERGY_SAVER_STATUS
     {
@@ -1687,6 +1754,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ENERGY_SAVER_SUBGROUP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ENERGY_SAVER_SUBGROUP
     {
@@ -1712,6 +1780,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ENERGY_SAVER_BATTERY_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ENERGY_SAVER_BATTERY_THRESHOLD
     {
@@ -1737,6 +1806,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ENERGY_SAVER_BRIGHTNESS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ENERGY_SAVER_BRIGHTNESS
     {
@@ -1762,6 +1832,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ENERGY_SAVER_POLICY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ENERGY_SAVER_POLICY
     {
@@ -1787,6 +1858,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_SYSTEM_BUTTON_SUBGROUP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_SYSTEM_BUTTON_SUBGROUP
     {
@@ -1812,6 +1884,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_POWERBUTTON_ACTION"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_POWERBUTTON_ACTION
     {
@@ -1837,6 +1910,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_SLEEPBUTTON_ACTION"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_SLEEPBUTTON_ACTION
     {
@@ -1862,6 +1936,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_USERINTERFACEBUTTON_ACTION"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_USERINTERFACEBUTTON_ACTION
     {
@@ -1887,6 +1962,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_LIDCLOSE_ACTION"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_LIDCLOSE_ACTION
     {
@@ -1912,6 +1988,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_LIDOPEN_POWERSTATE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_LIDOPEN_POWERSTATE
     {
@@ -1937,6 +2014,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_BATTERY_SUBGROUP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_BATTERY_SUBGROUP
     {
@@ -1962,6 +2040,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_BATTERY_DISCHARGE_ACTION_0"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_BATTERY_DISCHARGE_ACTION_0
     {
@@ -1987,6 +2066,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_BATTERY_DISCHARGE_LEVEL_0"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_BATTERY_DISCHARGE_LEVEL_0
     {
@@ -2012,6 +2092,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_BATTERY_DISCHARGE_FLAGS_0"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_BATTERY_DISCHARGE_FLAGS_0
     {
@@ -2037,6 +2118,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_BATTERY_DISCHARGE_ACTION_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_BATTERY_DISCHARGE_ACTION_1
     {
@@ -2062,6 +2144,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_BATTERY_DISCHARGE_LEVEL_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_BATTERY_DISCHARGE_LEVEL_1
     {
@@ -2087,6 +2170,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_BATTERY_DISCHARGE_FLAGS_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_BATTERY_DISCHARGE_FLAGS_1
     {
@@ -2112,6 +2196,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_BATTERY_DISCHARGE_ACTION_2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_BATTERY_DISCHARGE_ACTION_2
     {
@@ -2137,6 +2222,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_BATTERY_DISCHARGE_LEVEL_2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_BATTERY_DISCHARGE_LEVEL_2
     {
@@ -2162,6 +2248,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_BATTERY_DISCHARGE_FLAGS_2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_BATTERY_DISCHARGE_FLAGS_2
     {
@@ -2187,6 +2274,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_BATTERY_DISCHARGE_ACTION_3"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_BATTERY_DISCHARGE_ACTION_3
     {
@@ -2212,6 +2300,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_BATTERY_DISCHARGE_LEVEL_3"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_BATTERY_DISCHARGE_LEVEL_3
     {
@@ -2237,6 +2326,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_BATTERY_DISCHARGE_FLAGS_3"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_BATTERY_DISCHARGE_FLAGS_3
     {
@@ -2262,6 +2352,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_SETTINGS_SUBGROUP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_SETTINGS_SUBGROUP
     {
@@ -2287,6 +2378,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_THROTTLE_POLICY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_THROTTLE_POLICY
     {
@@ -2312,6 +2404,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_THROTTLE_MAXIMUM"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_THROTTLE_MAXIMUM
     {
@@ -2337,6 +2430,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_THROTTLE_MAXIMUM_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_THROTTLE_MAXIMUM_1
     {
@@ -2362,6 +2456,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_THROTTLE_MAXIMUM_2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_THROTTLE_MAXIMUM_2
     {
@@ -2387,6 +2482,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_THROTTLE_MINIMUM"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_THROTTLE_MINIMUM
     {
@@ -2412,6 +2508,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_THROTTLE_MINIMUM_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_THROTTLE_MINIMUM_1
     {
@@ -2437,6 +2534,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_THROTTLE_MINIMUM_2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_THROTTLE_MINIMUM_2
     {
@@ -2462,6 +2560,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_FREQUENCY_LIMIT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_FREQUENCY_LIMIT
     {
@@ -2487,6 +2586,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_FREQUENCY_LIMIT_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_FREQUENCY_LIMIT_1
     {
@@ -2512,6 +2612,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_FREQUENCY_LIMIT_2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_FREQUENCY_LIMIT_2
     {
@@ -2537,6 +2638,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_FREQUENCY_MINIMUM"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_FREQUENCY_MINIMUM
     {
@@ -2562,6 +2664,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_FREQUENCY_MINIMUM_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_FREQUENCY_MINIMUM_1
     {
@@ -2587,6 +2690,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_FREQUENCY_MINIMUM_2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_FREQUENCY_MINIMUM_2
     {
@@ -2612,6 +2716,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_ALLOW_THROTTLING"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_ALLOW_THROTTLING
     {
@@ -2637,6 +2742,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_IDLESTATE_POLICY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_IDLESTATE_POLICY
     {
@@ -2662,6 +2768,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERFSTATE_POLICY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERFSTATE_POLICY
     {
@@ -2687,6 +2794,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_INCREASE_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_INCREASE_THRESHOLD
     {
@@ -2712,6 +2820,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_INCREASE_THRESHOLD_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_INCREASE_THRESHOLD_1
     {
@@ -2737,6 +2846,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_DECREASE_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_DECREASE_THRESHOLD
     {
@@ -2762,6 +2872,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_DECREASE_THRESHOLD_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_DECREASE_THRESHOLD_1
     {
@@ -2787,6 +2898,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_INCREASE_POLICY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_INCREASE_POLICY
     {
@@ -2812,6 +2924,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_INCREASE_POLICY_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_INCREASE_POLICY_1
     {
@@ -2837,6 +2950,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_DECREASE_POLICY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_DECREASE_POLICY
     {
@@ -2862,6 +2976,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_DECREASE_POLICY_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_DECREASE_POLICY_1
     {
@@ -2887,6 +3002,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_INCREASE_TIME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_INCREASE_TIME
     {
@@ -2912,6 +3028,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_INCREASE_TIME_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_INCREASE_TIME_1
     {
@@ -2937,6 +3054,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_DECREASE_TIME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_DECREASE_TIME
     {
@@ -2962,6 +3080,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_DECREASE_TIME_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_DECREASE_TIME_1
     {
@@ -2987,6 +3106,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_TIME_CHECK"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_TIME_CHECK
     {
@@ -3012,6 +3132,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_BOOST_POLICY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_BOOST_POLICY
     {
@@ -3037,6 +3158,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_BOOST_MODE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_BOOST_MODE
     {
@@ -3062,6 +3184,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_AUTONOMOUS_MODE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_AUTONOMOUS_MODE
     {
@@ -3087,6 +3210,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_ENERGY_PERFORMANCE_PREFERENCE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_ENERGY_PERFORMANCE_PREFERENCE
     {
@@ -3112,6 +3236,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_ENERGY_PERFORMANCE_PREFERENCE_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_ENERGY_PERFORMANCE_PREFERENCE_1
     {
@@ -3137,6 +3262,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_ENERGY_PERFORMANCE_PREFERENCE_2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_ENERGY_PERFORMANCE_PREFERENCE_2
     {
@@ -3162,6 +3288,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_AUTONOMOUS_ACTIVITY_WINDOW"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_AUTONOMOUS_ACTIVITY_WINDOW
     {
@@ -3187,6 +3314,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_DUTY_CYCLING"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_DUTY_CYCLING
     {
@@ -3212,6 +3340,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_IDLE_ALLOW_SCALING"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_IDLE_ALLOW_SCALING
     {
@@ -3237,6 +3366,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_IDLE_DISABLE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_IDLE_DISABLE
     {
@@ -3262,6 +3392,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_IDLE_STATE_MAXIMUM"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_IDLE_STATE_MAXIMUM
     {
@@ -3287,6 +3418,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_IDLE_TIME_CHECK"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_IDLE_TIME_CHECK
     {
@@ -3312,6 +3444,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_IDLE_DEMOTE_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_IDLE_DEMOTE_THRESHOLD
     {
@@ -3337,6 +3470,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_IDLE_PROMOTE_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_IDLE_PROMOTE_THRESHOLD
     {
@@ -3362,6 +3496,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_CORE_PARKING_INCREASE_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_CORE_PARKING_INCREASE_THRESHOLD
     {
@@ -3387,6 +3522,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_CORE_PARKING_DECREASE_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_CORE_PARKING_DECREASE_THRESHOLD
     {
@@ -3412,6 +3548,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_CORE_PARKING_INCREASE_POLICY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_CORE_PARKING_INCREASE_POLICY
     {
@@ -3437,6 +3574,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_CORE_PARKING_DECREASE_POLICY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_CORE_PARKING_DECREASE_POLICY
     {
@@ -3462,6 +3600,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_CORE_PARKING_MAX_CORES"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_CORE_PARKING_MAX_CORES
     {
@@ -3487,6 +3626,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_CORE_PARKING_MAX_CORES_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_CORE_PARKING_MAX_CORES_1
     {
@@ -3512,6 +3652,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_CORE_PARKING_MIN_CORES"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_CORE_PARKING_MIN_CORES
     {
@@ -3537,6 +3678,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_CORE_PARKING_MIN_CORES_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_CORE_PARKING_MIN_CORES_1
     {
@@ -3562,6 +3704,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_CORE_PARKING_INCREASE_TIME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_CORE_PARKING_INCREASE_TIME
     {
@@ -3587,6 +3730,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_CORE_PARKING_DECREASE_TIME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_CORE_PARKING_DECREASE_TIME
     {
@@ -3612,6 +3756,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_CORE_PARKING_AFFINITY_HISTORY_DECREASE_FACTOR"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_CORE_PARKING_AFFINITY_HISTORY_DECREASE_FACTOR
     {
@@ -3637,6 +3782,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_CORE_PARKING_AFFINITY_HISTORY_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_CORE_PARKING_AFFINITY_HISTORY_THRESHOLD
     {
@@ -3662,6 +3808,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_CORE_PARKING_AFFINITY_WEIGHTING"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_CORE_PARKING_AFFINITY_WEIGHTING
     {
@@ -3687,6 +3834,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_CORE_PARKING_OVER_UTILIZATION_HISTORY_DECREASE_FACTOR"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_CORE_PARKING_OVER_UTILIZATION_HISTORY_DECREASE_FACTOR
     {
@@ -3712,6 +3860,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_CORE_PARKING_OVER_UTILIZATION_HISTORY_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_CORE_PARKING_OVER_UTILIZATION_HISTORY_THRESHOLD
     {
@@ -3737,6 +3886,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_CORE_PARKING_OVER_UTILIZATION_WEIGHTING"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_CORE_PARKING_OVER_UTILIZATION_WEIGHTING
     {
@@ -3762,6 +3912,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_CORE_PARKING_OVER_UTILIZATION_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_CORE_PARKING_OVER_UTILIZATION_THRESHOLD
     {
@@ -3787,6 +3938,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PACKAGE_C6_POLICY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PACKAGE_C6_POLICY
     {
@@ -3812,6 +3964,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PARKING_CORE_OVERRIDE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PARKING_CORE_OVERRIDE
     {
@@ -3837,6 +3990,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PARKING_PERF_STATE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PARKING_PERF_STATE
     {
@@ -3862,6 +4016,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PARKING_PERF_STATE_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PARKING_PERF_STATE_1
     {
@@ -3887,6 +4042,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PARKING_CONCURRENCY_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PARKING_CONCURRENCY_THRESHOLD
     {
@@ -3912,6 +4068,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PARKING_HEADROOM_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PARKING_HEADROOM_THRESHOLD
     {
@@ -3937,6 +4094,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PARKING_DISTRIBUTION_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PARKING_DISTRIBUTION_THRESHOLD
     {
@@ -3962,6 +4120,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_SOFT_PARKING_LATENCY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_SOFT_PARKING_LATENCY
     {
@@ -3987,6 +4146,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_HISTORY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_HISTORY
     {
@@ -4012,6 +4172,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_HISTORY_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_HISTORY_1
     {
@@ -4037,6 +4198,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_INCREASE_HISTORY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_INCREASE_HISTORY
     {
@@ -4062,6 +4224,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_DECREASE_HISTORY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_DECREASE_HISTORY
     {
@@ -4087,6 +4250,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_CORE_PARKING_HISTORY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_CORE_PARKING_HISTORY
     {
@@ -4112,6 +4276,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_LATENCY_HINT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_LATENCY_HINT
     {
@@ -4137,6 +4302,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_LATENCY_HINT_PERF"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_LATENCY_HINT_PERF
     {
@@ -4162,6 +4328,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_LATENCY_HINT_PERF_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_LATENCY_HINT_PERF_1
     {
@@ -4187,6 +4354,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_LATENCY_HINT_PERF_2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_LATENCY_HINT_PERF_2
     {
@@ -4212,6 +4380,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_LATENCY_HINT_FREQ"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_LATENCY_HINT_FREQ
     {
@@ -4237,6 +4406,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_LATENCY_HINT_FREQ_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_LATENCY_HINT_FREQ_1
     {
@@ -4262,6 +4432,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_LATENCY_HINT_FREQ_2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_LATENCY_HINT_FREQ_2
     {
@@ -4287,6 +4458,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_LATENCY_HINT_EPP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_LATENCY_HINT_EPP
     {
@@ -4312,6 +4484,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_LATENCY_HINT_EPP_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_LATENCY_HINT_EPP_1
     {
@@ -4337,6 +4510,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_PERF_LATENCY_HINT_EPP_2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PERF_LATENCY_HINT_EPP_2
     {
@@ -4362,6 +4536,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_LATENCY_HINT_MIN_UNPARK"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_LATENCY_HINT_MIN_UNPARK
     {
@@ -4387,6 +4562,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_LATENCY_HINT_MIN_UNPARK_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_LATENCY_HINT_MIN_UNPARK_1
     {
@@ -4412,6 +4588,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_MODULE_PARKING_POLICY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_MODULE_PARKING_POLICY
     {
@@ -4437,6 +4614,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_COMPLEX_PARKING_POLICY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_COMPLEX_PARKING_POLICY
     {
@@ -4462,6 +4640,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_SMT_UNPARKING_POLICY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_SMT_UNPARKING_POLICY
     {
@@ -4487,6 +4666,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_RESTRICTION_COUNT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_RESTRICTION_COUNT
     {
@@ -4512,6 +4692,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_DISTRIBUTE_UTILITY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_DISTRIBUTE_UTILITY
     {
@@ -4537,6 +4718,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_RESOURCE_PRIORITY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_RESOURCE_PRIORITY
     {
@@ -4562,6 +4744,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_RESOURCE_PRIORITY_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_RESOURCE_PRIORITY_1
     {
@@ -4587,6 +4770,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_RESOURCE_PRIORITY_2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_RESOURCE_PRIORITY_2
     {
@@ -4612,6 +4796,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_HETEROGENEOUS_POLICY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_HETEROGENEOUS_POLICY
     {
@@ -4637,6 +4822,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_HETERO_DECREASE_TIME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_HETERO_DECREASE_TIME
     {
@@ -4662,6 +4848,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_HETERO_INCREASE_TIME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_HETERO_INCREASE_TIME
     {
@@ -4687,6 +4874,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_HETERO_CONTAINMENT_DECREASE_TIME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_HETERO_CONTAINMENT_DECREASE_TIME
     {
@@ -4712,6 +4900,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_HETERO_CONTAINMENT_INCREASE_TIME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_HETERO_CONTAINMENT_INCREASE_TIME
     {
@@ -4737,6 +4926,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_HETERO_CONTAINMENT_EFFICIENCY_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_HETERO_CONTAINMENT_EFFICIENCY_THRESHOLD
     {
@@ -4762,6 +4952,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_HETERO_CONTAINMENT_HYBRID_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_HETERO_CONTAINMENT_HYBRID_THRESHOLD
     {
@@ -4787,6 +4978,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_HETERO_CONTAINMENT_POLICY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_HETERO_CONTAINMENT_POLICY
     {
@@ -4812,6 +5004,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_HETERO_CONTAINMENT_EFFICIENCY_IMP_UTIL_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_HETERO_CONTAINMENT_EFFICIENCY_IMP_UTIL_THRESHOLD
     {
@@ -4837,6 +5030,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_HETERO_CONTAINMENT_HYBRID_IMP_UTIL_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_HETERO_CONTAINMENT_HYBRID_IMP_UTIL_THRESHOLD
     {
@@ -4862,6 +5056,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_WPS_MIN_EFFICIENCY_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_WPS_MIN_EFFICIENCY_THRESHOLD
     {
@@ -4887,6 +5082,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_HETERO_DECREASE_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_HETERO_DECREASE_THRESHOLD
     {
@@ -4912,6 +5108,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_HETERO_DECREASE_THRESHOLD_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_HETERO_DECREASE_THRESHOLD_1
     {
@@ -4937,6 +5134,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_HETERO_INCREASE_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_HETERO_INCREASE_THRESHOLD
     {
@@ -4962,6 +5160,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_HETERO_INCREASE_THRESHOLD_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_HETERO_INCREASE_THRESHOLD_1
     {
@@ -4987,6 +5186,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_CLASS0_FLOOR_PERF"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_CLASS0_FLOOR_PERF
     {
@@ -5012,6 +5212,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_CLASS1_INITIAL_PERF"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_CLASS1_INITIAL_PERF
     {
@@ -5037,6 +5238,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_THREAD_SCHEDULING_POLICY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_THREAD_SCHEDULING_POLICY
     {
@@ -5062,6 +5264,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_SHORT_THREAD_SCHEDULING_POLICY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_SHORT_THREAD_SCHEDULING_POLICY
     {
@@ -5087,6 +5290,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_SHORT_THREAD_RUNTIME_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_SHORT_THREAD_RUNTIME_THRESHOLD
     {
@@ -5112,6 +5316,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_SHORT_THREAD_ARCH_CLASS_UPPER_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_SHORT_THREAD_ARCH_CLASS_UPPER_THRESHOLD
     {
@@ -5137,6 +5342,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_SHORT_THREAD_ARCH_CLASS_LOWER_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_SHORT_THREAD_ARCH_CLASS_LOWER_THRESHOLD
     {
@@ -5162,6 +5368,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_LONG_THREAD_ARCH_CLASS_UPPER_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_LONG_THREAD_ARCH_CLASS_UPPER_THRESHOLD
     {
@@ -5187,6 +5394,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_LONG_THREAD_ARCH_CLASS_LOWER_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_LONG_THREAD_ARCH_CLASS_LOWER_THRESHOLD
     {
@@ -5212,6 +5420,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_SYSTEM_COOLING_POLICY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_SYSTEM_COOLING_POLICY
     {
@@ -5237,6 +5446,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_RESPONSIVENESS_DISABLE_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_RESPONSIVENESS_DISABLE_THRESHOLD
     {
@@ -5262,6 +5472,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_RESPONSIVENESS_DISABLE_THRESHOLD_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_RESPONSIVENESS_DISABLE_THRESHOLD_1
     {
@@ -5287,6 +5498,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_RESPONSIVENESS_ENABLE_THRESHOLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_RESPONSIVENESS_ENABLE_THRESHOLD
     {
@@ -5312,6 +5524,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_RESPONSIVENESS_ENABLE_THRESHOLD_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_RESPONSIVENESS_ENABLE_THRESHOLD_1
     {
@@ -5337,6 +5550,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_RESPONSIVENESS_DISABLE_TIME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_RESPONSIVENESS_DISABLE_TIME
     {
@@ -5362,6 +5576,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_RESPONSIVENESS_DISABLE_TIME_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_RESPONSIVENESS_DISABLE_TIME_1
     {
@@ -5387,6 +5602,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_RESPONSIVENESS_ENABLE_TIME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_RESPONSIVENESS_ENABLE_TIME
     {
@@ -5412,6 +5628,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_RESPONSIVENESS_ENABLE_TIME_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_RESPONSIVENESS_ENABLE_TIME_1
     {
@@ -5437,6 +5654,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_RESPONSIVENESS_EPP_CEILING"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_RESPONSIVENESS_EPP_CEILING
     {
@@ -5462,6 +5680,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_RESPONSIVENESS_EPP_CEILING_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_RESPONSIVENESS_EPP_CEILING_1
     {
@@ -5487,6 +5706,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_RESPONSIVENESS_PERF_FLOOR"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_RESPONSIVENESS_PERF_FLOOR
     {
@@ -5512,6 +5732,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PROCESSOR_RESPONSIVENESS_PERF_FLOOR_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_RESPONSIVENESS_PERF_FLOOR_1
     {
@@ -5537,6 +5758,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_LOCK_CONSOLE_ON_WAKE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_LOCK_CONSOLE_ON_WAKE
     {
@@ -5562,6 +5784,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_DEVICE_IDLE_POLICY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_DEVICE_IDLE_POLICY
     {
@@ -5587,6 +5810,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_CONNECTIVITY_IN_STANDBY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_CONNECTIVITY_IN_STANDBY
     {
@@ -5612,6 +5836,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_DISCONNECTED_STANDBY_MODE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_DISCONNECTED_STANDBY_MODE
     {
@@ -5637,6 +5862,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ACDC_POWER_SOURCE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ACDC_POWER_SOURCE
     {
@@ -5662,6 +5888,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_LIDSWITCH_STATE_CHANGE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_LIDSWITCH_STATE_CHANGE
     {
@@ -5687,6 +5914,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_LIDSWITCH_STATE_RELIABILITY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_LIDSWITCH_STATE_RELIABILITY
     {
@@ -5712,6 +5940,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_BATTERY_PERCENTAGE_REMAINING"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_BATTERY_PERCENTAGE_REMAINING
     {
@@ -5737,6 +5966,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_BATTERY_COUNT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_BATTERY_COUNT
     {
@@ -5762,6 +5992,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_GLOBAL_USER_PRESENCE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_GLOBAL_USER_PRESENCE
     {
@@ -5787,6 +6018,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_SESSION_DISPLAY_STATUS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_SESSION_DISPLAY_STATUS
     {
@@ -5812,6 +6044,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_SESSION_USER_PRESENCE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_SESSION_USER_PRESENCE
     {
@@ -5837,6 +6070,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_IDLE_BACKGROUND_TASK"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_IDLE_BACKGROUND_TASK
     {
@@ -5862,6 +6096,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_BACKGROUND_TASK_NOTIFICATION"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_BACKGROUND_TASK_NOTIFICATION
     {
@@ -5887,6 +6122,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_APPLAUNCH_BUTTON"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_APPLAUNCH_BUTTON
     {
@@ -5912,6 +6148,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PCIEXPRESS_SETTINGS_SUBGROUP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PCIEXPRESS_SETTINGS_SUBGROUP
     {
@@ -5937,6 +6174,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_PCIEXPRESS_ASPM_POLICY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PCIEXPRESS_ASPM_POLICY
     {
@@ -5962,6 +6200,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ENABLE_SWITCH_FORCED_SHUTDOWN"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ENABLE_SWITCH_FORCED_SHUTDOWN
     {
@@ -5987,6 +6226,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_INTSTEER_SUBGROUP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_INTSTEER_SUBGROUP
     {
@@ -6012,6 +6252,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_INTSTEER_MODE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_INTSTEER_MODE
     {
@@ -6037,6 +6278,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_INTSTEER_LOAD_PER_PROC_TRIGGER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_INTSTEER_LOAD_PER_PROC_TRIGGER
     {
@@ -6062,6 +6304,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_INTSTEER_TIME_UNPARK_TRIGGER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_INTSTEER_TIME_UNPARK_TRIGGER
     {
@@ -6087,6 +6330,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_GRAPHICS_SUBGROUP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_GRAPHICS_SUBGROUP
     {
@@ -6112,6 +6356,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_GPU_PREFERENCE_POLICY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_GPU_PREFERENCE_POLICY
     {
@@ -6137,6 +6382,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_MIXED_REALITY_MODE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_MIXED_REALITY_MODE
     {
@@ -6162,6 +6408,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_SPR_ACTIVE_SESSION_CHANGE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_SPR_ACTIVE_SESSION_CHANGE
     {
@@ -6187,9 +6434,11 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_HUPR_ADAPTIVE_DISPLAY_TIMEOUT"]/*' />
     [NativeTypeName("#define GUID_HUPR_ADAPTIVE_DISPLAY_TIMEOUT GUID_HUPR_ADAPTIVE_AWAY_DISPLAY_TIMEOUT")]
     public static ref readonly Guid GUID_HUPR_ADAPTIVE_DISPLAY_TIMEOUT => ref GUID_HUPR_ADAPTIVE_AWAY_DISPLAY_TIMEOUT;
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_HUPR_ADAPTIVE_DIM_TIMEOUT"]/*' />
     [NativeTypeName("#define GUID_HUPR_ADAPTIVE_DIM_TIMEOUT GUID_HUPR_ADAPTIVE_INATTENTIVE_DIM_TIMEOUT")]
     public static ref readonly Guid GUID_HUPR_ADAPTIVE_DIM_TIMEOUT => ref GUID_HUPR_ADAPTIVE_INATTENTIVE_DIM_TIMEOUT;
 }

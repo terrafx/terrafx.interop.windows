@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("DC1C5A9C-E88A-4DDE-A5A1-60F82A20AEF7")]
 public unsafe partial struct FileOpenDialog : INativeGuid
 {
+    /// <include file='FileOpenDialog.xml' path='doc/member[@name="FileOpenDialog.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_FileOpenDialog);
 }

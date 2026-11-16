@@ -20,6 +20,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IPdfRendererNative : IPdfRendererNative.Interface, INativeGuid
 {
+    /// <include file='IPdfRendererNative.xml' path='doc/member[@name="IPdfRendererNative.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPdfRendererNative);
 
     public void** lpVtbl;

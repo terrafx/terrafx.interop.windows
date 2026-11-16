@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IDCompositionVisual2 : IDCompositionVisual2.Interface, INativeGuid
 {
+    /// <include file='IDCompositionVisual2.xml' path='doc/member[@name="IDCompositionVisual2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDCompositionVisual2);
 
     public void** lpVtbl;

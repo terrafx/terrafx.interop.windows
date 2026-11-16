@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IMFMediaType")]
 public unsafe partial struct IMFAudioMediaType : IMFAudioMediaType.Interface, INativeGuid
 {
+    /// <include file='IMFAudioMediaType.xml' path='doc/member[@name="IMFAudioMediaType.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFAudioMediaType);
 
     public void** lpVtbl;

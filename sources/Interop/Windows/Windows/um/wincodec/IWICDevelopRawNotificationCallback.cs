@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IWICDevelopRawNotificationCallback : IWICDevelopRawNotificationCallback.Interface, INativeGuid
 {
+    /// <include file='IWICDevelopRawNotificationCallback.xml' path='doc/member[@name="IWICDevelopRawNotificationCallback.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWICDevelopRawNotificationCallback);
 
     public void** lpVtbl;
