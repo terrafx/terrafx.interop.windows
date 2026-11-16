@@ -1,0 +1,16 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-wia_lh.h
+--method-class-name
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/wia_lh
+--remap
+LIBID_WiaDevMgr=@CLSID_WiaDevMgr
+--test-output
+../../../../tests/Interop/Windows/Windows/um/wia_lh
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.28000.0/um/wia_lh.h

@@ -1,0 +1,18 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+CENTERED
+WIA_PROP_LIST_COUNT
+WIA_PROP_LIST_VALUE
+--file
+um-WiaDef.h
+--method-class-name
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/WiaDef
+--test-output
+../../../../tests/Interop/Windows/Windows/um/WiaDef
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.28000.0/um/WiaDef.h
